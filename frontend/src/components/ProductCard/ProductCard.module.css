@@ -1,0 +1,174 @@
+.productCard {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.productCard img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+}
+
+.newBadge {
+
+    color: #ff4d00;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: .5px;
+
+    text-transform: uppercase;
+}
+
+.productTitle {
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+.productTitle:hover {
+    text-decoration: underline;
+}
+
+
+.productSubtitle {
+    font-size: 13px;
+    color: #555;
+}
+
+.productPrice {
+    font-weight: bold;
+}
+
+.oldPrice {
+    text-decoration: line-through;
+    font-weight: normal;
+    color: #999;
+    margin-left: 10px;
+}
+
+.colorSliderWrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.colorSlider {
+    --thumb-size: 40px;
+    --gap: 6px;
+    --visible-colors: 8;
+
+    width: calc(
+            var(--visible-colors) * var(--thumb-size) +
+            (var(--visible-colors) - 1) * var(--gap)
+    );
+
+    display: flex;
+    gap: var(--gap);
+    overflow: hidden;
+}
+
+.colorSlider img {
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    object-fit: cover;
+
+    border: none;
+    cursor: pointer;
+}
+
+.colorSlider img.active {
+    border: 1px solid #111;
+}
+
+.sliderBtn {
+    width: 40px;
+    height: 40px;
+
+    border: 1px solid #ddd;
+    background: white;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sliderBtn:hover {
+    background: #f5f5f5;
+}
+
+
+.quickAddBtn {
+    position: absolute;
+
+    margin-left: 400px;
+    margin-top: 400px;
+
+    width: 44px;
+    height: 44px;
+
+    background: #ffffff;
+    border: none;
+    border-radius: 6px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity .2s ease;
+    cursor: pointer;
+
+    z-index: 5;
+}
+
+.productCard:hover .quickAddBtn {
+    opacity: 1;
+    visibility: visible;
+}
+
+.quickAddBtn img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+
+
+@media (max-width: 1440px) {
+    .productCard {
+        width: 100%;
+    }
+
+}
+@media (max-width: 1200px) {
+    .productCard {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .productTitle {
+        font-size: 14px;
+    }
+
+    .productPrice {
+        font-size: 14px;
+    }
+}

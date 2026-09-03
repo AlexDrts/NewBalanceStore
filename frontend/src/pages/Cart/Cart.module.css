@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cartHero {
+    position: relative;
+
+    width: 1940px;
+    max-width: 95vw;
+
+    height: 150px;
+    min-height: 10px;
+
+    margin: 0 auto;
+
+    overflow: visible;
+}
+
+
+.cartContainer {
+    display: grid;
+    grid-template-columns: 1fr 880px;
+    margin-left: 350px;
+    gap: 50px;
+}
+
+.cartContainerFull {
+    margin-right: 350px;
+    grid-template-columns: 1fr;
+}

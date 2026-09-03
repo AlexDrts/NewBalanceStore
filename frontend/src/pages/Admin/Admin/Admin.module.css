@@ -1,0 +1,192 @@
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.adminPage .mainHeader {
+    background: white;
+    color: black;
+}
+
+body.adminPage .mainHeader .nav-menu a {
+    color: black;
+}
+
+body.adminPage .mainHeader .logo {
+    filter: brightness(1) invert(0);
+}
+
+body.adminPage .mainHeader .header-icons img {
+    filter: brightness(0);
+}
+
+.adminPage.hero {
+    position: relative;
+    width: 1940px;
+    max-width: 95vw;
+    height: 10px;
+    min-height: 10px;
+    margin: 0 auto;
+    overflow: visible;
+}
+
+.adminPage .mainHeader {
+    position: relative;
+    background: white;
+    color: black;
+}
+
+.adminPage .nav-menu a {
+    color: black;
+}
+
+.adminPage .logo {
+    filter: brightness(1) invert(0);
+}
+
+.adminPage .header-icons img {
+    filter: brightness(0);
+}
+
+/* Dashboard Container */
+.adminContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 100px;
+    padding: 60px 20px;
+}
+
+.dashboardCard {
+    width: 100%;
+    max-width: 720px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #111;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+/* Cards Grid Layout */
+.cardsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    width: 100%;
+}
+
+.actionCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    background-color: #ffffff;
+    border: 2px solid #e5e5e5;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.actionCard:hover {
+    border-color: #111111;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.iconWrapper {
+    color: #111111;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardTitle {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 8px;
+}
+
+.cardDesc {
+    font-size: 14px;
+    color: #666666;
+    font-weight: 400;
+}
+
+/* Dashboard Header */
+.dashboardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 16px;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #111;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Logout Button */
+.logoutBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: 1px solid #d7d7d7;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #111111;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.logoutBtn:hover {
+    background-color: #111111;
+    color: #ffffff;
+    border-color: #111111;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .cardsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboardHeader {
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+    }
+}

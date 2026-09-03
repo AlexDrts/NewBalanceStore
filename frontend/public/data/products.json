@@ -1,0 +1,437 @@
+[
+  {
+    "id": 1,
+    "featured": true,
+    "name": "204L",
+    "price": 119.99,
+    "oldPrice": null,
+    "gender": "Unisex",
+    "type": "Footwear",
+    "category": "Shoes",
+    "activity": "Lifestyle",
+    "description": "Lifestyle shoes",
+    "images": {
+      "white": [
+        "../src/assets/images/main-page/U204L1KP.jpg"
+      ]
+    },
+    "colors": ["white"],
+    "sizes": [7, 7.5, 8, 8.5, 9, 9.5]
+  },
+  {
+    "id": 2,
+    "featured": true,
+    "name": "Athletics Premium Logo Relaxed Crop Crew",
+    "price": 63.75,
+    "oldPrice": 84.99,
+    "gender": "Women",
+    "type": "Clothing",
+    "category": "Sweatshirts",
+    "activity": "Lifestyle",
+    "description": "Lifestyle sweatshirt",
+    "images": {
+      "white": [
+        "../src/assets/images/main-page/WT53507AHH.jpg"
+      ]
+    },
+    "colors": ["white"],
+    "sizes": ["XS", "S", "M", "L"]
+  },
+  {
+    "id": 3,
+    "featured": true,
+    "name": "574 Core",
+    "price": 74.99,
+    "oldPrice": 99.99,
+    "gender": "Men",
+    "type": "Footwear",
+    "category": "Shoes",
+    "activity": "Lifestyle",
+    "description": "Lifestyle shoes",
+    "images": {
+      "tan": [
+        "../src/assets/images/main-page/ML574EVG.jpg"
+      ]
+    },
+    "colors": ["tan"],
+    "sizes": [7, 7.5, 8, 8.5, 9, 9.5]
+  },
+  {
+    "id": 4,
+    "featured": true,
+    "name": "Athletics Jersey T-Shirt",
+    "price": 31.49,
+    "oldPrice": 44.99,
+    "gender": "Women",
+    "type": "Clothing",
+    "category": "Shirts",
+    "activity": "Lifestyle",
+    "description": "Lifestyle shirt",
+    "images": {
+      "white": [
+        "../src/assets/images/main-page/WT41501AHH.jpg"
+      ]
+    },
+    "colors": ["white"],
+    "sizes": ["XS", "S", "M", "L"]
+  },
+  {
+    "id": 5,
+    "featured": true,
+    "name": "NB Numeric 770",
+    "price": 124.99,
+    "oldPrice": null,
+    "gender": "Unisex",
+    "type": "Footwear",
+    "category": "Shoes",
+    "activity": "Lifestyle",
+    "description": "Lifestyle shoes",
+    "images": {
+      "gray": [
+        "../src/assets/images/main-page/UN770GRY.jpg"
+      ]
+    },
+    "colors": ["gray"],
+    "sizes": [7, 7.5, 8, 8.5, 9, 9.5]
+  },
+  {
+    "id": 6,
+    "featured": true,
+    "name": "Athletics French Terry Short",
+    "price": 45.49,
+    "oldPrice": 64.99,
+    "gender": "Women",
+    "type": "Clothing",
+    "category": "Short",
+    "activity": "Lifestyle",
+    "description": "Lifestyle short",
+    "images": {
+      "white": [
+        "../src/assets/images/main-page/WS41508AHH.jpg"
+      ]
+    },
+    "colors": ["white"],
+    "sizes": ["XS", "S", "M", "L"]
+  },
+  {
+    "id": 7,
+    "featured": false,
+    "name": "9060",
+    "price": 159.99,
+    "oldPrice": 199.99,
+    "gender": "Unisex",
+    "type": "Footwear",
+    "category": "Shoes",
+    "activity": "Lifestyle",
+    "description": "Lifestyle shoes",
+    "images": {
+      "white": [
+        "../src/assets/images/products/9060/white/9060-white1.jpg",
+        "../src/assets/images/products/9060/white/9060-white2.jpg",
+        "../src/assets/images/products/9060/white/9060-white3.jpg",
+        "../src/assets/images/products/9060/white/9060-white4.jpg",
+        "../src/assets/images/products/9060/white/9060-white5.jpg",
+        "../src/assets/images/products/9060/white/9060-white6.jpg",
+        "../src/assets/images/products/9060/white/9060-white7.jpg",
+        "../src/assets/images/products/9060/white/9060-white8.jpg",
+        "../src/assets/images/products/9060/white/9060-white9.jpg"
+      ],
+      "black": [
+        "../src/assets/images/products/9060/black/9060-black1.jpg",
+        "../src/assets/images/products/9060/black/9060-black2.jpg"
+      ],
+      "gray": [
+        "../src/assets/images/products/9060/gray/9060-gray1.jpg",
+        "../src/assets/images/products/9060/gray/9060-gray2.jpg"
+      ],
+      "tan": [
+        "../src/assets/images/products/9060/tan/9060-tan1.jpg",
+        "../src/assets/images/products/9060/tan/9060-tan2.jpg"
+      ]
+    },
+    "colors": ["white", "black", "gray", "tan"],
+    "sizes": [7, 7.5, 8, 8.5, 9, 9.5]
+  },
+  {
+    "id": 8,
+    "featured": false,
+    "name": "2002R",
+    "price": 149.99,
+    "oldPrice": null,
+    "gender": "Unisex",
+    "type": "Footwear",
+    "category": "Shoes",
+    "activity": "Lifestyle",
+    "description": "Lifestyle shoes",
+    "images": {
+      "black": [
+        "../src/assets/images/products/2002R/black/2002R-Black1.jpg",
+        "../src/assets/images/products/2002R/black/2002R-Black2.jpg",
+        "../src/assets/images/products/2002R/black/2002R-Black3.jpg",
+        "../src/assets/images/products/2002R/black/2002R-Black4.jpg",
+        "../src/assets/images/products/2002R/black/2002R-Black5.jpg",
+        "../src/assets/images/products/2002R/black/2002R-Black6.jpg",
+        "../src/assets/images/products/2002R/black/2002R-Black7.jpg"
+      ],
+      "gray": [
+        "../src/assets/images/products/2002R/gray/2002R-Gray1.jpg",
+        "../src/assets/images/products/2002R/gray/2002R-Gray2.jpg",
+        "../src/assets/images/products/2002R/gray/2002R-Gray3.jpg",
+        "../src/assets/images/products/2002R/gray/2002R-Gray4.jpg",
+        "../src/assets/images/products/2002R/gray/2002R-Gray5.jpg",
+        "../src/assets/images/products/2002R/gray/2002R-Gray6.jpg",
+        "../src/assets/images/products/2002R/gray/2002R-Gray7.jpg",
+        "../src/assets/images/products/2002R/gray/2002R-Gray8.jpg"
+      ]
+    },
+    "colors": ["black", "gray"],
+    "sizes": [7, 7.5, 8, 9, 9.5],
+    "isNew": true
+  },
+  {
+    "id": 9,
+    "featured": false,
+    "name": "530",
+    "price": 109.99,
+    "oldPrice": null,
+    "gender": "Unisex",
+    "type": "Footwear",
+    "category": "Shoes",
+    "activity": "Lifestyle",
+    "description": "Lifestyle shoes",
+    "images": {
+      "white": [
+        "../src/assets/images/products/530/white-1/530-White1.jpg",
+        "../src/assets/images/products/530/white-1/530-White2.jpg",
+        "../src/assets/images/products/530/white-1/530-White3.jpg",
+        "../src/assets/images/products/530/white-1/530-White4.jpg",
+        "../src/assets/images/products/530/white-1/530-White5.jpg"
+      ],
+      "white2": [
+        "../src/assets/images/products/530/white-2/530-White1.jpg",
+        "../src/assets/images/products/530/white-2/530-White2.jpg",
+        "../src/assets/images/products/530/white-2/530-White3.jpg",
+        "../src/assets/images/products/530/white-2/530-White4.jpg"
+      ],
+      "black": [
+        "../src/assets/images/products/530/black/530-Black1.jpg",
+        "../src/assets/images/products/530/black/530-Black2.jpg",
+        "../src/assets/images/products/530/black/530-Black3.jpg",
+        "../src/assets/images/products/530/black/530-Black4.jpg",
+        "../src/assets/images/products/530/black/530-Black5.jpg",
+        "../src/assets/images/products/530/black/530-Black6.jpg"
+      ],
+      "gray": [
+        "../src/assets/images/products/530/gray/530-Gray1.jpg",
+        "../src/assets/images/products/530/gray/530-Gray2.jpg",
+        "../src/assets/images/products/530/gray/530-Gray3.jpg",
+        "../src/assets/images/products/530/gray/530-Gray4.jpg",
+        "../src/assets/images/products/530/gray/530-Gray5.jpg",
+        "../src/assets/images/products/530/gray/530-Gray6.jpg",
+        "../src/assets/images/products/530/gray/530-Gray7.jpg"
+      ],
+      "tan": [
+        "../src/assets/images/products/530/tan/530-Tan1.jpg",
+        "../src/assets/images/products/530/tan/530-Tan2.jpg",
+        "../src/assets/images/products/530/tan/530-Tan3.jpg",
+        "../src/assets/images/products/530/tan/530-Tan4.jpg",
+        "../src/assets/images/products/530/tan/530-Tan5.jpg"
+      ],
+      "pink": [
+        "../src/assets/images/products/530/pink/530-Pink1.jpg",
+        "../src/assets/images/products/530/pink/530-Pink2.jpg",
+        "../src/assets/images/products/530/pink/530-Pink3.jpg",
+        "../src/assets/images/products/530/pink/530-Pink4.jpg",
+        "../src/assets/images/products/530/pink/530-Pink5.jpg"
+      ]
+    },
+    "colors": ["white", "white2", "black", "gray", "tan", "pink"],
+    "sizes": [8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5]
+  },
+  {
+    "id": 10,
+    "featured": false,
+    "name": "Soccer T-Shirt",
+    "price": 39.99,
+    "oldPrice": null,
+    "gender": "Men",
+    "type": "Clothing",
+    "category": "Shirts",
+    "activity": "Soccer",
+    "description": "Soccer T-Shirt",
+    "images": {
+      "white": [
+        "../src/assets/images/products/Soccer-Shirt/white/soccer-shirt-white1.jpg",
+        "../src/assets/images/products/Soccer-Shirt/white/soccer-shirt-white2.jpg"
+      ],
+      "red": [
+        "../src/assets/images/products/Soccer-Shirt/red/soccer-shirt-red1.jpg",
+        "../src/assets/images/products/Soccer-Shirt/red/soccer-shirt-red2.jpg"
+      ],
+      "black": [
+        "../src/assets/images/products/Soccer-Shirt/black/soccer-shirt-black1.jpg",
+        "../src/assets/images/products/Soccer-Shirt/black/soccer-shirt-black2.jpg"
+      ]
+    },
+    "colors": ["white", "red", "black"],
+    "sizes": ["XS", "S", "M", "L"]
+  },
+  {
+    "id": 11,
+    "featured": false,
+    "name": "Klutch Crew 2 Pack",
+    "price": 19.99,
+    "oldPrice": null,
+    "gender": "Unisex",
+    "type": "Accessories",
+    "category": "Socks",
+    "activity": "",
+    "description": "Klutch Crew 2 Pack",
+    "images": {
+      "multi_color": [
+        "../src/assets/images/products/Klutch-Crew-2-Pack/Klutch-Crew-2-Pack-1.jpg",
+        "../src/assets/images/products/Klutch-Crew-2-Pack/Klutch-Crew-2-Pack-2.jpg",
+        "../src/assets/images/products/Klutch-Crew-2-Pack/Klutch-Crew-2-Pack-3.jpg"
+      ]
+    },
+    "colors": ["multi_color"],
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  {
+    "id": 12,
+    "featured": false,
+    "name": "Klutch Athletics French Terry Crew",
+    "price": 79.99,
+    "oldPrice": null,
+    "gender": "Women",
+    "type": "Clothing",
+    "category": "Hoodies & Sweatshirts",
+    "activity": "Training",
+    "description": "Klutch Athletics French Terry Crew",
+    "images": {
+      "pink": [
+        "../src/assets/images/products/Klutch-Athletics-French-Terry-Crew/pink/Klutch-Athletics-French-Terry-Crew-Pink1.jpg",
+        "../src/assets/images/products/Klutch-Athletics-French-Terry-Crew/pink/Klutch-Athletics-French-Terry-Crew-Pink2.jpg"
+      ],
+      "gray": [
+        "../src/assets/images/products/Klutch-Athletics-French-Terry-Crew/gray/Klutch-Athletics-French-Terry-Crew-Gray1.jpg",
+        "../src/assets/images/products/Klutch-Athletics-French-Terry-Crew/gray/Klutch-Athletics-French-Terry-Crew-Gray2.jpg"
+      ]
+    },
+    "colors": ["pink", "gray"],
+    "sizes": ["XS", "S", "M", "L", "XL", "2XL"]
+  },
+
+  {
+    "id": 13,
+    "featured": false,
+    "name": "Athletics Premium Relaxed Chest Logo T-Shirt",
+    "price": 39.99,
+    "oldPrice": null,
+    "gender": "Men",
+    "type": "Clothing",
+    "category": "Shirts",
+    "activity": "Lifestyle",
+    "description": "Athletics Premium Relaxed Chest Logo T-Shirt",
+    "images": {
+      "blue": [
+        "../src/assets/images/products/Athletics-Premium-Relaxed-Chest-Logo-T-Shirt/blue/Shirt-Blue1.jpg",
+        "../src/assets/images/products/Athletics-Premium-Relaxed-Chest-Logo-T-Shirt/blue/Shirt-Blue2.jpg",
+        "../src/assets/images/products/Athletics-Premium-Relaxed-Chest-Logo-T-Shirt/blue/Shirt-Blue3.jpg",
+        "../src/assets/images/products/Athletics-Premium-Relaxed-Chest-Logo-T-Shirt/blue/Shirt-Blue4.jpg",
+        "../src/assets/images/products/Athletics-Premium-Relaxed-Chest-Logo-T-Shirt/blue/Shirt-Blue5.jpg"
+      ],
+      "white": [
+        "../src/assets/images/products/Athletics-Premium-Relaxed-Chest-Logo-T-Shirt/white-1/Shirt-White1.jpg",
+        "../src/assets/images/products/Athletics-Premium-Relaxed-Chest-Logo-T-Shirt/white-1/Shirt-White2.jpg",
+        "../src/assets/images/products/Athletics-Premium-Relaxed-Chest-Logo-T-Shirt/white-1/Shirt-White3.jpg",
+        "../src/assets/images/products/Athletics-Premium-Relaxed-Chest-Logo-T-Shirt/white-1/Shirt-White4.jpg",
+        "../src/assets/images/products/Athletics-Premium-Relaxed-Chest-Logo-T-Shirt/white-1/Shirt-White5.jpg"
+      ],
+      "white2": [
+        "../src/assets/images/products/Athletics-Premium-Relaxed-Chest-Logo-T-Shirt/white-2/Shirt-White1.jpg",
+        "../src/assets/images/products/Athletics-Premium-Relaxed-Chest-Logo-T-Shirt/white-2/Shirt-White2.jpg",
+        "../src/assets/images/products/Athletics-Premium-Relaxed-Chest-Logo-T-Shirt/white-2/Shirt-White3.jpg",
+        "../src/assets/images/products/Athletics-Premium-Relaxed-Chest-Logo-T-Shirt/white-2/Shirt-White4.jpg",
+        "../src/assets/images/products/Athletics-Premium-Relaxed-Chest-Logo-T-Shirt/white-2/Shirt-White5.jpg"
+      ]
+    },
+    "colors": ["blue", "white", "white2"],
+    "sizes": ["XS", "S", "M", "L", "XL", "2XL"],
+    "isNew": true
+  },
+
+  {
+    "id": 14,
+    "featured": false,
+    "name": "Sticker Pack Oversized T-Shirt",
+    "price": 39.99,
+    "oldPrice": null,
+    "gender": "Women",
+    "type": "Clothing",
+    "category": "Shirts",
+    "activity": "Lifestyle",
+    "description": "Sticker Pack Oversized T-Shirt",
+    "images": {
+      "tan": [
+        "../src/assets/images/products/Sticker-Pack-Oversized-T-Shirt/blue/Shirt-Blue1.jpg",
+        "../src/assets/images/products/Sticker-Pack-Oversized-T-Shirt/blue/Shirt-Blue2.jpg",
+        "../src/assets/images/products/Sticker-Pack-Oversized-T-Shirt/blue/Shirt-Blue3.jpg",
+        "../src/assets/images/products/Sticker-Pack-Oversized-T-Shirt/blue/Shirt-Blue4.jpg",
+        "../src/assets/images/products/Sticker-Pack-Oversized-T-Shirt/blue/Shirt-Blue5.jpg"
+      ],
+      "blue": [
+        "../src/assets/images/products/Sticker-Pack-Oversized-T-Shirt/tan/Shirt-Tan1.jpg",
+        "../src/assets/images/products/Sticker-Pack-Oversized-T-Shirt/tan/Shirt-Tan2.jpg",
+        "../src/assets/images/products/Sticker-Pack-Oversized-T-Shirt/tan/Shirt-Tan3.jpg",
+        "../src/assets/images/products/Sticker-Pack-Oversized-T-Shirt/tan/Shirt-Tan4.jpg",
+        "../src/assets/images/products/Sticker-Pack-Oversized-T-Shirt/tan/Shirt-Tan5.jpg"
+      ]
+    },
+    "colors": ["tan", "blue"],
+    "sizes": ["XS", "S", "M", "L", "XL"],
+    "isNew": true
+  },
+
+
+  {
+    "id": 15,
+    "featured": false,
+    "name": "740 Lace",
+    "price": 89.99,
+    "oldPrice": null,
+    "gender": "Kids",
+    "type": "Footwear",
+    "category": "Shoes",
+    "activity": "Lifestyle",
+    "description": "740 Lace",
+    "images": {
+      "white": [
+        "../src/assets/images/products/740-Lace/white1/740-Lace-White1.jpg",
+        "../src/assets/images/products/740-Lace/white1/740-Lace-White2.jpg",
+        "../src/assets/images/products/740-Lace/white1/740-Lace-White3.jpg",
+        "../src/assets/images/products/740-Lace/white1/740-Lace-White4.jpg",
+        "../src/assets/images/products/740-Lace/white1/740-Lace-White5.jpg",
+        "../src/assets/images/products/740-Lace/white1/740-Lace-White6.jpg"
+      ],
+      "black": [
+        "../src/assets/images/products/740-Lace/black/740-Lace-Black1.jpg",
+        "../src/assets/images/products/740-Lace/black/740-Lace-Black2.jpg",
+        "../src/assets/images/products/740-Lace/black/740-Lace-Black3.jpg",
+        "../src/assets/images/products/740-Lace/black/740-Lace-Black4.jpg",
+        "../src/assets/images/products/740-Lace/black/740-Lace-Black5.jpg",
+        "../src/assets/images/products/740-Lace/black/740-Lace-Black6.jpg"
+      ],
+      "blue": [
+        "../src/assets/images/products/740-Lace/blue/740-Lace-Blue1.jpg",
+        "../src/assets/images/products/740-Lace/blue/740-Lace-Blue2.jpg",
+        "../src/assets/images/products/740-Lace/blue/740-Lace-Blue3.jpg",
+        "../src/assets/images/products/740-Lace/blue/740-Lace-Blue4.jpg",
+        "../src/assets/images/products/740-Lace/blue/740-Lace-Blue5.jpg",
+        "../src/assets/images/products/740-Lace/blue/740-Lace-Blue6.jpg"
+      ]
+    },
+    "colors": ["white", "black", "blue"],
+    "sizes": [7, 7.5]
+  }
+]

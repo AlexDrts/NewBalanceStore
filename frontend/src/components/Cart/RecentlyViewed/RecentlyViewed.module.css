@@ -1,0 +1,38 @@
+/* Секция Recently Viewed */
+.recentlyViewedContainer {
+    width: 100%;
+    margin-top: 80px;
+}
+
+.recentlyViewedSection {
+    width: 100%;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.recentlyViewedSection h2 {
+    margin-bottom: 30px;
+}
+
+.recentlyViewedSection .colorSliderWrapper {
+    display: none;
+}
+
+.recentlyViewedSection .quickAddBtn {
+    display: none;
+}
+
+.recentlyViewedSection {
+    grid-column: 1 / -1;
+    margin-top: 60px;
+}
+
+.recentlyViewedGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4px;
+}
+
+.recentlyViewedGrid .productCard {
+    width: 100%;
+}

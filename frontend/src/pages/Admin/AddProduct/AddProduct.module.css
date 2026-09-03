@@ -1,0 +1,396 @@
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.addProduct .mainHeader {
+    background: white;
+    color: black;
+}
+
+body.addProduct .mainHeader .nav-menu a {
+    color: black;
+}
+
+body.addProduct .mainHeader .logo {
+    filter: brightness(1) invert(0);
+}
+
+body.addProduct .mainHeader .header-icons img {
+    filter: brightness(0);
+}
+
+.addProduct.hero {
+    position: relative;
+    width: 1940px;
+    max-width: 95vw;
+    height: 10px;
+    min-height: 10px;
+    margin: 0 auto;
+    overflow: visible;
+}
+
+.addProduct .mainHeader {
+    position: relative;
+    background: white;
+    color: black;
+}
+
+.addProduct .nav-menu a {
+    color: black;
+}
+
+.addProduct .logo {
+    filter: brightness(1) invert(0);
+}
+
+.addProduct .header-icons img {
+    filter: brightness(0);
+}
+
+/* Page Layout - Fixed Centering */
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 100px;
+    min-height: calc(100vh - 120px);
+    padding: 40px 20px 80px 20px;
+    background-color: white;
+}
+
+.formWrapper {
+    width: 100%;
+    max-width: 800px;
+}
+
+.pageTitle {
+    font-size: 28px;
+    font-weight: 800;
+    color: #111;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Card Block */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.cardTitle {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 12px;
+}
+
+.cardSubtitle {
+    font-size: 13px;
+    color: #666;
+    margin-top: -12px;
+}
+
+/* Inputs & Form Fields */
+.fieldGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #222;
+}
+
+.required {
+    color: #cb112d;
+}
+
+.inputWithCounter {
+    position: relative;
+    width: 100%;
+}
+
+.inputWithCounter input {
+    padding-right: 65px;
+}
+
+.counter {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #888;
+}
+
+.form input[type="text"],
+.form input[type="number"],
+.form textarea,
+.form select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #222;
+    background-color: #fff;
+    outline: none;
+    transition: border-color 0.2s;
+    font-family: inherit;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #111;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.rowTwoCols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* Checkbox Styles for Flags */
+.checkboxGroup {
+    display: flex;
+    gap: 24px;
+    padding-top: 8px;
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #222;
+    cursor: pointer;
+    user-select: none;
+}
+
+.checkboxLabel input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #111;
+}
+
+/* Color Group Section in Images Card */
+.colorImagesSection {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed #e0e0e0;
+}
+
+.colorImagesSection:first-of-type {
+    border-top: none;
+    padding-top: 0;
+}
+
+.colorHeading {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: #111;
+}
+
+/* Image Upload Grid */
+.imageGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.uploadBox {
+    aspect-ratio: 1;
+    border: 2px dashed #111;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #fdfdfd;
+    transition: background-color 0.2s;
+}
+
+.uploadBox:hover {
+    background-color: #f0f0f0;
+}
+
+.fileInput {
+    display: none;
+}
+
+.uploadContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #111;
+}
+
+.imagePreviewBox {
+    position: relative;
+    aspect-ratio: 1;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.imagePreviewBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.coverBadge {
+    position: absolute;
+    bottom: 6px;
+    left: 6px;
+    background-color: rgba(17, 17, 17, 0.85);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 2px;
+    text-transform: uppercase;
+}
+
+.removeImgBtn {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    transition: background-color 0.2s;
+}
+
+.removeImgBtn:hover {
+    background-color: #cb112d;
+}
+
+.emptyBox {
+    aspect-ratio: 1;
+    border: 1px solid #eeeeee;
+    background-color: #fafafa;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Variant Chips */
+.chipGroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.chip {
+    padding: 8px 16px;
+    border: 1px solid #d1d1d1;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.chip:hover {
+    border-color: #111;
+}
+
+.chipActive {
+    background-color: #111;
+    color: #fff;
+    border-color: #111;
+}
+
+/* Submit Action */
+.actionContainer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 8px;
+}
+
+.submitBtn {
+    padding: 14px 40px;
+    background-color: #111111;
+    color: #ffffff;
+    border: none;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.submitBtn:hover {
+    background-color: #333333;
+}
+
+/* Responsive Grid */
+@media (max-width: 650px) {
+    .imageGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .rowTwoCols {
+        grid-template-columns: 1fr;
+    }
+
+    .checkboxGroup {
+        flex-direction: column;
+        gap: 12px;
+    }
+}

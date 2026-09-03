@@ -1,0 +1,50 @@
+# =========================
+# Node / React / Vite
+# =========================
+
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# =========================
+# ASP.NET Core / .NET
+# =========================
+
+**/bin/
+**/obj/
+
+# User-specific .NET files
+*.user
+*.suo
+
+# =========================
+# Environment / secrets
+# =========================
+
+.env
+.env.*
+!.env.example
+
+# =========================
+# IDE
+# =========================
+
+.vscode/
+.idea/
+
+# Visual Studio
+.vs/
+
+# =========================
+# OS
+# =========================
+
+.DS_Store
+Thumbs.db

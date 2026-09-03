@@ -1,0 +1,275 @@
+/* ==========================================
+   PRODUCT DRAWER
+========================================== */
+
+.productDrawerOverlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,.35);
+
+    opacity: 1;
+    visibility: visible;
+
+    transition: .25s;
+
+    z-index: 9998;
+}
+
+.productDrawer {
+    position: fixed;
+
+    top: 0;
+    right: 0;
+
+    width: 980px;
+    height: 100vh;
+
+    background: white;
+
+    display: grid;
+    grid-template-columns: 1fr 400px;
+
+    transition: .35s ease;
+
+    z-index: 9999;
+}
+
+
+/* ==========================================
+   CLOSE
+========================================== */
+
+.drawerClose {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    width: 28px;
+    height: 28px;
+
+    border: none;
+    background: transparent;
+
+    font-size: 20px;
+    font-weight: 300;
+
+    cursor: pointer;
+
+    z-index: 10;
+}
+
+/* ==========================================
+   LEFT SIDE
+========================================== */
+
+.drawerGallery {
+    overflow-y: auto;
+
+    padding-top: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+
+    height: 100vh;
+}
+
+.drawerGallery::-webkit-scrollbar {
+    width: 8px;
+}
+
+.drawerGallery::-webkit-scrollbar-thumb {
+    background: #d8d8d8;
+}
+
+.drawerGallery img {
+    width: 100%;
+    min-width: 380px;
+
+    background: #f6f6f6;
+
+    display: block;
+
+    margin-bottom: 2px;
+}
+
+/* ==========================================
+   RIGHT SIDE
+========================================== */
+
+.drawerInfo {
+    border-left: 1px solid #ececec;
+
+    padding: 40px 35px;
+
+    overflow-y: auto;
+}
+
+.drawerName {
+    font-family: "Libre Baskerville", serif;
+
+    font-size: 40px;
+    font-weight: 400;
+
+    line-height: 1;
+}
+
+.drawerPrice {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 8px;
+    margin-bottom: 25px;
+}
+
+.drawerPrice .currentPrice {
+    font-size: 18px;
+    color: #111;
+}
+
+.drawerPrice .oldPrice {
+    font-size: 16px;
+    color: #888;
+
+    text-decoration: line-through;
+}
+/* ==========================================
+   COLORS
+========================================== */
+
+.drawerColors {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 8px;
+
+    margin-bottom: 30px;
+}
+
+.drawerColor {
+    width: 62px;
+    height: 62px;
+
+    border: 1px solid transparent;
+
+    background: #f5f5f5;
+
+    cursor: pointer;
+}
+
+.drawerColor img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.drawerColor.active {
+    border: 1px solid #111;
+}
+
+/* ==========================================
+   SIZES
+========================================== */
+
+.drawerSizes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 0;
+
+    margin-bottom: 35px;
+}
+
+.drawerSize {
+    height: 46px;
+
+    border: 1px solid #d9d9d9;
+    background: white;
+
+    cursor: pointer;
+
+    font-size: 15px;
+}
+
+.drawerSize:hover {
+    border-color: black;
+}
+
+.drawerSize.active {
+    background: black;
+    color: white;
+}
+
+.drawerSize.unavailable {
+    color: #bdbdbd;
+
+    text-decoration: line-through;
+
+    cursor: default;
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.drawerAddToCart {
+    width: 330px;
+    height: 50px;
+
+    background: black;
+    color: white;
+
+    border: none;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.drawerAddToCart:hover {
+    background: #222;
+}
+/* ===== HOVER ===== */
+
+.product-card img {
+    transition: opacity .25s ease;
+}
+
+
+.product-card:hover {
+    cursor: pointer;
+}
+
+.product-card:hover img {
+    opacity: .92;
+}
+
+.product-card:hover .product-title {
+    text-decoration: underline;
+}
+
+
+.sizeError {
+    margin-bottom: 12px;
+    color: #d32f2f;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+
+    opacity: 0;
+    animation: fadeIn .2s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

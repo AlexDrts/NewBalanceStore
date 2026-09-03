@@ -1,0 +1,281 @@
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.productsPage .mainHeader {
+    background: white;
+    color: black;
+}
+
+body.productsPage .mainHeader .nav-menu a {
+    color: black;
+}
+
+body.productsPage .mainHeader .logo {
+    filter: brightness(1) invert(0);
+}
+
+body.productsPage .mainHeader .header-icons img {
+    filter: brightness(0);
+}
+
+.productsPage.hero {
+    position: relative;
+
+    width: 1940px;
+    max-width: 95vw;
+
+    height: 10px;
+    min-height: 10px;
+
+    margin: 0 auto;
+
+    overflow: visible;
+}
+/* ===== PAGE ===== */
+
+.productsMain {
+    width: 1860px;
+    max-width: 95vw;
+
+    margin: 150px auto 80px;
+}
+
+/* ===== BREADCRUMB ===== */
+
+.breadcrumb {
+    margin-bottom: 15px;
+
+    font-size: 14px;
+}
+
+.breadcrumb a {
+    color: #666;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* ===== TITLE ===== */
+
+.categoryTitle {
+    font-family: "Libre Baskerville", serif;
+    font-size: 42px;
+    font-weight: 400;
+
+    margin-bottom: 40px;
+}
+
+/* ===== LAYOUT ===== */
+
+.productsWrapper {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 40px;
+
+    max-width: 1400px;
+
+    align-items: start;
+}
+.productsWrapperNoFilters {
+    grid-template-columns: 1fr;
+}
+
+/* ===== PRODUCTS ===== */
+
+.productGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(470px, 1fr));
+    column-gap: 12px;
+    row-gap: 40px;
+
+    max-width: 1200px;
+}
+
+.productGridWide {
+    grid-template-columns: repeat(4, minmax(460px,1fr));
+}
+
+/* ===== CARD ===== */
+
+.product-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    margin-top: -40px;
+}
+
+.product-card img {
+    width: 100%;
+    max-width: 470px;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    background: #f5f5f5;
+}
+
+
+
+.product-title {
+    margin-top: 15px;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.product-subtitle {
+    margin-top: 5px;
+
+    font-size: 13px;
+    color: #666;
+}
+
+.product-price {
+    margin-top: 10px;
+    margin-bottom: 40px;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.old-price {
+    margin-left: 10px;
+}
+
+
+.productsContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.productsToolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 25px;
+
+    width: 100%;
+}
+
+.sortSelect {
+    padding: 10px 15px;
+
+    border: 1px solid #ccc;
+
+    font-size: 16px;
+    cursor: pointer;
+
+    margin-right: -10px;
+
+}
+
+
+.productsTopBar{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 35px;
+}
+
+.filtersBtn{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    background: white;
+    border: 1px solid #d7d7d7;
+
+    padding: 10px 18px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.filtersBtn:hover{
+    border-color: black;
+}
+
+
+/* ===== PRODUCTS HEADER ===== */
+
+.productsPage .mainHeader {
+    position: relative;
+
+    background: white;
+    color: black;
+}
+
+.productsPage .nav-menu a {
+    color: black;
+}
+
+.productsPage .logo {
+    filter: brightness(1) invert(0);
+}
+
+.productsPage .header-icons img {
+    filter: brightness(0);
+}
+
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 1400px) {
+
+    .productGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+@media (max-width: 1100px) {
+
+    .productsWrapper {
+        grid-template-columns: 240px 1fr;
+    }
+
+    .productGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .productsWrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .filters {
+        position: static;
+    }
+
+    .productGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}

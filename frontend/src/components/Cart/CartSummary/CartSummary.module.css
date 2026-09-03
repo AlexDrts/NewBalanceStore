@@ -1,0 +1,44 @@
+.cartSummary {
+    width: 550px;
+    min-height: 440px;
+
+    background: #f5f5f5;
+    padding: 30px;
+    height: fit-content;
+}
+
+.savingsRow {
+    color: #c70404;
+    font-weight: 600;
+}
+
+.cartSummary h3 {
+    margin-bottom: 35px;
+}
+
+.summaryRow {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.summaryTotal {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    font-weight: 700;
+}
+
+.checkoutBtn {
+    width: 100%;
+    height: 54px;
+    margin-top: 35px;
+    border: none;
+    background: black;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}

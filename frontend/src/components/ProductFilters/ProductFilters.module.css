@@ -1,0 +1,121 @@
+.filterContent {
+    display: none;
+    padding: 15px 0 20px;
+}
+
+.filterContentOpen {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.filters {
+    position: static;
+    top: 110px;
+}
+
+.filterGroup {
+    border-bottom: 1px solid #ddd;
+}
+
+.filterGroup h4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 0;
+
+    font-size: 17px;
+
+    cursor: pointer;
+}
+
+.filterGroup h4::after {
+    content: "+";
+    font-size: 30px;
+    font-weight: 200;
+}
+
+.filterOption {
+    background: white;
+
+    border: 1px solid #bdbdbd;
+    border-radius: 6px;
+
+    padding: 10px 16px;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.filterOption:hover {
+    border-color: #111;
+}
+
+.filterOption.active {
+    background: #111;
+    color: white;
+
+    border-color: #111;
+}
+
+
+.active h4::after {
+    content: "−";
+}
+
+
+
+.colorFilter {
+    display: none;
+    padding: 15px 0 20px;
+}
+
+.filterGroup.active .colorFilter {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.colorSwatch {
+    width: 32px;
+    height: 32px;
+
+    border-radius: 50%;
+
+    border: 1px solid #ccc;
+
+    cursor: pointer;
+}
+
+.clearFiltersBtn {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px 16px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+
+    background: #fff;
+    color: black;
+
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.clearFiltersBtn:hover {
+    background: #f9fafb;
+    border-color: #d1d5db;
+    color: black;
+}
+
+.clearFiltersBtn:active {
+    transform: scale(0.98);
+}
+

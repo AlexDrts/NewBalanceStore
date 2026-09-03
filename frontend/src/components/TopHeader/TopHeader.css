@@ -1,0 +1,93 @@
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    height: 50px;
+
+    padding: 0 40px;
+    background: black;
+    color: white;
+}
+
+.US-flag {
+    width: 25px;
+    height: 15px;
+}
+
+.location-pin {
+    width: 15px;
+    height: 15px;
+}
+
+.recycle-icon {
+    width: 15px;
+    height: 15px;
+}
+
+.left-menu {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+}
+
+.left-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.left-menu span {
+    color: gray;
+}
+
+.right-menu {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.right-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.right-menu span {
+    color: gray;
+}
+
+.top-header a:hover {
+    opacity: 0.7;
+}
+
+/* ===========================
+   TABLET LANDSCAPE
+=========================== */
+
+@media (max-width: 992px) {
+
+    .top-header {
+        padding: 10px 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .left-menu,
+    .right-menu {
+        justify-content: center;
+        flex-wrap: wrap;
+        font-size: 13px;
+    }
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 768px) {
+
+    .top-header {
+        display: none;
+    }
+}

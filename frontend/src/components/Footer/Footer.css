@@ -1,0 +1,334 @@
+/* FOOTER */
+
+.footer {
+    background: #000;
+    color: white;
+    margin-top: 100px;
+}
+
+/* SIGNUP BAR */
+
+.footer-signup {
+    height: 110px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    gap: 30px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-signup p {
+    font-size: 14px;
+}
+
+.footer-signup button {
+    width: 140px;
+    height: 50px;
+
+    border: none;
+
+    background: white;
+    color: black;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.footer-signup button:hover {
+    background: #e8e8e8;
+}
+
+/* MAIN FOOTER */
+
+.footer-content {
+    width: 1500px;
+    max-width: 95vw;
+
+    margin: 0 auto;
+    padding: 90px 0 120px;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 180px;
+}
+
+/* LINKS */
+
+.footer-links {
+    display: flex;
+    gap: 100px;
+    padding-left: 40px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-column h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.footer-column a {
+    color: white;
+    text-decoration: none;
+
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 5px;
+
+    white-space: nowrap;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+/* BRAND */
+
+.footer-brand {
+    max-width: 320px;
+}
+
+.footer-brand h2 {
+    font-family: "Libre Baskerville", serif;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 24px;
+}
+
+.footer-logo {
+    width: 56px;
+    margin-bottom: 25px;
+    filter: brightness(0) invert(1);
+}
+
+.footer-brand p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+/* SOCIAL */
+
+.social-icons {
+    display: flex;
+    gap: 14px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+
+    cursor: pointer;
+    transition: opacity .2s ease;
+    filter: brightness(0) invert(1);
+}
+
+.social-icons img:hover {
+    opacity: .7;
+}
+
+/* SECOND FOOTER */
+
+.footer-secondary {
+    background: #f3f3f3;
+    color: #000;
+    font-size: 12px;
+}
+
+.footer-secondary-brands {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+
+    padding: 25px 20px 15px;
+}
+
+.footer-secondary-brands span {
+    font-size: 13px;
+}
+
+.footer-secondary-brands img {
+    height: 34px;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer-secondary-top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px 20px;
+}
+
+.footer-secondary-top a {
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-secondary-top a:hover {
+    text-decoration: underline;
+}
+
+.footer-secondary-top .US-flag {
+    width: 25px;
+    height: 15px;
+}
+
+.footer-secondary-bottom {
+    text-align: center;
+    padding: 12px 0 20px;
+    color: #333;
+}
+
+/* ===========================
+   1440
+=========================== */
+
+@media (max-width:1440px){
+
+    .footer-content{
+        width:100%;
+        max-width:1320px;
+        gap:120px;
+        padding:80px 20px 100px;
+    }
+
+    .footer-links{
+        gap:70px;
+    }
+
+    .footer-column a{
+        font-size:14px;
+    }
+
+}
+
+/* ===========================
+   1200
+=========================== */
+
+@media (max-width:1200px){
+
+    .footer-content{
+        width:100%;
+        flex-wrap:wrap;
+        gap:60px;
+    }
+
+}
+
+/* ===========================
+   992
+=========================== */
+
+@media (max-width:992px){
+
+    .footer-content{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:50px;
+    }
+
+    .footer-links{
+        flex-wrap:wrap;
+        gap:60px;
+        padding-left:0;
+    }
+
+    .footer-brand{
+        max-width:100%;
+    }
+
+}
+
+/* ===========================
+   768
+=========================== */
+
+@media (max-width:768px){
+
+    .footer-signup{
+        flex-direction:column;
+        height:auto;
+        padding:25px 15px;
+        text-align:center;
+        gap:15px;
+    }
+
+    .footer-content{
+        padding:60px 15px;
+        align-items:center;
+        text-align:center;
+    }
+
+    .footer-links{
+        flex-direction:column;
+        align-items:center;
+        gap:30px;
+    }
+
+    .footer-column{
+        align-items:center;
+    }
+
+    .footer-brand{
+        max-width:100%;
+        text-align:center;
+    }
+
+    .social-icons{
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+    .footer-secondary-top{
+        flex-direction:column;
+        gap:10px;
+        text-align:center;
+    }
+
+    .footer-secondary-brands{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+}
+
+/* ===========================
+   480
+=========================== */
+
+@media (max-width:480px){
+
+    .footer-column h3{
+        font-size:14px;
+    }
+
+    .footer-column a{
+        font-size:13px;
+    }
+
+    .footer-brand p{
+        font-size:13px;
+        line-height:1.4;
+    }
+
+    .footer-secondary-bottom{
+        font-size:11px;
+    }
+
+}

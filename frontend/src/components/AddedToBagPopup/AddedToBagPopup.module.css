@@ -1,0 +1,39 @@
+.popup {
+    position: fixed;
+
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 16px 24px;
+
+    background: white;
+    border-radius: 10px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+    z-index: 99999;
+
+    animation: popup 0.25s ease;
+}
+
+.icon {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+@keyframes popup {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}

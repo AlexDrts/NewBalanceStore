@@ -1,0 +1,66 @@
+.cartHeader {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.cartHeader h2 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.cartItemCount {
+    color: #666;
+}
+
+.cartItems {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.emptyCart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 420px;
+
+    text-align: center;
+}
+
+.emptyCart h3 {
+    font-family: "Libre Baskerville", serif;
+    font-size: 34px;
+    font-weight: 400;
+
+    margin-bottom: 18px;
+}
+
+.emptyCart p {
+    color: #666;
+    margin-bottom: 35px;
+    font-size: 16px;
+}
+
+.continueBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 250px;
+    height: 54px;
+
+    background: black;
+    color: white;
+
+    text-decoration: none;
+    font-weight: 600;
+
+    transition: .2s;
+}
+
+.continueBtn:hover {
+    background: #222;
+}
