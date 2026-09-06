@@ -1,0 +1,6 @@
+@NewBalanceStore.WebApi_HostAddress = http://localhost:5144
+
+GET {{NewBalanceStore.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
