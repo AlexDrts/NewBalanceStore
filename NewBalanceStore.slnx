@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="NewBalanceStore.Application/NewBalanceStore.Application.csproj" />
+  <Project Path="NewBalanceStore.Domain/NewBalanceStore.Domain.csproj" />
+  <Project Path="NewBalanceStore.Infrastructure/NewBalanceStore.Infrastructure.csproj" />
+  <Project Path="NewBalanceStore.UnitTests/NewBalanceStore.UnitTests.csproj" />
+  <Project Path="NewBalanceStore.Web/NewBalanceStore.Web.csproj" />
+  <Project Path="NewBalanceStore.WebApi/NewBalanceStore.WebApi.csproj" />
+</Solution>
