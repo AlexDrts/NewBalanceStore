@@ -10,19 +10,17 @@ import ProductDrawer from "../../components/ProductDrawer/ProductDrawer.jsx";
 import { addToRecentlyViewed } from "../../utils/recentlyViewed.js";
 import AddedToBagPopup from "../../components/AddedToBagPopup/AddedToBagPopup.jsx";
 import { getProducts } from "../../services/productsService.js";
-
+import { createPortal } from "react-dom";
 
 function Products() {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+
     useEffect(() => {
-
         async function loadProducts() {
-
             try {
                 const data = await getProducts();
-
                 setProducts(data.filter(product => !product.featured));
             }
             catch(err){
@@ -32,9 +30,7 @@ function Products() {
                 setLoading(false);
             }
         }
-
         loadProducts();
-
     }, []);
 
     const [searchParams] = useSearchParams();
@@ -48,9 +44,8 @@ function Products() {
     const urlFilteredProducts = products.filter(product => {
         const productGender = product.gender.toLowerCase();
         const isUnisex = productGender === "unisex" && (gender === "men" || gender === "women");
-        if(gender && !isUnisex && productGender !== gender) {
+        if(gender && !isUnisex && productGender !== gender)
             return false;
-        }
 
         if(type && product.type.toLowerCase() !== type)
             return false;
@@ -70,7 +65,6 @@ function Products() {
         return true;
     });
 
-
     const initialFilters = {
         category: [],
         footwearSizes: [],
@@ -83,20 +77,16 @@ function Products() {
     };
     const [filters, setFilters] = useState(initialFilters);
 
-
     const checkPrice = (productPrice) => {
         if (!filters.price.length) return true;
-
         return filters.price.some(range => {
             if (range === "200")
                 return productPrice >= 200;
 
             const [min, max] = range.split("-").map(Number);
-
             return productPrice >= min && productPrice <= max;
         });
     };
-
 
     const filteredProducts = urlFilteredProducts.filter(product => {
 
@@ -134,19 +124,15 @@ function Products() {
         case "price-low":
             sortedProducts.sort((a, b) => a.price - b.price);
             break;
-
         case "price-high":
             sortedProducts.sort((a, b) => b.price - a.price);
             break;
-
         case "newest":
             sortedProducts.sort((a, b) => Number(b.isNew) - Number(a.isNew));
             break;
-
         case "available":
             sortedProducts.sort((a, b) => Number(b.isAvailable()) - Number(a.isAvailable()));
             break;
-
         default:
             break;
     }
@@ -160,7 +146,6 @@ function Products() {
     }
     else if (gender) {
         breadcrumbs.push(gender.charAt(0).toUpperCase() + gender.slice(1));
-
         if(type) {
             breadcrumbs.push(" / ");
             if(type === "footwear") {
@@ -187,58 +172,87 @@ function Products() {
 
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [selectedColor, setSelectedColor] = useState(null);
-
     const [showAddedPopup, setShowAddedPopup] = useState(false);
 
     const handleAddedToCart = () => {
         setShowAddedPopup(true);
-
-        setTimeout(() => {
-            setShowAddedPopup(false);
-        }, 2000);
+        setTimeout(() => setShowAddedPopup(false), 2000);
     };
 
-
     const [showFilters, setShowFilters] = useState(true);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
     const pageRef = useRef(null);
 
+    useEffect(() => {
+        const handleResize = () => {
+            const mobile = window.innerWidth <= 768;
+            setIsMobile(mobile);
+            if (mobile) {
+                setShowFilters(false);
+            }
+        };
+        window.addEventListener('resize', handleResize);
+        handleResize();
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    // Disable scrolling when mobile filters are open
+    useEffect(() => {
+        if (mobileFiltersOpen) {
+            document.body.classList.add('menu-open');
+            document.documentElement.classList.add('menu-open');
+        }
+        else {
+            document.body.classList.remove('menu-open');
+            document.documentElement.classList.remove('menu-open');
+        }
+        return () => {
+            document.body.classList.remove('menu-open');
+            document.documentElement.classList.remove('menu-open');
+        };
+    }, [mobileFiltersOpen]);
 
     return (
         <>
             <TopHeader />
             <section ref={pageRef} className={`${styles.productsPage} ${styles.hero}`}>
-                <MainHeader  theme={"light"} containerRef={pageRef} />
+                <MainHeader theme={"light"} containerRef={pageRef} />
             </section>
 
             <main className={styles.productsMain}>
                 <nav className={styles.breadcrumb}>{breadcrumbs}</nav>
 
-                <h1 className={styles.categoryTitle}></h1>
-
                 <div className={styles.productsToolbar}>
                     <button
                         className={styles.filtersBtn}
-                        onClick={() => setShowFilters(prev => !prev)}
+                        onClick={() => {
+                            if (isMobile) {
+                                setMobileFiltersOpen(true);
+                            }
+                            else {
+                                setShowFilters(prev => !prev);
+                            }
+                        }}
                     >
-                        {showFilters ? "☰  Hide Filters" : "☰  Show Filters"}
+                        {isMobile ? "☰ Filters" : (showFilters ? "☰ Hide Filters" : "☰ Show Filters")}
                     </button>
 
-                    <select     className={styles.sortSelect}
-                                value={sortBy}
-                                onChange={(e) => setSortBy(e.target.value)}
+                    <select
+                        className={styles.sortSelect}
+                        value={sortBy}
+                        onChange={(e) => setSortBy(e.target.value)}
                     >
-
                         <option value="featured">Featured</option>
                         <option value="price-low">Price: Low to High</option>
                         <option value="price-high">Price: High to Low</option>
                         <option value="newest">Newest</option>
                         <option value="available">Available</option>
                     </select>
-
                 </div>
 
-                <div className={`${styles.productsWrapper} ${!showFilters ? styles.productsWrapperNoFilters : ""}`}>
-                    {showFilters && (
+                <div className={`${styles.productsWrapper} ${(!showFilters || isMobile) ? styles.productsWrapperNoFilters : ""}`}>
+                    {!isMobile && showFilters && (
                         <ProductFilters
                             filters={filters}
                             setFilters={setFilters}
@@ -246,13 +260,10 @@ function Products() {
                         />
                     )}
 
-
                     <div className={styles.productsContent}>
-                        <section className={`${styles.productGrid} ${!showFilters ? styles.productGridWide : ""}`}>
+                        <section className={`${styles.productGrid} ${(!showFilters || isMobile) ? styles.productGridWide : ""}`}>
                             {loading && <p>Loading products...</p>}
-
                             {error && <p>Failed to load products.</p>}
-
                             {!loading && !error &&
                                 sortedProducts.map(product => (
                                     <ProductCard
@@ -260,7 +271,6 @@ function Products() {
                                         product={product}
                                         onQuickAdd={(product, color) => {
                                             addToRecentlyViewed(product);
-
                                             setSelectedProduct(product);
                                             setSelectedColor(color);
                                         }}
@@ -271,9 +281,38 @@ function Products() {
                         </section>
                     </div>
                 </div>
-
-
             </main>
+
+            {/* Mobile filter overlay via Portal */}
+            {isMobile && createPortal(
+                <div className={`${styles.mobileFiltersDrawer} ${mobileFiltersOpen ? styles.active : ""}`}>
+                    <div className={styles.mobileFiltersHeader}>
+                        <h2>Filters</h2>
+                        <button
+                            className={styles.mobileFiltersClose}
+                            onClick={() => setMobileFiltersOpen(false)}
+                        >
+                            ✕
+                        </button>
+                    </div>
+                    <div className={styles.mobileFiltersBody}>
+                        <ProductFilters
+                            filters={filters}
+                            setFilters={setFilters}
+                            initialFilters={initialFilters}
+                        />
+                    </div>
+                    <div className={styles.mobileFiltersFooter}>
+                        <button
+                            className={styles.applyFiltersBtn}
+                            onClick={() => setMobileFiltersOpen(false)}
+                        >
+                            See Results ({sortedProducts.length})
+                        </button>
+                    </div>
+                </div>,
+                document.body
+            )}
 
             <ProductDrawer
                 key={selectedProduct?.id + "-" + selectedColor}
@@ -286,7 +325,7 @@ function Products() {
             {showAddedPopup && <AddedToBagPopup />}
             <Footer />
         </>
-    )
+    );
 }
 
-export default Products
+export default Products;

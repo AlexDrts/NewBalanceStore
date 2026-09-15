@@ -1,256 +1,224 @@
-/* ==========================================
-   PRODUCT DRAWER
-========================================== */
-
 .productDrawerOverlay {
     position: fixed;
     inset: 0;
-
-    background: rgba(0,0,0,.35);
-
-    opacity: 1;
-    visibility: visible;
-
-    transition: .25s;
-
+    background: rgba(0,0,0,.4);
     z-index: 9998;
 }
 
 .productDrawer {
     position: fixed;
-
     top: 0;
     right: 0;
-
-    width: 980px;
+    width: 900px;
+    max-width: 100vw;
     height: 100vh;
-
+    height: 100dvh;
     background: white;
-
     display: grid;
-    grid-template-columns: 1fr 400px;
-
-    transition: .35s ease;
-
+    grid-template-columns: 1fr 380px;
     z-index: 9999;
 }
 
-
-/* ==========================================
-   CLOSE
-========================================== */
-
 .drawerClose {
     position: absolute;
-
-    top: 15px;
-    right: 15px;
-
-    width: 28px;
-    height: 28px;
-
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
     border: none;
-    background: transparent;
-
-    font-size: 20px;
-    font-weight: 300;
-
+    background: #f0f0f0;
+    border-radius: 50%;
+    font-size: 16px;
     cursor: pointer;
-
     z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* ==========================================
-   LEFT SIDE
-========================================== */
-
+/* ===== GALLERY ===== */
 .drawerGallery {
     overflow-y: auto;
-
-    padding-top: 8px;
-    padding-left: 8px;
-    padding-right: 8px;
-
-    height: 100vh;
-}
-
-.drawerGallery::-webkit-scrollbar {
-    width: 8px;
-}
-
-.drawerGallery::-webkit-scrollbar-thumb {
-    background: #d8d8d8;
-}
-
-.drawerGallery img {
-    width: 100%;
-    min-width: 380px;
-
     background: #f6f6f6;
-
-    display: block;
-
-    margin-bottom: 2px;
+    position: relative;
 }
 
-/* ==========================================
-   RIGHT SIDE
-========================================== */
+.desktopGalleryList {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
 
+.desktopGalleryList img {
+    width: 100%;
+    display: block;
+}
+
+.sliderContainer {
+    display: none;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+.sliderContainer .activeImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sliderArrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.prevArrow { left: 10px; }
+.nextArrow { right: 10px; }
+
+.sliderBars {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+}
+
+.bar {
+    width: 24px;
+    height: 5px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.activeBar {
+    background: #000000;
+}
+
+
+/* ===== INFO ===== */
 .drawerInfo {
-    border-left: 1px solid #ececec;
-
-    padding: 40px 35px;
-
+    padding: 30px 24px;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .drawerName {
     font-family: "Libre Baskerville", serif;
-
-    font-size: 40px;
+    font-size: 28px;
     font-weight: 400;
-
-    line-height: 1;
+    line-height: 1.2;
 }
 
 .drawerPrice {
     display: flex;
     align-items: center;
     gap: 10px;
-
     margin-top: 8px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
-.drawerPrice .currentPrice {
+.currentPrice {
     font-size: 18px;
-    color: #111;
+    font-weight: 700;
 }
 
-.drawerPrice .oldPrice {
+.oldPrice {
     font-size: 16px;
     color: #888;
-
     text-decoration: line-through;
 }
-/* ==========================================
-   COLORS
-========================================== */
 
+.sectionLabel {
+    font-size: 14px;
+    color: #111;
+    margin-bottom: 10px;
+}
+
+.sectionLabel span {
+    color: #666;
+}
+
+/* Colors */
 .drawerColors {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-
+    display: flex;
+    flex-wrap: wrap;
     gap: 8px;
-
-    margin-bottom: 30px;
+    margin-bottom: 24px;
 }
 
 .drawerColor {
-    width: 62px;
-    height: 62px;
-
-    border: 1px solid transparent;
-
+    width: 54px;
+    height: 54px;
+    border: 1px solid #e5e5e5;
     background: #f5f5f5;
-
     cursor: pointer;
+    padding: 2px;
 }
 
 .drawerColor img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
 }
 
 .drawerColor.active {
-    border: 1px solid #111;
+    border: 2px solid #000;
 }
 
-/* ==========================================
-   SIZES
-========================================== */
-
+/* Sizes Grid (5 в ряд как на фото) */
 .drawerSizes {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 0;
-
-    margin-bottom: 35px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: -1px;
+    margin-bottom: 24px;
+    border: 1px solid #d9d9d9;
 }
 
 .drawerSize {
-    height: 46px;
-
+    height: 44px;
     border: 1px solid #d9d9d9;
     background: white;
-
     cursor: pointer;
-
-    font-size: 15px;
-}
-
-.drawerSize:hover {
-    border-color: black;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .drawerSize.active {
     background: black;
     color: white;
+    border-color: black;
 }
 
 .drawerSize.unavailable {
-    color: #bdbdbd;
-
-    text-decoration: line-through;
-
-    cursor: default;
+    color: #ccc;
+    background: #fafafa;
+    cursor: not-allowed;
 }
 
-/* ==========================================
-   BUTTON
-========================================== */
-
+/* Button */
 .drawerAddToCart {
-    width: 330px;
-    height: 50px;
-
+    width: 100%;
+    height: 48px;
     background: black;
     color: white;
-
     border: none;
-
     font-size: 16px;
     font-weight: 600;
-
     cursor: pointer;
+    margin-top: auto;
 }
-
-.drawerAddToCart:hover {
-    background: #222;
-}
-/* ===== HOVER ===== */
-
-.product-card img {
-    transition: opacity .25s ease;
-}
-
-
-.product-card:hover {
-    cursor: pointer;
-}
-
-.product-card:hover img {
-    opacity: .92;
-}
-
-.product-card:hover .product-title {
-    text-decoration: underline;
-}
-
 
 .sizeError {
     margin-bottom: 12px;
@@ -258,18 +226,29 @@
     font-size: 14px;
     font-weight: 600;
     text-align: center;
-
-    opacity: 0;
-    animation: fadeIn .2s forwards;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(6px);
+/* ===== MOBILE ADAPTIVITY ===== */
+@media (max-width: 768px) {
+    .productDrawer {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        width: 100vw;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+
+    .desktopGalleryList {
+        display: none;
+    }
+
+    .sliderContainer {
+        display: block;
+    }
+
+    .drawerInfo {
+        padding: 20px 16px;
+    }
+
+    .drawerName {
+        font-size: 24px;
     }
 }

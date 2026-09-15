@@ -1,19 +1,16 @@
 /*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
 /* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
+
 html {
     color: #222;
     font-size: 1em;
     line-height: 1.4;
+    overflow-x: hidden;
 }
 body {
-    /*background-color: #8984b3; */
     background-color: white;
     font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
 
 * {
@@ -22,8 +19,9 @@ body {
     box-sizing: border-box;
 }
 
-
-/* HERO SECTION */
+/* ===============
+   HERO SECTION
+   ===============*/
 .hero {
     position: relative;
 
@@ -37,6 +35,7 @@ body {
 
     overflow: hidden;
 }
+
 /* HERO TEXT */
 .hero-content {
     position: absolute;
@@ -78,7 +77,6 @@ body {
 
     font-size: 14px;
 
-
     cursor: pointer;
 
     transition: 0.3s;
@@ -88,7 +86,6 @@ body {
     background: #333;
 }
 
-
 /* VIDEO */
 #video-background {
     width: 100%;
@@ -97,32 +94,28 @@ body {
     object-fit: cover;
 }
 
-
-/* CATEGORIES SECTION */
+/* ==========================================
+   CATEGORIES SECTION
+   ========================================== */
 .categories {
     width: 1940px;
-    max-width: 95vw;
+    max-width: calc(100vw - 20px);
 
     margin: 5px auto 0;
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
 }
 
 .category-card {
     position: relative;
 
-    height: 430px;
+    height: 380px;
 
     overflow: hidden;
     text-decoration: none;
     color: white;
-
-    border-right: 1px solid rgba(255,255,255,0.2);
-}
-
-.category-card:last-child {
-    border-right: none;
 }
 
 .category-card img {
@@ -133,7 +126,6 @@ body {
 
     transition: transform 0.5s ease;
 }
-
 
 .category-card h2 {
     position: absolute;
@@ -158,11 +150,12 @@ body {
     background: rgba(0, 0, 0, 0.3);
 }
 
-
-
+/* ==========================================
+   GREY DAYS
+   ========================================== */
 .grey-days {
     width: 1940px;
-    max-width: 95vw;
+    max-width: calc(100vw - 20px);
     margin: 50px auto 100px;
     text-align: center;
 }
@@ -196,29 +189,32 @@ body {
     background: #333;
 }
 
+/* ==========================================
+   PRODUCT GRID
+   ========================================== */
 .product-grid {
     width: 1860px;
-    max-width: 95vw;
+    max-width: calc(100vw - 20px);
     margin: 50px auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 
     row-gap: 60px;
-    column-gap: 10px;
+    column-gap: 15px;
 }
 
-
-/* FEATURED PRODUCTS */
-
+/* ==========================================
+   FEATURED PRODUCTS
+   ========================================== */
 .featured-products {
     width: 1940px;
-    max-width: 95vw;
+    max-width: calc(100vw - 20px);
 
     margin: 100px auto;
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 4px;
+    gap: 10px;
 }
 
 .featured-card {
@@ -266,27 +262,17 @@ body {
 }
 
 
-
 /* ===========================
-   LAPTOP L (≤1440px)
-   Responsive tuning layer
-   Append only
+   LAPTOP L (≤1920px)
 =========================== */
+@media (max-width: 1920px) {
+    .hero {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
 
 @media (max-width: 1440px) {
-    /* GLOBAL WIDTH CONSISTENCY */
-    .hero,
-    .categories,
-    .grey-days,
-    .product-grid,
-    .featured-products {
-        width: 100% !important;
-        max-width: 1320px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    /* HERO */
     .hero {
         height: 90vh;
     }
@@ -299,57 +285,53 @@ body {
         font-size: 14px;
     }
 
-    /* GRID TUNING */
     .product-grid {
         grid-template-columns: repeat(3, 1fr);
-        column-gap: 30px;
+        column-gap: 20px;
         row-gap: 50px;
     }
 
-    .featured-products {
-        gap: 6px;
-    }
-
-    /* CATEGORIES */
-    .categories {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
     .category-card {
-        height: 380px;
+        height: 320px;
     }
 }
 
 
-/* ===========================
+/* ===============================
    LARGE TABLETS / SMALL DESKTOP
-=========================== */
+================================== */
 @media (max-width: 1200px) {
-
     .hero {
-        width: 100% !important;
         height: 85vh;
     }
 
     .categories {
-        width: 100% !important;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .product-grid {
-        width: 100% !important;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .featured-products {
-        width: 100% !important;
         grid-template-columns: 1fr;
     }
 }
 
 /* ===========================
-   TABLET LANDSCAPE
-=========================== */
+   TABLET LANDSCAPE (≤1024px)
+============================== */
+@media (max-width: 1024px) {
+    .category-card {
+        height: 280px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 15px;
+    }
+}
+
 @media (max-width: 992px) {
     .hero-content h1 {
         font-size: 34px;
@@ -358,15 +340,11 @@ body {
     .hero-content p {
         font-size: 14px;
     }
-
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
-/* ===========================
-   TABLET / MOBILE HYBRID
-=========================== */
+/* =================================
+   TABLET / MOBILE HYBRID (≤768px)
+==================================== */
 @media (max-width: 768px) {
     /* HERO */
     .hero {
@@ -374,12 +352,12 @@ body {
     }
 
     .hero-content {
-        left: 15px;
+        left: 20px;
         top: 55%;
     }
 
     .hero-content h1 {
-        font-size: 26px;
+        font-size: 28px;
     }
 
     .hero-content p {
@@ -395,11 +373,17 @@ body {
     /* SECTIONS */
     .categories {
         grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .category-card {
+        height: 100%;
     }
 
     .product-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         row-gap: 35px;
+        column-gap: 15px;
     }
 
     .featured-products {
@@ -408,10 +392,9 @@ body {
 }
 
 /* ===========================
-   SMALL MOBILE
-=========================== */
+   SMALL MOBILE (≤480px)
+============================== */
 @media (max-width: 480px) {
-
     .hero {
         height: 60vh;
     }
@@ -435,5 +418,10 @@ body {
 
     .grey-days-content p {
         font-size: 13px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 10px;
     }
 }

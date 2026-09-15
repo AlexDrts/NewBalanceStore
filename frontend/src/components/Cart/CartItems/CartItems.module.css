@@ -1,7 +1,16 @@
+.cartItems {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 .cartHeader {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
+    align-items: baseline;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 .cartHeader h2 {
@@ -11,36 +20,29 @@
 
 .cartItemCount {
     color: #666;
+    font-size: 15px;
 }
-
-.cartItems {
-    display: flex;
-    flex-direction: column;
-}
-
 
 .emptyCart {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    min-height: 420px;
-
+    min-height: 350px;
     text-align: center;
+    padding: 40px 20px;
 }
 
 .emptyCart h3 {
     font-family: "Libre Baskerville", serif;
-    font-size: 34px;
+    font-size: 32px;
     font-weight: 400;
-
-    margin-bottom: 18px;
+    margin-bottom: 16px;
 }
 
 .emptyCart p {
     color: #666;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
     font-size: 16px;
 }
 
@@ -48,19 +50,37 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
-    width: 250px;
-    height: 54px;
-
+    width: 240px;
+    height: 50px;
     background: black;
     color: white;
-
     text-decoration: none;
     font-weight: 600;
-
-    transition: .2s;
+    transition: background 0.2s;
 }
 
 .continueBtn:hover {
     background: #222;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 768px) {
+    .cartHeader h2 {
+        font-size: 22px;
+    }
+
+    .emptyCart h3 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 425px) {
+    .emptyCart {
+        min-height: 250px;
+    }
+
+    .continueBtn {
+        width: 100%;
+    }
 }

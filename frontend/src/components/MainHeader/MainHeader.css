@@ -1,6 +1,12 @@
 /* ==========================
-   HEADER
+   HEADER MAIN STYLES
 ========================== */
+body.menu-open,
+html.menu-open {
+    overflow: hidden !important;
+    height: 100% !important;
+    touch-action: none;
+}
 
 .main-header {
     position: absolute;
@@ -39,7 +45,6 @@
     color: black;
 }
 
-
 .main-header.dark .nav-menu a {
     color: white;
 }
@@ -56,11 +61,13 @@
     filter: brightness(1) invert(0);
 }
 
-.main-header.dark .header-icons img {
+.main-header.dark .header-icons img,
+.main-header.dark .mobile-account-link img {
     filter: brightness(0) invert(1);
 }
 
-.main-header.light .header-icons img {
+.main-header.light .header-icons img,
+.main-header.light .mobile-account-link img {
     filter: brightness(0);
 }
 
@@ -85,13 +92,15 @@
     filter: brightness(1) invert(0);
 }
 
-.main-header.dark:hover .header-icons img {
+.main-header.dark:hover .header-icons img,
+.main-header.dark:hover .mobile-account-link img {
     filter: brightness(0);
 }
 
 .main-header.scrolled.dark {
     background: white;
 }
+
 .main-header.scrolled.dark .nav-menu a {
     color: black;
 }
@@ -99,12 +108,13 @@
 .main-header.scrolled.dark .logo {
     filter: brightness(1) invert(0);
 }
+
 .main-header.dark:hover .header-icons img,
-.main-header.scrolled.dark .header-icons img {
+.main-header.scrolled.dark .header-icons img,
+.main-header.dark:hover .mobile-account-link img,
+.main-header.scrolled.dark .mobile-account-link img {
     filter: brightness(0);
 }
-
-
 
 /* ==========================
    PRODUCTS PAGE
@@ -127,7 +137,8 @@
     filter: brightness(1) invert(0);
 }
 
-.main-header.products .header-icons img {
+.main-header.products .header-icons img,
+.main-header.products .mobile-account-link img {
     filter: brightness(0);
 }
 
@@ -150,12 +161,14 @@
 }
 
 .main-header.products.scrolled .header-icons img,
-.main-header.products:hover .header-icons img {
+.main-header.products:hover .header-icons img,
+.main-header.products.scrolled .mobile-account-link img,
+.main-header.products:hover .mobile-account-link img {
     filter: brightness(0);
 }
 
 /* ==========================
-   HEADER LAYOUT
+   HEADER LAYOUT & DESKTOP NAV
 ========================== */
 
 .header-left {
@@ -197,7 +210,7 @@
 }
 
 /* ==========================
-   LOGO
+   LOGO & ICONS
 ========================== */
 
 .logo {
@@ -206,10 +219,6 @@
     filter: brightness(0) invert(1);
 }
 
-/* ==========================
-   HEADER ICONS
-========================== */
-
 .header-icons {
     display: flex;
     gap: 30px;
@@ -217,7 +226,8 @@
     cursor: pointer;
 }
 
-.header-icons img {
+.header-icons img,
+.account-icon {
     width: 20px;
     height: 20px;
 }
@@ -248,12 +258,11 @@
 }
 
 /* ==========================
-   MEGA MENU
+   DESKTOP DROPDOWNS
 ========================== */
 
 .mega-menu {
     position: fixed;
-
     top: 80px;
     left: 0;
 
@@ -261,7 +270,6 @@
     max-width: 1940px;
 
     background: white;
-
     padding: 30px 40px;
 
     display: flex;
@@ -269,9 +277,7 @@
 
     opacity: 0;
     visibility: hidden;
-
     transform: translateY(10px);
-
     transition: all 0.25s ease;
 }
 
@@ -279,44 +285,30 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-
     min-width: 150px;
 }
 
 .mega-column h4 {
     font-size: 13px;
     font-weight: 700;
-
     color: #222;
-
     margin-bottom: 8px;
 }
 
 .mega-column a {
     color: #333;
     text-decoration: none;
-
     font-size: 14px;
 }
 
 .featured {
     padding-right: 40px;
     border-right: 1px solid #ddd;
-
     margin-left: 190px;
 }
 
-.featured Link {
-    font-weight: 700;
-}
-
-/* ==========================
-   NEW DROPDOWN
-========================== */
-
 .new-dropdown {
     position: fixed;
-
     top: 80px;
     left: 0;
 
@@ -324,7 +316,6 @@
     max-width: 1940px;
 
     background: white;
-
     padding: 30px 190px 60px 270px;
 
     display: flex;
@@ -332,15 +323,12 @@
 
     opacity: 0;
     visibility: hidden;
-
     transform: translateY(10px);
-
     transition: all 0.25s ease;
 }
 
 .new-card {
     width: 270px;
-
     text-decoration: none;
     color: #111;
 }
@@ -348,22 +336,16 @@
 .new-card img {
     width: 100%;
     aspect-ratio: 1 / 1;
-
     object-fit: cover;
-
     display: block;
-
     transition: transform .3s ease;
 }
 
 .new-card span {
     display: block;
-
     margin-top: 10px;
-
     font-size: 14px;
     font-weight: 700;
-
     text-decoration: underline;
 }
 
@@ -372,7 +354,23 @@
 }
 
 /* ==========================
-   RESPONSIVE
+   DESKTOP DEFAULT HIDES
+========================== */
+
+.mobile-left-group {
+    display: none;
+}
+
+.desktop-account-link {
+    display: block;
+}
+
+.mobile-full-menu {
+    display: none;
+}
+
+/* ==========================
+   RESPONSIVE (DESKTOP TWEAKS)
 ========================== */
 
 @media (max-width: 1440px) {
@@ -408,10 +406,18 @@
     }
 }
 
+/* ==========================
+   MOBILE RESPONSIVE (<= 768px)
+========================== */
+
 @media (max-width: 768px) {
     .main-header {
         height: 65px;
         padding: 0 15px;
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
     .logo {
@@ -419,11 +425,171 @@
         height: 42px;
     }
 
-    .nav-menu {
-        display: none;
+    /* 1. Левая группа: Бургер + Иконка аккаунта */
+    .mobile-left-group {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        z-index: 10;
     }
 
+    .burger-btn {
+        background: transparent;
+        border: none;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: inherit;
+        cursor: pointer;
+    }
+
+    .mobile-account-link {
+        display: flex;
+        align-items: center;
+    }
+
+    .desktop-account-link {
+        display: none !important;
+    }
+
+    /* 2. Центр: Логотип NB */
+    .header-left {
+        gap: 0;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .desktop-nav {
+        display: none !important;
+    }
+
+    /* 3. Правая группа: Поиск + Корзина */
     .header-icons {
-        gap: 18px;
+        gap: 16px;
+        align-items: center;
+        z-index: 10;
+    }
+
+    /* 4. Полноэкранный оверлей меню (100vw / 100vh) */
+    .mobile-full-menu {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+        background: #ffffff;
+        z-index: 999999; /* Выше всего остального на странице */
+        color: #000000;
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    .mobile-full-menu.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .mobile-full-menu.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    /* Шапка полноэкранного меню */
+    .mobile-menu-header {
+        height: 65px;
+        padding: 0 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #eee;
+        flex-shrink: 0;
+    }
+
+    .menu-back-btn,
+    .menu-close-btn {
+        background: transparent;
+        border: none;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #111;
+        cursor: pointer;
+    }
+
+    .menu-title-text {
+        font-size: 16px;
+        font-weight: 700;
+        color: #111;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .mobile-menu-header .logo {
+        filter: brightness(1) invert(0) !important;
+    }
+
+    /* Тело меню */
+    .mobile-menu-body {
+        flex: 1;
+        overflow-y: auto;
+        padding: 10px 20px 40px 20px;
+    }
+
+    .menu-page {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu-nav-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 0;
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 17px;
+        color: #111;
+        cursor: pointer;
+    }
+
+    .arrow-icon {
+        font-size: 18px;
+        color: #888;
+        font-weight: 400;
+    }
+
+    .menu-link {
+        display: block;
+        padding: 18px 0;
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 17px;
+        color: #111;
+        text-decoration: none;
+    }
+
+    .menu-nav-row-link {
+        display: block;
+        padding: 16px 0;
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 16px;
+        font-weight: 500;
+        color: #333;
+        text-decoration: none;
+    }
+
+    .menu-nav-row-link:hover,
+    .menu-nav-row:hover {
+        opacity: 0.7;
     }
 }

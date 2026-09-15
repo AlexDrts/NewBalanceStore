@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
-import styles from './ProductCard.module.css'
+import styles from './ProductCard.module.css';
 import { useState } from "react";
-
 
 function ProductCard({ product, onQuickAdd, page }) {
     const [activeColor, setActiveColor] = useState(
@@ -25,78 +24,69 @@ function ProductCard({ product, onQuickAdd, page }) {
 
     return (
         <div className={styles.productCard}>
-            <Link to={`/product/${product.id}`}>
-                <img
-                    src={isCart ? currentImages[0] : image}
-                    onMouseEnter={!isCart ? () => setHovered(true) : undefined}
-                    onMouseLeave={!isCart ? () => setHovered(false) : undefined}
-                    alt={product.name}
+            {/* Image wrapper for positioning quickAddBtn */}
+            <div className={styles.imageWrapper}>
+                <Link to={`/product/${product.id}`}>
+                    <img
+                        src={isCart ? currentImages[0] : image}
+                        onMouseEnter={!isCart ? () => setHovered(true) : undefined}
+                        onMouseLeave={!isCart ? () => setHovered(false) : undefined}
+                        alt={product.name}
+                    />
+                </Link>
 
-                />
-            </Link>
-
-            { /* ColorSlider START*/ }
-            {!isHome && !isCart && (
-                <>
-                    <div className={styles.colorSliderWrapper}>
-                        { showSliderButtons && (
-                            <button
-                                onClick={() => setStartIndex(prev => prev - 1)}
-                                className={styles.sliderBtn}
-                            >
-                                ❮
-                            </button>
-                        )}
-
-                        <div className={styles.colorSlider}>
-                            {colors
-                                .slice(startIndex, startIndex + visibleColors)
-                                .map(color => (
-                                    <img
-                                        key={color}
-                                        src={product.getMainImage(color)}
-                                        onClick={() => setActiveColor(color)}
-                                        className={
-                                            color === activeColor
-                                                ? styles.active
-                                                : ""
-                                        }
-                                    />
-                                ))}
-                        </div>
-
-                        { showSliderButtons && (
-                            <button
-                                onClick={() => setStartIndex(prev => prev + 1)}
-                                className={styles.sliderBtn}
-                            >
-                                ❯
-                            </button>
-                        )}
-                    </div>
-                    {/*ColorSlider END*/}
-
+                {!isHome && !isCart && (
                     <button
                         className={styles.quickAddBtn}
                         onClick={() => onQuickAdd(product, activeColor)}
+                        aria-label="Quick Add"
                     >
                         <img src="../src/assets/icons/header/bag.svg" alt="Bag" />
                     </button>
-                </>
                 )}
+            </div>
 
+            {!isHome && !isCart && (
+                <div className={styles.colorSliderWrapper}>
+                    {showSliderButtons && (
+                        <button
+                            onClick={() => setStartIndex(prev => prev - 1)}
+                            className={styles.sliderBtn}
+                        >
+                            ❮
+                        </button>
+                    )}
 
+                    <div className={styles.colorSlider}>
+                        {colors
+                            .slice(startIndex, startIndex + visibleColors)
+                            .map(color => (
+                                <img
+                                    key={color}
+                                    src={product.getMainImage(color)}
+                                    onClick={() => setActiveColor(color)}
+                                    className={color === activeColor ? styles.active : ""}
+                                    alt={color}
+                                />
+                            ))}
+                    </div>
 
-
-
+                    {showSliderButtons && (
+                        <button
+                            onClick={() => setStartIndex(prev => prev + 1)}
+                            className={styles.sliderBtn}
+                        >
+                            ❯
+                        </button>
+                    )}
+                </div>
+            )}
 
             {product.isNew && (
                 <span className={styles.newBadge}>NEW</span>
             )}
-            <Link
-                to={`/product/${product.id}`}
-                className={styles.productTitle}
-            >
+
+            <Link to={`/product/${product.id}`} className={styles.productTitle}>
                 {product.name}
             </Link>
 
@@ -106,16 +96,14 @@ function ProductCard({ product, onQuickAdd, page }) {
 
             <div className={styles.productPrice}>
                 ${product.price}
-
                 {product.hasDiscount() && (
                     <span className={styles.oldPrice}>
                         ${product.oldPrice}
                     </span>
                 )}
             </div>
-
         </div>
     );
 }
 
-export default ProductCard
+export default ProductCard;

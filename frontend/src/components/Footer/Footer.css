@@ -1,66 +1,65 @@
-/* FOOTER */
+/* ===========================
+   BASE & RESET
+=========================== */
 
 .footer {
     background: #000;
     color: white;
-    margin-top: 100px;
+    margin-top: 80px;
+    width: 100%;
 }
 
 /* SIGNUP BAR */
 
 .footer-signup {
-    height: 110px;
-
+    padding: 30px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 10px;
-    gap: 30px;
-
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    gap: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-signup p {
-    font-size: 14px;
+    font-size: 15px;
+    margin: 0;
 }
 
 .footer-signup button {
     width: 140px;
-    height: 50px;
-
+    height: 48px;
     border: none;
-
     background: white;
     color: black;
-
+    font-weight: 600;
     cursor: pointer;
-    transition: 0.3s;
+    transition: background 0.2s ease;
 }
 
 .footer-signup button:hover {
     background: #e8e8e8;
 }
 
-/* MAIN FOOTER */
+/* MAIN FOOTER CONTENT */
 
 .footer-content {
-    width: 1500px;
-    max-width: 95vw;
-
+    width: 100%;
+    max-width: 1440px; /* Ограничиваем максимальную ширину для 2K/4K */
     margin: 0 auto;
-    padding: 90px 0 120px;
-
+    padding: 80px 40px;
     display: flex;
     justify-content: space-between;
-    gap: 180px;
+    gap: 60px;
+    box-sizing: border-box;
 }
 
-/* LINKS */
+/* LINKS (Grid вместо Flex для стабильной сетки) */
 
 .footer-links {
-    display: flex;
-    gap: 100px;
-    padding-left: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(130px, 1fr));
+    gap: 40px;
+    flex-grow: 1;
 }
 
 .footer-column {
@@ -71,92 +70,94 @@
 .footer-column h3 {
     font-size: 16px;
     font-weight: 700;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
 }
 
 .footer-column a {
-    color: white;
+    color: #cccccc;
     text-decoration: none;
-
-    font-size: 15px;
-    line-height: 1.7;
-    margin-bottom: 5px;
-
-    white-space: nowrap;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    transition: color 0.2s ease;
 }
 
 .footer-column a:hover {
+    color: #ffffff;
     text-decoration: underline;
 }
 
-/* BRAND */
+/* BRAND SECTION */
 
 .footer-brand {
     max-width: 320px;
+    flex-shrink: 0;
 }
 
 .footer-brand h2 {
     font-family: "Libre Baskerville", serif;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 400;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 .footer-logo {
-    width: 56px;
-    margin-bottom: 25px;
+    width: 50px;
+    margin-bottom: 20px;
     filter: brightness(0) invert(1);
 }
 
 .footer-brand p {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.6;
-    margin-bottom: 35px;
+    color: #cccccc;
+    margin-bottom: 28px;
 }
 
-/* SOCIAL */
+/* SOCIAL ICONS */
 
 .social-icons {
     display: flex;
-    gap: 14px;
+    gap: 12px;
 }
 
 .social-icons img {
-    width: 30px;
-    height: 30px;
-
+    width: 26px;
+    height: 26px;
     cursor: pointer;
-    transition: opacity .2s ease;
+    transition: opacity 0.2s ease;
     filter: brightness(0) invert(1);
 }
 
 .social-icons img:hover {
-    opacity: .7;
+    opacity: 0.7;
 }
 
-/* SECOND FOOTER */
+/* SECONDARY FOOTER */
 
 .footer-secondary {
     background: #f3f3f3;
     color: #000;
     font-size: 12px;
+    width: 100%;
 }
 
 .footer-secondary-brands {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 35px;
-
-    padding: 25px 20px 15px;
+    gap: 30px;
+    padding: 24px 20px 16px;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .footer-secondary-brands span {
     font-size: 13px;
+    color: #555;
 }
 
 .footer-secondary-brands img {
-    height: 34px;
+    height: 28px;
     width: auto;
     object-fit: contain;
 }
@@ -164,19 +165,19 @@
 .footer-secondary-top {
     display: flex;
     flex-wrap: wrap;
-    gap: 18px;
-
+    gap: 16px 24px;
     align-items: center;
     justify-content: center;
-
-    padding: 15px 20px;
+    padding: 20px 40px;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 .footer-secondary-top a {
-    font-size: 14px;
-    color: black;
+    font-size: 13px;
+    color: #111;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .footer-secondary-top a:hover {
@@ -184,151 +185,139 @@
 }
 
 .footer-secondary-top .US-flag {
-    width: 25px;
-    height: 15px;
+    width: 22px;
+    height: 14px;
+    object-fit: cover;
 }
 
 .footer-secondary-bottom {
     text-align: center;
-    padding: 12px 0 20px;
-    color: #333;
+    padding: 12px 20px 24px;
+    color: #666;
+    font-size: 12px;
 }
 
-/* ===========================
-   1440
-=========================== */
+/* ==========================================================================
+   MEDIA QUERIES (Адаптив под размеры экранов)
+   ========================================================================== */
 
-@media (max-width:1440px){
-
-    .footer-content{
-        width:100%;
-        max-width:1320px;
-        gap:120px;
-        padding:80px 20px 100px;
+/* 1. Экраны 1920px (Desktop Full HD) */
+@media (max-width: 1920px) {
+    .footer-content {
+        max-width: 1400px;
+        padding: 70px 30px;
+        gap: 50px;
     }
-
-    .footer-links{
-        gap:70px;
-    }
-
-    .footer-column a{
-        font-size:14px;
-    }
-
 }
 
-/* ===========================
-   1200
-=========================== */
-
-@media (max-width:1200px){
-
-    .footer-content{
-        width:100%;
-        flex-wrap:wrap;
-        gap:60px;
+/* 2. Экраны 1440px (Laptop L) */
+@media (max-width: 1440px) {
+    .footer-content {
+        max-width: 1200px;
+        gap: 40px;
     }
-
+    .footer-links {
+        gap: 30px;
+    }
 }
 
-/* ===========================
-   992
-=========================== */
-
-@media (max-width:992px){
-
-    .footer-content{
-        flex-direction:column;
-        align-items:flex-start;
-        gap:50px;
+/* 3. Экраны 1024px (Laptop / Tablet Landscape) */
+@media (max-width: 1024px) {
+    .footer-content {
+        flex-direction: column-reverse; /* Бренд уходит вниз или наверх по желанию */
+        gap: 50px;
+        padding: 60px 30px;
     }
 
-    .footer-links{
-        flex-wrap:wrap;
-        gap:60px;
-        padding-left:0;
+    .footer-brand {
+        max-width: 100%;
     }
 
-    .footer-brand{
-        max-width:100%;
+    .footer-links {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
     }
-
 }
 
-/* ===========================
-   768
-=========================== */
-
-@media (max-width:768px){
-
-    .footer-signup{
-        flex-direction:column;
-        height:auto;
-        padding:25px 15px;
-        text-align:center;
-        gap:15px;
+/* 4. Экраны 768px (Tablet Portrait) */
+@media (max-width: 768px) {
+    .footer-signup {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
     }
 
-    .footer-content{
-        padding:60px 15px;
-        align-items:center;
-        text-align:center;
+    .footer-signup button {
+        width: 100%;
+        max-width: 300px;
     }
 
-    .footer-links{
-        flex-direction:column;
-        align-items:center;
-        gap:30px;
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr); /* 2 колонки вместо 4 */
+        gap: 30px 20px;
     }
 
-    .footer-column{
-        align-items:center;
+    .footer-secondary-brands {
+        flex-direction: column;
+        gap: 15px;
     }
 
-    .footer-brand{
-        max-width:100%;
-        text-align:center;
+    .footer-secondary-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
     }
-
-    .social-icons{
-        justify-content:center;
-        flex-wrap:wrap;
-    }
-
-    .footer-secondary-top{
-        flex-direction:column;
-        gap:10px;
-        text-align:center;
-    }
-
-    .footer-secondary-brands{
-        flex-wrap:wrap;
-        justify-content:center;
-    }
-
 }
 
-/* ===========================
-   480
-=========================== */
-
-@media (max-width:480px){
-
-    .footer-column h3{
-        font-size:14px;
+/* 5. Экраны 425px (Mobile L) */
+@media (max-width: 425px) {
+    .footer-content {
+        padding: 40px 20px;
     }
 
-    .footer-column a{
-        font-size:13px;
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px 15px;
     }
 
-    .footer-brand p{
-        font-size:13px;
-        line-height:1.4;
+    .footer-column h3 {
+        font-size: 15px;
     }
 
-    .footer-secondary-bottom{
-        font-size:11px;
+    .footer-column a {
+        font-size: 13px;
+        white-space: normal; /* Разрешаем перенос длинных ссылок */
     }
 
+    .footer-brand h2 {
+        font-size: 20px;
+    }
+}
+
+/* 6. Экраны 375px (Mobile M) */
+@media (max-width: 375px) {
+    .footer-links {
+        grid-template-columns: 1fr; /* Переходим в 1 колонку на узких экранах */
+        text-align: left;
+    }
+
+    .social-icons {
+        gap: 16px;
+    }
+}
+
+/* 7. Экраны 320px (Mobile S) */
+@media (max-width: 320px) {
+    .footer-content {
+        padding: 30px 15px;
+    }
+
+    .footer-signup p {
+        font-size: 13px;
+    }
+
+    .footer-secondary-top a {
+        font-size: 12px;
+    }
 }
