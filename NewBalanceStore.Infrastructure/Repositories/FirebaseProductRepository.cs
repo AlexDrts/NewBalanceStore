@@ -1,8 +1,8 @@
 ﻿using Firebase.Database;
 using Firebase.Database.Query;
 using Microsoft.Extensions.Configuration;
-using NewBalanceStore.Application.Interfaces;
 using NewBalanceStore.Domain.Entities;
+using NewBalanceStore.Domain.Interfaces; 
 
 namespace NewBalanceStore.Infrastructure.Repositories;
 
@@ -54,8 +54,7 @@ public class FirebaseProductRepository : IProductRepository
     public async Task<Product?> GetByIdAsync(string id)
     {
         var product = await _firebaseClient
-            .Child(CollectionName)
-            .Child(id)
+            .Child($"{CollectionName}/{id}")
             .OnceSingleAsync<Product>();
 
         if (product != null)
@@ -74,24 +73,21 @@ public class FirebaseProductRepository : IProductRepository
         }
 
         await _firebaseClient
-            .Child(CollectionName)
-            .Child(item.Id)
+            .Child($"{CollectionName}/{item.Id}")
             .PutAsync(item);
     }
 
     public async Task UpdateAsync(Product item)
     {
         await _firebaseClient
-            .Child(CollectionName)
-            .Child(item.Id)
+            .Child($"{CollectionName}/{item.Id}")
             .PutAsync(item);
     }
 
     public async Task DeleteAsync(string id)
     {
         await _firebaseClient
-            .Child(CollectionName)
-            .Child(id)
+            .Child($"{CollectionName}/{id}")
             .DeleteAsync();
     }
 }

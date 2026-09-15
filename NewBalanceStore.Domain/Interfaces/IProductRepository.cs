@@ -1,6 +1,6 @@
 ﻿using NewBalanceStore.Domain.Entities;
 
-namespace NewBalanceStore.Application.Interfaces;
+namespace NewBalanceStore.Domain.Interfaces;
 
 public interface IProductRepository
 {

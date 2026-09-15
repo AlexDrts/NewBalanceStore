@@ -1,5 +1,4 @@
-﻿using NewBalanceStore.Application.DTOs;
-
+﻿using NewBalanceStore.Application.DTOs; 
 namespace NewBalanceStore.Application.Interfaces;
 
 public interface IProductService

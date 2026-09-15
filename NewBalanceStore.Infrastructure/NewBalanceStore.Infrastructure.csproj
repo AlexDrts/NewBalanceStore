@@ -1,38 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="coverlet.collector" Version="10.0.1">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="FirebaseAdmin" Version="3.6.0" />
-    <PackageReference Include="FirebaseAdminCore" Version="2.0.0" />
-    <PackageReference Include="FirebaseDatabase.net" Version="5.0.0" />
-    <PackageReference Include="Google.Cloud.Firestore" Version="4.4.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.12" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="10.2.3" />
-    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="10.2.3" />
-    <PackageReference Include="xunit" Version="2.9.3" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="4.0.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="CloudinaryDotNet" Version="1.29.3" />
+		<PackageReference Include="FirebaseAdmin" Version="3.6.0" />
+		<PackageReference Include="FirebaseAdminCore" Version="2.0.0" />
+		<PackageReference Include="FirebaseDatabase.net" Version="5.0.0" />
+		<PackageReference Include="Google.Cloud.Firestore" Version="4.4.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="10.0.0-preview.1.25080.5" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\NewBalanceStore.Application\NewBalanceStore.Application.csproj" />
-    <ProjectReference Include="..\NewBalanceStore.Domain\NewBalanceStore.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Firebase\" />
-    <Folder Include="Authentication\" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\NewBalanceStore.Domain\NewBalanceStore.Domain.csproj" />
+	</ItemGroup>
 
 </Project>

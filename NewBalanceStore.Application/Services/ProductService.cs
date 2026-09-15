@@ -1,6 +1,7 @@
 ﻿using NewBalanceStore.Application.DTOs;
 using NewBalanceStore.Application.Interfaces;
 using NewBalanceStore.Domain.Entities;
+using NewBalanceStore.Domain.Interfaces;
 
 namespace NewBalanceStore.Application.Services;
 

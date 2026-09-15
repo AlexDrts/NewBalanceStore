@@ -6,7 +6,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FirebaseDatabase.net" Version="5.0.0" />
+  
   </ItemGroup>
 
   <PropertyGroup>
