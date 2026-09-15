@@ -143,7 +143,6 @@ body.adminPage .mainHeader .header-icons img {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    position: relative;
     border-bottom: 1px solid #e5e5e5;
     padding-bottom: 16px;
 }
@@ -154,6 +153,8 @@ body.adminPage .mainHeader .header-icons img {
     color: #111;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    text-align: left; /* Выравнивание по левому краю карточек */
+    margin: 0;
 }
 
 /* Logout Button */
@@ -169,6 +170,7 @@ body.adminPage .mainHeader .header-icons img {
     font-weight: 600;
     color: #111111;
     cursor: pointer;
+    white-space: nowrap;
     transition: all 0.2s ease;
 }
 
@@ -185,8 +187,21 @@ body.adminPage .mainHeader .header-icons img {
     }
 
     .dashboardHeader {
-        flex-direction: column;
-        gap: 16px;
-        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .title {
+        font-size: 22px;
+        grid-row: 2;
+        text-align: left;
+    }
+
+    .logoutBtn {
+        grid-row: 1;
+        justify-self: end;
+        padding: 6px 12px;
+        font-size: 13px;
     }
 }

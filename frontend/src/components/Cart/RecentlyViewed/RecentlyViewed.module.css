@@ -1,38 +1,162 @@
-/* Секция Recently Viewed */
-.recentlyViewedContainer {
-    width: 100%;
-    margin-top: 80px;
-}
-
+/* Полноширинная секция от самого края до края экрана */
 .recentlyViewedSection {
-    width: 100%;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+
+    margin-top: 100px;
+    margin-bottom: 60px;
     padding: 0 40px;
     box-sizing: border-box;
 }
 
-.recentlyViewedSection h2 {
-    margin-bottom: 30px;
+.headerRow {
+    margin-bottom: 24px;
 }
 
-.recentlyViewedSection .colorSliderWrapper {
+.recentlyViewedSection h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Обертка слайдера для позиционирования стрелок относительно него */
+.sliderWrapper {
+    position: relative;
+    width: 100%;
+}
+
+/* Контейнер слайдера */
+.recentlyViewedSlider {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 15px;
+
+    /* Скрываем полосу прокрутки */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.recentlyViewedSlider::-webkit-scrollbar {
     display: none;
 }
 
+/* Прямоугольные кнопки прокрутки 35x50px */
+.navButton {
+    position: absolute;
+    top: 35%; /* Центрируем по вертикали относительно изображений товаров */
+    transform: translateY(-50%);
+    width: 35px;
+    height: 50px;
+    background-color: rgba(30, 30, 30, 0.85); /* Черно-серый фон */
+    color: #ffffff;
+    border: none;
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.navButton:hover {
+    background-color: #000000;
+}
+
+.prevButton {
+    left: 0;
+}
+
+.nextButton {
+    right: 0;
+}
+
+/* Элементы слайдера */
+.sliderItem {
+    flex: 0 0 calc(25% - 12px); /* На ПК показываем по 4 крупных товара */
+    min-width: 280px;
+    scroll-snap-align: start;
+}
+
+.sliderItem :global(.productCard) {
+    width: 100%;
+    height: 100%;
+}
+
+.recentlyViewedSection .colorSliderWrapper,
 .recentlyViewedSection .quickAddBtn {
     display: none;
 }
 
-.recentlyViewedSection {
-    grid-column: 1 / -1;
-    margin-top: 60px;
+/* ===========================
+   MEDIA QUERIES
+=========================== */
+
+/* 2K / 4K / Ultra-wide — Во весь экран */
+@media (min-width: 1921px) {
+    .sliderItem {
+        flex: 0 0 calc(20% - 13px); /* 5 крупных карточек */
+    }
 }
 
-.recentlyViewedGrid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 4px;
+/* 1440px */
+@media (max-width: 1440px) {
+    .sliderItem {
+        flex: 0 0 calc(28% - 12px);
+    }
 }
 
-.recentlyViewedGrid .productCard {
-    width: 100%;
+/* 1024px */
+@media (max-width: 1024px) {
+    .recentlyViewedSection {
+        padding: 0 30px;
+        margin-top: 80px;
+    }
+
+    .sliderItem {
+        flex: 0 0 calc(35% - 12px);
+    }
+}
+
+/* 768px и меньше (Планшеты и телефоны) */
+@media (max-width: 768px) {
+    .recentlyViewedSection {
+        padding: 0 20px;
+        margin-top: 60px;
+    }
+
+    .recentlyViewedSection h2 {
+        font-size: 22px;
+    }
+
+    /* Стрелки полностью скрываем на устройствах 768px и меньше */
+    .navButton {
+        display: none !important;
+    }
+
+    .sliderItem {
+        flex: 0 0 calc(55% - 10px); /* Товары становятся больше при свайпе */
+    }
+}
+
+/* 425px, 375px, 320px (Мобильные) */
+@media (max-width: 425px) {
+    .recentlyViewedSection {
+        padding: 0 15px;
+        margin-top: 50px;
+    }
+
+    .sliderItem {
+        flex: 0 0 75%; /* Крупная карточка по центру */
+        min-width: 220px;
+        scroll-snap-align: center;
+    }
 }

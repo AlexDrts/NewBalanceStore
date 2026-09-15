@@ -1,6 +1,7 @@
-import styles from './ProductDrawer.module.css'
+import styles from './ProductDrawer.module.css';
 import { useState } from "react";
 import { useCart } from "../../context/useCart.js";
+import { createPortal } from "react-dom";
 
 function ProductDrawer({ product, activeColor, onClose, onAddedToCart }) {
     const { dispatch } = useCart();
@@ -12,23 +13,16 @@ function ProductDrawer({ product, activeColor, onClose, onAddedToCart }) {
 
     if (!product) return null;
 
-    const images = product.images[selectedColor];
+    const images = product.images[selectedColor] || [];
 
-    const allSizes =
-        product.type === "Footwear"
-            ? [7,7.5,8,8.5,9,9.5,10,10.5,11,11.5]
-            : ["XS","S","M","L","XL","2XL"];
-
+    const allSizes = product.type === "Footwear"
+        ? [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 12, 12.5]
+        : ["XS", "S", "M", "L", "XL", "2XL"];
 
     const handleAddToCart = () => {
-
         if (!selectedSize) {
             setSizeError(true);
-
-            setTimeout(() => {
-                setSizeError(false);
-            }, 2000);
-
+            setTimeout(() => setSizeError(false), 2000);
             return;
         }
 
@@ -44,43 +38,68 @@ function ProductDrawer({ product, activeColor, onClose, onAddedToCart }) {
         onAddedToCart();
         onClose();
     };
-    return (
+
+    const nextImage = () => {
+        setImageIndex((prev) => (prev + 1) % images.length);
+    };
+
+    const prevImage = () => {
+        setImageIndex((prev) => (prev - 1 + images.length) % images.length);
+    };
+
+    return createPortal(
         <>
-            <div onClick={onClose}
-                 className={styles.productDrawerOverlay}>
-            </div>
+            <div onClick={onClose} className={styles.productDrawerOverlay} />
 
             <aside className={styles.productDrawer}>
-                <button onClick={onClose}
-                        className={styles.drawerClose}>
+                <button onClick={onClose} className={styles.drawerClose} aria-label="Close">
                     ✕
                 </button>
 
+                {/* Gallery: Mobile slider / Desktop feed */}
                 <div className={styles.drawerGallery}>
-                    <img src={images[imageIndex]}
-                         alt=""
-                    />
+                    <div className={styles.sliderContainer}>
+                        <img src={images[imageIndex]} alt={product.name} className={styles.activeImage} />
 
-                    {images.slice(1).map((img) => (
-                        <img
-                            key={img}
-                            src={img}
-                            alt=""
-                        />
-                    ))}
+                        {images.length > 1 && (
+                            <>
+                                <button className={`${styles.sliderArrow} ${styles.prevArrow}`} onClick={prevImage}>❮</button>
+                                <button className={`${styles.sliderArrow} ${styles.nextArrow}`} onClick={nextImage}>❯</button>
+
+                                <div className={styles.sliderBars}>
+                                    {images.map((_, idx) => (
+                                        <span
+                                            key={idx}
+                                            className={`${styles.bar} ${idx === imageIndex ? styles.activeBar : ""}`}
+                                            onClick={() => setImageIndex(idx)}
+                                        />
+                                    ))}
+                                </div>
+                            </>
+                        )}
+                    </div>
+
+                    <div className={styles.desktopGalleryList}>
+                        {images.map((img, idx) => (
+                            <img key={idx} src={img} alt="" />
+                        ))}
+                    </div>
                 </div>
 
+                {/* Product information */}
                 <div className={styles.drawerInfo}>
                     <h2 className={styles.drawerName}>{product.name}</h2>
 
                     <div className={styles.drawerPrice}>
                         <span className={styles.currentPrice}>${product.price}</span>
-
                         {product.oldPrice && (
                             <span className={styles.oldPrice}>${product.oldPrice}</span>
                         )}
                     </div>
 
+                    <div className={styles.sectionLabel}>
+                        Color: <span>{selectedColor}</span>
+                    </div>
                     <div className={styles.drawerColors}>
                         {Object.keys(product.images).map(color => (
                             <button
@@ -89,23 +108,20 @@ function ProductDrawer({ product, activeColor, onClose, onAddedToCart }) {
                                     setSelectedColor(color);
                                     setImageIndex(0);
                                 }}
-                                className={`
-                                    ${styles.drawerColor}
-                                    ${color === selectedColor ? styles.active : ""}
-                                `}
+                                className={`${styles.drawerColor} ${color === selectedColor ? styles.active : ""}`}
                             >
-                            <img src={product.images[color][0]} />
+                                <img src={product.images[color][0]} alt={color} />
                             </button>
                         ))}
                     </div>
 
+                    <div className={styles.sectionLabel}>
+                        Size: <span>{selectedSize}</span>
+                    </div>
                     <div className={styles.drawerSizes}>
                         {allSizes.map(size => {
-                            const available =
-                                product.sizes.includes(size);
-
+                            const available = product.sizes.includes(size);
                             return (
-
                                 <button
                                     key={size}
                                     disabled={!available}
@@ -114,8 +130,9 @@ function ProductDrawer({ product, activeColor, onClose, onAddedToCart }) {
                                         setSizeError(false);
                                     }}
                                     className={`
-                                        ${styles.drawerSize}
-                                        ${size === selectedSize ? styles.active : ""}
+                                        ${styles.drawerSize} 
+                                        ${size === selectedSize ? styles.active : ""} 
+                                        ${!available ? styles.unavailable : ""}
                                     `}
                                 >
                                     {size}
@@ -130,16 +147,14 @@ function ProductDrawer({ product, activeColor, onClose, onAddedToCart }) {
                         </div>
                     )}
 
-
-                    <button onClick={handleAddToCart}
-                            className={styles.drawerAddToCart}
-                    >
+                    <button onClick={handleAddToCart} className={styles.drawerAddToCart}>
                         Add to Bag
                     </button>
                 </div>
             </aside>
-        </>
-    )
+        </>,
+        document.body
+    );
 }
 
-export default ProductDrawer
+export default ProductDrawer;

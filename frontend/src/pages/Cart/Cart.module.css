@@ -6,27 +6,68 @@
 
 .cartHero {
     position: relative;
-
-    width: 1940px;
-    max-width: 95vw;
-
-    height: 150px;
+    width: 100%;
+    max-width: 1440px;
+    height: 120px;
     min-height: 10px;
-
     margin: 0 auto;
-
     overflow: visible;
 }
 
-
 .cartContainer {
     display: grid;
-    grid-template-columns: 1fr 880px;
-    margin-left: 350px;
-    gap: 50px;
+    grid-template-columns: 1fr 420px;
+    gap: 40px;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 40px 60px;
 }
 
 .cartContainerFull {
-    margin-right: 350px;
     grid-template-columns: 1fr;
+}
+
+/* ===========================
+   MEDIA QUERIES
+=========================== */
+
+/* 1920px & 1440px (Desktop / Laptop L) */
+@media (max-width: 1920px) {
+    .cartContainer {
+        grid-template-columns: 1fr 380px;
+        gap: 30px;
+    }
+}
+
+/* 1024px (Laptop) */
+@media (max-width: 1024px) {
+    .cartHero {
+        height: 100px;
+    }
+
+    .cartContainer {
+        grid-template-columns: 1fr; /* CartSummary уходит под товары */
+        gap: 40px;
+        padding: 0 30px 40px;
+    }
+}
+
+/* 768px (Tablet) */
+@media (max-width: 768px) {
+    .cartHero {
+        height: 80px;
+    }
+
+    .cartContainer {
+        padding: 0 20px 30px;
+        gap: 30px;
+    }
+}
+
+/* 425px, 375px, 320px (Mobile) */
+@media (max-width: 425px) {
+    .cartContainer {
+        padding: 0 15px 25px;
+    }
 }
