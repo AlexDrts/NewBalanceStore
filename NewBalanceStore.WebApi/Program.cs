@@ -1,15 +1,14 @@
-﻿using NewBalanceStore.Application.Interfaces;
-using NewBalanceStore.Application.Services;
+﻿using NewBalanceStore.Domain.Interfaces; 
+using NewBalanceStore.Application.Interfaces;
+using NewBalanceStore.Application.Services;   
 using NewBalanceStore.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Регистрация сервисов и репозиториев
 builder.Services.AddScoped<IProductRepository, FirebaseProductRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddControllers();
 
-// Регистрация CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp",
