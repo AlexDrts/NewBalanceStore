@@ -1,4 +1,3 @@
-/* Полноширинная секция от самого края до края экрана */
 .recentlyViewedSection {
     width: 100vw;
     position: relative;
@@ -23,13 +22,11 @@
     margin: 0;
 }
 
-/* Обертка слайдера для позиционирования стрелок относительно него */
 .sliderWrapper {
     position: relative;
     width: 100%;
 }
 
-/* Контейнер слайдера */
 .recentlyViewedSlider {
     display: flex;
     gap: 16px;
@@ -47,14 +44,13 @@
     display: none;
 }
 
-/* Прямоугольные кнопки прокрутки 35x50px */
 .navButton {
     position: absolute;
-    top: 35%; /* Центрируем по вертикали относительно изображений товаров */
+    top: 35%;
     transform: translateY(-50%);
     width: 35px;
     height: 50px;
-    background-color: rgba(30, 30, 30, 0.85); /* Черно-серый фон */
+    background-color: rgba(30, 30, 30, 0.85);
     color: #ffffff;
     border: none;
     font-size: 26px;
@@ -126,7 +122,6 @@
     }
 }
 
-/* 768px и меньше (Планшеты и телефоны) */
 @media (max-width: 768px) {
     .recentlyViewedSection {
         padding: 0 20px;
@@ -137,17 +132,15 @@
         font-size: 22px;
     }
 
-    /* Стрелки полностью скрываем на устройствах 768px и меньше */
     .navButton {
         display: none !important;
     }
 
     .sliderItem {
-        flex: 0 0 calc(55% - 10px); /* Товары становятся больше при свайпе */
+        flex: 0 0 calc(55% - 10px);
     }
 }
 
-/* 425px, 375px, 320px (Мобильные) */
 @media (max-width: 425px) {
     .recentlyViewedSection {
         padding: 0 15px;
@@ -155,7 +148,7 @@
     }
 
     .sliderItem {
-        flex: 0 0 75%; /* Крупная карточка по центру */
+        flex: 0 0 75%;
         min-width: 220px;
         scroll-snap-align: center;
     }

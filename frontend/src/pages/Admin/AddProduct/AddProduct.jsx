@@ -19,11 +19,10 @@ function AddProduct() {
 
     // Status Flags
     const [isNew, setIsNew] = useState(true);
-    const [inStock, setInStock] = useState(true);
 
     // Variants
     const [selectedColors, setSelectedColors] = useState([]);
-    const [selectedSizes, setSelectedSizes] = useState([]);
+    const [colorVariants, setColorVariants] = useState({});
 
     // Images stored per color
     const [colorImages, setColorImages] = useState({});
@@ -33,7 +32,7 @@ function AddProduct() {
         "Green", "Pink", "Tan", "Orange", "Purple"
     ];
 
-    const footwearSizes = ["7", "7.5", "8", "8.5", "9", "9.5", "10", "10.5", "11", "11.5"];
+    const footwearSizes = [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 12, 12.5];
     const clothingSizes = ["XS", "S", "M", "L", "XL", "2XL"];
 
     const activeSizesList = (category === "Clothing" || category === "Accessories") ? clothingSizes : footwearSizes;
@@ -44,11 +43,17 @@ function AddProduct() {
 
         setSelectedColors((prev) => {
             if(prev.includes(colorKey)) {
-                // Remove images for this color when deselected
+                // Remove images
                 setColorImages((prevImgs) => {
                     const newImgs = { ...prevImgs };
                     delete newImgs[colorKey];
                     return newImgs;
+                });
+                // Remove variants
+                setColorVariants((prevVariants) => {
+                    const newVariants = { ...prevVariants };
+                    delete newVariants[colorKey];
+                    return newVariants;
                 });
                 return prev.filter((c) => c !== colorKey);
             }
@@ -56,21 +61,58 @@ function AddProduct() {
         });
     };
 
-    // Toggle Sizes
-    const toggleSize = (size) => {
-        setSelectedSizes((prev) => {
-            if(prev.includes(size)) {
-                return prev.filter((s) => s !== size);
+    //  Toggle Size for a specific color
+    const toggleSizeForColor = (colorKey, size) => {
+        setColorVariants((prev) => {
+            const currentColorData = prev[colorKey] || {};
+            const newColorData = { ...currentColorData };
+
+            if (size in newColorData) {
+                // Deselect size
+                delete newColorData[size];
             }
-            return [...prev, size];
+            else {
+                // Select size with default quantity 1
+                newColorData[size] = 1;
+            }
+
+            return {
+                ...prev,
+                [colorKey]: newColorData
+            };
         });
     };
 
-    // Category change handler (resets sizes if switching between footwear & clothing)
+    // Update Quantity for specific color and size
+    const handleQuantityChange = (colorKey, size, quantity) => {
+        if (quantity === "") {
+            setColorVariants((prev) => ({
+                ...prev,
+                [colorKey]: {
+                    ...(prev[colorKey] || {}),
+                    [size]: ""
+                }
+            }));
+            return;
+        }
+
+        const parsedQty = Math.max(0, parseInt(quantity, 10) || 0);
+
+        setColorVariants((prev) => ({
+            ...prev,
+            [colorKey]: {
+                ...(prev[colorKey] || {}),
+                [size]: parsedQty
+            }
+        }));
+    };
+
+
+    // Category change handler (resets variants if switching categories)
     const handleCategoryChange = (e) => {
         const newCategory = e.target.value;
         setCategory(newCategory);
-        setSelectedSizes([]);
+        setColorVariants({});
     };
 
     // Convert file to Base64
@@ -111,28 +153,36 @@ function AddProduct() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Convert string sizes to numbers if footwear
-        const formattedSizes = selectedSizes.map((s) => {
-            const num = parseFloat(s);
-            return isNaN(num) ? s : num;
+        const variants = [];
+
+        // Build flat array of variants with exact quantity
+        selectedColors.forEach((colorKey) => {
+            const sizesData = colorVariants[colorKey] || {};
+
+            Object.entries(sizesData).forEach(([size, quantity]) => {
+                variants.push({
+                    color: colorKey,
+                    size: isNaN(Number(size)) ? size : Number(size),
+                    quantity: Number(quantity)
+                });
+            });
         });
+
 
         const productData = {
             id: Date.now(),
-            featured: false,
             name: productName,
             price: parseFloat(price) || 0,
             oldPrice: oldPrice ? parseFloat(oldPrice) : null,
             gender: gender,
-            type: category === "Shoes" ? "Footwear" : "Clothing",
+            type: category === "Shoes" ? "Footwear" : category === "Clothing" ? "Clothing" : "Accessories",
             category: category,
             activity: activity,
             description: description,
             images: colorImages,
             colors: selectedColors,
-            sizes: formattedSizes,
             isNew: isNew,
-            inStock: inStock,
+            variants
         };
 
         saveProduct(productData);
@@ -262,24 +312,13 @@ function AddProduct() {
                                     />
                                     <span>New Release</span>
                                 </label>
-
-                                <label className={styles.checkboxLabel}>
-                                    <input
-                                        type="checkbox"
-                                        checked={inStock}
-                                        onChange={(e) => setInStock(e.target.checked)}
-                                    />
-                                    <span>In Stock</span>
-                                </label>
                             </div>
                         </div>
 
-                        {/* Section 2: Colors & Sizes */}
+                        {/* Section 2: Colors Selection */}
                         <div className={styles.card}>
-                            <h2 className={styles.cardTitle}>Variants</h2>
-
+                            <h2 className={styles.cardTitle}>Select Colors</h2>
                             <div className={styles.fieldGroup}>
-                                <label className={styles.label}>Colors</label>
                                 <div className={styles.chipGroup}>
                                     {availableColors.map((color) => {
                                         const colorKey = color.toLowerCase();
@@ -297,29 +336,70 @@ function AddProduct() {
                                     })}
                                 </div>
                             </div>
-
-                            <div className={styles.fieldGroup}>
-                                <label className={styles.label}>
-                                    Sizes ({category === "Shoes" ? "Footwear" : "Clothing"})
-                                </label>
-                                <div className={styles.chipGroup}>
-                                    {activeSizesList.map((size) => (
-                                        <button
-                                            key={size}
-                                            type="button"
-                                            className={`${styles.chip} ${
-                                                selectedSizes.includes(size) ? styles.chipActive : ""
-                                            }`}
-                                            onClick={() => toggleSize(size)}
-                                        >
-                                            {size}
-                                        </button>
-                                    ))}
-                                </div>
-                            </div>
                         </div>
 
-                        {/* Section 3: Images per Color */}
+                        {/* Section 3: Sizes & Quantities per Color */}
+                        {selectedColors.length > 0 && (
+                            <div className={styles.card}>
+                                <h2 className={styles.cardTitle}>Sizes & Stock per Color</h2>
+                                <p className={styles.cardSubtitle}>
+                                    Select available sizes and set stock quantity for each selected color.
+                                </p>
+
+                                {selectedColors.map((colorKey) => {
+                                    const selectedSizesData = colorVariants[colorKey] || {};
+
+                                    return (
+                                        <div key={colorKey} className={styles.colorVariantsBlock}>
+                                            <h3 className={styles.colorHeading}>
+                                                Color: {colorKey.toUpperCase()}
+                                            </h3>
+
+                                            {/* Size Chips */}
+                                            <div className={styles.fieldGroup}>
+                                                <label className={styles.label}>Select Sizes:</label>
+                                                <div className={styles.chipGroup}>
+                                                    {activeSizesList.map((size) => {
+                                                        const isSelected = size in selectedSizesData;
+                                                        return (
+                                                            <button
+                                                                key={size}
+                                                                type="button"
+                                                                className={`${styles.chip} ${isSelected ? styles.chipActive : ""}`}
+                                                                onClick={() => toggleSizeForColor(colorKey, size)}
+                                                            >
+                                                                {size}
+                                                            </button>
+                                                        );
+                                                    })}
+                                                </div>
+                                            </div>
+
+                                            {/* Quantity Inputs for active sizes */}
+                                            {Object.keys(selectedSizesData).length > 0 && (
+                                                <div className={styles.quantitiesGrid}>
+                                                    {Object.entries(selectedSizesData).map(([size, qty]) => (
+                                                        <div key={size} className={styles.quantityItem}>
+                                                            <span className={styles.sizeLabel}>Size {size}:</span>
+                                                            <input
+                                                                type="number"
+                                                                min="0"
+                                                                value={qty}
+                                                                onChange={(e) => handleQuantityChange(colorKey, size, e.target.value)}
+                                                                placeholder="Qty"
+                                                                className={styles.qtyInput}
+                                                            />
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        )}
+
+                        {/* Section 4: Images per Color */}
                         {selectedColors.length > 0 && (
                             <div className={styles.card}>
                                 <h2 className={styles.cardTitle}>Images</h2>

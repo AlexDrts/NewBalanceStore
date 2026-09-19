@@ -15,8 +15,17 @@
         "../src/assets/images/main-page/U204L1KP.jpg"
       ]
     },
-    "colors": ["white"],
-    "sizes": [7, 7.5, 8, 8.5, 9, 9.5]
+    "colors": [
+      "white"
+    ],
+    "variants": [
+      { "color": "white", "size": 7, "quantity": 5 },
+      { "color": "white", "size": 7.5, "quantity": 3 },
+      { "color": "white", "size": 8, "quantity": 8 },
+      { "color": "white", "size": 8.5, "quantity": 4 },
+      { "color": "white", "size": 9, "quantity": 6 },
+      { "color": "white", "size": 9.5, "quantity": 2 }
+    ]
   },
   {
     "id": 2,
@@ -34,8 +43,15 @@
         "../src/assets/images/main-page/WT53507AHH.jpg"
       ]
     },
-    "colors": ["white"],
-    "sizes": ["XS", "S", "M", "L"]
+    "colors": [
+      "white"
+    ],
+    "variants": [
+      { "color": "white", "size": "XS", "quantity": 4 },
+      { "color": "white", "size": "S", "quantity": 7 },
+      { "color": "white", "size": "M", "quantity": 5 },
+      { "color": "white", "size": "L", "quantity": 3 }
+    ]
   },
   {
     "id": 3,
@@ -53,8 +69,17 @@
         "../src/assets/images/main-page/ML574EVG.jpg"
       ]
     },
-    "colors": ["tan"],
-    "sizes": [7, 7.5, 8, 8.5, 9, 9.5]
+    "colors": [
+      "tan"
+    ],
+    "variants": [
+      { "color": "tan", "size": 7, "quantity": 2 },
+      { "color": "tan", "size": 7.5, "quantity": 4 },
+      { "color": "tan", "size": 8, "quantity": 6 },
+      { "color": "tan", "size": 8.5, "quantity": 5 },
+      { "color": "tan", "size": 9, "quantity": 3 },
+      { "color": "tan", "size": 9.5, "quantity": 1 }
+    ]
   },
   {
     "id": 4,
@@ -72,8 +97,15 @@
         "../src/assets/images/main-page/WT41501AHH.jpg"
       ]
     },
-    "colors": ["white"],
-    "sizes": ["XS", "S", "M", "L"]
+    "colors": [
+      "white"
+    ],
+    "variants": [
+      { "color": "white", "size": "XS", "quantity": 3 },
+      { "color": "white", "size": "S", "quantity": 5 },
+      { "color": "white", "size": "M", "quantity": 8 },
+      { "color": "white", "size": "L", "quantity": 2 }
+    ]
   },
   {
     "id": 5,
@@ -91,8 +123,17 @@
         "../src/assets/images/main-page/UN770GRY.jpg"
       ]
     },
-    "colors": ["gray"],
-    "sizes": [7, 7.5, 8, 8.5, 9, 9.5]
+    "colors": [
+      "gray"
+    ],
+    "variants": [
+      { "color": "gray", "size": 7, "quantity": 4 },
+      { "color": "gray", "size": 7.5, "quantity": 5 },
+      { "color": "gray", "size": 8, "quantity": 3 },
+      { "color": "gray", "size": 8.5, "quantity": 6 },
+      { "color": "gray", "size": 9, "quantity": 2 },
+      { "color": "gray", "size": 9.5, "quantity": 4 }
+    ]
   },
   {
     "id": 6,
@@ -110,8 +151,15 @@
         "../src/assets/images/main-page/WS41508AHH.jpg"
       ]
     },
-    "colors": ["white"],
-    "sizes": ["XS", "S", "M", "L"]
+    "colors": [
+      "white"
+    ],
+    "variants": [
+      { "color": "white", "size": "XS", "quantity": 5 },
+      { "color": "white", "size": "S", "quantity": 6 },
+      { "color": "white", "size": "M", "quantity": 4 },
+      { "color": "white", "size": "L", "quantity": 2 }
+    ]
   },
   {
     "id": 7,
@@ -149,8 +197,38 @@
         "../src/assets/images/products/9060/tan/9060-tan2.jpg"
       ]
     },
-    "colors": ["white", "black", "gray", "tan"],
-    "sizes": [7, 7.5, 8, 8.5, 9, 9.5]
+    "colors": [
+      "white",
+      "black",
+      "gray",
+      "tan"
+    ],
+    "variants": [
+      { "color": "white", "size": 7, "quantity": 4 },
+      { "color": "white", "size": 7.5, "quantity": 3 },
+      { "color": "white", "size": 8, "quantity": 5 },
+      { "color": "white", "size": 8.5, "quantity": 2 },
+      { "color": "white", "size": 9, "quantity": 6 },
+      { "color": "white", "size": 9.5, "quantity": 1 },
+      { "color": "black", "size": 7, "quantity": 3 },
+      { "color": "black", "size": 7.5, "quantity": 5 },
+      { "color": "black", "size": 8, "quantity": 2 },
+      { "color": "black", "size": 8.5, "quantity": 4 },
+      { "color": "black", "size": 9, "quantity": 5 },
+      { "color": "black", "size": 9.5, "quantity": 3 },
+      { "color": "gray", "size": 7, "quantity": 2 },
+      { "color": "gray", "size": 7.5, "quantity": 4 },
+      { "color": "gray", "size": 8, "quantity": 6 },
+      { "color": "gray", "size": 8.5, "quantity": 3 },
+      { "color": "gray", "size": 9, "quantity": 1 },
+      { "color": "gray", "size": 9.5, "quantity": 5 },
+      { "color": "tan", "size": 7, "quantity": 5 },
+      { "color": "tan", "size": 7.5, "quantity": 2 },
+      { "color": "tan", "size": 8, "quantity": 4 },
+      { "color": "tan", "size": 8.5, "quantity": 3 },
+      { "color": "tan", "size": 9, "quantity": 6 },
+      { "color": "tan", "size": 9.5, "quantity": 2 }
+    ]
   },
   {
     "id": 8,
@@ -184,9 +262,23 @@
         "../src/assets/images/products/2002R/gray/2002R-Gray8.jpg"
       ]
     },
-    "colors": ["black", "gray"],
-    "sizes": [7, 7.5, 8, 9, 9.5],
-    "isNew": true
+    "colors": [
+      "black",
+      "gray"
+    ],
+    "isNew": true,
+    "variants": [
+      { "color": "black", "size": 7, "quantity": 3 },
+      { "color": "black", "size": 7.5, "quantity": 4 },
+      { "color": "black", "size": 8, "quantity": 6 },
+      { "color": "black", "size": 9, "quantity": 2 },
+      { "color": "black", "size": 9.5, "quantity": 5 },
+      { "color": "gray", "size": 7, "quantity": 5 },
+      { "color": "gray", "size": 7.5, "quantity": 2 },
+      { "color": "gray", "size": 8, "quantity": 4 },
+      { "color": "gray", "size": 9, "quantity": 6 },
+      { "color": "gray", "size": 9.5, "quantity": 3 }
+    ]
   },
   {
     "id": 9,
@@ -245,8 +337,64 @@
         "../src/assets/images/products/530/pink/530-Pink5.jpg"
       ]
     },
-    "colors": ["white", "white2", "black", "gray", "tan", "pink"],
-    "sizes": [8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5]
+    "colors": [
+      "white",
+      "white2",
+      "black",
+      "gray",
+      "tan",
+      "pink"
+    ],
+    "variants": [
+      { "color": "white", "size": 8, "quantity": 4 },
+      { "color": "white", "size": 8.5, "quantity": 2 },
+      { "color": "white", "size": 9, "quantity": 5 },
+      { "color": "white", "size": 9.5, "quantity": 3 },
+      { "color": "white", "size": 10, "quantity": 6 },
+      { "color": "white", "size": 10.5, "quantity": 1 },
+      { "color": "white", "size": 11, "quantity": 4 },
+      { "color": "white", "size": 11.5, "quantity": 2 },
+      { "color": "white2", "size": 8, "quantity": 3 },
+      { "color": "white2", "size": 8.5, "quantity": 5 },
+      { "color": "white2", "size": 9, "quantity": 2 },
+      { "color": "white2", "size": 9.5, "quantity": 4 },
+      { "color": "white2", "size": 10, "quantity": 3 },
+      { "color": "white2", "size": 10.5, "quantity": 2 },
+      { "color": "white2", "size": 11, "quantity": 5 },
+      { "color": "white2", "size": 11.5, "quantity": 1 },
+      { "color": "black", "size": 8, "quantity": 6 },
+      { "color": "black", "size": 8.5, "quantity": 3 },
+      { "color": "black", "size": 9, "quantity": 4 },
+      { "color": "black", "size": 9.5, "quantity": 2 },
+      { "color": "black", "size": 10, "quantity": 5 },
+      { "color": "black", "size": 10.5, "quantity": 3 },
+      { "color": "black", "size": 11, "quantity": 2 },
+      { "color": "black", "size": 11.5, "quantity": 4 },
+      { "color": "gray", "size": 8, "quantity": 2 },
+      { "color": "gray", "size": 8.5, "quantity": 4 },
+      { "color": "gray", "size": 9, "quantity": 6 },
+      { "color": "gray", "size": 9.5, "quantity": 3 },
+      { "color": "gray", "size": 10, "quantity": 1 },
+      { "color": "gray", "size": 10.5, "quantity": 5 },
+      { "color": "gray", "size": 11, "quantity": 3 },
+      { "color": "gray", "size": 11.5, "quantity": 2 },
+      { "color": "tan", "size": 8, "quantity": 5 },
+      { "color": "tan", "size": 8.5, "quantity": 3 },
+      { "color": "tan", "size": 9, "quantity": 2 },
+      { "color": "tan", "size": 9.5, "quantity": 4 },
+      { "color": "tan", "size": 10, "quantity": 6 },
+      { "color": "tan", "size": 10.5, "quantity": 2 },
+      { "color": "tan", "size": 11, "quantity": 1 },
+      { "color": "tan", "size": 11.5, "quantity": 3 },
+      { "color": "pink", "size": 8, "quantity": 3 },
+      { "color": "pink", "size": 8.5, "quantity": 6 },
+      { "color": "pink", "size": 9, "quantity": 4 },
+      { "color": "pink", "size": 9.5, "quantity": 1 },
+      { "color": "pink", "size": 10, "quantity": 2 },
+      { "color": "pink", "size": 10.5, "quantity": 5 },
+      { "color": "pink", "size": 11, "quantity": 3 },
+      { "color": "pink", "size": 11.5, "quantity": 4 }
+    ]
   },
   {
     "id": 10,
@@ -273,8 +421,25 @@
         "../src/assets/images/products/Soccer-Shirt/black/soccer-shirt-black2.jpg"
       ]
     },
-    "colors": ["white", "red", "black"],
-    "sizes": ["XS", "S", "M", "L"]
+    "colors": [
+      "white",
+      "red",
+      "black"
+    ],
+    "variants": [
+      { "color": "white", "size": "XS", "quantity": 2 },
+      { "color": "white", "size": "S", "quantity": 5 },
+      { "color": "white", "size": "M", "quantity": 8 },
+      { "color": "white", "size": "L", "quantity": 4 },
+      { "color": "red", "size": "XS", "quantity": 3 },
+      { "color": "red", "size": "S", "quantity": 4 },
+      { "color": "red", "size": "M", "quantity": 6 },
+      { "color": "red", "size": "L", "quantity": 2 },
+      { "color": "black", "size": "XS", "quantity": 4 },
+      { "color": "black", "size": "S", "quantity": 6 },
+      { "color": "black", "size": "M", "quantity": 5 },
+      { "color": "black", "size": "L", "quantity": 3 }
+    ]
   },
   {
     "id": 11,
@@ -294,8 +459,15 @@
         "../src/assets/images/products/Klutch-Crew-2-Pack/Klutch-Crew-2-Pack-3.jpg"
       ]
     },
-    "colors": ["multi_color"],
-    "sizes": ["S", "M", "L", "XL"]
+    "colors": [
+      "multi_color"
+    ],
+    "variants": [
+      { "color": "multi_color", "size": "S", "quantity": 10 },
+      { "color": "multi_color", "size": "M", "quantity": 15 },
+      { "color": "multi_color", "size": "L", "quantity": 12 },
+      { "color": "multi_color", "size": "XL", "quantity": 8 }
+    ]
   },
   {
     "id": 12,
@@ -318,10 +490,25 @@
         "../src/assets/images/products/Klutch-Athletics-French-Terry-Crew/gray/Klutch-Athletics-French-Terry-Crew-Gray2.jpg"
       ]
     },
-    "colors": ["pink", "gray"],
-    "sizes": ["XS", "S", "M", "L", "XL", "2XL"]
+    "colors": [
+      "pink",
+      "gray"
+    ],
+    "variants": [
+      { "color": "pink", "size": "XS", "quantity": 3 },
+      { "color": "pink", "size": "S", "quantity": 5 },
+      { "color": "pink", "size": "M", "quantity": 4 },
+      { "color": "pink", "size": "L", "quantity": 2 },
+      { "color": "pink", "size": "XL", "quantity": 1 },
+      { "color": "pink", "size": "2XL", "quantity": 3 },
+      { "color": "gray", "size": "XS", "quantity": 4 },
+      { "color": "gray", "size": "S", "quantity": 6 },
+      { "color": "gray", "size": "M", "quantity": 5 },
+      { "color": "gray", "size": "L", "quantity": 3 },
+      { "color": "gray", "size": "XL", "quantity": 2 },
+      { "color": "gray", "size": "2XL", "quantity": 1 }
+    ]
   },
-
   {
     "id": 13,
     "featured": false,
@@ -356,11 +543,33 @@
         "../src/assets/images/products/Athletics-Premium-Relaxed-Chest-Logo-T-Shirt/white-2/Shirt-White5.jpg"
       ]
     },
-    "colors": ["blue", "white", "white2"],
-    "sizes": ["XS", "S", "M", "L", "XL", "2XL"],
-    "isNew": true
+    "colors": [
+      "blue",
+      "white",
+      "white2"
+    ],
+    "isNew": true,
+    "variants": [
+      { "color": "blue", "size": "XS", "quantity": 2 },
+      { "color": "blue", "size": "S", "quantity": 4 },
+      { "color": "blue", "size": "M", "quantity": 7 },
+      { "color": "blue", "size": "L", "quantity": 5 },
+      { "color": "blue", "size": "XL", "quantity": 3 },
+      { "color": "blue", "size": "2XL", "quantity": 1 },
+      { "color": "white", "size": "XS", "quantity": 3 },
+      { "color": "white", "size": "S", "quantity": 5 },
+      { "color": "white", "size": "M", "quantity": 6 },
+      { "color": "white", "size": "L", "quantity": 4 },
+      { "color": "white", "size": "XL", "quantity": 2 },
+      { "color": "white", "size": "2XL", "quantity": 2 },
+      { "color": "white2", "size": "XS", "quantity": 1 },
+      { "color": "white2", "size": "S", "quantity": 3 },
+      { "color": "white2", "size": "M", "quantity": 5 },
+      { "color": "white2", "size": "L", "quantity": 4 },
+      { "color": "white2", "size": "XL", "quantity": 3 },
+      { "color": "white2", "size": "2XL", "quantity": 1 }
+    ]
   },
-
   {
     "id": 14,
     "featured": false,
@@ -388,12 +597,24 @@
         "../src/assets/images/products/Sticker-Pack-Oversized-T-Shirt/tan/Shirt-Tan5.jpg"
       ]
     },
-    "colors": ["tan", "blue"],
-    "sizes": ["XS", "S", "M", "L", "XL"],
-    "isNew": true
+    "colors": [
+      "tan",
+      "blue"
+    ],
+    "isNew": true,
+    "variants": [
+      { "color": "tan", "size": "XS", "quantity": 3 },
+      { "color": "tan", "size": "S", "quantity": 5 },
+      { "color": "tan", "size": "M", "quantity": 4 },
+      { "color": "tan", "size": "L", "quantity": 2 },
+      { "color": "tan", "size": "XL", "quantity": 1 },
+      { "color": "blue", "size": "XS", "quantity": 2 },
+      { "color": "blue", "size": "S", "quantity": 4 },
+      { "color": "blue", "size": "M", "quantity": 6 },
+      { "color": "blue", "size": "L", "quantity": 3 },
+      { "color": "blue", "size": "XL", "quantity": 2 }
+    ]
   },
-
-
   {
     "id": 15,
     "featured": false,
@@ -431,7 +652,18 @@
         "../src/assets/images/products/740-Lace/blue/740-Lace-Blue6.jpg"
       ]
     },
-    "colors": ["white", "black", "blue"],
-    "sizes": [7, 7.5]
+    "colors": [
+      "white",
+      "black",
+      "blue"
+    ],
+    "variants": [
+      { "color": "white", "size": 7, "quantity": 5 },
+      { "color": "white", "size": 7.5, "quantity": 3 },
+      { "color": "black", "size": 7, "quantity": 4 },
+      { "color": "black", "size": 7.5, "quantity": 6 },
+      { "color": "blue", "size": 7, "quantity": 2 },
+      { "color": "blue", "size": 7.5, "quantity": 5 }
+    ]
   }
 ]

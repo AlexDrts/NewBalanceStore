@@ -175,7 +175,7 @@
     border: 2px solid #000;
 }
 
-/* Sizes Grid (5 в ряд как на фото) */
+/* Sizes Grid  */
 .drawerSizes {
     display: grid;
     grid-template-columns: repeat(5, 1fr);

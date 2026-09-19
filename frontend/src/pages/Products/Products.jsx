@@ -93,10 +93,17 @@ function Products() {
         if (filters.category.length && !filters.category.includes(product.type.toLowerCase()))
             return false;
 
-        if (filters.footwearSizes.length && !product.sizes.some(size => filters.footwearSizes.includes(size)))
+        if (filters.footwearSizes.length && !product.variants.some(
+                variant => filters.footwearSizes.includes(variant.size) &&
+                    variant.quantity > 0
+            ))
+
             return false;
 
-        if (filters.clothingSizes.length && !product.sizes.some(size => filters.clothingSizes.includes(size)))
+        if (filters.clothingSizes.length && !product.variants.some(
+            variant => filters.clothingSizes.includes(variant.size) &&
+                variant.quantity > 0
+        ))
             return false;
 
         if (filters.accessoryType.length && !filters.accessoryType.includes(product.category))

@@ -47,7 +47,7 @@
     }
 
     .cartContainer {
-        grid-template-columns: 1fr; /* CartSummary уходит под товары */
+        grid-template-columns: 1fr;
         gap: 40px;
         padding: 0 30px 40px;
     }

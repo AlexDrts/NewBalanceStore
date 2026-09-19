@@ -120,7 +120,7 @@ function ProductDrawer({ product, activeColor, onClose, onAddedToCart }) {
                     </div>
                     <div className={styles.drawerSizes}>
                         {allSizes.map(size => {
-                            const available = product.sizes.includes(size);
+                            const available = product.isAvailable(selectedColor, size);
                             return (
                                 <button
                                     key={size}

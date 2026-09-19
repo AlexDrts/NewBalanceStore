@@ -112,7 +112,6 @@ body {
     width: 100%;
 }
 
-/* 1920px и ниже */
 @media (max-width: 1920px) {
     .productGrid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -135,19 +134,16 @@ body {
 }
 
 @media (max-width: 1024px) {
-    /* С фильтрами (сайдбар открыт) -> 2 колонки */
     .productGrid {
         grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
         gap: 20px 14px;
     }
 
-    /* Без фильтров (сайдбар скрыт) -> ровно 4 колонки в ряд */
     .productGridWide {
         grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
         gap: 16px 10px;
     }
 
-    /* Убираем жесткую фиксированную ширину сайдбара, чтобы сетка занимала 100% */
     .productsWrapper {
         grid-template-columns: 240px 1fr;
         gap: 16px;

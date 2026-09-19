@@ -370,7 +370,7 @@ html.menu-open {
 }
 
 /* ==========================
-   RESPONSIVE (DESKTOP TWEAKS)
+   RESPONSIVE (DESKTOP)
 ========================== */
 
 @media (max-width: 1440px) {
@@ -407,7 +407,7 @@ html.menu-open {
 }
 
 /* ==========================
-   MOBILE RESPONSIVE (<= 768px)
+   MOBILE RESPONSIVE
 ========================== */
 
 @media (max-width: 768px) {
@@ -425,7 +425,6 @@ html.menu-open {
         height: 42px;
     }
 
-    /* 1. Левая группа: Бургер + Иконка аккаунта */
     .mobile-left-group {
         display: flex;
         align-items: center;
@@ -453,7 +452,6 @@ html.menu-open {
         display: none !important;
     }
 
-    /* 2. Центр: Логотип NB */
     .header-left {
         gap: 0;
         position: absolute;
@@ -465,14 +463,12 @@ html.menu-open {
         display: none !important;
     }
 
-    /* 3. Правая группа: Поиск + Корзина */
     .header-icons {
         gap: 16px;
         align-items: center;
         z-index: 10;
     }
 
-    /* 4. Полноэкранный оверлей меню (100vw / 100vh) */
     .mobile-full-menu {
         display: flex;
         flex-direction: column;
@@ -483,7 +479,7 @@ html.menu-open {
         height: 100vh;
         height: 100dvh;
         background: #ffffff;
-        z-index: 999999; /* Выше всего остального на странице */
+        z-index: 999999;
         color: #000000;
 
         opacity: 0;
@@ -504,7 +500,6 @@ html.menu-open {
         pointer-events: auto;
     }
 
-    /* Шапка полноэкранного меню */
     .mobile-menu-header {
         height: 65px;
         padding: 0 15px;
@@ -540,7 +535,6 @@ html.menu-open {
         filter: brightness(1) invert(0) !important;
     }
 
-    /* Тело меню */
     .mobile-menu-body {
         flex: 1;
         overflow-y: auto;
