@@ -44,7 +44,7 @@
 
 .footer-content {
     width: 100%;
-    max-width: 1440px; /* Ограничиваем максимальную ширину для 2K/4K */
+    max-width: 1440px;
     margin: 0 auto;
     padding: 80px 40px;
     display: flex;
@@ -53,7 +53,7 @@
     box-sizing: border-box;
 }
 
-/* LINKS (Grid вместо Flex для стабильной сетки) */
+/* LINKS */
 
 .footer-links {
     display: grid;
@@ -197,11 +197,11 @@
     font-size: 12px;
 }
 
-/* ==========================================================================
-   MEDIA QUERIES (Адаптив под размеры экранов)
-   ========================================================================== */
+/* ==============================
+   MEDIA QUERIES
+   ==============================*/
 
-/* 1. Экраны 1920px (Desktop Full HD) */
+/* Desktop Full HD */
 @media (max-width: 1920px) {
     .footer-content {
         max-width: 1400px;
@@ -210,7 +210,7 @@
     }
 }
 
-/* 2. Экраны 1440px (Laptop L) */
+/* Laptop L */
 @media (max-width: 1440px) {
     .footer-content {
         max-width: 1200px;
@@ -221,10 +221,10 @@
     }
 }
 
-/* 3. Экраны 1024px (Laptop / Tablet Landscape) */
+/* Laptop / Tablet Landscape */
 @media (max-width: 1024px) {
     .footer-content {
-        flex-direction: column-reverse; /* Бренд уходит вниз или наверх по желанию */
+        flex-direction: column-reverse;
         gap: 50px;
         padding: 60px 30px;
     }
@@ -239,7 +239,7 @@
     }
 }
 
-/* 4. Экраны 768px (Tablet Portrait) */
+/* Tablet Portrait */
 @media (max-width: 768px) {
     .footer-signup {
         flex-direction: column;
@@ -253,7 +253,7 @@
     }
 
     .footer-links {
-        grid-template-columns: repeat(2, 1fr); /* 2 колонки вместо 4 */
+        grid-template-columns: repeat(2, 1fr);
         gap: 30px 20px;
     }
 
@@ -270,7 +270,7 @@
     }
 }
 
-/* 5. Экраны 425px (Mobile L) */
+/* Mobile */
 @media (max-width: 425px) {
     .footer-content {
         padding: 40px 20px;
@@ -287,7 +287,7 @@
 
     .footer-column a {
         font-size: 13px;
-        white-space: normal; /* Разрешаем перенос длинных ссылок */
+        white-space: normal;
     }
 
     .footer-brand h2 {
@@ -295,10 +295,9 @@
     }
 }
 
-/* 6. Экраны 375px (Mobile M) */
 @media (max-width: 375px) {
     .footer-links {
-        grid-template-columns: 1fr; /* Переходим в 1 колонку на узких экранах */
+        grid-template-columns: 1fr;
         text-align: left;
     }
 
@@ -307,7 +306,6 @@
     }
 }
 
-/* 7. Экраны 320px (Mobile S) */
 @media (max-width: 320px) {
     .footer-content {
         padding: 30px 15px;

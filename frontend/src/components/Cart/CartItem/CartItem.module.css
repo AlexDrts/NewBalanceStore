@@ -29,7 +29,7 @@
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 8px;
-    padding-right: 30px; /* Запас под кнопку крестика */
+    padding-right: 30px;
 }
 
 .cartItemText {
@@ -126,7 +126,6 @@
     }
 }
 
-/* На экранах до 425px меняем сетку карточки товара */
 @media (max-width: 425px) {
     .cartItem {
         display: grid;

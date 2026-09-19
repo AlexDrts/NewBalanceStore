@@ -1,6 +1,6 @@
-import { Shoe } from "../entities/Product/Shoe.jsx";
-import { Clothing } from "../entities/Product/Clothing.jsx";
-import { Accessory } from "../entities/Product/Accessory.jsx";
+import { Shoe } from "../entities/Product/Shoe.js";
+import { Clothing } from "../entities/Product/Clothing.js";
+import { Accessory } from "../entities/Product/Accessory.js";
 import { Product } from "../entities/Product/Product.js";
 
 export function createProduct(data) {

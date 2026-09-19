@@ -22,9 +22,9 @@ function RecentlyViewed() {
 
     const ids = getRecentlyViewed();
 
-    const recentProducts = ids
-        .map(id => products.find(product => product.id === id))
-        .filter(Boolean);
+    const recentProducts = (ids !== null)
+        ? ids.map(id => products.find(product => product.id === id)).filter(Boolean)
+        : null;
 
     const checkScrollPosition = () => {
         if (sliderRef.current) {
@@ -42,7 +42,7 @@ function RecentlyViewed() {
         return () => window.removeEventListener('resize', checkScrollPosition);
     }, [recentProducts]);
 
-    if (recentProducts.length === 0) {
+    if (!recentProducts || recentProducts.length === 0) {
         return null;
     }
 
