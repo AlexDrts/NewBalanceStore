@@ -1,4 +1,5 @@
-﻿using NewBalanceStore.Application.DTOs;
+﻿using AutoMapper;
+using NewBalanceStore.Application.DTOs;
 using NewBalanceStore.Application.Interfaces;
 using NewBalanceStore.Domain.Entities;
 using NewBalanceStore.Domain.Interfaces;
@@ -39,7 +40,10 @@ public class ProductService : IProductService
         if (existing == null) return false;
 
         var productToUpdate = MapToEntity(dto);
-        productToUpdate.Id = id;
+        if (int.TryParse(id, out int parsedId))
+        {
+            productToUpdate.Id = parsedId;
+        }
 
         await _repository.UpdateAsync(productToUpdate);
         return true;
@@ -52,6 +56,44 @@ public class ProductService : IProductService
 
         await _repository.DeleteAsync(id);
         return true;
+    }
+    public async Task<IEnumerable<ProductDto>> GetFilteredProductsAsync(ProductFilterDto filter)
+    {
+        var products = (await _repository.GetAllAsync()).AsEnumerable();
+
+        if (!string.IsNullOrWhiteSpace(filter.SearchTerm))
+        {
+            var term = filter.SearchTerm.Trim().ToLower();
+            products = products.Where(p =>
+                (p.Name != null && p.Name.ToLower().Contains(term)) ||
+                (p.Description != null && p.Description.ToLower().Contains(term)));
+        }
+
+        if (!string.IsNullOrWhiteSpace(filter.Category))
+        {
+            products = products.Where(p => p.Category != null &&
+                p.Category.Equals(filter.Category, StringComparison.OrdinalIgnoreCase));
+        }
+
+        if (filter.MinPrice.HasValue)
+        {
+            products = products.Where(p => p.Price >= filter.MinPrice.Value);
+        }
+
+        if (filter.MaxPrice.HasValue)
+        {
+            products = products.Where(p => p.Price <= filter.MaxPrice.Value);
+        }
+
+        products = filter.SortBy?.ToLower() switch
+        {
+            "price_asc" => products.OrderBy(p => p.Price),
+            "price_desc" => products.OrderByDescending(p => p.Price),
+            "name" => products.OrderBy(p => p.Name),
+            _ => products
+        };
+
+        return products.Select(MapToDto);
     }
 
     private static ProductDto MapToDto(Product entity) => new()
@@ -66,7 +108,12 @@ public class ProductService : IProductService
         OldPrice = entity.OldPrice,
         Images = entity.Images,
         IsNew = entity.IsNew,
-        Variants = entity.Variants
+        Variants = entity.Variants?.Select(v => new CreateProductVariantDto
+        {
+            Color = v.Color,
+            Size = v.Size,
+            Quantity = v.Quantity
+        }).ToList() ?? new()
     };
 
     private static Product MapToEntity(CreateProductDto dto) => new()
@@ -80,6 +127,11 @@ public class ProductService : IProductService
         OldPrice = dto.OldPrice,
         Images = dto.Images,
         IsNew = dto.IsNew,
-        Variants = dto.Variants
+        Variants = dto.Variants?.Select(v => new ProductVariant
+        {
+            Color = v.Color,
+            Size = v.Size,
+            Quantity = v.Quantity
+        }).ToList() ?? new()
     };
 }

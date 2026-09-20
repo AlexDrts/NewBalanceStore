@@ -16,9 +16,9 @@ public class ProductsController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<ProductDto>>> GetAll()
+    public async Task<IActionResult> GetProducts([FromQuery] ProductFilterDto filter)
     {
-        var products = await _productService.GetAllAsync();
+        var products = await _productService.GetFilteredProductsAsync(filter);
         return Ok(products);
     }
 
@@ -31,6 +31,7 @@ public class ProductsController : ControllerBase
 
         return Ok(product);
     }
+    
 
     [HttpPost]
     public async Task<ActionResult<ProductDto>> Create([FromBody] CreateProductDto dto)
