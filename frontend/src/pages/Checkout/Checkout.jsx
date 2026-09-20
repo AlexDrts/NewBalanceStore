@@ -134,7 +134,7 @@ function Checkout() {
 
                 <div className={styles.checkoutGrid}>
 
-                    <div className="checkout-main">
+                    <div className={styles.checkoutMain}>
 
                         {/*Contact Section*/}
                         <section className={`${styles.section} ${styles.contactSection}`}>
@@ -144,9 +144,10 @@ function Checkout() {
                                 <input name="phone" type="tel" placeholder="Phone number" value={form.phone} onChange={handleChange}/>
                             </div>
                             <label className={styles.newsletter}>
-                                <input name="newsletter" type="checkbox" checked={form.newsletter} onChange={handleChange}/> Sign up for email to hear about product launches, exclusive
-                                offers and athlete news. By subscribing, I am agreeing to the New Balance <a href="#">Privacy
-                                Policy</a> and <a href="#">Terms & Conditions</a>.
+                                <input name="newsletter" type="checkbox" checked={form.newsletter} onChange={handleChange}/>
+                                <span>
+                                    Sign up for email to hear about product launches, exclusive offers and athlete news. By subscribing, I am agreeing to the New Balance <a href="#">Privacy Policy</a> and <a href="#">Terms & Conditions</a>.
+                                </span>
                             </label>
                         </section>
 
