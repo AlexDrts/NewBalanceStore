@@ -1,8 +1,7 @@
 ﻿using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
-using NewBalanceStore.Application.Interfaces;
+using NewBalanceStore.Domain.Interfaces;
 using NewBalanceStore.Infrastructure.Configurations;
 
 namespace NewBalanceStore.Infrastructure.Services;
@@ -22,22 +21,21 @@ public class PhotoService : IPhotoService
         _cloudinary = new Cloudinary(acc);
     }
 
-    public async Task<ImageUploadResult> AddPhotoAsync(IFormFile file)
+    public async Task<string> AddPhotoAsync(Stream fileStream, string fileName)
     {
-        var uploadResult = new ImageUploadResult();
-
-        if (file.Length > 0)
+        var uploadParams = new ImageUploadParams
         {
-            using var stream = file.OpenReadStream();
-            var uploadParams = new ImageUploadParams
-            {
-                File = new FileDescription(file.FileName, stream),
-                Transformation = new Transformation().Height(500).Width(500).Crop("fill") 
-            };
+            File = new FileDescription(fileName, fileStream),
+            Transformation = new Transformation().Height(500).Width(500).Crop("fill").Gravity("face")
+        };
 
-            uploadResult = await _cloudinary.UploadAsync(uploadParams);
+        var uploadResult = await _cloudinary.UploadAsync(uploadParams);
+
+        if (uploadResult.Error != null)
+        {
+            throw new Exception(uploadResult.Error.Message);
         }
 
-        return uploadResult;
+        return uploadResult.SecureUrl?.ToString() ?? string.Empty;
     }
 }
