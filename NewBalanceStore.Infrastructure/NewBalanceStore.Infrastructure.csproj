@@ -8,17 +8,19 @@
 
 	<ItemGroup>
 		<PackageReference Include="CloudinaryDotNet" Version="1.29.3" />
-		<PackageReference Include="FirebaseAdmin" Version="3.6.0" />
+		<PackageReference Include="FirebaseAdmin" Version="3.7.0" />
 		<PackageReference Include="FirebaseAdminCore" Version="2.0.0" />
 		<PackageReference Include="FirebaseDatabase.net" Version="5.0.0" />
 		<PackageReference Include="Google.Cloud.Firestore" Version="4.4.0" />
-		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="10.0.0-preview.1.25080.5" />
+		<PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="10.0.12" />
+		<PackageReference Include="Microsoft.Extensions.Options" Version="10.0.12" />
 		<PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.23.0" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.10.1" />
 		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.23.0" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\NewBalanceStore.Application\NewBalanceStore.Application.csproj" />
 		<ProjectReference Include="..\NewBalanceStore.Domain\NewBalanceStore.Domain.csproj" />
 	</ItemGroup>
 

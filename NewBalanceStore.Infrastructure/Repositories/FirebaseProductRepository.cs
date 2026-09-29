@@ -2,12 +2,15 @@
 using Firebase.Database.Query;
 using Microsoft.Extensions.Configuration;
 using NewBalanceStore.Domain.Entities;
-using NewBalanceStore.Domain.Interfaces; 
+using NewBalanceStore.Domain.Interfaces;
+using System.Diagnostics.CodeAnalysis;
 
 namespace NewBalanceStore.Infrastructure.Repositories;
 
+[ExcludeFromCodeCoverage]
 public class FirebaseProductRepository : IProductRepository
 {
+
     private readonly FirebaseClient _firebaseClient;
     private const string CollectionName = "products";
 

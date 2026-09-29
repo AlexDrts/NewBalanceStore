@@ -1,4 +1,5 @@
-﻿using Firebase.Database;
+﻿using System.Diagnostics.CodeAnalysis;
+using Firebase.Database;
 using Firebase.Database.Query;
 using NewBalanceStore.Domain.Entities;
 using NewBalanceStore.Domain.Interfaces;
@@ -6,6 +7,7 @@ using Newtonsoft.Json.Linq;
 
 namespace NewBalanceStore.Infrastructure.Repositories
 {
+    [ExcludeFromCodeCoverage]
     public class FirebaseOrderRepository : IOrderRepository
     {
         private readonly FirebaseClient _firebaseClient;
