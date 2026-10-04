@@ -1,10 +1,11 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import styles from "./Login.module.css";
 import TopHeader from "../../components/TopHeader/TopHeader.jsx";
 import MainHeader from "../../components/MainHeader/MainHeader.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
 import { useNavigate } from "react-router-dom";
-import { getStorage, removeStorage, setStorage } from "../../utils/localStorage.js";
+import { login, register } from "../../services/api/authApi.js";
+import { saveAuth } from "../../services/api/authService.js";
 
 function Login() {
     const pageRef = useRef(null);
@@ -20,13 +21,6 @@ function Login() {
         password: "",
         rememberMe: true,
     });
-
-    useEffect(() => {
-        const credentials = getStorage("adminCredentials");
-        if(credentials && credentials.email === "admin" && credentials.password === "admin123") {
-            navigate("/admin");
-        }
-    }, [navigate]);
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
@@ -54,29 +48,48 @@ function Login() {
         form.password &&
         phoneValid;
 
-    function handleLogin() {
+    async function handleLogin() {
         if(!loginFormValid) return;
-        if(form.email === "admin" && form.password === "admin123") {
-            if(form.rememberMe) {
-                setStorage("adminCredentials", {
-                    email: form.email,
-                    password: form.password,
-                });
+        try {
+            const authData = await login(
+                form.email,
+                form.password
+            );
+
+            saveAuth(authData);
+
+            if (authData.role === "Admin") {
+                navigate("/admin");
             }
             else {
-                removeStorage("adminCredentials");
+                navigate("/");
             }
-
-            navigate("/admin");
         }
-        else {
-            alert("Invalid login or password");
+        catch (error) {
+            console.error("Login error:", error);
+            alert("Invalid email or password");
         }
     }
 
-    function handleCreateAccount() {
+    async function handleCreateAccount() {
         if(!createAccountFormValid) return;
-        console.log(form);
+        try {
+            const fullName = `${form.firstName} ${form.lastName}`.trim();
+
+            const authData = await register(
+                form.email,
+                form.password,
+                fullName
+            );
+
+            saveAuth(authData);
+
+            navigate("/");
+        }
+        catch (error) {
+            console.error("Registration error:", error);
+            alert("Failed to create account");
+        }
     }
 
     return (

@@ -3,7 +3,7 @@ import styles from "./AddProduct.module.css";
 import TopHeader from "../../../components/TopHeader/TopHeader.jsx";
 import MainHeader from "../../../components/MainHeader/MainHeader.jsx";
 import Footer from "../../../components/Footer/Footer.jsx";
-import { saveProduct } from "../../../services/localStorageService.js";
+import { createProduct } from "../../../services/api/productsApi.js";
 
 function AddProduct() {
     const pageRef = useRef(null);
@@ -150,7 +150,7 @@ function AddProduct() {
     };
 
     // Submit Form
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         const variants = [];
@@ -162,7 +162,7 @@ function AddProduct() {
             Object.entries(sizesData).forEach(([size, quantity]) => {
                 variants.push({
                     color: colorKey,
-                    size: isNaN(Number(size)) ? size : Number(size),
+                    size: String(size),
                     quantity: Number(quantity)
                 });
             });
@@ -170,7 +170,6 @@ function AddProduct() {
 
 
         const productData = {
-            id: Date.now(),
             name: productName,
             price: parseFloat(price) || 0,
             oldPrice: oldPrice ? parseFloat(oldPrice) : null,
@@ -185,7 +184,7 @@ function AddProduct() {
             variants
         };
 
-        saveProduct(productData);
+        await createProduct(productData);
 
         console.log("Created Product Data Object:", productData);
         alert("Product added successfully!");

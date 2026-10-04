@@ -4,6 +4,8 @@ export class ProductVariant {
     quantity;
 
     constructor(data) {
-        Object.assign(this, data);
+        this.color = data.color;
+        this.size = Number(data.size);
+        this.quantity = data.quantity;
     }
 }
