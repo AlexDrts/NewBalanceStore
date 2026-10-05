@@ -25,8 +25,16 @@ function App() {
                     <Admin />
                 </AdminRoute>
             }/>
-            <Route path="/add-product" element={<AddProduct />} />
-            <Route path="/manage-products" element={<ManageProducts />} />
+            <Route path="/add-product" element={
+                <AdminRoute>
+                    <AddProduct />
+                </AdminRoute>
+            } />
+            <Route path="/manage-products" element={
+                <AdminRoute>
+                    <ManageProducts />
+                </AdminRoute>
+            } />
             <Route path="/login" element={<Login />} />
 
             <Route path="*" element={<NotFound />} />
