@@ -1,6 +1,0 @@
-{
-  "configProperties": {
-    "System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization": true,
-    "System.Reflection.NullabilityInfoContext.IsSupported": true
-  }
-}

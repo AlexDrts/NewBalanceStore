@@ -50,7 +50,7 @@ public class AuthServiceTests
     {
         var email = $"duplicate_{Guid.NewGuid()}@example.com";
         var registerDto1 = new UserRegisterDto { Email = email, Password = "Password123!", FullName = "User One" };
-        var registerDto2 = new UserRegisterDto { Email = email, Password = "Password123!", FullName = "User Two" };
+        var registerDto2 = new UserRegisterDto { Email = email.ToUpperInvariant(), Password = "Password123!", FullName = "User Two" };
 
         await _authService.RegisterAsync(registerDto1);
 
@@ -91,6 +91,40 @@ public class AuthServiceTests
         });
 
         var loginDto = new UserLoginDto { Email = email, Password = "WrongPassword!" };
+
+        await Assert.ThrowsAsync<UnauthorizedAccessException>(() => _authService.LoginAsync(loginDto));
+    }
+
+    [Fact]
+    public async Task LoginAsync_ShouldReturnToken_WhenEmailDiffersOnlyByCase()
+    {
+        var email = $"case_{Guid.NewGuid()}@example.com";
+        const string password = "CorrectPassword123!";
+        await _authService.RegisterAsync(new UserRegisterDto
+        {
+            Email = email,
+            Password = password,
+            FullName = "Alex Smith"
+        });
+
+        var result = await _authService.LoginAsync(new UserLoginDto
+        {
+            Email = email.ToUpperInvariant(),
+            Password = password
+        });
+
+        Assert.NotNull(result.Token);
+        Assert.Equal(email, result.Email);
+    }
+
+    [Fact]
+    public async Task LoginAsync_ShouldThrowException_WhenEmailDoesNotExist()
+    {
+        var loginDto = new UserLoginDto
+        {
+            Email = $"missing_{Guid.NewGuid()}@example.com",
+            Password = "Password123!"
+        };
 
         await Assert.ThrowsAsync<UnauthorizedAccessException>(() => _authService.LoginAsync(loginDto));
     }
