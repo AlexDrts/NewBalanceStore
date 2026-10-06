@@ -1,17 +1,28 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import styles from "./Login.module.css";
 import TopHeader from "../../components/TopHeader/TopHeader.jsx";
 import MainHeader from "../../components/MainHeader/MainHeader.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
 import { useNavigate } from "react-router-dom";
 import { login, register } from "../../services/api/authApi.js";
-import { saveAuth } from "../../services/api/authService.js";
+import { getCurrentUser, saveAuth } from "../../services/api/authService.js";
 
 function Login() {
     const pageRef = useRef(null);
     const navigate = useNavigate();
     const [activeTab, setActiveTab] = useState("login");
     const [showPassword, setShowPassword] = useState(false);
+
+    useEffect(() => {
+        const user = getCurrentUser();
+        if (user) {
+            if (user.role === "Admin") {
+                navigate("/admin", { replace: true });
+            } else {
+                navigate("/account", { replace: true });
+            }
+        }
+    }, [navigate]);
 
     const [form, setForm] = useState({
         email: "",
@@ -62,7 +73,7 @@ function Login() {
                 navigate("/admin");
             }
             else {
-                navigate("/");
+                navigate("/account");
             }
         }
         catch (error) {
@@ -84,7 +95,9 @@ function Login() {
 
             saveAuth(authData);
 
-            navigate("/");
+            console.log("Saved token:", localStorage.getItem("authToken"));
+
+            navigate("/account");
         }
         catch (error) {
             console.error("Registration error:", error);
