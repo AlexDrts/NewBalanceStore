@@ -9,7 +9,9 @@ import Admin from "./pages/Admin/Admin/Admin.jsx";
 import AddProduct from "./pages/Admin/AddProduct/AddProduct.jsx";
 import ManageProducts from "./pages/Admin/ManageProducts/ManageProducts.jsx";
 import NotFound from "./pages/NotFound/NotFound.jsx";
-import AdminRoute from "./components/AdminRoute/AdminRoute.jsx";
+import Account from "./pages/Account/Account.jsx";
+import AccountRoute from "./components/ProtectedRoutes/AccountRoute.jsx";
+import AdminRoute from "./components/ProtectedRoutes/AdminRoute.jsx";
 
 function App() {
 
@@ -37,7 +39,14 @@ function App() {
             } />
             <Route path="/login" element={<Login />} />
 
+            <Route path="/account" element={
+                <AccountRoute>
+                    <Account />
+                </AccountRoute>
+            } />
+
             <Route path="*" element={<NotFound />} />
+
         </Routes>
     </>
   )
