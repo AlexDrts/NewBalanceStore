@@ -1,0 +1,276 @@
+.gallery {
+    position: relative;
+    width: 100%;
+}
+
+.placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    background: #f2f2f2;
+    color: #777;
+    font-size: 14px;
+}
+
+.track {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px;
+}
+
+.slide {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    padding: 0;
+    border: none;
+    background: #f2f2f2;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    user-select: none;
+}
+
+.slide:focus-visible {
+    outline: 2px solid #000;
+    outline-offset: -2px;
+}
+
+.arrow,
+.bars,
+.counter {
+    display: none;
+}
+
+@media (max-width: 1023px) {
+    .track {
+        display: flex;
+        gap: 0;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        overscroll-behavior-x: contain;
+    }
+
+    .track::-webkit-scrollbar {
+        display: none;
+    }
+
+    .slide {
+        flex: 0 0 100%;
+        scroll-snap-align: start;
+        cursor: pointer;
+    }
+
+
+    .bars {
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        bottom: 14px;
+        display: flex;
+        gap: 4px;
+        z-index: 2;
+    }
+
+    .bar {
+        flex: 1;
+        height: 3px;
+        padding: 0;
+        border: none;
+        border-radius: 2px;
+        background: rgba(0, 0, 0, .18);
+        cursor: pointer;
+        transition: background .2s;
+    }
+
+    .barActive {
+        background: #000;
+    }
+
+    .counter {
+        display: block;
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        padding: 3px 8px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, .85);
+        font-size: 12px;
+        font-weight: 600;
+        z-index: 2;
+    }
+
+    .arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        border: none;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, .9);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, .12);
+        font-size: 26px;
+        line-height: 1;
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    .arrowPrev { left: 12px; }
+    .arrowNext { right: 12px; }
+}
+
+@media (max-width: 767px), (hover: none) {
+    .arrow {
+        display: none;
+    }
+}
+
+.viewer {
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    overflow: hidden;
+    background: #fff;
+    animation: fadeIn .2s ease;
+}
+
+.viewerTrack {
+    display: flex;
+    height: 100%;
+    transition: transform .5s cubic-bezier(.22, .61, .36, 1);
+    will-change: transform;
+}
+
+.viewerSlide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 100%;
+    height: 100%;
+}
+
+.viewerImage {
+    height: 100vh;
+    height: 100dvh;
+    width: auto;
+    max-width: 100vw;
+    object-fit: contain;
+    background: #f0f0f0;
+    user-select: none;
+}
+
+.viewerClose {
+    position: absolute;
+    top: 50px;
+    right: 18px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: none;
+    background: none;
+    color: #000;
+    cursor: pointer;
+}
+
+.viewerClose:hover {
+    opacity: .7;
+}
+
+.viewerArrow {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 62px;
+    padding: 0;
+    border: 1px solid #2b2b2b;
+    border-radius: 2px;
+    background: #555;
+    color: #fff;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: background .15s;
+}
+
+.viewerArrow:hover {
+    background: #333;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .viewerTrack {
+        transition: none;
+    }
+}
+
+.viewerClose:focus-visible,
+.viewerArrow:focus-visible {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+}
+
+.viewerPrev { left: 18px; }
+.viewerNext { right: 18px; }
+
+@media (min-width: 2560px) {
+    .viewerArrow {
+        width: 60px;
+        height: 84px;
+    }
+
+    .viewerArrow svg {
+        width: 16px;
+        height: 28px;
+    }
+
+    .viewerClose svg {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+@media (max-width: 767px) {
+    .viewerImage {
+        width: 100vw;
+        height: auto;
+        max-height: 100dvh;
+    }
+
+    .viewerClose {
+        top: 12px;
+        right: 8px;
+    }
+
+    .viewerArrow {
+        width: 36px;
+        height: 52px;
+    }
+
+    .viewerPrev { left: 8px; }
+    .viewerNext { right: 8px; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

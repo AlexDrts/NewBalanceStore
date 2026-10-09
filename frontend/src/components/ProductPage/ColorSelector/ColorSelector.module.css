@@ -1,0 +1,100 @@
+.colorSelector {
+    margin-top: 24px;
+}
+
+.label {
+    margin-bottom: 12px;
+    font-size: 13px;
+    color: #222;
+}
+
+.label span {
+    font-weight: 400;
+}
+
+.swatches {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--swatch-size, 52px), 1fr));
+    gap: 6px;
+    max-width: 100%;
+}
+
+.swatch {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    padding: 0;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    background: #f2f2f2;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color .15s;
+}
+
+.swatch img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.swatch:hover {
+    border-color: #999;
+}
+
+.swatch.active {
+    border: 2px solid #000;
+}
+
+.swatch:focus-visible {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+}
+
+.soldOut img {
+    opacity: .45;
+}
+
+.soldOut::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    width: 120%;
+    height: 1px;
+    background: #8a8a8a;
+    transform: rotate(-45deg);
+}
+
+@media (min-width: 1921px) {
+    .swatches {
+        --swatch-size: 64px;
+    }
+
+    .label {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 2560px) {
+    .swatches {
+        --swatch-size: 80px;
+    }
+
+    .label {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .swatches {
+        --swatch-size: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .swatches {
+        --swatch-size: 52px;
+    }
+}

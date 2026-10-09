@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home.jsx";
 import Cart from "./pages/Cart/Cart.jsx";
 import Products from "./pages/Products/Products.jsx";
+import Product from "./pages/Product/Product.jsx";
 import Checkout from "./pages/Checkout/Checkout.jsx";
 import Login from "./pages/Login/Login.jsx";
 import Admin from "./pages/Admin/Admin/Admin.jsx";
@@ -22,6 +23,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/products" element={<Products />} />
+            <Route path="/product/:id" element={<Product />} />
             <Route path="/admin" element={
                 <AdminRoute>
                     <Admin />
