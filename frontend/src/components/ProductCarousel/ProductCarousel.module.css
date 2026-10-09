@@ -1,0 +1,114 @@
+.carousel {
+    margin-top: 72px;
+}
+
+.title {
+    margin: 0 0 20px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #000;
+}
+
+.viewport {
+    position: relative;
+}
+
+.track {
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.track::-webkit-scrollbar {
+    display: none;
+}
+
+.item {
+    flex: 0 0 calc((100% - 4 * 4px) / 5);
+    min-width: 0;
+    scroll-snap-align: start;
+}
+
+.arrow {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 48px;
+    border: none;
+    background: rgba(30, 30, 30, .85);
+    color: #fff;
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+.arrow:hover {
+    background: #000;
+}
+
+.prev { left: 0; }
+.next { right: 0; }
+
+.progress {
+    position: relative;
+    width: min(350px, 60%);
+    height: 3px;
+    margin: 28px auto 0;
+    background: #c4c4c4;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progressThumb {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background: #000;
+    border-radius: 2px;
+    transition: left .1s linear, width .2s;
+}
+
+@media (min-width: 1921px) {
+    .title { font-size: 28px; }
+}
+
+@media (min-width: 2560px) {
+    .carousel { margin-top: 110px; }
+    .title { font-size: 36px; margin-bottom: 28px; }
+    .item { flex-basis: calc((100% - 5 * 4px) / 6); }
+    .arrow { width: 44px; height: 64px; font-size: 34px; }
+    .progress { height: 4px; width: 480px; }
+}
+
+@media (max-width: 1279px) {
+    .item { flex-basis: calc((100% - 3 * 4px) / 4); }
+}
+
+@media (max-width: 1023px) {
+    .carousel { margin-top: 56px; }
+    .item { flex-basis: calc((100% - 2 * 4px) / 3); }
+}
+
+@media (max-width: 767px), (hover: none) {
+    .arrow { display: none; }
+}
+
+@media (max-width: 767px) {
+    .carousel { margin-top: 48px; }
+    .title { font-size: 20px; margin-bottom: 16px; }
+    .item { flex-basis: 45%; }
+}
+
+@media (max-width: 480px) {
+    .item { flex-basis: 70%; }
+}
