@@ -1,0 +1,272 @@
+### YamlMime:TableOfContent
+items:
+- uid: NewBalanceStore.Application.DTOs
+  name: NewBalanceStore.Application.DTOs
+  type: Namespace
+  items:
+  - uid: NewBalanceStore.Application.DTOs.AddToCartDto
+    name: AddToCartDto
+    type: Class
+  - uid: NewBalanceStore.Application.DTOs.AuthResponseDto
+    name: AuthResponseDto
+    type: Class
+  - uid: NewBalanceStore.Application.DTOs.CartDto
+    name: CartDto
+    type: Class
+  - uid: NewBalanceStore.Application.DTOs.CartItemDto
+    name: CartItemDto
+    type: Class
+  - uid: NewBalanceStore.Application.DTOs.CreateOrderDto
+    name: CreateOrderDto
+    type: Class
+  - uid: NewBalanceStore.Application.DTOs.CreateOrderItemDto
+    name: CreateOrderItemDto
+    type: Class
+  - uid: NewBalanceStore.Application.DTOs.CreateProductDto
+    name: CreateProductDto
+    type: Class
+  - uid: NewBalanceStore.Application.DTOs.CreateProductVariantDto
+    name: CreateProductVariantDto
+    type: Class
+  - uid: NewBalanceStore.Application.DTOs.OrderDto
+    name: OrderDto
+    type: Class
+  - uid: NewBalanceStore.Application.DTOs.OrderItemDto
+    name: OrderItemDto
+    type: Class
+  - uid: NewBalanceStore.Application.DTOs.ProductDto
+    name: ProductDto
+    type: Class
+  - uid: NewBalanceStore.Application.DTOs.ProductFilterDto
+    name: ProductFilterDto
+    type: Class
+  - uid: NewBalanceStore.Application.DTOs.UserLoginDto
+    name: UserLoginDto
+    type: Class
+  - uid: NewBalanceStore.Application.DTOs.UserRegisterDto
+    name: UserRegisterDto
+    type: Class
+- uid: NewBalanceStore.Application.Interfaces
+  name: NewBalanceStore.Application.Interfaces
+  type: Namespace
+  items:
+  - uid: NewBalanceStore.Application.Interfaces.IAuthService
+    name: IAuthService
+    type: Interface
+  - uid: NewBalanceStore.Application.Interfaces.IProductRepository
+    name: IProductRepository
+    type: Interface
+  - uid: NewBalanceStore.Application.Interfaces.IProductService
+    name: IProductService
+    type: Interface
+- uid: NewBalanceStore.Application.Mappings
+  name: NewBalanceStore.Application.Mappings
+  type: Namespace
+  items:
+  - uid: NewBalanceStore.Application.Mappings.OrderMappingProfile
+    name: OrderMappingProfile
+    type: Class
+- uid: NewBalanceStore.Application.Services
+  name: NewBalanceStore.Application.Services
+  type: Namespace
+  items:
+  - uid: NewBalanceStore.Application.Services.IOrderService
+    name: IOrderService
+    type: Interface
+  - uid: NewBalanceStore.Application.Services.OrderService
+    name: OrderService
+    type: Class
+  - uid: NewBalanceStore.Application.Services.ProductService
+    name: ProductService
+    type: Class
+- uid: NewBalanceStore.Domain.Entities
+  name: NewBalanceStore.Domain.Entities
+  type: Namespace
+  items:
+  - uid: NewBalanceStore.Domain.Entities.Cart
+    name: Cart
+    type: Class
+  - uid: NewBalanceStore.Domain.Entities.CartItem
+    name: CartItem
+    type: Class
+  - uid: NewBalanceStore.Domain.Entities.CustomerInfo
+    name: CustomerInfo
+    type: Class
+  - uid: NewBalanceStore.Domain.Entities.Order
+    name: Order
+    type: Class
+  - uid: NewBalanceStore.Domain.Entities.OrderItem
+    name: OrderItem
+    type: Class
+  - uid: NewBalanceStore.Domain.Entities.Product
+    name: Product
+    type: Class
+  - uid: NewBalanceStore.Domain.Entities.ProductVariant
+    name: ProductVariant
+    type: Class
+  - uid: NewBalanceStore.Domain.Entities.ShippingAddress
+    name: ShippingAddress
+    type: Class
+  - uid: NewBalanceStore.Domain.Entities.User
+    name: User
+    type: Class
+- uid: NewBalanceStore.Domain.Enums
+  name: NewBalanceStore.Domain.Enums
+  type: Namespace
+  items:
+  - uid: NewBalanceStore.Domain.Enums.Gender
+    name: Gender
+    type: Enum
+  - uid: NewBalanceStore.Domain.Enums.OrderStatus
+    name: OrderStatus
+    type: Enum
+  - uid: NewBalanceStore.Domain.Enums.ProductType
+    name: ProductType
+    type: Enum
+  - uid: NewBalanceStore.Domain.Enums.UserRole
+    name: UserRole
+    type: Enum
+- uid: NewBalanceStore.Domain.Interfaces
+  name: NewBalanceStore.Domain.Interfaces
+  type: Namespace
+  items:
+  - uid: NewBalanceStore.Domain.Interfaces.IOrderRepository
+    name: IOrderRepository
+    type: Interface
+  - uid: NewBalanceStore.Domain.Interfaces.IPhotoService
+    name: IPhotoService
+    type: Interface
+  - uid: NewBalanceStore.Domain.Interfaces.IProductRepository
+    name: IProductRepository
+    type: Interface
+  - uid: NewBalanceStore.Domain.Interfaces.IUserRepository
+    name: IUserRepository
+    type: Interface
+- uid: NewBalanceStore.Infrastructure.Configurations
+  name: NewBalanceStore.Infrastructure.Configurations
+  type: Namespace
+  items:
+  - uid: NewBalanceStore.Infrastructure.Configurations.CloudinarySettings
+    name: CloudinarySettings
+    type: Class
+- uid: NewBalanceStore.Infrastructure.Repositories
+  name: NewBalanceStore.Infrastructure.Repositories
+  type: Namespace
+  items:
+  - uid: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository
+    name: FirebaseOrderRepository
+    type: Class
+  - uid: NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository
+    name: FirebaseProductRepository
+    type: Class
+  - uid: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository
+    name: FirebaseUserRepository
+    type: Class
+- uid: NewBalanceStore.Infrastructure.Services
+  name: NewBalanceStore.Infrastructure.Services
+  type: Namespace
+  items:
+  - uid: NewBalanceStore.Infrastructure.Services.AuthService
+    name: AuthService
+    type: Class
+  - uid: NewBalanceStore.Infrastructure.Services.PhotoService
+    name: PhotoService
+    type: Class
+- uid: NewBalanceStore.IntegrationTests
+  name: NewBalanceStore.IntegrationTests
+  type: Namespace
+  items:
+  - uid: NewBalanceStore.IntegrationTests.AuthAndStartupIntegrationTests
+    name: AuthAndStartupIntegrationTests
+    type: Class
+  - uid: NewBalanceStore.IntegrationTests.OrdersApiIntegrationTests
+    name: OrdersApiIntegrationTests
+    type: Class
+  - uid: NewBalanceStore.IntegrationTests.ProductsApiIntegrationTests
+    name: ProductsApiIntegrationTests
+    type: Class
+- uid: NewBalanceStore.IntegrationTests.Infrastructure
+  name: NewBalanceStore.IntegrationTests.Infrastructure
+  type: Namespace
+  items:
+  - uid: NewBalanceStore.IntegrationTests.Infrastructure.TestApiFactory
+    name: TestApiFactory
+    type: Class
+  - uid: NewBalanceStore.IntegrationTests.Infrastructure.TestAuthenticationHandler
+    name: TestAuthenticationHandler
+    type: Class
+- uid: NewBalanceStore.UnitTests
+  name: NewBalanceStore.UnitTests
+  type: Namespace
+  items:
+  - uid: NewBalanceStore.UnitTests.ProductServiceTests
+    name: ProductServiceTests
+    type: Class
+- uid: NewBalanceStore.UnitTests.Controllers
+  name: NewBalanceStore.UnitTests.Controllers
+  type: Namespace
+  items:
+  - uid: NewBalanceStore.UnitTests.Controllers.AuthControllerTests
+    name: AuthControllerTests
+    type: Class
+  - uid: NewBalanceStore.UnitTests.Controllers.OrdersControllerTests
+    name: OrdersControllerTests
+    type: Class
+  - uid: NewBalanceStore.UnitTests.Controllers.ProductsControllerTests
+    name: ProductsControllerTests
+    type: Class
+- uid: NewBalanceStore.UnitTests.DTOs
+  name: NewBalanceStore.UnitTests.DTOs
+  type: Namespace
+  items:
+  - uid: NewBalanceStore.UnitTests.DTOs.CartTests
+    name: CartTests
+    type: Class
+- uid: NewBalanceStore.UnitTests.Services
+  name: NewBalanceStore.UnitTests.Services
+  type: Namespace
+  items:
+  - uid: NewBalanceStore.UnitTests.Services.AuthServiceTests
+    name: AuthServiceTests
+    type: Class
+  - uid: NewBalanceStore.UnitTests.Services.AuthServiceTests.FakeUserRepository
+    name: AuthServiceTests.FakeUserRepository
+    type: Class
+  - uid: NewBalanceStore.UnitTests.Services.OrderServiceTests
+    name: OrderServiceTests
+    type: Class
+- uid: NewBalanceStore.UnitTests.Tests
+  name: NewBalanceStore.UnitTests.Tests
+  type: Namespace
+  items:
+  - uid: NewBalanceStore.UnitTests.Tests.DtoMappingTests
+    name: DtoMappingTests
+    type: Class
+- uid: NewBalanceStore.Web.Controllers
+  name: NewBalanceStore.Web.Controllers
+  type: Namespace
+  items:
+  - uid: NewBalanceStore.Web.Controllers.HomeController
+    name: HomeController
+    type: Class
+- uid: NewBalanceStore.Web.Models
+  name: NewBalanceStore.Web.Models
+  type: Namespace
+  items:
+  - uid: NewBalanceStore.Web.Models.ErrorViewModel
+    name: ErrorViewModel
+    type: Class
+- uid: NewBalanceStore.WebApi.Controllers
+  name: NewBalanceStore.WebApi.Controllers
+  type: Namespace
+  items:
+  - uid: NewBalanceStore.WebApi.Controllers.AuthController
+    name: AuthController
+    type: Class
+  - uid: NewBalanceStore.WebApi.Controllers.OrdersController
+    name: OrdersController
+    type: Class
+  - uid: NewBalanceStore.WebApi.Controllers.ProductsController
+    name: ProductsController
+    type: Class
+memberLayout: SamePage

@@ -1,0 +1,62 @@
+### YamlMime:ManagedReference
+items:
+- uid: NewBalanceStore.Application.Services
+  commentId: N:NewBalanceStore.Application.Services
+  id: NewBalanceStore.Application.Services
+  children:
+  - NewBalanceStore.Application.Services.IOrderService
+  - NewBalanceStore.Application.Services.OrderService
+  - NewBalanceStore.Application.Services.ProductService
+  langs:
+  - csharp
+  - vb
+  name: NewBalanceStore.Application.Services
+  nameWithType: NewBalanceStore.Application.Services
+  fullName: NewBalanceStore.Application.Services
+  type: Namespace
+  assemblies:
+  - NewBalanceStore.Application
+references:
+- uid: NewBalanceStore.Application.Services.ProductService
+  commentId: T:NewBalanceStore.Application.Services.ProductService
+  parent: NewBalanceStore.Application.Services
+  href: NewBalanceStore.Application.Services.ProductService.html
+  name: ProductService
+  nameWithType: ProductService
+  fullName: NewBalanceStore.Application.Services.ProductService
+- uid: NewBalanceStore.Application.Services.IOrderService
+  commentId: T:NewBalanceStore.Application.Services.IOrderService
+  parent: NewBalanceStore.Application.Services
+  href: NewBalanceStore.Application.Services.IOrderService.html
+  name: IOrderService
+  nameWithType: IOrderService
+  fullName: NewBalanceStore.Application.Services.IOrderService
+- uid: NewBalanceStore.Application.Services.OrderService
+  commentId: T:NewBalanceStore.Application.Services.OrderService
+  href: NewBalanceStore.Application.Services.OrderService.html
+  name: OrderService
+  nameWithType: OrderService
+  fullName: NewBalanceStore.Application.Services.OrderService
+- uid: NewBalanceStore.Application.Services
+  commentId: N:NewBalanceStore.Application.Services
+  name: NewBalanceStore.Application.Services
+  nameWithType: NewBalanceStore.Application.Services
+  fullName: NewBalanceStore.Application.Services
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.Services
+    name: Services
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.Services
+    name: Services

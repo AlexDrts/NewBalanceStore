@@ -1,0 +1,37 @@
+### YamlMime:ManagedReference
+items:
+- uid: NewBalanceStore.IntegrationTests
+  commentId: N:NewBalanceStore.IntegrationTests
+  id: NewBalanceStore.IntegrationTests
+  children:
+  - NewBalanceStore.IntegrationTests.AuthAndStartupIntegrationTests
+  - NewBalanceStore.IntegrationTests.OrdersApiIntegrationTests
+  - NewBalanceStore.IntegrationTests.ProductsApiIntegrationTests
+  langs:
+  - csharp
+  - vb
+  name: NewBalanceStore.IntegrationTests
+  nameWithType: NewBalanceStore.IntegrationTests
+  fullName: NewBalanceStore.IntegrationTests
+  type: Namespace
+  assemblies:
+  - NewBalanceStore.IntegrationTests
+references:
+- uid: NewBalanceStore.IntegrationTests.AuthAndStartupIntegrationTests
+  commentId: T:NewBalanceStore.IntegrationTests.AuthAndStartupIntegrationTests
+  href: NewBalanceStore.IntegrationTests.AuthAndStartupIntegrationTests.html
+  name: AuthAndStartupIntegrationTests
+  nameWithType: AuthAndStartupIntegrationTests
+  fullName: NewBalanceStore.IntegrationTests.AuthAndStartupIntegrationTests
+- uid: NewBalanceStore.IntegrationTests.OrdersApiIntegrationTests
+  commentId: T:NewBalanceStore.IntegrationTests.OrdersApiIntegrationTests
+  href: NewBalanceStore.IntegrationTests.OrdersApiIntegrationTests.html
+  name: OrdersApiIntegrationTests
+  nameWithType: OrdersApiIntegrationTests
+  fullName: NewBalanceStore.IntegrationTests.OrdersApiIntegrationTests
+- uid: NewBalanceStore.IntegrationTests.ProductsApiIntegrationTests
+  commentId: T:NewBalanceStore.IntegrationTests.ProductsApiIntegrationTests
+  href: NewBalanceStore.IntegrationTests.ProductsApiIntegrationTests.html
+  name: ProductsApiIntegrationTests
+  nameWithType: ProductsApiIntegrationTests
+  fullName: NewBalanceStore.IntegrationTests.ProductsApiIntegrationTests

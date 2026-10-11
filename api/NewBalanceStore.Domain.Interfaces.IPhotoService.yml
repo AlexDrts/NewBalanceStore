@@ -1,0 +1,250 @@
+### YamlMime:ManagedReference
+items:
+- uid: NewBalanceStore.Domain.Interfaces.IPhotoService
+  commentId: T:NewBalanceStore.Domain.Interfaces.IPhotoService
+  id: IPhotoService
+  parent: NewBalanceStore.Domain.Interfaces
+  children:
+  - NewBalanceStore.Domain.Interfaces.IPhotoService.AddPhotoAsync(System.IO.Stream,System.String)
+  langs:
+  - csharp
+  - vb
+  name: IPhotoService
+  nameWithType: IPhotoService
+  fullName: NewBalanceStore.Domain.Interfaces.IPhotoService
+  type: Interface
+  source:
+    remote:
+      path: NewBalanceStore.Domain/Interfaces/IPhotoService.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: IPhotoService
+    path: NewBalanceStore.Domain/Interfaces/IPhotoService.cs
+    startLine: 2
+  assemblies:
+  - NewBalanceStore.Domain
+  namespace: NewBalanceStore.Domain.Interfaces
+  syntax:
+    content: public interface IPhotoService
+    content.vb: Public Interface IPhotoService
+  derivedClasses:
+  - NewBalanceStore.Infrastructure.Services.PhotoService
+- uid: NewBalanceStore.Domain.Interfaces.IPhotoService.AddPhotoAsync(System.IO.Stream,System.String)
+  commentId: M:NewBalanceStore.Domain.Interfaces.IPhotoService.AddPhotoAsync(System.IO.Stream,System.String)
+  id: AddPhotoAsync(System.IO.Stream,System.String)
+  parent: NewBalanceStore.Domain.Interfaces.IPhotoService
+  langs:
+  - csharp
+  - vb
+  name: AddPhotoAsync(Stream, string)
+  nameWithType: IPhotoService.AddPhotoAsync(Stream, string)
+  fullName: NewBalanceStore.Domain.Interfaces.IPhotoService.AddPhotoAsync(System.IO.Stream, string)
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.Domain/Interfaces/IPhotoService.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: AddPhotoAsync
+    path: NewBalanceStore.Domain/Interfaces/IPhotoService.cs
+    startLine: 4
+  assemblies:
+  - NewBalanceStore.Domain
+  namespace: NewBalanceStore.Domain.Interfaces
+  syntax:
+    content: Task<string> AddPhotoAsync(Stream fileStream, string fileName)
+    parameters:
+    - id: fileStream
+      type: System.IO.Stream
+    - id: fileName
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{System.String}
+    content.vb: Function AddPhotoAsync(fileStream As Stream, fileName As String) As Task(Of String)
+  overload: NewBalanceStore.Domain.Interfaces.IPhotoService.AddPhotoAsync*
+  nameWithType.vb: IPhotoService.AddPhotoAsync(Stream, String)
+  fullName.vb: NewBalanceStore.Domain.Interfaces.IPhotoService.AddPhotoAsync(System.IO.Stream, String)
+  name.vb: AddPhotoAsync(Stream, String)
+references:
+- uid: NewBalanceStore.Domain.Interfaces
+  commentId: N:NewBalanceStore.Domain.Interfaces
+  name: NewBalanceStore.Domain.Interfaces
+  nameWithType: NewBalanceStore.Domain.Interfaces
+  fullName: NewBalanceStore.Domain.Interfaces
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Interfaces
+    name: Interfaces
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Interfaces
+    name: Interfaces
+- uid: NewBalanceStore.Domain.Interfaces.IPhotoService.AddPhotoAsync*
+  commentId: Overload:NewBalanceStore.Domain.Interfaces.IPhotoService.AddPhotoAsync
+  href: NewBalanceStore.Domain.Interfaces.IPhotoService.html#NewBalanceStore_Domain_Interfaces_IPhotoService_AddPhotoAsync_System_IO_Stream_System_String_
+  name: AddPhotoAsync
+  nameWithType: IPhotoService.AddPhotoAsync
+  fullName: NewBalanceStore.Domain.Interfaces.IPhotoService.AddPhotoAsync
+- uid: System.IO.Stream
+  commentId: T:System.IO.Stream
+  parent: System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.stream
+  name: Stream
+  nameWithType: Stream
+  fullName: System.IO.Stream
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.Tasks.Task{System.String}
+  commentId: T:System.Threading.Tasks.Task{System.String}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<string>
+  nameWithType: Task<string>
+  fullName: System.Threading.Tasks.Task<string>
+  nameWithType.vb: Task(Of String)
+  fullName.vb: System.Threading.Tasks.Task(Of String)
+  name.vb: Task(Of String)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

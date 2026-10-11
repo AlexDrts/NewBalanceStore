@@ -1,0 +1,548 @@
+### YamlMime:ManagedReference
+items:
+- uid: NewBalanceStore.Application.DTOs.CartItemDto
+  commentId: T:NewBalanceStore.Application.DTOs.CartItemDto
+  id: CartItemDto
+  parent: NewBalanceStore.Application.DTOs
+  children:
+  - NewBalanceStore.Application.DTOs.CartItemDto.ImageUrl
+  - NewBalanceStore.Application.DTOs.CartItemDto.Price
+  - NewBalanceStore.Application.DTOs.CartItemDto.ProductId
+  - NewBalanceStore.Application.DTOs.CartItemDto.ProductName
+  - NewBalanceStore.Application.DTOs.CartItemDto.Quantity
+  - NewBalanceStore.Application.DTOs.CartItemDto.Size
+  langs:
+  - csharp
+  - vb
+  name: CartItemDto
+  nameWithType: CartItemDto
+  fullName: NewBalanceStore.Application.DTOs.CartItemDto
+  type: Class
+  source:
+    remote:
+      path: backend/NewBalanceStore.Application/DTOs/CartDto.cs
+      branch: main
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: CartItemDto
+    path: NewBalanceStore/backend/NewBalanceStore.Application/DTOs/CartDto.cs
+    startLine: 2
+  assemblies:
+  - NewBalanceStore.Application
+  namespace: NewBalanceStore.Application.DTOs
+  syntax:
+    content: public class CartItemDto
+    content.vb: Public Class CartItemDto
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NewBalanceStore.Application.DTOs.CartItemDto.ProductId
+  commentId: P:NewBalanceStore.Application.DTOs.CartItemDto.ProductId
+  id: ProductId
+  parent: NewBalanceStore.Application.DTOs.CartItemDto
+  langs:
+  - csharp
+  - vb
+  name: ProductId
+  nameWithType: CartItemDto.ProductId
+  fullName: NewBalanceStore.Application.DTOs.CartItemDto.ProductId
+  type: Property
+  source:
+    remote:
+      path: backend/NewBalanceStore.Application/DTOs/CartDto.cs
+      branch: main
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: ProductId
+    path: NewBalanceStore/backend/NewBalanceStore.Application/DTOs/CartDto.cs
+    startLine: 4
+  assemblies:
+  - NewBalanceStore.Application
+  namespace: NewBalanceStore.Application.DTOs
+  syntax:
+    content: public string ProductId { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ProductId As String
+  overload: NewBalanceStore.Application.DTOs.CartItemDto.ProductId*
+- uid: NewBalanceStore.Application.DTOs.CartItemDto.ProductName
+  commentId: P:NewBalanceStore.Application.DTOs.CartItemDto.ProductName
+  id: ProductName
+  parent: NewBalanceStore.Application.DTOs.CartItemDto
+  langs:
+  - csharp
+  - vb
+  name: ProductName
+  nameWithType: CartItemDto.ProductName
+  fullName: NewBalanceStore.Application.DTOs.CartItemDto.ProductName
+  type: Property
+  source:
+    remote:
+      path: backend/NewBalanceStore.Application/DTOs/CartDto.cs
+      branch: main
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: ProductName
+    path: NewBalanceStore/backend/NewBalanceStore.Application/DTOs/CartDto.cs
+    startLine: 5
+  assemblies:
+  - NewBalanceStore.Application
+  namespace: NewBalanceStore.Application.DTOs
+  syntax:
+    content: public string ProductName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ProductName As String
+  overload: NewBalanceStore.Application.DTOs.CartItemDto.ProductName*
+- uid: NewBalanceStore.Application.DTOs.CartItemDto.Size
+  commentId: P:NewBalanceStore.Application.DTOs.CartItemDto.Size
+  id: Size
+  parent: NewBalanceStore.Application.DTOs.CartItemDto
+  langs:
+  - csharp
+  - vb
+  name: Size
+  nameWithType: CartItemDto.Size
+  fullName: NewBalanceStore.Application.DTOs.CartItemDto.Size
+  type: Property
+  source:
+    remote:
+      path: backend/NewBalanceStore.Application/DTOs/CartDto.cs
+      branch: main
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: Size
+    path: NewBalanceStore/backend/NewBalanceStore.Application/DTOs/CartDto.cs
+    startLine: 6
+  assemblies:
+  - NewBalanceStore.Application
+  namespace: NewBalanceStore.Application.DTOs
+  syntax:
+    content: public string Size { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Size As String
+  overload: NewBalanceStore.Application.DTOs.CartItemDto.Size*
+- uid: NewBalanceStore.Application.DTOs.CartItemDto.Price
+  commentId: P:NewBalanceStore.Application.DTOs.CartItemDto.Price
+  id: Price
+  parent: NewBalanceStore.Application.DTOs.CartItemDto
+  langs:
+  - csharp
+  - vb
+  name: Price
+  nameWithType: CartItemDto.Price
+  fullName: NewBalanceStore.Application.DTOs.CartItemDto.Price
+  type: Property
+  source:
+    remote:
+      path: backend/NewBalanceStore.Application/DTOs/CartDto.cs
+      branch: main
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: Price
+    path: NewBalanceStore/backend/NewBalanceStore.Application/DTOs/CartDto.cs
+    startLine: 7
+  assemblies:
+  - NewBalanceStore.Application
+  namespace: NewBalanceStore.Application.DTOs
+  syntax:
+    content: public decimal Price { get; set; }
+    parameters: []
+    return:
+      type: System.Decimal
+    content.vb: Public Property Price As Decimal
+  overload: NewBalanceStore.Application.DTOs.CartItemDto.Price*
+- uid: NewBalanceStore.Application.DTOs.CartItemDto.Quantity
+  commentId: P:NewBalanceStore.Application.DTOs.CartItemDto.Quantity
+  id: Quantity
+  parent: NewBalanceStore.Application.DTOs.CartItemDto
+  langs:
+  - csharp
+  - vb
+  name: Quantity
+  nameWithType: CartItemDto.Quantity
+  fullName: NewBalanceStore.Application.DTOs.CartItemDto.Quantity
+  type: Property
+  source:
+    remote:
+      path: backend/NewBalanceStore.Application/DTOs/CartDto.cs
+      branch: main
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: Quantity
+    path: NewBalanceStore/backend/NewBalanceStore.Application/DTOs/CartDto.cs
+    startLine: 8
+  assemblies:
+  - NewBalanceStore.Application
+  namespace: NewBalanceStore.Application.DTOs
+  syntax:
+    content: public int Quantity { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Quantity As Integer
+  overload: NewBalanceStore.Application.DTOs.CartItemDto.Quantity*
+- uid: NewBalanceStore.Application.DTOs.CartItemDto.ImageUrl
+  commentId: P:NewBalanceStore.Application.DTOs.CartItemDto.ImageUrl
+  id: ImageUrl
+  parent: NewBalanceStore.Application.DTOs.CartItemDto
+  langs:
+  - csharp
+  - vb
+  name: ImageUrl
+  nameWithType: CartItemDto.ImageUrl
+  fullName: NewBalanceStore.Application.DTOs.CartItemDto.ImageUrl
+  type: Property
+  source:
+    remote:
+      path: backend/NewBalanceStore.Application/DTOs/CartDto.cs
+      branch: main
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: ImageUrl
+    path: NewBalanceStore/backend/NewBalanceStore.Application/DTOs/CartDto.cs
+    startLine: 9
+  assemblies:
+  - NewBalanceStore.Application
+  namespace: NewBalanceStore.Application.DTOs
+  syntax:
+    content: public string ImageUrl { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ImageUrl As String
+  overload: NewBalanceStore.Application.DTOs.CartItemDto.ImageUrl*
+references:
+- uid: NewBalanceStore.Application.DTOs
+  commentId: N:NewBalanceStore.Application.DTOs
+  name: NewBalanceStore.Application.DTOs
+  nameWithType: NewBalanceStore.Application.DTOs
+  fullName: NewBalanceStore.Application.DTOs
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.DTOs
+    name: DTOs
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.DTOs
+    name: DTOs
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NewBalanceStore.Application.DTOs.CartItemDto.ProductId*
+  commentId: Overload:NewBalanceStore.Application.DTOs.CartItemDto.ProductId
+  href: NewBalanceStore.Application.DTOs.CartItemDto.html#NewBalanceStore_Application_DTOs_CartItemDto_ProductId
+  name: ProductId
+  nameWithType: CartItemDto.ProductId
+  fullName: NewBalanceStore.Application.DTOs.CartItemDto.ProductId
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: NewBalanceStore.Application.DTOs.CartItemDto.ProductName*
+  commentId: Overload:NewBalanceStore.Application.DTOs.CartItemDto.ProductName
+  href: NewBalanceStore.Application.DTOs.CartItemDto.html#NewBalanceStore_Application_DTOs_CartItemDto_ProductName
+  name: ProductName
+  nameWithType: CartItemDto.ProductName
+  fullName: NewBalanceStore.Application.DTOs.CartItemDto.ProductName
+- uid: NewBalanceStore.Application.DTOs.CartItemDto.Size*
+  commentId: Overload:NewBalanceStore.Application.DTOs.CartItemDto.Size
+  href: NewBalanceStore.Application.DTOs.CartItemDto.html#NewBalanceStore_Application_DTOs_CartItemDto_Size
+  name: Size
+  nameWithType: CartItemDto.Size
+  fullName: NewBalanceStore.Application.DTOs.CartItemDto.Size
+- uid: NewBalanceStore.Application.DTOs.CartItemDto.Price*
+  commentId: Overload:NewBalanceStore.Application.DTOs.CartItemDto.Price
+  href: NewBalanceStore.Application.DTOs.CartItemDto.html#NewBalanceStore_Application_DTOs_CartItemDto_Price
+  name: Price
+  nameWithType: CartItemDto.Price
+  fullName: NewBalanceStore.Application.DTOs.CartItemDto.Price
+- uid: System.Decimal
+  commentId: T:System.Decimal
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.decimal
+  name: decimal
+  nameWithType: decimal
+  fullName: decimal
+  nameWithType.vb: Decimal
+  fullName.vb: Decimal
+  name.vb: Decimal
+- uid: NewBalanceStore.Application.DTOs.CartItemDto.Quantity*
+  commentId: Overload:NewBalanceStore.Application.DTOs.CartItemDto.Quantity
+  href: NewBalanceStore.Application.DTOs.CartItemDto.html#NewBalanceStore_Application_DTOs_CartItemDto_Quantity
+  name: Quantity
+  nameWithType: CartItemDto.Quantity
+  fullName: NewBalanceStore.Application.DTOs.CartItemDto.Quantity
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: NewBalanceStore.Application.DTOs.CartItemDto.ImageUrl*
+  commentId: Overload:NewBalanceStore.Application.DTOs.CartItemDto.ImageUrl
+  href: NewBalanceStore.Application.DTOs.CartItemDto.html#NewBalanceStore_Application_DTOs_CartItemDto_ImageUrl
+  name: ImageUrl
+  nameWithType: CartItemDto.ImageUrl
+  fullName: NewBalanceStore.Application.DTOs.CartItemDto.ImageUrl

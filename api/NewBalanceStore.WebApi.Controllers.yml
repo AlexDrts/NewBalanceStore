@@ -1,0 +1,37 @@
+### YamlMime:ManagedReference
+items:
+- uid: NewBalanceStore.WebApi.Controllers
+  commentId: N:NewBalanceStore.WebApi.Controllers
+  id: NewBalanceStore.WebApi.Controllers
+  children:
+  - NewBalanceStore.WebApi.Controllers.AuthController
+  - NewBalanceStore.WebApi.Controllers.OrdersController
+  - NewBalanceStore.WebApi.Controllers.ProductsController
+  langs:
+  - csharp
+  - vb
+  name: NewBalanceStore.WebApi.Controllers
+  nameWithType: NewBalanceStore.WebApi.Controllers
+  fullName: NewBalanceStore.WebApi.Controllers
+  type: Namespace
+  assemblies:
+  - NewBalanceStore.WebApi
+references:
+- uid: NewBalanceStore.WebApi.Controllers.ProductsController
+  commentId: T:NewBalanceStore.WebApi.Controllers.ProductsController
+  href: NewBalanceStore.WebApi.Controllers.ProductsController.html
+  name: ProductsController
+  nameWithType: ProductsController
+  fullName: NewBalanceStore.WebApi.Controllers.ProductsController
+- uid: NewBalanceStore.WebApi.Controllers.AuthController
+  commentId: T:NewBalanceStore.WebApi.Controllers.AuthController
+  href: NewBalanceStore.WebApi.Controllers.AuthController.html
+  name: AuthController
+  nameWithType: AuthController
+  fullName: NewBalanceStore.WebApi.Controllers.AuthController
+- uid: NewBalanceStore.WebApi.Controllers.OrdersController
+  commentId: T:NewBalanceStore.WebApi.Controllers.OrdersController
+  href: NewBalanceStore.WebApi.Controllers.OrdersController.html
+  name: OrdersController
+  nameWithType: OrdersController
+  fullName: NewBalanceStore.WebApi.Controllers.OrdersController

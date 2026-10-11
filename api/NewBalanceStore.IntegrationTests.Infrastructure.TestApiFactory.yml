@@ -1,0 +1,1376 @@
+### YamlMime:ManagedReference
+items:
+- uid: NewBalanceStore.IntegrationTests.Infrastructure.TestApiFactory
+  commentId: T:NewBalanceStore.IntegrationTests.Infrastructure.TestApiFactory
+  id: TestApiFactory
+  parent: NewBalanceStore.IntegrationTests.Infrastructure
+  children:
+  - NewBalanceStore.IntegrationTests.Infrastructure.TestApiFactory.ConfigureWebHost(Microsoft.AspNetCore.Hosting.IWebHostBuilder)
+  langs:
+  - csharp
+  - vb
+  name: TestApiFactory
+  nameWithType: TestApiFactory
+  fullName: NewBalanceStore.IntegrationTests.Infrastructure.TestApiFactory
+  type: Class
+  source:
+    remote:
+      path: NewBalanceStore.IntegrationTests/Infrastructure/TestApiFactory.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: TestApiFactory
+    path: NewBalanceStore.IntegrationTests/Infrastructure/TestApiFactory.cs
+    startLine: 16
+  assemblies:
+  - NewBalanceStore.IntegrationTests
+  namespace: NewBalanceStore.IntegrationTests.Infrastructure
+  syntax:
+    content: 'public sealed class TestApiFactory : WebApplicationFactory<Program>, IDisposable, IAsyncDisposable'
+    content.vb: Public NotInheritable Class TestApiFactory Inherits WebApplicationFactory(Of Program) Implements IDisposable, IAsyncDisposable
+  inheritance:
+  - System.Object
+  - Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}
+  implements:
+  - System.IDisposable
+  - System.IAsyncDisposable
+  inheritedMembers:
+  - Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.WithWebHostBuilder(System.Action{Microsoft.AspNetCore.Hosting.IWebHostBuilder})
+  - Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.UseKestrel
+  - Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.UseKestrel(System.Int32)
+  - Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.UseKestrel(System.Action{Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerOptions})
+  - Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.StartServer
+  - Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.CreateClient
+  - Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.CreateClient(Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryClientOptions)
+  - Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.CreateDefaultClient(System.Net.Http.DelegatingHandler[])
+  - Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.CreateDefaultClient(System.Uri,System.Net.Http.DelegatingHandler[])
+  - Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.Dispose
+  - Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.DisposeAsync
+  - Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.Server
+  - Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.Services
+  - Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.Factories
+  - Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.ClientOptions
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NewBalanceStore.IntegrationTests.Infrastructure.TestApiFactory.ConfigureWebHost(Microsoft.AspNetCore.Hosting.IWebHostBuilder)
+  commentId: M:NewBalanceStore.IntegrationTests.Infrastructure.TestApiFactory.ConfigureWebHost(Microsoft.AspNetCore.Hosting.IWebHostBuilder)
+  id: ConfigureWebHost(Microsoft.AspNetCore.Hosting.IWebHostBuilder)
+  parent: NewBalanceStore.IntegrationTests.Infrastructure.TestApiFactory
+  langs:
+  - csharp
+  - vb
+  name: ConfigureWebHost(IWebHostBuilder)
+  nameWithType: TestApiFactory.ConfigureWebHost(IWebHostBuilder)
+  fullName: NewBalanceStore.IntegrationTests.Infrastructure.TestApiFactory.ConfigureWebHost(Microsoft.AspNetCore.Hosting.IWebHostBuilder)
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.IntegrationTests/Infrastructure/TestApiFactory.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: ConfigureWebHost
+    path: NewBalanceStore.IntegrationTests/Infrastructure/TestApiFactory.cs
+    startLine: 18
+  assemblies:
+  - NewBalanceStore.IntegrationTests
+  namespace: NewBalanceStore.IntegrationTests.Infrastructure
+  summary: Gives a fixture an opportunity to configure the application before it gets built.
+  example: []
+  syntax:
+    content: protected override void ConfigureWebHost(IWebHostBuilder builder)
+    parameters:
+    - id: builder
+      type: Microsoft.AspNetCore.Hosting.IWebHostBuilder
+      description: The <xref href="Microsoft.AspNetCore.Hosting.IWebHostBuilder" data-throw-if-not-resolved="false"></xref> for the application.
+    content.vb: Protected Overrides Sub ConfigureWebHost(builder As IWebHostBuilder)
+  overridden: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.ConfigureWebHost(Microsoft.AspNetCore.Hosting.IWebHostBuilder)
+  overload: NewBalanceStore.IntegrationTests.Infrastructure.TestApiFactory.ConfigureWebHost*
+references:
+- uid: NewBalanceStore.IntegrationTests.Infrastructure
+  commentId: N:NewBalanceStore.IntegrationTests.Infrastructure
+  name: NewBalanceStore.IntegrationTests.Infrastructure
+  nameWithType: NewBalanceStore.IntegrationTests.Infrastructure
+  fullName: NewBalanceStore.IntegrationTests.Infrastructure
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.IntegrationTests
+    name: IntegrationTests
+  - name: .
+  - uid: NewBalanceStore.IntegrationTests.Infrastructure
+    name: Infrastructure
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.IntegrationTests
+    name: IntegrationTests
+  - name: .
+  - uid: NewBalanceStore.IntegrationTests.Infrastructure
+    name: Infrastructure
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}
+  commentId: T:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}
+  parent: Microsoft.AspNetCore.Mvc.Testing
+  definition: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1
+  name: WebApplicationFactory<Program>
+  nameWithType: WebApplicationFactory<Program>
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<Program>
+  nameWithType.vb: WebApplicationFactory(Of Program)
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of Program)
+  name.vb: WebApplicationFactory(Of Program)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1
+    name: WebApplicationFactory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1
+  - name: <
+  - uid: Program
+    name: Program
+    href: Program.html
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1
+    name: WebApplicationFactory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Program
+    name: Program
+    href: Program.html
+  - name: )
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.idisposable
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.IAsyncDisposable
+  commentId: T:System.IAsyncDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable
+  name: IAsyncDisposable
+  nameWithType: IAsyncDisposable
+  fullName: System.IAsyncDisposable
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.WithWebHostBuilder(System.Action{Microsoft.AspNetCore.Hosting.IWebHostBuilder})
+  commentId: M:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.WithWebHostBuilder(System.Action{Microsoft.AspNetCore.Hosting.IWebHostBuilder})
+  parent: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}
+  definition: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.WithWebHostBuilder(System.Action{Microsoft.AspNetCore.Hosting.IWebHostBuilder})
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.withwebhostbuilder
+  name: WithWebHostBuilder(Action<IWebHostBuilder>)
+  nameWithType: WebApplicationFactory<Program>.WithWebHostBuilder(Action<IWebHostBuilder>)
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<Program>.WithWebHostBuilder(System.Action<Microsoft.AspNetCore.Hosting.IWebHostBuilder>)
+  nameWithType.vb: WebApplicationFactory(Of Program).WithWebHostBuilder(Action(Of IWebHostBuilder))
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of Program).WithWebHostBuilder(System.Action(Of Microsoft.AspNetCore.Hosting.IWebHostBuilder))
+  name.vb: WithWebHostBuilder(Action(Of IWebHostBuilder))
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.WithWebHostBuilder(System.Action{Microsoft.AspNetCore.Hosting.IWebHostBuilder})
+    name: WithWebHostBuilder
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.withwebhostbuilder
+  - name: (
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Microsoft.AspNetCore.Hosting.IWebHostBuilder
+    name: IWebHostBuilder
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.WithWebHostBuilder(System.Action{Microsoft.AspNetCore.Hosting.IWebHostBuilder})
+    name: WithWebHostBuilder
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.withwebhostbuilder
+  - name: (
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Microsoft.AspNetCore.Hosting.IWebHostBuilder
+    name: IWebHostBuilder
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder
+  - name: )
+  - name: )
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.UseKestrel
+  commentId: M:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.UseKestrel
+  parent: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}
+  definition: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.UseKestrel
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.usekestrel#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-usekestrel
+  name: UseKestrel()
+  nameWithType: WebApplicationFactory<Program>.UseKestrel()
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<Program>.UseKestrel()
+  nameWithType.vb: WebApplicationFactory(Of Program).UseKestrel()
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of Program).UseKestrel()
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.UseKestrel
+    name: UseKestrel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.usekestrel#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-usekestrel
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.UseKestrel
+    name: UseKestrel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.usekestrel#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-usekestrel
+  - name: (
+  - name: )
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.UseKestrel(System.Int32)
+  commentId: M:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.UseKestrel(System.Int32)
+  parent: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}
+  definition: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.UseKestrel(System.Int32)
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.usekestrel#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-usekestrel(system-int32)
+  name: UseKestrel(int)
+  nameWithType: WebApplicationFactory<Program>.UseKestrel(int)
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<Program>.UseKestrel(int)
+  nameWithType.vb: WebApplicationFactory(Of Program).UseKestrel(Integer)
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of Program).UseKestrel(Integer)
+  name.vb: UseKestrel(Integer)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.UseKestrel(System.Int32)
+    name: UseKestrel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.usekestrel#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-usekestrel(system-int32)
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.UseKestrel(System.Int32)
+    name: UseKestrel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.usekestrel#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-usekestrel(system-int32)
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.UseKestrel(System.Action{Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerOptions})
+  commentId: M:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.UseKestrel(System.Action{Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerOptions})
+  parent: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}
+  definition: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.UseKestrel(System.Action{Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerOptions})
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.usekestrel#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-usekestrel(system-action((microsoft-aspnetcore-server-kestrel-core-kestrelserveroptions)))
+  name: UseKestrel(Action<KestrelServerOptions>)
+  nameWithType: WebApplicationFactory<Program>.UseKestrel(Action<KestrelServerOptions>)
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<Program>.UseKestrel(System.Action<Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerOptions>)
+  nameWithType.vb: WebApplicationFactory(Of Program).UseKestrel(Action(Of KestrelServerOptions))
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of Program).UseKestrel(System.Action(Of Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerOptions))
+  name.vb: UseKestrel(Action(Of KestrelServerOptions))
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.UseKestrel(System.Action{Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerOptions})
+    name: UseKestrel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.usekestrel#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-usekestrel(system-action((microsoft-aspnetcore-server-kestrel-core-kestrelserveroptions)))
+  - name: (
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerOptions
+    name: KestrelServerOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserveroptions
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.UseKestrel(System.Action{Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerOptions})
+    name: UseKestrel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.usekestrel#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-usekestrel(system-action((microsoft-aspnetcore-server-kestrel-core-kestrelserveroptions)))
+  - name: (
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerOptions
+    name: KestrelServerOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserveroptions
+  - name: )
+  - name: )
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.StartServer
+  commentId: M:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.StartServer
+  parent: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}
+  definition: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.StartServer
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.startserver
+  name: StartServer()
+  nameWithType: WebApplicationFactory<Program>.StartServer()
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<Program>.StartServer()
+  nameWithType.vb: WebApplicationFactory(Of Program).StartServer()
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of Program).StartServer()
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.StartServer
+    name: StartServer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.startserver
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.StartServer
+    name: StartServer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.startserver
+  - name: (
+  - name: )
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.CreateClient
+  commentId: M:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.CreateClient
+  parent: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}
+  definition: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.createclient#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-createclient
+  name: CreateClient()
+  nameWithType: WebApplicationFactory<Program>.CreateClient()
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<Program>.CreateClient()
+  nameWithType.vb: WebApplicationFactory(Of Program).CreateClient()
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of Program).CreateClient()
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.CreateClient
+    name: CreateClient
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.createclient#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-createclient
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.CreateClient
+    name: CreateClient
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.createclient#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-createclient
+  - name: (
+  - name: )
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.CreateClient(Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryClientOptions)
+  commentId: M:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.CreateClient(Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryClientOptions)
+  parent: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}
+  definition: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryClientOptions)
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.createclient#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-createclient(microsoft-aspnetcore-mvc-testing-webapplicationfactoryclientoptions)
+  name: CreateClient(WebApplicationFactoryClientOptions)
+  nameWithType: WebApplicationFactory<Program>.CreateClient(WebApplicationFactoryClientOptions)
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<Program>.CreateClient(Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryClientOptions)
+  nameWithType.vb: WebApplicationFactory(Of Program).CreateClient(WebApplicationFactoryClientOptions)
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of Program).CreateClient(Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryClientOptions)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.CreateClient(Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryClientOptions)
+    name: CreateClient
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.createclient#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-createclient(microsoft-aspnetcore-mvc-testing-webapplicationfactoryclientoptions)
+  - name: (
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryClientOptions
+    name: WebApplicationFactoryClientOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactoryclientoptions
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.CreateClient(Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryClientOptions)
+    name: CreateClient
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.createclient#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-createclient(microsoft-aspnetcore-mvc-testing-webapplicationfactoryclientoptions)
+  - name: (
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryClientOptions
+    name: WebApplicationFactoryClientOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactoryclientoptions
+  - name: )
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.CreateDefaultClient(System.Net.Http.DelegatingHandler[])
+  commentId: M:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.CreateDefaultClient(System.Net.Http.DelegatingHandler[])
+  parent: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}
+  definition: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(System.Net.Http.DelegatingHandler[])
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.createdefaultclient#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-createdefaultclient(system-net-http-delegatinghandler())
+  name: CreateDefaultClient(params DelegatingHandler[])
+  nameWithType: WebApplicationFactory<Program>.CreateDefaultClient(params DelegatingHandler[])
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<Program>.CreateDefaultClient(params System.Net.Http.DelegatingHandler[])
+  nameWithType.vb: WebApplicationFactory(Of Program).CreateDefaultClient(ParamArray DelegatingHandler())
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of Program).CreateDefaultClient(ParamArray System.Net.Http.DelegatingHandler())
+  name.vb: CreateDefaultClient(ParamArray DelegatingHandler())
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.CreateDefaultClient(System.Net.Http.DelegatingHandler[])
+    name: CreateDefaultClient
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.createdefaultclient#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-createdefaultclient(system-net-http-delegatinghandler())
+  - name: (
+  - name: params
+  - name: " "
+  - uid: System.Net.Http.DelegatingHandler
+    name: DelegatingHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http.delegatinghandler
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.CreateDefaultClient(System.Net.Http.DelegatingHandler[])
+    name: CreateDefaultClient
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.createdefaultclient#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-createdefaultclient(system-net-http-delegatinghandler())
+  - name: (
+  - name: ParamArray
+  - name: " "
+  - uid: System.Net.Http.DelegatingHandler
+    name: DelegatingHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http.delegatinghandler
+  - name: (
+  - name: )
+  - name: )
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.CreateDefaultClient(System.Uri,System.Net.Http.DelegatingHandler[])
+  commentId: M:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.CreateDefaultClient(System.Uri,System.Net.Http.DelegatingHandler[])
+  parent: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}
+  definition: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(System.Uri,System.Net.Http.DelegatingHandler[])
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.createdefaultclient#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-createdefaultclient(system-uri-system-net-http-delegatinghandler())
+  name: CreateDefaultClient(Uri, params DelegatingHandler[])
+  nameWithType: WebApplicationFactory<Program>.CreateDefaultClient(Uri, params DelegatingHandler[])
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<Program>.CreateDefaultClient(System.Uri, params System.Net.Http.DelegatingHandler[])
+  nameWithType.vb: WebApplicationFactory(Of Program).CreateDefaultClient(Uri, ParamArray DelegatingHandler())
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of Program).CreateDefaultClient(System.Uri, ParamArray System.Net.Http.DelegatingHandler())
+  name.vb: CreateDefaultClient(Uri, ParamArray DelegatingHandler())
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.CreateDefaultClient(System.Uri,System.Net.Http.DelegatingHandler[])
+    name: CreateDefaultClient
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.createdefaultclient#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-createdefaultclient(system-uri-system-net-http-delegatinghandler())
+  - name: (
+  - uid: System.Uri
+    name: Uri
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uri
+  - name: ','
+  - name: " "
+  - name: params
+  - name: " "
+  - uid: System.Net.Http.DelegatingHandler
+    name: DelegatingHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http.delegatinghandler
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.CreateDefaultClient(System.Uri,System.Net.Http.DelegatingHandler[])
+    name: CreateDefaultClient
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.createdefaultclient#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-createdefaultclient(system-uri-system-net-http-delegatinghandler())
+  - name: (
+  - uid: System.Uri
+    name: Uri
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uri
+  - name: ','
+  - name: " "
+  - name: ParamArray
+  - name: " "
+  - uid: System.Net.Http.DelegatingHandler
+    name: DelegatingHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http.delegatinghandler
+  - name: (
+  - name: )
+  - name: )
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.Dispose
+  commentId: M:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.Dispose
+  parent: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}
+  definition: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.Dispose
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.dispose#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-dispose
+  name: Dispose()
+  nameWithType: WebApplicationFactory<Program>.Dispose()
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<Program>.Dispose()
+  nameWithType.vb: WebApplicationFactory(Of Program).Dispose()
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of Program).Dispose()
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.dispose#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.dispose#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-dispose
+  - name: (
+  - name: )
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.DisposeAsync
+  commentId: M:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.DisposeAsync
+  parent: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}
+  definition: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.DisposeAsync
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.disposeasync
+  name: DisposeAsync()
+  nameWithType: WebApplicationFactory<Program>.DisposeAsync()
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<Program>.DisposeAsync()
+  nameWithType.vb: WebApplicationFactory(Of Program).DisposeAsync()
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of Program).DisposeAsync()
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.DisposeAsync
+    name: DisposeAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.disposeasync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.DisposeAsync
+    name: DisposeAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.disposeasync
+  - name: (
+  - name: )
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.Server
+  commentId: P:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.Server
+  parent: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}
+  definition: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.Server
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.server
+  name: Server
+  nameWithType: WebApplicationFactory<Program>.Server
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<Program>.Server
+  nameWithType.vb: WebApplicationFactory(Of Program).Server
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of Program).Server
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.Services
+  commentId: P:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.Services
+  parent: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}
+  definition: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.Services
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.services
+  name: Services
+  nameWithType: WebApplicationFactory<Program>.Services
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<Program>.Services
+  nameWithType.vb: WebApplicationFactory(Of Program).Services
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of Program).Services
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.Factories
+  commentId: P:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.Factories
+  parent: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}
+  definition: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.Factories
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.factories
+  name: Factories
+  nameWithType: WebApplicationFactory<Program>.Factories
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<Program>.Factories
+  nameWithType.vb: WebApplicationFactory(Of Program).Factories
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of Program).Factories
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.ClientOptions
+  commentId: P:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.ClientOptions
+  parent: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}
+  definition: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ClientOptions
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.clientoptions
+  name: ClientOptions
+  nameWithType: WebApplicationFactory<Program>.ClientOptions
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<Program>.ClientOptions
+  nameWithType.vb: WebApplicationFactory(Of Program).ClientOptions
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of Program).ClientOptions
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1
+  commentId: T:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1
+  name: WebApplicationFactory<TEntryPoint>
+  nameWithType: WebApplicationFactory<TEntryPoint>
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<TEntryPoint>
+  nameWithType.vb: WebApplicationFactory(Of TEntryPoint)
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of TEntryPoint)
+  name.vb: WebApplicationFactory(Of TEntryPoint)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1
+    name: WebApplicationFactory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1
+  - name: <
+  - name: TEntryPoint
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1
+    name: WebApplicationFactory
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TEntryPoint
+  - name: )
+- uid: Microsoft.AspNetCore.Mvc.Testing
+  commentId: N:Microsoft.AspNetCore.Mvc.Testing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.AspNetCore.Mvc.Testing
+  nameWithType: Microsoft.AspNetCore.Mvc.Testing
+  fullName: Microsoft.AspNetCore.Mvc.Testing
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Mvc
+    name: Mvc
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc
+  - name: .
+  - uid: Microsoft.AspNetCore.Mvc.Testing
+    name: Testing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Mvc
+    name: Mvc
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc
+  - name: .
+  - uid: Microsoft.AspNetCore.Mvc.Testing
+    name: Testing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.WithWebHostBuilder(System.Action{Microsoft.AspNetCore.Hosting.IWebHostBuilder})
+  commentId: M:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.WithWebHostBuilder(System.Action{Microsoft.AspNetCore.Hosting.IWebHostBuilder})
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.withwebhostbuilder
+  name: WithWebHostBuilder(Action<IWebHostBuilder>)
+  nameWithType: WebApplicationFactory<TEntryPoint>.WithWebHostBuilder(Action<IWebHostBuilder>)
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<TEntryPoint>.WithWebHostBuilder(System.Action<Microsoft.AspNetCore.Hosting.IWebHostBuilder>)
+  nameWithType.vb: WebApplicationFactory(Of TEntryPoint).WithWebHostBuilder(Action(Of IWebHostBuilder))
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of TEntryPoint).WithWebHostBuilder(System.Action(Of Microsoft.AspNetCore.Hosting.IWebHostBuilder))
+  name.vb: WithWebHostBuilder(Action(Of IWebHostBuilder))
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.WithWebHostBuilder(System.Action{Microsoft.AspNetCore.Hosting.IWebHostBuilder})
+    name: WithWebHostBuilder
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.withwebhostbuilder
+  - name: (
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Microsoft.AspNetCore.Hosting.IWebHostBuilder
+    name: IWebHostBuilder
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.WithWebHostBuilder(System.Action{Microsoft.AspNetCore.Hosting.IWebHostBuilder})
+    name: WithWebHostBuilder
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.withwebhostbuilder
+  - name: (
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Microsoft.AspNetCore.Hosting.IWebHostBuilder
+    name: IWebHostBuilder
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder
+  - name: )
+  - name: )
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.UseKestrel
+  commentId: M:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.UseKestrel
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.usekestrel#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-usekestrel
+  name: UseKestrel()
+  nameWithType: WebApplicationFactory<TEntryPoint>.UseKestrel()
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<TEntryPoint>.UseKestrel()
+  nameWithType.vb: WebApplicationFactory(Of TEntryPoint).UseKestrel()
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of TEntryPoint).UseKestrel()
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.UseKestrel
+    name: UseKestrel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.usekestrel#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-usekestrel
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.UseKestrel
+    name: UseKestrel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.usekestrel#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-usekestrel
+  - name: (
+  - name: )
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.UseKestrel(System.Int32)
+  commentId: M:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.UseKestrel(System.Int32)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.usekestrel#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-usekestrel(system-int32)
+  name: UseKestrel(int)
+  nameWithType: WebApplicationFactory<TEntryPoint>.UseKestrel(int)
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<TEntryPoint>.UseKestrel(int)
+  nameWithType.vb: WebApplicationFactory(Of TEntryPoint).UseKestrel(Integer)
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of TEntryPoint).UseKestrel(Integer)
+  name.vb: UseKestrel(Integer)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.UseKestrel(System.Int32)
+    name: UseKestrel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.usekestrel#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-usekestrel(system-int32)
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.UseKestrel(System.Int32)
+    name: UseKestrel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.usekestrel#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-usekestrel(system-int32)
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.UseKestrel(System.Action{Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerOptions})
+  commentId: M:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.UseKestrel(System.Action{Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerOptions})
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.usekestrel#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-usekestrel(system-action((microsoft-aspnetcore-server-kestrel-core-kestrelserveroptions)))
+  name: UseKestrel(Action<KestrelServerOptions>)
+  nameWithType: WebApplicationFactory<TEntryPoint>.UseKestrel(Action<KestrelServerOptions>)
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<TEntryPoint>.UseKestrel(System.Action<Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerOptions>)
+  nameWithType.vb: WebApplicationFactory(Of TEntryPoint).UseKestrel(Action(Of KestrelServerOptions))
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of TEntryPoint).UseKestrel(System.Action(Of Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerOptions))
+  name.vb: UseKestrel(Action(Of KestrelServerOptions))
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.UseKestrel(System.Action{Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerOptions})
+    name: UseKestrel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.usekestrel#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-usekestrel(system-action((microsoft-aspnetcore-server-kestrel-core-kestrelserveroptions)))
+  - name: (
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerOptions
+    name: KestrelServerOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserveroptions
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.UseKestrel(System.Action{Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerOptions})
+    name: UseKestrel
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.usekestrel#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-usekestrel(system-action((microsoft-aspnetcore-server-kestrel-core-kestrelserveroptions)))
+  - name: (
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerOptions
+    name: KestrelServerOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserveroptions
+  - name: )
+  - name: )
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.StartServer
+  commentId: M:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.StartServer
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.startserver
+  name: StartServer()
+  nameWithType: WebApplicationFactory<TEntryPoint>.StartServer()
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<TEntryPoint>.StartServer()
+  nameWithType.vb: WebApplicationFactory(Of TEntryPoint).StartServer()
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of TEntryPoint).StartServer()
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.StartServer
+    name: StartServer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.startserver
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.StartServer
+    name: StartServer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.startserver
+  - name: (
+  - name: )
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient
+  commentId: M:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.createclient#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-createclient
+  name: CreateClient()
+  nameWithType: WebApplicationFactory<TEntryPoint>.CreateClient()
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<TEntryPoint>.CreateClient()
+  nameWithType.vb: WebApplicationFactory(Of TEntryPoint).CreateClient()
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of TEntryPoint).CreateClient()
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient
+    name: CreateClient
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.createclient#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-createclient
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient
+    name: CreateClient
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.createclient#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-createclient
+  - name: (
+  - name: )
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryClientOptions)
+  commentId: M:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryClientOptions)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.createclient#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-createclient(microsoft-aspnetcore-mvc-testing-webapplicationfactoryclientoptions)
+  name: CreateClient(WebApplicationFactoryClientOptions)
+  nameWithType: WebApplicationFactory<TEntryPoint>.CreateClient(WebApplicationFactoryClientOptions)
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<TEntryPoint>.CreateClient(Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryClientOptions)
+  nameWithType.vb: WebApplicationFactory(Of TEntryPoint).CreateClient(WebApplicationFactoryClientOptions)
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of TEntryPoint).CreateClient(Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryClientOptions)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryClientOptions)
+    name: CreateClient
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.createclient#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-createclient(microsoft-aspnetcore-mvc-testing-webapplicationfactoryclientoptions)
+  - name: (
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryClientOptions
+    name: WebApplicationFactoryClientOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactoryclientoptions
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryClientOptions)
+    name: CreateClient
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.createclient#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-createclient(microsoft-aspnetcore-mvc-testing-webapplicationfactoryclientoptions)
+  - name: (
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryClientOptions
+    name: WebApplicationFactoryClientOptions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactoryclientoptions
+  - name: )
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(System.Net.Http.DelegatingHandler[])
+  commentId: M:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(System.Net.Http.DelegatingHandler[])
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.createdefaultclient#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-createdefaultclient(system-net-http-delegatinghandler())
+  name: CreateDefaultClient(params DelegatingHandler[])
+  nameWithType: WebApplicationFactory<TEntryPoint>.CreateDefaultClient(params DelegatingHandler[])
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<TEntryPoint>.CreateDefaultClient(params System.Net.Http.DelegatingHandler[])
+  nameWithType.vb: WebApplicationFactory(Of TEntryPoint).CreateDefaultClient(ParamArray DelegatingHandler())
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of TEntryPoint).CreateDefaultClient(ParamArray System.Net.Http.DelegatingHandler())
+  name.vb: CreateDefaultClient(ParamArray DelegatingHandler())
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(System.Net.Http.DelegatingHandler[])
+    name: CreateDefaultClient
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.createdefaultclient#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-createdefaultclient(system-net-http-delegatinghandler())
+  - name: (
+  - name: params
+  - name: " "
+  - uid: System.Net.Http.DelegatingHandler
+    name: DelegatingHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http.delegatinghandler
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(System.Net.Http.DelegatingHandler[])
+    name: CreateDefaultClient
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.createdefaultclient#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-createdefaultclient(system-net-http-delegatinghandler())
+  - name: (
+  - name: ParamArray
+  - name: " "
+  - uid: System.Net.Http.DelegatingHandler
+    name: DelegatingHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http.delegatinghandler
+  - name: (
+  - name: )
+  - name: )
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(System.Uri,System.Net.Http.DelegatingHandler[])
+  commentId: M:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(System.Uri,System.Net.Http.DelegatingHandler[])
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.createdefaultclient#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-createdefaultclient(system-uri-system-net-http-delegatinghandler())
+  name: CreateDefaultClient(Uri, params DelegatingHandler[])
+  nameWithType: WebApplicationFactory<TEntryPoint>.CreateDefaultClient(Uri, params DelegatingHandler[])
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<TEntryPoint>.CreateDefaultClient(System.Uri, params System.Net.Http.DelegatingHandler[])
+  nameWithType.vb: WebApplicationFactory(Of TEntryPoint).CreateDefaultClient(Uri, ParamArray DelegatingHandler())
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of TEntryPoint).CreateDefaultClient(System.Uri, ParamArray System.Net.Http.DelegatingHandler())
+  name.vb: CreateDefaultClient(Uri, ParamArray DelegatingHandler())
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(System.Uri,System.Net.Http.DelegatingHandler[])
+    name: CreateDefaultClient
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.createdefaultclient#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-createdefaultclient(system-uri-system-net-http-delegatinghandler())
+  - name: (
+  - uid: System.Uri
+    name: Uri
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uri
+  - name: ','
+  - name: " "
+  - name: params
+  - name: " "
+  - uid: System.Net.Http.DelegatingHandler
+    name: DelegatingHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http.delegatinghandler
+  - name: '['
+  - name: ']'
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(System.Uri,System.Net.Http.DelegatingHandler[])
+    name: CreateDefaultClient
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.createdefaultclient#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-createdefaultclient(system-uri-system-net-http-delegatinghandler())
+  - name: (
+  - uid: System.Uri
+    name: Uri
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uri
+  - name: ','
+  - name: " "
+  - name: ParamArray
+  - name: " "
+  - uid: System.Net.Http.DelegatingHandler
+    name: DelegatingHandler
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http.delegatinghandler
+  - name: (
+  - name: )
+  - name: )
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.Dispose
+  commentId: M:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.Dispose
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.dispose#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-dispose
+  name: Dispose()
+  nameWithType: WebApplicationFactory<TEntryPoint>.Dispose()
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<TEntryPoint>.Dispose()
+  nameWithType.vb: WebApplicationFactory(Of TEntryPoint).Dispose()
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of TEntryPoint).Dispose()
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.dispose#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-dispose
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.Dispose
+    name: Dispose
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.dispose#microsoft-aspnetcore-mvc-testing-webapplicationfactory-1-dispose
+  - name: (
+  - name: )
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.DisposeAsync
+  commentId: M:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.DisposeAsync
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.disposeasync
+  name: DisposeAsync()
+  nameWithType: WebApplicationFactory<TEntryPoint>.DisposeAsync()
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<TEntryPoint>.DisposeAsync()
+  nameWithType.vb: WebApplicationFactory(Of TEntryPoint).DisposeAsync()
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of TEntryPoint).DisposeAsync()
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.DisposeAsync
+    name: DisposeAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.disposeasync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.DisposeAsync
+    name: DisposeAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.disposeasync
+  - name: (
+  - name: )
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.Server
+  commentId: P:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.Server
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.server
+  name: Server
+  nameWithType: WebApplicationFactory<TEntryPoint>.Server
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<TEntryPoint>.Server
+  nameWithType.vb: WebApplicationFactory(Of TEntryPoint).Server
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of TEntryPoint).Server
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.Services
+  commentId: P:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.Services
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.services
+  name: Services
+  nameWithType: WebApplicationFactory<TEntryPoint>.Services
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<TEntryPoint>.Services
+  nameWithType.vb: WebApplicationFactory(Of TEntryPoint).Services
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of TEntryPoint).Services
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.Factories
+  commentId: P:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.Factories
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.factories
+  name: Factories
+  nameWithType: WebApplicationFactory<TEntryPoint>.Factories
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<TEntryPoint>.Factories
+  nameWithType.vb: WebApplicationFactory(Of TEntryPoint).Factories
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of TEntryPoint).Factories
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ClientOptions
+  commentId: P:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ClientOptions
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.clientoptions
+  name: ClientOptions
+  nameWithType: WebApplicationFactory<TEntryPoint>.ClientOptions
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<TEntryPoint>.ClientOptions
+  nameWithType.vb: WebApplicationFactory(Of TEntryPoint).ClientOptions
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of TEntryPoint).ClientOptions
+- uid: Microsoft.AspNetCore.Hosting.IWebHostBuilder
+  commentId: T:Microsoft.AspNetCore.Hosting.IWebHostBuilder
+  parent: Microsoft.AspNetCore.Hosting
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder
+  name: IWebHostBuilder
+  nameWithType: IWebHostBuilder
+  fullName: Microsoft.AspNetCore.Hosting.IWebHostBuilder
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.ConfigureWebHost(Microsoft.AspNetCore.Hosting.IWebHostBuilder)
+  commentId: M:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.ConfigureWebHost(Microsoft.AspNetCore.Hosting.IWebHostBuilder)
+  parent: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}
+  definition: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureWebHost(Microsoft.AspNetCore.Hosting.IWebHostBuilder)
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.configurewebhost
+  name: ConfigureWebHost(IWebHostBuilder)
+  nameWithType: WebApplicationFactory<Program>.ConfigureWebHost(IWebHostBuilder)
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<Program>.ConfigureWebHost(Microsoft.AspNetCore.Hosting.IWebHostBuilder)
+  nameWithType.vb: WebApplicationFactory(Of Program).ConfigureWebHost(IWebHostBuilder)
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of Program).ConfigureWebHost(Microsoft.AspNetCore.Hosting.IWebHostBuilder)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.ConfigureWebHost(Microsoft.AspNetCore.Hosting.IWebHostBuilder)
+    name: ConfigureWebHost
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.configurewebhost
+  - name: (
+  - uid: Microsoft.AspNetCore.Hosting.IWebHostBuilder
+    name: IWebHostBuilder
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory{Program}.ConfigureWebHost(Microsoft.AspNetCore.Hosting.IWebHostBuilder)
+    name: ConfigureWebHost
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.configurewebhost
+  - name: (
+  - uid: Microsoft.AspNetCore.Hosting.IWebHostBuilder
+    name: IWebHostBuilder
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder
+  - name: )
+- uid: NewBalanceStore.IntegrationTests.Infrastructure.TestApiFactory.ConfigureWebHost*
+  commentId: Overload:NewBalanceStore.IntegrationTests.Infrastructure.TestApiFactory.ConfigureWebHost
+  href: NewBalanceStore.IntegrationTests.Infrastructure.TestApiFactory.html#NewBalanceStore_IntegrationTests_Infrastructure_TestApiFactory_ConfigureWebHost_Microsoft_AspNetCore_Hosting_IWebHostBuilder_
+  name: ConfigureWebHost
+  nameWithType: TestApiFactory.ConfigureWebHost
+  fullName: NewBalanceStore.IntegrationTests.Infrastructure.TestApiFactory.ConfigureWebHost
+- uid: Microsoft.AspNetCore.Hosting
+  commentId: N:Microsoft.AspNetCore.Hosting
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.AspNetCore.Hosting
+  nameWithType: Microsoft.AspNetCore.Hosting
+  fullName: Microsoft.AspNetCore.Hosting
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Hosting
+    name: Hosting
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.AspNetCore
+    name: AspNetCore
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore
+  - name: .
+  - uid: Microsoft.AspNetCore.Hosting
+    name: Hosting
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting
+- uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureWebHost(Microsoft.AspNetCore.Hosting.IWebHostBuilder)
+  commentId: M:Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureWebHost(Microsoft.AspNetCore.Hosting.IWebHostBuilder)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.configurewebhost
+  name: ConfigureWebHost(IWebHostBuilder)
+  nameWithType: WebApplicationFactory<TEntryPoint>.ConfigureWebHost(IWebHostBuilder)
+  fullName: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory<TEntryPoint>.ConfigureWebHost(Microsoft.AspNetCore.Hosting.IWebHostBuilder)
+  nameWithType.vb: WebApplicationFactory(Of TEntryPoint).ConfigureWebHost(IWebHostBuilder)
+  fullName.vb: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory(Of TEntryPoint).ConfigureWebHost(Microsoft.AspNetCore.Hosting.IWebHostBuilder)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureWebHost(Microsoft.AspNetCore.Hosting.IWebHostBuilder)
+    name: ConfigureWebHost
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.configurewebhost
+  - name: (
+  - uid: Microsoft.AspNetCore.Hosting.IWebHostBuilder
+    name: IWebHostBuilder
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder
+  - name: )
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureWebHost(Microsoft.AspNetCore.Hosting.IWebHostBuilder)
+    name: ConfigureWebHost
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.testing.webapplicationfactory-1.configurewebhost
+  - name: (
+  - uid: Microsoft.AspNetCore.Hosting.IWebHostBuilder
+    name: IWebHostBuilder
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder
+  - name: )

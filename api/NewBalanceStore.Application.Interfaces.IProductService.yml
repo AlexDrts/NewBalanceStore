@@ -1,0 +1,480 @@
+### YamlMime:ManagedReference
+items:
+- uid: NewBalanceStore.Application.Interfaces.IProductService
+  commentId: T:NewBalanceStore.Application.Interfaces.IProductService
+  id: IProductService
+  parent: NewBalanceStore.Application.Interfaces
+  children:
+  - NewBalanceStore.Application.Interfaces.IProductService.CreateAsync(NewBalanceStore.Application.DTOs.CreateProductDto)
+  - NewBalanceStore.Application.Interfaces.IProductService.DeleteAsync(System.String)
+  - NewBalanceStore.Application.Interfaces.IProductService.GetAllAsync
+  - NewBalanceStore.Application.Interfaces.IProductService.GetByIdAsync(System.String)
+  - NewBalanceStore.Application.Interfaces.IProductService.UpdateAsync(System.String,NewBalanceStore.Application.DTOs.CreateProductDto)
+  langs:
+  - csharp
+  - vb
+  name: IProductService
+  nameWithType: IProductService
+  fullName: NewBalanceStore.Application.Interfaces.IProductService
+  type: Interface
+  source:
+    remote:
+      path: backend/NewBalanceStore.Application/Interfaces/IProductService.cs
+      branch: main
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: IProductService
+    path: NewBalanceStore/backend/NewBalanceStore.Application/Interfaces/IProductService.cs
+    startLine: 4
+  assemblies:
+  - NewBalanceStore.Application
+  namespace: NewBalanceStore.Application.Interfaces
+  syntax:
+    content: public interface IProductService
+    content.vb: Public Interface IProductService
+  derivedClasses:
+  - NewBalanceStore.Application.Services.ProductService
+- uid: NewBalanceStore.Application.Interfaces.IProductService.GetAllAsync
+  commentId: M:NewBalanceStore.Application.Interfaces.IProductService.GetAllAsync
+  id: GetAllAsync
+  parent: NewBalanceStore.Application.Interfaces.IProductService
+  langs:
+  - csharp
+  - vb
+  name: GetAllAsync()
+  nameWithType: IProductService.GetAllAsync()
+  fullName: NewBalanceStore.Application.Interfaces.IProductService.GetAllAsync()
+  type: Method
+  source:
+    remote:
+      path: backend/NewBalanceStore.Application/Interfaces/IProductService.cs
+      branch: main
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: GetAllAsync
+    path: NewBalanceStore/backend/NewBalanceStore.Application/Interfaces/IProductService.cs
+    startLine: 6
+  assemblies:
+  - NewBalanceStore.Application
+  namespace: NewBalanceStore.Application.Interfaces
+  syntax:
+    content: Task<IEnumerable<ProductDto>> GetAllAsync()
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{NewBalanceStore.Application.DTOs.ProductDto}}
+    content.vb: Function GetAllAsync() As Task(Of IEnumerable(Of ProductDto))
+  overload: NewBalanceStore.Application.Interfaces.IProductService.GetAllAsync*
+- uid: NewBalanceStore.Application.Interfaces.IProductService.GetByIdAsync(System.String)
+  commentId: M:NewBalanceStore.Application.Interfaces.IProductService.GetByIdAsync(System.String)
+  id: GetByIdAsync(System.String)
+  parent: NewBalanceStore.Application.Interfaces.IProductService
+  langs:
+  - csharp
+  - vb
+  name: GetByIdAsync(string)
+  nameWithType: IProductService.GetByIdAsync(string)
+  fullName: NewBalanceStore.Application.Interfaces.IProductService.GetByIdAsync(string)
+  type: Method
+  source:
+    remote:
+      path: backend/NewBalanceStore.Application/Interfaces/IProductService.cs
+      branch: main
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: GetByIdAsync
+    path: NewBalanceStore/backend/NewBalanceStore.Application/Interfaces/IProductService.cs
+    startLine: 7
+  assemblies:
+  - NewBalanceStore.Application
+  namespace: NewBalanceStore.Application.Interfaces
+  syntax:
+    content: Task<ProductDto?> GetByIdAsync(string id)
+    parameters:
+    - id: id
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{NewBalanceStore.Application.DTOs.ProductDto}
+    content.vb: Function GetByIdAsync(id As String) As Task(Of ProductDto)
+  overload: NewBalanceStore.Application.Interfaces.IProductService.GetByIdAsync*
+  nameWithType.vb: IProductService.GetByIdAsync(String)
+  fullName.vb: NewBalanceStore.Application.Interfaces.IProductService.GetByIdAsync(String)
+  name.vb: GetByIdAsync(String)
+- uid: NewBalanceStore.Application.Interfaces.IProductService.CreateAsync(NewBalanceStore.Application.DTOs.CreateProductDto)
+  commentId: M:NewBalanceStore.Application.Interfaces.IProductService.CreateAsync(NewBalanceStore.Application.DTOs.CreateProductDto)
+  id: CreateAsync(NewBalanceStore.Application.DTOs.CreateProductDto)
+  parent: NewBalanceStore.Application.Interfaces.IProductService
+  langs:
+  - csharp
+  - vb
+  name: CreateAsync(CreateProductDto)
+  nameWithType: IProductService.CreateAsync(CreateProductDto)
+  fullName: NewBalanceStore.Application.Interfaces.IProductService.CreateAsync(NewBalanceStore.Application.DTOs.CreateProductDto)
+  type: Method
+  source:
+    remote:
+      path: backend/NewBalanceStore.Application/Interfaces/IProductService.cs
+      branch: main
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: CreateAsync
+    path: NewBalanceStore/backend/NewBalanceStore.Application/Interfaces/IProductService.cs
+    startLine: 8
+  assemblies:
+  - NewBalanceStore.Application
+  namespace: NewBalanceStore.Application.Interfaces
+  syntax:
+    content: Task<ProductDto> CreateAsync(CreateProductDto dto)
+    parameters:
+    - id: dto
+      type: NewBalanceStore.Application.DTOs.CreateProductDto
+    return:
+      type: System.Threading.Tasks.Task{NewBalanceStore.Application.DTOs.ProductDto}
+    content.vb: Function CreateAsync(dto As CreateProductDto) As Task(Of ProductDto)
+  overload: NewBalanceStore.Application.Interfaces.IProductService.CreateAsync*
+- uid: NewBalanceStore.Application.Interfaces.IProductService.UpdateAsync(System.String,NewBalanceStore.Application.DTOs.CreateProductDto)
+  commentId: M:NewBalanceStore.Application.Interfaces.IProductService.UpdateAsync(System.String,NewBalanceStore.Application.DTOs.CreateProductDto)
+  id: UpdateAsync(System.String,NewBalanceStore.Application.DTOs.CreateProductDto)
+  parent: NewBalanceStore.Application.Interfaces.IProductService
+  langs:
+  - csharp
+  - vb
+  name: UpdateAsync(string, CreateProductDto)
+  nameWithType: IProductService.UpdateAsync(string, CreateProductDto)
+  fullName: NewBalanceStore.Application.Interfaces.IProductService.UpdateAsync(string, NewBalanceStore.Application.DTOs.CreateProductDto)
+  type: Method
+  source:
+    remote:
+      path: backend/NewBalanceStore.Application/Interfaces/IProductService.cs
+      branch: main
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: UpdateAsync
+    path: NewBalanceStore/backend/NewBalanceStore.Application/Interfaces/IProductService.cs
+    startLine: 9
+  assemblies:
+  - NewBalanceStore.Application
+  namespace: NewBalanceStore.Application.Interfaces
+  syntax:
+    content: Task<bool> UpdateAsync(string id, CreateProductDto dto)
+    parameters:
+    - id: id
+      type: System.String
+    - id: dto
+      type: NewBalanceStore.Application.DTOs.CreateProductDto
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+    content.vb: Function UpdateAsync(id As String, dto As CreateProductDto) As Task(Of Boolean)
+  overload: NewBalanceStore.Application.Interfaces.IProductService.UpdateAsync*
+  nameWithType.vb: IProductService.UpdateAsync(String, CreateProductDto)
+  fullName.vb: NewBalanceStore.Application.Interfaces.IProductService.UpdateAsync(String, NewBalanceStore.Application.DTOs.CreateProductDto)
+  name.vb: UpdateAsync(String, CreateProductDto)
+- uid: NewBalanceStore.Application.Interfaces.IProductService.DeleteAsync(System.String)
+  commentId: M:NewBalanceStore.Application.Interfaces.IProductService.DeleteAsync(System.String)
+  id: DeleteAsync(System.String)
+  parent: NewBalanceStore.Application.Interfaces.IProductService
+  langs:
+  - csharp
+  - vb
+  name: DeleteAsync(string)
+  nameWithType: IProductService.DeleteAsync(string)
+  fullName: NewBalanceStore.Application.Interfaces.IProductService.DeleteAsync(string)
+  type: Method
+  source:
+    remote:
+      path: backend/NewBalanceStore.Application/Interfaces/IProductService.cs
+      branch: main
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: DeleteAsync
+    path: NewBalanceStore/backend/NewBalanceStore.Application/Interfaces/IProductService.cs
+    startLine: 10
+  assemblies:
+  - NewBalanceStore.Application
+  namespace: NewBalanceStore.Application.Interfaces
+  syntax:
+    content: Task<bool> DeleteAsync(string id)
+    parameters:
+    - id: id
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{System.Boolean}
+    content.vb: Function DeleteAsync(id As String) As Task(Of Boolean)
+  overload: NewBalanceStore.Application.Interfaces.IProductService.DeleteAsync*
+  nameWithType.vb: IProductService.DeleteAsync(String)
+  fullName.vb: NewBalanceStore.Application.Interfaces.IProductService.DeleteAsync(String)
+  name.vb: DeleteAsync(String)
+references:
+- uid: NewBalanceStore.Application.Interfaces
+  commentId: N:NewBalanceStore.Application.Interfaces
+  name: NewBalanceStore.Application.Interfaces
+  nameWithType: NewBalanceStore.Application.Interfaces
+  fullName: NewBalanceStore.Application.Interfaces
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.Interfaces
+    name: Interfaces
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.Interfaces
+    name: Interfaces
+- uid: NewBalanceStore.Application.Interfaces.IProductService.GetAllAsync*
+  commentId: Overload:NewBalanceStore.Application.Interfaces.IProductService.GetAllAsync
+  href: NewBalanceStore.Application.Interfaces.IProductService.html#NewBalanceStore_Application_Interfaces_IProductService_GetAllAsync
+  name: GetAllAsync
+  nameWithType: IProductService.GetAllAsync
+  fullName: NewBalanceStore.Application.Interfaces.IProductService.GetAllAsync
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{NewBalanceStore.Application.DTOs.ProductDto}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{NewBalanceStore.Application.DTOs.ProductDto}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IEnumerable<ProductDto>>
+  nameWithType: Task<IEnumerable<ProductDto>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<NewBalanceStore.Application.DTOs.ProductDto>>
+  nameWithType.vb: Task(Of IEnumerable(Of ProductDto))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IEnumerable(Of NewBalanceStore.Application.DTOs.ProductDto))
+  name.vb: Task(Of IEnumerable(Of ProductDto))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: NewBalanceStore.Application.DTOs.ProductDto
+    name: ProductDto
+    href: NewBalanceStore.Application.DTOs.ProductDto.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NewBalanceStore.Application.DTOs.ProductDto
+    name: ProductDto
+    href: NewBalanceStore.Application.DTOs.ProductDto.html
+  - name: )
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NewBalanceStore.Application.Interfaces.IProductService.GetByIdAsync*
+  commentId: Overload:NewBalanceStore.Application.Interfaces.IProductService.GetByIdAsync
+  href: NewBalanceStore.Application.Interfaces.IProductService.html#NewBalanceStore_Application_Interfaces_IProductService_GetByIdAsync_System_String_
+  name: GetByIdAsync
+  nameWithType: IProductService.GetByIdAsync
+  fullName: NewBalanceStore.Application.Interfaces.IProductService.GetByIdAsync
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.Tasks.Task{NewBalanceStore.Application.DTOs.ProductDto}
+  commentId: T:System.Threading.Tasks.Task{NewBalanceStore.Application.DTOs.ProductDto}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<ProductDto>
+  nameWithType: Task<ProductDto>
+  fullName: System.Threading.Tasks.Task<NewBalanceStore.Application.DTOs.ProductDto>
+  nameWithType.vb: Task(Of ProductDto)
+  fullName.vb: System.Threading.Tasks.Task(Of NewBalanceStore.Application.DTOs.ProductDto)
+  name.vb: Task(Of ProductDto)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NewBalanceStore.Application.DTOs.ProductDto
+    name: ProductDto
+    href: NewBalanceStore.Application.DTOs.ProductDto.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NewBalanceStore.Application.DTOs.ProductDto
+    name: ProductDto
+    href: NewBalanceStore.Application.DTOs.ProductDto.html
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NewBalanceStore.Application.Interfaces.IProductService.CreateAsync*
+  commentId: Overload:NewBalanceStore.Application.Interfaces.IProductService.CreateAsync
+  href: NewBalanceStore.Application.Interfaces.IProductService.html#NewBalanceStore_Application_Interfaces_IProductService_CreateAsync_NewBalanceStore_Application_DTOs_CreateProductDto_
+  name: CreateAsync
+  nameWithType: IProductService.CreateAsync
+  fullName: NewBalanceStore.Application.Interfaces.IProductService.CreateAsync
+- uid: NewBalanceStore.Application.DTOs.CreateProductDto
+  commentId: T:NewBalanceStore.Application.DTOs.CreateProductDto
+  parent: NewBalanceStore.Application.DTOs
+  href: NewBalanceStore.Application.DTOs.CreateProductDto.html
+  name: CreateProductDto
+  nameWithType: CreateProductDto
+  fullName: NewBalanceStore.Application.DTOs.CreateProductDto
+- uid: NewBalanceStore.Application.DTOs
+  commentId: N:NewBalanceStore.Application.DTOs
+  name: NewBalanceStore.Application.DTOs
+  nameWithType: NewBalanceStore.Application.DTOs
+  fullName: NewBalanceStore.Application.DTOs
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.DTOs
+    name: DTOs
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.DTOs
+    name: DTOs
+- uid: NewBalanceStore.Application.Interfaces.IProductService.UpdateAsync*
+  commentId: Overload:NewBalanceStore.Application.Interfaces.IProductService.UpdateAsync
+  href: NewBalanceStore.Application.Interfaces.IProductService.html#NewBalanceStore_Application_Interfaces_IProductService_UpdateAsync_System_String_NewBalanceStore_Application_DTOs_CreateProductDto_
+  name: UpdateAsync
+  nameWithType: IProductService.UpdateAsync
+  fullName: NewBalanceStore.Application.Interfaces.IProductService.UpdateAsync
+- uid: System.Threading.Tasks.Task{System.Boolean}
+  commentId: T:System.Threading.Tasks.Task{System.Boolean}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<bool>
+  nameWithType: Task<bool>
+  fullName: System.Threading.Tasks.Task<bool>
+  nameWithType.vb: Task(Of Boolean)
+  fullName.vb: System.Threading.Tasks.Task(Of Boolean)
+  name.vb: Task(Of Boolean)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: )
+- uid: NewBalanceStore.Application.Interfaces.IProductService.DeleteAsync*
+  commentId: Overload:NewBalanceStore.Application.Interfaces.IProductService.DeleteAsync
+  href: NewBalanceStore.Application.Interfaces.IProductService.html#NewBalanceStore_Application_Interfaces_IProductService_DeleteAsync_System_String_
+  name: DeleteAsync
+  nameWithType: IProductService.DeleteAsync
+  fullName: NewBalanceStore.Application.Interfaces.IProductService.DeleteAsync

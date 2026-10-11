@@ -1,0 +1,429 @@
+### YamlMime:ManagedReference
+items:
+- uid: NewBalanceStore.Application.DTOs.CreateProductVariantDto
+  commentId: T:NewBalanceStore.Application.DTOs.CreateProductVariantDto
+  id: CreateProductVariantDto
+  parent: NewBalanceStore.Application.DTOs
+  children:
+  - NewBalanceStore.Application.DTOs.CreateProductVariantDto.Color
+  - NewBalanceStore.Application.DTOs.CreateProductVariantDto.Quantity
+  - NewBalanceStore.Application.DTOs.CreateProductVariantDto.Size
+  langs:
+  - csharp
+  - vb
+  name: CreateProductVariantDto
+  nameWithType: CreateProductVariantDto
+  fullName: NewBalanceStore.Application.DTOs.CreateProductVariantDto
+  type: Class
+  source:
+    remote:
+      path: NewBalanceStore.Application/DTOs/CreateProductVariantDto.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: CreateProductVariantDto
+    path: NewBalanceStore.Application/DTOs/CreateProductVariantDto.cs
+    startLine: 6
+  assemblies:
+  - NewBalanceStore.Application
+  namespace: NewBalanceStore.Application.DTOs
+  syntax:
+    content: public class CreateProductVariantDto
+    content.vb: Public Class CreateProductVariantDto
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NewBalanceStore.Application.DTOs.CreateProductVariantDto.Color
+  commentId: P:NewBalanceStore.Application.DTOs.CreateProductVariantDto.Color
+  id: Color
+  parent: NewBalanceStore.Application.DTOs.CreateProductVariantDto
+  langs:
+  - csharp
+  - vb
+  name: Color
+  nameWithType: CreateProductVariantDto.Color
+  fullName: NewBalanceStore.Application.DTOs.CreateProductVariantDto.Color
+  type: Property
+  source:
+    remote:
+      path: NewBalanceStore.Application/DTOs/CreateProductVariantDto.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: Color
+    path: NewBalanceStore.Application/DTOs/CreateProductVariantDto.cs
+    startLine: 8
+  assemblies:
+  - NewBalanceStore.Application
+  namespace: NewBalanceStore.Application.DTOs
+  syntax:
+    content: public string Color { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Color As String
+  overload: NewBalanceStore.Application.DTOs.CreateProductVariantDto.Color*
+- uid: NewBalanceStore.Application.DTOs.CreateProductVariantDto.Size
+  commentId: P:NewBalanceStore.Application.DTOs.CreateProductVariantDto.Size
+  id: Size
+  parent: NewBalanceStore.Application.DTOs.CreateProductVariantDto
+  langs:
+  - csharp
+  - vb
+  name: Size
+  nameWithType: CreateProductVariantDto.Size
+  fullName: NewBalanceStore.Application.DTOs.CreateProductVariantDto.Size
+  type: Property
+  source:
+    remote:
+      path: NewBalanceStore.Application/DTOs/CreateProductVariantDto.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: Size
+    path: NewBalanceStore.Application/DTOs/CreateProductVariantDto.cs
+    startLine: 9
+  assemblies:
+  - NewBalanceStore.Application
+  namespace: NewBalanceStore.Application.DTOs
+  syntax:
+    content: public string Size { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Size As String
+  overload: NewBalanceStore.Application.DTOs.CreateProductVariantDto.Size*
+- uid: NewBalanceStore.Application.DTOs.CreateProductVariantDto.Quantity
+  commentId: P:NewBalanceStore.Application.DTOs.CreateProductVariantDto.Quantity
+  id: Quantity
+  parent: NewBalanceStore.Application.DTOs.CreateProductVariantDto
+  langs:
+  - csharp
+  - vb
+  name: Quantity
+  nameWithType: CreateProductVariantDto.Quantity
+  fullName: NewBalanceStore.Application.DTOs.CreateProductVariantDto.Quantity
+  type: Property
+  source:
+    remote:
+      path: NewBalanceStore.Application/DTOs/CreateProductVariantDto.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: Quantity
+    path: NewBalanceStore.Application/DTOs/CreateProductVariantDto.cs
+    startLine: 10
+  assemblies:
+  - NewBalanceStore.Application
+  namespace: NewBalanceStore.Application.DTOs
+  syntax:
+    content: public int Quantity { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Quantity As Integer
+  overload: NewBalanceStore.Application.DTOs.CreateProductVariantDto.Quantity*
+references:
+- uid: NewBalanceStore.Application.DTOs
+  commentId: N:NewBalanceStore.Application.DTOs
+  name: NewBalanceStore.Application.DTOs
+  nameWithType: NewBalanceStore.Application.DTOs
+  fullName: NewBalanceStore.Application.DTOs
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.DTOs
+    name: DTOs
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.DTOs
+    name: DTOs
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NewBalanceStore.Application.DTOs.CreateProductVariantDto.Color*
+  commentId: Overload:NewBalanceStore.Application.DTOs.CreateProductVariantDto.Color
+  href: NewBalanceStore.Application.DTOs.CreateProductVariantDto.html#NewBalanceStore_Application_DTOs_CreateProductVariantDto_Color
+  name: Color
+  nameWithType: CreateProductVariantDto.Color
+  fullName: NewBalanceStore.Application.DTOs.CreateProductVariantDto.Color
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: NewBalanceStore.Application.DTOs.CreateProductVariantDto.Size*
+  commentId: Overload:NewBalanceStore.Application.DTOs.CreateProductVariantDto.Size
+  href: NewBalanceStore.Application.DTOs.CreateProductVariantDto.html#NewBalanceStore_Application_DTOs_CreateProductVariantDto_Size
+  name: Size
+  nameWithType: CreateProductVariantDto.Size
+  fullName: NewBalanceStore.Application.DTOs.CreateProductVariantDto.Size
+- uid: NewBalanceStore.Application.DTOs.CreateProductVariantDto.Quantity*
+  commentId: Overload:NewBalanceStore.Application.DTOs.CreateProductVariantDto.Quantity
+  href: NewBalanceStore.Application.DTOs.CreateProductVariantDto.html#NewBalanceStore_Application_DTOs_CreateProductVariantDto_Quantity
+  name: Quantity
+  nameWithType: CreateProductVariantDto.Quantity
+  fullName: NewBalanceStore.Application.DTOs.CreateProductVariantDto.Quantity
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer

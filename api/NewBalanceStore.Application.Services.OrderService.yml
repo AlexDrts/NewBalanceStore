@@ -1,0 +1,896 @@
+### YamlMime:ManagedReference
+items:
+- uid: NewBalanceStore.Application.Services.OrderService
+  commentId: T:NewBalanceStore.Application.Services.OrderService
+  id: OrderService
+  parent: NewBalanceStore.Application.Services
+  children:
+  - NewBalanceStore.Application.Services.OrderService.#ctor(NewBalanceStore.Domain.Interfaces.IOrderRepository,NewBalanceStore.Domain.Interfaces.IProductRepository,AutoMapper.IMapper)
+  - NewBalanceStore.Application.Services.OrderService.CreateOrderAsync(NewBalanceStore.Application.DTOs.CreateOrderDto)
+  - NewBalanceStore.Application.Services.OrderService.GetAllOrdersAsync
+  - NewBalanceStore.Application.Services.OrderService.GetOrderByIdAsync(System.Int32)
+  - NewBalanceStore.Application.Services.OrderService.UpdateOrderStatusAsync(System.Int32,System.String)
+  langs:
+  - csharp
+  - vb
+  name: OrderService
+  nameWithType: OrderService
+  fullName: NewBalanceStore.Application.Services.OrderService
+  type: Class
+  source:
+    remote:
+      path: NewBalanceStore.Application/Services/OrderService.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: OrderService
+    path: NewBalanceStore.Application/Services/OrderService.cs
+    startLine: 15
+  assemblies:
+  - NewBalanceStore.Application
+  namespace: NewBalanceStore.Application.Services
+  syntax:
+    content: 'public class OrderService : IOrderService'
+    content.vb: Public Class OrderService Implements IOrderService
+  inheritance:
+  - System.Object
+  implements:
+  - NewBalanceStore.Application.Services.IOrderService
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: NewBalanceStore.Application.Services.OrderService.#ctor(NewBalanceStore.Domain.Interfaces.IOrderRepository,NewBalanceStore.Domain.Interfaces.IProductRepository,AutoMapper.IMapper)
+  commentId: M:NewBalanceStore.Application.Services.OrderService.#ctor(NewBalanceStore.Domain.Interfaces.IOrderRepository,NewBalanceStore.Domain.Interfaces.IProductRepository,AutoMapper.IMapper)
+  id: '#ctor(NewBalanceStore.Domain.Interfaces.IOrderRepository,NewBalanceStore.Domain.Interfaces.IProductRepository,AutoMapper.IMapper)'
+  parent: NewBalanceStore.Application.Services.OrderService
+  langs:
+  - csharp
+  - vb
+  name: OrderService(IOrderRepository, IProductRepository, IMapper)
+  nameWithType: OrderService.OrderService(IOrderRepository, IProductRepository, IMapper)
+  fullName: NewBalanceStore.Application.Services.OrderService.OrderService(NewBalanceStore.Domain.Interfaces.IOrderRepository, NewBalanceStore.Domain.Interfaces.IProductRepository, AutoMapper.IMapper)
+  type: Constructor
+  source:
+    remote:
+      path: NewBalanceStore.Application/Services/OrderService.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: .ctor
+    path: NewBalanceStore.Application/Services/OrderService.cs
+    startLine: 21
+  assemblies:
+  - NewBalanceStore.Application
+  namespace: NewBalanceStore.Application.Services
+  syntax:
+    content: public OrderService(IOrderRepository orderRepository, IProductRepository productRepository, IMapper mapper)
+    parameters:
+    - id: orderRepository
+      type: NewBalanceStore.Domain.Interfaces.IOrderRepository
+    - id: productRepository
+      type: NewBalanceStore.Domain.Interfaces.IProductRepository
+    - id: mapper
+      type: AutoMapper.IMapper
+    content.vb: Public Sub New(orderRepository As IOrderRepository, productRepository As IProductRepository, mapper As IMapper)
+  overload: NewBalanceStore.Application.Services.OrderService.#ctor*
+  nameWithType.vb: OrderService.New(IOrderRepository, IProductRepository, IMapper)
+  fullName.vb: NewBalanceStore.Application.Services.OrderService.New(NewBalanceStore.Domain.Interfaces.IOrderRepository, NewBalanceStore.Domain.Interfaces.IProductRepository, AutoMapper.IMapper)
+  name.vb: New(IOrderRepository, IProductRepository, IMapper)
+- uid: NewBalanceStore.Application.Services.OrderService.CreateOrderAsync(NewBalanceStore.Application.DTOs.CreateOrderDto)
+  commentId: M:NewBalanceStore.Application.Services.OrderService.CreateOrderAsync(NewBalanceStore.Application.DTOs.CreateOrderDto)
+  id: CreateOrderAsync(NewBalanceStore.Application.DTOs.CreateOrderDto)
+  parent: NewBalanceStore.Application.Services.OrderService
+  langs:
+  - csharp
+  - vb
+  name: CreateOrderAsync(CreateOrderDto)
+  nameWithType: OrderService.CreateOrderAsync(CreateOrderDto)
+  fullName: NewBalanceStore.Application.Services.OrderService.CreateOrderAsync(NewBalanceStore.Application.DTOs.CreateOrderDto)
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.Application/Services/OrderService.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: CreateOrderAsync
+    path: NewBalanceStore.Application/Services/OrderService.cs
+    startLine: 28
+  assemblies:
+  - NewBalanceStore.Application
+  namespace: NewBalanceStore.Application.Services
+  example: []
+  syntax:
+    content: public Task<OrderDto> CreateOrderAsync(CreateOrderDto dto)
+    parameters:
+    - id: dto
+      type: NewBalanceStore.Application.DTOs.CreateOrderDto
+    return:
+      type: System.Threading.Tasks.Task{NewBalanceStore.Application.DTOs.OrderDto}
+    content.vb: Public Function CreateOrderAsync(dto As CreateOrderDto) As Task(Of OrderDto)
+  overload: NewBalanceStore.Application.Services.OrderService.CreateOrderAsync*
+  implements:
+  - NewBalanceStore.Application.Services.IOrderService.CreateOrderAsync(NewBalanceStore.Application.DTOs.CreateOrderDto)
+- uid: NewBalanceStore.Application.Services.OrderService.GetOrderByIdAsync(System.Int32)
+  commentId: M:NewBalanceStore.Application.Services.OrderService.GetOrderByIdAsync(System.Int32)
+  id: GetOrderByIdAsync(System.Int32)
+  parent: NewBalanceStore.Application.Services.OrderService
+  langs:
+  - csharp
+  - vb
+  name: GetOrderByIdAsync(int)
+  nameWithType: OrderService.GetOrderByIdAsync(int)
+  fullName: NewBalanceStore.Application.Services.OrderService.GetOrderByIdAsync(int)
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.Application/Services/OrderService.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: GetOrderByIdAsync
+    path: NewBalanceStore.Application/Services/OrderService.cs
+    startLine: 67
+  assemblies:
+  - NewBalanceStore.Application
+  namespace: NewBalanceStore.Application.Services
+  example: []
+  syntax:
+    content: public Task<OrderDto?> GetOrderByIdAsync(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    return:
+      type: System.Threading.Tasks.Task{NewBalanceStore.Application.DTOs.OrderDto}
+    content.vb: Public Function GetOrderByIdAsync(id As Integer) As Task(Of OrderDto)
+  overload: NewBalanceStore.Application.Services.OrderService.GetOrderByIdAsync*
+  implements:
+  - NewBalanceStore.Application.Services.IOrderService.GetOrderByIdAsync(System.Int32)
+  nameWithType.vb: OrderService.GetOrderByIdAsync(Integer)
+  fullName.vb: NewBalanceStore.Application.Services.OrderService.GetOrderByIdAsync(Integer)
+  name.vb: GetOrderByIdAsync(Integer)
+- uid: NewBalanceStore.Application.Services.OrderService.GetAllOrdersAsync
+  commentId: M:NewBalanceStore.Application.Services.OrderService.GetAllOrdersAsync
+  id: GetAllOrdersAsync
+  parent: NewBalanceStore.Application.Services.OrderService
+  langs:
+  - csharp
+  - vb
+  name: GetAllOrdersAsync()
+  nameWithType: OrderService.GetAllOrdersAsync()
+  fullName: NewBalanceStore.Application.Services.OrderService.GetAllOrdersAsync()
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.Application/Services/OrderService.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: GetAllOrdersAsync
+    path: NewBalanceStore.Application/Services/OrderService.cs
+    startLine: 73
+  assemblies:
+  - NewBalanceStore.Application
+  namespace: NewBalanceStore.Application.Services
+  example: []
+  syntax:
+    content: public Task<IEnumerable<OrderDto>> GetAllOrdersAsync()
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{NewBalanceStore.Application.DTOs.OrderDto}}
+    content.vb: Public Function GetAllOrdersAsync() As Task(Of IEnumerable(Of OrderDto))
+  overload: NewBalanceStore.Application.Services.OrderService.GetAllOrdersAsync*
+  implements:
+  - NewBalanceStore.Application.Services.IOrderService.GetAllOrdersAsync
+- uid: NewBalanceStore.Application.Services.OrderService.UpdateOrderStatusAsync(System.Int32,System.String)
+  commentId: M:NewBalanceStore.Application.Services.OrderService.UpdateOrderStatusAsync(System.Int32,System.String)
+  id: UpdateOrderStatusAsync(System.Int32,System.String)
+  parent: NewBalanceStore.Application.Services.OrderService
+  langs:
+  - csharp
+  - vb
+  name: UpdateOrderStatusAsync(int, string)
+  nameWithType: OrderService.UpdateOrderStatusAsync(int, string)
+  fullName: NewBalanceStore.Application.Services.OrderService.UpdateOrderStatusAsync(int, string)
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.Application/Services/OrderService.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: UpdateOrderStatusAsync
+    path: NewBalanceStore.Application/Services/OrderService.cs
+    startLine: 79
+  assemblies:
+  - NewBalanceStore.Application
+  namespace: NewBalanceStore.Application.Services
+  example: []
+  syntax:
+    content: public Task UpdateOrderStatusAsync(int id, string status)
+    parameters:
+    - id: id
+      type: System.Int32
+    - id: status
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function UpdateOrderStatusAsync(id As Integer, status As String) As Task
+  overload: NewBalanceStore.Application.Services.OrderService.UpdateOrderStatusAsync*
+  implements:
+  - NewBalanceStore.Application.Services.IOrderService.UpdateOrderStatusAsync(System.Int32,System.String)
+  nameWithType.vb: OrderService.UpdateOrderStatusAsync(Integer, String)
+  fullName.vb: NewBalanceStore.Application.Services.OrderService.UpdateOrderStatusAsync(Integer, String)
+  name.vb: UpdateOrderStatusAsync(Integer, String)
+references:
+- uid: NewBalanceStore.Application.Services
+  commentId: N:NewBalanceStore.Application.Services
+  name: NewBalanceStore.Application.Services
+  nameWithType: NewBalanceStore.Application.Services
+  fullName: NewBalanceStore.Application.Services
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.Services
+    name: Services
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.Services
+    name: Services
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: NewBalanceStore.Application.Services.IOrderService
+  commentId: T:NewBalanceStore.Application.Services.IOrderService
+  parent: NewBalanceStore.Application.Services
+  href: NewBalanceStore.Application.Services.IOrderService.html
+  name: IOrderService
+  nameWithType: IOrderService
+  fullName: NewBalanceStore.Application.Services.IOrderService
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NewBalanceStore.Application.Services.OrderService.#ctor*
+  commentId: Overload:NewBalanceStore.Application.Services.OrderService.#ctor
+  href: NewBalanceStore.Application.Services.OrderService.html#NewBalanceStore_Application_Services_OrderService__ctor_NewBalanceStore_Domain_Interfaces_IOrderRepository_NewBalanceStore_Domain_Interfaces_IProductRepository_AutoMapper_IMapper_
+  name: OrderService
+  nameWithType: OrderService.OrderService
+  fullName: NewBalanceStore.Application.Services.OrderService.OrderService
+  nameWithType.vb: OrderService.New
+  fullName.vb: NewBalanceStore.Application.Services.OrderService.New
+  name.vb: New
+- uid: NewBalanceStore.Domain.Interfaces.IOrderRepository
+  commentId: T:NewBalanceStore.Domain.Interfaces.IOrderRepository
+  parent: NewBalanceStore.Domain.Interfaces
+  href: NewBalanceStore.Domain.Interfaces.IOrderRepository.html
+  name: IOrderRepository
+  nameWithType: IOrderRepository
+  fullName: NewBalanceStore.Domain.Interfaces.IOrderRepository
+- uid: NewBalanceStore.Domain.Interfaces.IProductRepository
+  commentId: T:NewBalanceStore.Domain.Interfaces.IProductRepository
+  parent: NewBalanceStore.Domain.Interfaces
+  href: NewBalanceStore.Domain.Interfaces.IProductRepository.html
+  name: IProductRepository
+  nameWithType: IProductRepository
+  fullName: NewBalanceStore.Domain.Interfaces.IProductRepository
+- uid: AutoMapper.IMapper
+  commentId: T:AutoMapper.IMapper
+  parent: AutoMapper
+  isExternal: true
+  name: IMapper
+  nameWithType: IMapper
+  fullName: AutoMapper.IMapper
+- uid: NewBalanceStore.Domain.Interfaces
+  commentId: N:NewBalanceStore.Domain.Interfaces
+  name: NewBalanceStore.Domain.Interfaces
+  nameWithType: NewBalanceStore.Domain.Interfaces
+  fullName: NewBalanceStore.Domain.Interfaces
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Interfaces
+    name: Interfaces
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Interfaces
+    name: Interfaces
+- uid: AutoMapper
+  commentId: N:AutoMapper
+  isExternal: true
+  name: AutoMapper
+  nameWithType: AutoMapper
+  fullName: AutoMapper
+- uid: NewBalanceStore.Application.Services.OrderService.CreateOrderAsync*
+  commentId: Overload:NewBalanceStore.Application.Services.OrderService.CreateOrderAsync
+  href: NewBalanceStore.Application.Services.OrderService.html#NewBalanceStore_Application_Services_OrderService_CreateOrderAsync_NewBalanceStore_Application_DTOs_CreateOrderDto_
+  name: CreateOrderAsync
+  nameWithType: OrderService.CreateOrderAsync
+  fullName: NewBalanceStore.Application.Services.OrderService.CreateOrderAsync
+- uid: NewBalanceStore.Application.Services.IOrderService.CreateOrderAsync(NewBalanceStore.Application.DTOs.CreateOrderDto)
+  commentId: M:NewBalanceStore.Application.Services.IOrderService.CreateOrderAsync(NewBalanceStore.Application.DTOs.CreateOrderDto)
+  parent: NewBalanceStore.Application.Services.IOrderService
+  href: NewBalanceStore.Application.Services.IOrderService.html#NewBalanceStore_Application_Services_IOrderService_CreateOrderAsync_NewBalanceStore_Application_DTOs_CreateOrderDto_
+  name: CreateOrderAsync(CreateOrderDto)
+  nameWithType: IOrderService.CreateOrderAsync(CreateOrderDto)
+  fullName: NewBalanceStore.Application.Services.IOrderService.CreateOrderAsync(NewBalanceStore.Application.DTOs.CreateOrderDto)
+  spec.csharp:
+  - uid: NewBalanceStore.Application.Services.IOrderService.CreateOrderAsync(NewBalanceStore.Application.DTOs.CreateOrderDto)
+    name: CreateOrderAsync
+    href: NewBalanceStore.Application.Services.IOrderService.html#NewBalanceStore_Application_Services_IOrderService_CreateOrderAsync_NewBalanceStore_Application_DTOs_CreateOrderDto_
+  - name: (
+  - uid: NewBalanceStore.Application.DTOs.CreateOrderDto
+    name: CreateOrderDto
+    href: NewBalanceStore.Application.DTOs.CreateOrderDto.html
+  - name: )
+  spec.vb:
+  - uid: NewBalanceStore.Application.Services.IOrderService.CreateOrderAsync(NewBalanceStore.Application.DTOs.CreateOrderDto)
+    name: CreateOrderAsync
+    href: NewBalanceStore.Application.Services.IOrderService.html#NewBalanceStore_Application_Services_IOrderService_CreateOrderAsync_NewBalanceStore_Application_DTOs_CreateOrderDto_
+  - name: (
+  - uid: NewBalanceStore.Application.DTOs.CreateOrderDto
+    name: CreateOrderDto
+    href: NewBalanceStore.Application.DTOs.CreateOrderDto.html
+  - name: )
+- uid: NewBalanceStore.Application.DTOs.CreateOrderDto
+  commentId: T:NewBalanceStore.Application.DTOs.CreateOrderDto
+  parent: NewBalanceStore.Application.DTOs
+  href: NewBalanceStore.Application.DTOs.CreateOrderDto.html
+  name: CreateOrderDto
+  nameWithType: CreateOrderDto
+  fullName: NewBalanceStore.Application.DTOs.CreateOrderDto
+- uid: System.Threading.Tasks.Task{NewBalanceStore.Application.DTOs.OrderDto}
+  commentId: T:System.Threading.Tasks.Task{NewBalanceStore.Application.DTOs.OrderDto}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<OrderDto>
+  nameWithType: Task<OrderDto>
+  fullName: System.Threading.Tasks.Task<NewBalanceStore.Application.DTOs.OrderDto>
+  nameWithType.vb: Task(Of OrderDto)
+  fullName.vb: System.Threading.Tasks.Task(Of NewBalanceStore.Application.DTOs.OrderDto)
+  name.vb: Task(Of OrderDto)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NewBalanceStore.Application.DTOs.OrderDto
+    name: OrderDto
+    href: NewBalanceStore.Application.DTOs.OrderDto.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NewBalanceStore.Application.DTOs.OrderDto
+    name: OrderDto
+    href: NewBalanceStore.Application.DTOs.OrderDto.html
+  - name: )
+- uid: NewBalanceStore.Application.DTOs
+  commentId: N:NewBalanceStore.Application.DTOs
+  name: NewBalanceStore.Application.DTOs
+  nameWithType: NewBalanceStore.Application.DTOs
+  fullName: NewBalanceStore.Application.DTOs
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.DTOs
+    name: DTOs
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.DTOs
+    name: DTOs
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NewBalanceStore.Application.Services.OrderService.GetOrderByIdAsync*
+  commentId: Overload:NewBalanceStore.Application.Services.OrderService.GetOrderByIdAsync
+  href: NewBalanceStore.Application.Services.OrderService.html#NewBalanceStore_Application_Services_OrderService_GetOrderByIdAsync_System_Int32_
+  name: GetOrderByIdAsync
+  nameWithType: OrderService.GetOrderByIdAsync
+  fullName: NewBalanceStore.Application.Services.OrderService.GetOrderByIdAsync
+- uid: NewBalanceStore.Application.Services.IOrderService.GetOrderByIdAsync(System.Int32)
+  commentId: M:NewBalanceStore.Application.Services.IOrderService.GetOrderByIdAsync(System.Int32)
+  parent: NewBalanceStore.Application.Services.IOrderService
+  isExternal: true
+  href: NewBalanceStore.Application.Services.IOrderService.html#NewBalanceStore_Application_Services_IOrderService_GetOrderByIdAsync_System_Int32_
+  name: GetOrderByIdAsync(int)
+  nameWithType: IOrderService.GetOrderByIdAsync(int)
+  fullName: NewBalanceStore.Application.Services.IOrderService.GetOrderByIdAsync(int)
+  nameWithType.vb: IOrderService.GetOrderByIdAsync(Integer)
+  fullName.vb: NewBalanceStore.Application.Services.IOrderService.GetOrderByIdAsync(Integer)
+  name.vb: GetOrderByIdAsync(Integer)
+  spec.csharp:
+  - uid: NewBalanceStore.Application.Services.IOrderService.GetOrderByIdAsync(System.Int32)
+    name: GetOrderByIdAsync
+    href: NewBalanceStore.Application.Services.IOrderService.html#NewBalanceStore_Application_Services_IOrderService_GetOrderByIdAsync_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: NewBalanceStore.Application.Services.IOrderService.GetOrderByIdAsync(System.Int32)
+    name: GetOrderByIdAsync
+    href: NewBalanceStore.Application.Services.IOrderService.html#NewBalanceStore_Application_Services_IOrderService_GetOrderByIdAsync_System_Int32_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: NewBalanceStore.Application.Services.OrderService.GetAllOrdersAsync*
+  commentId: Overload:NewBalanceStore.Application.Services.OrderService.GetAllOrdersAsync
+  href: NewBalanceStore.Application.Services.OrderService.html#NewBalanceStore_Application_Services_OrderService_GetAllOrdersAsync
+  name: GetAllOrdersAsync
+  nameWithType: OrderService.GetAllOrdersAsync
+  fullName: NewBalanceStore.Application.Services.OrderService.GetAllOrdersAsync
+- uid: NewBalanceStore.Application.Services.IOrderService.GetAllOrdersAsync
+  commentId: M:NewBalanceStore.Application.Services.IOrderService.GetAllOrdersAsync
+  parent: NewBalanceStore.Application.Services.IOrderService
+  href: NewBalanceStore.Application.Services.IOrderService.html#NewBalanceStore_Application_Services_IOrderService_GetAllOrdersAsync
+  name: GetAllOrdersAsync()
+  nameWithType: IOrderService.GetAllOrdersAsync()
+  fullName: NewBalanceStore.Application.Services.IOrderService.GetAllOrdersAsync()
+  spec.csharp:
+  - uid: NewBalanceStore.Application.Services.IOrderService.GetAllOrdersAsync
+    name: GetAllOrdersAsync
+    href: NewBalanceStore.Application.Services.IOrderService.html#NewBalanceStore_Application_Services_IOrderService_GetAllOrdersAsync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NewBalanceStore.Application.Services.IOrderService.GetAllOrdersAsync
+    name: GetAllOrdersAsync
+    href: NewBalanceStore.Application.Services.IOrderService.html#NewBalanceStore_Application_Services_IOrderService_GetAllOrdersAsync
+  - name: (
+  - name: )
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{NewBalanceStore.Application.DTOs.OrderDto}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{NewBalanceStore.Application.DTOs.OrderDto}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IEnumerable<OrderDto>>
+  nameWithType: Task<IEnumerable<OrderDto>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<NewBalanceStore.Application.DTOs.OrderDto>>
+  nameWithType.vb: Task(Of IEnumerable(Of OrderDto))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IEnumerable(Of NewBalanceStore.Application.DTOs.OrderDto))
+  name.vb: Task(Of IEnumerable(Of OrderDto))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: NewBalanceStore.Application.DTOs.OrderDto
+    name: OrderDto
+    href: NewBalanceStore.Application.DTOs.OrderDto.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NewBalanceStore.Application.DTOs.OrderDto
+    name: OrderDto
+    href: NewBalanceStore.Application.DTOs.OrderDto.html
+  - name: )
+  - name: )
+- uid: NewBalanceStore.Application.Services.OrderService.UpdateOrderStatusAsync*
+  commentId: Overload:NewBalanceStore.Application.Services.OrderService.UpdateOrderStatusAsync
+  href: NewBalanceStore.Application.Services.OrderService.html#NewBalanceStore_Application_Services_OrderService_UpdateOrderStatusAsync_System_Int32_System_String_
+  name: UpdateOrderStatusAsync
+  nameWithType: OrderService.UpdateOrderStatusAsync
+  fullName: NewBalanceStore.Application.Services.OrderService.UpdateOrderStatusAsync
+- uid: NewBalanceStore.Application.Services.IOrderService.UpdateOrderStatusAsync(System.Int32,System.String)
+  commentId: M:NewBalanceStore.Application.Services.IOrderService.UpdateOrderStatusAsync(System.Int32,System.String)
+  parent: NewBalanceStore.Application.Services.IOrderService
+  isExternal: true
+  href: NewBalanceStore.Application.Services.IOrderService.html#NewBalanceStore_Application_Services_IOrderService_UpdateOrderStatusAsync_System_Int32_System_String_
+  name: UpdateOrderStatusAsync(int, string)
+  nameWithType: IOrderService.UpdateOrderStatusAsync(int, string)
+  fullName: NewBalanceStore.Application.Services.IOrderService.UpdateOrderStatusAsync(int, string)
+  nameWithType.vb: IOrderService.UpdateOrderStatusAsync(Integer, String)
+  fullName.vb: NewBalanceStore.Application.Services.IOrderService.UpdateOrderStatusAsync(Integer, String)
+  name.vb: UpdateOrderStatusAsync(Integer, String)
+  spec.csharp:
+  - uid: NewBalanceStore.Application.Services.IOrderService.UpdateOrderStatusAsync(System.Int32,System.String)
+    name: UpdateOrderStatusAsync
+    href: NewBalanceStore.Application.Services.IOrderService.html#NewBalanceStore_Application_Services_IOrderService_UpdateOrderStatusAsync_System_Int32_System_String_
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: NewBalanceStore.Application.Services.IOrderService.UpdateOrderStatusAsync(System.Int32,System.String)
+    name: UpdateOrderStatusAsync
+    href: NewBalanceStore.Application.Services.IOrderService.html#NewBalanceStore_Application_Services_IOrderService_UpdateOrderStatusAsync_System_Int32_System_String_
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task

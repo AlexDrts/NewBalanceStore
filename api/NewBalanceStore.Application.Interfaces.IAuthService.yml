@@ -1,0 +1,265 @@
+### YamlMime:ManagedReference
+items:
+- uid: NewBalanceStore.Application.Interfaces.IAuthService
+  commentId: T:NewBalanceStore.Application.Interfaces.IAuthService
+  id: IAuthService
+  parent: NewBalanceStore.Application.Interfaces
+  children:
+  - NewBalanceStore.Application.Interfaces.IAuthService.LoginAsync(NewBalanceStore.Application.DTOs.UserLoginDto)
+  - NewBalanceStore.Application.Interfaces.IAuthService.RegisterAsync(NewBalanceStore.Application.DTOs.UserRegisterDto)
+  langs:
+  - csharp
+  - vb
+  name: IAuthService
+  nameWithType: IAuthService
+  fullName: NewBalanceStore.Application.Interfaces.IAuthService
+  type: Interface
+  source:
+    remote:
+      path: NewBalanceStore.Domain/Interfaces/IAuthService.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: IAuthService
+    path: NewBalanceStore.Domain/Interfaces/IAuthService.cs
+    startLine: 8
+  assemblies:
+  - NewBalanceStore.Domain
+  namespace: NewBalanceStore.Application.Interfaces
+  syntax:
+    content: public interface IAuthService
+    content.vb: Public Interface IAuthService
+  derivedClasses:
+  - NewBalanceStore.Infrastructure.Services.AuthService
+- uid: NewBalanceStore.Application.Interfaces.IAuthService.RegisterAsync(NewBalanceStore.Application.DTOs.UserRegisterDto)
+  commentId: M:NewBalanceStore.Application.Interfaces.IAuthService.RegisterAsync(NewBalanceStore.Application.DTOs.UserRegisterDto)
+  id: RegisterAsync(NewBalanceStore.Application.DTOs.UserRegisterDto)
+  parent: NewBalanceStore.Application.Interfaces.IAuthService
+  langs:
+  - csharp
+  - vb
+  name: RegisterAsync(UserRegisterDto)
+  nameWithType: IAuthService.RegisterAsync(UserRegisterDto)
+  fullName: NewBalanceStore.Application.Interfaces.IAuthService.RegisterAsync(NewBalanceStore.Application.DTOs.UserRegisterDto)
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.Domain/Interfaces/IAuthService.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: RegisterAsync
+    path: NewBalanceStore.Domain/Interfaces/IAuthService.cs
+    startLine: 10
+  assemblies:
+  - NewBalanceStore.Domain
+  namespace: NewBalanceStore.Application.Interfaces
+  syntax:
+    content: Task<AuthResponseDto> RegisterAsync(UserRegisterDto registerDto)
+    parameters:
+    - id: registerDto
+      type: NewBalanceStore.Application.DTOs.UserRegisterDto
+    return:
+      type: System.Threading.Tasks.Task{NewBalanceStore.Application.DTOs.AuthResponseDto}
+    content.vb: Function RegisterAsync(registerDto As UserRegisterDto) As Task(Of AuthResponseDto)
+  overload: NewBalanceStore.Application.Interfaces.IAuthService.RegisterAsync*
+- uid: NewBalanceStore.Application.Interfaces.IAuthService.LoginAsync(NewBalanceStore.Application.DTOs.UserLoginDto)
+  commentId: M:NewBalanceStore.Application.Interfaces.IAuthService.LoginAsync(NewBalanceStore.Application.DTOs.UserLoginDto)
+  id: LoginAsync(NewBalanceStore.Application.DTOs.UserLoginDto)
+  parent: NewBalanceStore.Application.Interfaces.IAuthService
+  langs:
+  - csharp
+  - vb
+  name: LoginAsync(UserLoginDto)
+  nameWithType: IAuthService.LoginAsync(UserLoginDto)
+  fullName: NewBalanceStore.Application.Interfaces.IAuthService.LoginAsync(NewBalanceStore.Application.DTOs.UserLoginDto)
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.Domain/Interfaces/IAuthService.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: LoginAsync
+    path: NewBalanceStore.Domain/Interfaces/IAuthService.cs
+    startLine: 11
+  assemblies:
+  - NewBalanceStore.Domain
+  namespace: NewBalanceStore.Application.Interfaces
+  syntax:
+    content: Task<AuthResponseDto> LoginAsync(UserLoginDto loginDto)
+    parameters:
+    - id: loginDto
+      type: NewBalanceStore.Application.DTOs.UserLoginDto
+    return:
+      type: System.Threading.Tasks.Task{NewBalanceStore.Application.DTOs.AuthResponseDto}
+    content.vb: Function LoginAsync(loginDto As UserLoginDto) As Task(Of AuthResponseDto)
+  overload: NewBalanceStore.Application.Interfaces.IAuthService.LoginAsync*
+references:
+- uid: NewBalanceStore.Application.Interfaces
+  commentId: N:NewBalanceStore.Application.Interfaces
+  name: NewBalanceStore.Application.Interfaces
+  nameWithType: NewBalanceStore.Application.Interfaces
+  fullName: NewBalanceStore.Application.Interfaces
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.Interfaces
+    name: Interfaces
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.Interfaces
+    name: Interfaces
+- uid: NewBalanceStore.Application.Interfaces.IAuthService.RegisterAsync*
+  commentId: Overload:NewBalanceStore.Application.Interfaces.IAuthService.RegisterAsync
+  href: NewBalanceStore.Application.Interfaces.IAuthService.html#NewBalanceStore_Application_Interfaces_IAuthService_RegisterAsync_NewBalanceStore_Application_DTOs_UserRegisterDto_
+  name: RegisterAsync
+  nameWithType: IAuthService.RegisterAsync
+  fullName: NewBalanceStore.Application.Interfaces.IAuthService.RegisterAsync
+- uid: NewBalanceStore.Application.DTOs.UserRegisterDto
+  commentId: T:NewBalanceStore.Application.DTOs.UserRegisterDto
+  parent: NewBalanceStore.Application.DTOs
+  href: NewBalanceStore.Application.DTOs.UserRegisterDto.html
+  name: UserRegisterDto
+  nameWithType: UserRegisterDto
+  fullName: NewBalanceStore.Application.DTOs.UserRegisterDto
+- uid: System.Threading.Tasks.Task{NewBalanceStore.Application.DTOs.AuthResponseDto}
+  commentId: T:System.Threading.Tasks.Task{NewBalanceStore.Application.DTOs.AuthResponseDto}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<AuthResponseDto>
+  nameWithType: Task<AuthResponseDto>
+  fullName: System.Threading.Tasks.Task<NewBalanceStore.Application.DTOs.AuthResponseDto>
+  nameWithType.vb: Task(Of AuthResponseDto)
+  fullName.vb: System.Threading.Tasks.Task(Of NewBalanceStore.Application.DTOs.AuthResponseDto)
+  name.vb: Task(Of AuthResponseDto)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NewBalanceStore.Application.DTOs.AuthResponseDto
+    name: AuthResponseDto
+    href: NewBalanceStore.Application.DTOs.AuthResponseDto.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NewBalanceStore.Application.DTOs.AuthResponseDto
+    name: AuthResponseDto
+    href: NewBalanceStore.Application.DTOs.AuthResponseDto.html
+  - name: )
+- uid: NewBalanceStore.Application.DTOs
+  commentId: N:NewBalanceStore.Application.DTOs
+  name: NewBalanceStore.Application.DTOs
+  nameWithType: NewBalanceStore.Application.DTOs
+  fullName: NewBalanceStore.Application.DTOs
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.DTOs
+    name: DTOs
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.DTOs
+    name: DTOs
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NewBalanceStore.Application.Interfaces.IAuthService.LoginAsync*
+  commentId: Overload:NewBalanceStore.Application.Interfaces.IAuthService.LoginAsync
+  href: NewBalanceStore.Application.Interfaces.IAuthService.html#NewBalanceStore_Application_Interfaces_IAuthService_LoginAsync_NewBalanceStore_Application_DTOs_UserLoginDto_
+  name: LoginAsync
+  nameWithType: IAuthService.LoginAsync
+  fullName: NewBalanceStore.Application.Interfaces.IAuthService.LoginAsync
+- uid: NewBalanceStore.Application.DTOs.UserLoginDto
+  commentId: T:NewBalanceStore.Application.DTOs.UserLoginDto
+  parent: NewBalanceStore.Application.DTOs
+  href: NewBalanceStore.Application.DTOs.UserLoginDto.html
+  name: UserLoginDto
+  nameWithType: UserLoginDto
+  fullName: NewBalanceStore.Application.DTOs.UserLoginDto

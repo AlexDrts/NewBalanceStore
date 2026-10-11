@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>New Balance Store | NewBalanceStoreBack </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="New Balance Store | NewBalanceStoreBack ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/AlexElNX/NewBalanceStore/blob/main/frontend/README.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="NewBalanceStoreBack">
+            NewBalanceStoreBack
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="new-balance-store">New Balance Store</h1>
+
+<p>A full-featured e-commerce web application inspired by the official <strong>New Balance</strong> design. The project includes a functional home page, product catalog with multi-criteria filtering and sorting, interactive product drawer for quick preview, shopping cart, checkout workflow, authentication system, and administrative panel.</p>
+<hr>
+<h2 id="-tech-stack">🛠 Tech Stack</h2>
+<p>The project is built using modern frontend technologies and design patterns:</p>
+<ul>
+<li><strong>Core &amp; UI:</strong> React (React.js), JavaScript (ES6+), HTML5, CSS Modules</li>
+<li><strong>Build Tool:</strong> Vite</li>
+<li><strong>Routing:</strong> React Router (SPA)</li>
+<li><strong>Testing:</strong> Vitest (Unit testing for business logic)</li>
+<li><strong>State Management &amp; Patterns:</strong> React Context API (<code>useCart</code>), Reducers, Factory Pattern (<code>ProductFactory</code>)</li>
+<li><strong>Data Persistence:</strong> LocalStorage API</li>
+</ul>
+<hr>
+<h2 id="-features">✨ Features</h2>
+<ul>
+<li><strong>📦 Product Catalog &amp; Quick View:</strong>
+<ul>
+<li>Displays footwear, apparel, and accessories.</li>
+<li><strong>Product Drawer:</strong> Dynamic quick-view panel to select sizes, colors, and add items to the cart without leaving the main page.</li>
+</ul>
+</li>
+<li><strong>🔍 Advanced Filtering &amp; Sorting:</strong>
+<ul>
+<li><strong>Category Filter:</strong> Shoes, Clothing, Accessories.</li>
+<li><strong>Sizing:</strong> Footwear Size (7–11.5) and Clothing Size (XS–2XL).</li>
+<li><strong>Price &amp; Gender:</strong> Tiered price ranges and gender classification (Men, Women, Unisex).</li>
+<li><strong>Activity Type:</strong> Running, Lifestyle, Basketball, Training, Walking, Tennis, Golf, Baseball, Skateboarding, Soccer, Lacrosse, Pickleball.</li>
+<li><strong>Color Palette:</strong> Visual color swatch filter.</li>
+<li><strong>Sorting Options:</strong> <em>Featured</em>, <em>Price: Low to High</em>, <em>Price: High to Low</em>, <em>Newest</em>, <em>Available</em>.</li>
+</ul>
+</li>
+<li><strong>🛒 Shopping Cart &amp; Checkout:</strong>
+<ul>
+<li>Add, remove, and adjust item quantities with dynamic subtotal, tax, and total calculations.</li>
+<li>Interactive checkout flow.</li>
+</ul>
+</li>
+<li><strong>🔑 Authentication:</strong>
+<ul>
+<li>User Login and Account Registration forms.</li>
+</ul>
+</li>
+<li><strong>🛠 Admin Dashboard &amp; Product Management:</strong>
+<ul>
+<li>Administrative interface with a form to create and publish new products (<strong>Add Product</strong>).</li>
+</ul>
+</li>
+<li><strong>🧪 Unit Testing:</strong>
+<ul>
+<li>Comprehensive test suite using Vitest covering domain entities (<code>Order</code> and <code>Cart</code>).</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="-project-structure">📁 Project Structure</h2>
+<p>The project structure follows a clean, modular architecture:</p>
+<pre><code class="lang-text">src/
+├── assets/          # Product images, SVG icons, and static media
+├── components/      # Reusable UI components (Buttons, Cards, Modals, Product Drawer)
+├── context/         # Global state management (useCart context provider)
+├── entities/        # Core domain model classes (Cart, Order)
+├── factory/         # Factory Pattern implementation for Product sub-classes
+├── pages/           # Application views (Home, Products, Cart, Checkout, Login, Register, Admin)
+├── reducers/        # Reducers for handling complex state transitions
+├── services/        # Data services and mock API interactions
+├── styles/          # Global styles and CSS modules (App.css, index.css)
+├── tests/           # Unit tests for domain models (Vitest)
+└── utils/           # Helper functions and localStorage helpers
+</code></pre>
+<hr>
+<h2 id="-interface-screenshots--screenshots-walkthrough">📸 Interface Screenshots &amp; Screenshots Walkthrough</h2>
+<p>Below are previews of key pages and components across the application.</p>
+<h3 id="-main-page-home">🏠 Main Page (Home)</h3>
+<p>The landing page introduces the store, showcasing top categories, featured collections, and quick links to shop.</p>
+<h2 id="main-pagemain-pagemain-pagemain-pagemain-page"><img src="screenshots/main_page/photo1.png" alt="Main Page">
+<img src="screenshots/main_page/photo2.png" alt="Main Page">
+<img src="screenshots/main_page/photo3.png" alt="Main Page">
+<img src="screenshots/main_page/photo4.png" alt="Main Page">
+<img src="screenshots/main_page/photo5.png" alt="Main Page"></h2>
+<h3 id="-products-page-catalog">🛍️ Products Page (Catalog)</h3>
+<p>Full catalog display featuring product cards, dynamic badges (e.g., <em>NEW</em>), price displays, and color variant swatches.</p>
+<p><img src="screenshots/product_page/photo1.png" alt="Products Page">
+<img src="screenshots/product_page/photo2.png" alt="Products Page"></p>
+<hr>
+<h3 id="-filtering-and-sorting-filter-panel">🎛️ Filtering and Sorting (Filter Panel)</h3>
+<p>Sidebar filters allowing users to narrow down products by category, footwear size, clothing size, accessory type, price range, activity, gender, and color, along with quick sorting options.</p>
+<p><img src="screenshots/filters/photo1.png" alt="Products and Sorting">
+<img src="screenshots/filters/photo2.png" alt="Products and Sorting">
+<img src="screenshots/filters/photo3.png" alt="Products and Sorting">
+<img src="screenshots/filters/photo4.png" alt="Products and Sorting"></p>
+<hr>
+<h3 id="-product-drawer-quick-view">⚡ Product Drawer (Quick View)</h3>
+<p>Interactive slide-out drawer enabling users to view high-resolution product photos, select sizes/colors, and add products directly to the bag.</p>
+<p><img src="screenshots/product_drawer/photo1.png" alt="Product Drawer">
+<img src="screenshots/product_drawer/photo2.png" alt="Product Drawer">
+<img src="screenshots/product_drawer/photo3.png" alt="Product Drawer"></p>
+<hr>
+<h3 id="-cart-page-shopping-bag">🛒 Cart Page (Shopping Bag)</h3>
+<p>Detailed shopping cart summary listing selected items, quantity controls, price itemization (subtotal, tax, shipping), and transition to checkout.</p>
+<p><img src="screenshots/cart_page/photo1.png" alt="Cart Page">
+<img src="screenshots/cart_page/photo2.png" alt="Cart Page">
+<img src="screenshots/cart_page/photo3.png" alt="Cart Page"></p>
+<hr>
+<h3 id="-checkout-page">💳 Checkout Page</h3>
+<p>Secure order placement form capturing shipping details, payment preferences, and final order review.</p>
+<p><img src="screenshots/checkout_page/photo1.png" alt="Checkout Page">
+<img src="screenshots/checkout_page/photo2.png" alt="Checkout Page"></p>
+<hr>
+<h3 id="-authentication-login--register">🔑 Authentication (Login &amp; Register)</h3>
+<p>User sign-in and registration pages for managing user accounts and saved preferences.</p>
+<h4 id="login">Login</h4>
+<p><img src="screenshots/login_register_page/login.png" alt="Login Page"></p>
+<h4 id="register">Register</h4>
+<p><img src="screenshots/login_register_page/register.png" alt="Register Page"></p>
+<hr>
+<h3 id="-admin-dashboard--add-product">⚙️ Admin Dashboard &amp; Add Product</h3>
+<p>Admin management panel featuring a rich form to create, configure, and publish new product listings to the catalog.</p>
+<h4 id="admin-dashboard">Admin Dashboard</h4>
+<p><img src="screenshots/admin_dashboard/photo1.png" alt="Admin Page"></p>
+<h4 id="add-product-form">Add Product Form</h4>
+<p><img src="screenshots/add_product_page/photo1.png" alt="Add Product Form">
+<img src="screenshots/add_product_page/photo2.png" alt="Add Product Form"></p>
+<hr>
+<h2 id="-testing--quality-assurance">🧪 Testing &amp; Quality Assurance</h2>
+<p>Unit testing is implemented with <strong>Vitest</strong> to verify business logic and domain classes:</p>
+<p><img src="screenshots/tests_run/photo.png" alt="Testing Results"></p>
+<h3 id="test-coverage-highlights">Test Coverage Highlights:</h3>
+<ul>
+<li><strong>Order Domain Class:</strong>
+<ul>
+<li>Order creation and validation</li>
+<li>Unique ID generation and timestamps</li>
+<li>Total price and tax computation</li>
+<li>Item count calculation</li>
+<li>Order status state transitions</li>
+</ul>
+</li>
+<li><strong>Cart Domain Class:</strong>
+<ul>
+<li>Adding and removing cart items</li>
+<li>Quantity updates</li>
+<li>Dynamic calculation of subtotal, tax, and overall total</li>
+</ul>
+</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/AlexElNX/NewBalanceStore/blob/main/frontend/README.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

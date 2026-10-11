@@ -1,0 +1,63 @@
+### YamlMime:ManagedReference
+items:
+- uid: NewBalanceStore.Application.Interfaces
+  commentId: N:NewBalanceStore.Application.Interfaces
+  id: NewBalanceStore.Application.Interfaces
+  children:
+  - NewBalanceStore.Application.Interfaces.IAuthService
+  - NewBalanceStore.Application.Interfaces.IProductRepository
+  - NewBalanceStore.Application.Interfaces.IProductService
+  langs:
+  - csharp
+  - vb
+  name: NewBalanceStore.Application.Interfaces
+  nameWithType: NewBalanceStore.Application.Interfaces
+  fullName: NewBalanceStore.Application.Interfaces
+  type: Namespace
+  assemblies:
+  - NewBalanceStore.Application
+references:
+- uid: NewBalanceStore.Application.Interfaces.IProductRepository
+  commentId: T:NewBalanceStore.Application.Interfaces.IProductRepository
+  parent: NewBalanceStore.Application.Interfaces
+  href: NewBalanceStore.Application.Interfaces.IProductRepository.html
+  name: IProductRepository
+  nameWithType: IProductRepository
+  fullName: NewBalanceStore.Application.Interfaces.IProductRepository
+- uid: NewBalanceStore.Application.Interfaces.IProductService
+  commentId: T:NewBalanceStore.Application.Interfaces.IProductService
+  parent: NewBalanceStore.Application.Interfaces
+  href: NewBalanceStore.Application.Interfaces.IProductService.html
+  name: IProductService
+  nameWithType: IProductService
+  fullName: NewBalanceStore.Application.Interfaces.IProductService
+- uid: NewBalanceStore.Application.Interfaces.IAuthService
+  commentId: T:NewBalanceStore.Application.Interfaces.IAuthService
+  parent: NewBalanceStore.Application.Interfaces
+  href: NewBalanceStore.Application.Interfaces.IAuthService.html
+  name: IAuthService
+  nameWithType: IAuthService
+  fullName: NewBalanceStore.Application.Interfaces.IAuthService
+- uid: NewBalanceStore.Application.Interfaces
+  commentId: N:NewBalanceStore.Application.Interfaces
+  name: NewBalanceStore.Application.Interfaces
+  nameWithType: NewBalanceStore.Application.Interfaces
+  fullName: NewBalanceStore.Application.Interfaces
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.Interfaces
+    name: Interfaces
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.Interfaces
+    name: Interfaces

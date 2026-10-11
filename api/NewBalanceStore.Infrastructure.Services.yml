@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: NewBalanceStore.Infrastructure.Services
+  commentId: N:NewBalanceStore.Infrastructure.Services
+  id: NewBalanceStore.Infrastructure.Services
+  children:
+  - NewBalanceStore.Infrastructure.Services.AuthService
+  - NewBalanceStore.Infrastructure.Services.PhotoService
+  langs:
+  - csharp
+  - vb
+  name: NewBalanceStore.Infrastructure.Services
+  nameWithType: NewBalanceStore.Infrastructure.Services
+  fullName: NewBalanceStore.Infrastructure.Services
+  type: Namespace
+  assemblies:
+  - NewBalanceStore.Infrastructure
+references:
+- uid: NewBalanceStore.Infrastructure.Services.AuthService
+  commentId: T:NewBalanceStore.Infrastructure.Services.AuthService
+  href: NewBalanceStore.Infrastructure.Services.AuthService.html
+  name: AuthService
+  nameWithType: AuthService
+  fullName: NewBalanceStore.Infrastructure.Services.AuthService
+- uid: NewBalanceStore.Infrastructure.Services.PhotoService
+  commentId: T:NewBalanceStore.Infrastructure.Services.PhotoService
+  href: NewBalanceStore.Infrastructure.Services.PhotoService.html
+  name: PhotoService
+  nameWithType: PhotoService
+  fullName: NewBalanceStore.Infrastructure.Services.PhotoService

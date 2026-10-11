@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: NewBalanceStore.Web.Controllers
+  commentId: N:NewBalanceStore.Web.Controllers
+  id: NewBalanceStore.Web.Controllers
+  children:
+  - NewBalanceStore.Web.Controllers.HomeController
+  langs:
+  - csharp
+  - vb
+  name: NewBalanceStore.Web.Controllers
+  nameWithType: NewBalanceStore.Web.Controllers
+  fullName: NewBalanceStore.Web.Controllers
+  type: Namespace
+  assemblies:
+  - NewBalanceStore.Web
+references:
+- uid: NewBalanceStore.Web.Controllers.HomeController
+  commentId: T:NewBalanceStore.Web.Controllers.HomeController
+  href: NewBalanceStore.Web.Controllers.HomeController.html
+  name: HomeController
+  nameWithType: HomeController
+  fullName: NewBalanceStore.Web.Controllers.HomeController

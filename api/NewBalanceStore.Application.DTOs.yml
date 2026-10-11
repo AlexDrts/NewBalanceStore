@@ -1,0 +1,142 @@
+### YamlMime:ManagedReference
+items:
+- uid: NewBalanceStore.Application.DTOs
+  commentId: N:NewBalanceStore.Application.DTOs
+  id: NewBalanceStore.Application.DTOs
+  children:
+  - NewBalanceStore.Application.DTOs.AddToCartDto
+  - NewBalanceStore.Application.DTOs.AuthResponseDto
+  - NewBalanceStore.Application.DTOs.CartDto
+  - NewBalanceStore.Application.DTOs.CartItemDto
+  - NewBalanceStore.Application.DTOs.CreateOrderDto
+  - NewBalanceStore.Application.DTOs.CreateOrderItemDto
+  - NewBalanceStore.Application.DTOs.CreateProductDto
+  - NewBalanceStore.Application.DTOs.CreateProductVariantDto
+  - NewBalanceStore.Application.DTOs.OrderDto
+  - NewBalanceStore.Application.DTOs.OrderItemDto
+  - NewBalanceStore.Application.DTOs.ProductDto
+  - NewBalanceStore.Application.DTOs.ProductFilterDto
+  - NewBalanceStore.Application.DTOs.UserLoginDto
+  - NewBalanceStore.Application.DTOs.UserRegisterDto
+  langs:
+  - csharp
+  - vb
+  name: NewBalanceStore.Application.DTOs
+  nameWithType: NewBalanceStore.Application.DTOs
+  fullName: NewBalanceStore.Application.DTOs
+  type: Namespace
+  assemblies:
+  - NewBalanceStore.Application
+references:
+- uid: NewBalanceStore.Application.DTOs.CartItemDto
+  commentId: T:NewBalanceStore.Application.DTOs.CartItemDto
+  href: NewBalanceStore.Application.DTOs.CartItemDto.html
+  name: CartItemDto
+  nameWithType: CartItemDto
+  fullName: NewBalanceStore.Application.DTOs.CartItemDto
+- uid: NewBalanceStore.Application.DTOs.CartDto
+  commentId: T:NewBalanceStore.Application.DTOs.CartDto
+  href: NewBalanceStore.Application.DTOs.CartDto.html
+  name: CartDto
+  nameWithType: CartDto
+  fullName: NewBalanceStore.Application.DTOs.CartDto
+- uid: NewBalanceStore.Application.DTOs.AddToCartDto
+  commentId: T:NewBalanceStore.Application.DTOs.AddToCartDto
+  href: NewBalanceStore.Application.DTOs.AddToCartDto.html
+  name: AddToCartDto
+  nameWithType: AddToCartDto
+  fullName: NewBalanceStore.Application.DTOs.AddToCartDto
+- uid: NewBalanceStore.Application.DTOs.ProductDto
+  commentId: T:NewBalanceStore.Application.DTOs.ProductDto
+  href: NewBalanceStore.Application.DTOs.ProductDto.html
+  name: ProductDto
+  nameWithType: ProductDto
+  fullName: NewBalanceStore.Application.DTOs.ProductDto
+- uid: NewBalanceStore.Application.DTOs.CreateProductDto
+  commentId: T:NewBalanceStore.Application.DTOs.CreateProductDto
+  parent: NewBalanceStore.Application.DTOs
+  href: NewBalanceStore.Application.DTOs.CreateProductDto.html
+  name: CreateProductDto
+  nameWithType: CreateProductDto
+  fullName: NewBalanceStore.Application.DTOs.CreateProductDto
+- uid: NewBalanceStore.Application.DTOs.CreateOrderDto
+  commentId: T:NewBalanceStore.Application.DTOs.CreateOrderDto
+  parent: NewBalanceStore.Application.DTOs
+  href: NewBalanceStore.Application.DTOs.CreateOrderDto.html
+  name: CreateOrderDto
+  nameWithType: CreateOrderDto
+  fullName: NewBalanceStore.Application.DTOs.CreateOrderDto
+- uid: NewBalanceStore.Application.DTOs.CreateOrderItemDto
+  commentId: T:NewBalanceStore.Application.DTOs.CreateOrderItemDto
+  href: NewBalanceStore.Application.DTOs.CreateOrderItemDto.html
+  name: CreateOrderItemDto
+  nameWithType: CreateOrderItemDto
+  fullName: NewBalanceStore.Application.DTOs.CreateOrderItemDto
+- uid: NewBalanceStore.Application.DTOs.CreateProductVariantDto
+  commentId: T:NewBalanceStore.Application.DTOs.CreateProductVariantDto
+  href: NewBalanceStore.Application.DTOs.CreateProductVariantDto.html
+  name: CreateProductVariantDto
+  nameWithType: CreateProductVariantDto
+  fullName: NewBalanceStore.Application.DTOs.CreateProductVariantDto
+- uid: NewBalanceStore.Application.DTOs.OrderDto
+  commentId: T:NewBalanceStore.Application.DTOs.OrderDto
+  href: NewBalanceStore.Application.DTOs.OrderDto.html
+  name: OrderDto
+  nameWithType: OrderDto
+  fullName: NewBalanceStore.Application.DTOs.OrderDto
+- uid: NewBalanceStore.Application.DTOs.OrderItemDto
+  commentId: T:NewBalanceStore.Application.DTOs.OrderItemDto
+  href: NewBalanceStore.Application.DTOs.OrderItemDto.html
+  name: OrderItemDto
+  nameWithType: OrderItemDto
+  fullName: NewBalanceStore.Application.DTOs.OrderItemDto
+- uid: NewBalanceStore.Application.DTOs.ProductFilterDto
+  commentId: T:NewBalanceStore.Application.DTOs.ProductFilterDto
+  parent: NewBalanceStore.Application.DTOs
+  href: NewBalanceStore.Application.DTOs.ProductFilterDto.html
+  name: ProductFilterDto
+  nameWithType: ProductFilterDto
+  fullName: NewBalanceStore.Application.DTOs.ProductFilterDto
+- uid: NewBalanceStore.Application.DTOs.AuthResponseDto
+  commentId: T:NewBalanceStore.Application.DTOs.AuthResponseDto
+  href: NewBalanceStore.Application.DTOs.AuthResponseDto.html
+  name: AuthResponseDto
+  nameWithType: AuthResponseDto
+  fullName: NewBalanceStore.Application.DTOs.AuthResponseDto
+- uid: NewBalanceStore.Application.DTOs.UserLoginDto
+  commentId: T:NewBalanceStore.Application.DTOs.UserLoginDto
+  parent: NewBalanceStore.Application.DTOs
+  href: NewBalanceStore.Application.DTOs.UserLoginDto.html
+  name: UserLoginDto
+  nameWithType: UserLoginDto
+  fullName: NewBalanceStore.Application.DTOs.UserLoginDto
+- uid: NewBalanceStore.Application.DTOs.UserRegisterDto
+  commentId: T:NewBalanceStore.Application.DTOs.UserRegisterDto
+  parent: NewBalanceStore.Application.DTOs
+  href: NewBalanceStore.Application.DTOs.UserRegisterDto.html
+  name: UserRegisterDto
+  nameWithType: UserRegisterDto
+  fullName: NewBalanceStore.Application.DTOs.UserRegisterDto
+- uid: NewBalanceStore.Application.DTOs
+  commentId: N:NewBalanceStore.Application.DTOs
+  name: NewBalanceStore.Application.DTOs
+  nameWithType: NewBalanceStore.Application.DTOs
+  fullName: NewBalanceStore.Application.DTOs
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.DTOs
+    name: DTOs
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.DTOs
+    name: DTOs

@@ -1,0 +1,1263 @@
+### YamlMime:ManagedReference
+items:
+- uid: NewBalanceStore.UnitTests.ProductServiceTests
+  commentId: T:NewBalanceStore.UnitTests.ProductServiceTests
+  id: ProductServiceTests
+  parent: NewBalanceStore.UnitTests
+  children:
+  - NewBalanceStore.UnitTests.ProductServiceTests.CreateAsync_ShouldCallRepository
+  - NewBalanceStore.UnitTests.ProductServiceTests.DeleteAsync_ShouldCallRepository_WhenProductExists
+  - NewBalanceStore.UnitTests.ProductServiceTests.DeleteAsync_WhenProductDoesNotExist_ShouldNotCallDelete
+  - NewBalanceStore.UnitTests.ProductServiceTests.GetAllAsync_ShouldReturnAllProducts
+  - NewBalanceStore.UnitTests.ProductServiceTests.GetByIdAsync_ShouldMapProductAndVariantProperties
+  - NewBalanceStore.UnitTests.ProductServiceTests.GetByIdAsync_WhenProductDoesNotExist_ShouldReturnNull
+  - NewBalanceStore.UnitTests.ProductServiceTests.GetByIdAsync_WhenProductExists_ShouldReturnProduct
+  - NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldFilterBySearchTerm
+  - NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldFilterCategoryAndInclusivePriceRange
+  - NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldReturnFilteredAndSortedResults
+  - NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldSearchDescriptionCaseInsensitively
+  - NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldSortResults(System.String,System.Int32[])
+  - NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_WhenNoProductsMatch_ShouldReturnEmptyCollection
+  - NewBalanceStore.UnitTests.ProductServiceTests.ProductService
+  - NewBalanceStore.UnitTests.ProductServiceTests.RepositoryMock
+  - NewBalanceStore.UnitTests.ProductServiceTests.SetUp
+  - NewBalanceStore.UnitTests.ProductServiceTests.UpdateAsync_ShouldCallRepository_WhenProductExists
+  - NewBalanceStore.UnitTests.ProductServiceTests.UpdateAsync_WhenProductDoesNotExist_ShouldReturnFalseWithoutUpdating
+  langs:
+  - csharp
+  - vb
+  name: ProductServiceTests
+  nameWithType: ProductServiceTests
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests
+  type: Class
+  source:
+    remote:
+      path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: ProductServiceTests
+    path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+    startLine: 9
+  assemblies:
+  - NewBalanceStore.UnitTests
+  namespace: NewBalanceStore.UnitTests
+  syntax:
+    content: >-
+      [TestFixture]
+
+      public class ProductServiceTests
+    content.vb: >-
+      <TestFixture>
+
+      Public Class ProductServiceTests
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: NUnit.Framework.TestFixtureAttribute
+    ctor: NUnit.Framework.TestFixtureAttribute.#ctor
+    arguments: []
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.RepositoryMock
+  commentId: P:NewBalanceStore.UnitTests.ProductServiceTests.RepositoryMock
+  id: RepositoryMock
+  parent: NewBalanceStore.UnitTests.ProductServiceTests
+  langs:
+  - csharp
+  - vb
+  name: RepositoryMock
+  nameWithType: ProductServiceTests.RepositoryMock
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.RepositoryMock
+  type: Property
+  source:
+    remote:
+      path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: RepositoryMock
+    path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+    startLine: 15
+  assemblies:
+  - NewBalanceStore.UnitTests
+  namespace: NewBalanceStore.UnitTests
+  syntax:
+    content: public Mock<IProductRepository> RepositoryMock { get; set; }
+    parameters: []
+    return:
+      type: Moq.Mock{NewBalanceStore.Domain.Interfaces.IProductRepository}
+    content.vb: Public Property RepositoryMock As Mock(Of IProductRepository)
+  overload: NewBalanceStore.UnitTests.ProductServiceTests.RepositoryMock*
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.ProductService
+  commentId: P:NewBalanceStore.UnitTests.ProductServiceTests.ProductService
+  id: ProductService
+  parent: NewBalanceStore.UnitTests.ProductServiceTests
+  langs:
+  - csharp
+  - vb
+  name: ProductService
+  nameWithType: ProductServiceTests.ProductService
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.ProductService
+  type: Property
+  source:
+    remote:
+      path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: ProductService
+    path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+    startLine: 16
+  assemblies:
+  - NewBalanceStore.UnitTests
+  namespace: NewBalanceStore.UnitTests
+  syntax:
+    content: public ProductService ProductService { get; set; }
+    parameters: []
+    return:
+      type: NewBalanceStore.Application.Services.ProductService
+    content.vb: Public Property ProductService As ProductService
+  overload: NewBalanceStore.UnitTests.ProductServiceTests.ProductService*
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.SetUp
+  commentId: M:NewBalanceStore.UnitTests.ProductServiceTests.SetUp
+  id: SetUp
+  parent: NewBalanceStore.UnitTests.ProductServiceTests
+  langs:
+  - csharp
+  - vb
+  name: SetUp()
+  nameWithType: ProductServiceTests.SetUp()
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.SetUp()
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: SetUp
+    path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+    startLine: 18
+  assemblies:
+  - NewBalanceStore.UnitTests
+  namespace: NewBalanceStore.UnitTests
+  syntax:
+    content: >-
+      [SetUp]
+
+      public void SetUp()
+    content.vb: >-
+      <SetUp>
+
+      Public Sub SetUp()
+  overload: NewBalanceStore.UnitTests.ProductServiceTests.SetUp*
+  attributes:
+  - type: NUnit.Framework.SetUpAttribute
+    ctor: NUnit.Framework.SetUpAttribute.#ctor
+    arguments: []
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.GetAllAsync_ShouldReturnAllProducts
+  commentId: M:NewBalanceStore.UnitTests.ProductServiceTests.GetAllAsync_ShouldReturnAllProducts
+  id: GetAllAsync_ShouldReturnAllProducts
+  parent: NewBalanceStore.UnitTests.ProductServiceTests
+  langs:
+  - csharp
+  - vb
+  name: GetAllAsync_ShouldReturnAllProducts()
+  nameWithType: ProductServiceTests.GetAllAsync_ShouldReturnAllProducts()
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.GetAllAsync_ShouldReturnAllProducts()
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: GetAllAsync_ShouldReturnAllProducts
+    path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+    startLine: 25
+  assemblies:
+  - NewBalanceStore.UnitTests
+  namespace: NewBalanceStore.UnitTests
+  syntax:
+    content: >-
+      [Test]
+
+      public Task GetAllAsync_ShouldReturnAllProducts()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: >-
+      <Test>
+
+      Public Function GetAllAsync_ShouldReturnAllProducts() As Task
+  overload: NewBalanceStore.UnitTests.ProductServiceTests.GetAllAsync_ShouldReturnAllProducts*
+  attributes:
+  - type: NUnit.Framework.TestAttribute
+    ctor: NUnit.Framework.TestAttribute.#ctor
+    arguments: []
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.GetByIdAsync_WhenProductExists_ShouldReturnProduct
+  commentId: M:NewBalanceStore.UnitTests.ProductServiceTests.GetByIdAsync_WhenProductExists_ShouldReturnProduct
+  id: GetByIdAsync_WhenProductExists_ShouldReturnProduct
+  parent: NewBalanceStore.UnitTests.ProductServiceTests
+  langs:
+  - csharp
+  - vb
+  name: GetByIdAsync_WhenProductExists_ShouldReturnProduct()
+  nameWithType: ProductServiceTests.GetByIdAsync_WhenProductExists_ShouldReturnProduct()
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.GetByIdAsync_WhenProductExists_ShouldReturnProduct()
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: GetByIdAsync_WhenProductExists_ShouldReturnProduct
+    path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+    startLine: 43
+  assemblies:
+  - NewBalanceStore.UnitTests
+  namespace: NewBalanceStore.UnitTests
+  syntax:
+    content: >-
+      [Test]
+
+      public Task GetByIdAsync_WhenProductExists_ShouldReturnProduct()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: >-
+      <Test>
+
+      Public Function GetByIdAsync_WhenProductExists_ShouldReturnProduct() As Task
+  overload: NewBalanceStore.UnitTests.ProductServiceTests.GetByIdAsync_WhenProductExists_ShouldReturnProduct*
+  attributes:
+  - type: NUnit.Framework.TestAttribute
+    ctor: NUnit.Framework.TestAttribute.#ctor
+    arguments: []
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldFilterBySearchTerm
+  commentId: M:NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldFilterBySearchTerm
+  id: GetFilteredProductsAsync_ShouldFilterBySearchTerm
+  parent: NewBalanceStore.UnitTests.ProductServiceTests
+  langs:
+  - csharp
+  - vb
+  name: GetFilteredProductsAsync_ShouldFilterBySearchTerm()
+  nameWithType: ProductServiceTests.GetFilteredProductsAsync_ShouldFilterBySearchTerm()
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldFilterBySearchTerm()
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: GetFilteredProductsAsync_ShouldFilterBySearchTerm
+    path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+    startLine: 55
+  assemblies:
+  - NewBalanceStore.UnitTests
+  namespace: NewBalanceStore.UnitTests
+  syntax:
+    content: >-
+      [Test]
+
+      public Task GetFilteredProductsAsync_ShouldFilterBySearchTerm()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: >-
+      <Test>
+
+      Public Function GetFilteredProductsAsync_ShouldFilterBySearchTerm() As Task
+  overload: NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldFilterBySearchTerm*
+  attributes:
+  - type: NUnit.Framework.TestAttribute
+    ctor: NUnit.Framework.TestAttribute.#ctor
+    arguments: []
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldReturnFilteredAndSortedResults
+  commentId: M:NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldReturnFilteredAndSortedResults
+  id: GetFilteredProductsAsync_ShouldReturnFilteredAndSortedResults
+  parent: NewBalanceStore.UnitTests.ProductServiceTests
+  langs:
+  - csharp
+  - vb
+  name: GetFilteredProductsAsync_ShouldReturnFilteredAndSortedResults()
+  nameWithType: ProductServiceTests.GetFilteredProductsAsync_ShouldReturnFilteredAndSortedResults()
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldReturnFilteredAndSortedResults()
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: GetFilteredProductsAsync_ShouldReturnFilteredAndSortedResults
+    path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+    startLine: 74
+  assemblies:
+  - NewBalanceStore.UnitTests
+  namespace: NewBalanceStore.UnitTests
+  syntax:
+    content: >-
+      [Test]
+
+      public Task GetFilteredProductsAsync_ShouldReturnFilteredAndSortedResults()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: >-
+      <Test>
+
+      Public Function GetFilteredProductsAsync_ShouldReturnFilteredAndSortedResults() As Task
+  overload: NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldReturnFilteredAndSortedResults*
+  attributes:
+  - type: NUnit.Framework.TestAttribute
+    ctor: NUnit.Framework.TestAttribute.#ctor
+    arguments: []
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldSearchDescriptionCaseInsensitively
+  commentId: M:NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldSearchDescriptionCaseInsensitively
+  id: GetFilteredProductsAsync_ShouldSearchDescriptionCaseInsensitively
+  parent: NewBalanceStore.UnitTests.ProductServiceTests
+  langs:
+  - csharp
+  - vb
+  name: GetFilteredProductsAsync_ShouldSearchDescriptionCaseInsensitively()
+  nameWithType: ProductServiceTests.GetFilteredProductsAsync_ShouldSearchDescriptionCaseInsensitively()
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldSearchDescriptionCaseInsensitively()
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: GetFilteredProductsAsync_ShouldSearchDescriptionCaseInsensitively
+    path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+    startLine: 105
+  assemblies:
+  - NewBalanceStore.UnitTests
+  namespace: NewBalanceStore.UnitTests
+  syntax:
+    content: public Task GetFilteredProductsAsync_ShouldSearchDescriptionCaseInsensitively()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function GetFilteredProductsAsync_ShouldSearchDescriptionCaseInsensitively() As Task
+  overload: NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldSearchDescriptionCaseInsensitively*
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldFilterCategoryAndInclusivePriceRange
+  commentId: M:NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldFilterCategoryAndInclusivePriceRange
+  id: GetFilteredProductsAsync_ShouldFilterCategoryAndInclusivePriceRange
+  parent: NewBalanceStore.UnitTests.ProductServiceTests
+  langs:
+  - csharp
+  - vb
+  name: GetFilteredProductsAsync_ShouldFilterCategoryAndInclusivePriceRange()
+  nameWithType: ProductServiceTests.GetFilteredProductsAsync_ShouldFilterCategoryAndInclusivePriceRange()
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldFilterCategoryAndInclusivePriceRange()
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: GetFilteredProductsAsync_ShouldFilterCategoryAndInclusivePriceRange
+    path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+    startLine: 119
+  assemblies:
+  - NewBalanceStore.UnitTests
+  namespace: NewBalanceStore.UnitTests
+  syntax:
+    content: >-
+      [Test]
+
+      public Task GetFilteredProductsAsync_ShouldFilterCategoryAndInclusivePriceRange()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: >-
+      <Test>
+
+      Public Function GetFilteredProductsAsync_ShouldFilterCategoryAndInclusivePriceRange() As Task
+  overload: NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldFilterCategoryAndInclusivePriceRange*
+  attributes:
+  - type: NUnit.Framework.TestAttribute
+    ctor: NUnit.Framework.TestAttribute.#ctor
+    arguments: []
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldSortResults(System.String,System.Int32[])
+  commentId: M:NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldSortResults(System.String,System.Int32[])
+  id: GetFilteredProductsAsync_ShouldSortResults(System.String,System.Int32[])
+  parent: NewBalanceStore.UnitTests.ProductServiceTests
+  langs:
+  - csharp
+  - vb
+  name: GetFilteredProductsAsync_ShouldSortResults(string, int[])
+  nameWithType: ProductServiceTests.GetFilteredProductsAsync_ShouldSortResults(string, int[])
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldSortResults(string, int[])
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: GetFilteredProductsAsync_ShouldSortResults
+    path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+    startLine: 140
+  assemblies:
+  - NewBalanceStore.UnitTests
+  namespace: NewBalanceStore.UnitTests
+  syntax:
+    content: >-
+      [TestCase("price_asc", new int[] { 2, 3, 1 })]
+
+      [TestCase("price_desc", new int[] { 1, 3, 2 })]
+
+      [TestCase("name", new int[] { 2, 1, 3 })]
+
+      public Task GetFilteredProductsAsync_ShouldSortResults(string sortBy, int[] expectedIds)
+    parameters:
+    - id: sortBy
+      type: System.String
+    - id: expectedIds
+      type: System.Int32[]
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: >-
+      <TestCase("price_asc", New Integer() { 2, 3, 1 })>
+
+      <TestCase("price_desc", New Integer() { 1, 3, 2 })>
+
+      <TestCase("name", New Integer() { 2, 1, 3 })>
+
+      Public Function GetFilteredProductsAsync_ShouldSortResults(sortBy As String, expectedIds As Integer()) As Task
+  overload: NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldSortResults*
+  nameWithType.vb: ProductServiceTests.GetFilteredProductsAsync_ShouldSortResults(String, Integer())
+  fullName.vb: NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldSortResults(String, Integer())
+  name.vb: GetFilteredProductsAsync_ShouldSortResults(String, Integer())
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_WhenNoProductsMatch_ShouldReturnEmptyCollection
+  commentId: M:NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_WhenNoProductsMatch_ShouldReturnEmptyCollection
+  id: GetFilteredProductsAsync_WhenNoProductsMatch_ShouldReturnEmptyCollection
+  parent: NewBalanceStore.UnitTests.ProductServiceTests
+  langs:
+  - csharp
+  - vb
+  name: GetFilteredProductsAsync_WhenNoProductsMatch_ShouldReturnEmptyCollection()
+  nameWithType: ProductServiceTests.GetFilteredProductsAsync_WhenNoProductsMatch_ShouldReturnEmptyCollection()
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_WhenNoProductsMatch_ShouldReturnEmptyCollection()
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: GetFilteredProductsAsync_WhenNoProductsMatch_ShouldReturnEmptyCollection
+    path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+    startLine: 157
+  assemblies:
+  - NewBalanceStore.UnitTests
+  namespace: NewBalanceStore.UnitTests
+  syntax:
+    content: >-
+      [Test]
+
+      public Task GetFilteredProductsAsync_WhenNoProductsMatch_ShouldReturnEmptyCollection()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: >-
+      <Test>
+
+      Public Function GetFilteredProductsAsync_WhenNoProductsMatch_ShouldReturnEmptyCollection() As Task
+  overload: NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_WhenNoProductsMatch_ShouldReturnEmptyCollection*
+  attributes:
+  - type: NUnit.Framework.TestAttribute
+    ctor: NUnit.Framework.TestAttribute.#ctor
+    arguments: []
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.GetByIdAsync_ShouldMapProductAndVariantProperties
+  commentId: M:NewBalanceStore.UnitTests.ProductServiceTests.GetByIdAsync_ShouldMapProductAndVariantProperties
+  id: GetByIdAsync_ShouldMapProductAndVariantProperties
+  parent: NewBalanceStore.UnitTests.ProductServiceTests
+  langs:
+  - csharp
+  - vb
+  name: GetByIdAsync_ShouldMapProductAndVariantProperties()
+  nameWithType: ProductServiceTests.GetByIdAsync_ShouldMapProductAndVariantProperties()
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.GetByIdAsync_ShouldMapProductAndVariantProperties()
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: GetByIdAsync_ShouldMapProductAndVariantProperties
+    path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+    startLine: 174
+  assemblies:
+  - NewBalanceStore.UnitTests
+  namespace: NewBalanceStore.UnitTests
+  syntax:
+    content: >-
+      [Test]
+
+      public Task GetByIdAsync_ShouldMapProductAndVariantProperties()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: >-
+      <Test>
+
+      Public Function GetByIdAsync_ShouldMapProductAndVariantProperties() As Task
+  overload: NewBalanceStore.UnitTests.ProductServiceTests.GetByIdAsync_ShouldMapProductAndVariantProperties*
+  attributes:
+  - type: NUnit.Framework.TestAttribute
+    ctor: NUnit.Framework.TestAttribute.#ctor
+    arguments: []
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.CreateAsync_ShouldCallRepository
+  commentId: M:NewBalanceStore.UnitTests.ProductServiceTests.CreateAsync_ShouldCallRepository
+  id: CreateAsync_ShouldCallRepository
+  parent: NewBalanceStore.UnitTests.ProductServiceTests
+  langs:
+  - csharp
+  - vb
+  name: CreateAsync_ShouldCallRepository()
+  nameWithType: ProductServiceTests.CreateAsync_ShouldCallRepository()
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.CreateAsync_ShouldCallRepository()
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: CreateAsync_ShouldCallRepository
+    path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+    startLine: 201
+  assemblies:
+  - NewBalanceStore.UnitTests
+  namespace: NewBalanceStore.UnitTests
+  syntax:
+    content: >-
+      [Test]
+
+      public Task CreateAsync_ShouldCallRepository()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: >-
+      <Test>
+
+      Public Function CreateAsync_ShouldCallRepository() As Task
+  overload: NewBalanceStore.UnitTests.ProductServiceTests.CreateAsync_ShouldCallRepository*
+  attributes:
+  - type: NUnit.Framework.TestAttribute
+    ctor: NUnit.Framework.TestAttribute.#ctor
+    arguments: []
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.UpdateAsync_ShouldCallRepository_WhenProductExists
+  commentId: M:NewBalanceStore.UnitTests.ProductServiceTests.UpdateAsync_ShouldCallRepository_WhenProductExists
+  id: UpdateAsync_ShouldCallRepository_WhenProductExists
+  parent: NewBalanceStore.UnitTests.ProductServiceTests
+  langs:
+  - csharp
+  - vb
+  name: UpdateAsync_ShouldCallRepository_WhenProductExists()
+  nameWithType: ProductServiceTests.UpdateAsync_ShouldCallRepository_WhenProductExists()
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.UpdateAsync_ShouldCallRepository_WhenProductExists()
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: UpdateAsync_ShouldCallRepository_WhenProductExists
+    path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+    startLine: 214
+  assemblies:
+  - NewBalanceStore.UnitTests
+  namespace: NewBalanceStore.UnitTests
+  syntax:
+    content: >-
+      [Test]
+
+      public Task UpdateAsync_ShouldCallRepository_WhenProductExists()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: >-
+      <Test>
+
+      Public Function UpdateAsync_ShouldCallRepository_WhenProductExists() As Task
+  overload: NewBalanceStore.UnitTests.ProductServiceTests.UpdateAsync_ShouldCallRepository_WhenProductExists*
+  attributes:
+  - type: NUnit.Framework.TestAttribute
+    ctor: NUnit.Framework.TestAttribute.#ctor
+    arguments: []
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.UpdateAsync_WhenProductDoesNotExist_ShouldReturnFalseWithoutUpdating
+  commentId: M:NewBalanceStore.UnitTests.ProductServiceTests.UpdateAsync_WhenProductDoesNotExist_ShouldReturnFalseWithoutUpdating
+  id: UpdateAsync_WhenProductDoesNotExist_ShouldReturnFalseWithoutUpdating
+  parent: NewBalanceStore.UnitTests.ProductServiceTests
+  langs:
+  - csharp
+  - vb
+  name: UpdateAsync_WhenProductDoesNotExist_ShouldReturnFalseWithoutUpdating()
+  nameWithType: ProductServiceTests.UpdateAsync_WhenProductDoesNotExist_ShouldReturnFalseWithoutUpdating()
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.UpdateAsync_WhenProductDoesNotExist_ShouldReturnFalseWithoutUpdating()
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: UpdateAsync_WhenProductDoesNotExist_ShouldReturnFalseWithoutUpdating
+    path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+    startLine: 231
+  assemblies:
+  - NewBalanceStore.UnitTests
+  namespace: NewBalanceStore.UnitTests
+  syntax:
+    content: >-
+      [Test]
+
+      public Task UpdateAsync_WhenProductDoesNotExist_ShouldReturnFalseWithoutUpdating()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: >-
+      <Test>
+
+      Public Function UpdateAsync_WhenProductDoesNotExist_ShouldReturnFalseWithoutUpdating() As Task
+  overload: NewBalanceStore.UnitTests.ProductServiceTests.UpdateAsync_WhenProductDoesNotExist_ShouldReturnFalseWithoutUpdating*
+  attributes:
+  - type: NUnit.Framework.TestAttribute
+    ctor: NUnit.Framework.TestAttribute.#ctor
+    arguments: []
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.DeleteAsync_ShouldCallRepository_WhenProductExists
+  commentId: M:NewBalanceStore.UnitTests.ProductServiceTests.DeleteAsync_ShouldCallRepository_WhenProductExists
+  id: DeleteAsync_ShouldCallRepository_WhenProductExists
+  parent: NewBalanceStore.UnitTests.ProductServiceTests
+  langs:
+  - csharp
+  - vb
+  name: DeleteAsync_ShouldCallRepository_WhenProductExists()
+  nameWithType: ProductServiceTests.DeleteAsync_ShouldCallRepository_WhenProductExists()
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.DeleteAsync_ShouldCallRepository_WhenProductExists()
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: DeleteAsync_ShouldCallRepository_WhenProductExists
+    path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+    startLine: 242
+  assemblies:
+  - NewBalanceStore.UnitTests
+  namespace: NewBalanceStore.UnitTests
+  syntax:
+    content: >-
+      [Test]
+
+      public Task DeleteAsync_ShouldCallRepository_WhenProductExists()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: >-
+      <Test>
+
+      Public Function DeleteAsync_ShouldCallRepository_WhenProductExists() As Task
+  overload: NewBalanceStore.UnitTests.ProductServiceTests.DeleteAsync_ShouldCallRepository_WhenProductExists*
+  attributes:
+  - type: NUnit.Framework.TestAttribute
+    ctor: NUnit.Framework.TestAttribute.#ctor
+    arguments: []
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.GetByIdAsync_WhenProductDoesNotExist_ShouldReturnNull
+  commentId: M:NewBalanceStore.UnitTests.ProductServiceTests.GetByIdAsync_WhenProductDoesNotExist_ShouldReturnNull
+  id: GetByIdAsync_WhenProductDoesNotExist_ShouldReturnNull
+  parent: NewBalanceStore.UnitTests.ProductServiceTests
+  langs:
+  - csharp
+  - vb
+  name: GetByIdAsync_WhenProductDoesNotExist_ShouldReturnNull()
+  nameWithType: ProductServiceTests.GetByIdAsync_WhenProductDoesNotExist_ShouldReturnNull()
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.GetByIdAsync_WhenProductDoesNotExist_ShouldReturnNull()
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: GetByIdAsync_WhenProductDoesNotExist_ShouldReturnNull
+    path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+    startLine: 258
+  assemblies:
+  - NewBalanceStore.UnitTests
+  namespace: NewBalanceStore.UnitTests
+  syntax:
+    content: >-
+      [Test]
+
+      public Task GetByIdAsync_WhenProductDoesNotExist_ShouldReturnNull()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: >-
+      <Test>
+
+      Public Function GetByIdAsync_WhenProductDoesNotExist_ShouldReturnNull() As Task
+  overload: NewBalanceStore.UnitTests.ProductServiceTests.GetByIdAsync_WhenProductDoesNotExist_ShouldReturnNull*
+  attributes:
+  - type: NUnit.Framework.TestAttribute
+    ctor: NUnit.Framework.TestAttribute.#ctor
+    arguments: []
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.DeleteAsync_WhenProductDoesNotExist_ShouldNotCallDelete
+  commentId: M:NewBalanceStore.UnitTests.ProductServiceTests.DeleteAsync_WhenProductDoesNotExist_ShouldNotCallDelete
+  id: DeleteAsync_WhenProductDoesNotExist_ShouldNotCallDelete
+  parent: NewBalanceStore.UnitTests.ProductServiceTests
+  langs:
+  - csharp
+  - vb
+  name: DeleteAsync_WhenProductDoesNotExist_ShouldNotCallDelete()
+  nameWithType: ProductServiceTests.DeleteAsync_WhenProductDoesNotExist_ShouldNotCallDelete()
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.DeleteAsync_WhenProductDoesNotExist_ShouldNotCallDelete()
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: DeleteAsync_WhenProductDoesNotExist_ShouldNotCallDelete
+    path: NewBalanceStore.UnitTests/ProductServiceTests.cs
+    startLine: 268
+  assemblies:
+  - NewBalanceStore.UnitTests
+  namespace: NewBalanceStore.UnitTests
+  syntax:
+    content: >-
+      [Test]
+
+      public Task DeleteAsync_WhenProductDoesNotExist_ShouldNotCallDelete()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: >-
+      <Test>
+
+      Public Function DeleteAsync_WhenProductDoesNotExist_ShouldNotCallDelete() As Task
+  overload: NewBalanceStore.UnitTests.ProductServiceTests.DeleteAsync_WhenProductDoesNotExist_ShouldNotCallDelete*
+  attributes:
+  - type: NUnit.Framework.TestAttribute
+    ctor: NUnit.Framework.TestAttribute.#ctor
+    arguments: []
+references:
+- uid: NewBalanceStore.UnitTests
+  commentId: N:NewBalanceStore.UnitTests
+  name: NewBalanceStore.UnitTests
+  nameWithType: NewBalanceStore.UnitTests
+  fullName: NewBalanceStore.UnitTests
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.UnitTests
+    name: UnitTests
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.UnitTests
+    name: UnitTests
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.RepositoryMock*
+  commentId: Overload:NewBalanceStore.UnitTests.ProductServiceTests.RepositoryMock
+  href: NewBalanceStore.UnitTests.ProductServiceTests.html#NewBalanceStore_UnitTests_ProductServiceTests_RepositoryMock
+  name: RepositoryMock
+  nameWithType: ProductServiceTests.RepositoryMock
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.RepositoryMock
+- uid: Moq.Mock{NewBalanceStore.Domain.Interfaces.IProductRepository}
+  commentId: T:Moq.Mock{NewBalanceStore.Domain.Interfaces.IProductRepository}
+  parent: Moq
+  definition: Moq.Mock`1
+  name: Mock<IProductRepository>
+  nameWithType: Mock<IProductRepository>
+  fullName: Moq.Mock<NewBalanceStore.Domain.Interfaces.IProductRepository>
+  nameWithType.vb: Mock(Of IProductRepository)
+  fullName.vb: Moq.Mock(Of NewBalanceStore.Domain.Interfaces.IProductRepository)
+  name.vb: Mock(Of IProductRepository)
+  spec.csharp:
+  - uid: Moq.Mock`1
+    name: Mock
+    isExternal: true
+  - name: <
+  - uid: NewBalanceStore.Domain.Interfaces.IProductRepository
+    name: IProductRepository
+  - name: '>'
+  spec.vb:
+  - uid: Moq.Mock`1
+    name: Mock
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NewBalanceStore.Domain.Interfaces.IProductRepository
+    name: IProductRepository
+  - name: )
+- uid: Moq.Mock`1
+  commentId: T:Moq.Mock`1
+  isExternal: true
+  name: Mock<T>
+  nameWithType: Mock<T>
+  fullName: Moq.Mock<T>
+  nameWithType.vb: Mock(Of T)
+  fullName.vb: Moq.Mock(Of T)
+  name.vb: Mock(Of T)
+  spec.csharp:
+  - uid: Moq.Mock`1
+    name: Mock
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: Moq.Mock`1
+    name: Mock
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Moq
+  commentId: N:Moq
+  isExternal: true
+  name: Moq
+  nameWithType: Moq
+  fullName: Moq
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.ProductService*
+  commentId: Overload:NewBalanceStore.UnitTests.ProductServiceTests.ProductService
+  href: NewBalanceStore.UnitTests.ProductServiceTests.html#NewBalanceStore_UnitTests_ProductServiceTests_ProductService
+  name: ProductService
+  nameWithType: ProductServiceTests.ProductService
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.ProductService
+- uid: NewBalanceStore.Application.Services.ProductService
+  commentId: T:NewBalanceStore.Application.Services.ProductService
+  parent: NewBalanceStore.Application.Services
+  href: NewBalanceStore.Application.Services.ProductService.html
+  name: ProductService
+  nameWithType: ProductService
+  fullName: NewBalanceStore.Application.Services.ProductService
+- uid: NewBalanceStore.Application.Services
+  commentId: N:NewBalanceStore.Application.Services
+  name: NewBalanceStore.Application.Services
+  nameWithType: NewBalanceStore.Application.Services
+  fullName: NewBalanceStore.Application.Services
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.Services
+    name: Services
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.Services
+    name: Services
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.SetUp*
+  commentId: Overload:NewBalanceStore.UnitTests.ProductServiceTests.SetUp
+  href: NewBalanceStore.UnitTests.ProductServiceTests.html#NewBalanceStore_UnitTests_ProductServiceTests_SetUp
+  name: SetUp
+  nameWithType: ProductServiceTests.SetUp
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.SetUp
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.GetAllAsync_ShouldReturnAllProducts*
+  commentId: Overload:NewBalanceStore.UnitTests.ProductServiceTests.GetAllAsync_ShouldReturnAllProducts
+  href: NewBalanceStore.UnitTests.ProductServiceTests.html#NewBalanceStore_UnitTests_ProductServiceTests_GetAllAsync_ShouldReturnAllProducts
+  name: GetAllAsync_ShouldReturnAllProducts
+  nameWithType: ProductServiceTests.GetAllAsync_ShouldReturnAllProducts
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.GetAllAsync_ShouldReturnAllProducts
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.GetByIdAsync_WhenProductExists_ShouldReturnProduct*
+  commentId: Overload:NewBalanceStore.UnitTests.ProductServiceTests.GetByIdAsync_WhenProductExists_ShouldReturnProduct
+  href: NewBalanceStore.UnitTests.ProductServiceTests.html#NewBalanceStore_UnitTests_ProductServiceTests_GetByIdAsync_WhenProductExists_ShouldReturnProduct
+  name: GetByIdAsync_WhenProductExists_ShouldReturnProduct
+  nameWithType: ProductServiceTests.GetByIdAsync_WhenProductExists_ShouldReturnProduct
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.GetByIdAsync_WhenProductExists_ShouldReturnProduct
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldFilterBySearchTerm*
+  commentId: Overload:NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldFilterBySearchTerm
+  href: NewBalanceStore.UnitTests.ProductServiceTests.html#NewBalanceStore_UnitTests_ProductServiceTests_GetFilteredProductsAsync_ShouldFilterBySearchTerm
+  name: GetFilteredProductsAsync_ShouldFilterBySearchTerm
+  nameWithType: ProductServiceTests.GetFilteredProductsAsync_ShouldFilterBySearchTerm
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldFilterBySearchTerm
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldReturnFilteredAndSortedResults*
+  commentId: Overload:NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldReturnFilteredAndSortedResults
+  href: NewBalanceStore.UnitTests.ProductServiceTests.html#NewBalanceStore_UnitTests_ProductServiceTests_GetFilteredProductsAsync_ShouldReturnFilteredAndSortedResults
+  name: GetFilteredProductsAsync_ShouldReturnFilteredAndSortedResults
+  nameWithType: ProductServiceTests.GetFilteredProductsAsync_ShouldReturnFilteredAndSortedResults
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldReturnFilteredAndSortedResults
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldSearchDescriptionCaseInsensitively*
+  commentId: Overload:NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldSearchDescriptionCaseInsensitively
+  href: NewBalanceStore.UnitTests.ProductServiceTests.html#NewBalanceStore_UnitTests_ProductServiceTests_GetFilteredProductsAsync_ShouldSearchDescriptionCaseInsensitively
+  name: GetFilteredProductsAsync_ShouldSearchDescriptionCaseInsensitively
+  nameWithType: ProductServiceTests.GetFilteredProductsAsync_ShouldSearchDescriptionCaseInsensitively
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldSearchDescriptionCaseInsensitively
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldFilterCategoryAndInclusivePriceRange*
+  commentId: Overload:NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldFilterCategoryAndInclusivePriceRange
+  href: NewBalanceStore.UnitTests.ProductServiceTests.html#NewBalanceStore_UnitTests_ProductServiceTests_GetFilteredProductsAsync_ShouldFilterCategoryAndInclusivePriceRange
+  name: GetFilteredProductsAsync_ShouldFilterCategoryAndInclusivePriceRange
+  nameWithType: ProductServiceTests.GetFilteredProductsAsync_ShouldFilterCategoryAndInclusivePriceRange
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldFilterCategoryAndInclusivePriceRange
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldSortResults*
+  commentId: Overload:NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldSortResults
+  href: NewBalanceStore.UnitTests.ProductServiceTests.html#NewBalanceStore_UnitTests_ProductServiceTests_GetFilteredProductsAsync_ShouldSortResults_System_String_System_Int32___
+  name: GetFilteredProductsAsync_ShouldSortResults
+  nameWithType: ProductServiceTests.GetFilteredProductsAsync_ShouldSortResults
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_ShouldSortResults
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Int32[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int[]
+  nameWithType: int[]
+  fullName: int[]
+  nameWithType.vb: Integer()
+  fullName.vb: Integer()
+  name.vb: Integer()
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: (
+  - name: )
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_WhenNoProductsMatch_ShouldReturnEmptyCollection*
+  commentId: Overload:NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_WhenNoProductsMatch_ShouldReturnEmptyCollection
+  href: NewBalanceStore.UnitTests.ProductServiceTests.html#NewBalanceStore_UnitTests_ProductServiceTests_GetFilteredProductsAsync_WhenNoProductsMatch_ShouldReturnEmptyCollection
+  name: GetFilteredProductsAsync_WhenNoProductsMatch_ShouldReturnEmptyCollection
+  nameWithType: ProductServiceTests.GetFilteredProductsAsync_WhenNoProductsMatch_ShouldReturnEmptyCollection
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.GetFilteredProductsAsync_WhenNoProductsMatch_ShouldReturnEmptyCollection
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.GetByIdAsync_ShouldMapProductAndVariantProperties*
+  commentId: Overload:NewBalanceStore.UnitTests.ProductServiceTests.GetByIdAsync_ShouldMapProductAndVariantProperties
+  href: NewBalanceStore.UnitTests.ProductServiceTests.html#NewBalanceStore_UnitTests_ProductServiceTests_GetByIdAsync_ShouldMapProductAndVariantProperties
+  name: GetByIdAsync_ShouldMapProductAndVariantProperties
+  nameWithType: ProductServiceTests.GetByIdAsync_ShouldMapProductAndVariantProperties
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.GetByIdAsync_ShouldMapProductAndVariantProperties
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.CreateAsync_ShouldCallRepository*
+  commentId: Overload:NewBalanceStore.UnitTests.ProductServiceTests.CreateAsync_ShouldCallRepository
+  href: NewBalanceStore.UnitTests.ProductServiceTests.html#NewBalanceStore_UnitTests_ProductServiceTests_CreateAsync_ShouldCallRepository
+  name: CreateAsync_ShouldCallRepository
+  nameWithType: ProductServiceTests.CreateAsync_ShouldCallRepository
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.CreateAsync_ShouldCallRepository
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.UpdateAsync_ShouldCallRepository_WhenProductExists*
+  commentId: Overload:NewBalanceStore.UnitTests.ProductServiceTests.UpdateAsync_ShouldCallRepository_WhenProductExists
+  href: NewBalanceStore.UnitTests.ProductServiceTests.html#NewBalanceStore_UnitTests_ProductServiceTests_UpdateAsync_ShouldCallRepository_WhenProductExists
+  name: UpdateAsync_ShouldCallRepository_WhenProductExists
+  nameWithType: ProductServiceTests.UpdateAsync_ShouldCallRepository_WhenProductExists
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.UpdateAsync_ShouldCallRepository_WhenProductExists
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.UpdateAsync_WhenProductDoesNotExist_ShouldReturnFalseWithoutUpdating*
+  commentId: Overload:NewBalanceStore.UnitTests.ProductServiceTests.UpdateAsync_WhenProductDoesNotExist_ShouldReturnFalseWithoutUpdating
+  href: NewBalanceStore.UnitTests.ProductServiceTests.html#NewBalanceStore_UnitTests_ProductServiceTests_UpdateAsync_WhenProductDoesNotExist_ShouldReturnFalseWithoutUpdating
+  name: UpdateAsync_WhenProductDoesNotExist_ShouldReturnFalseWithoutUpdating
+  nameWithType: ProductServiceTests.UpdateAsync_WhenProductDoesNotExist_ShouldReturnFalseWithoutUpdating
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.UpdateAsync_WhenProductDoesNotExist_ShouldReturnFalseWithoutUpdating
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.DeleteAsync_ShouldCallRepository_WhenProductExists*
+  commentId: Overload:NewBalanceStore.UnitTests.ProductServiceTests.DeleteAsync_ShouldCallRepository_WhenProductExists
+  href: NewBalanceStore.UnitTests.ProductServiceTests.html#NewBalanceStore_UnitTests_ProductServiceTests_DeleteAsync_ShouldCallRepository_WhenProductExists
+  name: DeleteAsync_ShouldCallRepository_WhenProductExists
+  nameWithType: ProductServiceTests.DeleteAsync_ShouldCallRepository_WhenProductExists
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.DeleteAsync_ShouldCallRepository_WhenProductExists
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.GetByIdAsync_WhenProductDoesNotExist_ShouldReturnNull*
+  commentId: Overload:NewBalanceStore.UnitTests.ProductServiceTests.GetByIdAsync_WhenProductDoesNotExist_ShouldReturnNull
+  href: NewBalanceStore.UnitTests.ProductServiceTests.html#NewBalanceStore_UnitTests_ProductServiceTests_GetByIdAsync_WhenProductDoesNotExist_ShouldReturnNull
+  name: GetByIdAsync_WhenProductDoesNotExist_ShouldReturnNull
+  nameWithType: ProductServiceTests.GetByIdAsync_WhenProductDoesNotExist_ShouldReturnNull
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.GetByIdAsync_WhenProductDoesNotExist_ShouldReturnNull
+- uid: NewBalanceStore.UnitTests.ProductServiceTests.DeleteAsync_WhenProductDoesNotExist_ShouldNotCallDelete*
+  commentId: Overload:NewBalanceStore.UnitTests.ProductServiceTests.DeleteAsync_WhenProductDoesNotExist_ShouldNotCallDelete
+  href: NewBalanceStore.UnitTests.ProductServiceTests.html#NewBalanceStore_UnitTests_ProductServiceTests_DeleteAsync_WhenProductDoesNotExist_ShouldNotCallDelete
+  name: DeleteAsync_WhenProductDoesNotExist_ShouldNotCallDelete
+  nameWithType: ProductServiceTests.DeleteAsync_WhenProductDoesNotExist_ShouldNotCallDelete
+  fullName: NewBalanceStore.UnitTests.ProductServiceTests.DeleteAsync_WhenProductDoesNotExist_ShouldNotCallDelete

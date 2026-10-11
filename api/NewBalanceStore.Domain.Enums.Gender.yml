@@ -1,0 +1,140 @@
+### YamlMime:ManagedReference
+items:
+- uid: NewBalanceStore.Domain.Enums.Gender
+  commentId: T:NewBalanceStore.Domain.Enums.Gender
+  id: Gender
+  parent: NewBalanceStore.Domain.Enums
+  children:
+  - NewBalanceStore.Domain.Enums.Gender.Men
+  - NewBalanceStore.Domain.Enums.Gender.Unisex
+  - NewBalanceStore.Domain.Enums.Gender.Women
+  langs:
+  - csharp
+  - vb
+  name: Gender
+  nameWithType: Gender
+  fullName: NewBalanceStore.Domain.Enums.Gender
+  type: Enum
+  source:
+    remote:
+      path: backend/backend/NewBalanceStore.Domain/Enums/Gender.cs
+      branch: main
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: Gender
+    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Enums/Gender.cs
+    startLine: 6
+  assemblies:
+  - NewBalanceStore.Domain
+  namespace: NewBalanceStore.Domain.Enums
+  syntax:
+    content: public enum Gender
+    content.vb: Public Enum Gender
+- uid: NewBalanceStore.Domain.Enums.Gender.Men
+  commentId: F:NewBalanceStore.Domain.Enums.Gender.Men
+  id: Men
+  parent: NewBalanceStore.Domain.Enums.Gender
+  langs:
+  - csharp
+  - vb
+  name: Men
+  nameWithType: Gender.Men
+  fullName: NewBalanceStore.Domain.Enums.Gender.Men
+  type: Field
+  source:
+    remote:
+      path: backend/backend/NewBalanceStore.Domain/Enums/Gender.cs
+      branch: main
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: Men
+    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Enums/Gender.cs
+    startLine: 8
+  assemblies:
+  - NewBalanceStore.Domain
+  namespace: NewBalanceStore.Domain.Enums
+  syntax:
+    content: Men = 0
+    return:
+      type: NewBalanceStore.Domain.Enums.Gender
+- uid: NewBalanceStore.Domain.Enums.Gender.Women
+  commentId: F:NewBalanceStore.Domain.Enums.Gender.Women
+  id: Women
+  parent: NewBalanceStore.Domain.Enums.Gender
+  langs:
+  - csharp
+  - vb
+  name: Women
+  nameWithType: Gender.Women
+  fullName: NewBalanceStore.Domain.Enums.Gender.Women
+  type: Field
+  source:
+    remote:
+      path: backend/backend/NewBalanceStore.Domain/Enums/Gender.cs
+      branch: main
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: Women
+    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Enums/Gender.cs
+    startLine: 9
+  assemblies:
+  - NewBalanceStore.Domain
+  namespace: NewBalanceStore.Domain.Enums
+  syntax:
+    content: Women = 1
+    return:
+      type: NewBalanceStore.Domain.Enums.Gender
+- uid: NewBalanceStore.Domain.Enums.Gender.Unisex
+  commentId: F:NewBalanceStore.Domain.Enums.Gender.Unisex
+  id: Unisex
+  parent: NewBalanceStore.Domain.Enums.Gender
+  langs:
+  - csharp
+  - vb
+  name: Unisex
+  nameWithType: Gender.Unisex
+  fullName: NewBalanceStore.Domain.Enums.Gender.Unisex
+  type: Field
+  source:
+    remote:
+      path: backend/backend/NewBalanceStore.Domain/Enums/Gender.cs
+      branch: main
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: Unisex
+    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Enums/Gender.cs
+    startLine: 10
+  assemblies:
+  - NewBalanceStore.Domain
+  namespace: NewBalanceStore.Domain.Enums
+  syntax:
+    content: Unisex = 2
+    return:
+      type: NewBalanceStore.Domain.Enums.Gender
+references:
+- uid: NewBalanceStore.Domain.Enums
+  commentId: N:NewBalanceStore.Domain.Enums
+  name: NewBalanceStore.Domain.Enums
+  nameWithType: NewBalanceStore.Domain.Enums
+  fullName: NewBalanceStore.Domain.Enums
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Enums
+    name: Enums
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Enums
+    name: Enums
+- uid: NewBalanceStore.Domain.Enums.Gender
+  commentId: T:NewBalanceStore.Domain.Enums.Gender
+  parent: NewBalanceStore.Domain.Enums
+  href: NewBalanceStore.Domain.Enums.Gender.html
+  name: Gender
+  nameWithType: Gender
+  fullName: NewBalanceStore.Domain.Enums.Gender

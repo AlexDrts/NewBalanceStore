@@ -1,0 +1,6301 @@
+{
+  "docfx_version": "2.81.0+ba844df625370a6bd7c1ecab0d0ec4d1d9128ac4",
+  "source_base_path": "D:/NewBalanceStore-main/NewBalanceStore-Clean/NewBalanceStoreBack",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "NewBalanceStore/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "NewBalanceStore/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "NewBalanceStore/backend/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "NewBalanceStore/backend/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "NewBalanceStore/backend/backend/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "NewBalanceStore/backend/backend/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "NewBalanceStore/docs/architecture.md",
+      "output": {
+        ".html": {
+          "relative_path": "NewBalanceStore/docs/architecture.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "NewBalanceStore/docs/src.md",
+      "output": {
+        ".html": {
+          "relative_path": "NewBalanceStore/docs/src.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "NewBalanceStore/docs/uml.md",
+      "output": {
+        ".html": {
+          "relative_path": "NewBalanceStore/docs/uml.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "NewBalanceStore/frontend/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "NewBalanceStore/frontend/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "NewBalanceStoreBackend/NewBalanceStore.Web/wwwroot/lib/jquery-validation/LICENSE.md",
+      "output": {
+        ".html": {
+          "relative_path": "NewBalanceStoreBackend/NewBalanceStore.Web/wwwroot/lib/jquery-validation/LICENSE.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "NewBalanceStoreBackend/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "NewBalanceStoreBackend/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "NewBalanceStoreBackend/backend/NewBalanceStore.Web/wwwroot/lib/jquery-validation/LICENSE.md",
+      "output": {
+        ".html": {
+          "relative_path": "NewBalanceStoreBackend/backend/NewBalanceStore.Web/wwwroot/lib/jquery-validation/LICENSE.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "NewBalanceStoreBackend/backend/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "NewBalanceStoreBackend/backend/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "NewBalanceStoreBackend/backend/backend/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "NewBalanceStoreBackend/backend/backend/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "NewBalanceStoreBackend/docs/architecture.md",
+      "output": {
+        ".html": {
+          "relative_path": "NewBalanceStoreBackend/docs/architecture.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "NewBalanceStoreBackend/docs/src.md",
+      "output": {
+        ".html": {
+          "relative_path": "NewBalanceStoreBackend/docs/src.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "NewBalanceStoreBackend/docs/uml.md",
+      "output": {
+        ".html": {
+          "relative_path": "NewBalanceStoreBackend/docs/uml.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "NewBalanceStoreBackend/frontend/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "NewBalanceStoreBackend/frontend/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "README.md",
+      "output": {
+        ".html": {
+          "relative_path": "README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Application.DTOs.AddToCartDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Application.DTOs.AddToCartDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Application.DTOs.AddToCartDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Application.DTOs.AuthResponseDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Application.DTOs.AuthResponseDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Application.DTOs.AuthResponseDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Application.DTOs.CartDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Application.DTOs.CartDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Application.DTOs.CartDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Application.DTOs.CartItemDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Application.DTOs.CartItemDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Application.DTOs.CartItemDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Application.DTOs.CreateOrderDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Application.DTOs.CreateOrderDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Application.DTOs.CreateOrderDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Application.DTOs.CreateOrderItemDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Application.DTOs.CreateOrderItemDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Application.DTOs.CreateOrderItemDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Application.DTOs.CreateProductDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Application.DTOs.CreateProductDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Application.DTOs.CreateProductDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Application.DTOs.CreateProductVariantDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Application.DTOs.CreateProductVariantDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Application.DTOs.CreateProductVariantDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Application.DTOs.OrderDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Application.DTOs.OrderDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Application.DTOs.OrderDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Application.DTOs.OrderItemDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Application.DTOs.OrderItemDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Application.DTOs.OrderItemDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Application.DTOs.ProductDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Application.DTOs.ProductDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Application.DTOs.ProductDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Application.DTOs.ProductFilterDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Application.DTOs.ProductFilterDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Application.DTOs.ProductFilterDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Application.DTOs.UserLoginDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Application.DTOs.UserLoginDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Application.DTOs.UserLoginDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Application.DTOs.UserRegisterDto.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Application.DTOs.UserRegisterDto.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Application.DTOs.UserRegisterDto",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Application.DTOs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Application.DTOs.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Application.DTOs",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Application.Interfaces.IAuthService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Application.Interfaces.IAuthService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Application.Interfaces.IAuthService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Application.Interfaces.IProductRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Application.Interfaces.IProductRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Application.Interfaces.IProductRepository",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Application.Interfaces.IProductService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Application.Interfaces.IProductService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Application.Interfaces.IProductService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Application.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Application.Interfaces.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Application.Interfaces",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Application.Mappings.OrderMappingProfile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Application.Mappings.OrderMappingProfile.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Application.Mappings.OrderMappingProfile",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Application.Mappings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Application.Mappings.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Application.Mappings",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Application.Services.IOrderService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Application.Services.IOrderService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Application.Services.IOrderService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Application.Services.OrderService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Application.Services.OrderService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Application.Services.OrderService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Application.Services.ProductService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Application.Services.ProductService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Application.Services.ProductService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Application.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Application.Services.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Application.Services",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Domain.Entities.Cart.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Domain.Entities.Cart.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Domain.Entities.Cart",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Domain.Entities.CartItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Domain.Entities.CartItem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Domain.Entities.CartItem",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Domain.Entities.CustomerInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Domain.Entities.CustomerInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Domain.Entities.CustomerInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Domain.Entities.Order.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Domain.Entities.Order.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Domain.Entities.Order",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Domain.Entities.OrderItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Domain.Entities.OrderItem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Domain.Entities.OrderItem",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Domain.Entities.Product.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Domain.Entities.Product.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Domain.Entities.Product",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Domain.Entities.ProductVariant.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Domain.Entities.ProductVariant.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Domain.Entities.ProductVariant",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Domain.Entities.ShippingAddress.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Domain.Entities.ShippingAddress.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Domain.Entities.ShippingAddress",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Domain.Entities.User.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Domain.Entities.User.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Domain.Entities.User",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Domain.Entities.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Domain.Entities.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Domain.Entities",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Domain.Enums.Gender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Domain.Enums.Gender.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Domain.Enums.Gender",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Domain.Enums.OrderStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Domain.Enums.OrderStatus.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Domain.Enums.OrderStatus",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Domain.Enums.ProductType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Domain.Enums.ProductType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Domain.Enums.ProductType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Domain.Enums.UserRole.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Domain.Enums.UserRole.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Domain.Enums.UserRole",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Domain.Enums.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Domain.Enums.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Domain.Enums",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Domain.Interfaces.IOrderRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Domain.Interfaces.IOrderRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Domain.Interfaces.IOrderRepository",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Domain.Interfaces.IPhotoService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Domain.Interfaces.IPhotoService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Domain.Interfaces.IPhotoService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Domain.Interfaces.IProductRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Domain.Interfaces.IProductRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Domain.Interfaces.IProductRepository",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Domain.Interfaces.IUserRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Domain.Interfaces.IUserRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Domain.Interfaces.IUserRepository",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Domain.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Domain.Interfaces.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Domain.Interfaces",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Infrastructure.Configurations.CloudinarySettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Infrastructure.Configurations.CloudinarySettings.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Infrastructure.Configurations.CloudinarySettings",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Infrastructure.Configurations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Infrastructure.Configurations.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Infrastructure.Configurations",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Infrastructure.Repositories.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Infrastructure.Repositories.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Infrastructure.Repositories",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Infrastructure.Services.AuthService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Infrastructure.Services.AuthService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Infrastructure.Services.AuthService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Infrastructure.Services.PhotoService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Infrastructure.Services.PhotoService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Infrastructure.Services.PhotoService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Infrastructure.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Infrastructure.Services.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Infrastructure.Services",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.IntegrationTests.AuthAndStartupIntegrationTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.IntegrationTests.AuthAndStartupIntegrationTests.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.IntegrationTests.AuthAndStartupIntegrationTests",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.IntegrationTests.Infrastructure.TestApiFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.IntegrationTests.Infrastructure.TestApiFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.IntegrationTests.Infrastructure.TestApiFactory",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.IntegrationTests.Infrastructure.TestAuthenticationHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.IntegrationTests.Infrastructure.TestAuthenticationHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.IntegrationTests.Infrastructure.TestAuthenticationHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.IntegrationTests.Infrastructure.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.IntegrationTests.Infrastructure.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.IntegrationTests.Infrastructure",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.IntegrationTests.OrdersApiIntegrationTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.IntegrationTests.OrdersApiIntegrationTests.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.IntegrationTests.OrdersApiIntegrationTests",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.IntegrationTests.ProductsApiIntegrationTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.IntegrationTests.ProductsApiIntegrationTests.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.IntegrationTests.ProductsApiIntegrationTests",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.IntegrationTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.IntegrationTests.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.IntegrationTests",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.UnitTests.Controllers.AuthControllerTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.UnitTests.Controllers.AuthControllerTests.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.UnitTests.Controllers.AuthControllerTests",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.UnitTests.Controllers.OrdersControllerTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.UnitTests.Controllers.OrdersControllerTests.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.UnitTests.Controllers.OrdersControllerTests",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.UnitTests.Controllers.ProductsControllerTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.UnitTests.Controllers.ProductsControllerTests.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.UnitTests.Controllers.ProductsControllerTests",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.UnitTests.Controllers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.UnitTests.Controllers.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.UnitTests.Controllers",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.UnitTests.DTOs.CartTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.UnitTests.DTOs.CartTests.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.UnitTests.DTOs.CartTests",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.UnitTests.DTOs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.UnitTests.DTOs.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.UnitTests.DTOs",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.UnitTests.ProductServiceTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.UnitTests.ProductServiceTests.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.UnitTests.ProductServiceTests",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.UnitTests.Services.AuthServiceTests.FakeUserRepository.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.UnitTests.Services.AuthServiceTests.FakeUserRepository.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.UnitTests.Services.AuthServiceTests.FakeUserRepository",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.UnitTests.Services.AuthServiceTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.UnitTests.Services.AuthServiceTests.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.UnitTests.Services.AuthServiceTests",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.UnitTests.Services.OrderServiceTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.UnitTests.Services.OrderServiceTests.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.UnitTests.Services.OrderServiceTests",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.UnitTests.Services.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.UnitTests.Services.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.UnitTests.Services",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.UnitTests.Tests.DtoMappingTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.UnitTests.Tests.DtoMappingTests.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.UnitTests.Tests.DtoMappingTests",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.UnitTests.Tests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.UnitTests.Tests.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.UnitTests.Tests",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.UnitTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.UnitTests.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.UnitTests",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Web.Controllers.HomeController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Web.Controllers.HomeController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Web.Controllers.HomeController",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Web.Controllers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Web.Controllers.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Web.Controllers",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Web.Models.ErrorViewModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Web.Models.ErrorViewModel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Web.Models.ErrorViewModel",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.Web.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.Web.Models.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.Web.Models",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.WebApi.Controllers.AuthController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.WebApi.Controllers.AuthController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.WebApi.Controllers.AuthController",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.WebApi.Controllers.OrdersController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.WebApi.Controllers.OrdersController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.WebApi.Controllers.OrdersController",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.WebApi.Controllers.ProductsController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.WebApi.Controllers.ProductsController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.WebApi.Controllers.ProductsController",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/NewBalanceStore.WebApi.Controllers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/NewBalanceStore.WebApi.Controllers.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "NewBalanceStore.WebApi.Controllers",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/architecture.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/architecture.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/src.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/src.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/uml.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/uml.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@adobe/css-tools/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@adobe/css-tools/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@adobe/css-tools/docs/API.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@adobe/css-tools/docs/API.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@adobe/css-tools/docs/AST.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@adobe/css-tools/docs/AST.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@adobe/css-tools/docs/CHANGELOG.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@adobe/css-tools/docs/CHANGELOG.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@adobe/css-tools/docs/EXAMPLES.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@adobe/css-tools/docs/EXAMPLES.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@asamuzakjp/css-color/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@asamuzakjp/css-color/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@asamuzakjp/dom-selector/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@asamuzakjp/dom-selector/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@asamuzakjp/generational-cache/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@asamuzakjp/generational-cache/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@asamuzakjp/nwsapi/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@asamuzakjp/nwsapi/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@babel/code-frame/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@babel/code-frame/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@babel/compat-data/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@babel/compat-data/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@babel/core/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@babel/core/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@babel/generator/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@babel/generator/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@babel/helper-compilation-targets/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@babel/helper-compilation-targets/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@babel/helper-globals/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@babel/helper-globals/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@babel/helper-module-imports/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@babel/helper-module-imports/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@babel/helper-module-transforms/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@babel/helper-module-transforms/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@babel/helper-string-parser/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@babel/helper-string-parser/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@babel/helper-validator-identifier/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@babel/helper-validator-identifier/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@babel/helper-validator-option/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@babel/helper-validator-option/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@babel/helpers/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@babel/helpers/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@babel/parser/CHANGELOG.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@babel/parser/CHANGELOG.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@babel/parser/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@babel/parser/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@babel/runtime/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@babel/runtime/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@babel/template/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@babel/template/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@babel/traverse/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@babel/traverse/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@babel/types/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@babel/types/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@bramus/specificity/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@bramus/specificity/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@csstools/color-helpers/CHANGELOG.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@csstools/color-helpers/CHANGELOG.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@csstools/color-helpers/LICENSE.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@csstools/color-helpers/LICENSE.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@csstools/color-helpers/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@csstools/color-helpers/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@csstools/css-calc/CHANGELOG.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@csstools/css-calc/CHANGELOG.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@csstools/css-calc/LICENSE.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@csstools/css-calc/LICENSE.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@csstools/css-calc/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@csstools/css-calc/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@csstools/css-color-parser/CHANGELOG.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@csstools/css-color-parser/CHANGELOG.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@csstools/css-color-parser/LICENSE.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@csstools/css-color-parser/LICENSE.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@csstools/css-color-parser/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@csstools/css-color-parser/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@csstools/css-parser-algorithms/CHANGELOG.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@csstools/css-parser-algorithms/CHANGELOG.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@csstools/css-parser-algorithms/LICENSE.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@csstools/css-parser-algorithms/LICENSE.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@csstools/css-parser-algorithms/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@csstools/css-parser-algorithms/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@csstools/css-syntax-patches-for-csstree/CHANGELOG.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@csstools/css-syntax-patches-for-csstree/CHANGELOG.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@csstools/css-syntax-patches-for-csstree/LICENSE.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@csstools/css-syntax-patches-for-csstree/LICENSE.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@csstools/css-syntax-patches-for-csstree/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@csstools/css-syntax-patches-for-csstree/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@csstools/css-tokenizer/CHANGELOG.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@csstools/css-tokenizer/CHANGELOG.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@csstools/css-tokenizer/LICENSE.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@csstools/css-tokenizer/LICENSE.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@csstools/css-tokenizer/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@csstools/css-tokenizer/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@eslint-community/eslint-utils/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@eslint-community/eslint-utils/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@eslint-community/eslint-utils/node_modules/eslint-visitor-keys/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@eslint-community/eslint-utils/node_modules/eslint-visitor-keys/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@eslint-community/regexpp/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@eslint-community/regexpp/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@eslint/config-array/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@eslint/config-array/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@eslint/config-helpers/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@eslint/config-helpers/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@eslint/core/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@eslint/core/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@eslint/js/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@eslint/js/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@eslint/object-schema/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@eslint/object-schema/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@eslint/plugin-kit/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@eslint/plugin-kit/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@exodus/bytes/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@exodus/bytes/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@humanfs/core/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@humanfs/core/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@humanfs/node/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@humanfs/node/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@humanfs/types/CHANGELOG.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@humanfs/types/CHANGELOG.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@humanfs/types/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@humanfs/types/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@humanwhocodes/module-importer/CHANGELOG.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@humanwhocodes/module-importer/CHANGELOG.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@humanwhocodes/module-importer/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@humanwhocodes/module-importer/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@humanwhocodes/retry/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@humanwhocodes/retry/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@jridgewell/gen-mapping/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@jridgewell/gen-mapping/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@jridgewell/remapping/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@jridgewell/remapping/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@jridgewell/resolve-uri/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@jridgewell/resolve-uri/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@jridgewell/sourcemap-codec/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@jridgewell/sourcemap-codec/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@jridgewell/trace-mapping/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@jridgewell/trace-mapping/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@oxc-project/types/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@oxc-project/types/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@rolldown/binding-win32-x64-msvc/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@rolldown/binding-win32-x64-msvc/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@rolldown/pluginutils/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@rolldown/pluginutils/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@standard-schema/spec/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@standard-schema/spec/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@testing-library/dom/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@testing-library/dom/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@testing-library/jest-dom/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@testing-library/jest-dom/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@testing-library/jest-dom/node_modules/dom-accessibility-api/LICENSE.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@testing-library/jest-dom/node_modules/dom-accessibility-api/LICENSE.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@testing-library/jest-dom/node_modules/dom-accessibility-api/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@testing-library/jest-dom/node_modules/dom-accessibility-api/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@testing-library/react/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@testing-library/react/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@types/aria-query/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@types/aria-query/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@types/chai/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@types/chai/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@types/deep-eql/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@types/deep-eql/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@types/esrecurse/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@types/esrecurse/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@types/estree/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@types/estree/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@types/json-schema/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@types/json-schema/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@types/react-dom/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@types/react-dom/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@types/react/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@types/react/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@vitejs/plugin-react/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@vitejs/plugin-react/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@vitest/expect/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@vitest/expect/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@vitest/mocker/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@vitest/mocker/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@vitest/pretty-format/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@vitest/pretty-format/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@vitest/runner/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@vitest/runner/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@vitest/snapshot/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@vitest/snapshot/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@vitest/spy/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@vitest/spy/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/@vitest/utils/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/@vitest/utils/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/acorn-jsx/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/acorn-jsx/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/acorn/CHANGELOG.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/acorn/CHANGELOG.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/acorn/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/acorn/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/ajv/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/ajv/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/ajv/lib/dotjs/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/ajv/lib/dotjs/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/ansi-regex/readme.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/ansi-regex/readme.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/ansi-styles/readme.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/ansi-styles/readme.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/aria-query/CHANGELOG.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/aria-query/CHANGELOG.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/aria-query/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/aria-query/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/assertion-error/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/assertion-error/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/balanced-match/LICENSE.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/balanced-match/LICENSE.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/balanced-match/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/balanced-match/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/baseline-browser-mapping/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/baseline-browser-mapping/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/bidi-js/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/bidi-js/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/brace-expansion/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/brace-expansion/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/browserslist/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/browserslist/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/caniuse-lite/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/caniuse-lite/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/chai/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/chai/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/convert-source-map/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/convert-source-map/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/cookie-es/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/cookie-es/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/cookie/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/cookie/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/cross-spawn/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/cross-spawn/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/css-tree/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/css-tree/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/css.escape/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/css.escape/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/csstype/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/csstype/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/data-urls/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/data-urls/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/debug/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/debug/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/decimal.js/LICENCE.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/decimal.js/LICENCE.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/decimal.js/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/decimal.js/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/dequal/readme.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/dequal/readme.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/detect-libc/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/detect-libc/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/dom-accessibility-api/LICENSE.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/dom-accessibility-api/LICENSE.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/dom-accessibility-api/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/dom-accessibility-api/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/electron-to-chromium/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/electron-to-chromium/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/entities/readme.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/entities/readme.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/es-module-lexer/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/es-module-lexer/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/escalade/readme.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/escalade/readme.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/escape-string-regexp/readme.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/escape-string-regexp/readme.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/eslint-plugin-react-hooks/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/eslint-plugin-react-hooks/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/eslint-plugin-react-refresh/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/eslint-plugin-react-refresh/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/eslint-scope/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/eslint-scope/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/eslint-visitor-keys/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/eslint-visitor-keys/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/eslint/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/eslint/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/espree/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/espree/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/esquery/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/esquery/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/esrecurse/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/esrecurse/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/estraverse/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/estraverse/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/estree-walker/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/estree-walker/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/esutils/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/esutils/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/expect-type/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/expect-type/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/expect-type/SECURITY.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/expect-type/SECURITY.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/fast-deep-equal/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/fast-deep-equal/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/fast-json-stable-stringify/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/fast-json-stable-stringify/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/fast-levenshtein/LICENSE.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/fast-levenshtein/LICENSE.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/fast-levenshtein/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/fast-levenshtein/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/fdir/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/fdir/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/file-entry-cache/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/file-entry-cache/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/find-up/readme.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/find-up/readme.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/flat-cache/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/flat-cache/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/flat-cache/changelog.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/flat-cache/changelog.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/flatted/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/flatted/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/flatted/golang/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/flatted/golang/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/gensync/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/gensync/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/glob-parent/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/glob-parent/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/globals/readme.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/globals/readme.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/hermes-estree/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/hermes-estree/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/hermes-parser/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/hermes-parser/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/html-encoding-sniffer/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/html-encoding-sniffer/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/ignore/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/ignore/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/imurmurhash/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/imurmurhash/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/indent-string/readme.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/indent-string/readme.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/is-extglob/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/is-extglob/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/is-glob/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/is-glob/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/is-potential-custom-element-name/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/is-potential-custom-element-name/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/isexe/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/isexe/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/js-tokens/CHANGELOG.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/js-tokens/CHANGELOG.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/js-tokens/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/js-tokens/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/jsdom/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/jsdom/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/jsdom/node_modules/lru-cache/LICENSE.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/jsdom/node_modules/lru-cache/LICENSE.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/jsdom/node_modules/lru-cache/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/jsdom/node_modules/lru-cache/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/jsesc/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/jsesc/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/json-buffer/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/json-buffer/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/json-schema-traverse/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/json-schema-traverse/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/json5/LICENSE.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/json5/LICENSE.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/json5/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/json5/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/keyv/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/keyv/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/levn/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/levn/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/lightningcss-win32-x64-msvc/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/lightningcss-win32-x64-msvc/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/lightningcss/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/lightningcss/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/locate-path/readme.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/locate-path/readme.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/lru-cache/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/lru-cache/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/lz-string/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/lz-string/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/magic-string/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/magic-string/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/mdn-data/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/mdn-data/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/min-indent/readme.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/min-indent/readme.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/minimatch/LICENSE.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/minimatch/LICENSE.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/minimatch/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/minimatch/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/ms/license.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/ms/license.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/ms/readme.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/ms/readme.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/nanoid/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/nanoid/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/natural-compare/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/natural-compare/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/node-releases/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/node-releases/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/obug/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/obug/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/optionator/CHANGELOG.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/optionator/CHANGELOG.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/optionator/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/optionator/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/p-limit/readme.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/p-limit/readme.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/p-locate/readme.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/p-locate/readme.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/parse5/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/parse5/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/path-exists/readme.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/path-exists/readme.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/path-key/readme.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/path-key/readme.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/pathe/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/pathe/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/picocolors/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/picocolors/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/picomatch/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/picomatch/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/postcss/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/postcss/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/prelude-ls/CHANGELOG.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/prelude-ls/CHANGELOG.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/prelude-ls/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/prelude-ls/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/pretty-format/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/pretty-format/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/punycode/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/punycode/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-dom/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-dom/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-is/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-is/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/LICENSE.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/LICENSE.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/CHANGELOG.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/CHANGELOG.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/LICENSE.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/LICENSE.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/backend-for-frontend.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/backend-for-frontend.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/code-splitting.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/code-splitting.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/concurrency.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/concurrency.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/form-vs-fetcher.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/form-vs-fetcher.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/hot-module-replacement.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/hot-module-replacement.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/hydration.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/hydration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/index-query-param.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/index-query-param.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/lazy-route-discovery.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/lazy-route-discovery.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/location.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/location.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/progressive-enhancement.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/progressive-enhancement.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/race-conditions.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/race-conditions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/react-transitions.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/react-transitions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/route-matching.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/route-matching.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/server-client-execution.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/server-client-execution.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/sessions-and-cookies.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/sessions-and-cookies.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/special-files.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/special-files.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/state-management.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/state-management.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/styling.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/styling.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/type-safety.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/explanation/type-safety.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/accessibility.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/accessibility.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/client-data.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/client-data.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/data-strategy.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/data-strategy.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/error-boundary.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/error-boundary.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/error-reporting.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/error-reporting.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/fetchers.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/fetchers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/file-route-conventions.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/file-route-conventions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/file-uploads.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/file-uploads.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/form-validation.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/form-validation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/headers.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/headers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/instrumentation.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/instrumentation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/meta.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/meta.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/middleware.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/middleware.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/navigation-blocking.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/navigation-blocking.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/optimize-revalidation.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/optimize-revalidation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/pre-rendering.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/pre-rendering.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/presets.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/presets.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/react-server-components.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/react-server-components.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/resource-routes.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/resource-routes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/route-module-type-safety.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/route-module-type-safety.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/search-params.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/search-params.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/security.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/security.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/server-bundles.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/server-bundles.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/spa.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/spa.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/status.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/status.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/suspense.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/suspense.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/using-handle.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/using-handle.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/view-transitions.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/view-transitions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/webhook.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/how-to/webhook.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/data/actions.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/data/actions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/data/custom.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/data/custom.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/data/data-loading.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/data/data-loading.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/data/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/data/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/data/installation.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/data/installation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/data/navigating.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/data/navigating.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/data/pending-ui.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/data/pending-ui.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/data/route-object.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/data/route-object.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/data/routing.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/data/routing.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/data/testing.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/data/testing.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/declarative/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/declarative/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/declarative/installation.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/declarative/installation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/declarative/navigating.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/declarative/navigating.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/declarative/routing.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/declarative/routing.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/declarative/url-values.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/declarative/url-values.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/framework/actions.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/framework/actions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/framework/data-loading.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/framework/data-loading.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/framework/deploying.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/framework/deploying.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/framework/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/framework/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/framework/installation.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/framework/installation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/framework/navigating.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/framework/navigating.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/framework/pending-ui.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/framework/pending-ui.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/framework/rendering.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/framework/rendering.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/framework/route-module.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/framework/route-module.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/framework/routing.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/framework/routing.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/framework/testing.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/framework/testing.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/modes.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/start/modes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/upgrading/component-routes.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/upgrading/component-routes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/upgrading/future.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/upgrading/future.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/upgrading/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/upgrading/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/upgrading/remix.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/upgrading/remix.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/upgrading/router-provider.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/upgrading/router-provider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/upgrading/v6.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router-dom/node_modules/react-router/docs/upgrading/v6.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/CHANGELOG.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/CHANGELOG.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/LICENSE.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/LICENSE.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/explanation/backend-for-frontend.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/explanation/backend-for-frontend.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/explanation/code-splitting.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/explanation/code-splitting.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/explanation/concurrency.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/explanation/concurrency.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/explanation/form-vs-fetcher.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/explanation/form-vs-fetcher.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/explanation/hot-module-replacement.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/explanation/hot-module-replacement.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/explanation/hydration.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/explanation/hydration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/explanation/index-query-param.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/explanation/index-query-param.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/explanation/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/explanation/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/explanation/lazy-route-discovery.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/explanation/lazy-route-discovery.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/explanation/location.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/explanation/location.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/explanation/progressive-enhancement.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/explanation/progressive-enhancement.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/explanation/race-conditions.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/explanation/race-conditions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/explanation/react-transitions.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/explanation/react-transitions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/explanation/route-matching.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/explanation/route-matching.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/explanation/server-client-execution.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/explanation/server-client-execution.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/explanation/sessions-and-cookies.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/explanation/sessions-and-cookies.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/explanation/special-files.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/explanation/special-files.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/explanation/state-management.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/explanation/state-management.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/explanation/styling.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/explanation/styling.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/explanation/type-safety.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/explanation/type-safety.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/how-to/accessibility.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/how-to/accessibility.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/how-to/client-data.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/how-to/client-data.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/how-to/data-strategy.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/how-to/data-strategy.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/how-to/error-boundary.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/how-to/error-boundary.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/how-to/error-reporting.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/how-to/error-reporting.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/how-to/fetchers.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/how-to/fetchers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/how-to/file-route-conventions.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/how-to/file-route-conventions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/how-to/file-uploads.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/how-to/file-uploads.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/how-to/form-validation.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/how-to/form-validation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/how-to/headers.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/how-to/headers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/how-to/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/how-to/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/how-to/instrumentation.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/how-to/instrumentation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/how-to/meta.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/how-to/meta.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/how-to/middleware.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/how-to/middleware.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/how-to/navigation-blocking.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/how-to/navigation-blocking.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/how-to/optimize-revalidation.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/how-to/optimize-revalidation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/how-to/pre-rendering.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/how-to/pre-rendering.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/how-to/presets.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/how-to/presets.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/how-to/react-server-components.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/how-to/react-server-components.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/how-to/resource-routes.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/how-to/resource-routes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/how-to/route-module-type-safety.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/how-to/route-module-type-safety.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/how-to/search-params.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/how-to/search-params.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/how-to/security.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/how-to/security.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/how-to/server-bundles.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/how-to/server-bundles.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/how-to/spa.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/how-to/spa.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/how-to/status.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/how-to/status.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/how-to/suspense.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/how-to/suspense.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/how-to/using-handle.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/how-to/using-handle.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/how-to/view-transitions.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/how-to/view-transitions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/how-to/webhook.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/how-to/webhook.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/start/data/actions.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/start/data/actions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/start/data/custom.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/start/data/custom.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/start/data/data-loading.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/start/data/data-loading.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/start/data/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/start/data/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/start/data/installation.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/start/data/installation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/start/data/navigating.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/start/data/navigating.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/start/data/pending-ui.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/start/data/pending-ui.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/start/data/route-object.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/start/data/route-object.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/start/data/routing.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/start/data/routing.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/start/data/testing.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/start/data/testing.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/start/declarative/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/start/declarative/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/start/declarative/installation.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/start/declarative/installation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/start/declarative/navigating.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/start/declarative/navigating.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/start/declarative/routing.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/start/declarative/routing.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/start/declarative/url-values.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/start/declarative/url-values.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/start/framework/actions.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/start/framework/actions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/start/framework/data-loading.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/start/framework/data-loading.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/start/framework/deploying.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/start/framework/deploying.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/start/framework/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/start/framework/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/start/framework/installation.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/start/framework/installation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/start/framework/navigating.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/start/framework/navigating.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/start/framework/pending-ui.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/start/framework/pending-ui.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/start/framework/rendering.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/start/framework/rendering.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/start/framework/route-module.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/start/framework/route-module.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/start/framework/routing.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/start/framework/routing.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/start/framework/testing.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/start/framework/testing.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/start/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/start/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/start/modes.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/start/modes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/upgrading/component-routes.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/upgrading/component-routes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/upgrading/future.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/upgrading/future.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/upgrading/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/upgrading/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/upgrading/router-provider.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/upgrading/router-provider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react-router/docs/upgrading/v7.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react-router/docs/upgrading/v7.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/react/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/react/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/redent/readme.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/redent/readme.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/require-from-string/readme.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/require-from-string/readme.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/rolldown/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/rolldown/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/saxes/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/saxes/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/scheduler/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/scheduler/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/semver/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/semver/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/set-cookie-parser/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/set-cookie-parser/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/shebang-command/readme.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/shebang-command/readme.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/shebang-regex/readme.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/shebang-regex/readme.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/siginfo/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/siginfo/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/source-map-js/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/source-map-js/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/stackback/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/stackback/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/std-env/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/std-env/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/strip-indent/readme.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/strip-indent/readme.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/symbol-tree/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/symbol-tree/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/tinybench/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/tinybench/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/tinyexec/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/tinyexec/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/tinyglobby/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/tinyglobby/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/tinyrainbow/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/tinyrainbow/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/tldts-core/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/tldts-core/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/tldts/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/tldts/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/tough-cookie/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/tough-cookie/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/tr46/LICENSE.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/tr46/LICENSE.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/tr46/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/tr46/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/type-check/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/type-check/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/Agent.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/Agent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/BalancedPool.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/BalancedPool.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/CacheStorage.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/CacheStorage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/CacheStore.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/CacheStore.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/Client.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/Client.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/ClientStats.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/ClientStats.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/Connector.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/Connector.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/ContentType.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/ContentType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/Cookies.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/Cookies.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/Debug.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/Debug.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/DiagnosticsChannel.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/DiagnosticsChannel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/Dispatcher.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/Dispatcher.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/EnvHttpProxyAgent.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/EnvHttpProxyAgent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/Errors.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/Errors.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/EventSource.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/EventSource.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/Fetch.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/Fetch.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/GlobalInstallation.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/GlobalInstallation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/H2CClient.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/H2CClient.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/MockAgent.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/MockAgent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/MockCallHistory.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/MockCallHistory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/MockCallHistoryLog.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/MockCallHistoryLog.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/MockClient.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/MockClient.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/MockErrors.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/MockErrors.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/MockPool.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/MockPool.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/Pool.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/Pool.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/PoolStats.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/PoolStats.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/ProxyAgent.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/ProxyAgent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/RedirectHandler.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/RedirectHandler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/RetryAgent.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/RetryAgent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/RetryHandler.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/RetryHandler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/RoundRobinPool.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/RoundRobinPool.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/SnapshotAgent.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/SnapshotAgent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/Socks5ProxyAgent.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/Socks5ProxyAgent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/Util.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/Util.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/WebSocket.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/WebSocket.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/api/api-lifecycle.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/api/api-lifecycle.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/best-practices/client-certificate.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/best-practices/client-certificate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/best-practices/crawling.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/best-practices/crawling.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/best-practices/mocking-request.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/best-practices/mocking-request.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/best-practices/proxy.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/best-practices/proxy.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/best-practices/undici-vs-builtin-fetch.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/best-practices/undici-vs-builtin-fetch.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/docs/docs/best-practices/writing-tests.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/docs/docs/best-practices/writing-tests.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/lib/web/subresource-integrity/Readme.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/lib/web/subresource-integrity/Readme.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/undici/types/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/undici/types/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/update-browserslist-db/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/update-browserslist-db/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/uri-js/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/uri-js/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/vite/LICENSE.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/vite/LICENSE.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/vite/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/vite/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/vitest/LICENSE.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/vitest/LICENSE.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/vitest/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/vitest/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/w3c-xmlserializer/LICENSE.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/w3c-xmlserializer/LICENSE.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/w3c-xmlserializer/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/w3c-xmlserializer/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/webidl-conversions/LICENSE.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/webidl-conversions/LICENSE.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/webidl-conversions/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/webidl-conversions/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/whatwg-mimetype/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/whatwg-mimetype/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/whatwg-url/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/whatwg-url/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/which/CHANGELOG.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/which/CHANGELOG.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/which/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/which/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/why-is-node-running/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/why-is-node-running/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/word-wrap/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/word-wrap/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/xml-name-validator/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/xml-name-validator/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/xmlchars/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/xmlchars/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/yallist/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/yallist/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/yocto-queue/readme.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/yocto-queue/readme.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/zod-validation-error/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/zod-validation-error/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/zod-validation-error/README.v3.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/zod-validation-error/README.v3.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "frontend/node_modules/zod/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "frontend/node_modules/zod/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

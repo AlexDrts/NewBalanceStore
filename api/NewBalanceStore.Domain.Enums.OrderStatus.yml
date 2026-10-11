@@ -1,0 +1,194 @@
+### YamlMime:ManagedReference
+items:
+- uid: NewBalanceStore.Domain.Enums.OrderStatus
+  commentId: T:NewBalanceStore.Domain.Enums.OrderStatus
+  id: OrderStatus
+  parent: NewBalanceStore.Domain.Enums
+  children:
+  - NewBalanceStore.Domain.Enums.OrderStatus.Cancelled
+  - NewBalanceStore.Domain.Enums.OrderStatus.Delivered
+  - NewBalanceStore.Domain.Enums.OrderStatus.Pending
+  - NewBalanceStore.Domain.Enums.OrderStatus.Processing
+  - NewBalanceStore.Domain.Enums.OrderStatus.Shipped
+  langs:
+  - csharp
+  - vb
+  name: OrderStatus
+  nameWithType: OrderStatus
+  fullName: NewBalanceStore.Domain.Enums.OrderStatus
+  type: Enum
+  source:
+    remote:
+      path: backend/backend/NewBalanceStore.Domain/Enums/OrderStatus.cs
+      branch: main
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: OrderStatus
+    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Enums/OrderStatus.cs
+    startLine: 6
+  assemblies:
+  - NewBalanceStore.Domain
+  namespace: NewBalanceStore.Domain.Enums
+  syntax:
+    content: public enum OrderStatus
+    content.vb: Public Enum OrderStatus
+- uid: NewBalanceStore.Domain.Enums.OrderStatus.Pending
+  commentId: F:NewBalanceStore.Domain.Enums.OrderStatus.Pending
+  id: Pending
+  parent: NewBalanceStore.Domain.Enums.OrderStatus
+  langs:
+  - csharp
+  - vb
+  name: Pending
+  nameWithType: OrderStatus.Pending
+  fullName: NewBalanceStore.Domain.Enums.OrderStatus.Pending
+  type: Field
+  source:
+    remote:
+      path: backend/backend/NewBalanceStore.Domain/Enums/OrderStatus.cs
+      branch: main
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: Pending
+    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Enums/OrderStatus.cs
+    startLine: 8
+  assemblies:
+  - NewBalanceStore.Domain
+  namespace: NewBalanceStore.Domain.Enums
+  syntax:
+    content: Pending = 0
+    return:
+      type: NewBalanceStore.Domain.Enums.OrderStatus
+- uid: NewBalanceStore.Domain.Enums.OrderStatus.Processing
+  commentId: F:NewBalanceStore.Domain.Enums.OrderStatus.Processing
+  id: Processing
+  parent: NewBalanceStore.Domain.Enums.OrderStatus
+  langs:
+  - csharp
+  - vb
+  name: Processing
+  nameWithType: OrderStatus.Processing
+  fullName: NewBalanceStore.Domain.Enums.OrderStatus.Processing
+  type: Field
+  source:
+    remote:
+      path: backend/backend/NewBalanceStore.Domain/Enums/OrderStatus.cs
+      branch: main
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: Processing
+    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Enums/OrderStatus.cs
+    startLine: 9
+  assemblies:
+  - NewBalanceStore.Domain
+  namespace: NewBalanceStore.Domain.Enums
+  syntax:
+    content: Processing = 1
+    return:
+      type: NewBalanceStore.Domain.Enums.OrderStatus
+- uid: NewBalanceStore.Domain.Enums.OrderStatus.Shipped
+  commentId: F:NewBalanceStore.Domain.Enums.OrderStatus.Shipped
+  id: Shipped
+  parent: NewBalanceStore.Domain.Enums.OrderStatus
+  langs:
+  - csharp
+  - vb
+  name: Shipped
+  nameWithType: OrderStatus.Shipped
+  fullName: NewBalanceStore.Domain.Enums.OrderStatus.Shipped
+  type: Field
+  source:
+    remote:
+      path: backend/backend/NewBalanceStore.Domain/Enums/OrderStatus.cs
+      branch: main
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: Shipped
+    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Enums/OrderStatus.cs
+    startLine: 10
+  assemblies:
+  - NewBalanceStore.Domain
+  namespace: NewBalanceStore.Domain.Enums
+  syntax:
+    content: Shipped = 2
+    return:
+      type: NewBalanceStore.Domain.Enums.OrderStatus
+- uid: NewBalanceStore.Domain.Enums.OrderStatus.Delivered
+  commentId: F:NewBalanceStore.Domain.Enums.OrderStatus.Delivered
+  id: Delivered
+  parent: NewBalanceStore.Domain.Enums.OrderStatus
+  langs:
+  - csharp
+  - vb
+  name: Delivered
+  nameWithType: OrderStatus.Delivered
+  fullName: NewBalanceStore.Domain.Enums.OrderStatus.Delivered
+  type: Field
+  source:
+    remote:
+      path: backend/backend/NewBalanceStore.Domain/Enums/OrderStatus.cs
+      branch: main
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: Delivered
+    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Enums/OrderStatus.cs
+    startLine: 11
+  assemblies:
+  - NewBalanceStore.Domain
+  namespace: NewBalanceStore.Domain.Enums
+  syntax:
+    content: Delivered = 3
+    return:
+      type: NewBalanceStore.Domain.Enums.OrderStatus
+- uid: NewBalanceStore.Domain.Enums.OrderStatus.Cancelled
+  commentId: F:NewBalanceStore.Domain.Enums.OrderStatus.Cancelled
+  id: Cancelled
+  parent: NewBalanceStore.Domain.Enums.OrderStatus
+  langs:
+  - csharp
+  - vb
+  name: Cancelled
+  nameWithType: OrderStatus.Cancelled
+  fullName: NewBalanceStore.Domain.Enums.OrderStatus.Cancelled
+  type: Field
+  source:
+    remote:
+      path: backend/backend/NewBalanceStore.Domain/Enums/OrderStatus.cs
+      branch: main
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: Cancelled
+    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Enums/OrderStatus.cs
+    startLine: 12
+  assemblies:
+  - NewBalanceStore.Domain
+  namespace: NewBalanceStore.Domain.Enums
+  syntax:
+    content: Cancelled = 4
+    return:
+      type: NewBalanceStore.Domain.Enums.OrderStatus
+references:
+- uid: NewBalanceStore.Domain.Enums
+  commentId: N:NewBalanceStore.Domain.Enums
+  name: NewBalanceStore.Domain.Enums
+  nameWithType: NewBalanceStore.Domain.Enums
+  fullName: NewBalanceStore.Domain.Enums
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Enums
+    name: Enums
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Enums
+    name: Enums
+- uid: NewBalanceStore.Domain.Enums.OrderStatus
+  commentId: T:NewBalanceStore.Domain.Enums.OrderStatus
+  parent: NewBalanceStore.Domain.Enums
+  href: NewBalanceStore.Domain.Enums.OrderStatus.html
+  name: OrderStatus
+  nameWithType: OrderStatus
+  fullName: NewBalanceStore.Domain.Enums.OrderStatus

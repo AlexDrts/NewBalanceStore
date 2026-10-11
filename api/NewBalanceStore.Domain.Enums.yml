@@ -1,0 +1,71 @@
+### YamlMime:ManagedReference
+items:
+- uid: NewBalanceStore.Domain.Enums
+  commentId: N:NewBalanceStore.Domain.Enums
+  id: NewBalanceStore.Domain.Enums
+  children:
+  - NewBalanceStore.Domain.Enums.Gender
+  - NewBalanceStore.Domain.Enums.OrderStatus
+  - NewBalanceStore.Domain.Enums.ProductType
+  - NewBalanceStore.Domain.Enums.UserRole
+  langs:
+  - csharp
+  - vb
+  name: NewBalanceStore.Domain.Enums
+  nameWithType: NewBalanceStore.Domain.Enums
+  fullName: NewBalanceStore.Domain.Enums
+  type: Namespace
+  assemblies:
+  - NewBalanceStore.Domain
+references:
+- uid: NewBalanceStore.Domain.Enums.Gender
+  commentId: T:NewBalanceStore.Domain.Enums.Gender
+  parent: NewBalanceStore.Domain.Enums
+  href: NewBalanceStore.Domain.Enums.Gender.html
+  name: Gender
+  nameWithType: Gender
+  fullName: NewBalanceStore.Domain.Enums.Gender
+- uid: NewBalanceStore.Domain.Enums.OrderStatus
+  commentId: T:NewBalanceStore.Domain.Enums.OrderStatus
+  parent: NewBalanceStore.Domain.Enums
+  href: NewBalanceStore.Domain.Enums.OrderStatus.html
+  name: OrderStatus
+  nameWithType: OrderStatus
+  fullName: NewBalanceStore.Domain.Enums.OrderStatus
+- uid: NewBalanceStore.Domain.Enums.ProductType
+  commentId: T:NewBalanceStore.Domain.Enums.ProductType
+  parent: NewBalanceStore.Domain.Enums
+  href: NewBalanceStore.Domain.Enums.ProductType.html
+  name: ProductType
+  nameWithType: ProductType
+  fullName: NewBalanceStore.Domain.Enums.ProductType
+- uid: NewBalanceStore.Domain.Enums.UserRole
+  commentId: T:NewBalanceStore.Domain.Enums.UserRole
+  parent: NewBalanceStore.Domain.Enums
+  href: NewBalanceStore.Domain.Enums.UserRole.html
+  name: UserRole
+  nameWithType: UserRole
+  fullName: NewBalanceStore.Domain.Enums.UserRole
+- uid: NewBalanceStore.Domain.Enums
+  commentId: N:NewBalanceStore.Domain.Enums
+  name: NewBalanceStore.Domain.Enums
+  nameWithType: NewBalanceStore.Domain.Enums
+  fullName: NewBalanceStore.Domain.Enums
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Enums
+    name: Enums
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Enums
+    name: Enums

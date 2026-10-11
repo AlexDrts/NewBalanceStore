@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: NewBalanceStore.Web.Models
+  commentId: N:NewBalanceStore.Web.Models
+  id: NewBalanceStore.Web.Models
+  children:
+  - NewBalanceStore.Web.Models.ErrorViewModel
+  langs:
+  - csharp
+  - vb
+  name: NewBalanceStore.Web.Models
+  nameWithType: NewBalanceStore.Web.Models
+  fullName: NewBalanceStore.Web.Models
+  type: Namespace
+  assemblies:
+  - NewBalanceStore.Web
+references:
+- uid: NewBalanceStore.Web.Models.ErrorViewModel
+  commentId: T:NewBalanceStore.Web.Models.ErrorViewModel
+  href: NewBalanceStore.Web.Models.ErrorViewModel.html
+  name: ErrorViewModel
+  nameWithType: ErrorViewModel
+  fullName: NewBalanceStore.Web.Models.ErrorViewModel
