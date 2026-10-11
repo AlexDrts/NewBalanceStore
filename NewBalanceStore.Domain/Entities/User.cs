@@ -12,7 +12,5 @@ public class User
     public string LastName { get; set; } = string.Empty;
     public string Phone { get; set; } = string.Empty;
     public UserRole Role { get; set; } = UserRole.Customer;
-
-    // Вспомогательное свойство для получения полного имени
     public string FullName => $"{FirstName} {LastName}".Trim();
 }

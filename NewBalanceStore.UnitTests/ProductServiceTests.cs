@@ -1,11 +1,9 @@
 ﻿using Moq;
-using NUnit.Framework;
 using NewBalanceStore.Application.DTOs;
 using NewBalanceStore.Application.Services;
 using NewBalanceStore.Domain.Entities;
 using NewBalanceStore.Domain.Interfaces;
-
-using Assert = NUnit.Framework.Assert;
+using NUnit.Framework;
 
 namespace NewBalanceStore.UnitTests
 {
@@ -30,12 +28,12 @@ namespace NewBalanceStore.UnitTests
         {
             var products = new List<Product>
             {
-            new Product { Id = 1, Name = "Sneakers" },
-            new Product { Id = 2, Name = "T-Shirt" }
+                new Product { Id = 1, Name = "Sneakers" },
+                new Product { Id = 2, Name = "T-Shirt" }
             };
 
             RepositoryMock.Setup(r => r.GetAllAsync())
-                                .ReturnsAsync(products);
+                          .ReturnsAsync(products);
 
             var result = await ProductService.GetAllAsync();
 
@@ -52,7 +50,7 @@ namespace NewBalanceStore.UnitTests
             var result = await ProductService.GetByIdAsync("1");
 
             Assert.That(result, Is.Not.Null);
-            Assert.That(result.Name, Is.EqualTo("New Balance 574"));
+            Assert.That(result!.Name, Is.EqualTo("New Balance 574"));
         }
 
         [Test]
@@ -69,8 +67,41 @@ namespace NewBalanceStore.UnitTests
 
             var result = await ProductService.GetFilteredProductsAsync(filter);
 
+            Assert.That(result, Is.Not.Null);
             Assert.That(result.Count(), Is.EqualTo(1));
             Assert.That(result.First().Name, Is.EqualTo("New Balance 574"));
+        }
+
+        [Test]
+        public async Task GetFilteredProductsAsync_ShouldReturnFilteredAndSortedResults()
+        {
+            var testProducts = new List<Product>
+            {
+                new Product { Id = 1, Name = "Item 1", Price = 150 },
+                new Product { Id = 2, Name = "Item 2", Price = 180 }
+            };
+
+            RepositoryMock.Setup(r => r.GetAllAsync()).ReturnsAsync(testProducts);
+
+            var filter = new ProductFilterDto
+            {
+                MinPrice = 100,
+                MaxPrice = 200,
+                SortBy = "price_asc",
+                PageNumber = 1,
+                PageSize = 10
+            };
+
+            var result = await ProductService.GetFilteredProductsAsync(filter);
+
+            Assert.That(result, Is.Not.Null);
+            Assert.That(result, Is.Not.Empty);
+
+            foreach (var product in result)
+            {
+                Assert.That(product.Price, Is.GreaterThanOrEqualTo(100));
+                Assert.That(product.Price, Is.LessThanOrEqualTo(200));
+            }
         }
 
         [Test]
@@ -79,7 +110,7 @@ namespace NewBalanceStore.UnitTests
             var dto = new CreateProductDto { Name = "New Shoe", Price = 100 };
 
             RepositoryMock.Setup(r => r.CreateAsync(It.IsAny<Product>()))
-                           .Returns(Task.CompletedTask);
+                          .Returns(Task.CompletedTask);
 
             await ProductService.CreateAsync(dto);
 
@@ -93,10 +124,10 @@ namespace NewBalanceStore.UnitTests
             var dto = new CreateProductDto { Name = "Updated Shoe", Price = 120 };
 
             RepositoryMock.Setup(r => r.GetByIdAsync("123"))
-                           .ReturnsAsync(existingProduct);
+                          .ReturnsAsync(existingProduct);
 
             RepositoryMock.Setup(r => r.UpdateAsync(It.IsAny<Product>()))
-                           .Returns(Task.CompletedTask);
+                          .Returns(Task.CompletedTask);
 
             await ProductService.UpdateAsync("123", dto);
 
@@ -109,15 +140,16 @@ namespace NewBalanceStore.UnitTests
             var existingProduct = new Product { Id = 123, Name = "Shoe", Price = 100 };
 
             RepositoryMock.Setup(r => r.GetByIdAsync("123"))
-                           .ReturnsAsync(existingProduct);
+                          .ReturnsAsync(existingProduct);
 
             RepositoryMock.Setup(r => r.DeleteAsync("123"))
-                           .Returns(Task.CompletedTask);
+                          .Returns(Task.CompletedTask);
 
             await ProductService.DeleteAsync("123");
 
             RepositoryMock.Verify(r => r.DeleteAsync("123"), Times.Once);
         }
+
         [Test]
         public async Task GetByIdAsync_WhenProductDoesNotExist_ShouldReturnNull()
         {

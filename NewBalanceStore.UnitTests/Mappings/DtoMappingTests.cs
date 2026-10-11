@@ -1,11 +1,11 @@
-﻿using Xunit;
-using NewBalanceStore.Application.DTOs;
+﻿using NewBalanceStore.Application.DTOs;
+using NUnit.Framework;
 
 namespace NewBalanceStore.UnitTests.Tests
 {
     public class DtoMappingTests
     {
-        [Fact]
+        [Test]
         public void CreateOrderDto_ShouldCorrectlyInitializeProperties()
         {
             var customerName = "Ivan Ivanov";
@@ -32,24 +32,24 @@ namespace NewBalanceStore.UnitTests.Tests
             };
 
             Assert.NotNull(dto);
-            Assert.Equal(customerName, dto.CustomerName);
-            Assert.Equal(customerEmail, dto.CustomerEmail);
-            Assert.Equal(customerPhone, dto.CustomerPhone);
-            Assert.Equal(address, dto.ShippingAddress);
-            Assert.Single(dto.Items);
-            Assert.Equal(101, dto.Items[0].ProductId);
-            Assert.Equal("Black", dto.Items[0].Color);
-            Assert.Equal("42", dto.Items[0].Size);
-            Assert.Equal(2, dto.Items[0].Quantity);
+            Assert.That(dto.CustomerName, Is.EqualTo(customerName));
+            Assert.That(dto.CustomerEmail, Is.EqualTo(customerEmail));
+            Assert.That(dto.CustomerPhone, Is.EqualTo(customerPhone));
+            Assert.That(dto.ShippingAddress, Is.EqualTo(address));
+            Assert.That(dto.Items, Has.Count.EqualTo(1));
+            Assert.That(dto.Items[0].ProductId, Is.EqualTo(101));
+            Assert.That(dto.Items[0].Color, Is.EqualTo("Black"));
+            Assert.That(dto.Items[0].Size, Is.EqualTo("42"));
+            Assert.That(dto.Items[0].Quantity, Is.EqualTo(2));
         }
 
-        [Fact]
+        [Test]
         public void CreateOrderDto_DefaultItemsList_ShouldNotBeNull()
         {
             var dto = new CreateOrderDto();
 
             Assert.NotNull(dto.Items);
-            Assert.Empty(dto.Items);
+            Assert.That(dto.Items, Is.Empty);
         }
     }
 }
