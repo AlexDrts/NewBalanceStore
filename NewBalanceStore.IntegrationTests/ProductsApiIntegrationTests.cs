@@ -118,10 +118,17 @@ public class ProductsApiIntegrationTests
         image.Headers.ContentType = new MediaTypeHeaderValue("image/png");
         form.Add(image, "file", "shoe.png");
 
-        using var response = await _client.PostAsync("/api/products/upload-image", form);
-        var payload = await response.Content.ReadFromJsonAsync<Dictionary<string, string>>();
+        using var request = new HttpRequestMessage(HttpMethod.Post, "/api/products/upload-image")
+        {
+            Content = form
+        };
+        request.Headers.Add("X-Test-Role", "Admin");
+
+        using var response = await _client.SendAsync(request);
 
         Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK));
+
+        var payload = await response.Content.ReadFromJsonAsync<Dictionary<string, string>>();
         Assert.That(payload!["url"], Is.EqualTo("https://local.test/photos/shoe.png"));
     }
 
