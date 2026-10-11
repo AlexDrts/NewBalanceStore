@@ -3,24 +3,39 @@ import styles from './ProductCard.module.css';
 import { useState } from "react";
 
 function ProductCard({ product, onQuickAdd, page }) {
+    const hasImagesObject = product.images && typeof product.images === 'object';
+    const colors = hasImagesObject ? Object.keys(product.images) : [];
+
     const [activeColor, setActiveColor] = useState(
-        Object.keys(product.images)[0]
+        colors.length > 0 ? colors[0] : ""
     );
     const [startIndex, setStartIndex] = useState(0);
+
+
+
     const visibleColors = 8;
-    const colors = Object.keys(product.images);
     const showSliderButtons = colors.length > visibleColors;
 
     const [hovered, setHovered] = useState(false);
-    const currentImages = product.images[activeColor];
-    const image =
-        hovered && currentImages.length > 1
-            ? currentImages[1]
-            : currentImages[0];
-
 
     const isHome = page === "home";
     const isCart = page === "cart";
+
+    let currentImages = [];
+    if(hasImagesObject && activeColor) {
+        currentImages = product.images[activeColor] || [];
+    }
+
+    let image = product.image;
+    if(hasImagesObject && currentImages.length > 0) {
+        image = (hovered && currentImages.length > 1 && !isCart)
+            ? currentImages[1]
+            : currentImages[0];
+    }
+
+    const hasDiscount = typeof product.hasDiscount === 'function'
+        ? product.hasDiscount()
+        : Boolean(product.oldPrice);
 
     return (
         <div className={styles.productCard}>
@@ -46,7 +61,7 @@ function ProductCard({ product, onQuickAdd, page }) {
                 )}
             </div>
 
-            {!isHome && !isCart && (
+            {!isHome && !isCart && hasImagesObject && (
                 <div className={styles.colorSliderWrapper}>
                     {showSliderButtons && (
                         <button
@@ -96,7 +111,7 @@ function ProductCard({ product, onQuickAdd, page }) {
 
             <div className={styles.productPrice}>
                 ${product.price}
-                {product.hasDiscount() && (
+                {hasDiscount && (
                     <span className={styles.oldPrice}>
                         ${product.oldPrice}
                     </span>

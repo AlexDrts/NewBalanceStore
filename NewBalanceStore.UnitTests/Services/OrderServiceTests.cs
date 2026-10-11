@@ -49,6 +49,18 @@ namespace NewBalanceStore.UnitTests.Services
             Assert.That(result, Is.Not.Null);
             Assert.That(result!.Id, Is.EqualTo(1));
         }
+
+        [Test]
+        public async Task GetOrderByIdAsync_ShouldReturnNull_WhenOrderDoesNotExist()
+        {
+            _orderRepoMock.Setup(r => r.GetByIdAsync(999)).ReturnsAsync((Order?)null);
+
+            var result = await _orderService.GetOrderByIdAsync(999);
+
+            Assert.That(result, Is.Null);
+            _mapperMock.Verify(m => m.Map<OrderDto>(It.IsAny<Order>()), Times.Never);
+        }
+
         [Test]
         public async Task CreateOrderAsync_ShouldReturnCreatedOrderDto()
         {
@@ -69,6 +81,48 @@ namespace NewBalanceStore.UnitTests.Services
 
             Assert.That(result, Is.Not.Null);
             Assert.That(result.Id, Is.EqualTo(10));
+        }
+
+        [Test]
+        public async Task CreateOrderAsync_ShouldCreateItemsAndCalculateTotalFromProducts()
+        {
+            var createDto = new CreateOrderDto
+            {
+                CustomerName = "John Doe",
+                Items = new List<CreateOrderItemDto>
+                {
+                    new() { ProductId = 1, Color = "Grey", Size = "42", Quantity = 2 },
+                    new() { ProductId = 2, Color = "Blue", Size = "M", Quantity = 1 }
+                }
+            };
+            _productRepoMock.Setup(r => r.GetByIdAsync("1"))
+                .ReturnsAsync(new Product { Id = 1, Name = "Sneaker", Price = 100 });
+            _productRepoMock.Setup(r => r.GetByIdAsync("2"))
+                .ReturnsAsync(new Product { Id = 2, Name = "T-Shirt", Price = 50 });
+
+            Order? createdOrder = null;
+            _orderRepoMock.Setup(r => r.CreateAsync(It.IsAny<Order>()))
+                .Callback<Order>(order => createdOrder = order)
+                .Returns(Task.CompletedTask);
+            _mapperMock.Setup(m => m.Map<OrderDto>(It.IsAny<Order>()))
+                .Returns(new OrderDto { Id = 10, TotalAmount = 250 });
+
+            var beforeCreate = DateTime.UtcNow;
+            var result = await _orderService.CreateOrderAsync(createDto);
+            var afterCreate = DateTime.UtcNow;
+
+            Assert.That(result.TotalAmount, Is.EqualTo(250));
+            Assert.That(createdOrder, Is.Not.Null);
+            Assert.That(createdOrder!.Status, Is.EqualTo("Pending"));
+            Assert.That(createdOrder.TotalAmount, Is.EqualTo(250));
+            Assert.That(createdOrder.CreatedAt, Is.InRange(beforeCreate, afterCreate));
+            Assert.That(createdOrder.Items, Has.Count.EqualTo(2));
+            Assert.That(createdOrder.Items[0].ProductName, Is.EqualTo("Sneaker"));
+            Assert.That(createdOrder.Items[0].Color, Is.EqualTo("Grey"));
+            Assert.That(createdOrder.Items[0].Size, Is.EqualTo("42"));
+            Assert.That(createdOrder.Items[0].Quantity, Is.EqualTo(2));
+            Assert.That(createdOrder.Items[0].Price, Is.EqualTo(100));
+            Assert.That(createdOrder.Items[1].ProductName, Is.EqualTo("T-Shirt"));
         }
 
         [Test]

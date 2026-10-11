@@ -22,5 +22,13 @@ namespace NewBalanceStore.UnitTests.DTOs
 
             Assert.That(cart.TotalAmount, Is.EqualTo(250));
         }
+
+        [Test]
+        public void CartDto_TotalAmount_ShouldBeZero_WhenCartIsEmpty()
+        {
+            var cart = new CartDto();
+
+            Assert.That(cart.TotalAmount, Is.Zero);
+        }
     }
 }

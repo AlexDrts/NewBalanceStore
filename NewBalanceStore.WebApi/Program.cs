@@ -9,6 +9,7 @@ using NewBalanceStore.Infrastructure.Repositories;
 using NewBalanceStore.Infrastructure.Services;
 using Microsoft.OpenApi.Models;
 using NewBalanceStore.Infrastructure.Configurations;
+using NewBalanceStore.Application.Mappings;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -87,7 +88,7 @@ builder.Services.AddScoped<IOrderRepository, FirebaseOrderRepository>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 
-builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddAutoMapper(_ => { }, typeof(OrderMappingProfile).Assembly);
 
 var app = builder.Build();
 

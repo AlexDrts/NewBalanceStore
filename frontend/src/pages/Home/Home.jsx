@@ -3,39 +3,25 @@ import MainHeader from "../../components/MainHeader/MainHeader.jsx";
 import TopHeader from "../../components/TopHeader/TopHeader.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
 import ProductCard from "../../components/ProductCard/ProductCard.jsx";
-import { useEffect, useRef, useState } from "react";
-import { getProducts } from "../../services/productsService.js";
+import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { homeProducts } from "../../../public/data/homeProducts.js";
+
+// Video
+import heroVideo from '../../assets/videos/new-balance-video.mp4';
+
+// Images
+import womenPhoto from '../../assets/images/main-page/women.png';
+import menPhoto from '../../assets/images/main-page/men.png';
+import kidsPhoto from '../../assets/images/main-page/kids.png';
+import product9060Photo from '../../assets/images/main-page/NB10165_HCB_SideBySide_Desktop_U9060GRY_Image_1.jpg';
+import abzorb1890Photo from '../../assets/images/main-page/NB10165_SideBySide_Amine_1890_Mobile_1x1-1.jpg';
+
 
 function Home() {
     const heroRef = useRef(null);
     const navigate = useNavigate();
-    const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
 
-    useEffect(() => {
-
-        async function loadProducts() {
-
-            try {
-                const data = await getProducts();
-
-                setProducts(
-                    data.filter(product => product.featured)
-                );
-            }
-            catch(err){
-                setError(err);
-            }
-            finally{
-                setLoading(false);
-            }
-        }
-
-        loadProducts();
-
-    }, []);
 
     function handleShopNowBtn() {
         navigate("/products");
@@ -58,7 +44,7 @@ function Home() {
 
 
                 <video autoPlay muted loop id="video-background">
-                    <source src="../src/assets/videos/new-balance-video.mp4" type="video/mp4"/>
+                    <source src={heroVideo} type="video/mp4"/>
                 </video>
             </section>
 
@@ -66,19 +52,19 @@ function Home() {
             <main>
                 <section className="categories">
                     <a href="#" className="category-card">
-                        <img src="../src/assets/images/main-page/women.png" alt="Women"/>
+                        <img src={womenPhoto} alt="Women"/>
                         <div className="overlay"></div>
                         <h2>Women</h2>
                     </a>
 
                     <a href="#" className="category-card">
-                        <img src="../src/assets/images/main-page/men.png" alt="Men"/>
+                        <img src={menPhoto} alt="Men"/>
                         <div className="overlay"></div>
                         <h2>Men</h2>
                     </a>
 
                     <a href="#" className="category-card">
-                        <img src="../src/assets/images/main-page/kids.png" alt="Kids"/>
+                        <img src={kidsPhoto} alt="Kids"/>
                         <div className="overlay"></div>
                         <h2>Kids</h2>
                     </a>
@@ -100,24 +86,18 @@ function Home() {
 
 
                 <section className="product-grid">
-                    {loading && <p>Loading products...</p>}
-
-                    {error && <p>Failed to load products.</p>}
-
-                    {!loading && !error &&
-                        products.map(product => (
-                            <ProductCard
-                                key={product.id}
-                                product={product}
-                                page={"home"}
-                            />
-                        ))
-                    }
+                    {homeProducts.map(product => (
+                        <ProductCard
+                            key={product.id}
+                            product={product}
+                            page="home"
+                        />
+                    ))}
                 </section>
 
                 <section className="featured-products">
                     <div className="featured-card">
-                        <img src="../src/assets/images/main-page/NB10165_HCB_SideBySide_Desktop_U9060GRY_Image_1.jpg" alt="The 9060"/>
+                        <img src={product9060Photo} alt="The 9060"/>
 
                         <div className="featured-info">
                             <h2>The 9060</h2>
@@ -127,7 +107,7 @@ function Home() {
                     </div>
 
                     <div className="featured-card">
-                        <img src="../src/assets/images/main-page/NB10165_SideBySide_Amine_1890_Mobile_1x1-1.jpg" alt="ABZORB 1890"/>
+                        <img src={abzorb1890Photo} alt="ABZORB 1890"/>
 
                         <div className="featured-info">
                             <h2>ABZORB 1890</h2>

@@ -2,12 +2,15 @@ import './MainHeader.css'
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from 'react-dom';
+import { useCart } from "../../context/useCart.js";
 
 function MainHeader({
                         theme = "dark",
                         containerRef
 }) {
     const headerRef = useRef(null);
+    const { cart } = useCart();
+    const cartCount = cart.getProductCount();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const [menuStack, setMenuStack] = useState(['main']);
@@ -408,14 +411,15 @@ function MainHeader({
 
                 {/* RIGHT SIDE OF MOBILE HEADER: Search + Cart */}
                 <div className="header-icons">
+                    <img className="search-icon" src="../src/assets/icons/header/search-icon.svg" alt="Search"/>
+
                     <Link to={"/login"} className="desktop-account-link">
                         <img className="account-icon" src="../src/assets/icons/header/account-icon.svg" alt="Account"/>
                     </Link>
 
-                    <img className="search-icon" src="../src/assets/icons/header/search-icon.svg" alt="Search"/>
-
                     <Link to={"/cart"} className="cart-link" onClick={closeMobileMenu}>
-                        <img className="bag-icon" src="../src/assets/icons/header/bag-icon.svg" alt="Cart"/>
+                        <img className="bag-icon"  src="../src/assets/icons/header/bag-icon.svg" alt="Cart"/>
+                        {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
                     </Link>
                 </div>
 
