@@ -1,4 +1,5 @@
 <Solution>
+  <Folder Name="/Элементы решения/" />
   <Project Path="NewBalanceStore.Application/NewBalanceStore.Application.csproj" />
   <Project Path="NewBalanceStore.Domain/NewBalanceStore.Domain.csproj" />
   <Project Path="NewBalanceStore.Infrastructure/NewBalanceStore.Infrastructure.csproj" />
