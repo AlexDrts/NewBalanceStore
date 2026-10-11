@@ -45,6 +45,7 @@ public class ProductsController : ControllerBase
     }
 
     [HttpPost("upload-image")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> UploadImage(IFormFile file)
     {
         if (file == null || file.Length == 0)
@@ -54,7 +55,7 @@ public class ProductsController : ControllerBase
         var photoUrl = await _photoService.AddPhotoAsync(stream, file.FileName);
 
         if (string.IsNullOrEmpty(photoUrl))
-            return BadRequest("Ошибка при загрузке изображения.");
+            return BadRequest("Ошибка при загрузке изображении.");
 
         return Ok(new { Url = photoUrl });
     }

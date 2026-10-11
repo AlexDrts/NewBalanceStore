@@ -1,28 +1,33 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using NewBalanceStore.Application.DTOs;
 using NewBalanceStore.Application.Interfaces;
 using NewBalanceStore.Domain.Entities;
 using NewBalanceStore.Domain.Enums;
+using NewBalanceStore.Domain.Interfaces;
 
 namespace NewBalanceStore.Infrastructure.Services;
 
 public class AuthService : IAuthService
 {
-    private static readonly List<User> _users = new();
+    private readonly IUserRepository _userRepository;
     private readonly IConfiguration _configuration;
+    private readonly PasswordHasher<User> _passwordHasher = new();
 
-    public AuthService(IConfiguration configuration)
+    public AuthService(IUserRepository userRepository, IConfiguration configuration)
     {
+        _userRepository = userRepository;
         _configuration = configuration;
     }
 
-    public Task<AuthResponseDto> RegisterAsync(UserRegisterDto registerDto)
+    public async Task<AuthResponseDto> RegisterAsync(UserRegisterDto registerDto)
     {
-        if (_users.Any(u => u.Email.Equals(registerDto.Email, StringComparison.OrdinalIgnoreCase)))
+        var existingUser = await _userRepository.GetByEmailAsync(registerDto.Email);
+        if (existingUser != null)
         {
             throw new InvalidOperationException("Пользователь с таким Email уже существует.");
         }
@@ -34,42 +39,44 @@ public class AuthService : IAuthService
         var user = new User
         {
             Email = registerDto.Email,
-            PasswordHash = HashPassword(registerDto.Password),
             FirstName = firstName,
             LastName = lastName,
             Role = UserRole.Customer
         };
 
-        _users.Add(user);
+        user.PasswordHash = _passwordHasher.HashPassword(user, registerDto.Password);
+
+        await _userRepository.CreateAsync(user);
 
         var token = GenerateJwtToken(user);
 
-        return Task.FromResult(new AuthResponseDto
+        return new AuthResponseDto
         {
             Token = token,
             Email = user.Email,
             FullName = user.FullName,
             Role = user.Role.ToString()
-        });
+        };
     }
 
-    public Task<AuthResponseDto> LoginAsync(UserLoginDto loginDto)
+    public async Task<AuthResponseDto> LoginAsync(UserLoginDto loginDto)
     {
-        var user = _users.FirstOrDefault(u => u.Email.Equals(loginDto.Email, StringComparison.OrdinalIgnoreCase));
-        if (user == null || !VerifyPassword(loginDto.Password, user.PasswordHash))
+        var user = await _userRepository.GetByEmailAsync(loginDto.Email);
+
+        if (user == null || _passwordHasher.VerifyHashedPassword(user, user.PasswordHash, loginDto.Password) == PasswordVerificationResult.Failed)
         {
             throw new UnauthorizedAccessException("Неверный Email или пароль.");
         }
 
         var token = GenerateJwtToken(user);
 
-        return Task.FromResult(new AuthResponseDto
+        return new AuthResponseDto
         {
             Token = token,
             Email = user.Email,
             FullName = user.FullName,
             Role = user.Role.ToString()
-        });
+        };
     }
 
     private string GenerateJwtToken(User user)
@@ -79,7 +86,7 @@ public class AuthService : IAuthService
 
         var claims = new[]
         {
-            new Claim(JwtRegisteredClaimNames.Sub, user.Id),
+            new Claim(JwtRegisteredClaimNames.Sub, user.Id ?? string.Empty),
             new Claim(JwtRegisteredClaimNames.Email, user.Email),
             new Claim(ClaimTypes.Role, user.Role.ToString()),
             new Claim("fullName", user.FullName)
@@ -98,15 +105,5 @@ public class AuthService : IAuthService
         var token = tokenHandler.CreateToken(tokenDescriptor);
 
         return tokenHandler.WriteToken(token);
-    }
-
-    private static string HashPassword(string password)
-    {
-        return Convert.ToBase64String(Encoding.UTF8.GetBytes(password));
-    }
-
-    private static bool VerifyPassword(string password, string passwordHash)
-    {
-        return HashPassword(password) == passwordHash;
     }
 }

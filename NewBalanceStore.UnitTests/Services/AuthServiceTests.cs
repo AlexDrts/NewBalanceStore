@@ -2,6 +2,8 @@
 using NewBalanceStore.Application.DTOs;
 using NewBalanceStore.Infrastructure.Services;
 using NUnit.Framework;
+using NewBalanceStore.Domain.Entities;
+using NewBalanceStore.Domain.Interfaces;
 
 namespace NewBalanceStore.UnitTests.Services;
 
@@ -23,7 +25,8 @@ public class AuthServiceTests
             .AddInMemoryCollection(inMemorySettings!)
             .Build();
 
-        _authService = new AuthService(configuration);
+        var fakeUserRepository = new FakeUserRepository();
+        _authService = new AuthService(fakeUserRepository, configuration);
     }
 
     [Test]
@@ -95,7 +98,7 @@ public class AuthServiceTests
         await Assert.ThrowsAsync<UnauthorizedAccessException>(() => _authService.LoginAsync(loginDto));
     }
 
-    [Fact]
+    [Test]
     public async Task LoginAsync_ShouldReturnToken_WhenEmailDiffersOnlyByCase()
     {
         var email = $"case_{Guid.NewGuid()}@example.com";
@@ -114,10 +117,10 @@ public class AuthServiceTests
         });
 
         Assert.NotNull(result.Token);
-        Assert.Equal(email, result.Email);
+        Assert.That(result.Email, Is.EqualTo(email));
     }
 
-    [Fact]
+    [Test]
     public async Task LoginAsync_ShouldThrowException_WhenEmailDoesNotExist()
     {
         var loginDto = new UserLoginDto
@@ -127,5 +130,30 @@ public class AuthServiceTests
         };
 
         await Assert.ThrowsAsync<UnauthorizedAccessException>(() => _authService.LoginAsync(loginDto));
+    }
+    public class FakeUserRepository : IUserRepository
+    {
+        private readonly List<User> _users = new();
+
+        public Task<User?> GetByEmailAsync(string email)
+        {
+            var user = _users.FirstOrDefault(u => u.Email.Equals(email, StringComparison.OrdinalIgnoreCase));
+            return Task.FromResult(user);
+        }
+
+        public Task CreateAsync(User user)
+        {
+            if (string.IsNullOrEmpty(user.Id))
+            {
+                user.Id = Guid.NewGuid().ToString();
+            }
+            _users.Add(user);
+            return Task.CompletedTask;
+        }
+
+        public Task<IEnumerable<User>> GetAllAsync()
+        {
+            return Task.FromResult<IEnumerable<User>>(_users);
+        }
     }
 }
