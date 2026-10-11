@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Software Requirements Specification (SRS) | NewBalanceStoreBack </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Software Requirements Specification (SRS) | NewBalanceStoreBack ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZemNyux/NewBalanceStoreBack/blob/main/docs/src.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="NewBalanceStoreBack">
+            NewBalanceStoreBack
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="software-requirements-specification-srs">Software Requirements Specification (SRS)</h1>
+
+<h2 id="new-balance-store--вебплатформа-інтернет-магазину-спортивного-взуття-та-одягу">New Balance Store — вебплатформа інтернет-магазину спортивного взуття та одягу</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Метадані</th>
+<th style="text-align: left;">Значення</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Версія документа</strong></td>
+<td style="text-align: left;">1.1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Статус</strong></td>
+<td style="text-align: left;">Draft for Review</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Дата</strong></td>
+<td style="text-align: left;">22 серпня 2026</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Автор</strong></td>
+<td style="text-align: left;">BalanceDevs</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Затверджує</strong></td>
+<td style="text-align: left;">Загоруйко Олександр Дмитрович</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Класифікація</strong></td>
+<td style="text-align: left;">Internal / Academic</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Стандарт</strong></td>
+<td style="text-align: left;">IEEE 830-1998 / ISO/IEC/IEEE 29148</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="зміст">Зміст</h2>
+<ul>
+<li><a href="#1-%D0%B2%D1%81%D1%82%D1%83%D0%BF">1. Вступ</a></li>
+<li><a href="#2-%D0%B7%D0%B0%D0%B3%D0%B0%D0%BB%D1%8C%D0%BD%D0%B8%D0%B9-%D0%BE%D0%BF%D0%B8%D1%81">2. Загальний опис</a></li>
+<li><a href="#3-%D0%BC%D0%B5%D0%B6%D1%96-%D0%BF%D1%80%D0%BE%D1%94%D0%BA%D1%82%D1%83-scope">3. Межі проєкту (Scope)</a></li>
+<li><a href="#4-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D1%96%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%96-%D0%B2%D0%B8%D0%BC%D0%BE%D0%B3%D0%B8">4. Функціональні вимоги</a></li>
+<li><a href="#5-use-cases">5. Use Cases</a></li>
+<li><a href="#6-%D0%BD%D0%B5%D1%84%D1%83%D0%BD%D0%BA%D1%86%D1%96%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D1%96-%D0%B2%D0%B8%D0%BC%D0%BE%D0%B3%D0%B8-nfr">6. Нефункціональні вимоги (NFR)</a></li>
+<li><a href="#7-%D1%80%D0%B8%D0%B7%D0%B8%D0%BA%D0%B8">7. Ризики</a></li>
+<li><a href="#8-%D0%BA%D1%80%D0%B8%D1%82%D0%B5%D1%80%D1%96%D1%97-%D1%83%D1%81%D0%BF%D1%96%D1%88%D0%BD%D0%BE%D1%81%D1%82%D1%96-%D0%BF%D1%80%D0%BE%D1%94%D0%BA%D1%82%D1%83">8. Критерії успішності проєкту</a></li>
+<li><a href="#9-%D0%B4%D0%BE%D0%B4%D0%B0%D1%82%D0%BA%D0%B8">9. Додатки</a></li>
+<li><a href="#10-%D1%80%D0%B5%D0%BA%D0%BE%D0%BC%D0%B5%D0%BD%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B9-%D1%80%D0%BE%D0%B7%D0%BF%D0%BE%D0%B4%D1%96%D0%BB-%D1%80%D0%BE%D0%BB%D0%B5%D0%B9-%D1%83-%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%96-24-%D0%BE%D1%81%D0%BE%D0%B1%D0%B8">10. Рекомендований розподіл ролей у команді</a></li>
+</ul>
+<hr>
+<h2 id="1-вступ">1. Вступ</h2>
+<h3 id="11-мета-документа">1.1. Мета документа</h3>
+<p>Цей документ визначає функціональні та нефункціональні вимоги до вебзастосунку <strong>New Balance Store</strong>, який являє собою повноцінну платформу електронної комерції для перегляду, пошуку та придбання товарів бренду New Balance.</p>
+<p>SRS використовується як основний документ для планування, розробки, тестування та подальшого оцінювання програмного продукту.</p>
+<h3 id="12-обсяг-продукту">1.2. Обсяг продукту</h3>
+<p>New Balance Store — це повнофункціональна веб-платформа електронної комерції, що дозволяє користувачам переглядати товари, формувати кошик, оформлювати замовлення з онлайн-оплатою, а адміністраторам — керувати каталогом. Проєкт реалізується як командний проєкт із застосуванням методології Scrum, системи контролю версій Git та архітектури Clean / Onion.</p>
+<p>Проєкт має продемонструвати практичне використання сучасних технологій веброзробки, принципів об'єктно-орієнтованого програмування, REST API, роботи з базами даних, автентифікації, авторизації, тестування та командної розробки.</p>
+<h3 id="13-аудиторія-документа">1.3. Аудиторія документа</h3>
+<p>Команда розробників (Backend, Frontend, Full-stack), керівник проєкту, члени комісії з захисту, QA-інженери (в рамках навчального процесу).</p>
+<h3 id="14-референс">1.4. Референс</h3>
+<p>За основу UI та загальної концепції використовується американська версія офіційного сайту New Balance US. Поточний React-проєкт команди базується на попередній реалізації дизайну New Balance, розробленій у межах дисципліни React.</p>
+<h3 id="15-нормативні-посилання-та-стандарти">1.5. Нормативні посилання та стандарти</h3>
+<p>При розробці специфікації та проєктуванні системи використовуються такі міжнародні стандарти та регуляції:</p>
+<ul>
+<li><strong>ISO/IEC/IEEE 29148:2018</strong> — Systems and software engineering — Life cycle processes — Requirements engineering.</li>
+<li><strong>OWASP Top 10 (2025/2026 Edition)</strong> — Стандарт безпеки вебзастосунків та основних ризиків.</li>
+<li><strong>GDPR / CCPA Compliance</strong> — Стандарти приватності та захисту персональних даних користувачів.</li>
+</ul>
+<h3 id="16-визначення-акроніми-скорочення">1.6. Визначення, акроніми, скорочення</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Термін</th>
+<th style="text-align: left;">Визначення</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>SRS</strong></td>
+<td style="text-align: left;">Software Requirements Specification</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>FR</strong></td>
+<td style="text-align: left;">Functional Requirement</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>NFR</strong></td>
+<td style="text-align: left;">Non-Functional Requirement</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>UC</strong></td>
+<td style="text-align: left;">Use Case</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>API</strong></td>
+<td style="text-align: left;">Application Programming Interface</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>REST</strong></td>
+<td style="text-align: left;">Representational State Transfer</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>JWT</strong></td>
+<td style="text-align: left;">JSON Web Token</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RBAC</strong></td>
+<td style="text-align: left;">Role-Based Access Control</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CRUD</strong></td>
+<td style="text-align: left;">Create, Read, Update, Delete</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>NoSQL</strong></td>
+<td style="text-align: left;">Non-Relational Database</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>DTO</strong></td>
+<td style="text-align: left;">Data Transfer Object</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SOLID</strong></td>
+<td style="text-align: left;">Single responsibility, Open-closed, Liskov substitution, Interface segregation, Dependency inversion</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>UI/UX</strong></td>
+<td style="text-align: left;">User Interface / User Experience</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>MVP</strong></td>
+<td style="text-align: left;">Minimum Viable Product</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>MoSCoW</strong></td>
+<td style="text-align: left;">Must have, Should have, Could have, Won't have</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CI/CD</strong></td>
+<td style="text-align: left;">Continuous Integration / Continuous Deployment</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="2-загальний-опис">2. Загальний опис</h2>
+<h3 id="21-перспектива-продукту">2.1. Перспектива продукту</h3>
+<p><strong>New Balance Store</strong> розробляється як навчальний e-commerce продукт, архітектурні та UX-рішення якого базуються на кращих практиках сучасних платформ електронної комерції та дизайні офіційного сайту New Balance US. Система складається з клієнтської частини (React SPA), серверної частини (ASP.NET Core Web API) та хмарної платформи Firebase (Cloud Firestore / Authentication).</p>
+<h3 id="22-класи-користувачів-та-привілеї">2.2. Класи користувачів та привілеї</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Роль</th>
+<th style="text-align: left;">Опис</th>
+<th style="text-align: left;">Ключові дозволи</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Гість (Guest)</strong></td>
+<td style="text-align: left;">Неавторизований відвідувач</td>
+<td style="text-align: left;">Перегляд каталогу, пошук, фільтрація, перегляд деталей товару</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Покупець (Customer)</strong></td>
+<td style="text-align: left;">Авторизований користувач</td>
+<td style="text-align: left;">Функціонал Гість + кошика, оформлення замовлення, історія замовлень, управління профілем</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Адміністратор (Admin)</strong></td>
+<td style="text-align: left;">Менеджер платформи</td>
+<td style="text-align: left;">CRUD товарів</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Система (System)</strong></td>
+<td style="text-align: left;">Автоматизовані процеси</td>
+<td style="text-align: left;">Валідація JWT-токенів, автоматична зміна статусів кошика</td>
+</tr>
+</tbody>
+</table>
+<h3 id="23-операційне-середовище">2.3. Операційне середовище</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Компонент</th>
+<th style="text-align: left;">Специфікація</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Клієнт</strong></td>
+<td style="text-align: left;">Браузери Chrome, Firefox, Safari</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Сервер</strong></td>
+<td style="text-align: left;">ASP.NET Core Web API (.NET 8.0+), хостинг на Render / Vercel / Railway</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Клієнтський фреймворк</strong></td>
+<td style="text-align: left;">React 18+, Vite, React Router, CSS Modules</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Серверний фреймворк</strong></td>
+<td style="text-align: left;">ASP.NET Core Web API, Firebase Admin SDK</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>База даних / Хмара</strong></td>
+<td style="text-align: left;">Firebase (Cloud Firestore)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Автентифікація</strong></td>
+<td style="text-align: left;">Firebase Authentication / JWT</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Архітектура</strong></td>
+<td style="text-align: left;">Clean Architecture / Onion Architecture</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Мови інтерфейсу</strong></td>
+<td style="text-align: left;">Англійська (en-US)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="24-обмеження-дизайну-та-реалізації">2.4. Обмеження дизайну та реалізації</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Шар</th>
+<th style="text-align: left;">Технологія</th>
+<th style="text-align: left;">Обґрунтування</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Frontend</strong></td>
+<td style="text-align: left;">React 18+ (Vite)</td>
+<td style="text-align: left;">Компонентний підхід, висока швидкість рендерингу, багата екосистема</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Backend</strong></td>
+<td style="text-align: left;">ASP.NET Core Web API</td>
+<td style="text-align: left;">Висока продуктивність, кросплатформеність, суворе дотримання OOP та SOLID</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>БД</strong></td>
+<td style="text-align: left;">Firebase (Cloud Firestore)</td>
+<td style="text-align: left;">Безкоштовна NoSQL база даних із масштабованістю у реальному часі та відсутністю витрат на хостинг</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Auth</strong></td>
+<td style="text-align: left;">Firebase Auth / JWT</td>
+<td style="text-align: left;">Надійна автентифікація користувачів, безпека та легка інтеграція</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Документація API</strong></td>
+<td style="text-align: left;">Swagger / OpenAPI 3.0</td>
+<td style="text-align: left;">Автоматична генерація специфікації, зручне тестування endpoints</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Тестування</strong></td>
+<td style="text-align: left;">Vitest</td>
+<td style="text-align: left;">Покриття бізнес-логіки модульними тестами згідно з вимогами</td>
+</tr>
+</tbody>
+</table>
+<h3 id="25-припущення-та-залежності-assumptions--dependencies">2.5. Припущення та залежності (Assumptions &amp; Dependencies)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">№</th>
+<th style="text-align: left;">Опис</th>
+<th style="text-align: center;">Тип</th>
+<th style="text-align: left;">Вплив у разі порушення</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>A-01</strong></td>
+<td style="text-align: left;">Команда використовує Git (GitHub) із feature-branch workflow та Pull Request reviews</td>
+<td style="text-align: center;">Внутрішня</td>
+<td style="text-align: left;">Порушення контролю версій, конфлікти коду при злитті гілок</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>A-02</strong></td>
+<td style="text-align: left;">Використовується демо-процесинг платежів (без реального списання коштів)</td>
+<td style="text-align: center;">Зовнішня</td>
+<td style="text-align: left;">Неможливість повноцінного тестування Checkout у продакшені</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>A-03</strong></td>
+<td style="text-align: left;">Команда дотримується Scrum: 2-тижневі спринти, щоденні stand-up, Kanban-дошка</td>
+<td style="text-align: center;">Методологічна</td>
+<td style="text-align: left;">Порушення дедлайнів, відсутність прозорості прогресу розробки</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>A-04</strong></td>
+<td style="text-align: left;">Учасники команди мають базові знання C#, ASP.NET Core, React та Firebase</td>
+<td style="text-align: center;">Компетенційна</td>
+<td style="text-align: left;">Необхідність додаткового навчання, ризик затримки реалізації фіч</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-межі-проєкту-scope">3. Межі проєкту (Scope)</h2>
+<h3 id="31-in-scope">3.1. In Scope</h3>
+<ul>
+<li>Пошук товарів за назвою</li>
+<li>Детальна сторінка товару</li>
+<li>Реєстрація, авторизація та керування профілем (Firebase Auth / JWT)</li>
+<li>Історія замовлень</li>
+<li>Адміністративна панель (Управління товарами)</li>
+<li>REST API з OpenAPI/Swagger документацією</li>
+<li>База даних Firebase (Cloud Firestore)</li>
+<li>Безкоштовне розгортання (Deployment на Render / Vercel)</li>
+</ul>
+<h3 id="32-out-of-scope">3.2. Out of Scope</h3>
+<p>На першому етапі розробки <strong>не реалізується</strong>:</p>
+<ul>
+<li>Нативні мобільні застосунки (iOS / Android)</li>
+<li>Реальна інтеграція з платіжними системами (використовується демо-процесинг)</li>
+<li>Інтеграція з реальними службами доставки (UPS, USPS Delivery)</li>
+<li>Інтеграція з фізичними точками продажу</li>
+<li>Повноцінна ERP/CRM-система</li>
+<li>Мікросервісна інфраструктура</li>
+</ul>
+<hr>
+<h2 id="4-функціональні-вимоги">4. Функціональні вимоги</h2>
+<h3 id="41-головна-сторінка">4.1. Головна сторінка</h3>
+<ul>
+<li><strong>FR-01:</strong> Система повинна відображати головну сторінку, що містить: Головний Header Hero-секцію, рекомендовані товари, рекламні банери та Footer.</li>
+</ul>
+<h3 id="42-каталог-товарів">4.2. Каталог товарів</h3>
+<ul>
+<li><strong>FR-02:</strong> Система повинна відображати перелік товарів у вигляді сітки (Grid). Картка товару повинна містити: назву, зображення, категорію за статтю (Men, Women, Unisex), ціну, доступні розміри.</li>
+<li><strong>FR-03:</strong> Система повинна надавати детальну сторінку товару, що містить: галерею зображень, назву, опис, ціну, технічні характеристики, вибір розміру та кольору, кнопки «Додати до кошика».</li>
+</ul>
+<h3 id="43-пошук-фільтрація-та-сортування">4.3. Пошук, фільтрація та сортування</h3>
+<ul>
+<li><strong>FR-04:</strong> Пошук товарів за назвою.</li>
+<li><strong>FR-05:</strong> Фільтрація товарів за параметрами: категорія, стать (чоловіче, жіноче, unisex), ціновий діапазон, розмір, колір.</li>
+<li><strong>FR-06:</strong> Сортування товарів: за зростанням ціни, за спаданням ціни, за найновішим товаром, за доступним для покупки товаром.</li>
+</ul>
+<h3 id="44-автентифікація-та-авторизація">4.4. Автентифікація та авторизація</h3>
+<ul>
+<li><strong>FR-07:</strong> Реєстрація нових користувачів із валідацією полів (Email, Password, Name).</li>
+<li><strong>FR-08:</strong> Автентифікація існуючих користувачів.</li>
+<li><strong>FR-09:</strong> Використання JWT (JSON Web Tokens) для збереження сесії та захисту API endpoint'ів.</li>
+<li><strong>FR-10:</strong> Рольова модель доступу (RBAC): підтримка ролей <code>Guest</code>, <code>Customer</code> та <code>Admin</code>.</li>
+</ul>
+<h3 id="45-кошик">4.5. Кошик</h3>
+<ul>
+<li><strong>FR-11:</strong> Додавання товарів до кошика з вибором конкретного розміру та кольору.</li>
+<li><strong>FR-12:</strong> Управління кошиком: зміна кількості одиниць товару, видалення окремих позицій автоматичний перерахунок загальної вартості.</li>
+</ul>
+<h3 id="46-замовлення-orders">4.6. Замовлення (Orders)</h3>
+<ul>
+<li><strong>FR-13:</strong> Оформлення замовлення з можливістю введення: імені, прізвища, Email, телефону, адреси доставки.</li>
+<li><strong>FR-14:</strong> Створення замовлення у системі з присвоєнням унікального номера та початкового статусу <code>Pending</code>.</li>
+<li><strong>FR-15:</strong> Перегляд історії замовлень у кабінеті користувача (номер, дата, склад замовлення, загальна сума, поточний статус).</li>
+</ul>
+<h3 id="47-адміністративна-панель">4.7. Адміністративна панель</h3>
+<ul>
+<li><strong>FR-16:</strong> Доступ до панелі адміністрування виключно для користувачів із роллю <code>Admin</code>.</li>
+<li><strong>FR-17:</strong> Повний цикл CRUD-операцій над товарами (створення, редагування, видалення).</li>
+</ul>
+<h3 id="48-backend-api">4.8. Backend API</h3>
+<ul>
+<li><strong>FR-18:</strong> Взаємодія між Frontend та Backend відбувається через REST API.</li>
+<li><strong>Маршрути API:</strong>
+<ul>
+<li><code>/api/auth</code> — реєстрація, логін, оновлення токенів</li>
+<li><code>/api/products</code> — товари (CRUD, фільтрація, детальні дані)</li>
+<li><code>/api/orders</code> — створення та перегляд замовлень</li>
+<li><code>/api/users</code> — управління профілем</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="5-use-cases">5. Use Cases</h2>
+<h3 id="uc-01-перегляд-товару">UC-01: Перегляд товару</h3>
+<ul>
+<li><strong>Актор:</strong> Guest / Customer</li>
+<li><strong>Сценарій:</strong>
+<ol>
+<li>Користувач переходить до каталогу товарів.</li>
+<li>Застосовує фільтри за категорією або ціною.</li>
+<li>Натискає на картку товару.</li>
+<li>Система відображає сторінку товару із фотографіями, описом та сіткою розмірів.</li>
+</ol>
+</li>
+</ul>
+<h3 id="uc-02-додавання-товару-до-кошика">UC-02: Додавання товару до кошика</h3>
+<ul>
+<li><strong>Актор:</strong> Customer</li>
+<li><strong>Сценарій:</strong>
+<ol>
+<li>Користувач відкриває сторінку товару.</li>
+<li>Обирає розмір та колір.</li>
+<li>Натискає «Add to Cart».</li>
+<li>Backend перевіряє наявність товару та оновлює стан кошика в БД.</li>
+</ol>
+</li>
+</ul>
+<h3 id="uc-03-оформлення-замовлення">UC-03: Оформлення замовлення</h3>
+<ul>
+<li><strong>Актор:</strong> Customer</li>
+<li><strong>Сценарій:</strong>
+<ol>
+<li>Користувач переходить у кошик і натискає «Checkout».</li>
+<li>Вводить контактні дані та адресу доставки.</li>
+<li>Підтверджує замовлення.</li>
+<li>Система фіксує замовлення зі статусом <code>Pending</code> та очищає кошик.</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h2 id="6-нефункціональні-вимоги-nfr">6. Нефункціональні вимоги (NFR)</h2>
+<h3 id="61-архітектура">6.1. Архітектура</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ID</th>
+<th style="text-align: left;">Вимога</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>NFR-01</strong></td>
+<td style="text-align: left;">Backend реалізовано на платформі ASP.NET Core Web API.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>NFR-02</strong></td>
+<td style="text-align: left;">Дотримання принципів SOLID, забезпечення Low Coupling та High Cohesion.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>NFR-03</strong></td>
+<td style="text-align: left;">Реалізація Clean / Onion Architecture (шари: <em>Domain</em>, <em>Application</em>, <em>Infrastructure</em>, <em>Presentation</em>).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="62-база-даних">6.2. База даних</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ID</th>
+<th style="text-align: left;">Вимога</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>NFR-04</strong></td>
+<td style="text-align: left;">СУБД — Firebase Cloud Firestore (NoSQL).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>NFR-05</strong></td>
+<td style="text-align: left;">Інтеграція з Firebase через Firebase Admin SDK на боці C# Backend.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>NFR-06</strong></td>
+<td style="text-align: left;">Оптимізовані запити та індексація колекцій у Firestore для швидкої фільтрації каталогу.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="63-продуктивність-та-безпека">6.3. Продуктивність та Безпека</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ID</th>
+<th style="text-align: left;">Вимога</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>NFR-07</strong></td>
+<td style="text-align: left;">Всі I/O операції (БД, мережа) повинні використовувати асинхронні виклики (<code>async/await</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>NFR-08</strong></td>
+<td style="text-align: left;">Безпека та захист паролів забезпечуються сервісом Firebase Authentication.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>NFR-09</strong></td>
+<td style="text-align: left;">Валідація всіх вхідних DTO на боці сервера (FluentValidation / Data Annotations).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="64-документація-та-тестування">6.4. Документація та Тестування</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ID</th>
+<th style="text-align: left;">Вимога</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>NFR-10</strong></td>
+<td style="text-align: left;">Інтеграція Swagger / OpenAPI для документування та зручного тестування API endpoints.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>NFR-11</strong></td>
+<td style="text-align: left;">Покриття основної бізнес-логіки (авторизація, кошик, розрахунок замовлень) модульними тестами на NUnit (+ Vitest).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="65-uiux-та-адаптивність">6.5. UI/UX та Адаптивність</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ID</th>
+<th style="text-align: left;">Вимога</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>NFR-12</strong></td>
+<td style="text-align: left;">Інтерфейс повинен відповідати сучасним UX-стандартам e-commerce.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>NFR-13</strong></td>
+<td style="text-align: left;">Повна адаптивність (Responsive Web Design) для стандартних роздільних здатностей: <br> • Mobile: від <code>320px</code> <br> • Tablet: від <code>768px</code> <br> • Desktop: до <code>2160px</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="7-ризики">7. Ризики</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ID</th>
+<th style="text-align: left;">Ризик</th>
+<th style="text-align: center;">Ймовірність</th>
+<th style="text-align: center;">Вплив</th>
+<th style="text-align: left;">Стратегія мітигації</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>R-01</strong></td>
+<td style="text-align: left;"><strong>Великий обсяг робіт (scope creep)</strong></td>
+<td style="text-align: center;">Висока</td>
+<td style="text-align: center;">Високий</td>
+<td style="text-align: left;">Чітке пріоритезування Backlog (MoSCoW), реліз MVP у перших спринтах.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>R-02</strong></td>
+<td style="text-align: left;"><strong>Проблеми інтеграції React та API</strong></td>
+<td style="text-align: center;">Середня</td>
+<td style="text-align: center;">Високий</td>
+<td style="text-align: left;">Раннє проектування API контрактів (Swagger First / Mock Data).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>R-03</strong></td>
+<td style="text-align: left;"><strong>Недостатня адаптивність UI</strong></td>
+<td style="text-align: center;">Середня</td>
+<td style="text-align: center;">Середній</td>
+<td style="text-align: left;">Desktop-first підхід із поетапною адаптацією через CSS Media Queries; перевірка UI на різних роздільностях під час кожної ітерації.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="8-критерії-успішності-проєкту">8. Критерії успішності проєкту</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ID</th>
+<th style="text-align: left;">Критерій успішності</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>AC-01</strong></td>
+<td style="text-align: left;">Повна інтеграція React Frontend з ASP.NET Core Backend та Firebase.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>AC-02</strong></td>
+<td style="text-align: left;">Працездатність ключових модулів: каталог, пошук, кошик, checkout, профілі, адмінка.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>AC-03</strong></td>
+<td style="text-align: left;">Успішне дотримання рольової моделі (Guest, Customer, Admin).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>AC-04</strong></td>
+<td style="text-align: left;">Хмарна база даних Firebase Cloud Firestore коректно зберігає та віддає структуровані документи.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>AC-05</strong></td>
+<td style="text-align: left;">Основний бізнес-функціонал покритий NUnit-тестами (+ Vitest).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>AC-06</strong></td>
+<td style="text-align: left;">Наявність актуальної Swagger-документації.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>AC-07</strong></td>
+<td style="text-align: left;">Інтерфейс коректно адаптується під мобільні та десктопні пристрої (від 320px).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>AC-08</strong></td>
+<td style="text-align: left;">Проєкт розгорнуто на безкоштовному публічному хостингу (Deployment).</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="9-додатки">9. Додатки</h2>
+<h3 id="додаток-а-технологічний-стек">Додаток А: Технологічний стек</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Сфера</th>
+<th style="text-align: left;">Технології</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Frontend</strong></td>
+<td style="text-align: left;">React, React Router, JavaScript, CSS Modules, Fetch API</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Backend</strong></td>
+<td style="text-align: left;">C#, ASP.NET Core 8.0+ Web API, LINQ, Firebase Admin SDK</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Database &amp; Auth</strong></td>
+<td style="text-align: left;">Firebase (Cloud Firestore, Firebase Authentication)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Testing</strong></td>
+<td style="text-align: left;">NUnit, Vitest</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tools &amp; DevOps</strong></td>
+<td style="text-align: left;">Git, GitHub Actions, Swagger / OpenAPI</td>
+</tr>
+</tbody>
+</table>
+<h3 id="додаток-б-організація-командної-розробки">Додаток Б: Організація командної розробки</h3>
+<p>Розробка ведеться за методологією <strong>Scrum</strong> із використанням тижневих спринтів, Pull Request'ів та Code Review.</p>
+<hr>
+<h3 id="10-рекомендований-розподіл-ролей-у-команді-24-особи">10. Рекомендований розподіл ролей у команді (2–4 особи)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Роль</th>
+<th style="text-align: left;">Обов'язки</th>
+<th style="text-align: left;">Технології</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Team Lead / Frontend Lead</strong></td>
+<td style="text-align: left;">Архітектура проєкту, координація команди, UI/UX, React-компоненти та інтеграція з API</td>
+<td style="text-align: left;">React, React Router, CSS Modules, Fetch API, Git</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Backend Developer</strong></td>
+<td style="text-align: left;">Налаштування Firebase, розробка REST API, бізнес-логіка, авторизація</td>
+<td style="text-align: left;">C#, ASP.NET Core, Firebase Admin SDK, JWT</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Full-stack / DevOps</strong></td>
+<td style="text-align: left;">Інтеграція модулів, Swagger-документація, налаштування CI/CD та середовища розробки</td>
+<td style="text-align: left;">Swagger, GitHub Actions, C#, React</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>QA / Technical Writer</strong></td>
+<td style="text-align: left;">Написання юніт-тестів, SRS-документація, Scrum-звіти, підготовка презентації</td>
+<td style="text-align: left;">NUnit, Vitest, PowerPoint, MS Word</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZemNyux/NewBalanceStoreBack/blob/main/docs/src.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

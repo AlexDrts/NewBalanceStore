@@ -1,0 +1,53 @@
+### YamlMime:ManagedReference
+items:
+- uid: NewBalanceStore.UnitTests.Services
+  commentId: N:NewBalanceStore.UnitTests.Services
+  id: NewBalanceStore.UnitTests.Services
+  children:
+  - NewBalanceStore.UnitTests.Services.AuthServiceTests
+  - NewBalanceStore.UnitTests.Services.AuthServiceTests.FakeUserRepository
+  - NewBalanceStore.UnitTests.Services.OrderServiceTests
+  langs:
+  - csharp
+  - vb
+  name: NewBalanceStore.UnitTests.Services
+  nameWithType: NewBalanceStore.UnitTests.Services
+  fullName: NewBalanceStore.UnitTests.Services
+  type: Namespace
+  assemblies:
+  - NewBalanceStore.UnitTests
+references:
+- uid: NewBalanceStore.UnitTests.Services.AuthServiceTests
+  commentId: T:NewBalanceStore.UnitTests.Services.AuthServiceTests
+  href: NewBalanceStore.UnitTests.Services.AuthServiceTests.html
+  name: AuthServiceTests
+  nameWithType: AuthServiceTests
+  fullName: NewBalanceStore.UnitTests.Services.AuthServiceTests
+- uid: NewBalanceStore.UnitTests.Services.AuthServiceTests.FakeUserRepository
+  commentId: T:NewBalanceStore.UnitTests.Services.AuthServiceTests.FakeUserRepository
+  href: NewBalanceStore.UnitTests.Services.AuthServiceTests.html
+  name: AuthServiceTests.FakeUserRepository
+  nameWithType: AuthServiceTests.FakeUserRepository
+  fullName: NewBalanceStore.UnitTests.Services.AuthServiceTests.FakeUserRepository
+  spec.csharp:
+  - uid: NewBalanceStore.UnitTests.Services.AuthServiceTests
+    name: AuthServiceTests
+    href: NewBalanceStore.UnitTests.Services.AuthServiceTests.html
+  - name: .
+  - uid: NewBalanceStore.UnitTests.Services.AuthServiceTests.FakeUserRepository
+    name: FakeUserRepository
+    href: NewBalanceStore.UnitTests.Services.AuthServiceTests.FakeUserRepository.html
+  spec.vb:
+  - uid: NewBalanceStore.UnitTests.Services.AuthServiceTests
+    name: AuthServiceTests
+    href: NewBalanceStore.UnitTests.Services.AuthServiceTests.html
+  - name: .
+  - uid: NewBalanceStore.UnitTests.Services.AuthServiceTests.FakeUserRepository
+    name: FakeUserRepository
+    href: NewBalanceStore.UnitTests.Services.AuthServiceTests.FakeUserRepository.html
+- uid: NewBalanceStore.UnitTests.Services.OrderServiceTests
+  commentId: T:NewBalanceStore.UnitTests.Services.OrderServiceTests
+  href: NewBalanceStore.UnitTests.Services.OrderServiceTests.html
+  name: OrderServiceTests
+  nameWithType: OrderServiceTests
+  fullName: NewBalanceStore.UnitTests.Services.OrderServiceTests

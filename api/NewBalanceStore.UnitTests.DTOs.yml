@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: NewBalanceStore.UnitTests.DTOs
+  commentId: N:NewBalanceStore.UnitTests.DTOs
+  id: NewBalanceStore.UnitTests.DTOs
+  children:
+  - NewBalanceStore.UnitTests.DTOs.CartTests
+  langs:
+  - csharp
+  - vb
+  name: NewBalanceStore.UnitTests.DTOs
+  nameWithType: NewBalanceStore.UnitTests.DTOs
+  fullName: NewBalanceStore.UnitTests.DTOs
+  type: Namespace
+  assemblies:
+  - NewBalanceStore.UnitTests
+references:
+- uid: NewBalanceStore.UnitTests.DTOs.CartTests
+  commentId: T:NewBalanceStore.UnitTests.DTOs.CartTests
+  href: NewBalanceStore.UnitTests.DTOs.CartTests.html
+  name: CartTests
+  nameWithType: CartTests
+  fullName: NewBalanceStore.UnitTests.DTOs.CartTests

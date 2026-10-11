@@ -1,0 +1,37 @@
+### YamlMime:ManagedReference
+items:
+- uid: NewBalanceStore.Infrastructure.Repositories
+  commentId: N:NewBalanceStore.Infrastructure.Repositories
+  id: NewBalanceStore.Infrastructure.Repositories
+  children:
+  - NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository
+  - NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository
+  - NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository
+  langs:
+  - csharp
+  - vb
+  name: NewBalanceStore.Infrastructure.Repositories
+  nameWithType: NewBalanceStore.Infrastructure.Repositories
+  fullName: NewBalanceStore.Infrastructure.Repositories
+  type: Namespace
+  assemblies:
+  - NewBalanceStore.Infrastructure
+references:
+- uid: NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository
+  commentId: T:NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository
+  href: NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.html
+  name: FirebaseProductRepository
+  nameWithType: FirebaseProductRepository
+  fullName: NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository
+- uid: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository
+  commentId: T:NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository
+  href: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.html
+  name: FirebaseOrderRepository
+  nameWithType: FirebaseOrderRepository
+  fullName: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository
+- uid: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository
+  commentId: T:NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository
+  href: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.html
+  name: FirebaseUserRepository
+  nameWithType: FirebaseUserRepository
+  fullName: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository

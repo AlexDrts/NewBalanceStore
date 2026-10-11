@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: NewBalanceStore.Application.Mappings
+  commentId: N:NewBalanceStore.Application.Mappings
+  id: NewBalanceStore.Application.Mappings
+  children:
+  - NewBalanceStore.Application.Mappings.OrderMappingProfile
+  langs:
+  - csharp
+  - vb
+  name: NewBalanceStore.Application.Mappings
+  nameWithType: NewBalanceStore.Application.Mappings
+  fullName: NewBalanceStore.Application.Mappings
+  type: Namespace
+  assemblies:
+  - NewBalanceStore.Application
+references:
+- uid: NewBalanceStore.Application.Mappings.OrderMappingProfile
+  commentId: T:NewBalanceStore.Application.Mappings.OrderMappingProfile
+  href: NewBalanceStore.Application.Mappings.OrderMappingProfile.html
+  name: OrderMappingProfile
+  nameWithType: OrderMappingProfile
+  fullName: NewBalanceStore.Application.Mappings.OrderMappingProfile

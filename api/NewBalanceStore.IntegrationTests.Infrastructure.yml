@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: NewBalanceStore.IntegrationTests.Infrastructure
+  commentId: N:NewBalanceStore.IntegrationTests.Infrastructure
+  id: NewBalanceStore.IntegrationTests.Infrastructure
+  children:
+  - NewBalanceStore.IntegrationTests.Infrastructure.TestApiFactory
+  - NewBalanceStore.IntegrationTests.Infrastructure.TestAuthenticationHandler
+  langs:
+  - csharp
+  - vb
+  name: NewBalanceStore.IntegrationTests.Infrastructure
+  nameWithType: NewBalanceStore.IntegrationTests.Infrastructure
+  fullName: NewBalanceStore.IntegrationTests.Infrastructure
+  type: Namespace
+  assemblies:
+  - NewBalanceStore.IntegrationTests
+references:
+- uid: NewBalanceStore.IntegrationTests.Infrastructure.TestApiFactory
+  commentId: T:NewBalanceStore.IntegrationTests.Infrastructure.TestApiFactory
+  href: NewBalanceStore.IntegrationTests.Infrastructure.TestApiFactory.html
+  name: TestApiFactory
+  nameWithType: TestApiFactory
+  fullName: NewBalanceStore.IntegrationTests.Infrastructure.TestApiFactory
+- uid: NewBalanceStore.IntegrationTests.Infrastructure.TestAuthenticationHandler
+  commentId: T:NewBalanceStore.IntegrationTests.Infrastructure.TestAuthenticationHandler
+  href: NewBalanceStore.IntegrationTests.Infrastructure.TestAuthenticationHandler.html
+  name: TestAuthenticationHandler
+  nameWithType: TestAuthenticationHandler
+  fullName: NewBalanceStore.IntegrationTests.Infrastructure.TestAuthenticationHandler

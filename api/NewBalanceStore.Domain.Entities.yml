@@ -1,0 +1,107 @@
+### YamlMime:ManagedReference
+items:
+- uid: NewBalanceStore.Domain.Entities
+  commentId: N:NewBalanceStore.Domain.Entities
+  id: NewBalanceStore.Domain.Entities
+  children:
+  - NewBalanceStore.Domain.Entities.Cart
+  - NewBalanceStore.Domain.Entities.CartItem
+  - NewBalanceStore.Domain.Entities.CustomerInfo
+  - NewBalanceStore.Domain.Entities.Order
+  - NewBalanceStore.Domain.Entities.OrderItem
+  - NewBalanceStore.Domain.Entities.Product
+  - NewBalanceStore.Domain.Entities.ProductVariant
+  - NewBalanceStore.Domain.Entities.ShippingAddress
+  - NewBalanceStore.Domain.Entities.User
+  langs:
+  - csharp
+  - vb
+  name: NewBalanceStore.Domain.Entities
+  nameWithType: NewBalanceStore.Domain.Entities
+  fullName: NewBalanceStore.Domain.Entities
+  type: Namespace
+  assemblies:
+  - NewBalanceStore.Domain
+references:
+- uid: NewBalanceStore.Domain.Entities.Cart
+  commentId: T:NewBalanceStore.Domain.Entities.Cart
+  href: NewBalanceStore.Domain.Entities.Cart.html
+  name: Cart
+  nameWithType: Cart
+  fullName: NewBalanceStore.Domain.Entities.Cart
+- uid: NewBalanceStore.Domain.Entities.CartItem
+  commentId: T:NewBalanceStore.Domain.Entities.CartItem
+  href: NewBalanceStore.Domain.Entities.CartItem.html
+  name: CartItem
+  nameWithType: CartItem
+  fullName: NewBalanceStore.Domain.Entities.CartItem
+- uid: NewBalanceStore.Domain.Entities.CustomerInfo
+  commentId: T:NewBalanceStore.Domain.Entities.CustomerInfo
+  parent: NewBalanceStore.Domain.Entities
+  href: NewBalanceStore.Domain.Entities.CustomerInfo.html
+  name: CustomerInfo
+  nameWithType: CustomerInfo
+  fullName: NewBalanceStore.Domain.Entities.CustomerInfo
+- uid: NewBalanceStore.Domain.Entities.Order
+  commentId: T:NewBalanceStore.Domain.Entities.Order
+  parent: NewBalanceStore.Domain.Entities
+  href: NewBalanceStore.Domain.Entities.Order.html
+  name: Order
+  nameWithType: Order
+  fullName: NewBalanceStore.Domain.Entities.Order
+- uid: NewBalanceStore.Domain.Entities.OrderItem
+  commentId: T:NewBalanceStore.Domain.Entities.OrderItem
+  href: NewBalanceStore.Domain.Entities.OrderItem.html
+  name: OrderItem
+  nameWithType: OrderItem
+  fullName: NewBalanceStore.Domain.Entities.OrderItem
+- uid: NewBalanceStore.Domain.Entities.Product
+  commentId: T:NewBalanceStore.Domain.Entities.Product
+  parent: NewBalanceStore.Domain.Entities
+  href: NewBalanceStore.Domain.Entities.Product.html
+  name: Product
+  nameWithType: Product
+  fullName: NewBalanceStore.Domain.Entities.Product
+- uid: NewBalanceStore.Domain.Entities.ProductVariant
+  commentId: T:NewBalanceStore.Domain.Entities.ProductVariant
+  href: NewBalanceStore.Domain.Entities.ProductVariant.html
+  name: ProductVariant
+  nameWithType: ProductVariant
+  fullName: NewBalanceStore.Domain.Entities.ProductVariant
+- uid: NewBalanceStore.Domain.Entities.ShippingAddress
+  commentId: T:NewBalanceStore.Domain.Entities.ShippingAddress
+  parent: NewBalanceStore.Domain.Entities
+  href: NewBalanceStore.Domain.Entities.ShippingAddress.html
+  name: ShippingAddress
+  nameWithType: ShippingAddress
+  fullName: NewBalanceStore.Domain.Entities.ShippingAddress
+- uid: NewBalanceStore.Domain.Entities.User
+  commentId: T:NewBalanceStore.Domain.Entities.User
+  parent: NewBalanceStore.Domain.Entities
+  href: NewBalanceStore.Domain.Entities.User.html
+  name: User
+  nameWithType: User
+  fullName: NewBalanceStore.Domain.Entities.User
+- uid: NewBalanceStore.Domain.Entities
+  commentId: N:NewBalanceStore.Domain.Entities
+  name: NewBalanceStore.Domain.Entities
+  nameWithType: NewBalanceStore.Domain.Entities
+  fullName: NewBalanceStore.Domain.Entities
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Entities
+    name: Entities
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Entities
+    name: Entities

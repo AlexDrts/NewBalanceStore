@@ -1,0 +1,423 @@
+### YamlMime:ManagedReference
+items:
+- uid: NewBalanceStore.Domain.Interfaces.IOrderRepository
+  commentId: T:NewBalanceStore.Domain.Interfaces.IOrderRepository
+  id: IOrderRepository
+  parent: NewBalanceStore.Domain.Interfaces
+  children:
+  - NewBalanceStore.Domain.Interfaces.IOrderRepository.CreateAsync(NewBalanceStore.Domain.Entities.Order)
+  - NewBalanceStore.Domain.Interfaces.IOrderRepository.GetAllAsync
+  - NewBalanceStore.Domain.Interfaces.IOrderRepository.GetByIdAsync(System.Int32)
+  - NewBalanceStore.Domain.Interfaces.IOrderRepository.UpdateStatusAsync(System.Int32,System.String)
+  langs:
+  - csharp
+  - vb
+  name: IOrderRepository
+  nameWithType: IOrderRepository
+  fullName: NewBalanceStore.Domain.Interfaces.IOrderRepository
+  type: Interface
+  source:
+    remote:
+      path: NewBalanceStore.Domain/Interfaces/IOrderRepository.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: IOrderRepository
+    path: NewBalanceStore.Domain/Interfaces/IOrderRepository.cs
+    startLine: 4
+  assemblies:
+  - NewBalanceStore.Domain
+  namespace: NewBalanceStore.Domain.Interfaces
+  syntax:
+    content: public interface IOrderRepository
+    content.vb: Public Interface IOrderRepository
+  derivedClasses:
+  - NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository
+- uid: NewBalanceStore.Domain.Interfaces.IOrderRepository.GetByIdAsync(System.Int32)
+  commentId: M:NewBalanceStore.Domain.Interfaces.IOrderRepository.GetByIdAsync(System.Int32)
+  id: GetByIdAsync(System.Int32)
+  parent: NewBalanceStore.Domain.Interfaces.IOrderRepository
+  langs:
+  - csharp
+  - vb
+  name: GetByIdAsync(int)
+  nameWithType: IOrderRepository.GetByIdAsync(int)
+  fullName: NewBalanceStore.Domain.Interfaces.IOrderRepository.GetByIdAsync(int)
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.Domain/Interfaces/IOrderRepository.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: GetByIdAsync
+    path: NewBalanceStore.Domain/Interfaces/IOrderRepository.cs
+    startLine: 6
+  assemblies:
+  - NewBalanceStore.Domain
+  namespace: NewBalanceStore.Domain.Interfaces
+  syntax:
+    content: Task<Order?> GetByIdAsync(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    return:
+      type: System.Threading.Tasks.Task{NewBalanceStore.Domain.Entities.Order}
+    content.vb: Function GetByIdAsync(id As Integer) As Task(Of Order)
+  overload: NewBalanceStore.Domain.Interfaces.IOrderRepository.GetByIdAsync*
+  nameWithType.vb: IOrderRepository.GetByIdAsync(Integer)
+  fullName.vb: NewBalanceStore.Domain.Interfaces.IOrderRepository.GetByIdAsync(Integer)
+  name.vb: GetByIdAsync(Integer)
+- uid: NewBalanceStore.Domain.Interfaces.IOrderRepository.GetAllAsync
+  commentId: M:NewBalanceStore.Domain.Interfaces.IOrderRepository.GetAllAsync
+  id: GetAllAsync
+  parent: NewBalanceStore.Domain.Interfaces.IOrderRepository
+  langs:
+  - csharp
+  - vb
+  name: GetAllAsync()
+  nameWithType: IOrderRepository.GetAllAsync()
+  fullName: NewBalanceStore.Domain.Interfaces.IOrderRepository.GetAllAsync()
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.Domain/Interfaces/IOrderRepository.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: GetAllAsync
+    path: NewBalanceStore.Domain/Interfaces/IOrderRepository.cs
+    startLine: 7
+  assemblies:
+  - NewBalanceStore.Domain
+  namespace: NewBalanceStore.Domain.Interfaces
+  syntax:
+    content: Task<IEnumerable<Order>> GetAllAsync()
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{NewBalanceStore.Domain.Entities.Order}}
+    content.vb: Function GetAllAsync() As Task(Of IEnumerable(Of Order))
+  overload: NewBalanceStore.Domain.Interfaces.IOrderRepository.GetAllAsync*
+- uid: NewBalanceStore.Domain.Interfaces.IOrderRepository.CreateAsync(NewBalanceStore.Domain.Entities.Order)
+  commentId: M:NewBalanceStore.Domain.Interfaces.IOrderRepository.CreateAsync(NewBalanceStore.Domain.Entities.Order)
+  id: CreateAsync(NewBalanceStore.Domain.Entities.Order)
+  parent: NewBalanceStore.Domain.Interfaces.IOrderRepository
+  langs:
+  - csharp
+  - vb
+  name: CreateAsync(Order)
+  nameWithType: IOrderRepository.CreateAsync(Order)
+  fullName: NewBalanceStore.Domain.Interfaces.IOrderRepository.CreateAsync(NewBalanceStore.Domain.Entities.Order)
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.Domain/Interfaces/IOrderRepository.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: CreateAsync
+    path: NewBalanceStore.Domain/Interfaces/IOrderRepository.cs
+    startLine: 8
+  assemblies:
+  - NewBalanceStore.Domain
+  namespace: NewBalanceStore.Domain.Interfaces
+  syntax:
+    content: Task CreateAsync(Order order)
+    parameters:
+    - id: order
+      type: NewBalanceStore.Domain.Entities.Order
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function CreateAsync(order As Order) As Task
+  overload: NewBalanceStore.Domain.Interfaces.IOrderRepository.CreateAsync*
+- uid: NewBalanceStore.Domain.Interfaces.IOrderRepository.UpdateStatusAsync(System.Int32,System.String)
+  commentId: M:NewBalanceStore.Domain.Interfaces.IOrderRepository.UpdateStatusAsync(System.Int32,System.String)
+  id: UpdateStatusAsync(System.Int32,System.String)
+  parent: NewBalanceStore.Domain.Interfaces.IOrderRepository
+  langs:
+  - csharp
+  - vb
+  name: UpdateStatusAsync(int, string)
+  nameWithType: IOrderRepository.UpdateStatusAsync(int, string)
+  fullName: NewBalanceStore.Domain.Interfaces.IOrderRepository.UpdateStatusAsync(int, string)
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.Domain/Interfaces/IOrderRepository.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: UpdateStatusAsync
+    path: NewBalanceStore.Domain/Interfaces/IOrderRepository.cs
+    startLine: 9
+  assemblies:
+  - NewBalanceStore.Domain
+  namespace: NewBalanceStore.Domain.Interfaces
+  syntax:
+    content: Task UpdateStatusAsync(int id, string status)
+    parameters:
+    - id: id
+      type: System.Int32
+    - id: status
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function UpdateStatusAsync(id As Integer, status As String) As Task
+  overload: NewBalanceStore.Domain.Interfaces.IOrderRepository.UpdateStatusAsync*
+  nameWithType.vb: IOrderRepository.UpdateStatusAsync(Integer, String)
+  fullName.vb: NewBalanceStore.Domain.Interfaces.IOrderRepository.UpdateStatusAsync(Integer, String)
+  name.vb: UpdateStatusAsync(Integer, String)
+references:
+- uid: NewBalanceStore.Domain.Interfaces
+  commentId: N:NewBalanceStore.Domain.Interfaces
+  name: NewBalanceStore.Domain.Interfaces
+  nameWithType: NewBalanceStore.Domain.Interfaces
+  fullName: NewBalanceStore.Domain.Interfaces
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Interfaces
+    name: Interfaces
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Interfaces
+    name: Interfaces
+- uid: NewBalanceStore.Domain.Interfaces.IOrderRepository.GetByIdAsync*
+  commentId: Overload:NewBalanceStore.Domain.Interfaces.IOrderRepository.GetByIdAsync
+  href: NewBalanceStore.Domain.Interfaces.IOrderRepository.html#NewBalanceStore_Domain_Interfaces_IOrderRepository_GetByIdAsync_System_Int32_
+  name: GetByIdAsync
+  nameWithType: IOrderRepository.GetByIdAsync
+  fullName: NewBalanceStore.Domain.Interfaces.IOrderRepository.GetByIdAsync
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Threading.Tasks.Task{NewBalanceStore.Domain.Entities.Order}
+  commentId: T:System.Threading.Tasks.Task{NewBalanceStore.Domain.Entities.Order}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<Order>
+  nameWithType: Task<Order>
+  fullName: System.Threading.Tasks.Task<NewBalanceStore.Domain.Entities.Order>
+  nameWithType.vb: Task(Of Order)
+  fullName.vb: System.Threading.Tasks.Task(Of NewBalanceStore.Domain.Entities.Order)
+  name.vb: Task(Of Order)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NewBalanceStore.Domain.Entities.Order
+    name: Order
+    href: NewBalanceStore.Domain.Entities.Order.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NewBalanceStore.Domain.Entities.Order
+    name: Order
+    href: NewBalanceStore.Domain.Entities.Order.html
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NewBalanceStore.Domain.Interfaces.IOrderRepository.GetAllAsync*
+  commentId: Overload:NewBalanceStore.Domain.Interfaces.IOrderRepository.GetAllAsync
+  href: NewBalanceStore.Domain.Interfaces.IOrderRepository.html#NewBalanceStore_Domain_Interfaces_IOrderRepository_GetAllAsync
+  name: GetAllAsync
+  nameWithType: IOrderRepository.GetAllAsync
+  fullName: NewBalanceStore.Domain.Interfaces.IOrderRepository.GetAllAsync
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{NewBalanceStore.Domain.Entities.Order}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{NewBalanceStore.Domain.Entities.Order}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IEnumerable<Order>>
+  nameWithType: Task<IEnumerable<Order>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<NewBalanceStore.Domain.Entities.Order>>
+  nameWithType.vb: Task(Of IEnumerable(Of Order))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IEnumerable(Of NewBalanceStore.Domain.Entities.Order))
+  name.vb: Task(Of IEnumerable(Of Order))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: NewBalanceStore.Domain.Entities.Order
+    name: Order
+    href: NewBalanceStore.Domain.Entities.Order.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NewBalanceStore.Domain.Entities.Order
+    name: Order
+    href: NewBalanceStore.Domain.Entities.Order.html
+  - name: )
+  - name: )
+- uid: NewBalanceStore.Domain.Interfaces.IOrderRepository.CreateAsync*
+  commentId: Overload:NewBalanceStore.Domain.Interfaces.IOrderRepository.CreateAsync
+  href: NewBalanceStore.Domain.Interfaces.IOrderRepository.html#NewBalanceStore_Domain_Interfaces_IOrderRepository_CreateAsync_NewBalanceStore_Domain_Entities_Order_
+  name: CreateAsync
+  nameWithType: IOrderRepository.CreateAsync
+  fullName: NewBalanceStore.Domain.Interfaces.IOrderRepository.CreateAsync
+- uid: NewBalanceStore.Domain.Entities.Order
+  commentId: T:NewBalanceStore.Domain.Entities.Order
+  parent: NewBalanceStore.Domain.Entities
+  href: NewBalanceStore.Domain.Entities.Order.html
+  name: Order
+  nameWithType: Order
+  fullName: NewBalanceStore.Domain.Entities.Order
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: NewBalanceStore.Domain.Entities
+  commentId: N:NewBalanceStore.Domain.Entities
+  name: NewBalanceStore.Domain.Entities
+  nameWithType: NewBalanceStore.Domain.Entities
+  fullName: NewBalanceStore.Domain.Entities
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Entities
+    name: Entities
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Entities
+    name: Entities
+- uid: NewBalanceStore.Domain.Interfaces.IOrderRepository.UpdateStatusAsync*
+  commentId: Overload:NewBalanceStore.Domain.Interfaces.IOrderRepository.UpdateStatusAsync
+  href: NewBalanceStore.Domain.Interfaces.IOrderRepository.html#NewBalanceStore_Domain_Interfaces_IOrderRepository_UpdateStatusAsync_System_Int32_System_String_
+  name: UpdateStatusAsync
+  nameWithType: IOrderRepository.UpdateStatusAsync
+  fullName: NewBalanceStore.Domain.Interfaces.IOrderRepository.UpdateStatusAsync
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

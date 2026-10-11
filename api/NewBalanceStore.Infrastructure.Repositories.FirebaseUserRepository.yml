@@ -1,0 +1,810 @@
+### YamlMime:ManagedReference
+items:
+- uid: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository
+  commentId: T:NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository
+  id: FirebaseUserRepository
+  parent: NewBalanceStore.Infrastructure.Repositories
+  children:
+  - NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
+  - NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.CreateAsync(NewBalanceStore.Domain.Entities.User)
+  - NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.GetAllAsync
+  - NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.GetByEmailAsync(System.String)
+  langs:
+  - csharp
+  - vb
+  name: FirebaseUserRepository
+  nameWithType: FirebaseUserRepository
+  fullName: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository
+  type: Class
+  source:
+    remote:
+      path: NewBalanceStore.Infrastructure/Repositories/FirebaseUserRepository.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: FirebaseUserRepository
+    path: NewBalanceStore.Infrastructure/Repositories/FirebaseUserRepository.cs
+    startLine: 10
+  assemblies:
+  - NewBalanceStore.Infrastructure
+  namespace: NewBalanceStore.Infrastructure.Repositories
+  syntax:
+    content: >-
+      [ExcludeFromCodeCoverage]
+
+      public class FirebaseUserRepository : IUserRepository
+    content.vb: >-
+      <ExcludeFromCodeCoverage>
+
+      Public Class FirebaseUserRepository Implements IUserRepository
+  inheritance:
+  - System.Object
+  implements:
+  - NewBalanceStore.Domain.Interfaces.IUserRepository
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute
+    ctor: System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute.#ctor
+    arguments: []
+- uid: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
+  commentId: M:NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
+  id: '#ctor(Microsoft.Extensions.Configuration.IConfiguration)'
+  parent: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository
+  langs:
+  - csharp
+  - vb
+  name: FirebaseUserRepository(IConfiguration)
+  nameWithType: FirebaseUserRepository.FirebaseUserRepository(IConfiguration)
+  fullName: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.FirebaseUserRepository(Microsoft.Extensions.Configuration.IConfiguration)
+  type: Constructor
+  source:
+    remote:
+      path: NewBalanceStore.Infrastructure/Repositories/FirebaseUserRepository.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: .ctor
+    path: NewBalanceStore.Infrastructure/Repositories/FirebaseUserRepository.cs
+    startLine: 16
+  assemblies:
+  - NewBalanceStore.Infrastructure
+  namespace: NewBalanceStore.Infrastructure.Repositories
+  syntax:
+    content: public FirebaseUserRepository(IConfiguration config)
+    parameters:
+    - id: config
+      type: Microsoft.Extensions.Configuration.IConfiguration
+    content.vb: Public Sub New(config As IConfiguration)
+  overload: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.#ctor*
+  nameWithType.vb: FirebaseUserRepository.New(IConfiguration)
+  fullName.vb: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.New(Microsoft.Extensions.Configuration.IConfiguration)
+  name.vb: New(IConfiguration)
+- uid: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.GetByEmailAsync(System.String)
+  commentId: M:NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.GetByEmailAsync(System.String)
+  id: GetByEmailAsync(System.String)
+  parent: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository
+  langs:
+  - csharp
+  - vb
+  name: GetByEmailAsync(string)
+  nameWithType: FirebaseUserRepository.GetByEmailAsync(string)
+  fullName: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.GetByEmailAsync(string)
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.Infrastructure/Repositories/FirebaseUserRepository.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: GetByEmailAsync
+    path: NewBalanceStore.Infrastructure/Repositories/FirebaseUserRepository.cs
+    startLine: 24
+  assemblies:
+  - NewBalanceStore.Infrastructure
+  namespace: NewBalanceStore.Infrastructure.Repositories
+  example: []
+  syntax:
+    content: public Task<User?> GetByEmailAsync(string email)
+    parameters:
+    - id: email
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task{NewBalanceStore.Domain.Entities.User}
+    content.vb: Public Function GetByEmailAsync(email As String) As Task(Of User)
+  overload: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.GetByEmailAsync*
+  implements:
+  - NewBalanceStore.Domain.Interfaces.IUserRepository.GetByEmailAsync(System.String)
+  nameWithType.vb: FirebaseUserRepository.GetByEmailAsync(String)
+  fullName.vb: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.GetByEmailAsync(String)
+  name.vb: GetByEmailAsync(String)
+- uid: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.CreateAsync(NewBalanceStore.Domain.Entities.User)
+  commentId: M:NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.CreateAsync(NewBalanceStore.Domain.Entities.User)
+  id: CreateAsync(NewBalanceStore.Domain.Entities.User)
+  parent: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository
+  langs:
+  - csharp
+  - vb
+  name: CreateAsync(User)
+  nameWithType: FirebaseUserRepository.CreateAsync(User)
+  fullName: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.CreateAsync(NewBalanceStore.Domain.Entities.User)
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.Infrastructure/Repositories/FirebaseUserRepository.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: CreateAsync
+    path: NewBalanceStore.Infrastructure/Repositories/FirebaseUserRepository.cs
+    startLine: 30
+  assemblies:
+  - NewBalanceStore.Infrastructure
+  namespace: NewBalanceStore.Infrastructure.Repositories
+  example: []
+  syntax:
+    content: public Task CreateAsync(User user)
+    parameters:
+    - id: user
+      type: NewBalanceStore.Domain.Entities.User
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function CreateAsync(user As User) As Task
+  overload: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.CreateAsync*
+  implements:
+  - NewBalanceStore.Domain.Interfaces.IUserRepository.CreateAsync(NewBalanceStore.Domain.Entities.User)
+- uid: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.GetAllAsync
+  commentId: M:NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.GetAllAsync
+  id: GetAllAsync
+  parent: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository
+  langs:
+  - csharp
+  - vb
+  name: GetAllAsync()
+  nameWithType: FirebaseUserRepository.GetAllAsync()
+  fullName: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.GetAllAsync()
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.Infrastructure/Repositories/FirebaseUserRepository.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: GetAllAsync
+    path: NewBalanceStore.Infrastructure/Repositories/FirebaseUserRepository.cs
+    startLine: 42
+  assemblies:
+  - NewBalanceStore.Infrastructure
+  namespace: NewBalanceStore.Infrastructure.Repositories
+  example: []
+  syntax:
+    content: public Task<IEnumerable<User>> GetAllAsync()
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{NewBalanceStore.Domain.Entities.User}}
+    content.vb: Public Function GetAllAsync() As Task(Of IEnumerable(Of User))
+  overload: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.GetAllAsync*
+  implements:
+  - NewBalanceStore.Domain.Interfaces.IUserRepository.GetAllAsync
+references:
+- uid: NewBalanceStore.Infrastructure.Repositories
+  commentId: N:NewBalanceStore.Infrastructure.Repositories
+  name: NewBalanceStore.Infrastructure.Repositories
+  nameWithType: NewBalanceStore.Infrastructure.Repositories
+  fullName: NewBalanceStore.Infrastructure.Repositories
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Infrastructure
+    name: Infrastructure
+  - name: .
+  - uid: NewBalanceStore.Infrastructure.Repositories
+    name: Repositories
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Infrastructure
+    name: Infrastructure
+  - name: .
+  - uid: NewBalanceStore.Infrastructure.Repositories
+    name: Repositories
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: NewBalanceStore.Domain.Interfaces.IUserRepository
+  commentId: T:NewBalanceStore.Domain.Interfaces.IUserRepository
+  parent: NewBalanceStore.Domain.Interfaces
+  href: NewBalanceStore.Domain.Interfaces.IUserRepository.html
+  name: IUserRepository
+  nameWithType: IUserRepository
+  fullName: NewBalanceStore.Domain.Interfaces.IUserRepository
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NewBalanceStore.Domain.Interfaces
+  commentId: N:NewBalanceStore.Domain.Interfaces
+  name: NewBalanceStore.Domain.Interfaces
+  nameWithType: NewBalanceStore.Domain.Interfaces
+  fullName: NewBalanceStore.Domain.Interfaces
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Interfaces
+    name: Interfaces
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Interfaces
+    name: Interfaces
+- uid: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.#ctor*
+  commentId: Overload:NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.#ctor
+  href: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.html#NewBalanceStore_Infrastructure_Repositories_FirebaseUserRepository__ctor_Microsoft_Extensions_Configuration_IConfiguration_
+  name: FirebaseUserRepository
+  nameWithType: FirebaseUserRepository.FirebaseUserRepository
+  fullName: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.FirebaseUserRepository
+  nameWithType.vb: FirebaseUserRepository.New
+  fullName.vb: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.New
+  name.vb: New
+- uid: Microsoft.Extensions.Configuration.IConfiguration
+  commentId: T:Microsoft.Extensions.Configuration.IConfiguration
+  parent: Microsoft.Extensions.Configuration
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration.iconfiguration
+  name: IConfiguration
+  nameWithType: IConfiguration
+  fullName: Microsoft.Extensions.Configuration.IConfiguration
+- uid: Microsoft.Extensions.Configuration
+  commentId: N:Microsoft.Extensions.Configuration
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft
+  name: Microsoft.Extensions.Configuration
+  nameWithType: Microsoft.Extensions.Configuration
+  fullName: Microsoft.Extensions.Configuration
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Configuration
+    name: Configuration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft
+  - name: .
+  - uid: Microsoft.Extensions
+    name: Extensions
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions
+  - name: .
+  - uid: Microsoft.Extensions.Configuration
+    name: Configuration
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration
+- uid: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.GetByEmailAsync*
+  commentId: Overload:NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.GetByEmailAsync
+  href: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.html#NewBalanceStore_Infrastructure_Repositories_FirebaseUserRepository_GetByEmailAsync_System_String_
+  name: GetByEmailAsync
+  nameWithType: FirebaseUserRepository.GetByEmailAsync
+  fullName: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.GetByEmailAsync
+- uid: NewBalanceStore.Domain.Interfaces.IUserRepository.GetByEmailAsync(System.String)
+  commentId: M:NewBalanceStore.Domain.Interfaces.IUserRepository.GetByEmailAsync(System.String)
+  parent: NewBalanceStore.Domain.Interfaces.IUserRepository
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: GetByEmailAsync(string)
+  nameWithType: IUserRepository.GetByEmailAsync(string)
+  fullName: NewBalanceStore.Domain.Interfaces.IUserRepository.GetByEmailAsync(string)
+  nameWithType.vb: IUserRepository.GetByEmailAsync(String)
+  fullName.vb: NewBalanceStore.Domain.Interfaces.IUserRepository.GetByEmailAsync(String)
+  name.vb: GetByEmailAsync(String)
+  spec.csharp:
+  - uid: NewBalanceStore.Domain.Interfaces.IUserRepository.GetByEmailAsync(System.String)
+    name: GetByEmailAsync
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: NewBalanceStore.Domain.Interfaces.IUserRepository.GetByEmailAsync(System.String)
+    name: GetByEmailAsync
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.Tasks.Task{NewBalanceStore.Domain.Entities.User}
+  commentId: T:System.Threading.Tasks.Task{NewBalanceStore.Domain.Entities.User}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<User>
+  nameWithType: Task<User>
+  fullName: System.Threading.Tasks.Task<NewBalanceStore.Domain.Entities.User>
+  nameWithType.vb: Task(Of User)
+  fullName.vb: System.Threading.Tasks.Task(Of NewBalanceStore.Domain.Entities.User)
+  name.vb: Task(Of User)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NewBalanceStore.Domain.Entities.User
+    name: User
+    href: NewBalanceStore.Domain.Entities.User.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NewBalanceStore.Domain.Entities.User
+    name: User
+    href: NewBalanceStore.Domain.Entities.User.html
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.CreateAsync*
+  commentId: Overload:NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.CreateAsync
+  href: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.html#NewBalanceStore_Infrastructure_Repositories_FirebaseUserRepository_CreateAsync_NewBalanceStore_Domain_Entities_User_
+  name: CreateAsync
+  nameWithType: FirebaseUserRepository.CreateAsync
+  fullName: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.CreateAsync
+- uid: NewBalanceStore.Domain.Interfaces.IUserRepository.CreateAsync(NewBalanceStore.Domain.Entities.User)
+  commentId: M:NewBalanceStore.Domain.Interfaces.IUserRepository.CreateAsync(NewBalanceStore.Domain.Entities.User)
+  parent: NewBalanceStore.Domain.Interfaces.IUserRepository
+  name: CreateAsync(User)
+  nameWithType: IUserRepository.CreateAsync(User)
+  fullName: NewBalanceStore.Domain.Interfaces.IUserRepository.CreateAsync(NewBalanceStore.Domain.Entities.User)
+  spec.csharp:
+  - uid: NewBalanceStore.Domain.Interfaces.IUserRepository.CreateAsync(NewBalanceStore.Domain.Entities.User)
+    name: CreateAsync
+  - name: (
+  - uid: NewBalanceStore.Domain.Entities.User
+    name: User
+  - name: )
+  spec.vb:
+  - uid: NewBalanceStore.Domain.Interfaces.IUserRepository.CreateAsync(NewBalanceStore.Domain.Entities.User)
+    name: CreateAsync
+  - name: (
+  - uid: NewBalanceStore.Domain.Entities.User
+    name: User
+  - name: )
+- uid: NewBalanceStore.Domain.Entities.User
+  commentId: T:NewBalanceStore.Domain.Entities.User
+  parent: NewBalanceStore.Domain.Entities
+  href: NewBalanceStore.Domain.Entities.User.html
+  name: User
+  nameWithType: User
+  fullName: NewBalanceStore.Domain.Entities.User
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: NewBalanceStore.Domain.Entities
+  commentId: N:NewBalanceStore.Domain.Entities
+  name: NewBalanceStore.Domain.Entities
+  nameWithType: NewBalanceStore.Domain.Entities
+  fullName: NewBalanceStore.Domain.Entities
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Entities
+    name: Entities
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Entities
+    name: Entities
+- uid: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.GetAllAsync*
+  commentId: Overload:NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.GetAllAsync
+  href: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.html#NewBalanceStore_Infrastructure_Repositories_FirebaseUserRepository_GetAllAsync
+  name: GetAllAsync
+  nameWithType: FirebaseUserRepository.GetAllAsync
+  fullName: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.GetAllAsync
+- uid: NewBalanceStore.Domain.Interfaces.IUserRepository.GetAllAsync
+  commentId: M:NewBalanceStore.Domain.Interfaces.IUserRepository.GetAllAsync
+  parent: NewBalanceStore.Domain.Interfaces.IUserRepository
+  name: GetAllAsync()
+  nameWithType: IUserRepository.GetAllAsync()
+  fullName: NewBalanceStore.Domain.Interfaces.IUserRepository.GetAllAsync()
+  spec.csharp:
+  - uid: NewBalanceStore.Domain.Interfaces.IUserRepository.GetAllAsync
+    name: GetAllAsync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NewBalanceStore.Domain.Interfaces.IUserRepository.GetAllAsync
+    name: GetAllAsync
+  - name: (
+  - name: )
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{NewBalanceStore.Domain.Entities.User}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{NewBalanceStore.Domain.Entities.User}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IEnumerable<User>>
+  nameWithType: Task<IEnumerable<User>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<NewBalanceStore.Domain.Entities.User>>
+  nameWithType.vb: Task(Of IEnumerable(Of User))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IEnumerable(Of NewBalanceStore.Domain.Entities.User))
+  name.vb: Task(Of IEnumerable(Of User))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: NewBalanceStore.Domain.Entities.User
+    name: User
+    href: NewBalanceStore.Domain.Entities.User.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NewBalanceStore.Domain.Entities.User
+    name: User
+    href: NewBalanceStore.Domain.Entities.User.html
+  - name: )
+  - name: )

@@ -1,0 +1,37 @@
+### YamlMime:ManagedReference
+items:
+- uid: NewBalanceStore.UnitTests.Controllers
+  commentId: N:NewBalanceStore.UnitTests.Controllers
+  id: NewBalanceStore.UnitTests.Controllers
+  children:
+  - NewBalanceStore.UnitTests.Controllers.AuthControllerTests
+  - NewBalanceStore.UnitTests.Controllers.OrdersControllerTests
+  - NewBalanceStore.UnitTests.Controllers.ProductsControllerTests
+  langs:
+  - csharp
+  - vb
+  name: NewBalanceStore.UnitTests.Controllers
+  nameWithType: NewBalanceStore.UnitTests.Controllers
+  fullName: NewBalanceStore.UnitTests.Controllers
+  type: Namespace
+  assemblies:
+  - NewBalanceStore.UnitTests
+references:
+- uid: NewBalanceStore.UnitTests.Controllers.ProductsControllerTests
+  commentId: T:NewBalanceStore.UnitTests.Controllers.ProductsControllerTests
+  href: NewBalanceStore.UnitTests.Controllers.ProductsControllerTests.html
+  name: ProductsControllerTests
+  nameWithType: ProductsControllerTests
+  fullName: NewBalanceStore.UnitTests.Controllers.ProductsControllerTests
+- uid: NewBalanceStore.UnitTests.Controllers.OrdersControllerTests
+  commentId: T:NewBalanceStore.UnitTests.Controllers.OrdersControllerTests
+  href: NewBalanceStore.UnitTests.Controllers.OrdersControllerTests.html
+  name: OrdersControllerTests
+  nameWithType: OrdersControllerTests
+  fullName: NewBalanceStore.UnitTests.Controllers.OrdersControllerTests
+- uid: NewBalanceStore.UnitTests.Controllers.AuthControllerTests
+  commentId: T:NewBalanceStore.UnitTests.Controllers.AuthControllerTests
+  href: NewBalanceStore.UnitTests.Controllers.AuthControllerTests.html
+  name: AuthControllerTests
+  nameWithType: AuthControllerTests
+  fullName: NewBalanceStore.UnitTests.Controllers.AuthControllerTests

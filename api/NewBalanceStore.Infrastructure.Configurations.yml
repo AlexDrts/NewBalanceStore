@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: NewBalanceStore.Infrastructure.Configurations
+  commentId: N:NewBalanceStore.Infrastructure.Configurations
+  id: NewBalanceStore.Infrastructure.Configurations
+  children:
+  - NewBalanceStore.Infrastructure.Configurations.CloudinarySettings
+  langs:
+  - csharp
+  - vb
+  name: NewBalanceStore.Infrastructure.Configurations
+  nameWithType: NewBalanceStore.Infrastructure.Configurations
+  fullName: NewBalanceStore.Infrastructure.Configurations
+  type: Namespace
+  assemblies:
+  - NewBalanceStore.Infrastructure
+references:
+- uid: NewBalanceStore.Infrastructure.Configurations.CloudinarySettings
+  commentId: T:NewBalanceStore.Infrastructure.Configurations.CloudinarySettings
+  href: NewBalanceStore.Infrastructure.Configurations.CloudinarySettings.html
+  name: CloudinarySettings
+  nameWithType: CloudinarySettings
+  fullName: NewBalanceStore.Infrastructure.Configurations.CloudinarySettings

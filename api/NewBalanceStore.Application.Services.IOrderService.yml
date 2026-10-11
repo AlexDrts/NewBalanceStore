@@ -1,0 +1,423 @@
+### YamlMime:ManagedReference
+items:
+- uid: NewBalanceStore.Application.Services.IOrderService
+  commentId: T:NewBalanceStore.Application.Services.IOrderService
+  id: IOrderService
+  parent: NewBalanceStore.Application.Services
+  children:
+  - NewBalanceStore.Application.Services.IOrderService.CreateOrderAsync(NewBalanceStore.Application.DTOs.CreateOrderDto)
+  - NewBalanceStore.Application.Services.IOrderService.GetAllOrdersAsync
+  - NewBalanceStore.Application.Services.IOrderService.GetOrderByIdAsync(System.Int32)
+  - NewBalanceStore.Application.Services.IOrderService.UpdateOrderStatusAsync(System.Int32,System.String)
+  langs:
+  - csharp
+  - vb
+  name: IOrderService
+  nameWithType: IOrderService
+  fullName: NewBalanceStore.Application.Services.IOrderService
+  type: Interface
+  source:
+    remote:
+      path: NewBalanceStore.Application/Services/OrderService.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: IOrderService
+    path: NewBalanceStore.Application/Services/OrderService.cs
+    startLine: 7
+  assemblies:
+  - NewBalanceStore.Application
+  namespace: NewBalanceStore.Application.Services
+  syntax:
+    content: public interface IOrderService
+    content.vb: Public Interface IOrderService
+  derivedClasses:
+  - NewBalanceStore.Application.Services.OrderService
+- uid: NewBalanceStore.Application.Services.IOrderService.CreateOrderAsync(NewBalanceStore.Application.DTOs.CreateOrderDto)
+  commentId: M:NewBalanceStore.Application.Services.IOrderService.CreateOrderAsync(NewBalanceStore.Application.DTOs.CreateOrderDto)
+  id: CreateOrderAsync(NewBalanceStore.Application.DTOs.CreateOrderDto)
+  parent: NewBalanceStore.Application.Services.IOrderService
+  langs:
+  - csharp
+  - vb
+  name: CreateOrderAsync(CreateOrderDto)
+  nameWithType: IOrderService.CreateOrderAsync(CreateOrderDto)
+  fullName: NewBalanceStore.Application.Services.IOrderService.CreateOrderAsync(NewBalanceStore.Application.DTOs.CreateOrderDto)
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.Application/Services/OrderService.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: CreateOrderAsync
+    path: NewBalanceStore.Application/Services/OrderService.cs
+    startLine: 9
+  assemblies:
+  - NewBalanceStore.Application
+  namespace: NewBalanceStore.Application.Services
+  syntax:
+    content: Task<OrderDto> CreateOrderAsync(CreateOrderDto dto)
+    parameters:
+    - id: dto
+      type: NewBalanceStore.Application.DTOs.CreateOrderDto
+    return:
+      type: System.Threading.Tasks.Task{NewBalanceStore.Application.DTOs.OrderDto}
+    content.vb: Function CreateOrderAsync(dto As CreateOrderDto) As Task(Of OrderDto)
+  overload: NewBalanceStore.Application.Services.IOrderService.CreateOrderAsync*
+- uid: NewBalanceStore.Application.Services.IOrderService.GetOrderByIdAsync(System.Int32)
+  commentId: M:NewBalanceStore.Application.Services.IOrderService.GetOrderByIdAsync(System.Int32)
+  id: GetOrderByIdAsync(System.Int32)
+  parent: NewBalanceStore.Application.Services.IOrderService
+  langs:
+  - csharp
+  - vb
+  name: GetOrderByIdAsync(int)
+  nameWithType: IOrderService.GetOrderByIdAsync(int)
+  fullName: NewBalanceStore.Application.Services.IOrderService.GetOrderByIdAsync(int)
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.Application/Services/OrderService.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: GetOrderByIdAsync
+    path: NewBalanceStore.Application/Services/OrderService.cs
+    startLine: 10
+  assemblies:
+  - NewBalanceStore.Application
+  namespace: NewBalanceStore.Application.Services
+  syntax:
+    content: Task<OrderDto?> GetOrderByIdAsync(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    return:
+      type: System.Threading.Tasks.Task{NewBalanceStore.Application.DTOs.OrderDto}
+    content.vb: Function GetOrderByIdAsync(id As Integer) As Task(Of OrderDto)
+  overload: NewBalanceStore.Application.Services.IOrderService.GetOrderByIdAsync*
+  nameWithType.vb: IOrderService.GetOrderByIdAsync(Integer)
+  fullName.vb: NewBalanceStore.Application.Services.IOrderService.GetOrderByIdAsync(Integer)
+  name.vb: GetOrderByIdAsync(Integer)
+- uid: NewBalanceStore.Application.Services.IOrderService.GetAllOrdersAsync
+  commentId: M:NewBalanceStore.Application.Services.IOrderService.GetAllOrdersAsync
+  id: GetAllOrdersAsync
+  parent: NewBalanceStore.Application.Services.IOrderService
+  langs:
+  - csharp
+  - vb
+  name: GetAllOrdersAsync()
+  nameWithType: IOrderService.GetAllOrdersAsync()
+  fullName: NewBalanceStore.Application.Services.IOrderService.GetAllOrdersAsync()
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.Application/Services/OrderService.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: GetAllOrdersAsync
+    path: NewBalanceStore.Application/Services/OrderService.cs
+    startLine: 11
+  assemblies:
+  - NewBalanceStore.Application
+  namespace: NewBalanceStore.Application.Services
+  syntax:
+    content: Task<IEnumerable<OrderDto>> GetAllOrdersAsync()
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{NewBalanceStore.Application.DTOs.OrderDto}}
+    content.vb: Function GetAllOrdersAsync() As Task(Of IEnumerable(Of OrderDto))
+  overload: NewBalanceStore.Application.Services.IOrderService.GetAllOrdersAsync*
+- uid: NewBalanceStore.Application.Services.IOrderService.UpdateOrderStatusAsync(System.Int32,System.String)
+  commentId: M:NewBalanceStore.Application.Services.IOrderService.UpdateOrderStatusAsync(System.Int32,System.String)
+  id: UpdateOrderStatusAsync(System.Int32,System.String)
+  parent: NewBalanceStore.Application.Services.IOrderService
+  langs:
+  - csharp
+  - vb
+  name: UpdateOrderStatusAsync(int, string)
+  nameWithType: IOrderService.UpdateOrderStatusAsync(int, string)
+  fullName: NewBalanceStore.Application.Services.IOrderService.UpdateOrderStatusAsync(int, string)
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.Application/Services/OrderService.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: UpdateOrderStatusAsync
+    path: NewBalanceStore.Application/Services/OrderService.cs
+    startLine: 12
+  assemblies:
+  - NewBalanceStore.Application
+  namespace: NewBalanceStore.Application.Services
+  syntax:
+    content: Task UpdateOrderStatusAsync(int id, string status)
+    parameters:
+    - id: id
+      type: System.Int32
+    - id: status
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function UpdateOrderStatusAsync(id As Integer, status As String) As Task
+  overload: NewBalanceStore.Application.Services.IOrderService.UpdateOrderStatusAsync*
+  nameWithType.vb: IOrderService.UpdateOrderStatusAsync(Integer, String)
+  fullName.vb: NewBalanceStore.Application.Services.IOrderService.UpdateOrderStatusAsync(Integer, String)
+  name.vb: UpdateOrderStatusAsync(Integer, String)
+references:
+- uid: NewBalanceStore.Application.Services
+  commentId: N:NewBalanceStore.Application.Services
+  name: NewBalanceStore.Application.Services
+  nameWithType: NewBalanceStore.Application.Services
+  fullName: NewBalanceStore.Application.Services
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.Services
+    name: Services
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.Services
+    name: Services
+- uid: NewBalanceStore.Application.Services.IOrderService.CreateOrderAsync*
+  commentId: Overload:NewBalanceStore.Application.Services.IOrderService.CreateOrderAsync
+  href: NewBalanceStore.Application.Services.IOrderService.html#NewBalanceStore_Application_Services_IOrderService_CreateOrderAsync_NewBalanceStore_Application_DTOs_CreateOrderDto_
+  name: CreateOrderAsync
+  nameWithType: IOrderService.CreateOrderAsync
+  fullName: NewBalanceStore.Application.Services.IOrderService.CreateOrderAsync
+- uid: NewBalanceStore.Application.DTOs.CreateOrderDto
+  commentId: T:NewBalanceStore.Application.DTOs.CreateOrderDto
+  parent: NewBalanceStore.Application.DTOs
+  href: NewBalanceStore.Application.DTOs.CreateOrderDto.html
+  name: CreateOrderDto
+  nameWithType: CreateOrderDto
+  fullName: NewBalanceStore.Application.DTOs.CreateOrderDto
+- uid: System.Threading.Tasks.Task{NewBalanceStore.Application.DTOs.OrderDto}
+  commentId: T:System.Threading.Tasks.Task{NewBalanceStore.Application.DTOs.OrderDto}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<OrderDto>
+  nameWithType: Task<OrderDto>
+  fullName: System.Threading.Tasks.Task<NewBalanceStore.Application.DTOs.OrderDto>
+  nameWithType.vb: Task(Of OrderDto)
+  fullName.vb: System.Threading.Tasks.Task(Of NewBalanceStore.Application.DTOs.OrderDto)
+  name.vb: Task(Of OrderDto)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NewBalanceStore.Application.DTOs.OrderDto
+    name: OrderDto
+    href: NewBalanceStore.Application.DTOs.OrderDto.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NewBalanceStore.Application.DTOs.OrderDto
+    name: OrderDto
+    href: NewBalanceStore.Application.DTOs.OrderDto.html
+  - name: )
+- uid: NewBalanceStore.Application.DTOs
+  commentId: N:NewBalanceStore.Application.DTOs
+  name: NewBalanceStore.Application.DTOs
+  nameWithType: NewBalanceStore.Application.DTOs
+  fullName: NewBalanceStore.Application.DTOs
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.DTOs
+    name: DTOs
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.DTOs
+    name: DTOs
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NewBalanceStore.Application.Services.IOrderService.GetOrderByIdAsync*
+  commentId: Overload:NewBalanceStore.Application.Services.IOrderService.GetOrderByIdAsync
+  href: NewBalanceStore.Application.Services.IOrderService.html#NewBalanceStore_Application_Services_IOrderService_GetOrderByIdAsync_System_Int32_
+  name: GetOrderByIdAsync
+  nameWithType: IOrderService.GetOrderByIdAsync
+  fullName: NewBalanceStore.Application.Services.IOrderService.GetOrderByIdAsync
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NewBalanceStore.Application.Services.IOrderService.GetAllOrdersAsync*
+  commentId: Overload:NewBalanceStore.Application.Services.IOrderService.GetAllOrdersAsync
+  href: NewBalanceStore.Application.Services.IOrderService.html#NewBalanceStore_Application_Services_IOrderService_GetAllOrdersAsync
+  name: GetAllOrdersAsync
+  nameWithType: IOrderService.GetAllOrdersAsync
+  fullName: NewBalanceStore.Application.Services.IOrderService.GetAllOrdersAsync
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{NewBalanceStore.Application.DTOs.OrderDto}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{NewBalanceStore.Application.DTOs.OrderDto}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IEnumerable<OrderDto>>
+  nameWithType: Task<IEnumerable<OrderDto>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<NewBalanceStore.Application.DTOs.OrderDto>>
+  nameWithType.vb: Task(Of IEnumerable(Of OrderDto))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IEnumerable(Of NewBalanceStore.Application.DTOs.OrderDto))
+  name.vb: Task(Of IEnumerable(Of OrderDto))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: NewBalanceStore.Application.DTOs.OrderDto
+    name: OrderDto
+    href: NewBalanceStore.Application.DTOs.OrderDto.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NewBalanceStore.Application.DTOs.OrderDto
+    name: OrderDto
+    href: NewBalanceStore.Application.DTOs.OrderDto.html
+  - name: )
+  - name: )
+- uid: NewBalanceStore.Application.Services.IOrderService.UpdateOrderStatusAsync*
+  commentId: Overload:NewBalanceStore.Application.Services.IOrderService.UpdateOrderStatusAsync
+  href: NewBalanceStore.Application.Services.IOrderService.html#NewBalanceStore_Application_Services_IOrderService_UpdateOrderStatusAsync_System_Int32_System_String_
+  name: UpdateOrderStatusAsync
+  nameWithType: IOrderService.UpdateOrderStatusAsync
+  fullName: NewBalanceStore.Application.Services.IOrderService.UpdateOrderStatusAsync
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task

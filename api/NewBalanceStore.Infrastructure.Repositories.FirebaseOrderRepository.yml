@@ -1,0 +1,892 @@
+### YamlMime:ManagedReference
+items:
+- uid: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository
+  commentId: T:NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository
+  id: FirebaseOrderRepository
+  parent: NewBalanceStore.Infrastructure.Repositories
+  children:
+  - NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.#ctor(Firebase.Database.FirebaseClient)
+  - NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.CreateAsync(NewBalanceStore.Domain.Entities.Order)
+  - NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.GetAllAsync
+  - NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.GetByIdAsync(System.Int32)
+  - NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.UpdateStatusAsync(System.Int32,System.String)
+  langs:
+  - csharp
+  - vb
+  name: FirebaseOrderRepository
+  nameWithType: FirebaseOrderRepository
+  fullName: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository
+  type: Class
+  source:
+    remote:
+      path: NewBalanceStore.Infrastructure/Repositories/FirebaseOrderRepository.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: FirebaseOrderRepository
+    path: NewBalanceStore.Infrastructure/Repositories/FirebaseOrderRepository.cs
+    startLine: 9
+  assemblies:
+  - NewBalanceStore.Infrastructure
+  namespace: NewBalanceStore.Infrastructure.Repositories
+  syntax:
+    content: >-
+      [ExcludeFromCodeCoverage]
+
+      public class FirebaseOrderRepository : IOrderRepository
+    content.vb: >-
+      <ExcludeFromCodeCoverage>
+
+      Public Class FirebaseOrderRepository Implements IOrderRepository
+  inheritance:
+  - System.Object
+  implements:
+  - NewBalanceStore.Domain.Interfaces.IOrderRepository
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute
+    ctor: System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute.#ctor
+    arguments: []
+- uid: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.#ctor(Firebase.Database.FirebaseClient)
+  commentId: M:NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.#ctor(Firebase.Database.FirebaseClient)
+  id: '#ctor(Firebase.Database.FirebaseClient)'
+  parent: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository
+  langs:
+  - csharp
+  - vb
+  name: FirebaseOrderRepository(FirebaseClient)
+  nameWithType: FirebaseOrderRepository.FirebaseOrderRepository(FirebaseClient)
+  fullName: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.FirebaseOrderRepository(Firebase.Database.FirebaseClient)
+  type: Constructor
+  source:
+    remote:
+      path: NewBalanceStore.Infrastructure/Repositories/FirebaseOrderRepository.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: .ctor
+    path: NewBalanceStore.Infrastructure/Repositories/FirebaseOrderRepository.cs
+    startLine: 15
+  assemblies:
+  - NewBalanceStore.Infrastructure
+  namespace: NewBalanceStore.Infrastructure.Repositories
+  syntax:
+    content: public FirebaseOrderRepository(FirebaseClient firebaseClient)
+    parameters:
+    - id: firebaseClient
+      type: Firebase.Database.FirebaseClient
+    content.vb: Public Sub New(firebaseClient As FirebaseClient)
+  overload: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.#ctor*
+  nameWithType.vb: FirebaseOrderRepository.New(FirebaseClient)
+  fullName.vb: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.New(Firebase.Database.FirebaseClient)
+  name.vb: New(FirebaseClient)
+- uid: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.CreateAsync(NewBalanceStore.Domain.Entities.Order)
+  commentId: M:NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.CreateAsync(NewBalanceStore.Domain.Entities.Order)
+  id: CreateAsync(NewBalanceStore.Domain.Entities.Order)
+  parent: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository
+  langs:
+  - csharp
+  - vb
+  name: CreateAsync(Order)
+  nameWithType: FirebaseOrderRepository.CreateAsync(Order)
+  fullName: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.CreateAsync(NewBalanceStore.Domain.Entities.Order)
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.Infrastructure/Repositories/FirebaseOrderRepository.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: CreateAsync
+    path: NewBalanceStore.Infrastructure/Repositories/FirebaseOrderRepository.cs
+    startLine: 20
+  assemblies:
+  - NewBalanceStore.Infrastructure
+  namespace: NewBalanceStore.Infrastructure.Repositories
+  example: []
+  syntax:
+    content: public Task CreateAsync(Order order)
+    parameters:
+    - id: order
+      type: NewBalanceStore.Domain.Entities.Order
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function CreateAsync(order As Order) As Task
+  overload: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.CreateAsync*
+  implements:
+  - NewBalanceStore.Domain.Interfaces.IOrderRepository.CreateAsync(NewBalanceStore.Domain.Entities.Order)
+- uid: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.GetByIdAsync(System.Int32)
+  commentId: M:NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.GetByIdAsync(System.Int32)
+  id: GetByIdAsync(System.Int32)
+  parent: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository
+  langs:
+  - csharp
+  - vb
+  name: GetByIdAsync(int)
+  nameWithType: FirebaseOrderRepository.GetByIdAsync(int)
+  fullName: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.GetByIdAsync(int)
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.Infrastructure/Repositories/FirebaseOrderRepository.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: GetByIdAsync
+    path: NewBalanceStore.Infrastructure/Repositories/FirebaseOrderRepository.cs
+    startLine: 32
+  assemblies:
+  - NewBalanceStore.Infrastructure
+  namespace: NewBalanceStore.Infrastructure.Repositories
+  example: []
+  syntax:
+    content: public Task<Order?> GetByIdAsync(int id)
+    parameters:
+    - id: id
+      type: System.Int32
+    return:
+      type: System.Threading.Tasks.Task{NewBalanceStore.Domain.Entities.Order}
+    content.vb: Public Function GetByIdAsync(id As Integer) As Task(Of Order)
+  overload: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.GetByIdAsync*
+  implements:
+  - NewBalanceStore.Domain.Interfaces.IOrderRepository.GetByIdAsync(System.Int32)
+  nameWithType.vb: FirebaseOrderRepository.GetByIdAsync(Integer)
+  fullName.vb: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.GetByIdAsync(Integer)
+  name.vb: GetByIdAsync(Integer)
+- uid: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.GetAllAsync
+  commentId: M:NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.GetAllAsync
+  id: GetAllAsync
+  parent: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository
+  langs:
+  - csharp
+  - vb
+  name: GetAllAsync()
+  nameWithType: FirebaseOrderRepository.GetAllAsync()
+  fullName: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.GetAllAsync()
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.Infrastructure/Repositories/FirebaseOrderRepository.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: GetAllAsync
+    path: NewBalanceStore.Infrastructure/Repositories/FirebaseOrderRepository.cs
+    startLine: 46
+  assemblies:
+  - NewBalanceStore.Infrastructure
+  namespace: NewBalanceStore.Infrastructure.Repositories
+  example: []
+  syntax:
+    content: public Task<IEnumerable<Order>> GetAllAsync()
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{NewBalanceStore.Domain.Entities.Order}}
+    content.vb: Public Function GetAllAsync() As Task(Of IEnumerable(Of Order))
+  overload: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.GetAllAsync*
+  implements:
+  - NewBalanceStore.Domain.Interfaces.IOrderRepository.GetAllAsync
+- uid: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.UpdateStatusAsync(System.Int32,System.String)
+  commentId: M:NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.UpdateStatusAsync(System.Int32,System.String)
+  id: UpdateStatusAsync(System.Int32,System.String)
+  parent: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository
+  langs:
+  - csharp
+  - vb
+  name: UpdateStatusAsync(int, string)
+  nameWithType: FirebaseOrderRepository.UpdateStatusAsync(int, string)
+  fullName: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.UpdateStatusAsync(int, string)
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.Infrastructure/Repositories/FirebaseOrderRepository.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: UpdateStatusAsync
+    path: NewBalanceStore.Infrastructure/Repositories/FirebaseOrderRepository.cs
+    startLine: 77
+  assemblies:
+  - NewBalanceStore.Infrastructure
+  namespace: NewBalanceStore.Infrastructure.Repositories
+  example: []
+  syntax:
+    content: public Task UpdateStatusAsync(int id, string status)
+    parameters:
+    - id: id
+      type: System.Int32
+    - id: status
+      type: System.String
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function UpdateStatusAsync(id As Integer, status As String) As Task
+  overload: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.UpdateStatusAsync*
+  implements:
+  - NewBalanceStore.Domain.Interfaces.IOrderRepository.UpdateStatusAsync(System.Int32,System.String)
+  nameWithType.vb: FirebaseOrderRepository.UpdateStatusAsync(Integer, String)
+  fullName.vb: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.UpdateStatusAsync(Integer, String)
+  name.vb: UpdateStatusAsync(Integer, String)
+references:
+- uid: NewBalanceStore.Infrastructure.Repositories
+  commentId: N:NewBalanceStore.Infrastructure.Repositories
+  name: NewBalanceStore.Infrastructure.Repositories
+  nameWithType: NewBalanceStore.Infrastructure.Repositories
+  fullName: NewBalanceStore.Infrastructure.Repositories
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Infrastructure
+    name: Infrastructure
+  - name: .
+  - uid: NewBalanceStore.Infrastructure.Repositories
+    name: Repositories
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Infrastructure
+    name: Infrastructure
+  - name: .
+  - uid: NewBalanceStore.Infrastructure.Repositories
+    name: Repositories
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: NewBalanceStore.Domain.Interfaces.IOrderRepository
+  commentId: T:NewBalanceStore.Domain.Interfaces.IOrderRepository
+  parent: NewBalanceStore.Domain.Interfaces
+  href: NewBalanceStore.Domain.Interfaces.IOrderRepository.html
+  name: IOrderRepository
+  nameWithType: IOrderRepository
+  fullName: NewBalanceStore.Domain.Interfaces.IOrderRepository
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NewBalanceStore.Domain.Interfaces
+  commentId: N:NewBalanceStore.Domain.Interfaces
+  name: NewBalanceStore.Domain.Interfaces
+  nameWithType: NewBalanceStore.Domain.Interfaces
+  fullName: NewBalanceStore.Domain.Interfaces
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Interfaces
+    name: Interfaces
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Interfaces
+    name: Interfaces
+- uid: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.#ctor*
+  commentId: Overload:NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.#ctor
+  href: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.html#NewBalanceStore_Infrastructure_Repositories_FirebaseOrderRepository__ctor_Firebase_Database_FirebaseClient_
+  name: FirebaseOrderRepository
+  nameWithType: FirebaseOrderRepository.FirebaseOrderRepository
+  fullName: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.FirebaseOrderRepository
+  nameWithType.vb: FirebaseOrderRepository.New
+  fullName.vb: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.New
+  name.vb: New
+- uid: Firebase.Database.FirebaseClient
+  commentId: T:Firebase.Database.FirebaseClient
+  parent: Firebase.Database
+  isExternal: true
+  name: FirebaseClient
+  nameWithType: FirebaseClient
+  fullName: Firebase.Database.FirebaseClient
+- uid: Firebase.Database
+  commentId: N:Firebase.Database
+  isExternal: true
+  name: Firebase.Database
+  nameWithType: Firebase.Database
+  fullName: Firebase.Database
+  spec.csharp:
+  - uid: Firebase
+    name: Firebase
+    isExternal: true
+  - name: .
+  - uid: Firebase.Database
+    name: Database
+    isExternal: true
+  spec.vb:
+  - uid: Firebase
+    name: Firebase
+    isExternal: true
+  - name: .
+  - uid: Firebase.Database
+    name: Database
+    isExternal: true
+- uid: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.CreateAsync*
+  commentId: Overload:NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.CreateAsync
+  href: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.html#NewBalanceStore_Infrastructure_Repositories_FirebaseOrderRepository_CreateAsync_NewBalanceStore_Domain_Entities_Order_
+  name: CreateAsync
+  nameWithType: FirebaseOrderRepository.CreateAsync
+  fullName: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.CreateAsync
+- uid: NewBalanceStore.Domain.Interfaces.IOrderRepository.CreateAsync(NewBalanceStore.Domain.Entities.Order)
+  commentId: M:NewBalanceStore.Domain.Interfaces.IOrderRepository.CreateAsync(NewBalanceStore.Domain.Entities.Order)
+  parent: NewBalanceStore.Domain.Interfaces.IOrderRepository
+  name: CreateAsync(Order)
+  nameWithType: IOrderRepository.CreateAsync(Order)
+  fullName: NewBalanceStore.Domain.Interfaces.IOrderRepository.CreateAsync(NewBalanceStore.Domain.Entities.Order)
+  spec.csharp:
+  - uid: NewBalanceStore.Domain.Interfaces.IOrderRepository.CreateAsync(NewBalanceStore.Domain.Entities.Order)
+    name: CreateAsync
+  - name: (
+  - uid: NewBalanceStore.Domain.Entities.Order
+    name: Order
+  - name: )
+  spec.vb:
+  - uid: NewBalanceStore.Domain.Interfaces.IOrderRepository.CreateAsync(NewBalanceStore.Domain.Entities.Order)
+    name: CreateAsync
+  - name: (
+  - uid: NewBalanceStore.Domain.Entities.Order
+    name: Order
+  - name: )
+- uid: NewBalanceStore.Domain.Entities.Order
+  commentId: T:NewBalanceStore.Domain.Entities.Order
+  parent: NewBalanceStore.Domain.Entities
+  href: NewBalanceStore.Domain.Entities.Order.html
+  name: Order
+  nameWithType: Order
+  fullName: NewBalanceStore.Domain.Entities.Order
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: NewBalanceStore.Domain.Entities
+  commentId: N:NewBalanceStore.Domain.Entities
+  name: NewBalanceStore.Domain.Entities
+  nameWithType: NewBalanceStore.Domain.Entities
+  fullName: NewBalanceStore.Domain.Entities
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Entities
+    name: Entities
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Entities
+    name: Entities
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.GetByIdAsync*
+  commentId: Overload:NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.GetByIdAsync
+  href: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.html#NewBalanceStore_Infrastructure_Repositories_FirebaseOrderRepository_GetByIdAsync_System_Int32_
+  name: GetByIdAsync
+  nameWithType: FirebaseOrderRepository.GetByIdAsync
+  fullName: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.GetByIdAsync
+- uid: NewBalanceStore.Domain.Interfaces.IOrderRepository.GetByIdAsync(System.Int32)
+  commentId: M:NewBalanceStore.Domain.Interfaces.IOrderRepository.GetByIdAsync(System.Int32)
+  parent: NewBalanceStore.Domain.Interfaces.IOrderRepository
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: GetByIdAsync(int)
+  nameWithType: IOrderRepository.GetByIdAsync(int)
+  fullName: NewBalanceStore.Domain.Interfaces.IOrderRepository.GetByIdAsync(int)
+  nameWithType.vb: IOrderRepository.GetByIdAsync(Integer)
+  fullName.vb: NewBalanceStore.Domain.Interfaces.IOrderRepository.GetByIdAsync(Integer)
+  name.vb: GetByIdAsync(Integer)
+  spec.csharp:
+  - uid: NewBalanceStore.Domain.Interfaces.IOrderRepository.GetByIdAsync(System.Int32)
+    name: GetByIdAsync
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+  spec.vb:
+  - uid: NewBalanceStore.Domain.Interfaces.IOrderRepository.GetByIdAsync(System.Int32)
+    name: GetByIdAsync
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Threading.Tasks.Task{NewBalanceStore.Domain.Entities.Order}
+  commentId: T:System.Threading.Tasks.Task{NewBalanceStore.Domain.Entities.Order}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<Order>
+  nameWithType: Task<Order>
+  fullName: System.Threading.Tasks.Task<NewBalanceStore.Domain.Entities.Order>
+  nameWithType.vb: Task(Of Order)
+  fullName.vb: System.Threading.Tasks.Task(Of NewBalanceStore.Domain.Entities.Order)
+  name.vb: Task(Of Order)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: NewBalanceStore.Domain.Entities.Order
+    name: Order
+    href: NewBalanceStore.Domain.Entities.Order.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NewBalanceStore.Domain.Entities.Order
+    name: Order
+    href: NewBalanceStore.Domain.Entities.Order.html
+  - name: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.GetAllAsync*
+  commentId: Overload:NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.GetAllAsync
+  href: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.html#NewBalanceStore_Infrastructure_Repositories_FirebaseOrderRepository_GetAllAsync
+  name: GetAllAsync
+  nameWithType: FirebaseOrderRepository.GetAllAsync
+  fullName: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.GetAllAsync
+- uid: NewBalanceStore.Domain.Interfaces.IOrderRepository.GetAllAsync
+  commentId: M:NewBalanceStore.Domain.Interfaces.IOrderRepository.GetAllAsync
+  parent: NewBalanceStore.Domain.Interfaces.IOrderRepository
+  name: GetAllAsync()
+  nameWithType: IOrderRepository.GetAllAsync()
+  fullName: NewBalanceStore.Domain.Interfaces.IOrderRepository.GetAllAsync()
+  spec.csharp:
+  - uid: NewBalanceStore.Domain.Interfaces.IOrderRepository.GetAllAsync
+    name: GetAllAsync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: NewBalanceStore.Domain.Interfaces.IOrderRepository.GetAllAsync
+    name: GetAllAsync
+  - name: (
+  - name: )
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{NewBalanceStore.Domain.Entities.Order}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{NewBalanceStore.Domain.Entities.Order}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<IEnumerable<Order>>
+  nameWithType: Task<IEnumerable<Order>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<NewBalanceStore.Domain.Entities.Order>>
+  nameWithType.vb: Task(Of IEnumerable(Of Order))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.IEnumerable(Of NewBalanceStore.Domain.Entities.Order))
+  name.vb: Task(Of IEnumerable(Of Order))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: NewBalanceStore.Domain.Entities.Order
+    name: Order
+    href: NewBalanceStore.Domain.Entities.Order.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: NewBalanceStore.Domain.Entities.Order
+    name: Order
+    href: NewBalanceStore.Domain.Entities.Order.html
+  - name: )
+  - name: )
+- uid: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.UpdateStatusAsync*
+  commentId: Overload:NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.UpdateStatusAsync
+  href: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.html#NewBalanceStore_Infrastructure_Repositories_FirebaseOrderRepository_UpdateStatusAsync_System_Int32_System_String_
+  name: UpdateStatusAsync
+  nameWithType: FirebaseOrderRepository.UpdateStatusAsync
+  fullName: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.UpdateStatusAsync
+- uid: NewBalanceStore.Domain.Interfaces.IOrderRepository.UpdateStatusAsync(System.Int32,System.String)
+  commentId: M:NewBalanceStore.Domain.Interfaces.IOrderRepository.UpdateStatusAsync(System.Int32,System.String)
+  parent: NewBalanceStore.Domain.Interfaces.IOrderRepository
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: UpdateStatusAsync(int, string)
+  nameWithType: IOrderRepository.UpdateStatusAsync(int, string)
+  fullName: NewBalanceStore.Domain.Interfaces.IOrderRepository.UpdateStatusAsync(int, string)
+  nameWithType.vb: IOrderRepository.UpdateStatusAsync(Integer, String)
+  fullName.vb: NewBalanceStore.Domain.Interfaces.IOrderRepository.UpdateStatusAsync(Integer, String)
+  name.vb: UpdateStatusAsync(Integer, String)
+  spec.csharp:
+  - uid: NewBalanceStore.Domain.Interfaces.IOrderRepository.UpdateStatusAsync(System.Int32,System.String)
+    name: UpdateStatusAsync
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: NewBalanceStore.Domain.Interfaces.IOrderRepository.UpdateStatusAsync(System.Int32,System.String)
+    name: UpdateStatusAsync
+  - name: (
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

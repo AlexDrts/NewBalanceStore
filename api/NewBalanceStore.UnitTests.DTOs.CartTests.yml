@@ -1,0 +1,395 @@
+### YamlMime:ManagedReference
+items:
+- uid: NewBalanceStore.UnitTests.DTOs.CartTests
+  commentId: T:NewBalanceStore.UnitTests.DTOs.CartTests
+  id: CartTests
+  parent: NewBalanceStore.UnitTests.DTOs
+  children:
+  - NewBalanceStore.UnitTests.DTOs.CartTests.CartDto_TotalAmount_ShouldBeZero_WhenCartIsEmpty
+  - NewBalanceStore.UnitTests.DTOs.CartTests.CartDto_TotalAmount_ShouldCalculateCorrectly
+  langs:
+  - csharp
+  - vb
+  name: CartTests
+  nameWithType: CartTests
+  fullName: NewBalanceStore.UnitTests.DTOs.CartTests
+  type: Class
+  source:
+    remote:
+      path: NewBalanceStore.UnitTests/Services/CartTests.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: CartTests
+    path: NewBalanceStore.UnitTests/Services/CartTests.cs
+    startLine: 7
+  assemblies:
+  - NewBalanceStore.UnitTests
+  namespace: NewBalanceStore.UnitTests.DTOs
+  syntax:
+    content: >-
+      [TestFixture]
+
+      public class CartTests
+    content.vb: >-
+      <TestFixture>
+
+      Public Class CartTests
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  attributes:
+  - type: NUnit.Framework.TestFixtureAttribute
+    ctor: NUnit.Framework.TestFixtureAttribute.#ctor
+    arguments: []
+- uid: NewBalanceStore.UnitTests.DTOs.CartTests.CartDto_TotalAmount_ShouldCalculateCorrectly
+  commentId: M:NewBalanceStore.UnitTests.DTOs.CartTests.CartDto_TotalAmount_ShouldCalculateCorrectly
+  id: CartDto_TotalAmount_ShouldCalculateCorrectly
+  parent: NewBalanceStore.UnitTests.DTOs.CartTests
+  langs:
+  - csharp
+  - vb
+  name: CartDto_TotalAmount_ShouldCalculateCorrectly()
+  nameWithType: CartTests.CartDto_TotalAmount_ShouldCalculateCorrectly()
+  fullName: NewBalanceStore.UnitTests.DTOs.CartTests.CartDto_TotalAmount_ShouldCalculateCorrectly()
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.UnitTests/Services/CartTests.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: CartDto_TotalAmount_ShouldCalculateCorrectly
+    path: NewBalanceStore.UnitTests/Services/CartTests.cs
+    startLine: 10
+  assemblies:
+  - NewBalanceStore.UnitTests
+  namespace: NewBalanceStore.UnitTests.DTOs
+  syntax:
+    content: >-
+      [Test]
+
+      public void CartDto_TotalAmount_ShouldCalculateCorrectly()
+    content.vb: >-
+      <Test>
+
+      Public Sub CartDto_TotalAmount_ShouldCalculateCorrectly()
+  overload: NewBalanceStore.UnitTests.DTOs.CartTests.CartDto_TotalAmount_ShouldCalculateCorrectly*
+  attributes:
+  - type: NUnit.Framework.TestAttribute
+    ctor: NUnit.Framework.TestAttribute.#ctor
+    arguments: []
+- uid: NewBalanceStore.UnitTests.DTOs.CartTests.CartDto_TotalAmount_ShouldBeZero_WhenCartIsEmpty
+  commentId: M:NewBalanceStore.UnitTests.DTOs.CartTests.CartDto_TotalAmount_ShouldBeZero_WhenCartIsEmpty
+  id: CartDto_TotalAmount_ShouldBeZero_WhenCartIsEmpty
+  parent: NewBalanceStore.UnitTests.DTOs.CartTests
+  langs:
+  - csharp
+  - vb
+  name: CartDto_TotalAmount_ShouldBeZero_WhenCartIsEmpty()
+  nameWithType: CartTests.CartDto_TotalAmount_ShouldBeZero_WhenCartIsEmpty()
+  fullName: NewBalanceStore.UnitTests.DTOs.CartTests.CartDto_TotalAmount_ShouldBeZero_WhenCartIsEmpty()
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.UnitTests/Services/CartTests.cs
+      branch: main
+      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+    id: CartDto_TotalAmount_ShouldBeZero_WhenCartIsEmpty
+    path: NewBalanceStore.UnitTests/Services/CartTests.cs
+    startLine: 25
+  assemblies:
+  - NewBalanceStore.UnitTests
+  namespace: NewBalanceStore.UnitTests.DTOs
+  syntax:
+    content: >-
+      [Test]
+
+      public void CartDto_TotalAmount_ShouldBeZero_WhenCartIsEmpty()
+    content.vb: >-
+      <Test>
+
+      Public Sub CartDto_TotalAmount_ShouldBeZero_WhenCartIsEmpty()
+  overload: NewBalanceStore.UnitTests.DTOs.CartTests.CartDto_TotalAmount_ShouldBeZero_WhenCartIsEmpty*
+  attributes:
+  - type: NUnit.Framework.TestAttribute
+    ctor: NUnit.Framework.TestAttribute.#ctor
+    arguments: []
+references:
+- uid: NewBalanceStore.UnitTests.DTOs
+  commentId: N:NewBalanceStore.UnitTests.DTOs
+  name: NewBalanceStore.UnitTests.DTOs
+  nameWithType: NewBalanceStore.UnitTests.DTOs
+  fullName: NewBalanceStore.UnitTests.DTOs
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.UnitTests
+    name: UnitTests
+  - name: .
+  - uid: NewBalanceStore.UnitTests.DTOs
+    name: DTOs
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.UnitTests
+    name: UnitTests
+  - name: .
+  - uid: NewBalanceStore.UnitTests.DTOs
+    name: DTOs
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: NewBalanceStore.UnitTests.DTOs.CartTests.CartDto_TotalAmount_ShouldCalculateCorrectly*
+  commentId: Overload:NewBalanceStore.UnitTests.DTOs.CartTests.CartDto_TotalAmount_ShouldCalculateCorrectly
+  href: NewBalanceStore.UnitTests.DTOs.CartTests.html#NewBalanceStore_UnitTests_DTOs_CartTests_CartDto_TotalAmount_ShouldCalculateCorrectly
+  name: CartDto_TotalAmount_ShouldCalculateCorrectly
+  nameWithType: CartTests.CartDto_TotalAmount_ShouldCalculateCorrectly
+  fullName: NewBalanceStore.UnitTests.DTOs.CartTests.CartDto_TotalAmount_ShouldCalculateCorrectly
+- uid: NewBalanceStore.UnitTests.DTOs.CartTests.CartDto_TotalAmount_ShouldBeZero_WhenCartIsEmpty*
+  commentId: Overload:NewBalanceStore.UnitTests.DTOs.CartTests.CartDto_TotalAmount_ShouldBeZero_WhenCartIsEmpty
+  href: NewBalanceStore.UnitTests.DTOs.CartTests.html#NewBalanceStore_UnitTests_DTOs_CartTests_CartDto_TotalAmount_ShouldBeZero_WhenCartIsEmpty
+  name: CartDto_TotalAmount_ShouldBeZero_WhenCartIsEmpty
+  nameWithType: CartTests.CartDto_TotalAmount_ShouldBeZero_WhenCartIsEmpty
+  fullName: NewBalanceStore.UnitTests.DTOs.CartTests.CartDto_TotalAmount_ShouldBeZero_WhenCartIsEmpty
