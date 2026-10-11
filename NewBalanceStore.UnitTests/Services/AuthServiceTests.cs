@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using NewBalanceStore.Application.DTOs;
 using NewBalanceStore.Infrastructure.Services;
-using Xunit;
+using NUnit.Framework;
 
 namespace NewBalanceStore.UnitTests.Services;
 
@@ -26,7 +26,7 @@ public class AuthServiceTests
         _authService = new AuthService(configuration);
     }
 
-    [Fact]
+    [Test]
     public async Task RegisterAsync_ShouldReturnAuthResponseDto_WhenUserIsNew()
     {
         var registerDto = new UserRegisterDto
@@ -40,12 +40,12 @@ public class AuthServiceTests
 
         Assert.NotNull(result);
         Assert.NotNull(result.Token);
-        Assert.NotEmpty(result.Token);
-        Assert.Equal(registerDto.Email, result.Email);
-        Assert.Equal("John Doe", result.FullName);
+        Assert.That(result.Token, Is.Not.Empty);
+        Assert.That(result.Email, Is.EqualTo(registerDto.Email));
+        Assert.That(result.FullName, Is.EqualTo("John Doe"));
     }
 
-    [Fact]
+    [Test]
     public async Task RegisterAsync_ShouldThrowException_WhenEmailAlreadyExists()
     {
         var email = $"duplicate_{Guid.NewGuid()}@example.com";
@@ -57,7 +57,7 @@ public class AuthServiceTests
         await Assert.ThrowsAsync<InvalidOperationException>(() => _authService.RegisterAsync(registerDto2));
     }
 
-    [Fact]
+    [Test]
     public async Task LoginAsync_ShouldReturnToken_WhenCredentialsAreValid()
     {
         var email = $"login_{Guid.NewGuid()}@example.com";
@@ -76,10 +76,10 @@ public class AuthServiceTests
 
         Assert.NotNull(result);
         Assert.NotNull(result.Token);
-        Assert.Equal(email, result.Email);
+        Assert.That(result.Email, Is.EqualTo(email));
     }
 
-    [Fact]
+    [Test]
     public async Task LoginAsync_ShouldThrowException_WhenPasswordIsInvalid()
     {
         var email = $"wrongpass_{Guid.NewGuid()}@example.com";
