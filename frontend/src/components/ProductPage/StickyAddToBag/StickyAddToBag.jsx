@@ -2,43 +2,29 @@ import styles from "./StickyAddToBag.module.css";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
-function useHeaderOffset() {
+function useHeaderOffset(active) {
     const [offset, setOffset] = useState(0);
 
     useEffect(() => {
-        const header = document.querySelector(".main-header");
-        if (!header) return;
+        if (!active) return;
 
-        const update = () => {
-            const isFixed = getComputedStyle(header).position === "fixed";
-            const isHidden = header.classList.contains("hidden");
-
-            if (isFixed) {
-                setOffset(isHidden ? 0 : header.offsetHeight);
-            }
-            else {
-                setOffset(Math.max(0, Math.round(header.getBoundingClientRect().bottom)));
-            }
+        let frame;
+        const follow = () => {
+            const header = document.querySelector(".main-header");
+            const bottom = header ? Math.max(0, Math.round(header.getBoundingClientRect().bottom)) : 0;
+            setOffset(current => (current === bottom ? current : bottom));
+            frame = requestAnimationFrame(follow);
         };
 
-        const observer = new MutationObserver(update);
-        observer.observe(header, { attributes: true, attributeFilter: ["class", "style"] });
-        window.addEventListener("scroll", update, { passive: true });
-        window.addEventListener("resize", update);
-        update();
-
-        return () => {
-            observer.disconnect();
-            window.removeEventListener("scroll", update);
-            window.removeEventListener("resize", update);
-        };
-    }, []);
+        frame = requestAnimationFrame(follow);
+        return () => cancelAnimationFrame(frame);
+    }, [active]);
 
     return offset;
 }
 
 function StickyAddToBag({ visible, product, image, label, disabled, onClick }) {
-    const headerOffset = useHeaderOffset();
+    const headerOffset = useHeaderOffset(visible);
 
     return createPortal(
         <div

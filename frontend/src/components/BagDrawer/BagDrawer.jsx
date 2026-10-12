@@ -11,7 +11,6 @@ import { BAG_DRAWER_EVENT } from "./bagDrawerEvents.js";
 
 const MAX_QUANTITY_PER_ITEM = 5;
 const HOVER_OPEN_DELAY = 150;
-const HOVER_CLOSE_DELAY = 250;
 
 function pickFrequentlyBought(items, products) {
     const inBag = new Set(items.map(item => String(item.product.id)));
@@ -42,26 +41,22 @@ function BagDrawer({ triggerRef }) {
         countRef.current = count;
     }, [count]);
 
-    const open = useCallback((nextMode, nextTop = 0) => {
-        clearTimeout(timers.current.close);
-        setTop(nextTop);
+    const getHeaderBottom = useCallback(() => {
+        const header = triggerRef?.current?.closest("header");
+        if (!header) return 0;
+        return Math.max(0, Math.round(header.getBoundingClientRect().bottom));
+    }, [triggerRef]);
+
+    const open = useCallback(nextMode => {
+        setTop(getHeaderBottom());
         setClosing(false);
         setMode(nextMode);
-    }, []);
+    }, [getHeaderBottom]);
 
     const close = useCallback(() => {
         clearTimeout(timers.current.open);
-        clearTimeout(timers.current.close);
         if (modeRef.current) setClosing(true);
     }, []);
-
-    const scheduleClose = useCallback(() => {
-        clearTimeout(timers.current.close);
-        if (modeRef.current !== "bag") return;
-        timers.current.close = setTimeout(close, HOVER_CLOSE_DELAY);
-    }, [close]);
-
-    const cancelClose = () => clearTimeout(timers.current.close);
 
     useEffect(() => {
         const handleOpen = event => open(event.detail?.mode === "bag" ? "bag" : "added");
@@ -80,18 +75,10 @@ function BagDrawer({ triggerRef }) {
         const handleEnter = () => {
             if (!canHover.matches || countRef.current === 0 || modeRef.current === "added") return;
 
-            clearTimeout(allTimers.close);
-            allTimers.open = setTimeout(() => {
-                const header = trigger.closest("header");
-                const bottom = header ? Math.max(0, Math.round(header.getBoundingClientRect().bottom)) : 0;
-                open("bag", bottom);
-            }, HOVER_OPEN_DELAY);
+            allTimers.open = setTimeout(() => open("bag"), HOVER_OPEN_DELAY);
         };
 
-        const handleLeave = () => {
-            clearTimeout(allTimers.open);
-            scheduleClose();
-        };
+        const handleLeave = () => clearTimeout(allTimers.open);
 
         trigger.addEventListener("mouseenter", handleEnter);
         trigger.addEventListener("mouseleave", handleLeave);
@@ -100,9 +87,30 @@ function BagDrawer({ triggerRef }) {
             trigger.removeEventListener("mouseenter", handleEnter);
             trigger.removeEventListener("mouseleave", handleLeave);
             clearTimeout(allTimers.open);
-            clearTimeout(allTimers.close);
         };
-    }, [triggerRef, open, scheduleClose]);
+    }, [triggerRef, open]);
+
+    useEffect(() => {
+        const header = triggerRef?.current?.closest("header");
+        if (!mode || !header) return;
+
+        header.classList.add(styles.headerActive);
+        return () => header.classList.remove(styles.headerActive);
+    }, [mode, triggerRef]);
+
+    useEffect(() => {
+        if (!mode) return;
+
+        let frame;
+        const follow = () => {
+            const bottom = getHeaderBottom();
+            setTop(current => (current === bottom ? current : bottom));
+            frame = requestAnimationFrame(follow);
+        };
+
+        frame = requestAnimationFrame(follow);
+        return () => cancelAnimationFrame(frame);
+    }, [mode, getHeaderBottom]);
 
     useEffect(() => {
         if (!mode) return;
@@ -189,8 +197,6 @@ function BagDrawer({ triggerRef }) {
                 style={{ top }}
                 role="dialog"
                 aria-label={isAdded ? "Added to bag" : "Bag"}
-                onMouseEnter={cancelClose}
-                onMouseLeave={scheduleClose}
                 onAnimationEnd={handleAnimationEnd}
             >
                 <div className={styles.header}>
@@ -247,7 +253,10 @@ function BagDrawer({ triggerRef }) {
 
                                         {product.gender && <p className={styles.meta}>{product.gender}</p>}
                                         <p className={styles.meta}>Color: {formatColorName(entry.color)}</p>
-                                        <p className={styles.meta}>Size: {formatSizeLabel(product, entry.size)}</p>
+                                        <p className={styles.meta}>
+                                            Size: {formatSizeLabel(product, entry.size)}
+                                            {product.type === "Footwear" && " | Standard"}
+                                        </p>
 
                                         <div className={styles.qtyRow}>
                                             <div className={styles.qty}>

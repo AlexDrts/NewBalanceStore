@@ -24,14 +24,24 @@
     border-bottom: 1px solid #e5e5e5;
 }
 
+@media (max-width: 768px) {
+    .hero {
+        height: 66px;
+    }
+
+    .hero :global(.main-header) {
+        position: absolute;
+    }
+}
+
 .page {
     --gutter: 40px;
-    --info-width: 400px;
-    --column-gap: 48px;
-    --shift: 112px;
+    --info-width: 440px;
+    --column-gap: 64px;
+    --shift: 96px;
 
     width: 100%;
-    max-width: 1440px;
+    max-width: 1524px;
     margin: 0 auto;
     padding: 0 calc(var(--gutter) + var(--shift)) 96px var(--gutter);
     color: #000;
@@ -43,18 +53,13 @@
     grid-template-columns: minmax(0, 1fr) var(--info-width);
     gap: var(--column-gap);
     align-items: start;
-    min-height: var(--layout-height, auto);
 }
 
 .galleryColumn {
-    position: sticky;
-    top: var(--gallery-top, 24px);
     min-width: 0;
 }
 
 .infoColumn {
-    position: sticky;
-    top: var(--info-top, 24px);
     min-width: 0;
     padding-top: 24px;
 }
@@ -95,25 +100,12 @@
     color: #9a9a9a;
 }
 
-.badge {
-    display: inline-block;
-    margin-top: 14px;
-    color: #b45309;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: .3px;
-}
-
 .name {
     margin: 12px 0 4px;
     font-size: 26px;
     font-weight: 700;
     line-height: 1.15;
     word-break: break-word;
-}
-
-.badge + .name {
-    margin-top: 4px;
 }
 
 .price {
@@ -389,10 +381,6 @@
     text-decoration: underline;
     text-underline-offset: 4px;
     cursor: pointer;
-}
-
-.fitGuideLink:hover {
-    color: #555;
 }
 
 .description {
