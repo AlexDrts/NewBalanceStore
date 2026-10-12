@@ -18,14 +18,19 @@ items:
   source:
     remote:
       path: NewBalanceStore.Infrastructure/Configurations/CloudinarySettings.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: CloudinarySettings
     path: NewBalanceStore.Infrastructure/Configurations/CloudinarySettings.cs
-    startLine: 6
+    startLine: 10
   assemblies:
   - NewBalanceStore.Infrastructure
   namespace: NewBalanceStore.Infrastructure.Configurations
+  summary: >-
+    Клас конфігураційних параметрів для підключення до сервісу Cloudinary.
+
+    Зчитується із секції <code>CloudinarySettings</code> файлу <code>appsettings.json</code>.
+  example: []
   syntax:
     content: public class CloudinarySettings
     content.vb: Public Class CloudinarySettings
@@ -53,14 +58,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Infrastructure/Configurations/CloudinarySettings.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: CloudName
     path: NewBalanceStore.Infrastructure/Configurations/CloudinarySettings.cs
-    startLine: 8
+    startLine: 15
   assemblies:
   - NewBalanceStore.Infrastructure
   namespace: NewBalanceStore.Infrastructure.Configurations
+  summary: Назва хмари в обліковому записі Cloudinary (Cloud Name).
+  example: []
   syntax:
     content: public string CloudName { get; set; }
     parameters: []
@@ -82,14 +89,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Infrastructure/Configurations/CloudinarySettings.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: ApiKey
     path: NewBalanceStore.Infrastructure/Configurations/CloudinarySettings.cs
-    startLine: 9
+    startLine: 20
   assemblies:
   - NewBalanceStore.Infrastructure
   namespace: NewBalanceStore.Infrastructure.Configurations
+  summary: Публічний ключ доступу до API Cloudinary (API Key).
+  example: []
   syntax:
     content: public string ApiKey { get; set; }
     parameters: []
@@ -111,14 +120,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Infrastructure/Configurations/CloudinarySettings.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: ApiSecret
     path: NewBalanceStore.Infrastructure/Configurations/CloudinarySettings.cs
-    startLine: 10
+    startLine: 25
   assemblies:
   - NewBalanceStore.Infrastructure
   namespace: NewBalanceStore.Infrastructure.Configurations
+  summary: Секретний ключ доступу до API Cloudinary (API Secret).
+  example: []
   syntax:
     content: public string ApiSecret { get; set; }
     parameters: []

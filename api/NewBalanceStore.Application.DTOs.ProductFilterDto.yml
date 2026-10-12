@@ -23,14 +23,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Application/DTOs/ProductFilterDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: ProductFilterDto
     path: NewBalanceStore.Application/DTOs/ProductFilterDto.cs
-    startLine: 2
+    startLine: 5
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: DTO з критеріями фільтрації, пошуку та пагінації для вибірки товарів з каталогу.
+  example: []
   syntax:
     content: public class ProductFilterDto
     content.vb: Public Class ProductFilterDto
@@ -58,14 +60,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Application/DTOs/ProductFilterDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: SearchTerm
     path: NewBalanceStore.Application/DTOs/ProductFilterDto.cs
-    startLine: 4
+    startLine: 10
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Пошуковий запит для фільтрації за назвою або описом товару.
+  example: []
   syntax:
     content: public string? SearchTerm { get; set; }
     parameters: []
@@ -87,14 +91,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Application/DTOs/ProductFilterDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: MinPrice
     path: NewBalanceStore.Application/DTOs/ProductFilterDto.cs
-    startLine: 5
+    startLine: 15
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Мінімальна ціна для фільтрації діапазону.
+  example: []
   syntax:
     content: public decimal? MinPrice { get; set; }
     parameters: []
@@ -116,14 +122,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Application/DTOs/ProductFilterDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: MaxPrice
     path: NewBalanceStore.Application/DTOs/ProductFilterDto.cs
-    startLine: 6
+    startLine: 20
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Максимальна ціна для фільтрації діапазону.
+  example: []
   syntax:
     content: public decimal? MaxPrice { get; set; }
     parameters: []
@@ -145,14 +153,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Application/DTOs/ProductFilterDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: Category
     path: NewBalanceStore.Application/DTOs/ProductFilterDto.cs
-    startLine: 7
+    startLine: 25
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Фільтр за категорією товару (наприклад, "Running", "Lifestyle").
+  example: []
   syntax:
     content: public string? Category { get; set; }
     parameters: []
@@ -174,14 +184,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Application/DTOs/ProductFilterDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: IsBoosted
     path: NewBalanceStore.Application/DTOs/ProductFilterDto.cs
-    startLine: 8
+    startLine: 30
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Прапорець для підвищеного пріоритету або промо-вибірки (опціонально).
+  example: []
   syntax:
     content: public bool? IsBoosted { get; set; }
     parameters: []
@@ -203,14 +215,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Application/DTOs/ProductFilterDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: SortBy
     path: NewBalanceStore.Application/DTOs/ProductFilterDto.cs
-    startLine: 9
+    startLine: 35
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Критерій сортування списку ("price_asc", "price_desc", "name").
+  example: []
   syntax:
     content: public string? SortBy { get; set; }
     parameters: []
@@ -232,14 +246,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Application/DTOs/ProductFilterDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: PageNumber
     path: NewBalanceStore.Application/DTOs/ProductFilterDto.cs
-    startLine: 10
+    startLine: 40
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Номер сторінки для пагінації результатів (за замовчуванням 1).
+  example: []
   syntax:
     content: public int PageNumber { get; set; }
     parameters: []
@@ -261,14 +277,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Application/DTOs/ProductFilterDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: PageSize
     path: NewBalanceStore.Application/DTOs/ProductFilterDto.cs
-    startLine: 11
+    startLine: 45
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Кількість елементів на одній сторінці (за замовчуванням 10).
+  example: []
   syntax:
     content: public int PageSize { get; set; }
     parameters: []

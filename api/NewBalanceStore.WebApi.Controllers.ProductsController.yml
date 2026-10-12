@@ -5,11 +5,9 @@ items:
   id: ProductsController
   parent: NewBalanceStore.WebApi.Controllers
   children:
-  - NewBalanceStore.WebApi.Controllers.ProductsController.#ctor(NewBalanceStore.Application.Interfaces.IProductService)
   - NewBalanceStore.WebApi.Controllers.ProductsController.#ctor(NewBalanceStore.Application.Interfaces.IProductService,NewBalanceStore.Domain.Interfaces.IPhotoService)
   - NewBalanceStore.WebApi.Controllers.ProductsController.Create(NewBalanceStore.Application.DTOs.CreateProductDto)
   - NewBalanceStore.WebApi.Controllers.ProductsController.Delete(System.String)
-  - NewBalanceStore.WebApi.Controllers.ProductsController.GetAll
   - NewBalanceStore.WebApi.Controllers.ProductsController.GetById(System.String)
   - NewBalanceStore.WebApi.Controllers.ProductsController.GetProducts(NewBalanceStore.Application.DTOs.ProductFilterDto)
   - NewBalanceStore.WebApi.Controllers.ProductsController.Update(System.String,NewBalanceStore.Application.DTOs.CreateProductDto)
@@ -23,15 +21,20 @@ items:
   type: Class
   source:
     remote:
-      path: backend/NewBalanceStore.WebApi/Controllers/ProductsController.cs
-      branch: main
+      path: NewBalanceStore.WebApi/Controllers/ProductsController.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: ProductsController
-    path: NewBalanceStore/backend/NewBalanceStore.WebApi/Controllers/ProductsController.cs
-    startLine: 6
+    path: NewBalanceStore.WebApi/Controllers/ProductsController.cs
+    startLine: 12
   assemblies:
   - NewBalanceStore.WebApi
   namespace: NewBalanceStore.WebApi.Controllers
+  summary: >-
+    Контролер для керування товарами в каталозі інтернет-магазину.
+
+    Забезпечує пошук, фільтрацію та адміністрування товарних позицій.
+  example: []
   syntax:
     content: >-
       [ApiController]
@@ -240,265 +243,6 @@ items:
     arguments:
     - type: System.String
       value: api/[controller]
-- uid: NewBalanceStore.WebApi.Controllers.ProductsController.#ctor(NewBalanceStore.Application.Interfaces.IProductService)
-  commentId: M:NewBalanceStore.WebApi.Controllers.ProductsController.#ctor(NewBalanceStore.Application.Interfaces.IProductService)
-  id: '#ctor(NewBalanceStore.Application.Interfaces.IProductService)'
-  parent: NewBalanceStore.WebApi.Controllers.ProductsController
-  langs:
-  - csharp
-  - vb
-  name: ProductsController(IProductService)
-  nameWithType: ProductsController.ProductsController(IProductService)
-  fullName: NewBalanceStore.WebApi.Controllers.ProductsController.ProductsController(NewBalanceStore.Application.Interfaces.IProductService)
-  type: Constructor
-  source:
-    remote:
-      path: backend/NewBalanceStore.WebApi/Controllers/ProductsController.cs
-      branch: main
-      repo: https://github.com/AlexElNX/NewBalanceStore
-    id: .ctor
-    path: NewBalanceStore/backend/NewBalanceStore.WebApi/Controllers/ProductsController.cs
-    startLine: 12
-  assemblies:
-  - NewBalanceStore.WebApi
-  namespace: NewBalanceStore.WebApi.Controllers
-  syntax:
-    content: public ProductsController(IProductService productService)
-    parameters:
-    - id: productService
-      type: NewBalanceStore.Application.Interfaces.IProductService
-    content.vb: Public Sub New(productService As IProductService)
-  overload: NewBalanceStore.WebApi.Controllers.ProductsController.#ctor*
-  nameWithType.vb: ProductsController.New(IProductService)
-  fullName.vb: NewBalanceStore.WebApi.Controllers.ProductsController.New(NewBalanceStore.Application.Interfaces.IProductService)
-  name.vb: New(IProductService)
-- uid: NewBalanceStore.WebApi.Controllers.ProductsController.GetAll
-  commentId: M:NewBalanceStore.WebApi.Controllers.ProductsController.GetAll
-  id: GetAll
-  parent: NewBalanceStore.WebApi.Controllers.ProductsController
-  langs:
-  - csharp
-  - vb
-  name: GetAll()
-  nameWithType: ProductsController.GetAll()
-  fullName: NewBalanceStore.WebApi.Controllers.ProductsController.GetAll()
-  type: Method
-  source:
-    remote:
-      path: backend/NewBalanceStore.WebApi/Controllers/ProductsController.cs
-      branch: main
-      repo: https://github.com/AlexElNX/NewBalanceStore
-    id: GetAll
-    path: NewBalanceStore/backend/NewBalanceStore.WebApi/Controllers/ProductsController.cs
-    startLine: 17
-  assemblies:
-  - NewBalanceStore.WebApi
-  namespace: NewBalanceStore.WebApi.Controllers
-  syntax:
-    content: >-
-      [HttpGet]
-
-      public Task<ActionResult<IEnumerable<ProductDto>>> GetAll()
-    return:
-      type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{System.Collections.Generic.IEnumerable{NewBalanceStore.Application.DTOs.ProductDto}}}
-    content.vb: >-
-      <HttpGet>
-
-      Public Function GetAll() As Task(Of ActionResult(Of IEnumerable(Of ProductDto)))
-  overload: NewBalanceStore.WebApi.Controllers.ProductsController.GetAll*
-  attributes:
-  - type: Microsoft.AspNetCore.Mvc.HttpGetAttribute
-    ctor: Microsoft.AspNetCore.Mvc.HttpGetAttribute.#ctor
-    arguments: []
-- uid: NewBalanceStore.WebApi.Controllers.ProductsController.GetById(System.String)
-  commentId: M:NewBalanceStore.WebApi.Controllers.ProductsController.GetById(System.String)
-  id: GetById(System.String)
-  parent: NewBalanceStore.WebApi.Controllers.ProductsController
-  langs:
-  - csharp
-  - vb
-  name: GetById(string)
-  nameWithType: ProductsController.GetById(string)
-  fullName: NewBalanceStore.WebApi.Controllers.ProductsController.GetById(string)
-  type: Method
-  source:
-    remote:
-      path: backend/NewBalanceStore.WebApi/Controllers/ProductsController.cs
-      branch: main
-      repo: https://github.com/AlexElNX/NewBalanceStore
-    id: GetById
-    path: NewBalanceStore/backend/NewBalanceStore.WebApi/Controllers/ProductsController.cs
-    startLine: 24
-  assemblies:
-  - NewBalanceStore.WebApi
-  namespace: NewBalanceStore.WebApi.Controllers
-  syntax:
-    content: >-
-      [HttpGet("{id}")]
-
-      public Task<ActionResult<ProductDto>> GetById(string id)
-    parameters:
-    - id: id
-      type: System.String
-    return:
-      type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{NewBalanceStore.Application.DTOs.ProductDto}}
-    content.vb: >-
-      <HttpGet("{id}")>
-
-      Public Function GetById(id As String) As Task(Of ActionResult(Of ProductDto))
-  overload: NewBalanceStore.WebApi.Controllers.ProductsController.GetById*
-  attributes:
-  - type: Microsoft.AspNetCore.Mvc.HttpGetAttribute
-    ctor: Microsoft.AspNetCore.Mvc.HttpGetAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: '{id}'
-  nameWithType.vb: ProductsController.GetById(String)
-  fullName.vb: NewBalanceStore.WebApi.Controllers.ProductsController.GetById(String)
-  name.vb: GetById(String)
-- uid: NewBalanceStore.WebApi.Controllers.ProductsController.Create(NewBalanceStore.Application.DTOs.CreateProductDto)
-  commentId: M:NewBalanceStore.WebApi.Controllers.ProductsController.Create(NewBalanceStore.Application.DTOs.CreateProductDto)
-  id: Create(NewBalanceStore.Application.DTOs.CreateProductDto)
-  parent: NewBalanceStore.WebApi.Controllers.ProductsController
-  langs:
-  - csharp
-  - vb
-  name: Create(CreateProductDto)
-  nameWithType: ProductsController.Create(CreateProductDto)
-  fullName: NewBalanceStore.WebApi.Controllers.ProductsController.Create(NewBalanceStore.Application.DTOs.CreateProductDto)
-  type: Method
-  source:
-    remote:
-      path: backend/NewBalanceStore.WebApi/Controllers/ProductsController.cs
-      branch: main
-      repo: https://github.com/AlexElNX/NewBalanceStore
-    id: Create
-    path: NewBalanceStore/backend/NewBalanceStore.WebApi/Controllers/ProductsController.cs
-    startLine: 34
-  assemblies:
-  - NewBalanceStore.WebApi
-  namespace: NewBalanceStore.WebApi.Controllers
-  syntax:
-    content: >-
-      [HttpPost]
-
-      public Task<ActionResult<ProductDto>> Create(CreateProductDto dto)
-    parameters:
-    - id: dto
-      type: NewBalanceStore.Application.DTOs.CreateProductDto
-      attributes:
-      - type: Microsoft.AspNetCore.Mvc.FromBodyAttribute
-        ctor: Microsoft.AspNetCore.Mvc.FromBodyAttribute.#ctor
-        arguments: []
-    return:
-      type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{NewBalanceStore.Application.DTOs.ProductDto}}
-    content.vb: >-
-      <HttpPost>
-
-      Public Function Create(dto As CreateProductDto) As Task(Of ActionResult(Of ProductDto))
-  overload: NewBalanceStore.WebApi.Controllers.ProductsController.Create*
-  attributes:
-  - type: Microsoft.AspNetCore.Mvc.HttpPostAttribute
-    ctor: Microsoft.AspNetCore.Mvc.HttpPostAttribute.#ctor
-    arguments: []
-- uid: NewBalanceStore.WebApi.Controllers.ProductsController.Update(System.String,NewBalanceStore.Application.DTOs.CreateProductDto)
-  commentId: M:NewBalanceStore.WebApi.Controllers.ProductsController.Update(System.String,NewBalanceStore.Application.DTOs.CreateProductDto)
-  id: Update(System.String,NewBalanceStore.Application.DTOs.CreateProductDto)
-  parent: NewBalanceStore.WebApi.Controllers.ProductsController
-  langs:
-  - csharp
-  - vb
-  name: Update(string, CreateProductDto)
-  nameWithType: ProductsController.Update(string, CreateProductDto)
-  fullName: NewBalanceStore.WebApi.Controllers.ProductsController.Update(string, NewBalanceStore.Application.DTOs.CreateProductDto)
-  type: Method
-  source:
-    remote:
-      path: backend/NewBalanceStore.WebApi/Controllers/ProductsController.cs
-      branch: main
-      repo: https://github.com/AlexElNX/NewBalanceStore
-    id: Update
-    path: NewBalanceStore/backend/NewBalanceStore.WebApi/Controllers/ProductsController.cs
-    startLine: 41
-  assemblies:
-  - NewBalanceStore.WebApi
-  namespace: NewBalanceStore.WebApi.Controllers
-  syntax:
-    content: >-
-      [HttpPut("{id}")]
-
-      public Task<IActionResult> Update(string id, CreateProductDto dto)
-    parameters:
-    - id: id
-      type: System.String
-    - id: dto
-      type: NewBalanceStore.Application.DTOs.CreateProductDto
-      attributes:
-      - type: Microsoft.AspNetCore.Mvc.FromBodyAttribute
-        ctor: Microsoft.AspNetCore.Mvc.FromBodyAttribute.#ctor
-        arguments: []
-    return:
-      type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
-    content.vb: >-
-      <HttpPut("{id}")>
-
-      Public Function Update(id As String, dto As CreateProductDto) As Task(Of IActionResult)
-  overload: NewBalanceStore.WebApi.Controllers.ProductsController.Update*
-  attributes:
-  - type: Microsoft.AspNetCore.Mvc.HttpPutAttribute
-    ctor: Microsoft.AspNetCore.Mvc.HttpPutAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: '{id}'
-  nameWithType.vb: ProductsController.Update(String, CreateProductDto)
-  fullName.vb: NewBalanceStore.WebApi.Controllers.ProductsController.Update(String, NewBalanceStore.Application.DTOs.CreateProductDto)
-  name.vb: Update(String, CreateProductDto)
-- uid: NewBalanceStore.WebApi.Controllers.ProductsController.Delete(System.String)
-  commentId: M:NewBalanceStore.WebApi.Controllers.ProductsController.Delete(System.String)
-  id: Delete(System.String)
-  parent: NewBalanceStore.WebApi.Controllers.ProductsController
-  langs:
-  - csharp
-  - vb
-  name: Delete(string)
-  nameWithType: ProductsController.Delete(string)
-  fullName: NewBalanceStore.WebApi.Controllers.ProductsController.Delete(string)
-  type: Method
-  source:
-    remote:
-      path: backend/NewBalanceStore.WebApi/Controllers/ProductsController.cs
-      branch: main
-      repo: https://github.com/AlexElNX/NewBalanceStore
-    id: Delete
-    path: NewBalanceStore/backend/NewBalanceStore.WebApi/Controllers/ProductsController.cs
-    startLine: 51
-  assemblies:
-  - NewBalanceStore.WebApi
-  namespace: NewBalanceStore.WebApi.Controllers
-  syntax:
-    content: >-
-      [HttpDelete("{id}")]
-
-      public Task<IActionResult> Delete(string id)
-    parameters:
-    - id: id
-      type: System.String
-    return:
-      type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
-    content.vb: >-
-      <HttpDelete("{id}")>
-
-      Public Function Delete(id As String) As Task(Of IActionResult)
-  overload: NewBalanceStore.WebApi.Controllers.ProductsController.Delete*
-  attributes:
-  - type: Microsoft.AspNetCore.Mvc.HttpDeleteAttribute
-    ctor: Microsoft.AspNetCore.Mvc.HttpDeleteAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: '{id}'
-  nameWithType.vb: ProductsController.Delete(String)
-  fullName.vb: NewBalanceStore.WebApi.Controllers.ProductsController.Delete(String)
-  name.vb: Delete(String)
 - uid: NewBalanceStore.WebApi.Controllers.ProductsController.#ctor(NewBalanceStore.Application.Interfaces.IProductService,NewBalanceStore.Domain.Interfaces.IPhotoService)
   commentId: M:NewBalanceStore.WebApi.Controllers.ProductsController.#ctor(NewBalanceStore.Application.Interfaces.IProductService,NewBalanceStore.Domain.Interfaces.IPhotoService)
   id: '#ctor(NewBalanceStore.Application.Interfaces.IProductService,NewBalanceStore.Domain.Interfaces.IPhotoService)'
@@ -513,21 +257,25 @@ items:
   source:
     remote:
       path: NewBalanceStore.WebApi/Controllers/ProductsController.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: .ctor
     path: NewBalanceStore.WebApi/Controllers/ProductsController.cs
-    startLine: 18
+    startLine: 24
   assemblies:
   - NewBalanceStore.WebApi
   namespace: NewBalanceStore.WebApi.Controllers
+  summary: Ініціалізує новий екземпляр контролера <xref href="NewBalanceStore.WebApi.Controllers.ProductsController" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public ProductsController(IProductService productService, IPhotoService photoService)
     parameters:
     - id: productService
       type: NewBalanceStore.Application.Interfaces.IProductService
+      description: Сервіс управління товарами.
     - id: photoService
       type: NewBalanceStore.Domain.Interfaces.IPhotoService
+      description: Сервіс завантаження фотографій до Cloudinary.
     content.vb: Public Sub New(productService As IProductService, photoService As IPhotoService)
   overload: NewBalanceStore.WebApi.Controllers.ProductsController.#ctor*
   nameWithType.vb: ProductsController.New(IProductService, IPhotoService)
@@ -547,11 +295,11 @@ items:
   source:
     remote:
       path: NewBalanceStore.WebApi/Controllers/ProductsController.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetProducts
     path: NewBalanceStore.WebApi/Controllers/ProductsController.cs
-    startLine: 30
+    startLine: 36
   assemblies:
   - NewBalanceStore.WebApi
   namespace: NewBalanceStore.WebApi.Controllers
@@ -582,6 +330,116 @@ items:
   - type: Microsoft.AspNetCore.Mvc.HttpGetAttribute
     ctor: Microsoft.AspNetCore.Mvc.HttpGetAttribute.#ctor
     arguments: []
+- uid: NewBalanceStore.WebApi.Controllers.ProductsController.GetById(System.String)
+  commentId: M:NewBalanceStore.WebApi.Controllers.ProductsController.GetById(System.String)
+  id: GetById(System.String)
+  parent: NewBalanceStore.WebApi.Controllers.ProductsController
+  langs:
+  - csharp
+  - vb
+  name: GetById(string)
+  nameWithType: ProductsController.GetById(string)
+  fullName: NewBalanceStore.WebApi.Controllers.ProductsController.GetById(string)
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.WebApi/Controllers/ProductsController.cs
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: GetById
+    path: NewBalanceStore.WebApi/Controllers/ProductsController.cs
+    startLine: 50
+  assemblies:
+  - NewBalanceStore.WebApi
+  namespace: NewBalanceStore.WebApi.Controllers
+  summary: Получить конкретный товар по его уникальному идентификатору
+  example: []
+  syntax:
+    content: >-
+      [HttpGet("{id}")]
+
+      public Task<ActionResult<ProductDto>> GetById(string id)
+    parameters:
+    - id: id
+      type: System.String
+      description: Идентификатор товара
+    return:
+      type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{NewBalanceStore.Application.DTOs.ProductDto}}
+      description: Информация о товаре
+    content.vb: >-
+      <HttpGet("{id}")>
+
+      Public Function GetById(id As String) As Task(Of ActionResult(Of ProductDto))
+  overload: NewBalanceStore.WebApi.Controllers.ProductsController.GetById*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.HttpGetAttribute
+    ctor: Microsoft.AspNetCore.Mvc.HttpGetAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: '{id}'
+  nameWithType.vb: ProductsController.GetById(String)
+  fullName.vb: NewBalanceStore.WebApi.Controllers.ProductsController.GetById(String)
+  name.vb: GetById(String)
+- uid: NewBalanceStore.WebApi.Controllers.ProductsController.Create(NewBalanceStore.Application.DTOs.CreateProductDto)
+  commentId: M:NewBalanceStore.WebApi.Controllers.ProductsController.Create(NewBalanceStore.Application.DTOs.CreateProductDto)
+  id: Create(NewBalanceStore.Application.DTOs.CreateProductDto)
+  parent: NewBalanceStore.WebApi.Controllers.ProductsController
+  langs:
+  - csharp
+  - vb
+  name: Create(CreateProductDto)
+  nameWithType: ProductsController.Create(CreateProductDto)
+  fullName: NewBalanceStore.WebApi.Controllers.ProductsController.Create(NewBalanceStore.Application.DTOs.CreateProductDto)
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.WebApi/Controllers/ProductsController.cs
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: Create
+    path: NewBalanceStore.WebApi/Controllers/ProductsController.cs
+    startLine: 68
+  assemblies:
+  - NewBalanceStore.WebApi
+  namespace: NewBalanceStore.WebApi.Controllers
+  summary: Создать новый товар (доступно только администратору)
+  example: []
+  syntax:
+    content: >-
+      [HttpPost]
+
+      [Authorize(Roles = "Admin")]
+
+      public Task<ActionResult<ProductDto>> Create(CreateProductDto dto)
+    parameters:
+    - id: dto
+      type: NewBalanceStore.Application.DTOs.CreateProductDto
+      description: Данные для создания товара
+      attributes:
+      - type: Microsoft.AspNetCore.Mvc.FromBodyAttribute
+        ctor: Microsoft.AspNetCore.Mvc.FromBodyAttribute.#ctor
+        arguments: []
+    return:
+      type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{NewBalanceStore.Application.DTOs.ProductDto}}
+      description: Созданный объект товара
+    content.vb: >-
+      <HttpPost>
+
+      <Authorize(Roles:="Admin")>
+
+      Public Function Create(dto As CreateProductDto) As Task(Of ActionResult(Of ProductDto))
+  overload: NewBalanceStore.WebApi.Controllers.ProductsController.Create*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.HttpPostAttribute
+    ctor: Microsoft.AspNetCore.Mvc.HttpPostAttribute.#ctor
+    arguments: []
+  - type: Microsoft.AspNetCore.Authorization.AuthorizeAttribute
+    ctor: Microsoft.AspNetCore.Authorization.AuthorizeAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Roles
+      type: System.String
+      value: Admin
 - uid: NewBalanceStore.WebApi.Controllers.ProductsController.UploadImage(Microsoft.AspNetCore.Http.IFormFile)
   commentId: M:NewBalanceStore.WebApi.Controllers.ProductsController.UploadImage(Microsoft.AspNetCore.Http.IFormFile)
   id: UploadImage(Microsoft.AspNetCore.Http.IFormFile)
@@ -596,11 +454,11 @@ items:
   source:
     remote:
       path: NewBalanceStore.WebApi/Controllers/ProductsController.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: UploadImage
     path: NewBalanceStore.WebApi/Controllers/ProductsController.cs
-    startLine: 77
+    startLine: 83
   assemblies:
   - NewBalanceStore.WebApi
   namespace: NewBalanceStore.WebApi.Controllers
@@ -640,6 +498,133 @@ items:
     - name: Roles
       type: System.String
       value: Admin
+- uid: NewBalanceStore.WebApi.Controllers.ProductsController.Update(System.String,NewBalanceStore.Application.DTOs.CreateProductDto)
+  commentId: M:NewBalanceStore.WebApi.Controllers.ProductsController.Update(System.String,NewBalanceStore.Application.DTOs.CreateProductDto)
+  id: Update(System.String,NewBalanceStore.Application.DTOs.CreateProductDto)
+  parent: NewBalanceStore.WebApi.Controllers.ProductsController
+  langs:
+  - csharp
+  - vb
+  name: Update(string, CreateProductDto)
+  nameWithType: ProductsController.Update(string, CreateProductDto)
+  fullName: NewBalanceStore.WebApi.Controllers.ProductsController.Update(string, NewBalanceStore.Application.DTOs.CreateProductDto)
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.WebApi/Controllers/ProductsController.cs
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: Update
+    path: NewBalanceStore.WebApi/Controllers/ProductsController.cs
+    startLine: 107
+  assemblies:
+  - NewBalanceStore.WebApi
+  namespace: NewBalanceStore.WebApi.Controllers
+  summary: Обновить существующий товар по ID (доступно только администратору).
+  example: []
+  syntax:
+    content: >-
+      [HttpPut("{id}")]
+
+      [Authorize(Roles = "Admin")]
+
+      public Task<IActionResult> Update(string id, CreateProductDto dto)
+    parameters:
+    - id: id
+      type: System.String
+      description: Идентификатор обновляемого товара
+    - id: dto
+      type: NewBalanceStore.Application.DTOs.CreateProductDto
+      description: Новые данные товара
+      attributes:
+      - type: Microsoft.AspNetCore.Mvc.FromBodyAttribute
+        ctor: Microsoft.AspNetCore.Mvc.FromBodyAttribute.#ctor
+        arguments: []
+    return:
+      type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
+    content.vb: >-
+      <HttpPut("{id}")>
+
+      <Authorize(Roles:="Admin")>
+
+      Public Function Update(id As String, dto As CreateProductDto) As Task(Of IActionResult)
+  overload: NewBalanceStore.WebApi.Controllers.ProductsController.Update*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.HttpPutAttribute
+    ctor: Microsoft.AspNetCore.Mvc.HttpPutAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: '{id}'
+  - type: Microsoft.AspNetCore.Authorization.AuthorizeAttribute
+    ctor: Microsoft.AspNetCore.Authorization.AuthorizeAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Roles
+      type: System.String
+      value: Admin
+  nameWithType.vb: ProductsController.Update(String, CreateProductDto)
+  fullName.vb: NewBalanceStore.WebApi.Controllers.ProductsController.Update(String, NewBalanceStore.Application.DTOs.CreateProductDto)
+  name.vb: Update(String, CreateProductDto)
+- uid: NewBalanceStore.WebApi.Controllers.ProductsController.Delete(System.String)
+  commentId: M:NewBalanceStore.WebApi.Controllers.ProductsController.Delete(System.String)
+  id: Delete(System.String)
+  parent: NewBalanceStore.WebApi.Controllers.ProductsController
+  langs:
+  - csharp
+  - vb
+  name: Delete(string)
+  nameWithType: ProductsController.Delete(string)
+  fullName: NewBalanceStore.WebApi.Controllers.ProductsController.Delete(string)
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.WebApi/Controllers/ProductsController.cs
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: Delete
+    path: NewBalanceStore.WebApi/Controllers/ProductsController.cs
+    startLine: 124
+  assemblies:
+  - NewBalanceStore.WebApi
+  namespace: NewBalanceStore.WebApi.Controllers
+  summary: Удалить товар по ID (доступно только администратору)
+  example: []
+  syntax:
+    content: >-
+      [HttpDelete("{id}")]
+
+      [Authorize(Roles = "Admin")]
+
+      public Task<IActionResult> Delete(string id)
+    parameters:
+    - id: id
+      type: System.String
+      description: Идентификатор удаляемого товара
+    return:
+      type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
+    content.vb: >-
+      <HttpDelete("{id}")>
+
+      <Authorize(Roles:="Admin")>
+
+      Public Function Delete(id As String) As Task(Of IActionResult)
+  overload: NewBalanceStore.WebApi.Controllers.ProductsController.Delete*
+  attributes:
+  - type: Microsoft.AspNetCore.Mvc.HttpDeleteAttribute
+    ctor: Microsoft.AspNetCore.Mvc.HttpDeleteAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: '{id}'
+  - type: Microsoft.AspNetCore.Authorization.AuthorizeAttribute
+    ctor: Microsoft.AspNetCore.Authorization.AuthorizeAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Roles
+      type: System.String
+      value: Admin
+  nameWithType.vb: ProductsController.Delete(String)
+  fullName.vb: NewBalanceStore.WebApi.Controllers.ProductsController.Delete(String)
+  name.vb: Delete(String)
 references:
 - uid: NewBalanceStore.WebApi.Controllers
   commentId: N:NewBalanceStore.WebApi.Controllers
@@ -9883,9 +9868,15 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   - name: )
+- uid: NewBalanceStore.WebApi.Controllers.ProductsController
+  commentId: T:NewBalanceStore.WebApi.Controllers.ProductsController
+  href: NewBalanceStore.WebApi.Controllers.ProductsController.html
+  name: ProductsController
+  nameWithType: ProductsController
+  fullName: NewBalanceStore.WebApi.Controllers.ProductsController
 - uid: NewBalanceStore.WebApi.Controllers.ProductsController.#ctor*
   commentId: Overload:NewBalanceStore.WebApi.Controllers.ProductsController.#ctor
-  href: NewBalanceStore.WebApi.Controllers.ProductsController.html#NewBalanceStore_WebApi_Controllers_ProductsController__ctor_NewBalanceStore_Application_Interfaces_IProductService_
+  href: NewBalanceStore.WebApi.Controllers.ProductsController.html#NewBalanceStore_WebApi_Controllers_ProductsController__ctor_NewBalanceStore_Application_Interfaces_IProductService_NewBalanceStore_Domain_Interfaces_IPhotoService_
   name: ProductsController
   nameWithType: ProductsController.ProductsController
   fullName: NewBalanceStore.WebApi.Controllers.ProductsController.ProductsController
@@ -9899,6 +9890,13 @@ references:
   name: IProductService
   nameWithType: IProductService
   fullName: NewBalanceStore.Application.Interfaces.IProductService
+- uid: NewBalanceStore.Domain.Interfaces.IPhotoService
+  commentId: T:NewBalanceStore.Domain.Interfaces.IPhotoService
+  parent: NewBalanceStore.Domain.Interfaces
+  href: NewBalanceStore.Domain.Interfaces.IPhotoService.html
+  name: IPhotoService
+  nameWithType: IPhotoService
+  fullName: NewBalanceStore.Domain.Interfaces.IPhotoService
 - uid: NewBalanceStore.Application.Interfaces
   commentId: N:NewBalanceStore.Application.Interfaces
   name: NewBalanceStore.Application.Interfaces
@@ -9922,43 +9920,63 @@ references:
   - name: .
   - uid: NewBalanceStore.Application.Interfaces
     name: Interfaces
-- uid: NewBalanceStore.WebApi.Controllers.ProductsController.GetAll*
-  commentId: Overload:NewBalanceStore.WebApi.Controllers.ProductsController.GetAll
-  href: NewBalanceStore.WebApi.Controllers.ProductsController.html#NewBalanceStore_WebApi_Controllers_ProductsController_GetAll
-  name: GetAll
-  nameWithType: ProductsController.GetAll
-  fullName: NewBalanceStore.WebApi.Controllers.ProductsController.GetAll
-- uid: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{System.Collections.Generic.IEnumerable{NewBalanceStore.Application.DTOs.ProductDto}}}
-  commentId: T:System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.ActionResult{System.Collections.Generic.IEnumerable{NewBalanceStore.Application.DTOs.ProductDto}}}
+- uid: NewBalanceStore.Domain.Interfaces
+  commentId: N:NewBalanceStore.Domain.Interfaces
+  name: NewBalanceStore.Domain.Interfaces
+  nameWithType: NewBalanceStore.Domain.Interfaces
+  fullName: NewBalanceStore.Domain.Interfaces
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Interfaces
+    name: Interfaces
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Interfaces
+    name: Interfaces
+- uid: NewBalanceStore.WebApi.Controllers.ProductsController.GetProducts*
+  commentId: Overload:NewBalanceStore.WebApi.Controllers.ProductsController.GetProducts
+  href: NewBalanceStore.WebApi.Controllers.ProductsController.html#NewBalanceStore_WebApi_Controllers_ProductsController_GetProducts_NewBalanceStore_Application_DTOs_ProductFilterDto_
+  name: GetProducts
+  nameWithType: ProductsController.GetProducts
+  fullName: NewBalanceStore.WebApi.Controllers.ProductsController.GetProducts
+- uid: NewBalanceStore.Application.DTOs.ProductFilterDto
+  commentId: T:NewBalanceStore.Application.DTOs.ProductFilterDto
+  parent: NewBalanceStore.Application.DTOs
+  href: NewBalanceStore.Application.DTOs.ProductFilterDto.html
+  name: ProductFilterDto
+  nameWithType: ProductFilterDto
+  fullName: NewBalanceStore.Application.DTOs.ProductFilterDto
+- uid: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
+  commentId: T:System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<ActionResult<IEnumerable<ProductDto>>>
-  nameWithType: Task<ActionResult<IEnumerable<ProductDto>>>
-  fullName: System.Threading.Tasks.Task<Microsoft.AspNetCore.Mvc.ActionResult<System.Collections.Generic.IEnumerable<NewBalanceStore.Application.DTOs.ProductDto>>>
-  nameWithType.vb: Task(Of ActionResult(Of IEnumerable(Of ProductDto)))
-  fullName.vb: System.Threading.Tasks.Task(Of Microsoft.AspNetCore.Mvc.ActionResult(Of System.Collections.Generic.IEnumerable(Of NewBalanceStore.Application.DTOs.ProductDto)))
-  name.vb: Task(Of ActionResult(Of IEnumerable(Of ProductDto)))
+  name: Task<IActionResult>
+  nameWithType: Task<IActionResult>
+  fullName: System.Threading.Tasks.Task<Microsoft.AspNetCore.Mvc.IActionResult>
+  nameWithType.vb: Task(Of IActionResult)
+  fullName.vb: System.Threading.Tasks.Task(Of Microsoft.AspNetCore.Mvc.IActionResult)
+  name.vb: Task(Of IActionResult)
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
-  - uid: Microsoft.AspNetCore.Mvc.ActionResult`1
-    name: ActionResult
+  - uid: Microsoft.AspNetCore.Mvc.IActionResult
+    name: IActionResult
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.actionresult-1
-  - name: <
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  - name: <
-  - uid: NewBalanceStore.Application.DTOs.ProductDto
-    name: ProductDto
-  - name: '>'
-  - name: '>'
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.iactionresult
   - name: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
@@ -9968,25 +9986,34 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: Microsoft.AspNetCore.Mvc.ActionResult`1
-    name: ActionResult
+  - uid: Microsoft.AspNetCore.Mvc.IActionResult
+    name: IActionResult
     isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.actionresult-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: NewBalanceStore.Application.DTOs.ProductDto
-    name: ProductDto
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.iactionresult
   - name: )
-  - name: )
-  - name: )
+- uid: NewBalanceStore.Application.DTOs
+  commentId: N:NewBalanceStore.Application.DTOs
+  name: NewBalanceStore.Application.DTOs
+  nameWithType: NewBalanceStore.Application.DTOs
+  fullName: NewBalanceStore.Application.DTOs
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.DTOs
+    name: DTOs
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.DTOs
+    name: DTOs
 - uid: System.Threading.Tasks.Task`1
   commentId: T:System.Threading.Tasks.Task`1
   isExternal: true
@@ -10127,119 +10154,6 @@ references:
   name: CreateProductDto
   nameWithType: CreateProductDto
   fullName: NewBalanceStore.Application.DTOs.CreateProductDto
-- uid: NewBalanceStore.Application.DTOs
-  commentId: N:NewBalanceStore.Application.DTOs
-  name: NewBalanceStore.Application.DTOs
-  nameWithType: NewBalanceStore.Application.DTOs
-  fullName: NewBalanceStore.Application.DTOs
-  spec.csharp:
-  - uid: NewBalanceStore
-    name: NewBalanceStore
-  - name: .
-  - uid: NewBalanceStore.Application
-    name: Application
-  - name: .
-  - uid: NewBalanceStore.Application.DTOs
-    name: DTOs
-  spec.vb:
-  - uid: NewBalanceStore
-    name: NewBalanceStore
-  - name: .
-  - uid: NewBalanceStore.Application
-    name: Application
-  - name: .
-  - uid: NewBalanceStore.Application.DTOs
-    name: DTOs
-- uid: NewBalanceStore.WebApi.Controllers.ProductsController.Update*
-  commentId: Overload:NewBalanceStore.WebApi.Controllers.ProductsController.Update
-  href: NewBalanceStore.WebApi.Controllers.ProductsController.html#NewBalanceStore_WebApi_Controllers_ProductsController_Update_System_String_NewBalanceStore_Application_DTOs_CreateProductDto_
-  name: Update
-  nameWithType: ProductsController.Update
-  fullName: NewBalanceStore.WebApi.Controllers.ProductsController.Update
-- uid: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
-  commentId: T:System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
-  parent: System.Threading.Tasks
-  definition: System.Threading.Tasks.Task`1
-  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  name: Task<IActionResult>
-  nameWithType: Task<IActionResult>
-  fullName: System.Threading.Tasks.Task<Microsoft.AspNetCore.Mvc.IActionResult>
-  nameWithType.vb: Task(Of IActionResult)
-  fullName.vb: System.Threading.Tasks.Task(Of Microsoft.AspNetCore.Mvc.IActionResult)
-  name.vb: Task(Of IActionResult)
-  spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: <
-  - uid: Microsoft.AspNetCore.Mvc.IActionResult
-    name: IActionResult
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.iactionresult
-  - name: '>'
-  spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
-  - name: (
-  - name: Of
-  - name: " "
-  - uid: Microsoft.AspNetCore.Mvc.IActionResult
-    name: IActionResult
-    isExternal: true
-    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.iactionresult
-  - name: )
-- uid: NewBalanceStore.WebApi.Controllers.ProductsController.Delete*
-  commentId: Overload:NewBalanceStore.WebApi.Controllers.ProductsController.Delete
-  href: NewBalanceStore.WebApi.Controllers.ProductsController.html#NewBalanceStore_WebApi_Controllers_ProductsController_Delete_System_String_
-  name: Delete
-  nameWithType: ProductsController.Delete
-  fullName: NewBalanceStore.WebApi.Controllers.ProductsController.Delete
-- uid: NewBalanceStore.Domain.Interfaces.IPhotoService
-  commentId: T:NewBalanceStore.Domain.Interfaces.IPhotoService
-  parent: NewBalanceStore.Domain.Interfaces
-  href: NewBalanceStore.Domain.Interfaces.IPhotoService.html
-  name: IPhotoService
-  nameWithType: IPhotoService
-  fullName: NewBalanceStore.Domain.Interfaces.IPhotoService
-- uid: NewBalanceStore.Domain.Interfaces
-  commentId: N:NewBalanceStore.Domain.Interfaces
-  name: NewBalanceStore.Domain.Interfaces
-  nameWithType: NewBalanceStore.Domain.Interfaces
-  fullName: NewBalanceStore.Domain.Interfaces
-  spec.csharp:
-  - uid: NewBalanceStore
-    name: NewBalanceStore
-  - name: .
-  - uid: NewBalanceStore.Domain
-    name: Domain
-  - name: .
-  - uid: NewBalanceStore.Domain.Interfaces
-    name: Interfaces
-  spec.vb:
-  - uid: NewBalanceStore
-    name: NewBalanceStore
-  - name: .
-  - uid: NewBalanceStore.Domain
-    name: Domain
-  - name: .
-  - uid: NewBalanceStore.Domain.Interfaces
-    name: Interfaces
-- uid: NewBalanceStore.WebApi.Controllers.ProductsController.GetProducts*
-  commentId: Overload:NewBalanceStore.WebApi.Controllers.ProductsController.GetProducts
-  href: NewBalanceStore.WebApi.Controllers.ProductsController.html#NewBalanceStore_WebApi_Controllers_ProductsController_GetProducts_NewBalanceStore_Application_DTOs_ProductFilterDto_
-  name: GetProducts
-  nameWithType: ProductsController.GetProducts
-  fullName: NewBalanceStore.WebApi.Controllers.ProductsController.GetProducts
-- uid: NewBalanceStore.Application.DTOs.ProductFilterDto
-  commentId: T:NewBalanceStore.Application.DTOs.ProductFilterDto
-  parent: NewBalanceStore.Application.DTOs
-  href: NewBalanceStore.Application.DTOs.ProductFilterDto.html
-  name: ProductFilterDto
-  nameWithType: ProductFilterDto
-  fullName: NewBalanceStore.Application.DTOs.ProductFilterDto
 - uid: NewBalanceStore.WebApi.Controllers.ProductsController.UploadImage*
   commentId: Overload:NewBalanceStore.WebApi.Controllers.ProductsController.UploadImage
   href: NewBalanceStore.WebApi.Controllers.ProductsController.html#NewBalanceStore_WebApi_Controllers_ProductsController_UploadImage_Microsoft_AspNetCore_Http_IFormFile_
@@ -10291,3 +10205,15 @@ references:
     name: Http
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.http
+- uid: NewBalanceStore.WebApi.Controllers.ProductsController.Update*
+  commentId: Overload:NewBalanceStore.WebApi.Controllers.ProductsController.Update
+  href: NewBalanceStore.WebApi.Controllers.ProductsController.html#NewBalanceStore_WebApi_Controllers_ProductsController_Update_System_String_NewBalanceStore_Application_DTOs_CreateProductDto_
+  name: Update
+  nameWithType: ProductsController.Update
+  fullName: NewBalanceStore.WebApi.Controllers.ProductsController.Update
+- uid: NewBalanceStore.WebApi.Controllers.ProductsController.Delete*
+  commentId: Overload:NewBalanceStore.WebApi.Controllers.ProductsController.Delete
+  href: NewBalanceStore.WebApi.Controllers.ProductsController.html#NewBalanceStore_WebApi_Controllers_ProductsController_Delete_System_String_
+  name: Delete
+  nameWithType: ProductsController.Delete
+  fullName: NewBalanceStore.WebApi.Controllers.ProductsController.Delete

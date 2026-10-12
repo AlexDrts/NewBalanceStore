@@ -16,8 +16,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.IntegrationTests/Infrastructure/TestApiFactory.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: TestApiFactory
     path: NewBalanceStore.IntegrationTests/Infrastructure/TestApiFactory.cs
     startLine: 16
@@ -69,8 +69,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.IntegrationTests/Infrastructure/TestApiFactory.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: ConfigureWebHost
     path: NewBalanceStore.IntegrationTests/Infrastructure/TestApiFactory.cs
     startLine: 18

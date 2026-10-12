@@ -20,8 +20,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: OrdersControllerTests
     path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
     startLine: 158
@@ -65,8 +65,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: SetUp
     path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
     startLine: 164
@@ -101,8 +101,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: Create_ReturnsCreatedAtAction
     path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
     startLine: 171
@@ -139,8 +139,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetById_WhenOrderExists_ReturnsOk
     path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
     startLine: 186
@@ -177,8 +177,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetById_WhenOrderDoesNotExist_ReturnsNotFound
     path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
     startLine: 197
@@ -215,8 +215,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: UpdateStatus_DelegatesToServiceAndReturnsNoContent
     path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
     startLine: 207

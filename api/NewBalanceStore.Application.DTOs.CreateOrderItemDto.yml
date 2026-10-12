@@ -19,14 +19,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Application/DTOs/CreateOrderDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: CreateOrderItemDto
     path: NewBalanceStore.Application/DTOs/CreateOrderDto.cs
-    startLine: 15
+    startLine: 40
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: DTO замовленої одиниці товару під час оформлення покупки.
+  example: []
   syntax:
     content: public class CreateOrderItemDto
     content.vb: Public Class CreateOrderItemDto
@@ -54,14 +56,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Application/DTOs/CreateOrderDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: ProductId
     path: NewBalanceStore.Application/DTOs/CreateOrderDto.cs
-    startLine: 17
+    startLine: 45
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Ідентифікатор замовленого товару.
+  example: []
   syntax:
     content: public int ProductId { get; set; }
     parameters: []
@@ -83,14 +87,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Application/DTOs/CreateOrderDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: Color
     path: NewBalanceStore.Application/DTOs/CreateOrderDto.cs
-    startLine: 18
+    startLine: 50
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Обраний колір моделі.
+  example: []
   syntax:
     content: public string Color { get; set; }
     parameters: []
@@ -112,14 +118,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Application/DTOs/CreateOrderDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: Size
     path: NewBalanceStore.Application/DTOs/CreateOrderDto.cs
-    startLine: 19
+    startLine: 55
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Обраний розмір моделі.
+  example: []
   syntax:
     content: public string Size { get; set; }
     parameters: []
@@ -141,14 +149,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Application/DTOs/CreateOrderDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: Quantity
     path: NewBalanceStore.Application/DTOs/CreateOrderDto.cs
-    startLine: 20
+    startLine: 60
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Кількість замовлених одиниць.
+  example: []
   syntax:
     content: public int Quantity { get; set; }
     parameters: []

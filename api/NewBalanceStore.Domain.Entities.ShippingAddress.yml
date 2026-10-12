@@ -18,15 +18,17 @@ items:
   type: Class
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/ShippingAddress.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/ShippingAddress.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: ShippingAddress
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/ShippingAddress.cs
-    startLine: 6
+    path: NewBalanceStore.Domain/Entities/ShippingAddress.cs
+    startLine: 9
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Значеннєвий об'єкт (Value Object), що інкапсулює поштову адресу фізичної доставки замовлення.
+  example: []
   syntax:
     content: public class ShippingAddress
     content.vb: Public Class ShippingAddress
@@ -53,15 +55,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/ShippingAddress.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/ShippingAddress.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Country
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/ShippingAddress.cs
-    startLine: 8
+    path: NewBalanceStore.Domain/Entities/ShippingAddress.cs
+    startLine: 14
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Країна доставки (наприклад, "Україна", "USA").
+  example: []
   syntax:
     content: public string Country { get; set; }
     parameters: []
@@ -82,15 +86,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/ShippingAddress.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/ShippingAddress.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: City
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/ShippingAddress.cs
-    startLine: 9
+    path: NewBalanceStore.Domain/Entities/ShippingAddress.cs
+    startLine: 19
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Населений пункт або місто доставки.
+  example: []
   syntax:
     content: public string City { get; set; }
     parameters: []
@@ -111,15 +117,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/ShippingAddress.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/ShippingAddress.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Street
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/ShippingAddress.cs
-    startLine: 10
+    path: NewBalanceStore.Domain/Entities/ShippingAddress.cs
+    startLine: 24
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Назва вулиці, номер будинку та квартири.
+  example: []
   syntax:
     content: public string Street { get; set; }
     parameters: []
@@ -140,15 +148,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/ShippingAddress.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/ShippingAddress.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: PostalCode
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/ShippingAddress.cs
-    startLine: 11
+    path: NewBalanceStore.Domain/Entities/ShippingAddress.cs
+    startLine: 29
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Поштовий індекс відділення або району доставки.
+  example: []
   syntax:
     content: public string PostalCode { get; set; }
     parameters: []

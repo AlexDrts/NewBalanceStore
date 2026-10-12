@@ -22,8 +22,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Services/AuthServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: AuthServiceTests
     path: NewBalanceStore.UnitTests/Services/AuthServiceTests.cs
     startLine: 9
@@ -57,8 +57,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Services/AuthServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: .ctor
     path: NewBalanceStore.UnitTests/Services/AuthServiceTests.cs
     startLine: 13
@@ -86,8 +86,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Services/AuthServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: RegisterAsync_ShouldReturnAuthResponseDto_WhenUserIsNew
     path: NewBalanceStore.UnitTests/Services/AuthServiceTests.cs
     startLine: 31
@@ -124,8 +124,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Services/AuthServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: RegisterAsync_ShouldThrowException_WhenEmailAlreadyExists
     path: NewBalanceStore.UnitTests/Services/AuthServiceTests.cs
     startLine: 50
@@ -162,8 +162,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Services/AuthServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: LoginAsync_ShouldReturnToken_WhenCredentialsAreValid
     path: NewBalanceStore.UnitTests/Services/AuthServiceTests.cs
     startLine: 62
@@ -200,8 +200,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Services/AuthServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: LoginAsync_ShouldThrowException_WhenPasswordIsInvalid
     path: NewBalanceStore.UnitTests/Services/AuthServiceTests.cs
     startLine: 84
@@ -238,8 +238,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Services/AuthServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: LoginAsync_ShouldReturnToken_WhenEmailDiffersOnlyByCase
     path: NewBalanceStore.UnitTests/Services/AuthServiceTests.cs
     startLine: 100
@@ -276,8 +276,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Services/AuthServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: LoginAsync_ShouldThrowException_WhenEmailDoesNotExist
     path: NewBalanceStore.UnitTests/Services/AuthServiceTests.cs
     startLine: 122

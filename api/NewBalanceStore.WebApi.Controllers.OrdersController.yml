@@ -19,14 +19,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.WebApi/Controllers/OrdersController.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: OrdersController
     path: NewBalanceStore.WebApi/Controllers/OrdersController.cs
-    startLine: 6
+    startLine: 9
   assemblies:
   - NewBalanceStore.WebApi
   namespace: NewBalanceStore.WebApi.Controllers
+  summary: Контролер для оформлення та управління клієнтськими замовленнями.
+  example: []
   syntax:
     content: >-
       [ApiController]
@@ -249,19 +251,22 @@ items:
   source:
     remote:
       path: NewBalanceStore.WebApi/Controllers/OrdersController.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: .ctor
     path: NewBalanceStore.WebApi/Controllers/OrdersController.cs
-    startLine: 12
+    startLine: 19
   assemblies:
   - NewBalanceStore.WebApi
   namespace: NewBalanceStore.WebApi.Controllers
+  summary: Ініціалізує новий екземпляр контролера <xref href="NewBalanceStore.WebApi.Controllers.OrdersController" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public OrdersController(IOrderService orderService)
     parameters:
     - id: orderService
       type: NewBalanceStore.Application.Services.IOrderService
+      description: Сервіс обробки замовлень.
     content.vb: Public Sub New(orderService As IOrderService)
   overload: NewBalanceStore.WebApi.Controllers.OrdersController.#ctor*
   nameWithType.vb: OrdersController.New(IOrderService)
@@ -281,30 +286,45 @@ items:
   source:
     remote:
       path: NewBalanceStore.WebApi/Controllers/OrdersController.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: Create
     path: NewBalanceStore.WebApi/Controllers/OrdersController.cs
-    startLine: 17
+    startLine: 32
   assemblies:
   - NewBalanceStore.WebApi
   namespace: NewBalanceStore.WebApi.Controllers
+  summary: >-
+    Створити нове замовлення.
+
+    Сервер автоматично звіряє ціни за каталогом та розраховує фінальну суму.
+  example: []
   syntax:
     content: >-
       [HttpPost]
+
+      [ProducesResponseType(typeof(OrderDto), 201)]
+
+      [ProducesResponseType(400)]
 
       public Task<IActionResult> Create(CreateOrderDto dto)
     parameters:
     - id: dto
       type: NewBalanceStore.Application.DTOs.CreateOrderDto
+      description: Дані замовлення (покупець, адреса доставки та перелік товарів).
       attributes:
       - type: Microsoft.AspNetCore.Mvc.FromBodyAttribute
         ctor: Microsoft.AspNetCore.Mvc.FromBodyAttribute.#ctor
         arguments: []
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
+      description: Створене замовлення з присвоєним ідентифікатором.
     content.vb: >-
       <HttpPost>
+
+      <ProducesResponseType(GetType(OrderDto), 201)>
+
+      <ProducesResponseType(400)>
 
       Public Function Create(dto As CreateOrderDto) As Task(Of IActionResult)
   overload: NewBalanceStore.WebApi.Controllers.OrdersController.Create*
@@ -312,6 +332,18 @@ items:
   - type: Microsoft.AspNetCore.Mvc.HttpPostAttribute
     ctor: Microsoft.AspNetCore.Mvc.HttpPostAttribute.#ctor
     arguments: []
+  - type: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute
+    ctor: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute.#ctor(System.Type,System.Int32)
+    arguments:
+    - type: System.Type
+      value: NewBalanceStore.Application.DTOs.OrderDto
+    - type: System.Int32
+      value: 201
+  - type: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute
+    ctor: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 400
 - uid: NewBalanceStore.WebApi.Controllers.OrdersController.GetById(System.Int32)
   commentId: M:NewBalanceStore.WebApi.Controllers.OrdersController.GetById(System.Int32)
   id: GetById(System.Int32)
@@ -326,26 +358,38 @@ items:
   source:
     remote:
       path: NewBalanceStore.WebApi/Controllers/OrdersController.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetById
     path: NewBalanceStore.WebApi/Controllers/OrdersController.cs
-    startLine: 24
+    startLine: 48
   assemblies:
   - NewBalanceStore.WebApi
   namespace: NewBalanceStore.WebApi.Controllers
+  summary: Отримати детальну інформацію про замовлення за його ідентифікатором.
+  example: []
   syntax:
     content: >-
       [HttpGet("{id}")]
+
+      [ProducesResponseType(typeof(OrderDto), 200)]
+
+      [ProducesResponseType(404)]
 
       public Task<IActionResult> GetById(int id)
     parameters:
     - id: id
       type: System.Int32
+      description: Числовий ідентифікатор замовлення.
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
+      description: Інформація про замовлення.
     content.vb: >-
       <HttpGet("{id}")>
+
+      <ProducesResponseType(GetType(OrderDto), 200)>
+
+      <ProducesResponseType(404)>
 
       Public Function GetById(id As Integer) As Task(Of IActionResult)
   overload: NewBalanceStore.WebApi.Controllers.OrdersController.GetById*
@@ -355,6 +399,18 @@ items:
     arguments:
     - type: System.String
       value: '{id}'
+  - type: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute
+    ctor: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute.#ctor(System.Type,System.Int32)
+    arguments:
+    - type: System.Type
+      value: NewBalanceStore.Application.DTOs.OrderDto
+    - type: System.Int32
+      value: 200
+  - type: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute
+    ctor: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 404
   nameWithType.vb: OrdersController.GetById(Integer)
   fullName.vb: NewBalanceStore.WebApi.Controllers.OrdersController.GetById(Integer)
   name.vb: GetById(Integer)
@@ -372,24 +428,32 @@ items:
   source:
     remote:
       path: NewBalanceStore.WebApi/Controllers/OrdersController.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: UpdateStatus
     path: NewBalanceStore.WebApi/Controllers/OrdersController.cs
-    startLine: 34
+    startLine: 65
   assemblies:
   - NewBalanceStore.WebApi
   namespace: NewBalanceStore.WebApi.Controllers
+  summary: Оновити статус виконання замовлення (доступно операторам та системі).
+  example: []
   syntax:
     content: >-
       [HttpPatch("{id}/status")]
+
+      [ProducesResponseType(204)]
+
+      [ProducesResponseType(404)]
 
       public Task<IActionResult> UpdateStatus(int id, string status)
     parameters:
     - id: id
       type: System.Int32
+      description: Ідентифікатор замовлення.
     - id: status
       type: System.String
+      description: Новий рядок статусу (наприклад, "Processing", "Shipped", "Delivered").
       attributes:
       - type: Microsoft.AspNetCore.Mvc.FromBodyAttribute
         ctor: Microsoft.AspNetCore.Mvc.FromBodyAttribute.#ctor
@@ -399,6 +463,10 @@ items:
     content.vb: >-
       <HttpPatch("{id}/status")>
 
+      <ProducesResponseType(204)>
+
+      <ProducesResponseType(404)>
+
       Public Function UpdateStatus(id As Integer, status As String) As Task(Of IActionResult)
   overload: NewBalanceStore.WebApi.Controllers.OrdersController.UpdateStatus*
   attributes:
@@ -407,6 +475,16 @@ items:
     arguments:
     - type: System.String
       value: '{id}/status'
+  - type: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute
+    ctor: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 204
+  - type: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute
+    ctor: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 404
   nameWithType.vb: OrdersController.UpdateStatus(Integer, String)
   fullName.vb: NewBalanceStore.WebApi.Controllers.OrdersController.UpdateStatus(Integer, String)
   name.vb: UpdateStatus(Integer, String)
@@ -9653,6 +9731,12 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   - name: )
+- uid: NewBalanceStore.WebApi.Controllers.OrdersController
+  commentId: T:NewBalanceStore.WebApi.Controllers.OrdersController
+  href: NewBalanceStore.WebApi.Controllers.OrdersController.html
+  name: OrdersController
+  nameWithType: OrdersController
+  fullName: NewBalanceStore.WebApi.Controllers.OrdersController
 - uid: NewBalanceStore.WebApi.Controllers.OrdersController.#ctor*
   commentId: Overload:NewBalanceStore.WebApi.Controllers.OrdersController.#ctor
   href: NewBalanceStore.WebApi.Controllers.OrdersController.html#NewBalanceStore_WebApi_Controllers_OrdersController__ctor_NewBalanceStore_Application_Services_IOrderService_

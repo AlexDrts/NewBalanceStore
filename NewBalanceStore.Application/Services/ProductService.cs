@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using NewBalanceStore.Application.DTOs;
 using NewBalanceStore.Application.Interfaces;
 using NewBalanceStore.Domain.Entities;
@@ -6,27 +6,50 @@ using NewBalanceStore.Domain.Interfaces;
 
 namespace NewBalanceStore.Application.Services;
 
+/// <summary>
+/// Реалізація сервісу управління товарами інтернет-магазину.
+/// Виконує обробку запитів фільтрації, сортування та CRUD-операцій,
+/// інкапсулюючи мапінг між доменними сутностями <see cref="Product"/> та об'єктами передачі даних (DTO).
+/// </summary>
 public class ProductService : IProductService
 {
     private readonly IProductRepository _repository;
 
+    /// <summary>
+    /// Ініціалізує новий екземпляр класу <see cref="ProductService"/> із впровадженням репозиторію товарів.
+    /// </summary>
+    /// <param name="repository">Репозиторій для роботи зі сховищем товарів.</param>
     public ProductService(IProductRepository repository)
     {
         _repository = repository;
     }
 
+    /// <summary>
+    /// Отримує всі товари з репозиторію та мапить їх у колекцію DTO.
+    /// </summary>
+    /// <returns>Перелік товарів у вигляді <see cref="ProductDto"/>.</returns>
     public async Task<IEnumerable<ProductDto>> GetAllAsync()
     {
         var products = await _repository.GetAllAsync();
         return products.Select(MapToDto);
     }
 
+    /// <summary>
+    /// Знаходить товар за його рядковим ідентифікатором та повертає його DTO.
+    /// </summary>
+    /// <param name="id">Ідентифікатор товару.</param>
+    /// <returns>Об'єкт <see cref="ProductDto"/> або <c>null</c>, якщо запис відсутній.</returns>
     public async Task<ProductDto?> GetByIdAsync(string id)
     {
         var product = await _repository.GetByIdAsync(id);
         return product == null ? null : MapToDto(product);
     }
 
+    /// <summary>
+    /// Створює новий товар на основі наданого DTO, генерує сутність та передає її репозиторію.
+    /// </summary>
+    /// <param name="dto">Вхідні дані нового товару.</param>
+    /// <returns>Створений товар у форматі <see cref="ProductDto"/>.</returns>
     public async Task<ProductDto> CreateAsync(CreateProductDto dto)
     {
         var product = MapToEntity(dto);
@@ -34,6 +57,13 @@ public class ProductService : IProductService
         return MapToDto(product);
     }
 
+    /// <summary>
+    /// Оновлює дані існуючого товару.
+    /// Якщо товар знайдено, його властивості перезаписуються новими значеннями з збереженням ID.
+    /// </summary>
+    /// <param name="id">Ідентифікатор товару для оновлення.</param>
+    /// <param name="dto">Нові значення властивостей товару.</param>
+    /// <returns><c>true</c>, якщо оновлення відбулося успішно; <c>false</c>, якщо товар не знайдено.</returns>
     public async Task<bool> UpdateAsync(string id, CreateProductDto dto)
     {
         var existing = await _repository.GetByIdAsync(id);
@@ -49,6 +79,11 @@ public class ProductService : IProductService
         return true;
     }
 
+    /// <summary>
+    /// Видаляє товар із каталогу за його ідентифікатором, якщо він існує.
+    /// </summary>
+    /// <param name="id">Ідентифікатор товару.</param>
+    /// <returns><c>true</c>, якщо товар знайдено та видалено; інакше <c>false</c>.</returns>
     public async Task<bool> DeleteAsync(string id)
     {
         var existing = await _repository.GetByIdAsync(id);
@@ -57,6 +92,13 @@ public class ProductService : IProductService
         await _repository.DeleteAsync(id);
         return true;
     }
+
+    /// <summary>
+    /// Застосовує фільтрацію, повнотекстовий пошук за підрядком у назві/описі
+    /// та впорядкування списку товарів згідно з переданими параметрами.
+    /// </summary>
+    /// <param name="filter">Параметри пошуку, цінових меж, категорії та критеріїв сортування.</param>
+    /// <returns>Відфільтрована та відсортована вибірка товарів.</returns>
     public async Task<IEnumerable<ProductDto>> GetFilteredProductsAsync(ProductFilterDto filter)
     {
         var products = (await _repository.GetAllAsync()).AsEnumerable();
@@ -96,6 +138,9 @@ public class ProductService : IProductService
         return products.Select(MapToDto);
     }
 
+    /// <summary>
+    /// Перетворює доменну сутність товару в DTO для відповіді API.
+    /// </summary>
     private static ProductDto MapToDto(Product entity) => new()
     {
         Id = entity.Id,
@@ -116,6 +161,9 @@ public class ProductService : IProductService
         }).ToList() ?? new()
     };
 
+    /// <summary>
+    /// Перетворює вхідний DTO створення товару у внутрішню доменну модель.
+    /// </summary>
     private static Product MapToEntity(CreateProductDto dto) => new()
     {
         Name = dto.Name,

@@ -20,8 +20,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: AuthControllerTests
     path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
     startLine: 220
@@ -65,8 +65,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: SetUp
     path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
     startLine: 226
@@ -101,8 +101,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: Register_WhenSuccessful_ReturnsOk
     path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
     startLine: 233
@@ -139,8 +139,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: Register_WhenEmailAlreadyExists_ReturnsBadRequest
     path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
     startLine: 245
@@ -177,8 +177,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: Login_WhenSuccessful_ReturnsOk
     path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
     startLine: 257
@@ -215,8 +215,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: Login_WhenCredentialsAreInvalid_ReturnsUnauthorized
     path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
     startLine: 269

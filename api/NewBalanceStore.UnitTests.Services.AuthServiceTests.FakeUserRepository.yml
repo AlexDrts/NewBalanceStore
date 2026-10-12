@@ -18,8 +18,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Services/AuthServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: FakeUserRepository
     path: NewBalanceStore.UnitTests/Services/AuthServiceTests.cs
     startLine: 133
@@ -55,22 +55,25 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Services/AuthServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetByEmailAsync
     path: NewBalanceStore.UnitTests/Services/AuthServiceTests.cs
     startLine: 137
   assemblies:
   - NewBalanceStore.UnitTests
   namespace: NewBalanceStore.UnitTests.Services
+  summary: Знаходить користувача за адресою електронної пошти без урахування регістру.
   example: []
   syntax:
     content: public Task<User?> GetByEmailAsync(string email)
     parameters:
     - id: email
       type: System.String
+      description: Email адреса для пошуку.
     return:
       type: System.Threading.Tasks.Task{NewBalanceStore.Domain.Entities.User}
+      description: Екземпляр <xref href="NewBalanceStore.Domain.Entities.User" data-throw-if-not-resolved="false"></xref> або <code>null</code>, якщо користувача не знайдено.
     content.vb: Public Function GetByEmailAsync(email As String) As Task(Of User)
   overload: NewBalanceStore.UnitTests.Services.AuthServiceTests.FakeUserRepository.GetByEmailAsync*
   implements:
@@ -92,20 +95,22 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Services/AuthServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: CreateAsync
     path: NewBalanceStore.UnitTests/Services/AuthServiceTests.cs
     startLine: 143
   assemblies:
   - NewBalanceStore.UnitTests
   namespace: NewBalanceStore.UnitTests.Services
+  summary: Зберігає нового зареєстрованого користувача у базі даних.
   example: []
   syntax:
     content: public Task CreateAsync(User user)
     parameters:
     - id: user
       type: NewBalanceStore.Domain.Entities.User
+      description: Об'єкт користувача з хешованим паролем та роллю.
     return:
       type: System.Threading.Tasks.Task
     content.vb: Public Function CreateAsync(user As User) As Task
@@ -126,19 +131,21 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Services/AuthServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetAllAsync
     path: NewBalanceStore.UnitTests/Services/AuthServiceTests.cs
     startLine: 153
   assemblies:
   - NewBalanceStore.UnitTests
   namespace: NewBalanceStore.UnitTests.Services
+  summary: Отримує перелік усіх користувачів системи.
   example: []
   syntax:
     content: public Task<IEnumerable<User>> GetAllAsync()
     return:
       type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{NewBalanceStore.Domain.Entities.User}}
+      description: Колекція сутностей <xref href="NewBalanceStore.Domain.Entities.User" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public Function GetAllAsync() As Task(Of IEnumerable(Of User))
   overload: NewBalanceStore.UnitTests.Services.AuthServiceTests.FakeUserRepository.GetAllAsync*
   implements:
@@ -434,6 +441,13 @@ references:
   - name: .
   - uid: NewBalanceStore.Domain.Interfaces
     name: Interfaces
+- uid: NewBalanceStore.Domain.Entities.User
+  commentId: T:NewBalanceStore.Domain.Entities.User
+  parent: NewBalanceStore.Domain.Entities
+  href: NewBalanceStore.Domain.Entities.User.html
+  name: User
+  nameWithType: User
+  fullName: NewBalanceStore.Domain.Entities.User
 - uid: NewBalanceStore.UnitTests.Services.AuthServiceTests.FakeUserRepository.GetByEmailAsync*
   commentId: Overload:NewBalanceStore.UnitTests.Services.AuthServiceTests.FakeUserRepository.GetByEmailAsync
   href: NewBalanceStore.UnitTests.Services.AuthServiceTests.FakeUserRepository.html#NewBalanceStore_UnitTests_Services_AuthServiceTests_FakeUserRepository_GetByEmailAsync_System_String_
@@ -513,6 +527,29 @@ references:
     name: User
     href: NewBalanceStore.Domain.Entities.User.html
   - name: )
+- uid: NewBalanceStore.Domain.Entities
+  commentId: N:NewBalanceStore.Domain.Entities
+  name: NewBalanceStore.Domain.Entities
+  nameWithType: NewBalanceStore.Domain.Entities
+  fullName: NewBalanceStore.Domain.Entities
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Entities
+    name: Entities
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Entities
+    name: Entities
 - uid: System.Threading.Tasks.Task`1
   commentId: T:System.Threading.Tasks.Task`1
   isExternal: true
@@ -604,13 +641,6 @@ references:
   - uid: NewBalanceStore.Domain.Entities.User
     name: User
   - name: )
-- uid: NewBalanceStore.Domain.Entities.User
-  commentId: T:NewBalanceStore.Domain.Entities.User
-  parent: NewBalanceStore.Domain.Entities
-  href: NewBalanceStore.Domain.Entities.User.html
-  name: User
-  nameWithType: User
-  fullName: NewBalanceStore.Domain.Entities.User
 - uid: System.Threading.Tasks.Task
   commentId: T:System.Threading.Tasks.Task
   parent: System.Threading.Tasks
@@ -619,29 +649,6 @@ references:
   name: Task
   nameWithType: Task
   fullName: System.Threading.Tasks.Task
-- uid: NewBalanceStore.Domain.Entities
-  commentId: N:NewBalanceStore.Domain.Entities
-  name: NewBalanceStore.Domain.Entities
-  nameWithType: NewBalanceStore.Domain.Entities
-  fullName: NewBalanceStore.Domain.Entities
-  spec.csharp:
-  - uid: NewBalanceStore
-    name: NewBalanceStore
-  - name: .
-  - uid: NewBalanceStore.Domain
-    name: Domain
-  - name: .
-  - uid: NewBalanceStore.Domain.Entities
-    name: Entities
-  spec.vb:
-  - uid: NewBalanceStore
-    name: NewBalanceStore
-  - name: .
-  - uid: NewBalanceStore.Domain
-    name: Domain
-  - name: .
-  - uid: NewBalanceStore.Domain.Entities
-    name: Entities
 - uid: NewBalanceStore.UnitTests.Services.AuthServiceTests.FakeUserRepository.GetAllAsync*
   commentId: Overload:NewBalanceStore.UnitTests.Services.AuthServiceTests.FakeUserRepository.GetAllAsync
   href: NewBalanceStore.UnitTests.Services.AuthServiceTests.FakeUserRepository.html#NewBalanceStore_UnitTests_Services_AuthServiceTests_FakeUserRepository_GetAllAsync

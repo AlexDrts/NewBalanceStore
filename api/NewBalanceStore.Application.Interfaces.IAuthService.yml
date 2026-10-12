@@ -17,14 +17,19 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/Interfaces/IAuthService.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: IAuthService
     path: NewBalanceStore.Domain/Interfaces/IAuthService.cs
-    startLine: 8
+    startLine: 11
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Application.Interfaces
+  summary: >-
+    Контракт сервісу автентифікації та реєстрації користувачів.
+
+    Забезпечує перевірку облікових даних, хешування паролів та видачу JWT-токенів.
+  example: []
   syntax:
     content: public interface IAuthService
     content.vb: Public Interface IAuthService
@@ -44,23 +49,31 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/Interfaces/IAuthService.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: RegisterAsync
     path: NewBalanceStore.Domain/Interfaces/IAuthService.cs
-    startLine: 10
+    startLine: 19
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Application.Interfaces
+  summary: Реєструє нового користувача в системі, перевіряючи унікальність Email.
+  example: []
   syntax:
     content: Task<AuthResponseDto> RegisterAsync(UserRegisterDto registerDto)
     parameters:
     - id: registerDto
       type: NewBalanceStore.Application.DTOs.UserRegisterDto
+      description: Дані для реєстрації користувача (Email, Password, FullName).
     return:
       type: System.Threading.Tasks.Task{NewBalanceStore.Application.DTOs.AuthResponseDto}
+      description: DTO з JWT-токеном та базовими відомостями про створений профіль.
     content.vb: Function RegisterAsync(registerDto As UserRegisterDto) As Task(Of AuthResponseDto)
   overload: NewBalanceStore.Application.Interfaces.IAuthService.RegisterAsync*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: Виникає, якщо користувач з таким Email вже існує в системі.
 - uid: NewBalanceStore.Application.Interfaces.IAuthService.LoginAsync(NewBalanceStore.Application.DTOs.UserLoginDto)
   commentId: M:NewBalanceStore.Application.Interfaces.IAuthService.LoginAsync(NewBalanceStore.Application.DTOs.UserLoginDto)
   id: LoginAsync(NewBalanceStore.Application.DTOs.UserLoginDto)
@@ -75,23 +88,31 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/Interfaces/IAuthService.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: LoginAsync
     path: NewBalanceStore.Domain/Interfaces/IAuthService.cs
-    startLine: 11
+    startLine: 27
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Application.Interfaces
+  summary: Виконує вхід користувача у систему за допомогою перевірки пари логін/пароль.
+  example: []
   syntax:
     content: Task<AuthResponseDto> LoginAsync(UserLoginDto loginDto)
     parameters:
     - id: loginDto
       type: NewBalanceStore.Application.DTOs.UserLoginDto
+      description: Дані для входу (Email та відкритий пароль).
     return:
       type: System.Threading.Tasks.Task{NewBalanceStore.Application.DTOs.AuthResponseDto}
+      description: DTO з згенерованим JWT-токеном та інформацією про роль користувача.
     content.vb: Function LoginAsync(loginDto As UserLoginDto) As Task(Of AuthResponseDto)
   overload: NewBalanceStore.Application.Interfaces.IAuthService.LoginAsync*
+  exceptions:
+  - type: System.UnauthorizedAccessException
+    commentId: T:System.UnauthorizedAccessException
+    description: Виникає у разі невірного пароля або відсутності акаунта з даним Email.
 references:
 - uid: NewBalanceStore.Application.Interfaces
   commentId: N:NewBalanceStore.Application.Interfaces
@@ -116,6 +137,13 @@ references:
   - name: .
   - uid: NewBalanceStore.Application.Interfaces
     name: Interfaces
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.invalidoperationexception
+  name: InvalidOperationException
+  nameWithType: InvalidOperationException
+  fullName: System.InvalidOperationException
 - uid: NewBalanceStore.Application.Interfaces.IAuthService.RegisterAsync*
   commentId: Overload:NewBalanceStore.Application.Interfaces.IAuthService.RegisterAsync
   href: NewBalanceStore.Application.Interfaces.IAuthService.html#NewBalanceStore_Application_Interfaces_IAuthService_RegisterAsync_NewBalanceStore_Application_DTOs_UserRegisterDto_
@@ -250,6 +278,13 @@ references:
     name: Tasks
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: System.UnauthorizedAccessException
+  commentId: T:System.UnauthorizedAccessException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.unauthorizedaccessexception
+  name: UnauthorizedAccessException
+  nameWithType: UnauthorizedAccessException
+  fullName: System.UnauthorizedAccessException
 - uid: NewBalanceStore.Application.Interfaces.IAuthService.LoginAsync*
   commentId: Overload:NewBalanceStore.Application.Interfaces.IAuthService.LoginAsync
   href: NewBalanceStore.Application.Interfaces.IAuthService.html#NewBalanceStore_Application_Interfaces_IAuthService_LoginAsync_NewBalanceStore_Application_DTOs_UserLoginDto_

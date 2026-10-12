@@ -17,15 +17,17 @@ items:
   type: Enum
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Enums/Gender.cs
-      branch: main
+      path: NewBalanceStore.Domain/Enums/Gender.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Gender
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Enums/Gender.cs
-    startLine: 6
+    path: NewBalanceStore.Domain/Enums/Gender.cs
+    startLine: 7
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Enums
+  summary: Цільова гендерна категорія продукту в каталозі.
+  example: []
   syntax:
     content: public enum Gender
     content.vb: Public Enum Gender
@@ -42,15 +44,17 @@ items:
   type: Field
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Enums/Gender.cs
-      branch: main
+      path: NewBalanceStore.Domain/Enums/Gender.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Men
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Enums/Gender.cs
-    startLine: 8
+    path: NewBalanceStore.Domain/Enums/Gender.cs
+    startLine: 12
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Enums
+  summary: Чоловічі моделі.
+  example: []
   syntax:
     content: Men = 0
     return:
@@ -68,15 +72,17 @@ items:
   type: Field
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Enums/Gender.cs
-      branch: main
+      path: NewBalanceStore.Domain/Enums/Gender.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Women
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Enums/Gender.cs
-    startLine: 9
+    path: NewBalanceStore.Domain/Enums/Gender.cs
+    startLine: 17
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Enums
+  summary: Жіночі моделі.
+  example: []
   syntax:
     content: Women = 1
     return:
@@ -94,15 +100,17 @@ items:
   type: Field
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Enums/Gender.cs
-      branch: main
+      path: NewBalanceStore.Domain/Enums/Gender.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Unisex
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Enums/Gender.cs
-    startLine: 10
+    path: NewBalanceStore.Domain/Enums/Gender.cs
+    startLine: 22
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Enums
+  summary: Універсальні моделі (унісекс).
+  example: []
   syntax:
     content: Unisex = 2
     return:

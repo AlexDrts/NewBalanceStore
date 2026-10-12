@@ -19,14 +19,19 @@ items:
   source:
     remote:
       path: NewBalanceStore.Infrastructure/Repositories/FirebaseUserRepository.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: FirebaseUserRepository
     path: NewBalanceStore.Infrastructure/Repositories/FirebaseUserRepository.cs
-    startLine: 10
+    startLine: 14
   assemblies:
   - NewBalanceStore.Infrastructure
   namespace: NewBalanceStore.Infrastructure.Repositories
+  summary: >-
+    Репозиторій для роботи з користувачами в Firebase Realtime Database.
+
+    Забезпечує пошук та збереження профілів у вузлі <code>users</code>.
+  example: []
   syntax:
     content: >-
       [ExcludeFromCodeCoverage]
@@ -66,21 +71,28 @@ items:
   source:
     remote:
       path: NewBalanceStore.Infrastructure/Repositories/FirebaseUserRepository.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: .ctor
     path: NewBalanceStore.Infrastructure/Repositories/FirebaseUserRepository.cs
-    startLine: 16
+    startLine: 25
   assemblies:
   - NewBalanceStore.Infrastructure
   namespace: NewBalanceStore.Infrastructure.Repositories
+  summary: Ініціалізує репозиторій користувачів, зчитуючи адресу бази даних із конфігурації.
+  example: []
   syntax:
     content: public FirebaseUserRepository(IConfiguration config)
     parameters:
     - id: config
       type: Microsoft.Extensions.Configuration.IConfiguration
+      description: Конфігурація застосунку.
     content.vb: Public Sub New(config As IConfiguration)
   overload: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.#ctor*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: Якщо параметр Firebase:DatabaseUrl не налаштовано.
   nameWithType.vb: FirebaseUserRepository.New(IConfiguration)
   fullName.vb: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.New(Microsoft.Extensions.Configuration.IConfiguration)
   name.vb: New(IConfiguration)
@@ -98,22 +110,25 @@ items:
   source:
     remote:
       path: NewBalanceStore.Infrastructure/Repositories/FirebaseUserRepository.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetByEmailAsync
     path: NewBalanceStore.Infrastructure/Repositories/FirebaseUserRepository.cs
-    startLine: 24
+    startLine: 38
   assemblies:
   - NewBalanceStore.Infrastructure
   namespace: NewBalanceStore.Infrastructure.Repositories
+  summary: Знаходить користувача за адресою електронної пошти (без урахування регістру символів).
   example: []
   syntax:
     content: public Task<User?> GetByEmailAsync(string email)
     parameters:
     - id: email
       type: System.String
+      description: Email адреса шуканого акаунта.
     return:
       type: System.Threading.Tasks.Task{NewBalanceStore.Domain.Entities.User}
+      description: Екземпляр <xref href="NewBalanceStore.Domain.Entities.User" data-throw-if-not-resolved="false"></xref> або <code>null</code>, якщо запис відсутній.
     content.vb: Public Function GetByEmailAsync(email As String) As Task(Of User)
   overload: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.GetByEmailAsync*
   implements:
@@ -135,20 +150,22 @@ items:
   source:
     remote:
       path: NewBalanceStore.Infrastructure/Repositories/FirebaseUserRepository.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: CreateAsync
     path: NewBalanceStore.Infrastructure/Repositories/FirebaseUserRepository.cs
-    startLine: 30
+    startLine: 48
   assemblies:
   - NewBalanceStore.Infrastructure
   namespace: NewBalanceStore.Infrastructure.Repositories
+  summary: Створює новий запис користувача. Якщо ID користувача порожній, генерує новий GUID.
   example: []
   syntax:
     content: public Task CreateAsync(User user)
     parameters:
     - id: user
       type: NewBalanceStore.Domain.Entities.User
+      description: Об'єкт користувача з хешованим паролем.
     return:
       type: System.Threading.Tasks.Task
     content.vb: Public Function CreateAsync(user As User) As Task
@@ -169,19 +186,21 @@ items:
   source:
     remote:
       path: NewBalanceStore.Infrastructure/Repositories/FirebaseUserRepository.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetAllAsync
     path: NewBalanceStore.Infrastructure/Repositories/FirebaseUserRepository.cs
-    startLine: 42
+    startLine: 64
   assemblies:
   - NewBalanceStore.Infrastructure
   namespace: NewBalanceStore.Infrastructure.Repositories
+  summary: Отримує всіх користувачів із бази даних.
   example: []
   syntax:
     content: public Task<IEnumerable<User>> GetAllAsync()
     return:
       type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{NewBalanceStore.Domain.Entities.User}}
+      description: Список доменних сутностей <xref href="NewBalanceStore.Domain.Entities.User" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public Function GetAllAsync() As Task(Of IEnumerable(Of User))
   overload: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.GetAllAsync*
   implements:
@@ -477,6 +496,13 @@ references:
   - name: .
   - uid: NewBalanceStore.Domain.Interfaces
     name: Interfaces
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.invalidoperationexception
+  name: InvalidOperationException
+  nameWithType: InvalidOperationException
+  fullName: System.InvalidOperationException
 - uid: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.#ctor*
   commentId: Overload:NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.#ctor
   href: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.html#NewBalanceStore_Infrastructure_Repositories_FirebaseUserRepository__ctor_Microsoft_Extensions_Configuration_IConfiguration_
@@ -531,6 +557,13 @@ references:
     name: Configuration
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration
+- uid: NewBalanceStore.Domain.Entities.User
+  commentId: T:NewBalanceStore.Domain.Entities.User
+  parent: NewBalanceStore.Domain.Entities
+  href: NewBalanceStore.Domain.Entities.User.html
+  name: User
+  nameWithType: User
+  fullName: NewBalanceStore.Domain.Entities.User
 - uid: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.GetByEmailAsync*
   commentId: Overload:NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.GetByEmailAsync
   href: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.html#NewBalanceStore_Infrastructure_Repositories_FirebaseUserRepository_GetByEmailAsync_System_String_
@@ -610,6 +643,29 @@ references:
     name: User
     href: NewBalanceStore.Domain.Entities.User.html
   - name: )
+- uid: NewBalanceStore.Domain.Entities
+  commentId: N:NewBalanceStore.Domain.Entities
+  name: NewBalanceStore.Domain.Entities
+  nameWithType: NewBalanceStore.Domain.Entities
+  fullName: NewBalanceStore.Domain.Entities
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Entities
+    name: Entities
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Entities
+    name: Entities
 - uid: System.Threading.Tasks.Task`1
   commentId: T:System.Threading.Tasks.Task`1
   isExternal: true
@@ -701,13 +757,6 @@ references:
   - uid: NewBalanceStore.Domain.Entities.User
     name: User
   - name: )
-- uid: NewBalanceStore.Domain.Entities.User
-  commentId: T:NewBalanceStore.Domain.Entities.User
-  parent: NewBalanceStore.Domain.Entities
-  href: NewBalanceStore.Domain.Entities.User.html
-  name: User
-  nameWithType: User
-  fullName: NewBalanceStore.Domain.Entities.User
 - uid: System.Threading.Tasks.Task
   commentId: T:System.Threading.Tasks.Task
   parent: System.Threading.Tasks
@@ -716,29 +765,6 @@ references:
   name: Task
   nameWithType: Task
   fullName: System.Threading.Tasks.Task
-- uid: NewBalanceStore.Domain.Entities
-  commentId: N:NewBalanceStore.Domain.Entities
-  name: NewBalanceStore.Domain.Entities
-  nameWithType: NewBalanceStore.Domain.Entities
-  fullName: NewBalanceStore.Domain.Entities
-  spec.csharp:
-  - uid: NewBalanceStore
-    name: NewBalanceStore
-  - name: .
-  - uid: NewBalanceStore.Domain
-    name: Domain
-  - name: .
-  - uid: NewBalanceStore.Domain.Entities
-    name: Entities
-  spec.vb:
-  - uid: NewBalanceStore
-    name: NewBalanceStore
-  - name: .
-  - uid: NewBalanceStore.Domain
-    name: Domain
-  - name: .
-  - uid: NewBalanceStore.Domain.Entities
-    name: Entities
 - uid: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.GetAllAsync*
   commentId: Overload:NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.GetAllAsync
   href: NewBalanceStore.Infrastructure.Repositories.FirebaseUserRepository.html#NewBalanceStore_Infrastructure_Repositories_FirebaseUserRepository_GetAllAsync

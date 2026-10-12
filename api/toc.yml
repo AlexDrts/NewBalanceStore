@@ -53,9 +53,6 @@ items:
   - uid: NewBalanceStore.Application.Interfaces.IAuthService
     name: IAuthService
     type: Interface
-  - uid: NewBalanceStore.Application.Interfaces.IProductRepository
-    name: IProductRepository
-    type: Interface
   - uid: NewBalanceStore.Application.Interfaces.IProductService
     name: IProductService
     type: Interface
@@ -241,20 +238,6 @@ items:
   items:
   - uid: NewBalanceStore.UnitTests.Tests.DtoMappingTests
     name: DtoMappingTests
-    type: Class
-- uid: NewBalanceStore.Web.Controllers
-  name: NewBalanceStore.Web.Controllers
-  type: Namespace
-  items:
-  - uid: NewBalanceStore.Web.Controllers.HomeController
-    name: HomeController
-    type: Class
-- uid: NewBalanceStore.Web.Models
-  name: NewBalanceStore.Web.Models
-  type: Namespace
-  items:
-  - uid: NewBalanceStore.Web.Models.ErrorViewModel
-    name: ErrorViewModel
     type: Class
 - uid: NewBalanceStore.WebApi.Controllers
   name: NewBalanceStore.WebApi.Controllers

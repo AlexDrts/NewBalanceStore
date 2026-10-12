@@ -18,14 +18,21 @@ items:
   source:
     remote:
       path: NewBalanceStore.Infrastructure/Services/AuthService.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: AuthService
     path: NewBalanceStore.Infrastructure/Services/AuthService.cs
-    startLine: 14
+    startLine: 19
   assemblies:
   - NewBalanceStore.Infrastructure
   namespace: NewBalanceStore.Infrastructure.Services
+  summary: >-
+    Сервіс автентифікації користувачів та генерації токенів безпеки.
+
+    Забезпечує безпечне хешування паролів за допомогою <xref href="Microsoft.AspNetCore.Identity.PasswordHasher%601" data-throw-if-not-resolved="false"></xref>
+
+    та випуск JWT токенів з claims для контролю доступу (RBAC).
+  example: []
   syntax:
     content: 'public class AuthService : IAuthService'
     content.vb: Public Class AuthService Implements IAuthService
@@ -55,21 +62,25 @@ items:
   source:
     remote:
       path: NewBalanceStore.Infrastructure/Services/AuthService.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: .ctor
     path: NewBalanceStore.Infrastructure/Services/AuthService.cs
-    startLine: 20
+    startLine: 30
   assemblies:
   - NewBalanceStore.Infrastructure
   namespace: NewBalanceStore.Infrastructure.Services
+  summary: Ініціалізує новий екземпляр сервісу <xref href="NewBalanceStore.Infrastructure.Services.AuthService" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public AuthService(IUserRepository userRepository, IConfiguration configuration)
     parameters:
     - id: userRepository
       type: NewBalanceStore.Domain.Interfaces.IUserRepository
+      description: Репозиторій користувачів.
     - id: configuration
       type: Microsoft.Extensions.Configuration.IConfiguration
+      description: Конфігурація застосунку із налаштуваннями секції JWT.
     content.vb: Public Sub New(userRepository As IUserRepository, configuration As IConfiguration)
   overload: NewBalanceStore.Infrastructure.Services.AuthService.#ctor*
   nameWithType.vb: AuthService.New(IUserRepository, IConfiguration)
@@ -89,24 +100,34 @@ items:
   source:
     remote:
       path: NewBalanceStore.Infrastructure/Services/AuthService.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: RegisterAsync
     path: NewBalanceStore.Infrastructure/Services/AuthService.cs
-    startLine: 26
+    startLine: 43
   assemblies:
   - NewBalanceStore.Infrastructure
   namespace: NewBalanceStore.Infrastructure.Services
+  summary: >-
+    Виконує реєстрацію нового покупця: перевіряє відсутність дубліката Email,
+
+    створює хеш пароля та видає валідний JWT-токен.
   example: []
   syntax:
     content: public Task<AuthResponseDto> RegisterAsync(UserRegisterDto registerDto)
     parameters:
     - id: registerDto
       type: NewBalanceStore.Application.DTOs.UserRegisterDto
+      description: Дані для реєстрації.
     return:
       type: System.Threading.Tasks.Task{NewBalanceStore.Application.DTOs.AuthResponseDto}
+      description: Відповідь із згенерованим токеном та даними створеного користувача.
     content.vb: Public Function RegisterAsync(registerDto As UserRegisterDto) As Task(Of AuthResponseDto)
   overload: NewBalanceStore.Infrastructure.Services.AuthService.RegisterAsync*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: Виникає, якщо обліковий запис із таким Email уже зареєстровано.
   implements:
   - NewBalanceStore.Application.Interfaces.IAuthService.RegisterAsync(NewBalanceStore.Application.DTOs.UserRegisterDto)
 - uid: NewBalanceStore.Infrastructure.Services.AuthService.LoginAsync(NewBalanceStore.Application.DTOs.UserLoginDto)
@@ -123,27 +144,65 @@ items:
   source:
     remote:
       path: NewBalanceStore.Infrastructure/Services/AuthService.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: LoginAsync
     path: NewBalanceStore.Infrastructure/Services/AuthService.cs
-    startLine: 61
+    startLine: 86
   assemblies:
   - NewBalanceStore.Infrastructure
   namespace: NewBalanceStore.Infrastructure.Services
+  summary: >-
+    Виконує перевірку облікових даних користувача під час входу.
+
+    Перевіряє збіг хешу пароля за допомогою криптографічного верифікатора.
   example: []
   syntax:
     content: public Task<AuthResponseDto> LoginAsync(UserLoginDto loginDto)
     parameters:
     - id: loginDto
       type: NewBalanceStore.Application.DTOs.UserLoginDto
+      description: Облікові дані (Email та відкритий пароль).
     return:
       type: System.Threading.Tasks.Task{NewBalanceStore.Application.DTOs.AuthResponseDto}
+      description: Відповідь із новим JWT-токеном сесії.
     content.vb: Public Function LoginAsync(loginDto As UserLoginDto) As Task(Of AuthResponseDto)
   overload: NewBalanceStore.Infrastructure.Services.AuthService.LoginAsync*
+  exceptions:
+  - type: System.UnauthorizedAccessException
+    commentId: T:System.UnauthorizedAccessException
+    description: Виникає при некоректному логіні або паролі.
   implements:
   - NewBalanceStore.Application.Interfaces.IAuthService.LoginAsync(NewBalanceStore.Application.DTOs.UserLoginDto)
 references:
+- uid: Microsoft.AspNetCore.Identity.PasswordHasher`1
+  commentId: T:Microsoft.AspNetCore.Identity.PasswordHasher`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.passwordhasher-1
+  name: PasswordHasher<TUser>
+  nameWithType: PasswordHasher<TUser>
+  fullName: Microsoft.AspNetCore.Identity.PasswordHasher<TUser>
+  nameWithType.vb: PasswordHasher(Of TUser)
+  fullName.vb: Microsoft.AspNetCore.Identity.PasswordHasher(Of TUser)
+  name.vb: PasswordHasher(Of TUser)
+  spec.csharp:
+  - uid: Microsoft.AspNetCore.Identity.PasswordHasher`1
+    name: PasswordHasher
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.passwordhasher-1
+  - name: <
+  - name: TUser
+  - name: '>'
+  spec.vb:
+  - uid: Microsoft.AspNetCore.Identity.PasswordHasher`1
+    name: PasswordHasher
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/microsoft.aspnetcore.identity.passwordhasher-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TUser
+  - name: )
 - uid: NewBalanceStore.Infrastructure.Services
   commentId: N:NewBalanceStore.Infrastructure.Services
   name: NewBalanceStore.Infrastructure.Services
@@ -434,6 +493,12 @@ references:
   - name: .
   - uid: NewBalanceStore.Application.Interfaces
     name: Interfaces
+- uid: NewBalanceStore.Infrastructure.Services.AuthService
+  commentId: T:NewBalanceStore.Infrastructure.Services.AuthService
+  href: NewBalanceStore.Infrastructure.Services.AuthService.html
+  name: AuthService
+  nameWithType: AuthService
+  fullName: NewBalanceStore.Infrastructure.Services.AuthService
 - uid: NewBalanceStore.Infrastructure.Services.AuthService.#ctor*
   commentId: Overload:NewBalanceStore.Infrastructure.Services.AuthService.#ctor
   href: NewBalanceStore.Infrastructure.Services.AuthService.html#NewBalanceStore_Infrastructure_Services_AuthService__ctor_NewBalanceStore_Domain_Interfaces_IUserRepository_Microsoft_Extensions_Configuration_IConfiguration_
@@ -518,6 +583,13 @@ references:
     name: Configuration
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.invalidoperationexception
+  name: InvalidOperationException
+  nameWithType: InvalidOperationException
+  fullName: System.InvalidOperationException
 - uid: NewBalanceStore.Infrastructure.Services.AuthService.RegisterAsync*
   commentId: Overload:NewBalanceStore.Infrastructure.Services.AuthService.RegisterAsync
   href: NewBalanceStore.Infrastructure.Services.AuthService.html#NewBalanceStore_Infrastructure_Services_AuthService_RegisterAsync_NewBalanceStore_Application_DTOs_UserRegisterDto_
@@ -672,6 +744,13 @@ references:
     name: Tasks
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: System.UnauthorizedAccessException
+  commentId: T:System.UnauthorizedAccessException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.unauthorizedaccessexception
+  name: UnauthorizedAccessException
+  nameWithType: UnauthorizedAccessException
+  fullName: System.UnauthorizedAccessException
 - uid: NewBalanceStore.Infrastructure.Services.AuthService.LoginAsync*
   commentId: Overload:NewBalanceStore.Infrastructure.Services.AuthService.LoginAsync
   href: NewBalanceStore.Infrastructure.Services.AuthService.html#NewBalanceStore_Infrastructure_Services_AuthService_LoginAsync_NewBalanceStore_Application_DTOs_UserLoginDto_

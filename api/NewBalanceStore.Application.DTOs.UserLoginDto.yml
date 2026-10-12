@@ -17,14 +17,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/DTOs/UserLoginDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: UserLoginDto
     path: NewBalanceStore.Domain/DTOs/UserLoginDto.cs
-    startLine: 6
+    startLine: 9
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Application.DTOs
+  summary: DTO для передачі облікових даних користувача при процедурі входу (Login).
+  example: []
   syntax:
     content: public class UserLoginDto
     content.vb: Public Class UserLoginDto
@@ -52,14 +54,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/DTOs/UserLoginDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: Email
     path: NewBalanceStore.Domain/DTOs/UserLoginDto.cs
-    startLine: 8
+    startLine: 14
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Application.DTOs
+  summary: Адреса електронної пошти (логін користувача).
+  example: []
   syntax:
     content: public string Email { get; set; }
     parameters: []
@@ -81,14 +85,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/DTOs/UserLoginDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: Password
     path: NewBalanceStore.Domain/DTOs/UserLoginDto.cs
-    startLine: 9
+    startLine: 19
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Application.DTOs
+  summary: Пароль користувача у відкритому вигляді для перевірки на сервері.
+  example: []
   syntax:
     content: public string Password { get; set; }
     parameters: []
