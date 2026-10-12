@@ -107,13 +107,21 @@
 }
 
 @media (min-width: 1921px) {
-    .label,
-    .size {
-        font-size: 14px;
+    .label {
+        font-size: 20px;
+    }
+
+    .guideLink {
+        font-size: 19px;
+    }
+
+    .grid {
+        gap: 12px;
     }
 
     .size {
-        min-height: 48px;
+        min-height: 64px;
+        font-size: 20px;
     }
 }
 
