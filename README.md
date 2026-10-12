@@ -2,7 +2,7 @@
 
 > Повнофункціональна e-commerce вебплатформа для перегляду, фільтрації та онлайн-замовлення спортивного взуття й одягу, створена на основі офіційного онлайн-магазину New Balance. Навчальний курсовий проєкт на базі сучасного стеку React, ASP.NET Core Web API та Firebase.
 
-[🌐 Live Frontend](https://balancedevs.onrender.com/) &nbsp;|&nbsp; [📚 GitHub Репозиторій](https://github.com/AlexElNX/NewBalanceStore) &nbsp;|&nbsp; [📑 Документація API (Swagger)](https://newbalancestoreback.onrender.com/swagger) &&nbsp;|&nbsp; [📄 Документація проєкту (DocFX)](https://zemnyux.github.io/NewBalanceStoreBack/index.html)
+[🌐 Live Frontend](https://balancedevs.onrender.com/) &nbsp;|&nbsp; [📚 GitHub Репозиторій](https://github.com/AlexElNX/NewBalanceStore) &nbsp;|&nbsp; [📑 Документація API (Swagger)](https://newbalancestoreback.onrender.com/swagger) &nbsp;|&nbsp; [📄 Документація проєкту (DocFX)](https://zemnyux.github.io/NewBalanceStoreBack/index.html)
 
 ---
 
@@ -16,7 +16,7 @@
 
 ## ✨ Features
 
-- 👟 **Каталог товарів із варіаціями**: відображення моделей взуття, одягу та аксесуарів із комбінаціями розмірів, кольорів та обліком кількості на складі (`quantity`/`inStock`).
+- 👟 **Каталог товарів із варіаціями**: відображення моделей взуття, одягу та аксесуарів із комбінаціями розмірів і кольорів та показом кількості (`quantity`).
 - 🔍 **Гнучка система пошуку та фільтрації**:
   - Фільтрація за категоріями (`Footwear`, `Clothing`, `Accessories`).
   - Фільтрація за статтю (`Men`, `Women`, `Unisex`).
@@ -79,7 +79,7 @@ graph TD
 
     subgraph Backend ["Backend (ASP.NET Core 10 Web API)"]
         WebApi["WebApi Layer<br/>(Controllers, JWT Auth, Swagger)"]
-        App["Application Layer<br/>(Services, DTOs, AutoMapper, Validators)"]
+        App["Application Layer<br/>(Services, DTOs, AutoMapper)"]
         Domain["Domain Layer<br/>(Entities, Enums, Repo Interfaces)"]
         Infra["Infrastructure Layer<br/>(Firebase Repo, Cloudinary, Configs)"]
         
@@ -101,7 +101,7 @@ graph TD
 
 ### Шари бекенду:
 1. **`NewBalanceStore.Domain`**: ядро системи, що не залежить від жодних зовнішніх бібліотек та баз даних. Містить бізнес-сутності (`Product`, `ProductVariant`, `Cart`, `Order`, `User`), перечислення (`ProductType`, `Gender`, `OrderStatus`, `UserRole`) та контракти репозиторіїв (`IProductRepository`, `IOrderRepository`, `IUserRepository`).
-2. **`NewBalanceStore.Application`**: реалізація бізнес-правил та сценаріїв використання. Містить сервіси (`ProductService`, `OrderService`, `AuthService`), об'єкти передачі даних (DTO), профілі мапінгу AutoMapper (`OrderMappingProfile`) та валідатори.
+2. **`NewBalanceStore.Application`**: реалізація сценаріїв використання. Містить сервіси товарів і замовлень, DTO та профіль мапінгу AutoMapper.
 3. **`NewBalanceStore.Infrastructure`**: зв'язок із зовнішніми хмарними сервісами. Містить адаптери до Firebase Realtime Database (`FirebaseProductRepository`, `FirebaseOrderRepository`, `FirebaseUserRepository`) та сервіс роботи з медіафайлами Cloudinary (`PhotoService`).
 4. **`NewBalanceStore.WebApi`**: точка входу вебсервера. REST API контролери (`AuthController`, `ProductsController`, `OrdersController`), конфігурація маршрутизації, налаштування JWT Bearer аутентифікації, CORS-політик та Swagger UI.
 
@@ -123,7 +123,7 @@ graph TD
 | **State Management** | React Context + Reducers | Управління глобальним станом кошика та автентифікації |
 | **Styles** | CSS / CSS Modules | Модульні та глобальні стилі компонентів |
 | **Backend Framework** | ASP.NET Core Web API (.NET 10) | Продуктивний серверний REST API фреймворк |
-| **Мова програмування** | C# 13 / JavaScript (ES2023) | Мови бекенду та фронтенду |
+| **Мова програмування** | C# 14 / JavaScript | Мови бекенду та фронтенду |
 | **Database** | Firebase Realtime Database | Хмарна NoSQL база даних реального часу від Google |
 | **Media Storage** | Cloudinary | Хмарний сервіс для оптимізації та збереження фотографій товарів |
 | **Authentication** | JWT (JSON Web Tokens) | Авторизація за допомогою підписаних токенів та ролей |
@@ -146,8 +146,8 @@ graph TD
    ```
 4. **Рольовий доступ (RBAC)**:
    - **Гість (Guest)**: перегляд каталогу, деталей товару, пошук, фільтрація, локальний кошик.
-   - **Покупець (Customer)**: створення замовлень, перегляд власних покупок.
-   - **Адміністратор (Admin)**: створення/редагування/видалення товарів (`[Authorize(Roles = "Admin")]`), завантаження фото в Cloudinary, керування статусами замовлень.
+   - **Покупець (Customer)**: створення замовлень.
+   - **Адміністратор (Admin)**: створення/редагування/видалення товарів (`[Authorize(Roles = "Admin")]`) і завантаження фото в Cloudinary. Маршрут зміни статусу замовлення наразі не захищений авторизацією.
 
 ---
 
@@ -199,6 +199,11 @@ graph TD
 
 ### 2. Frontend (`frontend/.env`)
 Створіть файл `.env` у каталозі `frontend/`:
+```env
+VITE_API_URL=http://localhost:5124/api
+```
+
+URL Firebase для репозиторіїв товарів і замовлень наразі задано безпосередньо в `NewBalanceStore.WebApi/Program.cs`; значення `Firebase:DatabaseUrl` у конфігурації використовується репозиторієм користувачів.
 
 ---
 
@@ -206,7 +211,7 @@ graph TD
 
 ### Попередні вимоги:
 - [.NET 10.0 SDK](https://dotnet.microsoft.com/download)
-- [Node.js (v18 або новіший)](https://nodejs.org/) & `npm`
+- [Node.js 20.19+ або 22.12+](https://nodejs.org/) & `npm`
 - [Git](https://git-scm.com/)
 
 ### Кроки для запуску проєкту локально:
@@ -223,8 +228,8 @@ graph TD
    dotnet restore
    dotnet run --project NewBalanceStore.WebApi
    ```
-   API запуститься за адресою `http://localhost:5000` (або `https://localhost:5001`).  
-   Swagger UI доступний за адресою: `http://localhost:5000/swagger`.
+   API запуститься за адресою `http://localhost:5124` (або `https://localhost:7124`).
+   Swagger UI доступний за адресою: `http://localhost:5124/swagger`.
 
 3. **Запуск Frontend**:
    ```bash
@@ -255,41 +260,25 @@ npm run build
 ```bash
 docfx docfx.json
 ```
-Згенерована документація зберігається в папці `docs/`.
+Згенерована документація зберігається в папці `_site/`.
 
 ---
 
 ## 🌐 Deployment
 
 - **Backend**: **Render**.
-- **Frontend**: **Vercel**.
+- **Frontend**: див. посилання на розгорнутий застосунок на початку README.
 - **Database & Storage**: Google Firebase Realtime Database та Cloudinary керуються у хмарі та доступні за надійними API-ключами.
-
----
-
-## 📸 Screenshots
-
-| Головна сторінка | Каталог та фільтри |
-|:---:|:---:|
-| *(Головний банер, новинки та промо-колекції)* | *(Фільтрація за розміром, статтю та ціною)* |
-
-| Сторінка товару | Кошик та оформлення |
-|:---:|:---:|
-| *(Вибір кольору, розміру, галерея фото)* | *(Шторка кошика та введення даних доставки)* |
-
-| Swagger REST API | Панель адміністратора |
-|:---:|:---:|
-| *(Інтерактивна документація ендпоінтів)* | *(Керування товарами та статусами замовлень)* |
 
 ---
 
 ## 🧪 Testing
 
-Проєкт містить повне покриття ключової бізнес-логіки юніт- та інтеграційними тестами:
+Проєкт містить модульні та інтеграційні тести для вибраних сценаріїв:
 
 ### 1. Бекенд-тести
-- **Unit Tests (`NewBalanceStore.UnitTests`)**: 51 тест (покриття `ProductService`, `OrderService`, `AuthService`, `Cart`, мапінгу AutoMapper та екшенів контролерів).
-- **Integration Tests (`NewBalanceStore.IntegrationTests`)**: 10 тестів на базі `WebApplicationFactory` для перевірки реальних HTTP-запитів до API (авторизація, товари, замовлення).
+- **Unit Tests (`NewBalanceStore.UnitTests`)**: тести для `ProductService`, `OrderService`, `AuthService`, `Cart`, мапінгу AutoMapper та екшенів контролерів.
+- **Integration Tests (`NewBalanceStore.IntegrationTests`)**: тести на базі `WebApplicationFactory` для HTTP-сценаріїв автентифікації, товарів і замовлень.
 
 **Запуск усіх тестів бекенду:**
 ```bash
@@ -311,8 +300,8 @@ npm run test:run
 
 - **Захист від несанкціонованого доступу**: реалізовано атрибути `[Authorize(Roles = "Admin")]` на критичних ендпоінтах мутації даних (створення/редагування/видалення товарів).
 - **Валідація JWT**: сувора перевірка терміну дії токена, підпису секретним ключем, валідація видавця (`Issuer`) та споживача (`Audience`).
-- **Захист секретів**: API-ключі Cloudinary, JWT-секрети та параметри доступу до Firebase виносяться у конфігураційні змінні оточення та не фіксуються у відкритому репозиторії.
-- **CORS політика**: налаштовано політику `AllowReactApp` для безпечної міждоменної взаємодії API та вебклієнта.
+- **Захист секретів**: використовуйте .NET User Secrets або змінні середовища для JWT-секрету й облікових даних Cloudinary; не додавайте реальні секрети до репозиторію.
+- **CORS**: політика `AllowReactApp` наразі дозволяє будь-яке походження, заголовки й методи; обмежте її перед розгортанням у production.
 
 ---
 
@@ -330,9 +319,9 @@ npm run test:run
 | `PUT` | `/api/products/{id}` | `Admin` | Оновлення існуючого товару |
 | `DELETE`| `/api/products/{id}` | `Admin` | Видалення товару за ID |
 | `POST` | `/api/products/upload-image` | `Admin` | Завантаження зображення товару до Cloudinary |
-| `POST` | `/api/orders` | Customer / Guest | Оформлення нового замовлення |
-| `GET` | `/api/orders/{id}` | Customer / Admin | Отримання замовлення за ID |
-| `PATCH`| `/api/orders/{id}/status` | `Admin` | Зміна статусу замовлення (`Shipped`, `Delivered` тощо) |
+| `POST` | `/api/orders` | Public | Оформлення нового замовлення |
+| `GET` | `/api/orders/{id}` | Public | Отримання замовлення за ID |
+| `PATCH`| `/api/orders/{id}/status` | Public | Зміна статусу замовлення (`Shipped`, `Delivered` тощо) |
 
 *Детальна інтерактивна специфікація доступна у Swagger UI за маршрутом `/swagger`.*
 

@@ -11,7 +11,7 @@
 | Компонент | Мінімальна версія | Призначення |
 | :--- | :--- | :--- |
 | **.NET SDK** | `10.0` (або новіший) | Компіляція та запуск C# бекенду |
-| **Node.js** | `18.x` / `20.x` LTS | Середовище виконання для збірки фронтенду |
+| **Node.js** | `20.19+` або `22.12+` | Середовище виконання для збірки фронтенду |
 | **npm** | `9.x`+ | Пакетний менеджер Node |
 | **Git** | `2.30`+ | Система контролю версій |
 | **Docker** *(опціонально)* | `24.x`+ | Запуск бекенду в ізольованому контейнері |
@@ -38,13 +38,14 @@ cd NewBalanceStore
 ```bash
 cd NewBalanceStore.WebApi
 dotnet user-secrets init
-dotnet user-secrets set "Firebase:DatabaseUrl" "https://<your-project>.firebasedatabase.app/"
 dotnet user-secrets set "Jwt:Secret" "YourStrongSecretKeyWithAtLeast32CharsLength!"
 dotnet user-secrets set "CloudinarySettings:CloudName" "<your-cloud-name>"
 dotnet user-secrets set "CloudinarySettings:ApiKey" "<your-api-key>"
 dotnet user-secrets set "CloudinarySettings:ApiSecret" "<your-api-secret>"
 cd ..
 ```
+
+`Firebase:DatabaseUrl` використовується репозиторієм користувачів. Натомість клієнти товарів і замовлень створюються з URL, заданим безпосередньо в `NewBalanceStore.WebApi/Program.cs`; зміна User Secrets не оновить URL цих клієнтів.
 
 Структура `appsettings.json`:
 ```json
@@ -57,11 +58,11 @@ cd ..
   },
   "AllowedHosts": "*",
   "Firebase": {
-    "DatabaseUrl": "https://newbalancestore-bc142-default-rtdb.europe-west1.firebasedatabase.app/",
-    "ProjectId": "newbalancestore-bc142"
+    "DatabaseUrl": "https://<your-project>.firebasedatabase.app/",
+    "ProjectId": "<your-project-id>"
   },
   "Jwt": {
-    "Secret": "SuperSecretKeyForNewBalanceStoreApi2026SecureKey!",
+    "Secret": "<your-secret-key-at-least-32-characters>",
     "Issuer": "NewBalanceStoreBackend",
     "Audience": "NewBalanceStoreFrontend",
     "ExpiryInMinutes": 60
@@ -78,7 +79,7 @@ cd ..
 
 У каталозі `frontend/` створіть файл `.env`:
 ```env
-VITE_API_URL=http://localhost:5000/api
+VITE_API_URL=http://localhost:5124/api
 ```
 
 ---
@@ -95,8 +96,8 @@ dotnet restore
 dotnet run --project NewBalanceStore.WebApi
 ```
 
-- **API Endpoint**: `http://localhost:5000` (або `https://localhost:5001`)
-- **Інтерактивна документація Swagger**: `http://localhost:5000/swagger`
+- **API Endpoint**: `http://localhost:5124` (або `https://localhost:7124`)
+- **Інтерактивна документація Swagger**: `http://localhost:5124/swagger`
 
 ### 4.2. Запуск Frontend (React SPA)
 
@@ -178,7 +179,7 @@ docfx docfx.json
 docfx docfx.json --serve
 ```
 
-Сайт документації доступний за адресою `http://localhost:8080` (або вказаному порту DocFX).
+DocFX створює сайт у каталозі `_site/`; `docfx docfx.json --serve` запускає локальний попередній перегляд.
 
 ---
 

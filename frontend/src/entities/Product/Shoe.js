@@ -21,4 +21,3 @@ export class Shoe extends Product {
         return true;
     }
 }
-}

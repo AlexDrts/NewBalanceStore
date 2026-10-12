@@ -20,4 +20,3 @@ export class Clothing extends Product {
         return true;
     }
 }
-}

@@ -26,4 +26,3 @@ export function createProduct(data) {
             return new Product(data);
     }
 }
-}

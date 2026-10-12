@@ -15,7 +15,7 @@ namespace NewBalanceStore.Application.DTOs
         public string CustomerName { get; set; } = string.Empty;
 
         /// <summary>
-        /// Електронна пошта замовника для надсилання підтвердження.
+        /// Електронна адреса покупця для зв'язку щодо замовлення.
         /// </summary>
         public string CustomerEmail { get; set; } = string.Empty;
 

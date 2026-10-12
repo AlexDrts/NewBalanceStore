@@ -20,4 +20,3 @@ export class Accessory extends Product {
         return true;
     }
 }
-}

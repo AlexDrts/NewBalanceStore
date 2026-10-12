@@ -19,4 +19,3 @@ export class ProductVariant {
         this.quantity = data.quantity;
     }
 }
-}

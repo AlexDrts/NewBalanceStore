@@ -1,7 +1,7 @@
 namespace NewBalanceStore.Application.DTOs;
 
 /// <summary>
-/// DTO з критеріями фільтрації, пошуку та пагінації для вибірки товарів з каталогу.
+/// DTO з параметрами пошуку, фільтрації та сортування товарів каталогу.
 /// </summary>
 public class ProductFilterDto
 {
@@ -26,7 +26,7 @@ public class ProductFilterDto
     public string? Category { get; set; }
 
     /// <summary>
-    /// Прапорець для підвищеного пріоритету або промо-вибірки (опціонально).
+    /// Зарезервований прапорець промо-вибірки; наразі сервісом фільтрації не використовується.
     /// </summary>
     public bool? IsBoosted { get; set; }
 
@@ -36,12 +36,12 @@ public class ProductFilterDto
     public string? SortBy { get; set; }
 
     /// <summary>
-    /// Номер сторінки для пагінації результатів (за замовчуванням 1).
+    /// Зарезервований номер сторінки; наразі сервісом фільтрації не використовується.
     /// </summary>
     public int PageNumber { get; set; } = 1;
 
     /// <summary>
-    /// Кількість елементів на одній сторінці (за замовчуванням 10).
+    /// Зарезервована кількість елементів на сторінці; наразі сервісом фільтрації не використовується.
     /// </summary>
     public int PageSize { get; set; } = 10;
 }

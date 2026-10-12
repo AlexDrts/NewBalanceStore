@@ -81,8 +81,6 @@
   - `MinPrice` (decimal) — нижня межа ціни.
   - `MaxPrice` (decimal) — верхня межа ціни.
   - `SortBy` (string) — "price_asc", "price_desc", "name".
-  - `PageNumber` (int, default: 1) — номер сторінки.
-  - `PageSize` (int, default: 10) — кількість товарів на сторінку.
 
 - **Відповідь (`200 OK`)**:
 ```json
@@ -136,6 +134,7 @@
 - **Метод**: `DELETE /api/Products/{id}`
 - **Доступ**: `[Authorize(Roles = "Admin")]`
 - **Відповідь (`204 No Content`)**.
+- **Відповідь (`404 Not Found`)**: товар із таким ID не знайдено.
 
 ### 3.6. Завантаження фотографії товару
 - **Метод**: `POST /api/Products/upload-image`
@@ -198,15 +197,14 @@
 
 ### 4.2. Отримання замовлення за ID
 - **Метод**: `GET /api/Orders/{id}`
-- **Доступ**: Customer / Admin
+- **Доступ**: Public (у поточному контролері авторизація не вимагається).
 - **Відповідь (`200 OK`)**: об'єкт `OrderDto`.
 
 ### 4.3. Оновлення статусу замовлення
 - **Метод**: `PATCH /api/Orders/{id}/status`
-- **Доступ**: `Admin` / Система
+- **Доступ**: Public (у поточному контролері авторизація не вимагається).
 - **Тіло запиту** (string у JSON):
 ```json
 "Shipped"
 ```
 - **Відповідь (`204 No Content`)**.
-
