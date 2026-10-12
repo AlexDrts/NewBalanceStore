@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from 'react-dom';
 import { useCart } from "../../context/useCart.js";
+import BagDrawer from "../BagDrawer/BagDrawer.jsx";
 
 function MainHeader({
                         theme = "dark",
@@ -10,6 +11,7 @@ function MainHeader({
                         autoHide = true
                     }) {
     const headerRef = useRef(null);
+    const cartLinkRef = useRef(null);
     const { cart } = useCart();
     const cartCount = cart.getProductCount();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -418,7 +420,7 @@ function MainHeader({
                         <img className="account-icon" src="../src/assets/icons/header/account-icon.svg" alt="Account"/>
                     </Link>
 
-                    <Link to={"/cart"} className="cart-link" onClick={closeMobileMenu}>
+                    <Link ref={cartLinkRef} to={"/cart"} className="cart-link" onClick={closeMobileMenu}>
                         <img className="bag-icon" src="../src/assets/icons/header/bag-icon.svg" alt="Cart"/>
                         {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
                     </Link>
@@ -691,6 +693,8 @@ function MainHeader({
                 )}
 
             </header>
+
+            <BagDrawer triggerRef={cartLinkRef} />
         </>
     );
 }

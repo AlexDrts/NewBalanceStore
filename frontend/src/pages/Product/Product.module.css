@@ -268,19 +268,20 @@
 
 @media (min-width: 1921px) {
     .page {
-        --info-width: 480px;
+        --info-width: 600px;
         --column-gap: 64px;
         max-width: 1880px;
         --gutter: 48px;
         --shift: 140px;
     }
 
-    .breadcrumbs { font-size: 16px; }
-    .crumbNote { font-size: 14px; }
-    .name { font-size: 32px; }
-    .price { font-size: 22px; }
-    .selection, .payments { font-size: 14px; }
-    .addToBag, .primaryButton { height: 56px; font-size: 17px; }
+    .breadcrumbs { font-size: 18px; }
+    .crumbNote { font-size: 16px; }
+    .name { font-size: 50px; }
+    .price { font-size: 28px; }
+    .discount { font-size: 16px; }
+    .selection, .payments { font-size: 18px; }
+    .addToBag, .primaryButton { height: 78px; font-size: 21px; }
 }
 
 @media (min-width: 2560px) {
