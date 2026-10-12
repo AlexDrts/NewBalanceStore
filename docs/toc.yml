@@ -2,3 +2,13 @@
   href: introduction.md
 - name: Getting Started
   href: getting-started.md
+- name: Architecture
+  href: architecture.md
+- name: API Reference
+  href: api.md
+- name: Database
+  href: database.md
+- name: UML Diagrams
+  href: uml.md
+- name: Requirements (SRS)
+  href: src.md

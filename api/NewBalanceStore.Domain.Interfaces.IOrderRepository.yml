@@ -19,14 +19,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/Interfaces/IOrderRepository.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: IOrderRepository
     path: NewBalanceStore.Domain/Interfaces/IOrderRepository.cs
-    startLine: 4
+    startLine: 7
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Interfaces
+  summary: Контракт репозиторію для збереження та управління замовленнями клієнтів.
+  example: []
   syntax:
     content: public interface IOrderRepository
     content.vb: Public Interface IOrderRepository
@@ -46,21 +48,25 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/Interfaces/IOrderRepository.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetByIdAsync
     path: NewBalanceStore.Domain/Interfaces/IOrderRepository.cs
-    startLine: 6
+    startLine: 14
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Interfaces
+  summary: Отримує замовлення за його числовим ідентифікатором.
+  example: []
   syntax:
     content: Task<Order?> GetByIdAsync(int id)
     parameters:
     - id: id
       type: System.Int32
+      description: Числовий ідентифікатор замовлення.
     return:
       type: System.Threading.Tasks.Task{NewBalanceStore.Domain.Entities.Order}
+      description: Знайдений об'єкт <xref href="NewBalanceStore.Domain.Entities.Order" data-throw-if-not-resolved="false"></xref> або <code>null</code>.
     content.vb: Function GetByIdAsync(id As Integer) As Task(Of Order)
   overload: NewBalanceStore.Domain.Interfaces.IOrderRepository.GetByIdAsync*
   nameWithType.vb: IOrderRepository.GetByIdAsync(Integer)
@@ -80,18 +86,21 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/Interfaces/IOrderRepository.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetAllAsync
     path: NewBalanceStore.Domain/Interfaces/IOrderRepository.cs
-    startLine: 7
+    startLine: 20
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Interfaces
+  summary: Отримує перелік усіх замовлень у системі (для перегляду адміністрацією).
+  example: []
   syntax:
     content: Task<IEnumerable<Order>> GetAllAsync()
     return:
       type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{NewBalanceStore.Domain.Entities.Order}}
+      description: Колекція замовлень <xref href="NewBalanceStore.Domain.Entities.Order" data-throw-if-not-resolved="false"></xref>.
     content.vb: Function GetAllAsync() As Task(Of IEnumerable(Of Order))
   overload: NewBalanceStore.Domain.Interfaces.IOrderRepository.GetAllAsync*
 - uid: NewBalanceStore.Domain.Interfaces.IOrderRepository.CreateAsync(NewBalanceStore.Domain.Entities.Order)
@@ -108,19 +117,22 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/Interfaces/IOrderRepository.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: CreateAsync
     path: NewBalanceStore.Domain/Interfaces/IOrderRepository.cs
-    startLine: 8
+    startLine: 26
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Interfaces
+  summary: Створює нове замовлення у сховищі даних.
+  example: []
   syntax:
     content: Task CreateAsync(Order order)
     parameters:
     - id: order
       type: NewBalanceStore.Domain.Entities.Order
+      description: Об'єкт замовлення з переліком замовлених товарів.
     return:
       type: System.Threading.Tasks.Task
     content.vb: Function CreateAsync(order As Order) As Task
@@ -139,21 +151,25 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/Interfaces/IOrderRepository.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: UpdateStatusAsync
     path: NewBalanceStore.Domain/Interfaces/IOrderRepository.cs
-    startLine: 9
+    startLine: 33
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Interfaces
+  summary: Оновлює поточний статус виконання замовлення за його ID.
+  example: []
   syntax:
     content: Task UpdateStatusAsync(int id, string status)
     parameters:
     - id: id
       type: System.Int32
+      description: Ідентифікатор замовлення.
     - id: status
       type: System.String
+      description: Новий текстовий статус (наприклад, "Processing", "Shipped").
     return:
       type: System.Threading.Tasks.Task
     content.vb: Function UpdateStatusAsync(id As Integer, status As String) As Task
@@ -185,6 +201,13 @@ references:
   - name: .
   - uid: NewBalanceStore.Domain.Interfaces
     name: Interfaces
+- uid: NewBalanceStore.Domain.Entities.Order
+  commentId: T:NewBalanceStore.Domain.Entities.Order
+  parent: NewBalanceStore.Domain.Entities
+  href: NewBalanceStore.Domain.Entities.Order.html
+  name: Order
+  nameWithType: Order
+  fullName: NewBalanceStore.Domain.Entities.Order
 - uid: NewBalanceStore.Domain.Interfaces.IOrderRepository.GetByIdAsync*
   commentId: Overload:NewBalanceStore.Domain.Interfaces.IOrderRepository.GetByIdAsync
   href: NewBalanceStore.Domain.Interfaces.IOrderRepository.html#NewBalanceStore_Domain_Interfaces_IOrderRepository_GetByIdAsync_System_Int32_
@@ -235,6 +258,29 @@ references:
     name: Order
     href: NewBalanceStore.Domain.Entities.Order.html
   - name: )
+- uid: NewBalanceStore.Domain.Entities
+  commentId: N:NewBalanceStore.Domain.Entities
+  name: NewBalanceStore.Domain.Entities
+  nameWithType: NewBalanceStore.Domain.Entities
+  fullName: NewBalanceStore.Domain.Entities
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Entities
+    name: Entities
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Entities
+    name: Entities
 - uid: System
   commentId: N:System
   isExternal: true
@@ -366,13 +412,6 @@ references:
   name: CreateAsync
   nameWithType: IOrderRepository.CreateAsync
   fullName: NewBalanceStore.Domain.Interfaces.IOrderRepository.CreateAsync
-- uid: NewBalanceStore.Domain.Entities.Order
-  commentId: T:NewBalanceStore.Domain.Entities.Order
-  parent: NewBalanceStore.Domain.Entities
-  href: NewBalanceStore.Domain.Entities.Order.html
-  name: Order
-  nameWithType: Order
-  fullName: NewBalanceStore.Domain.Entities.Order
 - uid: System.Threading.Tasks.Task
   commentId: T:System.Threading.Tasks.Task
   parent: System.Threading.Tasks
@@ -381,29 +420,6 @@ references:
   name: Task
   nameWithType: Task
   fullName: System.Threading.Tasks.Task
-- uid: NewBalanceStore.Domain.Entities
-  commentId: N:NewBalanceStore.Domain.Entities
-  name: NewBalanceStore.Domain.Entities
-  nameWithType: NewBalanceStore.Domain.Entities
-  fullName: NewBalanceStore.Domain.Entities
-  spec.csharp:
-  - uid: NewBalanceStore
-    name: NewBalanceStore
-  - name: .
-  - uid: NewBalanceStore.Domain
-    name: Domain
-  - name: .
-  - uid: NewBalanceStore.Domain.Entities
-    name: Entities
-  spec.vb:
-  - uid: NewBalanceStore
-    name: NewBalanceStore
-  - name: .
-  - uid: NewBalanceStore.Domain
-    name: Domain
-  - name: .
-  - uid: NewBalanceStore.Domain.Entities
-    name: Entities
 - uid: NewBalanceStore.Domain.Interfaces.IOrderRepository.UpdateStatusAsync*
   commentId: Overload:NewBalanceStore.Domain.Interfaces.IOrderRepository.UpdateStatusAsync
   href: NewBalanceStore.Domain.Interfaces.IOrderRepository.html#NewBalanceStore_Domain_Interfaces_IOrderRepository_UpdateStatusAsync_System_Int32_System_String_

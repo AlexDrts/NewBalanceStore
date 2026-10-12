@@ -18,14 +18,19 @@ items:
   source:
     remote:
       path: NewBalanceStore.WebApi/Controllers/AuthController.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: AuthController
     path: NewBalanceStore.WebApi/Controllers/AuthController.cs
-    startLine: 6
+    startLine: 10
   assemblies:
   - NewBalanceStore.WebApi
   namespace: NewBalanceStore.WebApi.Controllers
+  summary: >-
+    Контролер автентифікації та реєстрації облікових записів користувачів.
+
+    Забезпечує отримання токенів авторизації для доступу до захищених операцій API.
+  example: []
   syntax:
     content: >-
       [ApiController]
@@ -248,19 +253,22 @@ items:
   source:
     remote:
       path: NewBalanceStore.WebApi/Controllers/AuthController.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: .ctor
     path: NewBalanceStore.WebApi/Controllers/AuthController.cs
-    startLine: 12
+    startLine: 20
   assemblies:
   - NewBalanceStore.WebApi
   namespace: NewBalanceStore.WebApi.Controllers
+  summary: Ініціалізує новий екземпляр контролера <xref href="NewBalanceStore.WebApi.Controllers.AuthController" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public AuthController(IAuthService authService)
     parameters:
     - id: authService
       type: NewBalanceStore.Application.Interfaces.IAuthService
+      description: Сервіс автентифікації користувачів.
     content.vb: Public Sub New(authService As IAuthService)
   overload: NewBalanceStore.WebApi.Controllers.AuthController.#ctor*
   nameWithType.vb: AuthController.New(IAuthService)
@@ -280,30 +288,42 @@ items:
   source:
     remote:
       path: NewBalanceStore.WebApi/Controllers/AuthController.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: Register
     path: NewBalanceStore.WebApi/Controllers/AuthController.cs
-    startLine: 17
+    startLine: 32
   assemblies:
   - NewBalanceStore.WebApi
   namespace: NewBalanceStore.WebApi.Controllers
+  summary: Реєстрація нового користувача в системі.
+  example: []
   syntax:
     content: >-
       [HttpPost("register")]
+
+      [ProducesResponseType(typeof(AuthResponseDto), 200)]
+
+      [ProducesResponseType(400)]
 
       public Task<IActionResult> Register(UserRegisterDto registerDto)
     parameters:
     - id: registerDto
       type: NewBalanceStore.Application.DTOs.UserRegisterDto
+      description: Об'єкт із реєстраційними даними (Email, пароль, повне ім'я).
       attributes:
       - type: Microsoft.AspNetCore.Mvc.FromBodyAttribute
         ctor: Microsoft.AspNetCore.Mvc.FromBodyAttribute.#ctor
         arguments: []
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
+      description: Відповідь із даними створеного профілю та JWT-токеном.
     content.vb: >-
       <HttpPost("register")>
+
+      <ProducesResponseType(GetType(AuthResponseDto), 200)>
+
+      <ProducesResponseType(400)>
 
       Public Function Register(registerDto As UserRegisterDto) As Task(Of IActionResult)
   overload: NewBalanceStore.WebApi.Controllers.AuthController.Register*
@@ -313,6 +333,18 @@ items:
     arguments:
     - type: System.String
       value: register
+  - type: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute
+    ctor: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute.#ctor(System.Type,System.Int32)
+    arguments:
+    - type: System.Type
+      value: NewBalanceStore.Application.DTOs.AuthResponseDto
+    - type: System.Int32
+      value: 200
+  - type: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute
+    ctor: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 400
 - uid: NewBalanceStore.WebApi.Controllers.AuthController.Login(NewBalanceStore.Application.DTOs.UserLoginDto)
   commentId: M:NewBalanceStore.WebApi.Controllers.AuthController.Login(NewBalanceStore.Application.DTOs.UserLoginDto)
   id: Login(NewBalanceStore.Application.DTOs.UserLoginDto)
@@ -327,30 +359,42 @@ items:
   source:
     remote:
       path: NewBalanceStore.WebApi/Controllers/AuthController.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: Login
     path: NewBalanceStore.WebApi/Controllers/AuthController.cs
-    startLine: 31
+    startLine: 55
   assemblies:
   - NewBalanceStore.WebApi
   namespace: NewBalanceStore.WebApi.Controllers
+  summary: Вхід користувача в систему за допомогою Email та пароля.
+  example: []
   syntax:
     content: >-
       [HttpPost("login")]
+
+      [ProducesResponseType(typeof(AuthResponseDto), 200)]
+
+      [ProducesResponseType(401)]
 
       public Task<IActionResult> Login(UserLoginDto loginDto)
     parameters:
     - id: loginDto
       type: NewBalanceStore.Application.DTOs.UserLoginDto
+      description: Облікові дані користувача.
       attributes:
       - type: Microsoft.AspNetCore.Mvc.FromBodyAttribute
         ctor: Microsoft.AspNetCore.Mvc.FromBodyAttribute.#ctor
         arguments: []
     return:
       type: System.Threading.Tasks.Task{Microsoft.AspNetCore.Mvc.IActionResult}
+      description: Відповідь із дійсним JWT-токеном сесії та роллю користувача.
     content.vb: >-
       <HttpPost("login")>
+
+      <ProducesResponseType(GetType(AuthResponseDto), 200)>
+
+      <ProducesResponseType(401)>
 
       Public Function Login(loginDto As UserLoginDto) As Task(Of IActionResult)
   overload: NewBalanceStore.WebApi.Controllers.AuthController.Login*
@@ -360,6 +404,18 @@ items:
     arguments:
     - type: System.String
       value: login
+  - type: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute
+    ctor: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute.#ctor(System.Type,System.Int32)
+    arguments:
+    - type: System.Type
+      value: NewBalanceStore.Application.DTOs.AuthResponseDto
+    - type: System.Int32
+      value: 200
+  - type: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute
+    ctor: Microsoft.AspNetCore.Mvc.ProducesResponseTypeAttribute.#ctor(System.Int32)
+    arguments:
+    - type: System.Int32
+      value: 401
 references:
 - uid: NewBalanceStore.WebApi.Controllers
   commentId: N:NewBalanceStore.WebApi.Controllers
@@ -9603,6 +9659,12 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
   - name: )
+- uid: NewBalanceStore.WebApi.Controllers.AuthController
+  commentId: T:NewBalanceStore.WebApi.Controllers.AuthController
+  href: NewBalanceStore.WebApi.Controllers.AuthController.html
+  name: AuthController
+  nameWithType: AuthController
+  fullName: NewBalanceStore.WebApi.Controllers.AuthController
 - uid: NewBalanceStore.WebApi.Controllers.AuthController.#ctor*
   commentId: Overload:NewBalanceStore.WebApi.Controllers.AuthController.#ctor
   href: NewBalanceStore.WebApi.Controllers.AuthController.html#NewBalanceStore_WebApi_Controllers_AuthController__ctor_NewBalanceStore_Application_Interfaces_IAuthService_

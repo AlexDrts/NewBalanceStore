@@ -20,14 +20,19 @@ items:
   source:
     remote:
       path: NewBalanceStore.Infrastructure/Repositories/FirebaseOrderRepository.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: FirebaseOrderRepository
     path: NewBalanceStore.Infrastructure/Repositories/FirebaseOrderRepository.cs
-    startLine: 9
+    startLine: 13
   assemblies:
   - NewBalanceStore.Infrastructure
   namespace: NewBalanceStore.Infrastructure.Repositories
+  summary: >-
+    Репозиторій для роботи з колекцією замовлень у хмарній базі даних Firebase Realtime Database.
+
+    Зберігає замовлення у вузлі <code>orders</code>.
+  example: []
   syntax:
     content: >-
       [ExcludeFromCodeCoverage]
@@ -67,19 +72,22 @@ items:
   source:
     remote:
       path: NewBalanceStore.Infrastructure/Repositories/FirebaseOrderRepository.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: .ctor
     path: NewBalanceStore.Infrastructure/Repositories/FirebaseOrderRepository.cs
-    startLine: 15
+    startLine: 23
   assemblies:
   - NewBalanceStore.Infrastructure
   namespace: NewBalanceStore.Infrastructure.Repositories
+  summary: Ініціалізує репозиторій замовлень екземпляром клієнта Firebase.
+  example: []
   syntax:
     content: public FirebaseOrderRepository(FirebaseClient firebaseClient)
     parameters:
     - id: firebaseClient
       type: Firebase.Database.FirebaseClient
+      description: Екземпляр клієнта бази даних Firebase.
     content.vb: Public Sub New(firebaseClient As FirebaseClient)
   overload: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.#ctor*
   nameWithType.vb: FirebaseOrderRepository.New(FirebaseClient)
@@ -99,20 +107,25 @@ items:
   source:
     remote:
       path: NewBalanceStore.Infrastructure/Repositories/FirebaseOrderRepository.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: CreateAsync
     path: NewBalanceStore.Infrastructure/Repositories/FirebaseOrderRepository.cs
-    startLine: 20
+    startLine: 33
   assemblies:
   - NewBalanceStore.Infrastructure
   namespace: NewBalanceStore.Infrastructure.Repositories
+  summary: >-
+    Створює новий запис замовлення в базі даних.
+
+    Якщо числовий ID не вказано, він генерується на основі системного часу UTC.
   example: []
   syntax:
     content: public Task CreateAsync(Order order)
     parameters:
     - id: order
       type: NewBalanceStore.Domain.Entities.Order
+      description: Об'єкт замовлення для збереження.
     return:
       type: System.Threading.Tasks.Task
     content.vb: Public Function CreateAsync(order As Order) As Task
@@ -133,22 +146,25 @@ items:
   source:
     remote:
       path: NewBalanceStore.Infrastructure/Repositories/FirebaseOrderRepository.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetByIdAsync
     path: NewBalanceStore.Infrastructure/Repositories/FirebaseOrderRepository.cs
-    startLine: 32
+    startLine: 51
   assemblies:
   - NewBalanceStore.Infrastructure
   namespace: NewBalanceStore.Infrastructure.Repositories
+  summary: Отримує одне замовлення з Firebase за числовим ID.
   example: []
   syntax:
     content: public Task<Order?> GetByIdAsync(int id)
     parameters:
     - id: id
       type: System.Int32
+      description: Числовий ідентифікатор замовлення.
     return:
       type: System.Threading.Tasks.Task{NewBalanceStore.Domain.Entities.Order}
+      description: Екземпляр <xref href="NewBalanceStore.Domain.Entities.Order" data-throw-if-not-resolved="false"></xref> або <code>null</code>.
     content.vb: Public Function GetByIdAsync(id As Integer) As Task(Of Order)
   overload: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.GetByIdAsync*
   implements:
@@ -170,19 +186,21 @@ items:
   source:
     remote:
       path: NewBalanceStore.Infrastructure/Repositories/FirebaseOrderRepository.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetAllAsync
     path: NewBalanceStore.Infrastructure/Repositories/FirebaseOrderRepository.cs
-    startLine: 46
+    startLine: 69
   assemblies:
   - NewBalanceStore.Infrastructure
   namespace: NewBalanceStore.Infrastructure.Repositories
+  summary: Отримує всі наявні замовлення з бази даних для аналітики та обробки менеджерами.
   example: []
   syntax:
     content: public Task<IEnumerable<Order>> GetAllAsync()
     return:
       type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{NewBalanceStore.Domain.Entities.Order}}
+      description: Колекція замовлень <xref href="NewBalanceStore.Domain.Entities.Order" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public Function GetAllAsync() As Task(Of IEnumerable(Of Order))
   overload: NewBalanceStore.Infrastructure.Repositories.FirebaseOrderRepository.GetAllAsync*
   implements:
@@ -201,22 +219,25 @@ items:
   source:
     remote:
       path: NewBalanceStore.Infrastructure/Repositories/FirebaseOrderRepository.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: UpdateStatusAsync
     path: NewBalanceStore.Infrastructure/Repositories/FirebaseOrderRepository.cs
-    startLine: 77
+    startLine: 105
   assemblies:
   - NewBalanceStore.Infrastructure
   namespace: NewBalanceStore.Infrastructure.Repositories
+  summary: Оновлює статус замовлення за його ID (наприклад, перехід із "Pending" у "Shipped").
   example: []
   syntax:
     content: public Task UpdateStatusAsync(int id, string status)
     parameters:
     - id: id
       type: System.Int32
+      description: Ідентифікатор замовлення.
     - id: status
       type: System.String
+      description: Новий текстовий статус.
     return:
       type: System.Threading.Tasks.Task
     content.vb: Public Function UpdateStatusAsync(id As Integer, status As String) As Task

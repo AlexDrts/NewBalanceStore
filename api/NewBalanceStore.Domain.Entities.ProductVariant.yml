@@ -20,15 +20,20 @@ items:
   type: Class
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/ProductVariant.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/ProductVariant.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: ProductVariant
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/ProductVariant.cs
-    startLine: 6
+    path: NewBalanceStore.Domain/Entities/ProductVariant.cs
+    startLine: 10
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: >-
+    Представляє конкретну складську варіацію товару (SKU),
+
+    що визначається певною комбінацією кольору, розміру та доступної кількості.
+  example: []
   syntax:
     content: public class ProductVariant
     content.vb: Public Class ProductVariant
@@ -42,93 +47,6 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: NewBalanceStore.Domain.Entities.ProductVariant.Color
-  commentId: P:NewBalanceStore.Domain.Entities.ProductVariant.Color
-  id: Color
-  parent: NewBalanceStore.Domain.Entities.ProductVariant
-  langs:
-  - csharp
-  - vb
-  name: Color
-  nameWithType: ProductVariant.Color
-  fullName: NewBalanceStore.Domain.Entities.ProductVariant.Color
-  type: Property
-  source:
-    remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/ProductVariant.cs
-      branch: main
-      repo: https://github.com/AlexElNX/NewBalanceStore
-    id: Color
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/ProductVariant.cs
-    startLine: 8
-  assemblies:
-  - NewBalanceStore.Domain
-  namespace: NewBalanceStore.Domain.Entities
-  syntax:
-    content: public string Color { get; set; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public Property Color As String
-  overload: NewBalanceStore.Domain.Entities.ProductVariant.Color*
-- uid: NewBalanceStore.Domain.Entities.ProductVariant.Size
-  commentId: P:NewBalanceStore.Domain.Entities.ProductVariant.Size
-  id: Size
-  parent: NewBalanceStore.Domain.Entities.ProductVariant
-  langs:
-  - csharp
-  - vb
-  name: Size
-  nameWithType: ProductVariant.Size
-  fullName: NewBalanceStore.Domain.Entities.ProductVariant.Size
-  type: Property
-  source:
-    remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/ProductVariant.cs
-      branch: main
-      repo: https://github.com/AlexElNX/NewBalanceStore
-    id: Size
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/ProductVariant.cs
-    startLine: 9
-  assemblies:
-  - NewBalanceStore.Domain
-  namespace: NewBalanceStore.Domain.Entities
-  syntax:
-    content: public string Size { get; set; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public Property Size As String
-  overload: NewBalanceStore.Domain.Entities.ProductVariant.Size*
-- uid: NewBalanceStore.Domain.Entities.ProductVariant.Quantity
-  commentId: P:NewBalanceStore.Domain.Entities.ProductVariant.Quantity
-  id: Quantity
-  parent: NewBalanceStore.Domain.Entities.ProductVariant
-  langs:
-  - csharp
-  - vb
-  name: Quantity
-  nameWithType: ProductVariant.Quantity
-  fullName: NewBalanceStore.Domain.Entities.ProductVariant.Quantity
-  type: Property
-  source:
-    remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/ProductVariant.cs
-      branch: main
-      repo: https://github.com/AlexElNX/NewBalanceStore
-    id: Quantity
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/ProductVariant.cs
-    startLine: 10
-  assemblies:
-  - NewBalanceStore.Domain
-  namespace: NewBalanceStore.Domain.Entities
-  syntax:
-    content: public int Quantity { get; set; }
-    parameters: []
-    return:
-      type: System.Int32
-    content.vb: Public Property Quantity As Integer
-  overload: NewBalanceStore.Domain.Entities.ProductVariant.Quantity*
 - uid: NewBalanceStore.Domain.Entities.ProductVariant.Id
   commentId: P:NewBalanceStore.Domain.Entities.ProductVariant.Id
   id: Id
@@ -143,14 +61,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/Entities/ProductVariant.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: Id
     path: NewBalanceStore.Domain/Entities/ProductVariant.cs
-    startLine: 8
+    startLine: 15
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Унікальний ідентифікатор варіації товару.
+  example: []
   syntax:
     content: public int Id { get; set; }
     parameters: []
@@ -172,14 +92,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/Entities/ProductVariant.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: ProductId
     path: NewBalanceStore.Domain/Entities/ProductVariant.cs
-    startLine: 10
+    startLine: 20
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Ідентифікатор батьківського товару, до якого належить ця варіація.
+  example: []
   syntax:
     content: public int ProductId { get; set; }
     parameters: []
@@ -201,14 +123,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/Entities/ProductVariant.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: Product
     path: NewBalanceStore.Domain/Entities/ProductVariant.cs
-    startLine: 11
+    startLine: 25
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Навігаційне посилання на екземпляр батьківського товару.
+  example: []
   syntax:
     content: public Product Product { get; set; }
     parameters: []
@@ -216,6 +140,99 @@ items:
       type: NewBalanceStore.Domain.Entities.Product
     content.vb: Public Property Product As Product
   overload: NewBalanceStore.Domain.Entities.ProductVariant.Product*
+- uid: NewBalanceStore.Domain.Entities.ProductVariant.Color
+  commentId: P:NewBalanceStore.Domain.Entities.ProductVariant.Color
+  id: Color
+  parent: NewBalanceStore.Domain.Entities.ProductVariant
+  langs:
+  - csharp
+  - vb
+  name: Color
+  nameWithType: ProductVariant.Color
+  fullName: NewBalanceStore.Domain.Entities.ProductVariant.Color
+  type: Property
+  source:
+    remote:
+      path: NewBalanceStore.Domain/Entities/ProductVariant.cs
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: Color
+    path: NewBalanceStore.Domain/Entities/ProductVariant.cs
+    startLine: 30
+  assemblies:
+  - NewBalanceStore.Domain
+  namespace: NewBalanceStore.Domain.Entities
+  summary: Колір варіації (наприклад, "Castlerock", "Sea Salt").
+  example: []
+  syntax:
+    content: public string Color { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Color As String
+  overload: NewBalanceStore.Domain.Entities.ProductVariant.Color*
+- uid: NewBalanceStore.Domain.Entities.ProductVariant.Size
+  commentId: P:NewBalanceStore.Domain.Entities.ProductVariant.Size
+  id: Size
+  parent: NewBalanceStore.Domain.Entities.ProductVariant
+  langs:
+  - csharp
+  - vb
+  name: Size
+  nameWithType: ProductVariant.Size
+  fullName: NewBalanceStore.Domain.Entities.ProductVariant.Size
+  type: Property
+  source:
+    remote:
+      path: NewBalanceStore.Domain/Entities/ProductVariant.cs
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: Size
+    path: NewBalanceStore.Domain/Entities/ProductVariant.cs
+    startLine: 35
+  assemblies:
+  - NewBalanceStore.Domain
+  namespace: NewBalanceStore.Domain.Entities
+  summary: Розмір виробу (наприклад, "9", "10.5" для взуття або "M", "L" для одягу).
+  example: []
+  syntax:
+    content: public string Size { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Size As String
+  overload: NewBalanceStore.Domain.Entities.ProductVariant.Size*
+- uid: NewBalanceStore.Domain.Entities.ProductVariant.Quantity
+  commentId: P:NewBalanceStore.Domain.Entities.ProductVariant.Quantity
+  id: Quantity
+  parent: NewBalanceStore.Domain.Entities.ProductVariant
+  langs:
+  - csharp
+  - vb
+  name: Quantity
+  nameWithType: ProductVariant.Quantity
+  fullName: NewBalanceStore.Domain.Entities.ProductVariant.Quantity
+  type: Property
+  source:
+    remote:
+      path: NewBalanceStore.Domain/Entities/ProductVariant.cs
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: Quantity
+    path: NewBalanceStore.Domain/Entities/ProductVariant.cs
+    startLine: 40
+  assemblies:
+  - NewBalanceStore.Domain
+  namespace: NewBalanceStore.Domain.Entities
+  summary: Залишкова кількість одиниць на складі, доступних для замовлення.
+  example: []
+  syntax:
+    content: public int Quantity { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Quantity As Integer
+  overload: NewBalanceStore.Domain.Entities.ProductVariant.Quantity*
 references:
 - uid: NewBalanceStore.Domain.Entities
   commentId: N:NewBalanceStore.Domain.Entities
@@ -477,6 +494,42 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: NewBalanceStore.Domain.Entities.ProductVariant.Id*
+  commentId: Overload:NewBalanceStore.Domain.Entities.ProductVariant.Id
+  href: NewBalanceStore.Domain.Entities.ProductVariant.html#NewBalanceStore_Domain_Entities_ProductVariant_Id
+  name: Id
+  nameWithType: ProductVariant.Id
+  fullName: NewBalanceStore.Domain.Entities.ProductVariant.Id
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: NewBalanceStore.Domain.Entities.ProductVariant.ProductId*
+  commentId: Overload:NewBalanceStore.Domain.Entities.ProductVariant.ProductId
+  href: NewBalanceStore.Domain.Entities.ProductVariant.html#NewBalanceStore_Domain_Entities_ProductVariant_ProductId
+  name: ProductId
+  nameWithType: ProductVariant.ProductId
+  fullName: NewBalanceStore.Domain.Entities.ProductVariant.ProductId
+- uid: NewBalanceStore.Domain.Entities.ProductVariant.Product*
+  commentId: Overload:NewBalanceStore.Domain.Entities.ProductVariant.Product
+  href: NewBalanceStore.Domain.Entities.ProductVariant.html#NewBalanceStore_Domain_Entities_ProductVariant_Product
+  name: Product
+  nameWithType: ProductVariant.Product
+  fullName: NewBalanceStore.Domain.Entities.ProductVariant.Product
+- uid: NewBalanceStore.Domain.Entities.Product
+  commentId: T:NewBalanceStore.Domain.Entities.Product
+  parent: NewBalanceStore.Domain.Entities
+  href: NewBalanceStore.Domain.Entities.Product.html
+  name: Product
+  nameWithType: Product
+  fullName: NewBalanceStore.Domain.Entities.Product
 - uid: NewBalanceStore.Domain.Entities.ProductVariant.Color*
   commentId: Overload:NewBalanceStore.Domain.Entities.ProductVariant.Color
   href: NewBalanceStore.Domain.Entities.ProductVariant.html#NewBalanceStore_Domain_Entities_ProductVariant_Color
@@ -506,39 +559,3 @@ references:
   name: Quantity
   nameWithType: ProductVariant.Quantity
   fullName: NewBalanceStore.Domain.Entities.ProductVariant.Quantity
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.int32
-  name: int
-  nameWithType: int
-  fullName: int
-  nameWithType.vb: Integer
-  fullName.vb: Integer
-  name.vb: Integer
-- uid: NewBalanceStore.Domain.Entities.ProductVariant.Id*
-  commentId: Overload:NewBalanceStore.Domain.Entities.ProductVariant.Id
-  href: NewBalanceStore.Domain.Entities.ProductVariant.html#NewBalanceStore_Domain_Entities_ProductVariant_Id
-  name: Id
-  nameWithType: ProductVariant.Id
-  fullName: NewBalanceStore.Domain.Entities.ProductVariant.Id
-- uid: NewBalanceStore.Domain.Entities.ProductVariant.ProductId*
-  commentId: Overload:NewBalanceStore.Domain.Entities.ProductVariant.ProductId
-  href: NewBalanceStore.Domain.Entities.ProductVariant.html#NewBalanceStore_Domain_Entities_ProductVariant_ProductId
-  name: ProductId
-  nameWithType: ProductVariant.ProductId
-  fullName: NewBalanceStore.Domain.Entities.ProductVariant.ProductId
-- uid: NewBalanceStore.Domain.Entities.ProductVariant.Product*
-  commentId: Overload:NewBalanceStore.Domain.Entities.ProductVariant.Product
-  href: NewBalanceStore.Domain.Entities.ProductVariant.html#NewBalanceStore_Domain_Entities_ProductVariant_Product
-  name: Product
-  nameWithType: ProductVariant.Product
-  fullName: NewBalanceStore.Domain.Entities.ProductVariant.Product
-- uid: NewBalanceStore.Domain.Entities.Product
-  commentId: T:NewBalanceStore.Domain.Entities.Product
-  parent: NewBalanceStore.Domain.Entities
-  href: NewBalanceStore.Domain.Entities.Product.html
-  name: Product
-  nameWithType: Product
-  fullName: NewBalanceStore.Domain.Entities.Product

@@ -17,15 +17,17 @@ items:
   type: Class
   source:
     remote:
-      path: backend/NewBalanceStore.Application/DTOs/CartDto.cs
-      branch: main
+      path: NewBalanceStore.Application/DTOs/CartDto.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: AddToCartDto
-    path: NewBalanceStore/backend/NewBalanceStore.Application/DTOs/CartDto.cs
-    startLine: 19
+    path: NewBalanceStore.Application/DTOs/CartDto.cs
+    startLine: 62
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: DTO для додавання товару до кошика.
+  example: []
   syntax:
     content: public class AddToCartDto
     content.vb: Public Class AddToCartDto
@@ -52,15 +54,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/NewBalanceStore.Application/DTOs/CartDto.cs
-      branch: main
+      path: NewBalanceStore.Application/DTOs/CartDto.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: ProductId
-    path: NewBalanceStore/backend/NewBalanceStore.Application/DTOs/CartDto.cs
-    startLine: 21
+    path: NewBalanceStore.Application/DTOs/CartDto.cs
+    startLine: 67
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Ідентифікатор товару.
+  example: []
   syntax:
     content: public string ProductId { get; set; }
     parameters: []
@@ -81,15 +85,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/NewBalanceStore.Application/DTOs/CartDto.cs
-      branch: main
+      path: NewBalanceStore.Application/DTOs/CartDto.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Size
-    path: NewBalanceStore/backend/NewBalanceStore.Application/DTOs/CartDto.cs
-    startLine: 22
+    path: NewBalanceStore.Application/DTOs/CartDto.cs
+    startLine: 72
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Обраний розмір товару.
+  example: []
   syntax:
     content: public string Size { get; set; }
     parameters: []
@@ -110,15 +116,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/NewBalanceStore.Application/DTOs/CartDto.cs
-      branch: main
+      path: NewBalanceStore.Application/DTOs/CartDto.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Quantity
-    path: NewBalanceStore/backend/NewBalanceStore.Application/DTOs/CartDto.cs
-    startLine: 23
+    path: NewBalanceStore.Application/DTOs/CartDto.cs
+    startLine: 77
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Кількість одиниць товару для додавання (за замовчуванням 1).
+  example: []
   syntax:
     content: public int Quantity { get; set; }
     parameters: []

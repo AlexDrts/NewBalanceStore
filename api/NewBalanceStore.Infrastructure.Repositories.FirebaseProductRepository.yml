@@ -20,22 +20,33 @@ items:
   type: Class
   source:
     remote:
-      path: backend/NewBalanceStore.Infrastructure/Repositories/FirebaseProductRepository.cs
-      branch: main
+      path: NewBalanceStore.Infrastructure/Repositories/FirebaseProductRepository.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: FirebaseProductRepository
-    path: NewBalanceStore/backend/NewBalanceStore.Infrastructure/Repositories/FirebaseProductRepository.cs
-    startLine: 8
+    path: NewBalanceStore.Infrastructure/Repositories/FirebaseProductRepository.cs
+    startLine: 13
   assemblies:
   - NewBalanceStore.Infrastructure
   namespace: NewBalanceStore.Infrastructure.Repositories
+  summary: >-
+    Репозиторій для роботи з колекцією товарів у хмарній базі даних Firebase Realtime Database.
+
+    Забезпечує виконання мережевих запитів CRUD над JSON-вузлом <code>products</code>.
+  example: []
   syntax:
-    content: 'public class FirebaseProductRepository : IProductRepository'
-    content.vb: Public Class FirebaseProductRepository Implements IProductRepository
+    content: >-
+      [ExcludeFromCodeCoverage]
+
+      public class FirebaseProductRepository : IProductRepository
+    content.vb: >-
+      <ExcludeFromCodeCoverage>
+
+      Public Class FirebaseProductRepository Implements IProductRepository
   inheritance:
   - System.Object
   implements:
-  - NewBalanceStore.Application.Interfaces.IProductRepository
+  - NewBalanceStore.Domain.Interfaces.IProductRepository
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -44,6 +55,10 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
+  attributes:
+  - type: System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute
+    ctor: System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute.#ctor
+    arguments: []
 - uid: NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
   commentId: M:NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.#ctor(Microsoft.Extensions.Configuration.IConfiguration)
   id: '#ctor(Microsoft.Extensions.Configuration.IConfiguration)'
@@ -57,22 +72,29 @@ items:
   type: Constructor
   source:
     remote:
-      path: backend/NewBalanceStore.Infrastructure/Repositories/FirebaseProductRepository.cs
-      branch: main
+      path: NewBalanceStore.Infrastructure/Repositories/FirebaseProductRepository.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: .ctor
-    path: NewBalanceStore/backend/NewBalanceStore.Infrastructure/Repositories/FirebaseProductRepository.cs
-    startLine: 13
+    path: NewBalanceStore.Infrastructure/Repositories/FirebaseProductRepository.cs
+    startLine: 24
   assemblies:
   - NewBalanceStore.Infrastructure
   namespace: NewBalanceStore.Infrastructure.Repositories
+  summary: Ініціалізує екземпляр репозиторію з конфігурації, створюючи підключення до Firebase за вказаним URL.
+  example: []
   syntax:
     content: public FirebaseProductRepository(IConfiguration config)
     parameters:
     - id: config
       type: Microsoft.Extensions.Configuration.IConfiguration
+      description: Конфігурація застосунку, що містить URL бази даних.
     content.vb: Public Sub New(config As IConfiguration)
   overload: NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.#ctor*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: Виникає, якщо параметр Firebase:DatabaseUrl не знайдено в налаштуваннях.
   nameWithType.vb: FirebaseProductRepository.New(IConfiguration)
   fullName.vb: NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.New(Microsoft.Extensions.Configuration.IConfiguration)
   name.vb: New(IConfiguration)
@@ -89,24 +111,29 @@ items:
   type: Method
   source:
     remote:
-      path: backend/NewBalanceStore.Infrastructure/Repositories/FirebaseProductRepository.cs
-      branch: main
+      path: NewBalanceStore.Infrastructure/Repositories/FirebaseProductRepository.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetAllAsync
-    path: NewBalanceStore/backend/NewBalanceStore.Infrastructure/Repositories/FirebaseProductRepository.cs
-    startLine: 21
+    path: NewBalanceStore.Infrastructure/Repositories/FirebaseProductRepository.cs
+    startLine: 37
   assemblies:
   - NewBalanceStore.Infrastructure
   namespace: NewBalanceStore.Infrastructure.Repositories
+  summary: >-
+    Отримує всі документи товарів з Firebase Realtime Database та перетворює їх на типізований список.
+
+    Безпечно обробляє помилки десеріалізації окремих вузлів, ігноруючи пошкоджені записи.
   example: []
   syntax:
     content: public Task<List<Product>> GetAllAsync()
     return:
       type: System.Threading.Tasks.Task{System.Collections.Generic.List{NewBalanceStore.Domain.Entities.Product}}
+      description: Список доменних моделей <xref href="NewBalanceStore.Domain.Entities.Product" data-throw-if-not-resolved="false"></xref>.
     content.vb: Public Function GetAllAsync() As Task(Of List(Of Product))
   overload: NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.GetAllAsync*
   implements:
-  - NewBalanceStore.Application.Interfaces.IProductRepository.GetAllAsync
+  - NewBalanceStore.Domain.Interfaces.IProductRepository.GetAllAsync
 - uid: NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.GetByIdAsync(System.String)
   commentId: M:NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.GetByIdAsync(System.String)
   id: GetByIdAsync(System.String)
@@ -120,27 +147,30 @@ items:
   type: Method
   source:
     remote:
-      path: backend/NewBalanceStore.Infrastructure/Repositories/FirebaseProductRepository.cs
-      branch: main
+      path: NewBalanceStore.Infrastructure/Repositories/FirebaseProductRepository.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetByIdAsync
-    path: NewBalanceStore/backend/NewBalanceStore.Infrastructure/Repositories/FirebaseProductRepository.cs
-    startLine: 53
+    path: NewBalanceStore.Infrastructure/Repositories/FirebaseProductRepository.cs
+    startLine: 73
   assemblies:
   - NewBalanceStore.Infrastructure
   namespace: NewBalanceStore.Infrastructure.Repositories
+  summary: Знаходить товар у Firebase за його ключем вузла.
   example: []
   syntax:
     content: public Task<Product?> GetByIdAsync(string id)
     parameters:
     - id: id
       type: System.String
+      description: Рядковий ідентифікатор товару.
     return:
       type: System.Threading.Tasks.Task{NewBalanceStore.Domain.Entities.Product}
+      description: Сутність <xref href="NewBalanceStore.Domain.Entities.Product" data-throw-if-not-resolved="false"></xref> або <code>null</code>, якщо запис відсутній.
     content.vb: Public Function GetByIdAsync(id As String) As Task(Of Product)
   overload: NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.GetByIdAsync*
   implements:
-  - NewBalanceStore.Application.Interfaces.IProductRepository.GetByIdAsync(System.String)
+  - NewBalanceStore.Domain.Interfaces.IProductRepository.GetByIdAsync(System.String)
   nameWithType.vb: FirebaseProductRepository.GetByIdAsync(String)
   fullName.vb: NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.GetByIdAsync(String)
   name.vb: GetByIdAsync(String)
@@ -157,27 +187,34 @@ items:
   type: Method
   source:
     remote:
-      path: backend/NewBalanceStore.Infrastructure/Repositories/FirebaseProductRepository.cs
-      branch: main
+      path: NewBalanceStore.Infrastructure/Repositories/FirebaseProductRepository.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: CreateAsync
-    path: NewBalanceStore/backend/NewBalanceStore.Infrastructure/Repositories/FirebaseProductRepository.cs
-    startLine: 68
+    path: NewBalanceStore.Infrastructure/Repositories/FirebaseProductRepository.cs
+    startLine: 93
   assemblies:
   - NewBalanceStore.Infrastructure
   namespace: NewBalanceStore.Infrastructure.Repositories
+  summary: >-
+    Зберігає новий товар у Firebase.
+
+    Якщо Id товару не встановлено (або менше або дорівнює 0), генерується псевдоунікальний
+
+    числовий ID на основі поточних тактів часу UTC (<code>DateTime.UtcNow.Ticks % int.MaxValue</code>).
   example: []
   syntax:
     content: public Task CreateAsync(Product item)
     parameters:
     - id: item
       type: NewBalanceStore.Domain.Entities.Product
+      description: Товар для додавання.
     return:
       type: System.Threading.Tasks.Task
     content.vb: Public Function CreateAsync(item As Product) As Task
   overload: NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.CreateAsync*
   implements:
-  - NewBalanceStore.Application.Interfaces.IProductRepository.CreateAsync(NewBalanceStore.Domain.Entities.Product)
+  - NewBalanceStore.Domain.Interfaces.IProductRepository.CreateAsync(NewBalanceStore.Domain.Entities.Product)
 - uid: NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.UpdateAsync(NewBalanceStore.Domain.Entities.Product)
   commentId: M:NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.UpdateAsync(NewBalanceStore.Domain.Entities.Product)
   id: UpdateAsync(NewBalanceStore.Domain.Entities.Product)
@@ -191,27 +228,29 @@ items:
   type: Method
   source:
     remote:
-      path: backend/NewBalanceStore.Infrastructure/Repositories/FirebaseProductRepository.cs
-      branch: main
+      path: NewBalanceStore.Infrastructure/Repositories/FirebaseProductRepository.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: UpdateAsync
-    path: NewBalanceStore/backend/NewBalanceStore.Infrastructure/Repositories/FirebaseProductRepository.cs
-    startLine: 81
+    path: NewBalanceStore.Infrastructure/Repositories/FirebaseProductRepository.cs
+    startLine: 110
   assemblies:
   - NewBalanceStore.Infrastructure
   namespace: NewBalanceStore.Infrastructure.Repositories
+  summary: Оновлює існуючий документ товару у Firebase за його ключем.
   example: []
   syntax:
     content: public Task UpdateAsync(Product item)
     parameters:
     - id: item
       type: NewBalanceStore.Domain.Entities.Product
+      description: Сутність товару з оновленими властивостями.
     return:
       type: System.Threading.Tasks.Task
     content.vb: Public Function UpdateAsync(item As Product) As Task
   overload: NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.UpdateAsync*
   implements:
-  - NewBalanceStore.Application.Interfaces.IProductRepository.UpdateAsync(NewBalanceStore.Domain.Entities.Product)
+  - NewBalanceStore.Domain.Interfaces.IProductRepository.UpdateAsync(NewBalanceStore.Domain.Entities.Product)
 - uid: NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.DeleteAsync(System.String)
   commentId: M:NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.DeleteAsync(System.String)
   id: DeleteAsync(System.String)
@@ -225,27 +264,29 @@ items:
   type: Method
   source:
     remote:
-      path: backend/NewBalanceStore.Infrastructure/Repositories/FirebaseProductRepository.cs
-      branch: main
+      path: NewBalanceStore.Infrastructure/Repositories/FirebaseProductRepository.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: DeleteAsync
-    path: NewBalanceStore/backend/NewBalanceStore.Infrastructure/Repositories/FirebaseProductRepository.cs
-    startLine: 89
+    path: NewBalanceStore.Infrastructure/Repositories/FirebaseProductRepository.cs
+    startLine: 121
   assemblies:
   - NewBalanceStore.Infrastructure
   namespace: NewBalanceStore.Infrastructure.Repositories
+  summary: Видаляє вузол товару з Firebase за його ідентифікатором.
   example: []
   syntax:
     content: public Task DeleteAsync(string id)
     parameters:
     - id: id
       type: System.String
+      description: Ідентифікатор товару для видалення.
     return:
       type: System.Threading.Tasks.Task
     content.vb: Public Function DeleteAsync(id As String) As Task
   overload: NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.DeleteAsync*
   implements:
-  - NewBalanceStore.Application.Interfaces.IProductRepository.DeleteAsync(System.String)
+  - NewBalanceStore.Domain.Interfaces.IProductRepository.DeleteAsync(System.String)
   nameWithType.vb: FirebaseProductRepository.DeleteAsync(String)
   fullName.vb: NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.DeleteAsync(String)
   name.vb: DeleteAsync(String)
@@ -284,13 +325,13 @@ references:
   nameWithType.vb: Object
   fullName.vb: Object
   name.vb: Object
-- uid: NewBalanceStore.Application.Interfaces.IProductRepository
-  commentId: T:NewBalanceStore.Application.Interfaces.IProductRepository
-  parent: NewBalanceStore.Application.Interfaces
-  href: NewBalanceStore.Application.Interfaces.IProductRepository.html
+- uid: NewBalanceStore.Domain.Interfaces.IProductRepository
+  commentId: T:NewBalanceStore.Domain.Interfaces.IProductRepository
+  parent: NewBalanceStore.Domain.Interfaces
+  href: NewBalanceStore.Domain.Interfaces.IProductRepository.html
   name: IProductRepository
   nameWithType: IProductRepository
-  fullName: NewBalanceStore.Application.Interfaces.IProductRepository
+  fullName: NewBalanceStore.Domain.Interfaces.IProductRepository
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -517,29 +558,36 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: NewBalanceStore.Application.Interfaces
-  commentId: N:NewBalanceStore.Application.Interfaces
-  name: NewBalanceStore.Application.Interfaces
-  nameWithType: NewBalanceStore.Application.Interfaces
-  fullName: NewBalanceStore.Application.Interfaces
+- uid: NewBalanceStore.Domain.Interfaces
+  commentId: N:NewBalanceStore.Domain.Interfaces
+  name: NewBalanceStore.Domain.Interfaces
+  nameWithType: NewBalanceStore.Domain.Interfaces
+  fullName: NewBalanceStore.Domain.Interfaces
   spec.csharp:
   - uid: NewBalanceStore
     name: NewBalanceStore
   - name: .
-  - uid: NewBalanceStore.Application
-    name: Application
+  - uid: NewBalanceStore.Domain
+    name: Domain
   - name: .
-  - uid: NewBalanceStore.Application.Interfaces
+  - uid: NewBalanceStore.Domain.Interfaces
     name: Interfaces
   spec.vb:
   - uid: NewBalanceStore
     name: NewBalanceStore
   - name: .
-  - uid: NewBalanceStore.Application
-    name: Application
+  - uid: NewBalanceStore.Domain
+    name: Domain
   - name: .
-  - uid: NewBalanceStore.Application.Interfaces
+  - uid: NewBalanceStore.Domain.Interfaces
     name: Interfaces
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.invalidoperationexception
+  name: InvalidOperationException
+  nameWithType: InvalidOperationException
+  fullName: System.InvalidOperationException
 - uid: NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.#ctor*
   commentId: Overload:NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.#ctor
   href: NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.html#NewBalanceStore_Infrastructure_Repositories_FirebaseProductRepository__ctor_Microsoft_Extensions_Configuration_IConfiguration_
@@ -594,25 +642,32 @@ references:
     name: Configuration
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.configuration
+- uid: NewBalanceStore.Domain.Entities.Product
+  commentId: T:NewBalanceStore.Domain.Entities.Product
+  parent: NewBalanceStore.Domain.Entities
+  href: NewBalanceStore.Domain.Entities.Product.html
+  name: Product
+  nameWithType: Product
+  fullName: NewBalanceStore.Domain.Entities.Product
 - uid: NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.GetAllAsync*
   commentId: Overload:NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.GetAllAsync
   href: NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.html#NewBalanceStore_Infrastructure_Repositories_FirebaseProductRepository_GetAllAsync
   name: GetAllAsync
   nameWithType: FirebaseProductRepository.GetAllAsync
   fullName: NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.GetAllAsync
-- uid: NewBalanceStore.Application.Interfaces.IProductRepository.GetAllAsync
-  commentId: M:NewBalanceStore.Application.Interfaces.IProductRepository.GetAllAsync
-  parent: NewBalanceStore.Application.Interfaces.IProductRepository
+- uid: NewBalanceStore.Domain.Interfaces.IProductRepository.GetAllAsync
+  commentId: M:NewBalanceStore.Domain.Interfaces.IProductRepository.GetAllAsync
+  parent: NewBalanceStore.Domain.Interfaces.IProductRepository
   name: GetAllAsync()
   nameWithType: IProductRepository.GetAllAsync()
-  fullName: NewBalanceStore.Application.Interfaces.IProductRepository.GetAllAsync()
+  fullName: NewBalanceStore.Domain.Interfaces.IProductRepository.GetAllAsync()
   spec.csharp:
-  - uid: NewBalanceStore.Application.Interfaces.IProductRepository.GetAllAsync
+  - uid: NewBalanceStore.Domain.Interfaces.IProductRepository.GetAllAsync
     name: GetAllAsync
   - name: (
   - name: )
   spec.vb:
-  - uid: NewBalanceStore.Application.Interfaces.IProductRepository.GetAllAsync
+  - uid: NewBalanceStore.Domain.Interfaces.IProductRepository.GetAllAsync
     name: GetAllAsync
   - name: (
   - name: )
@@ -663,6 +718,29 @@ references:
     href: NewBalanceStore.Domain.Entities.Product.html
   - name: )
   - name: )
+- uid: NewBalanceStore.Domain.Entities
+  commentId: N:NewBalanceStore.Domain.Entities
+  name: NewBalanceStore.Domain.Entities
+  nameWithType: NewBalanceStore.Domain.Entities
+  fullName: NewBalanceStore.Domain.Entities
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Entities
+    name: Entities
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Entities
+    name: Entities
 - uid: System.Threading.Tasks.Task`1
   commentId: T:System.Threading.Tasks.Task`1
   isExternal: true
@@ -734,19 +812,19 @@ references:
   name: GetByIdAsync
   nameWithType: FirebaseProductRepository.GetByIdAsync
   fullName: NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.GetByIdAsync
-- uid: NewBalanceStore.Application.Interfaces.IProductRepository.GetByIdAsync(System.String)
-  commentId: M:NewBalanceStore.Application.Interfaces.IProductRepository.GetByIdAsync(System.String)
-  parent: NewBalanceStore.Application.Interfaces.IProductRepository
+- uid: NewBalanceStore.Domain.Interfaces.IProductRepository.GetByIdAsync(System.String)
+  commentId: M:NewBalanceStore.Domain.Interfaces.IProductRepository.GetByIdAsync(System.String)
+  parent: NewBalanceStore.Domain.Interfaces.IProductRepository
   isExternal: true
   href: https://learn.microsoft.com/dotnet/api/system.string
   name: GetByIdAsync(string)
   nameWithType: IProductRepository.GetByIdAsync(string)
-  fullName: NewBalanceStore.Application.Interfaces.IProductRepository.GetByIdAsync(string)
+  fullName: NewBalanceStore.Domain.Interfaces.IProductRepository.GetByIdAsync(string)
   nameWithType.vb: IProductRepository.GetByIdAsync(String)
-  fullName.vb: NewBalanceStore.Application.Interfaces.IProductRepository.GetByIdAsync(String)
+  fullName.vb: NewBalanceStore.Domain.Interfaces.IProductRepository.GetByIdAsync(String)
   name.vb: GetByIdAsync(String)
   spec.csharp:
-  - uid: NewBalanceStore.Application.Interfaces.IProductRepository.GetByIdAsync(System.String)
+  - uid: NewBalanceStore.Domain.Interfaces.IProductRepository.GetByIdAsync(System.String)
     name: GetByIdAsync
   - name: (
   - uid: System.String
@@ -755,7 +833,7 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
-  - uid: NewBalanceStore.Application.Interfaces.IProductRepository.GetByIdAsync(System.String)
+  - uid: NewBalanceStore.Domain.Interfaces.IProductRepository.GetByIdAsync(System.String)
     name: GetByIdAsync
   - name: (
   - uid: System.String
@@ -813,33 +891,26 @@ references:
   name: CreateAsync
   nameWithType: FirebaseProductRepository.CreateAsync
   fullName: NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.CreateAsync
-- uid: NewBalanceStore.Application.Interfaces.IProductRepository.CreateAsync(NewBalanceStore.Domain.Entities.Product)
-  commentId: M:NewBalanceStore.Application.Interfaces.IProductRepository.CreateAsync(NewBalanceStore.Domain.Entities.Product)
-  parent: NewBalanceStore.Application.Interfaces.IProductRepository
+- uid: NewBalanceStore.Domain.Interfaces.IProductRepository.CreateAsync(NewBalanceStore.Domain.Entities.Product)
+  commentId: M:NewBalanceStore.Domain.Interfaces.IProductRepository.CreateAsync(NewBalanceStore.Domain.Entities.Product)
+  parent: NewBalanceStore.Domain.Interfaces.IProductRepository
   name: CreateAsync(Product)
   nameWithType: IProductRepository.CreateAsync(Product)
-  fullName: NewBalanceStore.Application.Interfaces.IProductRepository.CreateAsync(NewBalanceStore.Domain.Entities.Product)
+  fullName: NewBalanceStore.Domain.Interfaces.IProductRepository.CreateAsync(NewBalanceStore.Domain.Entities.Product)
   spec.csharp:
-  - uid: NewBalanceStore.Application.Interfaces.IProductRepository.CreateAsync(NewBalanceStore.Domain.Entities.Product)
+  - uid: NewBalanceStore.Domain.Interfaces.IProductRepository.CreateAsync(NewBalanceStore.Domain.Entities.Product)
     name: CreateAsync
   - name: (
   - uid: NewBalanceStore.Domain.Entities.Product
     name: Product
   - name: )
   spec.vb:
-  - uid: NewBalanceStore.Application.Interfaces.IProductRepository.CreateAsync(NewBalanceStore.Domain.Entities.Product)
+  - uid: NewBalanceStore.Domain.Interfaces.IProductRepository.CreateAsync(NewBalanceStore.Domain.Entities.Product)
     name: CreateAsync
   - name: (
   - uid: NewBalanceStore.Domain.Entities.Product
     name: Product
   - name: )
-- uid: NewBalanceStore.Domain.Entities.Product
-  commentId: T:NewBalanceStore.Domain.Entities.Product
-  parent: NewBalanceStore.Domain.Entities
-  href: NewBalanceStore.Domain.Entities.Product.html
-  name: Product
-  nameWithType: Product
-  fullName: NewBalanceStore.Domain.Entities.Product
 - uid: System.Threading.Tasks.Task
   commentId: T:System.Threading.Tasks.Task
   parent: System.Threading.Tasks
@@ -848,50 +919,27 @@ references:
   name: Task
   nameWithType: Task
   fullName: System.Threading.Tasks.Task
-- uid: NewBalanceStore.Domain.Entities
-  commentId: N:NewBalanceStore.Domain.Entities
-  name: NewBalanceStore.Domain.Entities
-  nameWithType: NewBalanceStore.Domain.Entities
-  fullName: NewBalanceStore.Domain.Entities
-  spec.csharp:
-  - uid: NewBalanceStore
-    name: NewBalanceStore
-  - name: .
-  - uid: NewBalanceStore.Domain
-    name: Domain
-  - name: .
-  - uid: NewBalanceStore.Domain.Entities
-    name: Entities
-  spec.vb:
-  - uid: NewBalanceStore
-    name: NewBalanceStore
-  - name: .
-  - uid: NewBalanceStore.Domain
-    name: Domain
-  - name: .
-  - uid: NewBalanceStore.Domain.Entities
-    name: Entities
 - uid: NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.UpdateAsync*
   commentId: Overload:NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.UpdateAsync
   href: NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.html#NewBalanceStore_Infrastructure_Repositories_FirebaseProductRepository_UpdateAsync_NewBalanceStore_Domain_Entities_Product_
   name: UpdateAsync
   nameWithType: FirebaseProductRepository.UpdateAsync
   fullName: NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.UpdateAsync
-- uid: NewBalanceStore.Application.Interfaces.IProductRepository.UpdateAsync(NewBalanceStore.Domain.Entities.Product)
-  commentId: M:NewBalanceStore.Application.Interfaces.IProductRepository.UpdateAsync(NewBalanceStore.Domain.Entities.Product)
-  parent: NewBalanceStore.Application.Interfaces.IProductRepository
+- uid: NewBalanceStore.Domain.Interfaces.IProductRepository.UpdateAsync(NewBalanceStore.Domain.Entities.Product)
+  commentId: M:NewBalanceStore.Domain.Interfaces.IProductRepository.UpdateAsync(NewBalanceStore.Domain.Entities.Product)
+  parent: NewBalanceStore.Domain.Interfaces.IProductRepository
   name: UpdateAsync(Product)
   nameWithType: IProductRepository.UpdateAsync(Product)
-  fullName: NewBalanceStore.Application.Interfaces.IProductRepository.UpdateAsync(NewBalanceStore.Domain.Entities.Product)
+  fullName: NewBalanceStore.Domain.Interfaces.IProductRepository.UpdateAsync(NewBalanceStore.Domain.Entities.Product)
   spec.csharp:
-  - uid: NewBalanceStore.Application.Interfaces.IProductRepository.UpdateAsync(NewBalanceStore.Domain.Entities.Product)
+  - uid: NewBalanceStore.Domain.Interfaces.IProductRepository.UpdateAsync(NewBalanceStore.Domain.Entities.Product)
     name: UpdateAsync
   - name: (
   - uid: NewBalanceStore.Domain.Entities.Product
     name: Product
   - name: )
   spec.vb:
-  - uid: NewBalanceStore.Application.Interfaces.IProductRepository.UpdateAsync(NewBalanceStore.Domain.Entities.Product)
+  - uid: NewBalanceStore.Domain.Interfaces.IProductRepository.UpdateAsync(NewBalanceStore.Domain.Entities.Product)
     name: UpdateAsync
   - name: (
   - uid: NewBalanceStore.Domain.Entities.Product
@@ -903,19 +951,19 @@ references:
   name: DeleteAsync
   nameWithType: FirebaseProductRepository.DeleteAsync
   fullName: NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository.DeleteAsync
-- uid: NewBalanceStore.Application.Interfaces.IProductRepository.DeleteAsync(System.String)
-  commentId: M:NewBalanceStore.Application.Interfaces.IProductRepository.DeleteAsync(System.String)
-  parent: NewBalanceStore.Application.Interfaces.IProductRepository
+- uid: NewBalanceStore.Domain.Interfaces.IProductRepository.DeleteAsync(System.String)
+  commentId: M:NewBalanceStore.Domain.Interfaces.IProductRepository.DeleteAsync(System.String)
+  parent: NewBalanceStore.Domain.Interfaces.IProductRepository
   isExternal: true
   href: https://learn.microsoft.com/dotnet/api/system.string
   name: DeleteAsync(string)
   nameWithType: IProductRepository.DeleteAsync(string)
-  fullName: NewBalanceStore.Application.Interfaces.IProductRepository.DeleteAsync(string)
+  fullName: NewBalanceStore.Domain.Interfaces.IProductRepository.DeleteAsync(string)
   nameWithType.vb: IProductRepository.DeleteAsync(String)
-  fullName.vb: NewBalanceStore.Application.Interfaces.IProductRepository.DeleteAsync(String)
+  fullName.vb: NewBalanceStore.Domain.Interfaces.IProductRepository.DeleteAsync(String)
   name.vb: DeleteAsync(String)
   spec.csharp:
-  - uid: NewBalanceStore.Application.Interfaces.IProductRepository.DeleteAsync(System.String)
+  - uid: NewBalanceStore.Domain.Interfaces.IProductRepository.DeleteAsync(System.String)
     name: DeleteAsync
   - name: (
   - uid: System.String
@@ -924,7 +972,7 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
   spec.vb:
-  - uid: NewBalanceStore.Application.Interfaces.IProductRepository.DeleteAsync(System.String)
+  - uid: NewBalanceStore.Domain.Interfaces.IProductRepository.DeleteAsync(System.String)
     name: DeleteAsync
   - name: (
   - uid: System.String

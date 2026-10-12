@@ -17,8 +17,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Services/CartTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: CartTests
     path: NewBalanceStore.UnitTests/Services/CartTests.cs
     startLine: 7
@@ -62,8 +62,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Services/CartTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: CartDto_TotalAmount_ShouldCalculateCorrectly
     path: NewBalanceStore.UnitTests/Services/CartTests.cs
     startLine: 10
@@ -98,8 +98,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Services/CartTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: CartDto_TotalAmount_ShouldBeZero_WhenCartIsEmpty
     path: NewBalanceStore.UnitTests/Services/CartTests.cs
     startLine: 25

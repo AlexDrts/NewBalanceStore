@@ -20,15 +20,20 @@ items:
   type: Class
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/OrderItem.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/OrderItem.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: OrderItem
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/OrderItem.cs
-    startLine: 6
+    path: NewBalanceStore.Domain/Entities/OrderItem.cs
+    startLine: 10
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: >-
+    Представляє окрему позицію в оформленому замовленні,
+
+    фіксуючи знімок ціни товару та обрані параметри на момент покупки.
+  example: []
   syntax:
     content: public class OrderItem
     content.vb: Public Class OrderItem
@@ -55,15 +60,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/OrderItem.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/OrderItem.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: ProductId
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/OrderItem.cs
-    startLine: 8
+    path: NewBalanceStore.Domain/Entities/OrderItem.cs
+    startLine: 15
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Ідентифікатор придбаного товару.
+  example: []
   syntax:
     content: public string ProductId { get; set; }
     parameters: []
@@ -84,15 +91,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/OrderItem.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/OrderItem.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: ProductName
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/OrderItem.cs
-    startLine: 9
+    path: NewBalanceStore.Domain/Entities/OrderItem.cs
+    startLine: 20
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Назва товару на момент створення замовлення.
+  example: []
   syntax:
     content: public string ProductName { get; set; }
     parameters: []
@@ -113,15 +122,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/OrderItem.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/OrderItem.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Color
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/OrderItem.cs
-    startLine: 10
+    path: NewBalanceStore.Domain/Entities/OrderItem.cs
+    startLine: 25
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Обраний колір виробу.
+  example: []
   syntax:
     content: public string Color { get; set; }
     parameters: []
@@ -142,15 +153,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/OrderItem.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/OrderItem.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Size
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/OrderItem.cs
-    startLine: 11
+    path: NewBalanceStore.Domain/Entities/OrderItem.cs
+    startLine: 30
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Обраний розмір виробу.
+  example: []
   syntax:
     content: public string Size { get; set; }
     parameters: []
@@ -171,15 +184,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/OrderItem.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/OrderItem.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Quantity
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/OrderItem.cs
-    startLine: 12
+    path: NewBalanceStore.Domain/Entities/OrderItem.cs
+    startLine: 35
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Кількість замовлених одиниць.
+  example: []
   syntax:
     content: public int Quantity { get; set; }
     parameters: []
@@ -200,15 +215,20 @@ items:
   type: Property
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/OrderItem.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/OrderItem.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Price
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/OrderItem.cs
-    startLine: 13
+    path: NewBalanceStore.Domain/Entities/OrderItem.cs
+    startLine: 41
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: >-
+    Зафіксована ціна за одиницю товару на момент оформлення замовлення.
+
+    Забезпечує незмінність вартості у звітах навіть при зміні поточної ціни в каталозі.
+  example: []
   syntax:
     content: public decimal Price { get; set; }
     parameters: []

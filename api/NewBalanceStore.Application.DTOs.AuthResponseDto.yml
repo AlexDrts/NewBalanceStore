@@ -19,14 +19,19 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/DTOs/AuthResponseDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: AuthResponseDto
     path: NewBalanceStore.Domain/DTOs/AuthResponseDto.cs
-    startLine: 6
+    startLine: 10
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Application.DTOs
+  summary: >-
+    DTO відповіді сервера при успішній автентифікації або реєстрації користувача.
+
+    Містить підписаний JWT-токен та базові відомості про профіль.
+  example: []
   syntax:
     content: public class AuthResponseDto
     content.vb: Public Class AuthResponseDto
@@ -54,14 +59,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/DTOs/AuthResponseDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: Token
     path: NewBalanceStore.Domain/DTOs/AuthResponseDto.cs
-    startLine: 8
+    startLine: 15
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Application.DTOs
+  summary: Підписаний JSON Web Token (JWT) для авторизації наступних API-запитів через заголовок Bearer.
+  example: []
   syntax:
     content: public string Token { get; set; }
     parameters: []
@@ -83,14 +90,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/DTOs/AuthResponseDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: Email
     path: NewBalanceStore.Domain/DTOs/AuthResponseDto.cs
-    startLine: 9
+    startLine: 20
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Application.DTOs
+  summary: Адреса електронної пошти автентифікованого користувача.
+  example: []
   syntax:
     content: public string Email { get; set; }
     parameters: []
@@ -112,14 +121,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/DTOs/AuthResponseDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: FullName
     path: NewBalanceStore.Domain/DTOs/AuthResponseDto.cs
-    startLine: 10
+    startLine: 25
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Application.DTOs
+  summary: Повне ім'я користувача для відображення у призначеному для користувача інтерфейсі.
+  example: []
   syntax:
     content: public string FullName { get; set; }
     parameters: []
@@ -141,14 +152,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/DTOs/AuthResponseDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: Role
     path: NewBalanceStore.Domain/DTOs/AuthResponseDto.cs
-    startLine: 11
+    startLine: 30
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Application.DTOs
+  summary: Роль користувача у системі ("Customer" або "Admin").
+  example: []
   syntax:
     content: public string Role { get; set; }
     parameters: []

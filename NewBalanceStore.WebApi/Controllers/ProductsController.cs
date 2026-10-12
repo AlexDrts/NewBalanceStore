@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NewBalanceStore.Application.DTOs;
 using NewBalanceStore.Application.Interfaces;
@@ -7,7 +7,8 @@ using NewBalanceStore.Domain.Interfaces;
 namespace NewBalanceStore.WebApi.Controllers;
 
 /// <summary>
-/// Контроллер для управления товарами в интернет-магазине
+/// Контролер для керування товарами в каталозі інтернет-магазину.
+/// Забезпечує пошук, фільтрацію та адміністрування товарних позицій.
 /// </summary>
 [ApiController]
 [Route("api/[controller]")]
@@ -16,6 +17,11 @@ public class ProductsController : ControllerBase
     private readonly IProductService _productService;
     private readonly IPhotoService _photoService;
 
+    /// <summary>
+    /// Ініціалізує новий екземпляр контролера <see cref="ProductsController"/>.
+    /// </summary>
+    /// <param name="productService">Сервіс управління товарами.</param>
+    /// <param name="photoService">Сервіс завантаження фотографій до Cloudinary.</param>
     public ProductsController(IProductService productService, IPhotoService photoService)
     {
         _productService = productService;

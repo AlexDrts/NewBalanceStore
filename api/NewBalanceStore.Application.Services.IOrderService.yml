@@ -19,14 +19,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Application/Services/OrderService.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: IOrderService
     path: NewBalanceStore.Application/Services/OrderService.cs
-    startLine: 7
+    startLine: 10
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.Services
+  summary: Контракт сервісу обробки та управління клієнтськими замовленнями.
+  example: []
   syntax:
     content: public interface IOrderService
     content.vb: Public Interface IOrderService
@@ -46,21 +48,28 @@ items:
   source:
     remote:
       path: NewBalanceStore.Application/Services/OrderService.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: CreateOrderAsync
     path: NewBalanceStore.Application/Services/OrderService.cs
-    startLine: 9
+    startLine: 18
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.Services
+  summary: >-
+    Створює нове замовлення: валідує товари за каталогом, розраховує фінальну вартість
+
+    та зберігає замовлення у базі даних.
+  example: []
   syntax:
     content: Task<OrderDto> CreateOrderAsync(CreateOrderDto dto)
     parameters:
     - id: dto
       type: NewBalanceStore.Application.DTOs.CreateOrderDto
+      description: Дані для оформлення замовлення.
     return:
       type: System.Threading.Tasks.Task{NewBalanceStore.Application.DTOs.OrderDto}
+      description: Створене замовлення у форматі <xref href="NewBalanceStore.Application.DTOs.OrderDto" data-throw-if-not-resolved="false"></xref>.
     content.vb: Function CreateOrderAsync(dto As CreateOrderDto) As Task(Of OrderDto)
   overload: NewBalanceStore.Application.Services.IOrderService.CreateOrderAsync*
 - uid: NewBalanceStore.Application.Services.IOrderService.GetOrderByIdAsync(System.Int32)
@@ -77,21 +86,25 @@ items:
   source:
     remote:
       path: NewBalanceStore.Application/Services/OrderService.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetOrderByIdAsync
     path: NewBalanceStore.Application/Services/OrderService.cs
-    startLine: 10
+    startLine: 25
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.Services
+  summary: Отримує замовлення за його ідентифікатором.
+  example: []
   syntax:
     content: Task<OrderDto?> GetOrderByIdAsync(int id)
     parameters:
     - id: id
       type: System.Int32
+      description: Числовий ідентифікатор замовлення.
     return:
       type: System.Threading.Tasks.Task{NewBalanceStore.Application.DTOs.OrderDto}
+      description: Знайдене замовлення або <code>null</code>.
     content.vb: Function GetOrderByIdAsync(id As Integer) As Task(Of OrderDto)
   overload: NewBalanceStore.Application.Services.IOrderService.GetOrderByIdAsync*
   nameWithType.vb: IOrderService.GetOrderByIdAsync(Integer)
@@ -111,18 +124,21 @@ items:
   source:
     remote:
       path: NewBalanceStore.Application/Services/OrderService.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetAllOrdersAsync
     path: NewBalanceStore.Application/Services/OrderService.cs
-    startLine: 11
+    startLine: 31
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.Services
+  summary: Отримує перелік усіх зареєстрованих замовлень.
+  example: []
   syntax:
     content: Task<IEnumerable<OrderDto>> GetAllOrdersAsync()
     return:
       type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{NewBalanceStore.Application.DTOs.OrderDto}}
+      description: Колекція замовлень <xref href="NewBalanceStore.Application.DTOs.OrderDto" data-throw-if-not-resolved="false"></xref>.
     content.vb: Function GetAllOrdersAsync() As Task(Of IEnumerable(Of OrderDto))
   overload: NewBalanceStore.Application.Services.IOrderService.GetAllOrdersAsync*
 - uid: NewBalanceStore.Application.Services.IOrderService.UpdateOrderStatusAsync(System.Int32,System.String)
@@ -139,21 +155,25 @@ items:
   source:
     remote:
       path: NewBalanceStore.Application/Services/OrderService.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: UpdateOrderStatusAsync
     path: NewBalanceStore.Application/Services/OrderService.cs
-    startLine: 12
+    startLine: 38
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.Services
+  summary: Оновлює статус обробки замовлення (наприклад, переведення у статус "Shipped").
+  example: []
   syntax:
     content: Task UpdateOrderStatusAsync(int id, string status)
     parameters:
     - id: id
       type: System.Int32
+      description: Ідентифікатор замовлення.
     - id: status
       type: System.String
+      description: Новий рядок статусу.
     return:
       type: System.Threading.Tasks.Task
     content.vb: Function UpdateOrderStatusAsync(id As Integer, status As String) As Task
@@ -185,6 +205,13 @@ references:
   - name: .
   - uid: NewBalanceStore.Application.Services
     name: Services
+- uid: NewBalanceStore.Application.DTOs.OrderDto
+  commentId: T:NewBalanceStore.Application.DTOs.OrderDto
+  parent: NewBalanceStore.Application.DTOs
+  href: NewBalanceStore.Application.DTOs.OrderDto.html
+  name: OrderDto
+  nameWithType: OrderDto
+  fullName: NewBalanceStore.Application.DTOs.OrderDto
 - uid: NewBalanceStore.Application.Services.IOrderService.CreateOrderAsync*
   commentId: Overload:NewBalanceStore.Application.Services.IOrderService.CreateOrderAsync
   href: NewBalanceStore.Application.Services.IOrderService.html#NewBalanceStore_Application_Services_IOrderService_CreateOrderAsync_NewBalanceStore_Application_DTOs_CreateOrderDto_

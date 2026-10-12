@@ -19,8 +19,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.IntegrationTests/AuthAndStartupIntegrationTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: AuthAndStartupIntegrationTests
     path: NewBalanceStore.IntegrationTests/AuthAndStartupIntegrationTests.cs
     startLine: 13
@@ -64,8 +64,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.IntegrationTests/AuthAndStartupIntegrationTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: SetUp
     path: NewBalanceStore.IntegrationTests/AuthAndStartupIntegrationTests.cs
     startLine: 19
@@ -100,8 +100,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.IntegrationTests/AuthAndStartupIntegrationTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: TearDown
     path: NewBalanceStore.IntegrationTests/AuthAndStartupIntegrationTests.cs
     startLine: 29
@@ -136,8 +136,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.IntegrationTests/AuthAndStartupIntegrationTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: RegisterAndLogin_UseRealAuthServiceAndReturnJsonToken
     path: NewBalanceStore.IntegrationTests/AuthAndStartupIntegrationTests.cs
     startLine: 36
@@ -174,8 +174,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.IntegrationTests/AuthAndStartupIntegrationTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: Application_StartsAndResolvesApplicationServicesWithLocalRepositories
     path: NewBalanceStore.IntegrationTests/AuthAndStartupIntegrationTests.cs
     startLine: 66

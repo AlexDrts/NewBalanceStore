@@ -19,15 +19,17 @@ items:
   type: Enum
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Enums/OrderStatus.cs
-      branch: main
+      path: NewBalanceStore.Domain/Enums/OrderStatus.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: OrderStatus
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Enums/OrderStatus.cs
-    startLine: 6
+    path: NewBalanceStore.Domain/Enums/OrderStatus.cs
+    startLine: 7
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Enums
+  summary: Статуси життєвого циклу клієнтського замовлення в системі.
+  example: []
   syntax:
     content: public enum OrderStatus
     content.vb: Public Enum OrderStatus
@@ -44,15 +46,17 @@ items:
   type: Field
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Enums/OrderStatus.cs
-      branch: main
+      path: NewBalanceStore.Domain/Enums/OrderStatus.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Pending
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Enums/OrderStatus.cs
-    startLine: 8
+    path: NewBalanceStore.Domain/Enums/OrderStatus.cs
+    startLine: 12
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Enums
+  summary: Замовлення щойно створено та очікує на підтвердження менеджером або оплату.
+  example: []
   syntax:
     content: Pending = 0
     return:
@@ -70,15 +74,17 @@ items:
   type: Field
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Enums/OrderStatus.cs
-      branch: main
+      path: NewBalanceStore.Domain/Enums/OrderStatus.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Processing
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Enums/OrderStatus.cs
-    startLine: 9
+    path: NewBalanceStore.Domain/Enums/OrderStatus.cs
+    startLine: 17
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Enums
+  summary: Замовлення прийнято в обробку та комплектується на складі.
+  example: []
   syntax:
     content: Processing = 1
     return:
@@ -96,15 +102,17 @@ items:
   type: Field
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Enums/OrderStatus.cs
-      branch: main
+      path: NewBalanceStore.Domain/Enums/OrderStatus.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Shipped
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Enums/OrderStatus.cs
-    startLine: 10
+    path: NewBalanceStore.Domain/Enums/OrderStatus.cs
+    startLine: 22
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Enums
+  summary: Замовлення запаковано та передано поштовій службі / перевізнику.
+  example: []
   syntax:
     content: Shipped = 2
     return:
@@ -122,15 +130,17 @@ items:
   type: Field
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Enums/OrderStatus.cs
-      branch: main
+      path: NewBalanceStore.Domain/Enums/OrderStatus.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Delivered
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Enums/OrderStatus.cs
-    startLine: 11
+    path: NewBalanceStore.Domain/Enums/OrderStatus.cs
+    startLine: 27
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Enums
+  summary: Замовлення успішно доставлено та отримано покупцем.
+  example: []
   syntax:
     content: Delivered = 3
     return:
@@ -148,15 +158,17 @@ items:
   type: Field
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Enums/OrderStatus.cs
-      branch: main
+      path: NewBalanceStore.Domain/Enums/OrderStatus.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Cancelled
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Enums/OrderStatus.cs
-    startLine: 12
+    path: NewBalanceStore.Domain/Enums/OrderStatus.cs
+    startLine: 32
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Enums
+  summary: Замовлення скасовано покупцем або адміністратором.
+  example: []
   syntax:
     content: Cancelled = 4
     return:

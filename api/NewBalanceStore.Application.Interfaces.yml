@@ -5,7 +5,6 @@ items:
   id: NewBalanceStore.Application.Interfaces
   children:
   - NewBalanceStore.Application.Interfaces.IAuthService
-  - NewBalanceStore.Application.Interfaces.IProductRepository
   - NewBalanceStore.Application.Interfaces.IProductService
   langs:
   - csharp
@@ -17,13 +16,6 @@ items:
   assemblies:
   - NewBalanceStore.Application
 references:
-- uid: NewBalanceStore.Application.Interfaces.IProductRepository
-  commentId: T:NewBalanceStore.Application.Interfaces.IProductRepository
-  parent: NewBalanceStore.Application.Interfaces
-  href: NewBalanceStore.Application.Interfaces.IProductRepository.html
-  name: IProductRepository
-  nameWithType: IProductRepository
-  fullName: NewBalanceStore.Application.Interfaces.IProductRepository
 - uid: NewBalanceStore.Application.Interfaces.IProductService
   commentId: T:NewBalanceStore.Application.Interfaces.IProductService
   parent: NewBalanceStore.Application.Interfaces

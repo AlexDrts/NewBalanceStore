@@ -18,15 +18,20 @@ items:
   type: Class
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/Cart.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/Cart.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Cart
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/Cart.cs
-    startLine: 6
+    path: NewBalanceStore.Domain/Entities/Cart.cs
+    startLine: 10
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: >-
+    Доменна сутність кошика покупок користувача.
+
+    Зберігає інформацію про обрані товари до моменту завершення оформлення замовлення.
+  example: []
   syntax:
     content: public class Cart
     content.vb: Public Class Cart
@@ -53,15 +58,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/Cart.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/Cart.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Id
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/Cart.cs
-    startLine: 8
+    path: NewBalanceStore.Domain/Entities/Cart.cs
+    startLine: 15
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Унікальний ідентифікатор кошика покупок.
+  example: []
   syntax:
     content: public string Id { get; set; }
     parameters: []
@@ -82,15 +89,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/Cart.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/Cart.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: UserId
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/Cart.cs
-    startLine: 9
+    path: NewBalanceStore.Domain/Entities/Cart.cs
+    startLine: 20
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Ідентифікатор зареєстрованого користувача або гостьової сесії, якій належить кошик.
+  example: []
   syntax:
     content: public string UserId { get; set; }
     parameters: []
@@ -111,15 +120,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/Cart.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/Cart.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Items
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/Cart.cs
-    startLine: 10
+    path: NewBalanceStore.Domain/Entities/Cart.cs
+    startLine: 25
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Колекція обраних позицій (товарів та обраних параметрів), доданих до кошика.
+  example: []
   syntax:
     content: public List<CartItem> Items { get; set; }
     parameters: []
@@ -140,15 +151,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/Cart.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/Cart.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: UpdatedAt
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/Cart.cs
-    startLine: 11
+    path: NewBalanceStore.Domain/Entities/Cart.cs
+    startLine: 30
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Дата та час останнього оновлення вмісту кошика (UTC).
+  example: []
   syntax:
     content: public DateTime UpdatedAt { get; set; }
     parameters: []

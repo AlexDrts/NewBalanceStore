@@ -18,15 +18,17 @@ items:
   type: Class
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/CartItem.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/CartItem.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: CartItem
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/CartItem.cs
-    startLine: 6
+    path: NewBalanceStore.Domain/Entities/CartItem.cs
+    startLine: 9
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Представляє окрему одиницю товару в кошику покупця з обраними характеристиками.
+  example: []
   syntax:
     content: public class CartItem
     content.vb: Public Class CartItem
@@ -53,15 +55,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/CartItem.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/CartItem.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: ProductId
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/CartItem.cs
-    startLine: 8
+    path: NewBalanceStore.Domain/Entities/CartItem.cs
+    startLine: 14
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Ідентифікатор обраного товару.
+  example: []
   syntax:
     content: public string ProductId { get; set; }
     parameters: []
@@ -82,15 +86,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/CartItem.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/CartItem.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Color
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/CartItem.cs
-    startLine: 9
+    path: NewBalanceStore.Domain/Entities/CartItem.cs
+    startLine: 19
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Обраний колір товару.
+  example: []
   syntax:
     content: public string Color { get; set; }
     parameters: []
@@ -111,15 +117,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/CartItem.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/CartItem.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Size
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/CartItem.cs
-    startLine: 10
+    path: NewBalanceStore.Domain/Entities/CartItem.cs
+    startLine: 24
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Обраний розмір товару.
+  example: []
   syntax:
     content: public string Size { get; set; }
     parameters: []
@@ -140,15 +148,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/CartItem.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/CartItem.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Quantity
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/CartItem.cs
-    startLine: 11
+    path: NewBalanceStore.Domain/Entities/CartItem.cs
+    startLine: 29
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Кількість одиниць товару даного розміру та кольору.
+  example: []
   syntax:
     content: public int Quantity { get; set; }
     parameters: []

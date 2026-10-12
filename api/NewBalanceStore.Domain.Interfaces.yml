@@ -18,13 +18,6 @@ items:
   assemblies:
   - NewBalanceStore.Domain
 references:
-- uid: NewBalanceStore.Domain.Interfaces.IProductRepository
-  commentId: T:NewBalanceStore.Domain.Interfaces.IProductRepository
-  parent: NewBalanceStore.Domain.Interfaces
-  href: NewBalanceStore.Domain.Interfaces.IProductRepository.html
-  name: IProductRepository
-  nameWithType: IProductRepository
-  fullName: NewBalanceStore.Domain.Interfaces.IProductRepository
 - uid: NewBalanceStore.Domain.Interfaces.IOrderRepository
   commentId: T:NewBalanceStore.Domain.Interfaces.IOrderRepository
   parent: NewBalanceStore.Domain.Interfaces
@@ -39,6 +32,13 @@ references:
   name: IPhotoService
   nameWithType: IPhotoService
   fullName: NewBalanceStore.Domain.Interfaces.IPhotoService
+- uid: NewBalanceStore.Domain.Interfaces.IProductRepository
+  commentId: T:NewBalanceStore.Domain.Interfaces.IProductRepository
+  parent: NewBalanceStore.Domain.Interfaces
+  href: NewBalanceStore.Domain.Interfaces.IProductRepository.html
+  name: IProductRepository
+  nameWithType: IProductRepository
+  fullName: NewBalanceStore.Domain.Interfaces.IProductRepository
 - uid: NewBalanceStore.Domain.Interfaces.IUserRepository
   commentId: T:NewBalanceStore.Domain.Interfaces.IUserRepository
   parent: NewBalanceStore.Domain.Interfaces

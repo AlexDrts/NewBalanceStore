@@ -22,8 +22,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.IntegrationTests/ProductsApiIntegrationTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: ProductsApiIntegrationTests
     path: NewBalanceStore.IntegrationTests/ProductsApiIntegrationTests.cs
     startLine: 11
@@ -67,8 +67,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.IntegrationTests/ProductsApiIntegrationTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: SetUp
     path: NewBalanceStore.IntegrationTests/ProductsApiIntegrationTests.cs
     startLine: 17
@@ -103,8 +103,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.IntegrationTests/ProductsApiIntegrationTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: TearDown
     path: NewBalanceStore.IntegrationTests/ProductsApiIntegrationTests.cs
     startLine: 27
@@ -139,8 +139,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.IntegrationTests/ProductsApiIntegrationTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetProducts_ReturnsSeededProductsAsJson
     path: NewBalanceStore.IntegrationTests/ProductsApiIntegrationTests.cs
     startLine: 34
@@ -177,8 +177,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.IntegrationTests/ProductsApiIntegrationTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetProducts_AppliesServiceFiltersAndSort
     path: NewBalanceStore.IntegrationTests/ProductsApiIntegrationTests.cs
     startLine: 47
@@ -215,8 +215,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.IntegrationTests/ProductsApiIntegrationTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetById_ReturnsProductOrNotFound
     path: NewBalanceStore.IntegrationTests/ProductsApiIntegrationTests.cs
     startLine: 57
@@ -253,8 +253,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.IntegrationTests/ProductsApiIntegrationTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: ProductWrites_EnforceAdminRoleAndPersistChanges
     path: NewBalanceStore.IntegrationTests/ProductsApiIntegrationTests.cs
     startLine: 69
@@ -291,8 +291,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.IntegrationTests/ProductsApiIntegrationTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: UploadImage_UsesLocalPhotoService
     path: NewBalanceStore.IntegrationTests/ProductsApiIntegrationTests.cs
     startLine: 112

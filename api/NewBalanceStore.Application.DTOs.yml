@@ -46,19 +46,6 @@ references:
   name: AddToCartDto
   nameWithType: AddToCartDto
   fullName: NewBalanceStore.Application.DTOs.AddToCartDto
-- uid: NewBalanceStore.Application.DTOs.ProductDto
-  commentId: T:NewBalanceStore.Application.DTOs.ProductDto
-  href: NewBalanceStore.Application.DTOs.ProductDto.html
-  name: ProductDto
-  nameWithType: ProductDto
-  fullName: NewBalanceStore.Application.DTOs.ProductDto
-- uid: NewBalanceStore.Application.DTOs.CreateProductDto
-  commentId: T:NewBalanceStore.Application.DTOs.CreateProductDto
-  parent: NewBalanceStore.Application.DTOs
-  href: NewBalanceStore.Application.DTOs.CreateProductDto.html
-  name: CreateProductDto
-  nameWithType: CreateProductDto
-  fullName: NewBalanceStore.Application.DTOs.CreateProductDto
 - uid: NewBalanceStore.Application.DTOs.CreateOrderDto
   commentId: T:NewBalanceStore.Application.DTOs.CreateOrderDto
   parent: NewBalanceStore.Application.DTOs
@@ -72,6 +59,13 @@ references:
   name: CreateOrderItemDto
   nameWithType: CreateOrderItemDto
   fullName: NewBalanceStore.Application.DTOs.CreateOrderItemDto
+- uid: NewBalanceStore.Application.DTOs.CreateProductDto
+  commentId: T:NewBalanceStore.Application.DTOs.CreateProductDto
+  parent: NewBalanceStore.Application.DTOs
+  href: NewBalanceStore.Application.DTOs.CreateProductDto.html
+  name: CreateProductDto
+  nameWithType: CreateProductDto
+  fullName: NewBalanceStore.Application.DTOs.CreateProductDto
 - uid: NewBalanceStore.Application.DTOs.CreateProductVariantDto
   commentId: T:NewBalanceStore.Application.DTOs.CreateProductVariantDto
   href: NewBalanceStore.Application.DTOs.CreateProductVariantDto.html
@@ -80,6 +74,7 @@ references:
   fullName: NewBalanceStore.Application.DTOs.CreateProductVariantDto
 - uid: NewBalanceStore.Application.DTOs.OrderDto
   commentId: T:NewBalanceStore.Application.DTOs.OrderDto
+  parent: NewBalanceStore.Application.DTOs
   href: NewBalanceStore.Application.DTOs.OrderDto.html
   name: OrderDto
   nameWithType: OrderDto
@@ -90,6 +85,12 @@ references:
   name: OrderItemDto
   nameWithType: OrderItemDto
   fullName: NewBalanceStore.Application.DTOs.OrderItemDto
+- uid: NewBalanceStore.Application.DTOs.ProductDto
+  commentId: T:NewBalanceStore.Application.DTOs.ProductDto
+  href: NewBalanceStore.Application.DTOs.ProductDto.html
+  name: ProductDto
+  nameWithType: ProductDto
+  fullName: NewBalanceStore.Application.DTOs.ProductDto
 - uid: NewBalanceStore.Application.DTOs.ProductFilterDto
   commentId: T:NewBalanceStore.Application.DTOs.ProductFilterDto
   parent: NewBalanceStore.Application.DTOs
@@ -99,6 +100,7 @@ references:
   fullName: NewBalanceStore.Application.DTOs.ProductFilterDto
 - uid: NewBalanceStore.Application.DTOs.AuthResponseDto
   commentId: T:NewBalanceStore.Application.DTOs.AuthResponseDto
+  parent: NewBalanceStore.Application.DTOs
   href: NewBalanceStore.Application.DTOs.AuthResponseDto.html
   name: AuthResponseDto
   nameWithType: AuthResponseDto

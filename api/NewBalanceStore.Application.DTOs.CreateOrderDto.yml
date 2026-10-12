@@ -20,14 +20,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Application/DTOs/CreateOrderDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: CreateOrderDto
     path: NewBalanceStore.Application/DTOs/CreateOrderDto.cs
-    startLine: 6
+    startLine: 9
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: DTO для передачі даних при створенні нового клієнтського замовлення під час Checkout.
+  example: []
   syntax:
     content: public class CreateOrderDto
     content.vb: Public Class CreateOrderDto
@@ -55,14 +57,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Application/DTOs/CreateOrderDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: CustomerName
     path: NewBalanceStore.Application/DTOs/CreateOrderDto.cs
-    startLine: 8
+    startLine: 14
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Повне ім'я та прізвище покупця.
+  example: []
   syntax:
     content: public string CustomerName { get; set; }
     parameters: []
@@ -84,14 +88,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Application/DTOs/CreateOrderDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: CustomerEmail
     path: NewBalanceStore.Application/DTOs/CreateOrderDto.cs
-    startLine: 9
+    startLine: 19
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Електронна пошта замовника для надсилання підтвердження.
+  example: []
   syntax:
     content: public string CustomerEmail { get; set; }
     parameters: []
@@ -113,14 +119,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Application/DTOs/CreateOrderDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: CustomerPhone
     path: NewBalanceStore.Application/DTOs/CreateOrderDto.cs
-    startLine: 10
+    startLine: 24
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Номер мобільного телефону отримувача.
+  example: []
   syntax:
     content: public string CustomerPhone { get; set; }
     parameters: []
@@ -142,14 +150,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Application/DTOs/CreateOrderDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: ShippingAddress
     path: NewBalanceStore.Application/DTOs/CreateOrderDto.cs
-    startLine: 11
+    startLine: 29
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Повна поштова адреса для кур'єрської або поштової доставки.
+  example: []
   syntax:
     content: public string ShippingAddress { get; set; }
     parameters: []
@@ -171,14 +181,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Application/DTOs/CreateOrderDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: Items
     path: NewBalanceStore.Application/DTOs/CreateOrderDto.cs
-    startLine: 12
+    startLine: 34
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Список товарних позицій, що оформлюються в замовленні.
+  example: []
   syntax:
     content: public List<CreateOrderItemDto> Items { get; set; }
     parameters: []
