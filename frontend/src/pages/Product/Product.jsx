@@ -6,7 +6,6 @@ import TopHeader from "../../components/TopHeader/TopHeader.jsx";
 import MainHeader from "../../components/MainHeader/MainHeader.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
 import NotFound from "../NotFound/NotFound.jsx";
-import AddedToBagPopup from "../../components/AddedToBagPopup/AddedToBagPopup.jsx";
 import ProductCarousel from "../../components/ProductCarousel/ProductCarousel.jsx";
 import ProductGallery from "../../components/ProductPage/ProductGallery/ProductGallery.jsx";
 import ColorSelector from "../../components/ProductPage/ColorSelector/ColorSelector.jsx";
@@ -15,6 +14,7 @@ import ProductAccordion from "../../components/ProductPage/ProductAccordion/Prod
 import StickyAddToBag from "../../components/ProductPage/StickyAddToBag/StickyAddToBag.jsx";
 import DeliveryOptions from "../../components/ProductPage/DeliveryOptions/DeliveryOptions.jsx";
 import SizeGuide from "../../components/ProductPage/SizeGuide/SizeGuide.jsx";
+import { openBagDrawer } from "../../components/BagDrawer/bagDrawerEvents.js";
 
 import { useCart } from "../../context/useCart.js";
 import { fetchProduct } from "../../services/api/productsApi.js";
@@ -171,7 +171,6 @@ function ProductView({ product, hideAfterRef }) {
     const columnScroll = useColumnScroll(galleryRef, infoRef, priceRef, hideAfterRef);
 
     const [sizeError, setSizeError] = useState(false);
-    const [showAddedPopup, setShowAddedPopup] = useState(false);
     const [showSticky, setShowSticky] = useState(false);
     const [sizeGuideOpen, setSizeGuideOpen] = useState(false);
     const closeSizeGuide = useCallback(() => setSizeGuideOpen(false), []);
@@ -260,14 +259,8 @@ function ProductView({ product, hideAfterRef }) {
             }
         });
 
-        setShowAddedPopup(true);
+        openBagDrawer("added");
     };
-
-    useEffect(() => {
-        if (!showAddedPopup) return;
-        const timer = setTimeout(() => setShowAddedPopup(false), 2000);
-        return () => clearTimeout(timer);
-    }, [showAddedPopup]);
 
     const images = product.getImages(selectedColor);
     const hasDiscount = product.hasDiscount();
@@ -419,7 +412,6 @@ function ProductView({ product, hideAfterRef }) {
                 onClick={handleAddToBag}
             />
 
-            {showAddedPopup && <AddedToBagPopup />}
         </>
     );
 }

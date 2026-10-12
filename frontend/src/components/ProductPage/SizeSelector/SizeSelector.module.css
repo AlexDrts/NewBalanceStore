@@ -27,10 +27,6 @@
     cursor: pointer;
 }
 
-.guideLink:hover {
-    color: #c8102e;
-}
-
 .guideLink:focus-visible {
     outline: 2px solid #000;
     outline-offset: 2px;
@@ -104,6 +100,19 @@
     margin-top: 8px;
     color: #c8102e;
     font-size: 13px;
+}
+
+@media (min-width: 1024px) and (max-width: 1920px) {
+    .sizeSelector {
+        max-width: 420px;
+    }
+
+    .size {
+        min-height: 44px;
+        font-family: "Segoe UI Variable Text", "Segoe UI", -apple-system, "Helvetica Neue", Arial, sans-serif;
+        font-size: 13px;
+        font-weight: 450;
+    }
 }
 
 @media (min-width: 1921px) {
