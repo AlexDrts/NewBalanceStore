@@ -1,3 +1,4 @@
+﻿using System.Diagnostics.CodeAnalysis;
 using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
 using Microsoft.Extensions.Options;
@@ -6,6 +7,7 @@ using NewBalanceStore.Infrastructure.Configurations;
 
 namespace NewBalanceStore.Infrastructure.Services;
 
+[ExcludeFromCodeCoverage]
 /// <summary>
 /// Реалізація сервісу збереження та оптимізації медіафайлів за допомогою хмарного провайдера Cloudinary.
 /// </summary>
