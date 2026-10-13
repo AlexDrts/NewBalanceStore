@@ -5,7 +5,7 @@ import { apiRequest } from "./apiClient.js";
  * @returns {Promise<Array<Object>>} Масив об'єктів товарів.
  */
 export async function fetchProducts() {
-    return apiRequest("/api/Products");
+    return apiRequest("/api/products");
 }
 
 /**
@@ -14,7 +14,7 @@ export async function fetchProducts() {
  * @returns {Promise<Object>} Об'єкт товару з варіаціями та зображеннями.
  */
 export async function fetchProduct(id) {
-    return apiRequest(`/api/Products/${id}`);
+    return apiRequest(`/api/products/${id}`);
 }
 
 /**
@@ -23,7 +23,7 @@ export async function fetchProduct(id) {
  * @returns {Promise<Object>} Створений товар з присвоєним ID.
  */
 export async function createProduct(product) {
-    return apiRequest("/api/Products", {
+    return apiRequest("/api/products", {
         method: "POST",
         body: JSON.stringify(product)
     });
@@ -36,7 +36,7 @@ export async function createProduct(product) {
  * @returns {Promise<void>}
  */
 export async function updateProduct(id, product) {
-    return apiRequest(`/api/Products/${id}`, {
+    return apiRequest(`/api/products/${id}`, {
         method: "PUT",
         body: JSON.stringify(product)
     });
@@ -48,7 +48,7 @@ export async function updateProduct(id, product) {
  * @returns {Promise<void>}
  */
 export async function deleteProduct(id) {
-    return apiRequest(`/api/Products/${id}`, {
+    return apiRequest(`/api/products/${id}`, {
         method: "DELETE"
     });
 }

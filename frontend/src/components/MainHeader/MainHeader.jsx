@@ -5,6 +5,20 @@ import { createPortal } from 'react-dom';
 import { useCart } from "../../context/useCart.js";
 import BagDrawer from "../BagDrawer/BagDrawer.jsx";
 
+// SVG
+import logo from '../../assets/icons/header/logo.svg';
+import searchIcon from '../../assets/icons/header/search-icon.svg';
+import accountIcon from '../../assets/icons/header/account-icon.svg';
+import bagIcon from '../../assets/icons/header/bag-icon.svg';
+import menArrivals from '../../assets/images/new/men-arrivals.jpg';
+import womenArrivals from '../../assets/images/new/women-arrivals.jpg';
+import kidsArrivals from '../../assets/images/new/kids-arrivals.jpg';
+import launchCalendar from '../../assets/images/new/launch-calendar.jpg';
+import footballCollection from '../../assets/images/new/football-collection.jpg';
+
+
+
+
 function MainHeader({
                         theme = "dark",
                         containerRef,
@@ -154,14 +168,14 @@ function MainHeader({
                     </button>
 
                     <Link to={"/login"} className="mobile-account-link" onClick={closeMobileMenu}>
-                        <img className="account-icon" src="../src/assets/icons/header/account-icon.svg" alt="Account"/>
+                        <img className="account-icon" src={accountIcon} alt="Account"/>
                     </Link>
                 </div>
 
                 {/* CENTER: Logo */}
                 <div className="header-left">
                     <Link to="/" onClick={closeMobileMenu}>
-                        <img className="logo" src="../src/assets/icons/header/logo.svg" alt="New Balance"/>
+                        <img className="logo" src={logo} alt="New Balance"/>
                     </Link>
 
                     {/* DESKTOP NAVIGATION */}
@@ -172,27 +186,27 @@ function MainHeader({
                             <div className="new-dropdown">
 
                                 <Link to={"/products?gender=men&new=true"} className="new-card">
-                                    <img src="../src/assets/images/new/mens-arrivals.jpg" alt=""/>
+                                    <img src={menArrivals} alt=""/>
                                     <span>Men's new arrivals</span>
                                 </Link>
 
                                 <Link to={"/products?gender=women&new=true"} className="new-card">
-                                    <img src="../src/assets/images/new/womens-arrivals.jpg" alt=""/>
+                                    <img src={womenArrivals} alt=""/>
                                     <span>Women's new arrivals</span>
                                 </Link>
 
                                 <Link to={"/products?gender=kids&new=true"} className="new-card">
-                                    <img src="../src/assets/images/new/kids-arrivals.jpg" alt=""/>
+                                    <img src={kidsArrivals} alt=""/>
                                     <span>Kids' new arrivals</span>
                                 </Link>
 
                                 <Link to={"#"} className="new-card">
-                                    <img src="../src/assets/images/new/launch-calendar.jpg" alt=""/>
+                                    <img src={launchCalendar} alt=""/>
                                     <span>Launch calendar</span>
                                 </Link>
 
                                 <Link to={"#"} className="new-card">
-                                    <img src="../src/assets/images/new/football-collection.jpg" alt=""/>
+                                    <img src={footballCollection} alt=""/>
                                     <span>The international football collection</span>
                                 </Link>
                             </div>
@@ -414,14 +428,14 @@ function MainHeader({
 
                 {/* RIGHT SIDE OF MOBILE HEADER: Search + Cart */}
                 <div className="header-icons">
-                    <img className="search-icon" src="../src/assets/icons/header/search-icon.svg" alt="Search"/>
+                    <img className="search-icon" src={searchIcon} alt="Search"/>
 
                     <Link to={"/login"} className="desktop-account-link">
-                        <img className="account-icon" src="../src/assets/icons/header/account-icon.svg" alt="Account"/>
+                        <img className="account-icon" src={accountIcon} alt="Account"/>
                     </Link>
 
                     <Link ref={cartLinkRef} to={"/cart"} className="cart-link" onClick={closeMobileMenu}>
-                        <img className="bag-icon" src="../src/assets/icons/header/bag-icon.svg" alt="Cart"/>
+                        <img className="bag-icon" src={bagIcon} alt="Cart"/>
                         {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
                     </Link>
                 </div>
@@ -441,7 +455,7 @@ function MainHeader({
                                 </button>
                             ) : (
                                 <Link to="/" onClick={closeMobileMenu}>
-                                    <img className="logo" src="../src/assets/icons/header/logo.svg" alt="New Balance"/>
+                                    <img className="logo" src={logo} alt="New Balance"/>
                                 </Link>
                             )}
 

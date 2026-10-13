@@ -1,6 +1,19 @@
 import './Footer.css'
 import { useNavigate } from "react-router-dom";
 
+// SVG
+import logo from '../../assets/icons/footer/logo.svg';
+import instagramIcon from '../../assets/icons/footer/instagram.svg';
+import facebookIcon from '../../assets/icons/footer/facebook.svg';
+import twitterIcon from '../../assets/icons/footer/twitter.svg';
+import youtubeIcon from '../../assets/icons/footer/youtube.svg';
+import pinterestIcon from '../../assets/icons/footer/pinterest.svg';
+import tiktokIcon from '../../assets/icons/footer/tiktok.svg';
+import brineLogo from '../../assets/icons/footer/brine-logo.svg';
+import warriorLogo from '../../assets/icons/footer/warror.svg';
+import teamSportsLogo from '../../assets/icons/footer/teamsports-logo.svg';
+import usFlag from '../../assets/icons/header/US.png';
+
 function Footer() {
     const navigate = useNavigate();
 
@@ -70,7 +83,7 @@ function Footer() {
 
                         <h2>Fearlessly Independent</h2>
 
-                        <img className="footer-logo" src="../src/assets/icons/footer/logo.svg" alt="New Balance"/>
+                        <img className="footer-logo" src={logo} alt="New Balance"/>
 
                         <p>
                             Independent since 1906, we empower people
@@ -80,12 +93,12 @@ function Footer() {
                         </p>
 
                         <div className="social-icons">
-                            <img src="../src/assets/icons/footer/instagram.svg" alt="Instagram"/>
-                            <img src="../src/assets/icons/footer/facebook.svg" alt="Facebook"/>
-                            <img src="../src/assets/icons/footer/twitter.svg" alt="X"/>
-                            <img src="../src/assets/icons/footer/youtube.svg" alt="YouTube"/>
-                            <img src="../src/assets/icons/footer/pinterest.svg" alt="Pinterest"/>
-                            <img src="../src/assets/icons/footer/tiktok.svg" alt="TikTok"/>
+                            <img src={instagramIcon} alt="Instagram" />
+                            <img src={facebookIcon} alt="Facebook" />
+                            <img src={twitterIcon} alt="X" />
+                            <img src={youtubeIcon} alt="YouTube" />
+                            <img src={pinterestIcon} alt="Pinterest" />
+                            <img src={tiktokIcon} alt="TikTok" />
                         </div>
 
                     </div>
@@ -99,13 +112,13 @@ function Footer() {
                 <div className="footer-secondary-brands">
                     <span>New Balance family of brands</span>
 
-                    <img src="../src/assets/icons/footer/brine-logo.svg" alt="Brine"/>
-                    <img src="../src/assets/icons/footer/warror.svg" alt="Warrior"/>
-                    <img src="../src/assets/icons/footer/teamsports-logo.svg" alt="Team Sports"/>
+                    <img src={brineLogo} alt="Brine" />
+                    <img src={warriorLogo} alt="Warrior" />
+                    <img src={teamSportsLogo} alt="Team Sports" />
                 </div>
 
                 <div className="footer-secondary-top">
-                    <img className="US-flag" src="../src/assets/icons/header/US.png" alt="US Flag"/>
+                    <img className="US-flag" src={usFlag} alt="US Flag" />
 
                     <a href="#">US | English</a>
 

@@ -350,7 +350,7 @@
     .meta, .qtyValue { font-size: 16px; }
     .summary, .recommendTitle { font-size: 21px; }
     .shipping, .viewBag, .checkout, .cardMeta, .cardPrice { font-size: 18px; }
-    .viewBag, .checkout { height: 72px; }
+    .viewBag, .checkout { height: 62px; }
 
     .item {
         grid-template-columns: 160px minmax(0, 1fr);
