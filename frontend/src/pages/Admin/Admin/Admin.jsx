@@ -4,15 +4,15 @@ import styles from "./Admin.module.css";
 import TopHeader from "../../../components/TopHeader/TopHeader.jsx";
 import MainHeader from "../../../components/MainHeader/MainHeader.jsx";
 import Footer from "../../../components/Footer/Footer.jsx";
-import { removeStorage } from "../../../utils/localStorage.js";
+import { logout } from "../../../services/api/authService.js";
 
 function Admin() {
     const pageRef = useRef(null);
     const navigate = useNavigate();
 
     const handleLogout = () => {
-        removeStorage("adminCredentials");
-        navigate("/login");
+        logout();
+        navigate("/login", { replace: true });
     };
 
     return (

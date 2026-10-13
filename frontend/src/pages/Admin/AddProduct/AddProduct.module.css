@@ -76,13 +76,42 @@ body.addProduct .mainHeader .header-icons img {
     max-width: 800px;
 }
 
+.pageHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
 .pageTitle {
     font-size: 28px;
     font-weight: 800;
     color: #111;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin-bottom: 24px;
+}
+
+.backBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: 1px solid #d7d7d7;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #111111;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.backBtn:hover {
+    background-color: #111111;
+    color: #ffffff;
+    border-color: #111111;
 }
 
 .form {
@@ -360,6 +389,7 @@ textarea {
 .actionContainer {
     display: flex;
     justify-content: flex-end;
+    gap: 12px;
     margin-top: 8px;
 }
 
@@ -377,6 +407,32 @@ textarea {
 
 .submitBtn:hover {
     background-color: #333333;
+}
+
+.submitBtn:disabled {
+    background-color: #777777;
+    cursor: default;
+}
+
+.cancelBtn {
+    padding: 14px 32px;
+    background-color: #ffffff;
+    color: #111111;
+    border: 1px solid #d1d1d1;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.cancelBtn:hover {
+    border-color: #111111;
+}
+
+.statusText {
+    font-size: 15px;
+    color: #666;
 }
 
 .colorVariantsBlock {
@@ -453,6 +509,11 @@ textarea {
 
 /* Responsive Grid */
 @media (max-width: 650px) {
+    .pageHeader {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
     .imageGrid {
         grid-template-columns: repeat(2, 1fr);
     }

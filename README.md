@@ -349,4 +349,4 @@ npm run test:run
 - **Олексій Єлісєєв** — [@AlexElNX](https://github.com/AlexElNX) — *Team Lead / Frontend Developer*
 - **Микита Габер** — [@ZemNyux](https://github.com/ZemNyux) — *Backend Developer*
 - **Данило Павлюк** — [@kasatjk](https://github.com/kasatjk) — *Tester and Technical Writer*
-- **Олексій Драціон** — [@arg50](https://github.com/arg50) — *Full-Stack Developer*
+- **Олексій Драціон** — [@AlexDrts](https://github.com/AlexDrts) — *Full-Stack Developer*
