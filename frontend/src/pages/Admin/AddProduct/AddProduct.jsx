@@ -1,12 +1,37 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import styles from "./AddProduct.module.css";
 import TopHeader from "../../../components/TopHeader/TopHeader.jsx";
 import MainHeader from "../../../components/MainHeader/MainHeader.jsx";
 import Footer from "../../../components/Footer/Footer.jsx";
-import { createProduct } from "../../../services/api/productsApi.js";
+import { createProduct, fetchProduct, updateProduct } from "../../../services/api/productsApi.js";
+
+const TYPE_TO_CATEGORY = {
+    Footwear: "Shoes",
+    Clothing: "Clothing",
+    Accessories: "Accessories"
+};
+
+function categoryToType(category) {
+    if (category === "Shoes") return "Footwear";
+    if (category === "Clothing") return "Clothing";
+    return "Accessories";
+}
+
+function formatColorLabel(colorKey) {
+    const text = colorKey.replace(/_/g, " ");
+    return text.charAt(0).toUpperCase() + text.slice(1);
+}
 
 function AddProduct() {
     const pageRef = useRef(null);
+    const navigate = useNavigate();
+    const { id } = useParams();
+    const isEdit = Boolean(id);
+
+    const [loadedProduct, setLoadedProduct] = useState(null);
+    const [loadError, setLoadError] = useState("");
+    const [isSaving, setIsSaving] = useState(false);
 
     // Form fields
     const [productName, setProductName] = useState("");
@@ -36,6 +61,78 @@ function AddProduct() {
     const clothingSizes = ["XS", "S", "M", "L", "XL", "2XL"];
 
     const activeSizesList = (category === "Clothing" || category === "Accessories") ? clothingSizes : footwearSizes;
+
+    const genderOptions = ["Unisex", "Men", "Women"];
+    const activityOptions = ["Lifestyle", "Running", "Training", "Soccer", "Basketball", "Tennis"];
+
+    const extraColors = selectedColors.filter((colorKey) =>
+        !availableColors.some((color) => color.toLowerCase() === colorKey)
+    );
+
+    const getSizesForColor = (colorKey) => {
+        const selected = Object.keys(colorVariants[colorKey] || {});
+        const extra = selected.filter((size) => !activeSizesList.some((item) => String(item) === size));
+        return [...activeSizesList, ...extra];
+    };
+
+    useEffect(() => {
+        if (!isEdit) return;
+
+        let cancelled = false;
+
+        async function loadProduct() {
+            try {
+                const product = await fetchProduct(id);
+                if (cancelled) return;
+
+                const images = product.images || {};
+                const variants = product.variants || [];
+
+                const colors = [...new Set([
+                    ...(product.colors || []),
+                    ...Object.keys(images),
+                    ...variants.map((variant) => variant.color)
+                ])].filter(Boolean).map((color) => color.toLowerCase());
+
+                const variantsByColor = {};
+                variants.forEach((variant) => {
+                    const colorKey = String(variant.color).toLowerCase();
+                    variantsByColor[colorKey] = {
+                        ...(variantsByColor[colorKey] || {}),
+                        [String(variant.size)]: variant.quantity
+                    };
+                });
+
+                const imagesByColor = {};
+                Object.entries(images).forEach(([color, list]) => {
+                    imagesByColor[color.toLowerCase()] = list || [];
+                });
+
+                setProductName(product.name || "");
+                setDescription(product.description || "");
+                setCategory(TYPE_TO_CATEGORY[product.type] || "Accessories");
+                setGender(product.gender || "Unisex");
+                setActivity(product.activity || "Lifestyle");
+                setPrice(product.price != null ? String(product.price) : "");
+                setOldPrice(product.oldPrice != null ? String(product.oldPrice) : "");
+                setIsNew(Boolean(product.isNew));
+                setSelectedColors(colors);
+                setColorVariants(variantsByColor);
+                setColorImages(imagesByColor);
+                setLoadedProduct(product);
+            }
+            catch (error) {
+                console.error("Load product error:", error);
+                if (!cancelled) setLoadError("Failed to load product.");
+            }
+        }
+
+        loadProduct();
+
+        return () => {
+            cancelled = true;
+        };
+    }, [id, isEdit]);
 
     // Toggle Colors & manage image key cleanup
     const toggleColor = (color) => {
@@ -169,13 +266,16 @@ function AddProduct() {
         });
 
 
+        const type = categoryToType(category);
+        const keepCategory = isEdit && loadedProduct && loadedProduct.type === type && loadedProduct.category;
+
         const productData = {
             name: productName,
             price: parseFloat(price) || 0,
             oldPrice: oldPrice ? parseFloat(oldPrice) : null,
             gender: gender,
-            type: category === "Shoes" ? "Footwear" : category === "Clothing" ? "Clothing" : "Accessories",
-            category: category,
+            type: type,
+            category: keepCategory ? loadedProduct.category : category,
             activity: activity,
             description: description,
             images: colorImages,
@@ -184,11 +284,30 @@ function AddProduct() {
             variants
         };
 
+        if (isEdit) {
+            setIsSaving(true);
+            try {
+                await updateProduct(id, productData);
+                alert("Product updated successfully!");
+                navigate("/manage-products");
+            }
+            catch (error) {
+                console.error("Update product error:", error);
+                alert("Failed to save product. Please log in again as admin and try once more.");
+            }
+            finally {
+                setIsSaving(false);
+            }
+            return;
+        }
+
         await createProduct(productData);
 
         console.log("Created Product Data Object:", productData);
         alert("Product added successfully!");
     };
+
+    const pageTitle = isEdit ? "Edit Product" : "Add Product";
 
     return (
         <>
@@ -199,281 +318,325 @@ function AddProduct() {
 
             <main className={styles.container}>
                 <div className={styles.formWrapper}>
-                    <h1 className={styles.pageTitle}>Add Product</h1>
+                    <div className={styles.pageHeader}>
+                        <h1 className={styles.pageTitle}>{pageTitle}</h1>
 
-                    <form onSubmit={handleSubmit} className={styles.form}>
-                        {/* Section 1: Product Information */}
-                        <div className={styles.card}>
-                            <h2 className={styles.cardTitle}>Product Information</h2>
+                        <button
+                            type="button"
+                            className={styles.backBtn}
+                            onClick={() => navigate(isEdit ? "/manage-products" : "/admin")}
+                        >
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <line x1="19" y1="12" x2="5" y2="12"></line>
+                                <polyline points="12 19 5 12 12 5"></polyline>
+                            </svg>
+                            {isEdit ? "Back to Products" : "Back to Dashboard"}
+                        </button>
+                    </div>
 
-                            <div className={styles.fieldGroup}>
-                                <label className={styles.label}>
-                                    Product name <span className={styles.required}>*</span>
-                                </label>
-                                <div className={styles.inputWithCounter}>
-                                    <input
-                                        type="text"
-                                        placeholder="e.g. 9060"
-                                        maxLength={150}
-                                        value={productName}
-                                        onChange={(e) => setProductName(e.target.value)}
-                                        required
-                                    />
-                                    <span className={styles.counter}>{productName.length}/150</span>
-                                </div>
-                            </div>
+                    {isEdit && loadError && <p className={styles.statusText}>{loadError}</p>}
+                    {isEdit && !loadError && !loadedProduct && <p className={styles.statusText}>Loading...</p>}
 
-                            <div className={styles.fieldGroup}>
-                                <label className={styles.label}>
-                                    Description <span className={styles.required}>*</span>
-                                </label>
-                                <textarea
-                                    rows={4}
-                                    placeholder="Write a detailed description of the product..."
-                                    value={description}
-                                    onChange={(e) => setDescription(e.target.value)}
-                                    required
-                                />
-                            </div>
+                    {(!isEdit || loadedProduct) && (
+                        <form onSubmit={handleSubmit} className={styles.form}>
+                            {/* Section 1: Product Information */}
+                            <div className={styles.card}>
+                                <h2 className={styles.cardTitle}>Product Information</h2>
 
-                            <div className={styles.rowTwoCols}>
                                 <div className={styles.fieldGroup}>
                                     <label className={styles.label}>
-                                        Category <span className={styles.required}>*</span>
+                                        Product name <span className={styles.required}>*</span>
                                     </label>
-                                    <select value={category} onChange={handleCategoryChange} required>
-                                        <option value="Shoes">Shoes</option>
-                                        <option value="Clothing">Clothing</option>
-                                        <option value="Accessories">Accessories</option>
-                                    </select>
+                                    <div className={styles.inputWithCounter}>
+                                        <input
+                                            type="text"
+                                            placeholder="e.g. 9060"
+                                            maxLength={150}
+                                            value={productName}
+                                            onChange={(e) => setProductName(e.target.value)}
+                                            required
+                                        />
+                                        <span className={styles.counter}>{productName.length}/150</span>
+                                    </div>
                                 </div>
 
                                 <div className={styles.fieldGroup}>
                                     <label className={styles.label}>
-                                        Gender <span className={styles.required}>*</span>
+                                        Description <span className={styles.required}>*</span>
                                     </label>
-                                    <select value={gender} onChange={(e) => setGender(e.target.value)} required>
-                                        <option value="Unisex">Unisex</option>
-                                        <option value="Men">Men</option>
-                                        <option value="Women">Women</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div className={styles.fieldGroup}>
-                                <label className={styles.label}>
-                                    Activity <span className={styles.required}>*</span>
-                                </label>
-                                <select value={activity} onChange={(e) => setActivity(e.target.value)} required>
-                                    <option value="Lifestyle">Lifestyle</option>
-                                    <option value="Running">Running</option>
-                                    <option value="Training">Training</option>
-                                    <option value="Soccer">Soccer</option>
-                                    <option value="Basketball">Basketball</option>
-                                    <option value="Tennis">Tennis</option>
-                                </select>
-                            </div>
-
-                            <div className={styles.rowTwoCols}>
-                                <div className={styles.fieldGroup}>
-                                    <label className={styles.label}>
-                                        Price ($) <span className={styles.required}>*</span>
-                                    </label>
-                                    <input
-                                        type="number"
-                                        step="0.01"
-                                        placeholder="159.99"
-                                        value={price}
-                                        onChange={(e) => setPrice(e.target.value)}
+                                    <textarea
+                                        rows={4}
+                                        placeholder="Write a detailed description of the product..."
+                                        value={description}
+                                        onChange={(e) => setDescription(e.target.value)}
                                         required
                                     />
                                 </div>
 
+                                <div className={styles.rowTwoCols}>
+                                    <div className={styles.fieldGroup}>
+                                        <label className={styles.label}>
+                                            Category <span className={styles.required}>*</span>
+                                        </label>
+                                        <select value={category} onChange={handleCategoryChange} required>
+                                            <option value="Shoes">Shoes</option>
+                                            <option value="Clothing">Clothing</option>
+                                            <option value="Accessories">Accessories</option>
+                                        </select>
+                                    </div>
+
+                                    <div className={styles.fieldGroup}>
+                                        <label className={styles.label}>
+                                            Gender <span className={styles.required}>*</span>
+                                        </label>
+                                        <select value={gender} onChange={(e) => setGender(e.target.value)} required>
+                                            <option value="Unisex">Unisex</option>
+                                            <option value="Men">Men</option>
+                                            <option value="Women">Women</option>
+                                            {!genderOptions.includes(gender) && (
+                                                <option value={gender}>{gender}</option>
+                                            )}
+                                        </select>
+                                    </div>
+                                </div>
+
                                 <div className={styles.fieldGroup}>
-                                    <label className={styles.label}>Old price ($)</label>
-                                    <input
-                                        type="number"
-                                        step="0.01"
-                                        placeholder="199.99"
-                                        value={oldPrice}
-                                        onChange={(e) => setOldPrice(e.target.value)}
-                                    />
+                                    <label className={styles.label}>
+                                        Activity <span className={styles.required}>*</span>
+                                    </label>
+                                    <select value={activity} onChange={(e) => setActivity(e.target.value)} required>
+                                        <option value="Lifestyle">Lifestyle</option>
+                                        <option value="Running">Running</option>
+                                        <option value="Training">Training</option>
+                                        <option value="Soccer">Soccer</option>
+                                        <option value="Basketball">Basketball</option>
+                                        <option value="Tennis">Tennis</option>
+                                        {!activityOptions.includes(activity) && (
+                                            <option value={activity}>{activity}</option>
+                                        )}
+                                    </select>
+                                </div>
+
+                                <div className={styles.rowTwoCols}>
+                                    <div className={styles.fieldGroup}>
+                                        <label className={styles.label}>
+                                            Price ($) <span className={styles.required}>*</span>
+                                        </label>
+                                        <input
+                                            type="number"
+                                            step="0.01"
+                                            placeholder="159.99"
+                                            value={price}
+                                            onChange={(e) => setPrice(e.target.value)}
+                                            required
+                                        />
+                                    </div>
+
+                                    <div className={styles.fieldGroup}>
+                                        <label className={styles.label}>Old price ($)</label>
+                                        <input
+                                            type="number"
+                                            step="0.01"
+                                            placeholder="199.99"
+                                            value={oldPrice}
+                                            onChange={(e) => setOldPrice(e.target.value)}
+                                        />
+                                    </div>
+                                </div>
+
+                                {/* Flags: isNew & inStock */}
+                                <div className={styles.checkboxGroup}>
+                                    <label className={styles.checkboxLabel}>
+                                        <input
+                                            type="checkbox"
+                                            checked={isNew}
+                                            onChange={(e) => setIsNew(e.target.checked)}
+                                        />
+                                        <span>New Release</span>
+                                    </label>
                                 </div>
                             </div>
 
-                            {/* Flags: isNew & inStock */}
-                            <div className={styles.checkboxGroup}>
-                                <label className={styles.checkboxLabel}>
-                                    <input
-                                        type="checkbox"
-                                        checked={isNew}
-                                        onChange={(e) => setIsNew(e.target.checked)}
-                                    />
-                                    <span>New Release</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        {/* Section 2: Colors Selection */}
-                        <div className={styles.card}>
-                            <h2 className={styles.cardTitle}>Select Colors</h2>
-                            <div className={styles.fieldGroup}>
-                                <div className={styles.chipGroup}>
-                                    {availableColors.map((color) => {
-                                        const colorKey = color.toLowerCase();
-                                        const isActive = selectedColors.includes(colorKey);
-                                        return (
+                            {/* Section 2: Colors Selection */}
+                            <div className={styles.card}>
+                                <h2 className={styles.cardTitle}>Select Colors</h2>
+                                <div className={styles.fieldGroup}>
+                                    <div className={styles.chipGroup}>
+                                        {availableColors.map((color) => {
+                                            const colorKey = color.toLowerCase();
+                                            const isActive = selectedColors.includes(colorKey);
+                                            return (
+                                                <button
+                                                    key={color}
+                                                    type="button"
+                                                    className={`${styles.chip} ${isActive ? styles.chipActive : ""}`}
+                                                    onClick={() => toggleColor(color)}
+                                                >
+                                                    {color}
+                                                </button>
+                                            );
+                                        })}
+                                        {extraColors.map((colorKey) => (
                                             <button
-                                                key={color}
+                                                key={colorKey}
                                                 type="button"
-                                                className={`${styles.chip} ${isActive ? styles.chipActive : ""}`}
-                                                onClick={() => toggleColor(color)}
+                                                className={`${styles.chip} ${styles.chipActive}`}
+                                                onClick={() => toggleColor(colorKey)}
                                             >
-                                                {color}
+                                                {formatColorLabel(colorKey)}
                                             </button>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Section 3: Sizes & Quantities per Color */}
+                            {selectedColors.length > 0 && (
+                                <div className={styles.card}>
+                                    <h2 className={styles.cardTitle}>Sizes & Stock per Color</h2>
+                                    <p className={styles.cardSubtitle}>
+                                        Select available sizes and set stock quantity for each selected color.
+                                    </p>
+
+                                    {selectedColors.map((colorKey) => {
+                                        const selectedSizesData = colorVariants[colorKey] || {};
+
+                                        return (
+                                            <div key={colorKey} className={styles.colorVariantsBlock}>
+                                                <h3 className={styles.colorHeading}>
+                                                    Color: {colorKey.toUpperCase()}
+                                                </h3>
+
+                                                {/* Size Chips */}
+                                                <div className={styles.fieldGroup}>
+                                                    <label className={styles.label}>Select Sizes:</label>
+                                                    <div className={styles.chipGroup}>
+                                                        {getSizesForColor(colorKey).map((size) => {
+                                                            const isSelected = size in selectedSizesData;
+                                                            return (
+                                                                <button
+                                                                    key={size}
+                                                                    type="button"
+                                                                    className={`${styles.chip} ${isSelected ? styles.chipActive : ""}`}
+                                                                    onClick={() => toggleSizeForColor(colorKey, size)}
+                                                                >
+                                                                    {size}
+                                                                </button>
+                                                            );
+                                                        })}
+                                                    </div>
+                                                </div>
+
+                                                {/* Quantity Inputs for active sizes */}
+                                                {Object.keys(selectedSizesData).length > 0 && (
+                                                    <div className={styles.quantitiesGrid}>
+                                                        {Object.entries(selectedSizesData).map(([size, qty]) => (
+                                                            <div key={size} className={styles.quantityItem}>
+                                                                <span className={styles.sizeLabel}>Size {size}:</span>
+                                                                <input
+                                                                    type="number"
+                                                                    min="0"
+                                                                    value={qty}
+                                                                    onChange={(e) => handleQuantityChange(colorKey, size, e.target.value)}
+                                                                    placeholder="Qty"
+                                                                    className={styles.qtyInput}
+                                                                />
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                )}
+                                            </div>
                                         );
                                     })}
                                 </div>
-                            </div>
-                        </div>
+                            )}
 
-                        {/* Section 3: Sizes & Quantities per Color */}
-                        {selectedColors.length > 0 && (
-                            <div className={styles.card}>
-                                <h2 className={styles.cardTitle}>Sizes & Stock per Color</h2>
-                                <p className={styles.cardSubtitle}>
-                                    Select available sizes and set stock quantity for each selected color.
-                                </p>
+                            {/* Section 4: Images per Color */}
+                            {selectedColors.length > 0 && (
+                                <div className={styles.card}>
+                                    <h2 className={styles.cardTitle}>Images</h2>
+                                    <p className={styles.cardSubtitle}>
+                                        The first image will be the product cover for that color.
+                                    </p>
 
-                                {selectedColors.map((colorKey) => {
-                                    const selectedSizesData = colorVariants[colorKey] || {};
+                                    {selectedColors.map((colorKey) => {
+                                        const imgs = colorImages[colorKey] || [];
+                                        const emptySlots = Math.max(0, 4 - imgs.length);
 
-                                    return (
-                                        <div key={colorKey} className={styles.colorVariantsBlock}>
-                                            <h3 className={styles.colorHeading}>
-                                                Color: {colorKey.toUpperCase()}
-                                            </h3>
+                                        return (
+                                            <div key={colorKey} className={styles.colorImagesSection}>
+                                                <h3 className={styles.colorHeading}>
+                                                    {colorKey.toUpperCase()}
+                                                </h3>
 
-                                            {/* Size Chips */}
-                                            <div className={styles.fieldGroup}>
-                                                <label className={styles.label}>Select Sizes:</label>
-                                                <div className={styles.chipGroup}>
-                                                    {activeSizesList.map((size) => {
-                                                        const isSelected = size in selectedSizesData;
-                                                        return (
+                                                <div className={styles.imageGrid}>
+                                                    <label className={styles.uploadBox}>
+                                                        <input
+                                                            type="file"
+                                                            accept="image/*"
+                                                            multiple
+                                                            onChange={(e) => handleImageUpload(e, colorKey)}
+                                                            className={styles.fileInput}
+                                                        />
+                                                        <div className={styles.uploadContent}>
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                                                <polyline points="21 15 16 10 5 21"></polyline>
+                                                            </svg>
+                                                            <span>+ Add Photo</span>
+                                                        </div>
+                                                    </label>
+
+                                                    {imgs.map((url, idx) => (
+                                                        <div key={idx} className={styles.imagePreviewBox}>
+                                                            <img src={url} alt={`${colorKey} ${idx}`} />
+                                                            {idx === 0 && (
+                                                                <span className={styles.coverBadge}>Cover</span>
+                                                            )}
                                                             <button
-                                                                key={size}
                                                                 type="button"
-                                                                className={`${styles.chip} ${isSelected ? styles.chipActive : ""}`}
-                                                                onClick={() => toggleSizeForColor(colorKey, size)}
+                                                                className={styles.removeImgBtn}
+                                                                onClick={() => handleRemoveImage(colorKey, idx)}
                                                             >
-                                                                {size}
+                                                                ✕
                                                             </button>
-                                                        );
-                                                    })}
-                                                </div>
-                                            </div>
+                                                        </div>
+                                                    ))}
 
-                                            {/* Quantity Inputs for active sizes */}
-                                            {Object.keys(selectedSizesData).length > 0 && (
-                                                <div className={styles.quantitiesGrid}>
-                                                    {Object.entries(selectedSizesData).map(([size, qty]) => (
-                                                        <div key={size} className={styles.quantityItem}>
-                                                            <span className={styles.sizeLabel}>Size {size}:</span>
-                                                            <input
-                                                                type="number"
-                                                                min="0"
-                                                                value={qty}
-                                                                onChange={(e) => handleQuantityChange(colorKey, size, e.target.value)}
-                                                                placeholder="Qty"
-                                                                className={styles.qtyInput}
-                                                            />
+                                                    {Array.from({ length: emptySlots }).map((_, i) => (
+                                                        <div key={i} className={styles.emptyBox}>
+                                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ccc" strokeWidth="2">
+                                                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                                                <polyline points="21 15 16 10 5 21"></polyline>
+                                                            </svg>
                                                         </div>
                                                     ))}
                                                 </div>
-                                            )}
-                                        </div>
-                                    );
-                                })}
-                            </div>
-                        )}
-
-                        {/* Section 4: Images per Color */}
-                        {selectedColors.length > 0 && (
-                            <div className={styles.card}>
-                                <h2 className={styles.cardTitle}>Images</h2>
-                                <p className={styles.cardSubtitle}>
-                                    The first image will be the product cover for that color.
-                                </p>
-
-                                {selectedColors.map((colorKey) => {
-                                    const imgs = colorImages[colorKey] || [];
-                                    const emptySlots = Math.max(0, 4 - imgs.length);
-
-                                    return (
-                                        <div key={colorKey} className={styles.colorImagesSection}>
-                                            <h3 className={styles.colorHeading}>
-                                                {colorKey.toUpperCase()}
-                                            </h3>
-
-                                            <div className={styles.imageGrid}>
-                                                <label className={styles.uploadBox}>
-                                                    <input
-                                                        type="file"
-                                                        accept="image/*"
-                                                        multiple
-                                                        onChange={(e) => handleImageUpload(e, colorKey)}
-                                                        className={styles.fileInput}
-                                                    />
-                                                    <div className={styles.uploadContent}>
-                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                                                            <polyline points="21 15 16 10 5 21"></polyline>
-                                                        </svg>
-                                                        <span>+ Add Photo</span>
-                                                    </div>
-                                                </label>
-
-                                                {imgs.map((url, idx) => (
-                                                    <div key={idx} className={styles.imagePreviewBox}>
-                                                        <img src={url} alt={`${colorKey} ${idx}`} />
-                                                        {idx === 0 && (
-                                                            <span className={styles.coverBadge}>Cover</span>
-                                                        )}
-                                                        <button
-                                                            type="button"
-                                                            className={styles.removeImgBtn}
-                                                            onClick={() => handleRemoveImage(colorKey, idx)}
-                                                        >
-                                                            ✕
-                                                        </button>
-                                                    </div>
-                                                ))}
-
-                                                {Array.from({ length: emptySlots }).map((_, i) => (
-                                                    <div key={i} className={styles.emptyBox}>
-                                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ccc" strokeWidth="2">
-                                                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                                                            <polyline points="21 15 16 10 5 21"></polyline>
-                                                        </svg>
-                                                    </div>
-                                                ))}
                                             </div>
-                                        </div>
-                                    );
-                                })}
-                            </div>
-                        )}
+                                        );
+                                    })}
+                                </div>
+                            )}
 
-                        {/* Submit Button Container */}
-                        <div className={styles.actionContainer}>
-                            <button type="submit" className={styles.submitBtn}>
-                                Add Product
-                            </button>
-                        </div>
-                    </form>
+                            {/* Submit Button Container */}
+                            <div className={styles.actionContainer}>
+                                {isEdit && (
+                                    <button
+                                        type="button"
+                                        className={styles.cancelBtn}
+                                        onClick={() => navigate("/manage-products")}
+                                    >
+                                        Cancel
+                                    </button>
+                                )}
+                                <button type="submit" className={styles.submitBtn} disabled={isSaving}>
+                                    {isEdit ? (isSaving ? "Saving..." : "Save Changes") : "Add Product"}
+                                </button>
+                            </div>
+                        </form>
+                    )}
                 </div>
             </main>
 
