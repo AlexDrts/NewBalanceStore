@@ -1,4 +1,5 @@
-﻿using CloudinaryDotNet;
+﻿using System.Diagnostics.CodeAnalysis;
+using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
 using Microsoft.Extensions.Options;
 using NewBalanceStore.Domain.Interfaces;
@@ -6,6 +7,7 @@ using NewBalanceStore.Infrastructure.Configurations;
 
 namespace NewBalanceStore.Infrastructure.Services;
 
+[ExcludeFromCodeCoverage]
 public class PhotoService : IPhotoService
 {
     private readonly Cloudinary _cloudinary;

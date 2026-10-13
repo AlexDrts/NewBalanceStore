@@ -51,17 +51,13 @@ public sealed class TestApiFactory : WebApplicationFactory<Program>
     }
 }
 
-public sealed class TestAuthenticationHandler : AuthenticationHandler<AuthenticationSchemeOptions>
+public sealed class TestAuthenticationHandler(
+    IOptionsMonitor<AuthenticationSchemeOptions> options,
+    ILoggerFactory logger,
+    UrlEncoder encoder)
+    : AuthenticationHandler<AuthenticationSchemeOptions>(options, logger, encoder)
 {
     public const string SchemeName = "IntegrationTest";
-
-    public TestAuthenticationHandler(
-        IOptionsMonitor<AuthenticationSchemeOptions> options,
-        ILoggerFactory logger,
-        UrlEncoder encoder)
-        : base(options, logger, encoder)
-    {
-    }
 
     protected override Task<AuthenticateResult> HandleAuthenticateAsync()
     {
@@ -71,12 +67,12 @@ public sealed class TestAuthenticationHandler : AuthenticationHandler<Authentica
             return Task.FromResult(AuthenticateResult.NoResult());
         }
 
-        var claims = new[]
-        {
-            new Claim(ClaimTypes.NameIdentifier, "integration-test-user"),
-            new Claim(ClaimTypes.Name, "Integration Test"),
-            new Claim(ClaimTypes.Role, role)
-        };
+        Claim[] claims =
+        [
+            new(ClaimTypes.NameIdentifier, "integration-test-user"),
+            new(ClaimTypes.Name, "Integration Test"),
+            new(ClaimTypes.Role, role)
+        ];
         var identity = new ClaimsIdentity(claims, SchemeName);
         var principal = new ClaimsPrincipal(identity);
         var ticket = new AuthenticationTicket(principal, SchemeName);
@@ -153,7 +149,7 @@ internal sealed class LocalProductRepository : IProductRepository
 
 internal sealed class LocalOrderRepository : IOrderRepository
 {
-    private readonly Dictionary<int, Order> _orders = new();
+    private readonly Dictionary<int, Order> _orders = [];
     private int _nextId = 2000;
 
     public Task<Order?> GetByIdAsync(int id) =>

@@ -1,5 +1,7 @@
 <Solution>
-  <Folder Name="/Элементы решения/" />
+  <Folder Name="/Элементы решения/">
+    <File Path="docker-compose.yml" />
+  </Folder>
   <Project Path="NewBalanceStore.Application/NewBalanceStore.Application.csproj" />
   <Project Path="NewBalanceStore.Domain/NewBalanceStore.Domain.csproj" />
   <Project Path="NewBalanceStore.Infrastructure/NewBalanceStore.Infrastructure.csproj" />
