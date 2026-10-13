@@ -1,5 +1,6 @@
 import './Footer.css'
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { getCurrentUser } from "../../services/api/authService.js";
 
 // SVG
 import logo from '../../assets/icons/footer/logo.svg';
@@ -16,6 +17,7 @@ import usFlag from '../../assets/icons/header/US.png';
 
 function Footer() {
     const navigate = useNavigate();
+    const isLoggedIn = Boolean(getCurrentUser());
 
     function handleSignup() {
         navigate("/login");
@@ -24,10 +26,12 @@ function Footer() {
         <>
             <footer className="footer">
 
-                <div className="footer-signup">
-                    <p>Be the first to know about new arrivals</p>
-                    <button onClick={handleSignup}>Sign up</button>
-                </div>
+                {!isLoggedIn && (
+                    <div className="footer-signup">
+                        <p>Be the first to know about new arrivals</p>
+                        <button onClick={handleSignup}>Sign up</button>
+                    </div>
+                )}
 
                 <div className="footer-content">
 
@@ -36,7 +40,7 @@ function Footer() {
                         <div className="footer-column">
                             <h3>Help</h3>
 
-                            <a href="#">Contact us</a>
+                            <Link to="/help" onClick={() => window.scrollTo(0, 0)}>Contact us</Link>
                             <a href="#">Start a return</a>
                             <a href="#">Track your order</a>
                             <a href="#">Become a member</a>
@@ -83,7 +87,9 @@ function Footer() {
 
                         <h2>Fearlessly Independent</h2>
 
-                        <img className="footer-logo" src={logo} alt="New Balance"/>
+                        <Link to="/" onClick={() => window.scrollTo(0, 0)} aria-label="New Balance home">
+                            <img className="footer-logo" src={logo} alt="New Balance"/>
+                        </Link>
 
                         <p>
                             Independent since 1906, we empower people
