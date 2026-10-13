@@ -9,6 +9,7 @@ items:
   - NewBalanceStore.Application.Interfaces.IProductService.DeleteAsync(System.String)
   - NewBalanceStore.Application.Interfaces.IProductService.GetAllAsync
   - NewBalanceStore.Application.Interfaces.IProductService.GetByIdAsync(System.String)
+  - NewBalanceStore.Application.Interfaces.IProductService.GetFilteredProductsAsync(NewBalanceStore.Application.DTOs.ProductFilterDto)
   - NewBalanceStore.Application.Interfaces.IProductService.UpdateAsync(System.String,NewBalanceStore.Application.DTOs.CreateProductDto)
   langs:
   - csharp
@@ -19,20 +20,60 @@ items:
   type: Interface
   source:
     remote:
-      path: backend/NewBalanceStore.Application/Interfaces/IProductService.cs
-      branch: main
+      path: NewBalanceStore.Application/Interfaces/IProductService.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: IProductService
-    path: NewBalanceStore/backend/NewBalanceStore.Application/Interfaces/IProductService.cs
-    startLine: 4
+    path: NewBalanceStore.Application/Interfaces/IProductService.cs
+    startLine: 8
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.Interfaces
+  summary: >-
+    Контракт сервісу прикладної бізнес-логіки управління товарами.
+
+    Забезпечує фільтрацію, пошук, пагінацію, мапінг та валідацію операцій над товарами.
+  example: []
   syntax:
     content: public interface IProductService
     content.vb: Public Interface IProductService
   derivedClasses:
   - NewBalanceStore.Application.Services.ProductService
+- uid: NewBalanceStore.Application.Interfaces.IProductService.GetFilteredProductsAsync(NewBalanceStore.Application.DTOs.ProductFilterDto)
+  commentId: M:NewBalanceStore.Application.Interfaces.IProductService.GetFilteredProductsAsync(NewBalanceStore.Application.DTOs.ProductFilterDto)
+  id: GetFilteredProductsAsync(NewBalanceStore.Application.DTOs.ProductFilterDto)
+  parent: NewBalanceStore.Application.Interfaces.IProductService
+  langs:
+  - csharp
+  - vb
+  name: GetFilteredProductsAsync(ProductFilterDto)
+  nameWithType: IProductService.GetFilteredProductsAsync(ProductFilterDto)
+  fullName: NewBalanceStore.Application.Interfaces.IProductService.GetFilteredProductsAsync(NewBalanceStore.Application.DTOs.ProductFilterDto)
+  type: Method
+  source:
+    remote:
+      path: NewBalanceStore.Application/Interfaces/IProductService.cs
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: GetFilteredProductsAsync
+    path: NewBalanceStore.Application/Interfaces/IProductService.cs
+    startLine: 15
+  assemblies:
+  - NewBalanceStore.Application
+  namespace: NewBalanceStore.Application.Interfaces
+  summary: Отримує відфільтрований перелік товарів відповідно до критеріїв пошуку, категорій, цін та сортування.
+  example: []
+  syntax:
+    content: Task<IEnumerable<ProductDto>> GetFilteredProductsAsync(ProductFilterDto filter)
+    parameters:
+    - id: filter
+      type: NewBalanceStore.Application.DTOs.ProductFilterDto
+      description: Об'єкт із критеріями фільтрації (<xref href="NewBalanceStore.Application.DTOs.ProductFilterDto" data-throw-if-not-resolved="false"></xref>).
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{NewBalanceStore.Application.DTOs.ProductDto}}
+      description: Колекція відфільтрованих об'єктів <xref href="NewBalanceStore.Application.DTOs.ProductDto" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Function GetFilteredProductsAsync(filter As ProductFilterDto) As Task(Of IEnumerable(Of ProductDto))
+  overload: NewBalanceStore.Application.Interfaces.IProductService.GetFilteredProductsAsync*
 - uid: NewBalanceStore.Application.Interfaces.IProductService.GetAllAsync
   commentId: M:NewBalanceStore.Application.Interfaces.IProductService.GetAllAsync
   id: GetAllAsync
@@ -46,19 +87,22 @@ items:
   type: Method
   source:
     remote:
-      path: backend/NewBalanceStore.Application/Interfaces/IProductService.cs
-      branch: main
+      path: NewBalanceStore.Application/Interfaces/IProductService.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetAllAsync
-    path: NewBalanceStore/backend/NewBalanceStore.Application/Interfaces/IProductService.cs
-    startLine: 6
+    path: NewBalanceStore.Application/Interfaces/IProductService.cs
+    startLine: 21
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.Interfaces
+  summary: Отримує всі товари без застосування додаткових фільтрів.
+  example: []
   syntax:
     content: Task<IEnumerable<ProductDto>> GetAllAsync()
     return:
       type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{NewBalanceStore.Application.DTOs.ProductDto}}
+      description: Повний перелік товарів у вигляді <xref href="NewBalanceStore.Application.DTOs.ProductDto" data-throw-if-not-resolved="false"></xref>.
     content.vb: Function GetAllAsync() As Task(Of IEnumerable(Of ProductDto))
   overload: NewBalanceStore.Application.Interfaces.IProductService.GetAllAsync*
 - uid: NewBalanceStore.Application.Interfaces.IProductService.GetByIdAsync(System.String)
@@ -74,22 +118,26 @@ items:
   type: Method
   source:
     remote:
-      path: backend/NewBalanceStore.Application/Interfaces/IProductService.cs
-      branch: main
+      path: NewBalanceStore.Application/Interfaces/IProductService.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetByIdAsync
-    path: NewBalanceStore/backend/NewBalanceStore.Application/Interfaces/IProductService.cs
-    startLine: 7
+    path: NewBalanceStore.Application/Interfaces/IProductService.cs
+    startLine: 28
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.Interfaces
+  summary: Отримує детальну інформацію про конкретний товар за його ідентифікатором.
+  example: []
   syntax:
     content: Task<ProductDto?> GetByIdAsync(string id)
     parameters:
     - id: id
       type: System.String
+      description: Ідентифікатор товару.
     return:
       type: System.Threading.Tasks.Task{NewBalanceStore.Application.DTOs.ProductDto}
+      description: Об'єкт <xref href="NewBalanceStore.Application.DTOs.ProductDto" data-throw-if-not-resolved="false"></xref> або <code>null</code>, якщо товар не знайдено.
     content.vb: Function GetByIdAsync(id As String) As Task(Of ProductDto)
   overload: NewBalanceStore.Application.Interfaces.IProductService.GetByIdAsync*
   nameWithType.vb: IProductService.GetByIdAsync(String)
@@ -108,22 +156,26 @@ items:
   type: Method
   source:
     remote:
-      path: backend/NewBalanceStore.Application/Interfaces/IProductService.cs
-      branch: main
+      path: NewBalanceStore.Application/Interfaces/IProductService.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: CreateAsync
-    path: NewBalanceStore/backend/NewBalanceStore.Application/Interfaces/IProductService.cs
-    startLine: 8
+    path: NewBalanceStore.Application/Interfaces/IProductService.cs
+    startLine: 35
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.Interfaces
+  summary: Створює новий товар на основі переданих вхідних даних та зберігає його в репозиторії.
+  example: []
   syntax:
     content: Task<ProductDto> CreateAsync(CreateProductDto dto)
     parameters:
     - id: dto
       type: NewBalanceStore.Application.DTOs.CreateProductDto
+      description: Вхідні дані для створення товару (<xref href="NewBalanceStore.Application.DTOs.CreateProductDto" data-throw-if-not-resolved="false"></xref>).
     return:
       type: System.Threading.Tasks.Task{NewBalanceStore.Application.DTOs.ProductDto}
+      description: Створений об'єкт <xref href="NewBalanceStore.Application.DTOs.ProductDto" data-throw-if-not-resolved="false"></xref> із присвоєним ідентифікатором.
     content.vb: Function CreateAsync(dto As CreateProductDto) As Task(Of ProductDto)
   overload: NewBalanceStore.Application.Interfaces.IProductService.CreateAsync*
 - uid: NewBalanceStore.Application.Interfaces.IProductService.UpdateAsync(System.String,NewBalanceStore.Application.DTOs.CreateProductDto)
@@ -139,24 +191,29 @@ items:
   type: Method
   source:
     remote:
-      path: backend/NewBalanceStore.Application/Interfaces/IProductService.cs
-      branch: main
+      path: NewBalanceStore.Application/Interfaces/IProductService.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: UpdateAsync
-    path: NewBalanceStore/backend/NewBalanceStore.Application/Interfaces/IProductService.cs
-    startLine: 9
+    path: NewBalanceStore.Application/Interfaces/IProductService.cs
+    startLine: 43
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.Interfaces
+  summary: Оновлює властивості та варіації існуючого товару за вказаним ідентифікатором.
+  example: []
   syntax:
     content: Task<bool> UpdateAsync(string id, CreateProductDto dto)
     parameters:
     - id: id
       type: System.String
+      description: Ідентифікатор товару для оновлення.
     - id: dto
       type: NewBalanceStore.Application.DTOs.CreateProductDto
+      description: Нові дані товару (<xref href="NewBalanceStore.Application.DTOs.CreateProductDto" data-throw-if-not-resolved="false"></xref>).
     return:
       type: System.Threading.Tasks.Task{System.Boolean}
+      description: <code>true</code>, якщо товар успішно знайдено та оновлено; інакше <code>false</code>.
     content.vb: Function UpdateAsync(id As String, dto As CreateProductDto) As Task(Of Boolean)
   overload: NewBalanceStore.Application.Interfaces.IProductService.UpdateAsync*
   nameWithType.vb: IProductService.UpdateAsync(String, CreateProductDto)
@@ -175,22 +232,26 @@ items:
   type: Method
   source:
     remote:
-      path: backend/NewBalanceStore.Application/Interfaces/IProductService.cs
-      branch: main
+      path: NewBalanceStore.Application/Interfaces/IProductService.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: DeleteAsync
-    path: NewBalanceStore/backend/NewBalanceStore.Application/Interfaces/IProductService.cs
-    startLine: 10
+    path: NewBalanceStore.Application/Interfaces/IProductService.cs
+    startLine: 50
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.Interfaces
+  summary: Видаляє товар із каталогу за його ідентифікатором.
+  example: []
   syntax:
     content: Task<bool> DeleteAsync(string id)
     parameters:
     - id: id
       type: System.String
+      description: Ідентифікатор товару для видалення.
     return:
       type: System.Threading.Tasks.Task{System.Boolean}
+      description: <code>true</code>, якщо товар існував та був видалений; інакше <code>false</code>.
     content.vb: Function DeleteAsync(id As String) As Task(Of Boolean)
   overload: NewBalanceStore.Application.Interfaces.IProductService.DeleteAsync*
   nameWithType.vb: IProductService.DeleteAsync(String)
@@ -220,12 +281,25 @@ references:
   - name: .
   - uid: NewBalanceStore.Application.Interfaces
     name: Interfaces
-- uid: NewBalanceStore.Application.Interfaces.IProductService.GetAllAsync*
-  commentId: Overload:NewBalanceStore.Application.Interfaces.IProductService.GetAllAsync
-  href: NewBalanceStore.Application.Interfaces.IProductService.html#NewBalanceStore_Application_Interfaces_IProductService_GetAllAsync
-  name: GetAllAsync
-  nameWithType: IProductService.GetAllAsync
-  fullName: NewBalanceStore.Application.Interfaces.IProductService.GetAllAsync
+- uid: NewBalanceStore.Application.DTOs.ProductFilterDto
+  commentId: T:NewBalanceStore.Application.DTOs.ProductFilterDto
+  parent: NewBalanceStore.Application.DTOs
+  href: NewBalanceStore.Application.DTOs.ProductFilterDto.html
+  name: ProductFilterDto
+  nameWithType: ProductFilterDto
+  fullName: NewBalanceStore.Application.DTOs.ProductFilterDto
+- uid: NewBalanceStore.Application.DTOs.ProductDto
+  commentId: T:NewBalanceStore.Application.DTOs.ProductDto
+  href: NewBalanceStore.Application.DTOs.ProductDto.html
+  name: ProductDto
+  nameWithType: ProductDto
+  fullName: NewBalanceStore.Application.DTOs.ProductDto
+- uid: NewBalanceStore.Application.Interfaces.IProductService.GetFilteredProductsAsync*
+  commentId: Overload:NewBalanceStore.Application.Interfaces.IProductService.GetFilteredProductsAsync
+  href: NewBalanceStore.Application.Interfaces.IProductService.html#NewBalanceStore_Application_Interfaces_IProductService_GetFilteredProductsAsync_NewBalanceStore_Application_DTOs_ProductFilterDto_
+  name: GetFilteredProductsAsync
+  nameWithType: IProductService.GetFilteredProductsAsync
+  fullName: NewBalanceStore.Application.Interfaces.IProductService.GetFilteredProductsAsync
 - uid: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{NewBalanceStore.Application.DTOs.ProductDto}}
   commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{NewBalanceStore.Application.DTOs.ProductDto}}
   parent: System.Threading.Tasks
@@ -273,6 +347,29 @@ references:
     href: NewBalanceStore.Application.DTOs.ProductDto.html
   - name: )
   - name: )
+- uid: NewBalanceStore.Application.DTOs
+  commentId: N:NewBalanceStore.Application.DTOs
+  name: NewBalanceStore.Application.DTOs
+  nameWithType: NewBalanceStore.Application.DTOs
+  fullName: NewBalanceStore.Application.DTOs
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.DTOs
+    name: DTOs
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.DTOs
+    name: DTOs
 - uid: System.Threading.Tasks.Task`1
   commentId: T:System.Threading.Tasks.Task`1
   isExternal: true
@@ -338,6 +435,12 @@ references:
     name: Tasks
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: NewBalanceStore.Application.Interfaces.IProductService.GetAllAsync*
+  commentId: Overload:NewBalanceStore.Application.Interfaces.IProductService.GetAllAsync
+  href: NewBalanceStore.Application.Interfaces.IProductService.html#NewBalanceStore_Application_Interfaces_IProductService_GetAllAsync
+  name: GetAllAsync
+  nameWithType: IProductService.GetAllAsync
+  fullName: NewBalanceStore.Application.Interfaces.IProductService.GetAllAsync
 - uid: NewBalanceStore.Application.Interfaces.IProductService.GetByIdAsync*
   commentId: Overload:NewBalanceStore.Application.Interfaces.IProductService.GetByIdAsync
   href: NewBalanceStore.Application.Interfaces.IProductService.html#NewBalanceStore_Application_Interfaces_IProductService_GetByIdAsync_System_String_
@@ -395,12 +498,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: NewBalanceStore.Application.Interfaces.IProductService.CreateAsync*
-  commentId: Overload:NewBalanceStore.Application.Interfaces.IProductService.CreateAsync
-  href: NewBalanceStore.Application.Interfaces.IProductService.html#NewBalanceStore_Application_Interfaces_IProductService_CreateAsync_NewBalanceStore_Application_DTOs_CreateProductDto_
-  name: CreateAsync
-  nameWithType: IProductService.CreateAsync
-  fullName: NewBalanceStore.Application.Interfaces.IProductService.CreateAsync
 - uid: NewBalanceStore.Application.DTOs.CreateProductDto
   commentId: T:NewBalanceStore.Application.DTOs.CreateProductDto
   parent: NewBalanceStore.Application.DTOs
@@ -408,29 +505,12 @@ references:
   name: CreateProductDto
   nameWithType: CreateProductDto
   fullName: NewBalanceStore.Application.DTOs.CreateProductDto
-- uid: NewBalanceStore.Application.DTOs
-  commentId: N:NewBalanceStore.Application.DTOs
-  name: NewBalanceStore.Application.DTOs
-  nameWithType: NewBalanceStore.Application.DTOs
-  fullName: NewBalanceStore.Application.DTOs
-  spec.csharp:
-  - uid: NewBalanceStore
-    name: NewBalanceStore
-  - name: .
-  - uid: NewBalanceStore.Application
-    name: Application
-  - name: .
-  - uid: NewBalanceStore.Application.DTOs
-    name: DTOs
-  spec.vb:
-  - uid: NewBalanceStore
-    name: NewBalanceStore
-  - name: .
-  - uid: NewBalanceStore.Application
-    name: Application
-  - name: .
-  - uid: NewBalanceStore.Application.DTOs
-    name: DTOs
+- uid: NewBalanceStore.Application.Interfaces.IProductService.CreateAsync*
+  commentId: Overload:NewBalanceStore.Application.Interfaces.IProductService.CreateAsync
+  href: NewBalanceStore.Application.Interfaces.IProductService.html#NewBalanceStore_Application_Interfaces_IProductService_CreateAsync_NewBalanceStore_Application_DTOs_CreateProductDto_
+  name: CreateAsync
+  nameWithType: IProductService.CreateAsync
+  fullName: NewBalanceStore.Application.Interfaces.IProductService.CreateAsync
 - uid: NewBalanceStore.Application.Interfaces.IProductService.UpdateAsync*
   commentId: Overload:NewBalanceStore.Application.Interfaces.IProductService.UpdateAsync
   href: NewBalanceStore.Application.Interfaces.IProductService.html#NewBalanceStore_Application_Interfaces_IProductService_UpdateAsync_System_String_NewBalanceStore_Application_DTOs_CreateProductDto_

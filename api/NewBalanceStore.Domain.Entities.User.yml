@@ -22,15 +22,20 @@ items:
   type: Class
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/User.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/User.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: User
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/User.cs
-    startLine: 8
+    path: NewBalanceStore.Domain/Entities/User.cs
+    startLine: 9
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: >-
+    Доменна сутність облікового запису користувача системи.
+
+    Представляє покупця або адміністратора з відповідними правами доступу.
+  example: []
   syntax:
     content: public class User
     content.vb: Public Class User
@@ -57,15 +62,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/User.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/User.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Id
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/User.cs
-    startLine: 10
+    path: NewBalanceStore.Domain/Entities/User.cs
+    startLine: 14
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Унікальний ідентифікатор користувача у системі.
+  example: []
   syntax:
     content: public string Id { get; set; }
     parameters: []
@@ -86,15 +93,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/User.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/User.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Email
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/User.cs
-    startLine: 11
+    path: NewBalanceStore.Domain/Entities/User.cs
+    startLine: 19
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Унікальна адреса електронної пошти користувача, що слугує логіном.
+  example: []
   syntax:
     content: public string Email { get; set; }
     parameters: []
@@ -102,6 +111,37 @@ items:
       type: System.String
     content.vb: Public Property Email As String
   overload: NewBalanceStore.Domain.Entities.User.Email*
+- uid: NewBalanceStore.Domain.Entities.User.PasswordHash
+  commentId: P:NewBalanceStore.Domain.Entities.User.PasswordHash
+  id: PasswordHash
+  parent: NewBalanceStore.Domain.Entities.User
+  langs:
+  - csharp
+  - vb
+  name: PasswordHash
+  nameWithType: User.PasswordHash
+  fullName: NewBalanceStore.Domain.Entities.User.PasswordHash
+  type: Property
+  source:
+    remote:
+      path: NewBalanceStore.Domain/Entities/User.cs
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: PasswordHash
+    path: NewBalanceStore.Domain/Entities/User.cs
+    startLine: 24
+  assemblies:
+  - NewBalanceStore.Domain
+  namespace: NewBalanceStore.Domain.Entities
+  summary: Криптографічний хеш пароля, згенерований за допомогою алгоритму PBKDF2 / PasswordHasher.
+  example: []
+  syntax:
+    content: public string PasswordHash { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property PasswordHash As String
+  overload: NewBalanceStore.Domain.Entities.User.PasswordHash*
 - uid: NewBalanceStore.Domain.Entities.User.FirstName
   commentId: P:NewBalanceStore.Domain.Entities.User.FirstName
   id: FirstName
@@ -115,15 +155,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/User.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/User.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: FirstName
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/User.cs
-    startLine: 12
+    path: NewBalanceStore.Domain/Entities/User.cs
+    startLine: 29
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Ім'я користувача.
+  example: []
   syntax:
     content: public string FirstName { get; set; }
     parameters: []
@@ -144,15 +186,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/User.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/User.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: LastName
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/User.cs
-    startLine: 13
+    path: NewBalanceStore.Domain/Entities/User.cs
+    startLine: 34
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Прізвище користувача.
+  example: []
   syntax:
     content: public string LastName { get; set; }
     parameters: []
@@ -173,15 +217,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/User.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/User.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Phone
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/User.cs
-    startLine: 14
+    path: NewBalanceStore.Domain/Entities/User.cs
+    startLine: 39
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Номер мобільного телефону користувача.
+  example: []
   syntax:
     content: public string Phone { get; set; }
     parameters: []
@@ -202,15 +248,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/User.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/User.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Role
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/User.cs
-    startLine: 15
+    path: NewBalanceStore.Domain/Entities/User.cs
+    startLine: 44
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Роль користувача в системі, яка визначає рівень привілеїв (Customer або Admin).
+  example: []
   syntax:
     content: public UserRole Role { get; set; }
     parameters: []
@@ -218,35 +266,6 @@ items:
       type: NewBalanceStore.Domain.Enums.UserRole
     content.vb: Public Property Role As UserRole
   overload: NewBalanceStore.Domain.Entities.User.Role*
-- uid: NewBalanceStore.Domain.Entities.User.PasswordHash
-  commentId: P:NewBalanceStore.Domain.Entities.User.PasswordHash
-  id: PasswordHash
-  parent: NewBalanceStore.Domain.Entities.User
-  langs:
-  - csharp
-  - vb
-  name: PasswordHash
-  nameWithType: User.PasswordHash
-  fullName: NewBalanceStore.Domain.Entities.User.PasswordHash
-  type: Property
-  source:
-    remote:
-      path: NewBalanceStore.Domain/Entities/User.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
-    id: PasswordHash
-    path: NewBalanceStore.Domain/Entities/User.cs
-    startLine: 9
-  assemblies:
-  - NewBalanceStore.Domain
-  namespace: NewBalanceStore.Domain.Entities
-  syntax:
-    content: public string PasswordHash { get; set; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public Property PasswordHash As String
-  overload: NewBalanceStore.Domain.Entities.User.PasswordHash*
 - uid: NewBalanceStore.Domain.Entities.User.FullName
   commentId: P:NewBalanceStore.Domain.Entities.User.FullName
   id: FullName
@@ -261,14 +280,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/Entities/User.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: FullName
     path: NewBalanceStore.Domain/Entities/User.cs
-    startLine: 14
+    startLine: 49
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: "Обчислювана властивість: повне ім'я та прізвище користувача."
+  example: []
   syntax:
     content: public string FullName { get; }
     parameters: []
@@ -560,6 +581,12 @@ references:
   name: Email
   nameWithType: User.Email
   fullName: NewBalanceStore.Domain.Entities.User.Email
+- uid: NewBalanceStore.Domain.Entities.User.PasswordHash*
+  commentId: Overload:NewBalanceStore.Domain.Entities.User.PasswordHash
+  href: NewBalanceStore.Domain.Entities.User.html#NewBalanceStore_Domain_Entities_User_PasswordHash
+  name: PasswordHash
+  nameWithType: User.PasswordHash
+  fullName: NewBalanceStore.Domain.Entities.User.PasswordHash
 - uid: NewBalanceStore.Domain.Entities.User.FirstName*
   commentId: Overload:NewBalanceStore.Domain.Entities.User.FirstName
   href: NewBalanceStore.Domain.Entities.User.html#NewBalanceStore_Domain_Entities_User_FirstName
@@ -614,12 +641,6 @@ references:
   - name: .
   - uid: NewBalanceStore.Domain.Enums
     name: Enums
-- uid: NewBalanceStore.Domain.Entities.User.PasswordHash*
-  commentId: Overload:NewBalanceStore.Domain.Entities.User.PasswordHash
-  href: NewBalanceStore.Domain.Entities.User.html#NewBalanceStore_Domain_Entities_User_PasswordHash
-  name: PasswordHash
-  nameWithType: User.PasswordHash
-  fullName: NewBalanceStore.Domain.Entities.User.PasswordHash
 - uid: NewBalanceStore.Domain.Entities.User.FullName*
   commentId: Overload:NewBalanceStore.Domain.Entities.User.FullName
   href: NewBalanceStore.Domain.Entities.User.html#NewBalanceStore_Domain_Entities_User_FullName

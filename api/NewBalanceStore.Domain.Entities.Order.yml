@@ -6,7 +6,6 @@ items:
   parent: NewBalanceStore.Domain.Entities
   children:
   - NewBalanceStore.Domain.Entities.Order.CreatedAt
-  - NewBalanceStore.Domain.Entities.Order.Customer
   - NewBalanceStore.Domain.Entities.Order.CustomerEmail
   - NewBalanceStore.Domain.Entities.Order.CustomerName
   - NewBalanceStore.Domain.Entities.Order.CustomerPhone
@@ -15,8 +14,6 @@ items:
   - NewBalanceStore.Domain.Entities.Order.ShippingAddress
   - NewBalanceStore.Domain.Entities.Order.Status
   - NewBalanceStore.Domain.Entities.Order.TotalAmount
-  - NewBalanceStore.Domain.Entities.Order.TotalPrice
-  - NewBalanceStore.Domain.Entities.Order.UserId
   langs:
   - csharp
   - vb
@@ -26,15 +23,20 @@ items:
   type: Class
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/Order.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/Order.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Order
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/Order.cs
-    startLine: 8
+    path: NewBalanceStore.Domain/Entities/Order.cs
+    startLine: 11
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: >-
+    Доменна сутність замовлення в системі інтернет-магазину.
+
+    Фіксує інформацію про покупця, адресу доставки, обрані товари та фінансовий підсумок.
+  example: []
   syntax:
     content: public class Order
     content.vb: Public Class Order
@@ -61,225 +63,24 @@ items:
   type: Property
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/Order.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/Order.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Id
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/Order.cs
-    startLine: 10
-  assemblies:
-  - NewBalanceStore.Domain
-  namespace: NewBalanceStore.Domain.Entities
-  syntax:
-    content: public string Id { get; set; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public Property Id As String
-  overload: NewBalanceStore.Domain.Entities.Order.Id*
-- uid: NewBalanceStore.Domain.Entities.Order.UserId
-  commentId: P:NewBalanceStore.Domain.Entities.Order.UserId
-  id: UserId
-  parent: NewBalanceStore.Domain.Entities.Order
-  langs:
-  - csharp
-  - vb
-  name: UserId
-  nameWithType: Order.UserId
-  fullName: NewBalanceStore.Domain.Entities.Order.UserId
-  type: Property
-  source:
-    remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/Order.cs
-      branch: main
-      repo: https://github.com/AlexElNX/NewBalanceStore
-    id: UserId
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/Order.cs
-    startLine: 11
-  assemblies:
-  - NewBalanceStore.Domain
-  namespace: NewBalanceStore.Domain.Entities
-  syntax:
-    content: public string UserId { get; set; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public Property UserId As String
-  overload: NewBalanceStore.Domain.Entities.Order.UserId*
-- uid: NewBalanceStore.Domain.Entities.Order.Items
-  commentId: P:NewBalanceStore.Domain.Entities.Order.Items
-  id: Items
-  parent: NewBalanceStore.Domain.Entities.Order
-  langs:
-  - csharp
-  - vb
-  name: Items
-  nameWithType: Order.Items
-  fullName: NewBalanceStore.Domain.Entities.Order.Items
-  type: Property
-  source:
-    remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/Order.cs
-      branch: main
-      repo: https://github.com/AlexElNX/NewBalanceStore
-    id: Items
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/Order.cs
-    startLine: 12
-  assemblies:
-  - NewBalanceStore.Domain
-  namespace: NewBalanceStore.Domain.Entities
-  syntax:
-    content: public List<OrderItem> Items { get; set; }
-    parameters: []
-    return:
-      type: System.Collections.Generic.List{NewBalanceStore.Domain.Entities.OrderItem}
-    content.vb: Public Property Items As List(Of OrderItem)
-  overload: NewBalanceStore.Domain.Entities.Order.Items*
-- uid: NewBalanceStore.Domain.Entities.Order.Customer
-  commentId: P:NewBalanceStore.Domain.Entities.Order.Customer
-  id: Customer
-  parent: NewBalanceStore.Domain.Entities.Order
-  langs:
-  - csharp
-  - vb
-  name: Customer
-  nameWithType: Order.Customer
-  fullName: NewBalanceStore.Domain.Entities.Order.Customer
-  type: Property
-  source:
-    remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/Order.cs
-      branch: main
-      repo: https://github.com/AlexElNX/NewBalanceStore
-    id: Customer
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/Order.cs
-    startLine: 13
-  assemblies:
-  - NewBalanceStore.Domain
-  namespace: NewBalanceStore.Domain.Entities
-  syntax:
-    content: public CustomerInfo Customer { get; set; }
-    parameters: []
-    return:
-      type: NewBalanceStore.Domain.Entities.CustomerInfo
-    content.vb: Public Property Customer As CustomerInfo
-  overload: NewBalanceStore.Domain.Entities.Order.Customer*
-- uid: NewBalanceStore.Domain.Entities.Order.ShippingAddress
-  commentId: P:NewBalanceStore.Domain.Entities.Order.ShippingAddress
-  id: ShippingAddress
-  parent: NewBalanceStore.Domain.Entities.Order
-  langs:
-  - csharp
-  - vb
-  name: ShippingAddress
-  nameWithType: Order.ShippingAddress
-  fullName: NewBalanceStore.Domain.Entities.Order.ShippingAddress
-  type: Property
-  source:
-    remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/Order.cs
-      branch: main
-      repo: https://github.com/AlexElNX/NewBalanceStore
-    id: ShippingAddress
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/Order.cs
-    startLine: 14
-  assemblies:
-  - NewBalanceStore.Domain
-  namespace: NewBalanceStore.Domain.Entities
-  syntax:
-    content: public ShippingAddress ShippingAddress { get; set; }
-    parameters: []
-    return:
-      type: NewBalanceStore.Domain.Entities.ShippingAddress
-    content.vb: Public Property ShippingAddress As ShippingAddress
-  overload: NewBalanceStore.Domain.Entities.Order.ShippingAddress*
-- uid: NewBalanceStore.Domain.Entities.Order.TotalPrice
-  commentId: P:NewBalanceStore.Domain.Entities.Order.TotalPrice
-  id: TotalPrice
-  parent: NewBalanceStore.Domain.Entities.Order
-  langs:
-  - csharp
-  - vb
-  name: TotalPrice
-  nameWithType: Order.TotalPrice
-  fullName: NewBalanceStore.Domain.Entities.Order.TotalPrice
-  type: Property
-  source:
-    remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/Order.cs
-      branch: main
-      repo: https://github.com/AlexElNX/NewBalanceStore
-    id: TotalPrice
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/Order.cs
-    startLine: 15
-  assemblies:
-  - NewBalanceStore.Domain
-  namespace: NewBalanceStore.Domain.Entities
-  syntax:
-    content: public decimal TotalPrice { get; set; }
-    parameters: []
-    return:
-      type: System.Decimal
-    content.vb: Public Property TotalPrice As Decimal
-  overload: NewBalanceStore.Domain.Entities.Order.TotalPrice*
-- uid: NewBalanceStore.Domain.Entities.Order.Status
-  commentId: P:NewBalanceStore.Domain.Entities.Order.Status
-  id: Status
-  parent: NewBalanceStore.Domain.Entities.Order
-  langs:
-  - csharp
-  - vb
-  name: Status
-  nameWithType: Order.Status
-  fullName: NewBalanceStore.Domain.Entities.Order.Status
-  type: Property
-  source:
-    remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/Order.cs
-      branch: main
-      repo: https://github.com/AlexElNX/NewBalanceStore
-    id: Status
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/Order.cs
+    path: NewBalanceStore.Domain/Entities/Order.cs
     startLine: 16
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Унікальний ідентифікатор замовлення.
+  example: []
   syntax:
-    content: public OrderStatus Status { get; set; }
+    content: public int Id { get; set; }
     parameters: []
     return:
-      type: NewBalanceStore.Domain.Enums.OrderStatus
-    content.vb: Public Property Status As OrderStatus
-  overload: NewBalanceStore.Domain.Entities.Order.Status*
-- uid: NewBalanceStore.Domain.Entities.Order.CreatedAt
-  commentId: P:NewBalanceStore.Domain.Entities.Order.CreatedAt
-  id: CreatedAt
-  parent: NewBalanceStore.Domain.Entities.Order
-  langs:
-  - csharp
-  - vb
-  name: CreatedAt
-  nameWithType: Order.CreatedAt
-  fullName: NewBalanceStore.Domain.Entities.Order.CreatedAt
-  type: Property
-  source:
-    remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/Order.cs
-      branch: main
-      repo: https://github.com/AlexElNX/NewBalanceStore
-    id: CreatedAt
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/Order.cs
-    startLine: 17
-  assemblies:
-  - NewBalanceStore.Domain
-  namespace: NewBalanceStore.Domain.Entities
-  syntax:
-    content: public DateTime CreatedAt { get; set; }
-    parameters: []
-    return:
-      type: System.DateTime
-    content.vb: Public Property CreatedAt As Date
-  overload: NewBalanceStore.Domain.Entities.Order.CreatedAt*
+      type: System.Int32
+    content.vb: Public Property Id As Integer
+  overload: NewBalanceStore.Domain.Entities.Order.Id*
 - uid: NewBalanceStore.Domain.Entities.Order.CustomerName
   commentId: P:NewBalanceStore.Domain.Entities.Order.CustomerName
   id: CustomerName
@@ -294,14 +95,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/Entities/Order.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: CustomerName
     path: NewBalanceStore.Domain/Entities/Order.cs
-    startLine: 11
+    startLine: 21
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Повне ім'я та прізвище покупця, вказані при оформленні.
+  example: []
   syntax:
     content: public string CustomerName { get; set; }
     parameters: []
@@ -323,14 +126,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/Entities/Order.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: CustomerEmail
     path: NewBalanceStore.Domain/Entities/Order.cs
-    startLine: 12
+    startLine: 26
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Контактна адреса електронної пошти замовника для сповіщень.
+  example: []
   syntax:
     content: public string CustomerEmail { get; set; }
     parameters: []
@@ -352,14 +157,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/Entities/Order.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: CustomerPhone
     path: NewBalanceStore.Domain/Entities/Order.cs
-    startLine: 13
+    startLine: 31
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Контактний номер телефону замовника для зв'язку служби доставки.
+  example: []
   syntax:
     content: public string CustomerPhone { get; set; }
     parameters: []
@@ -367,6 +174,37 @@ items:
       type: System.String
     content.vb: Public Property CustomerPhone As String
   overload: NewBalanceStore.Domain.Entities.Order.CustomerPhone*
+- uid: NewBalanceStore.Domain.Entities.Order.ShippingAddress
+  commentId: P:NewBalanceStore.Domain.Entities.Order.ShippingAddress
+  id: ShippingAddress
+  parent: NewBalanceStore.Domain.Entities.Order
+  langs:
+  - csharp
+  - vb
+  name: ShippingAddress
+  nameWithType: Order.ShippingAddress
+  fullName: NewBalanceStore.Domain.Entities.Order.ShippingAddress
+  type: Property
+  source:
+    remote:
+      path: NewBalanceStore.Domain/Entities/Order.cs
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: ShippingAddress
+    path: NewBalanceStore.Domain/Entities/Order.cs
+    startLine: 36
+  assemblies:
+  - NewBalanceStore.Domain
+  namespace: NewBalanceStore.Domain.Entities
+  summary: Повна фізична адреса доставки (країна, місто, вулиця, поштовий індекс).
+  example: []
+  syntax:
+    content: public string ShippingAddress { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ShippingAddress As String
+  overload: NewBalanceStore.Domain.Entities.Order.ShippingAddress*
 - uid: NewBalanceStore.Domain.Entities.Order.TotalAmount
   commentId: P:NewBalanceStore.Domain.Entities.Order.TotalAmount
   id: TotalAmount
@@ -381,14 +219,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/Entities/Order.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: TotalAmount
     path: NewBalanceStore.Domain/Entities/Order.cs
-    startLine: 15
+    startLine: 41
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Загальна сума вартості всіх замовлених позицій у замовленні.
+  example: []
   syntax:
     content: public decimal TotalAmount { get; set; }
     parameters: []
@@ -396,6 +236,99 @@ items:
       type: System.Decimal
     content.vb: Public Property TotalAmount As Decimal
   overload: NewBalanceStore.Domain.Entities.Order.TotalAmount*
+- uid: NewBalanceStore.Domain.Entities.Order.Status
+  commentId: P:NewBalanceStore.Domain.Entities.Order.Status
+  id: Status
+  parent: NewBalanceStore.Domain.Entities.Order
+  langs:
+  - csharp
+  - vb
+  name: Status
+  nameWithType: Order.Status
+  fullName: NewBalanceStore.Domain.Entities.Order.Status
+  type: Property
+  source:
+    remote:
+      path: NewBalanceStore.Domain/Entities/Order.cs
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: Status
+    path: NewBalanceStore.Domain/Entities/Order.cs
+    startLine: 46
+  assemblies:
+  - NewBalanceStore.Domain
+  namespace: NewBalanceStore.Domain.Entities
+  summary: Поточний статус життєвого циклу замовлення (наприклад, "Pending", "Processing", "Shipped", "Delivered", "Cancelled").
+  example: []
+  syntax:
+    content: public string Status { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Status As String
+  overload: NewBalanceStore.Domain.Entities.Order.Status*
+- uid: NewBalanceStore.Domain.Entities.Order.CreatedAt
+  commentId: P:NewBalanceStore.Domain.Entities.Order.CreatedAt
+  id: CreatedAt
+  parent: NewBalanceStore.Domain.Entities.Order
+  langs:
+  - csharp
+  - vb
+  name: CreatedAt
+  nameWithType: Order.CreatedAt
+  fullName: NewBalanceStore.Domain.Entities.Order.CreatedAt
+  type: Property
+  source:
+    remote:
+      path: NewBalanceStore.Domain/Entities/Order.cs
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: CreatedAt
+    path: NewBalanceStore.Domain/Entities/Order.cs
+    startLine: 51
+  assemblies:
+  - NewBalanceStore.Domain
+  namespace: NewBalanceStore.Domain.Entities
+  summary: Дата та час створення замовлення у форматі UTC.
+  example: []
+  syntax:
+    content: public DateTime CreatedAt { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property CreatedAt As Date
+  overload: NewBalanceStore.Domain.Entities.Order.CreatedAt*
+- uid: NewBalanceStore.Domain.Entities.Order.Items
+  commentId: P:NewBalanceStore.Domain.Entities.Order.Items
+  id: Items
+  parent: NewBalanceStore.Domain.Entities.Order
+  langs:
+  - csharp
+  - vb
+  name: Items
+  nameWithType: Order.Items
+  fullName: NewBalanceStore.Domain.Entities.Order.Items
+  type: Property
+  source:
+    remote:
+      path: NewBalanceStore.Domain/Entities/Order.cs
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: Items
+    path: NewBalanceStore.Domain/Entities/Order.cs
+    startLine: 56
+  assemblies:
+  - NewBalanceStore.Domain
+  namespace: NewBalanceStore.Domain.Entities
+  summary: Список замовлених позицій товарів, що входять до складу замовлення.
+  example: []
+  syntax:
+    content: public List<OrderItem> Items { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{NewBalanceStore.Domain.Entities.OrderItem}
+    content.vb: Public Property Items As List(Of OrderItem)
+  overload: NewBalanceStore.Domain.Entities.Order.Items*
 references:
 - uid: NewBalanceStore.Domain.Entities
   commentId: N:NewBalanceStore.Domain.Entities
@@ -663,6 +596,23 @@ references:
   name: Id
   nameWithType: Order.Id
   fullName: NewBalanceStore.Domain.Entities.Order.Id
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: NewBalanceStore.Domain.Entities.Order.CustomerName*
+  commentId: Overload:NewBalanceStore.Domain.Entities.Order.CustomerName
+  href: NewBalanceStore.Domain.Entities.Order.html#NewBalanceStore_Domain_Entities_Order_CustomerName
+  name: CustomerName
+  nameWithType: Order.CustomerName
+  fullName: NewBalanceStore.Domain.Entities.Order.CustomerName
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -674,12 +624,64 @@ references:
   nameWithType.vb: String
   fullName.vb: String
   name.vb: String
-- uid: NewBalanceStore.Domain.Entities.Order.UserId*
-  commentId: Overload:NewBalanceStore.Domain.Entities.Order.UserId
-  href: NewBalanceStore.Domain.Entities.Order.html#NewBalanceStore_Domain_Entities_Order_UserId
-  name: UserId
-  nameWithType: Order.UserId
-  fullName: NewBalanceStore.Domain.Entities.Order.UserId
+- uid: NewBalanceStore.Domain.Entities.Order.CustomerEmail*
+  commentId: Overload:NewBalanceStore.Domain.Entities.Order.CustomerEmail
+  href: NewBalanceStore.Domain.Entities.Order.html#NewBalanceStore_Domain_Entities_Order_CustomerEmail
+  name: CustomerEmail
+  nameWithType: Order.CustomerEmail
+  fullName: NewBalanceStore.Domain.Entities.Order.CustomerEmail
+- uid: NewBalanceStore.Domain.Entities.Order.CustomerPhone*
+  commentId: Overload:NewBalanceStore.Domain.Entities.Order.CustomerPhone
+  href: NewBalanceStore.Domain.Entities.Order.html#NewBalanceStore_Domain_Entities_Order_CustomerPhone
+  name: CustomerPhone
+  nameWithType: Order.CustomerPhone
+  fullName: NewBalanceStore.Domain.Entities.Order.CustomerPhone
+- uid: NewBalanceStore.Domain.Entities.Order.ShippingAddress*
+  commentId: Overload:NewBalanceStore.Domain.Entities.Order.ShippingAddress
+  href: NewBalanceStore.Domain.Entities.Order.html#NewBalanceStore_Domain_Entities_Order_ShippingAddress
+  name: ShippingAddress
+  nameWithType: Order.ShippingAddress
+  fullName: NewBalanceStore.Domain.Entities.Order.ShippingAddress
+- uid: NewBalanceStore.Domain.Entities.Order.TotalAmount*
+  commentId: Overload:NewBalanceStore.Domain.Entities.Order.TotalAmount
+  href: NewBalanceStore.Domain.Entities.Order.html#NewBalanceStore_Domain_Entities_Order_TotalAmount
+  name: TotalAmount
+  nameWithType: Order.TotalAmount
+  fullName: NewBalanceStore.Domain.Entities.Order.TotalAmount
+- uid: System.Decimal
+  commentId: T:System.Decimal
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.decimal
+  name: decimal
+  nameWithType: decimal
+  fullName: decimal
+  nameWithType.vb: Decimal
+  fullName.vb: Decimal
+  name.vb: Decimal
+- uid: NewBalanceStore.Domain.Entities.Order.Status*
+  commentId: Overload:NewBalanceStore.Domain.Entities.Order.Status
+  href: NewBalanceStore.Domain.Entities.Order.html#NewBalanceStore_Domain_Entities_Order_Status
+  name: Status
+  nameWithType: Order.Status
+  fullName: NewBalanceStore.Domain.Entities.Order.Status
+- uid: NewBalanceStore.Domain.Entities.Order.CreatedAt*
+  commentId: Overload:NewBalanceStore.Domain.Entities.Order.CreatedAt
+  href: NewBalanceStore.Domain.Entities.Order.html#NewBalanceStore_Domain_Entities_Order_CreatedAt
+  name: CreatedAt
+  nameWithType: Order.CreatedAt
+  fullName: NewBalanceStore.Domain.Entities.Order.CreatedAt
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
 - uid: NewBalanceStore.Domain.Entities.Order.Items*
   commentId: Overload:NewBalanceStore.Domain.Entities.Order.Items
   href: NewBalanceStore.Domain.Entities.Order.html#NewBalanceStore_Domain_Entities_Order_Items
@@ -784,123 +786,3 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: NewBalanceStore.Domain.Entities.Order.Customer*
-  commentId: Overload:NewBalanceStore.Domain.Entities.Order.Customer
-  href: NewBalanceStore.Domain.Entities.Order.html#NewBalanceStore_Domain_Entities_Order_Customer
-  name: Customer
-  nameWithType: Order.Customer
-  fullName: NewBalanceStore.Domain.Entities.Order.Customer
-- uid: NewBalanceStore.Domain.Entities.CustomerInfo
-  commentId: T:NewBalanceStore.Domain.Entities.CustomerInfo
-  parent: NewBalanceStore.Domain.Entities
-  href: NewBalanceStore.Domain.Entities.CustomerInfo.html
-  name: CustomerInfo
-  nameWithType: CustomerInfo
-  fullName: NewBalanceStore.Domain.Entities.CustomerInfo
-- uid: NewBalanceStore.Domain.Entities.Order.ShippingAddress*
-  commentId: Overload:NewBalanceStore.Domain.Entities.Order.ShippingAddress
-  href: NewBalanceStore.Domain.Entities.Order.html#NewBalanceStore_Domain_Entities_Order_ShippingAddress
-  name: ShippingAddress
-  nameWithType: Order.ShippingAddress
-  fullName: NewBalanceStore.Domain.Entities.Order.ShippingAddress
-- uid: NewBalanceStore.Domain.Entities.ShippingAddress
-  commentId: T:NewBalanceStore.Domain.Entities.ShippingAddress
-  parent: NewBalanceStore.Domain.Entities
-  href: NewBalanceStore.Domain.Entities.ShippingAddress.html
-  name: ShippingAddress
-  nameWithType: ShippingAddress
-  fullName: NewBalanceStore.Domain.Entities.ShippingAddress
-- uid: NewBalanceStore.Domain.Entities.Order.TotalPrice*
-  commentId: Overload:NewBalanceStore.Domain.Entities.Order.TotalPrice
-  href: NewBalanceStore.Domain.Entities.Order.html#NewBalanceStore_Domain_Entities_Order_TotalPrice
-  name: TotalPrice
-  nameWithType: Order.TotalPrice
-  fullName: NewBalanceStore.Domain.Entities.Order.TotalPrice
-- uid: System.Decimal
-  commentId: T:System.Decimal
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.decimal
-  name: decimal
-  nameWithType: decimal
-  fullName: decimal
-  nameWithType.vb: Decimal
-  fullName.vb: Decimal
-  name.vb: Decimal
-- uid: NewBalanceStore.Domain.Entities.Order.Status*
-  commentId: Overload:NewBalanceStore.Domain.Entities.Order.Status
-  href: NewBalanceStore.Domain.Entities.Order.html#NewBalanceStore_Domain_Entities_Order_Status
-  name: Status
-  nameWithType: Order.Status
-  fullName: NewBalanceStore.Domain.Entities.Order.Status
-- uid: NewBalanceStore.Domain.Enums.OrderStatus
-  commentId: T:NewBalanceStore.Domain.Enums.OrderStatus
-  parent: NewBalanceStore.Domain.Enums
-  href: NewBalanceStore.Domain.Enums.OrderStatus.html
-  name: OrderStatus
-  nameWithType: OrderStatus
-  fullName: NewBalanceStore.Domain.Enums.OrderStatus
-- uid: NewBalanceStore.Domain.Enums
-  commentId: N:NewBalanceStore.Domain.Enums
-  name: NewBalanceStore.Domain.Enums
-  nameWithType: NewBalanceStore.Domain.Enums
-  fullName: NewBalanceStore.Domain.Enums
-  spec.csharp:
-  - uid: NewBalanceStore
-    name: NewBalanceStore
-  - name: .
-  - uid: NewBalanceStore.Domain
-    name: Domain
-  - name: .
-  - uid: NewBalanceStore.Domain.Enums
-    name: Enums
-  spec.vb:
-  - uid: NewBalanceStore
-    name: NewBalanceStore
-  - name: .
-  - uid: NewBalanceStore.Domain
-    name: Domain
-  - name: .
-  - uid: NewBalanceStore.Domain.Enums
-    name: Enums
-- uid: NewBalanceStore.Domain.Entities.Order.CreatedAt*
-  commentId: Overload:NewBalanceStore.Domain.Entities.Order.CreatedAt
-  href: NewBalanceStore.Domain.Entities.Order.html#NewBalanceStore_Domain_Entities_Order_CreatedAt
-  name: CreatedAt
-  nameWithType: Order.CreatedAt
-  fullName: NewBalanceStore.Domain.Entities.Order.CreatedAt
-- uid: System.DateTime
-  commentId: T:System.DateTime
-  parent: System
-  isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.datetime
-  name: DateTime
-  nameWithType: DateTime
-  fullName: System.DateTime
-  nameWithType.vb: Date
-  fullName.vb: Date
-  name.vb: Date
-- uid: NewBalanceStore.Domain.Entities.Order.CustomerName*
-  commentId: Overload:NewBalanceStore.Domain.Entities.Order.CustomerName
-  href: NewBalanceStore.Domain.Entities.Order.html#NewBalanceStore_Domain_Entities_Order_CustomerName
-  name: CustomerName
-  nameWithType: Order.CustomerName
-  fullName: NewBalanceStore.Domain.Entities.Order.CustomerName
-- uid: NewBalanceStore.Domain.Entities.Order.CustomerEmail*
-  commentId: Overload:NewBalanceStore.Domain.Entities.Order.CustomerEmail
-  href: NewBalanceStore.Domain.Entities.Order.html#NewBalanceStore_Domain_Entities_Order_CustomerEmail
-  name: CustomerEmail
-  nameWithType: Order.CustomerEmail
-  fullName: NewBalanceStore.Domain.Entities.Order.CustomerEmail
-- uid: NewBalanceStore.Domain.Entities.Order.CustomerPhone*
-  commentId: Overload:NewBalanceStore.Domain.Entities.Order.CustomerPhone
-  href: NewBalanceStore.Domain.Entities.Order.html#NewBalanceStore_Domain_Entities_Order_CustomerPhone
-  name: CustomerPhone
-  nameWithType: Order.CustomerPhone
-  fullName: NewBalanceStore.Domain.Entities.Order.CustomerPhone
-- uid: NewBalanceStore.Domain.Entities.Order.TotalAmount*
-  commentId: Overload:NewBalanceStore.Domain.Entities.Order.TotalAmount
-  href: NewBalanceStore.Domain.Entities.Order.html#NewBalanceStore_Domain_Entities_Order_TotalAmount
-  name: TotalAmount
-  nameWithType: Order.TotalAmount
-  fullName: NewBalanceStore.Domain.Entities.Order.TotalAmount

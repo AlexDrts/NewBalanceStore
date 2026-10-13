@@ -18,8 +18,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.IntegrationTests/Infrastructure/TestApiFactory.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: TestAuthenticationHandler
     path: NewBalanceStore.IntegrationTests/Infrastructure/TestApiFactory.cs
     startLine: 53
@@ -61,8 +61,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.IntegrationTests/Infrastructure/TestApiFactory.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: SchemeName
     path: NewBalanceStore.IntegrationTests/Infrastructure/TestApiFactory.cs
     startLine: 55
@@ -88,8 +88,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.IntegrationTests/Infrastructure/TestApiFactory.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: .ctor
     path: NewBalanceStore.IntegrationTests/Infrastructure/TestApiFactory.cs
     startLine: 57
@@ -124,8 +124,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.IntegrationTests/Infrastructure/TestApiFactory.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: HandleAuthenticateAsync
     path: NewBalanceStore.IntegrationTests/Infrastructure/TestApiFactory.cs
     startLine: 65

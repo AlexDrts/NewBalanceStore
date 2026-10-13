@@ -17,15 +17,20 @@ items:
   type: Enum
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Enums/ProductType.cs
-      branch: main
+      path: NewBalanceStore.Domain/Enums/ProductType.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: ProductType
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Enums/ProductType.cs
-    startLine: 6
+    path: NewBalanceStore.Domain/Enums/ProductType.cs
+    startLine: 8
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Enums
+  summary: >-
+    Основні товарні типи номенклатури магазину.
+
+    Визначають класифікацію виробу та специфічні характеристики (наприклад, розмірні сітки).
+  example: []
   syntax:
     content: public enum ProductType
     content.vb: Public Enum ProductType
@@ -42,15 +47,17 @@ items:
   type: Field
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Enums/ProductType.cs
-      branch: main
+      path: NewBalanceStore.Domain/Enums/ProductType.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Footwear
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Enums/ProductType.cs
-    startLine: 8
+    path: NewBalanceStore.Domain/Enums/ProductType.cs
+    startLine: 13
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Enums
+  summary: Спортивне, бігове та повсякденне взуття (кросівки, кеди).
+  example: []
   syntax:
     content: Footwear = 0
     return:
@@ -68,15 +75,17 @@ items:
   type: Field
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Enums/ProductType.cs
-      branch: main
+      path: NewBalanceStore.Domain/Enums/ProductType.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Clothing
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Enums/ProductType.cs
-    startLine: 9
+    path: NewBalanceStore.Domain/Enums/ProductType.cs
+    startLine: 18
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Enums
+  summary: Спортивний та повсякденний одяг (худі, футболки, штани, куртки).
+  example: []
   syntax:
     content: Clothing = 1
     return:
@@ -94,15 +103,17 @@ items:
   type: Field
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Enums/ProductType.cs
-      branch: main
+      path: NewBalanceStore.Domain/Enums/ProductType.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Accessories
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Enums/ProductType.cs
-    startLine: 10
+    path: NewBalanceStore.Domain/Enums/ProductType.cs
+    startLine: 23
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Enums
+  summary: Аксесуари (шкарпетки, кепки, рюкзаки, сумки).
+  example: []
   syntax:
     content: Accessories = 2
     return:

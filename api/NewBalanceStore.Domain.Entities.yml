@@ -37,7 +37,6 @@ references:
   fullName: NewBalanceStore.Domain.Entities.CartItem
 - uid: NewBalanceStore.Domain.Entities.CustomerInfo
   commentId: T:NewBalanceStore.Domain.Entities.CustomerInfo
-  parent: NewBalanceStore.Domain.Entities
   href: NewBalanceStore.Domain.Entities.CustomerInfo.html
   name: CustomerInfo
   nameWithType: CustomerInfo
@@ -70,7 +69,6 @@ references:
   fullName: NewBalanceStore.Domain.Entities.ProductVariant
 - uid: NewBalanceStore.Domain.Entities.ShippingAddress
   commentId: T:NewBalanceStore.Domain.Entities.ShippingAddress
-  parent: NewBalanceStore.Domain.Entities
   href: NewBalanceStore.Domain.Entities.ShippingAddress.html
   name: ShippingAddress
   nameWithType: ShippingAddress

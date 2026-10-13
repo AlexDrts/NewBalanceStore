@@ -18,14 +18,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/Interfaces/IUserRepository.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: IUserRepository
     path: NewBalanceStore.Domain/Interfaces/IUserRepository.cs
-    startLine: 4
+    startLine: 7
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Interfaces
+  summary: Контракт репозиторію для доступу до сутностей облікових записів користувачів.
+  example: []
   syntax:
     content: public interface IUserRepository
     content.vb: Public Interface IUserRepository
@@ -46,21 +48,25 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/Interfaces/IUserRepository.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetByEmailAsync
     path: NewBalanceStore.Domain/Interfaces/IUserRepository.cs
-    startLine: 6
+    startLine: 14
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Interfaces
+  summary: Знаходить користувача за адресою електронної пошти без урахування регістру.
+  example: []
   syntax:
     content: Task<User?> GetByEmailAsync(string email)
     parameters:
     - id: email
       type: System.String
+      description: Email адреса для пошуку.
     return:
       type: System.Threading.Tasks.Task{NewBalanceStore.Domain.Entities.User}
+      description: Екземпляр <xref href="NewBalanceStore.Domain.Entities.User" data-throw-if-not-resolved="false"></xref> або <code>null</code>, якщо користувача не знайдено.
     content.vb: Function GetByEmailAsync(email As String) As Task(Of User)
   overload: NewBalanceStore.Domain.Interfaces.IUserRepository.GetByEmailAsync*
   nameWithType.vb: IUserRepository.GetByEmailAsync(String)
@@ -80,19 +86,22 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/Interfaces/IUserRepository.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: CreateAsync
     path: NewBalanceStore.Domain/Interfaces/IUserRepository.cs
-    startLine: 7
+    startLine: 20
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Interfaces
+  summary: Зберігає нового зареєстрованого користувача у базі даних.
+  example: []
   syntax:
     content: Task CreateAsync(User user)
     parameters:
     - id: user
       type: NewBalanceStore.Domain.Entities.User
+      description: Об'єкт користувача з хешованим паролем та роллю.
     return:
       type: System.Threading.Tasks.Task
     content.vb: Function CreateAsync(user As User) As Task
@@ -111,18 +120,21 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/Interfaces/IUserRepository.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetAllAsync
     path: NewBalanceStore.Domain/Interfaces/IUserRepository.cs
-    startLine: 8
+    startLine: 26
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Interfaces
+  summary: Отримує перелік усіх користувачів системи.
+  example: []
   syntax:
     content: Task<IEnumerable<User>> GetAllAsync()
     return:
       type: System.Threading.Tasks.Task{System.Collections.Generic.IEnumerable{NewBalanceStore.Domain.Entities.User}}
+      description: Колекція сутностей <xref href="NewBalanceStore.Domain.Entities.User" data-throw-if-not-resolved="false"></xref>.
     content.vb: Function GetAllAsync() As Task(Of IEnumerable(Of User))
   overload: NewBalanceStore.Domain.Interfaces.IUserRepository.GetAllAsync*
 references:
@@ -149,6 +161,13 @@ references:
   - name: .
   - uid: NewBalanceStore.Domain.Interfaces
     name: Interfaces
+- uid: NewBalanceStore.Domain.Entities.User
+  commentId: T:NewBalanceStore.Domain.Entities.User
+  parent: NewBalanceStore.Domain.Entities
+  href: NewBalanceStore.Domain.Entities.User.html
+  name: User
+  nameWithType: User
+  fullName: NewBalanceStore.Domain.Entities.User
 - uid: NewBalanceStore.Domain.Interfaces.IUserRepository.GetByEmailAsync*
   commentId: Overload:NewBalanceStore.Domain.Interfaces.IUserRepository.GetByEmailAsync
   href: NewBalanceStore.Domain.Interfaces.IUserRepository.html#NewBalanceStore_Domain_Interfaces_IUserRepository_GetByEmailAsync_System_String_
@@ -199,6 +218,29 @@ references:
     name: User
     href: NewBalanceStore.Domain.Entities.User.html
   - name: )
+- uid: NewBalanceStore.Domain.Entities
+  commentId: N:NewBalanceStore.Domain.Entities
+  name: NewBalanceStore.Domain.Entities
+  nameWithType: NewBalanceStore.Domain.Entities
+  fullName: NewBalanceStore.Domain.Entities
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Entities
+    name: Entities
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Entities
+    name: Entities
 - uid: System
   commentId: N:System
   isExternal: true
@@ -277,13 +319,6 @@ references:
   name: CreateAsync
   nameWithType: IUserRepository.CreateAsync
   fullName: NewBalanceStore.Domain.Interfaces.IUserRepository.CreateAsync
-- uid: NewBalanceStore.Domain.Entities.User
-  commentId: T:NewBalanceStore.Domain.Entities.User
-  parent: NewBalanceStore.Domain.Entities
-  href: NewBalanceStore.Domain.Entities.User.html
-  name: User
-  nameWithType: User
-  fullName: NewBalanceStore.Domain.Entities.User
 - uid: System.Threading.Tasks.Task
   commentId: T:System.Threading.Tasks.Task
   parent: System.Threading.Tasks
@@ -292,29 +327,6 @@ references:
   name: Task
   nameWithType: Task
   fullName: System.Threading.Tasks.Task
-- uid: NewBalanceStore.Domain.Entities
-  commentId: N:NewBalanceStore.Domain.Entities
-  name: NewBalanceStore.Domain.Entities
-  nameWithType: NewBalanceStore.Domain.Entities
-  fullName: NewBalanceStore.Domain.Entities
-  spec.csharp:
-  - uid: NewBalanceStore
-    name: NewBalanceStore
-  - name: .
-  - uid: NewBalanceStore.Domain
-    name: Domain
-  - name: .
-  - uid: NewBalanceStore.Domain.Entities
-    name: Entities
-  spec.vb:
-  - uid: NewBalanceStore
-    name: NewBalanceStore
-  - name: .
-  - uid: NewBalanceStore.Domain
-    name: Domain
-  - name: .
-  - uid: NewBalanceStore.Domain.Entities
-    name: Entities
 - uid: NewBalanceStore.Domain.Interfaces.IUserRepository.GetAllAsync*
   commentId: Overload:NewBalanceStore.Domain.Interfaces.IUserRepository.GetAllAsync
   href: NewBalanceStore.Domain.Interfaces.IUserRepository.html#NewBalanceStore_Domain_Interfaces_IUserRepository_GetAllAsync

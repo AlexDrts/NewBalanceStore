@@ -20,8 +20,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.IntegrationTests/OrdersApiIntegrationTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: OrdersApiIntegrationTests
     path: NewBalanceStore.IntegrationTests/OrdersApiIntegrationTests.cs
     startLine: 10
@@ -65,8 +65,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.IntegrationTests/OrdersApiIntegrationTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: SetUp
     path: NewBalanceStore.IntegrationTests/OrdersApiIntegrationTests.cs
     startLine: 16
@@ -101,8 +101,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.IntegrationTests/OrdersApiIntegrationTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: TearDown
     path: NewBalanceStore.IntegrationTests/OrdersApiIntegrationTests.cs
     startLine: 26
@@ -137,8 +137,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.IntegrationTests/OrdersApiIntegrationTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: CreateOrder_CalculatesItemsPersistsAndReturnsCreatedResource
     path: NewBalanceStore.IntegrationTests/OrdersApiIntegrationTests.cs
     startLine: 33
@@ -175,8 +175,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.IntegrationTests/OrdersApiIntegrationTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetOrder_WhenMissing_ReturnsNotFound
     path: NewBalanceStore.IntegrationTests/OrdersApiIntegrationTests.cs
     startLine: 70
@@ -213,8 +213,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.IntegrationTests/OrdersApiIntegrationTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: UpdateOrderStatus_PersistsNewStatus
     path: NewBalanceStore.IntegrationTests/OrdersApiIntegrationTests.cs
     startLine: 78

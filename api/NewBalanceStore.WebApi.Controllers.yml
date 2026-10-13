@@ -17,12 +17,6 @@ items:
   assemblies:
   - NewBalanceStore.WebApi
 references:
-- uid: NewBalanceStore.WebApi.Controllers.ProductsController
-  commentId: T:NewBalanceStore.WebApi.Controllers.ProductsController
-  href: NewBalanceStore.WebApi.Controllers.ProductsController.html
-  name: ProductsController
-  nameWithType: ProductsController
-  fullName: NewBalanceStore.WebApi.Controllers.ProductsController
 - uid: NewBalanceStore.WebApi.Controllers.AuthController
   commentId: T:NewBalanceStore.WebApi.Controllers.AuthController
   href: NewBalanceStore.WebApi.Controllers.AuthController.html
@@ -35,3 +29,9 @@ references:
   name: OrdersController
   nameWithType: OrdersController
   fullName: NewBalanceStore.WebApi.Controllers.OrdersController
+- uid: NewBalanceStore.WebApi.Controllers.ProductsController
+  commentId: T:NewBalanceStore.WebApi.Controllers.ProductsController
+  href: NewBalanceStore.WebApi.Controllers.ProductsController.html
+  name: ProductsController
+  nameWithType: ProductsController
+  fullName: NewBalanceStore.WebApi.Controllers.ProductsController

@@ -20,17 +20,24 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/Interfaces/IProductRepository.cs
-      branch: main
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: IProductRepository
-    path: NewBalanceStore/NewBalanceStore.Domain/Interfaces/IProductRepository.cs
-    startLine: 4
+    path: NewBalanceStore.Domain/Interfaces/IProductRepository.cs
+    startLine: 8
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Interfaces
+  summary: >-
+    Контракт репозиторію для доступу та маніпулювання даними товарів у базі даних.
+
+    Відповідає за інкапсуляцію операцій CRUD над сутністю <xref href="NewBalanceStore.Domain.Entities.Product" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public interface IProductRepository
     content.vb: Public Interface IProductRepository
+  derivedClasses:
+  - NewBalanceStore.Infrastructure.Repositories.FirebaseProductRepository
 - uid: NewBalanceStore.Domain.Interfaces.IProductRepository.GetAllAsync
   commentId: M:NewBalanceStore.Domain.Interfaces.IProductRepository.GetAllAsync
   id: GetAllAsync
@@ -45,18 +52,21 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/Interfaces/IProductRepository.cs
-      branch: main
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetAllAsync
-    path: NewBalanceStore/NewBalanceStore.Domain/Interfaces/IProductRepository.cs
-    startLine: 6
+    path: NewBalanceStore.Domain/Interfaces/IProductRepository.cs
+    startLine: 14
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Interfaces
+  summary: Отримує повний список усіх доступних товарів з бази даних.
+  example: []
   syntax:
     content: Task<List<Product>> GetAllAsync()
     return:
       type: System.Threading.Tasks.Task{System.Collections.Generic.List{NewBalanceStore.Domain.Entities.Product}}
+      description: Список доменних сутностей <xref href="NewBalanceStore.Domain.Entities.Product" data-throw-if-not-resolved="false"></xref>.
     content.vb: Function GetAllAsync() As Task(Of List(Of Product))
   overload: NewBalanceStore.Domain.Interfaces.IProductRepository.GetAllAsync*
 - uid: NewBalanceStore.Domain.Interfaces.IProductRepository.GetByIdAsync(System.String)
@@ -73,21 +83,25 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/Interfaces/IProductRepository.cs
-      branch: main
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetByIdAsync
-    path: NewBalanceStore/NewBalanceStore.Domain/Interfaces/IProductRepository.cs
-    startLine: 7
+    path: NewBalanceStore.Domain/Interfaces/IProductRepository.cs
+    startLine: 21
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Interfaces
+  summary: Знаходить товар за його унікальним ідентифікатором.
+  example: []
   syntax:
     content: Task<Product?> GetByIdAsync(string id)
     parameters:
     - id: id
       type: System.String
+      description: Ідентифікатор товару у строковому представленні.
     return:
       type: System.Threading.Tasks.Task{NewBalanceStore.Domain.Entities.Product}
+      description: Знайдений екземпляр <xref href="NewBalanceStore.Domain.Entities.Product" data-throw-if-not-resolved="false"></xref> або <code>null</code>, якщо товар відсутній.
     content.vb: Function GetByIdAsync(id As String) As Task(Of Product)
   overload: NewBalanceStore.Domain.Interfaces.IProductRepository.GetByIdAsync*
   nameWithType.vb: IProductRepository.GetByIdAsync(String)
@@ -107,19 +121,25 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/Interfaces/IProductRepository.cs
-      branch: main
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: CreateAsync
-    path: NewBalanceStore/NewBalanceStore.Domain/Interfaces/IProductRepository.cs
-    startLine: 8
+    path: NewBalanceStore.Domain/Interfaces/IProductRepository.cs
+    startLine: 28
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Interfaces
+  summary: >-
+    Зберігає новий товар у сховищі даних.
+
+    Якщо Id не задано, генерується новий унікальний ключ.
+  example: []
   syntax:
     content: Task CreateAsync(Product product)
     parameters:
     - id: product
       type: NewBalanceStore.Domain.Entities.Product
+      description: Екземпляр сутності товару для збереження.
     return:
       type: System.Threading.Tasks.Task
     content.vb: Function CreateAsync(product As Product) As Task
@@ -138,19 +158,22 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/Interfaces/IProductRepository.cs
-      branch: main
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: UpdateAsync
-    path: NewBalanceStore/NewBalanceStore.Domain/Interfaces/IProductRepository.cs
-    startLine: 9
+    path: NewBalanceStore.Domain/Interfaces/IProductRepository.cs
+    startLine: 34
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Interfaces
+  summary: Оновлює інформацію про існуючий товар у сховищі даних.
+  example: []
   syntax:
     content: Task UpdateAsync(Product product)
     parameters:
     - id: product
       type: NewBalanceStore.Domain.Entities.Product
+      description: Оновлений екземпляр товару із дійсним ідентифікатором.
     return:
       type: System.Threading.Tasks.Task
     content.vb: Function UpdateAsync(product As Product) As Task
@@ -169,19 +192,22 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/Interfaces/IProductRepository.cs
-      branch: main
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: DeleteAsync
-    path: NewBalanceStore/NewBalanceStore.Domain/Interfaces/IProductRepository.cs
-    startLine: 10
+    path: NewBalanceStore.Domain/Interfaces/IProductRepository.cs
+    startLine: 40
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Interfaces
+  summary: Видаляє товар із бази даних за його ідентифікатором.
+  example: []
   syntax:
     content: Task DeleteAsync(string id)
     parameters:
     - id: id
       type: System.String
+      description: Ідентифікатор товару, що підлягає видаленню.
     return:
       type: System.Threading.Tasks.Task
     content.vb: Function DeleteAsync(id As String) As Task
@@ -190,6 +216,13 @@ items:
   fullName.vb: NewBalanceStore.Domain.Interfaces.IProductRepository.DeleteAsync(String)
   name.vb: DeleteAsync(String)
 references:
+- uid: NewBalanceStore.Domain.Entities.Product
+  commentId: T:NewBalanceStore.Domain.Entities.Product
+  parent: NewBalanceStore.Domain.Entities
+  href: NewBalanceStore.Domain.Entities.Product.html
+  name: Product
+  nameWithType: Product
+  fullName: NewBalanceStore.Domain.Entities.Product
 - uid: NewBalanceStore.Domain.Interfaces
   commentId: N:NewBalanceStore.Domain.Interfaces
   name: NewBalanceStore.Domain.Interfaces
@@ -213,6 +246,29 @@ references:
   - name: .
   - uid: NewBalanceStore.Domain.Interfaces
     name: Interfaces
+- uid: NewBalanceStore.Domain.Entities
+  commentId: N:NewBalanceStore.Domain.Entities
+  name: NewBalanceStore.Domain.Entities
+  nameWithType: NewBalanceStore.Domain.Entities
+  fullName: NewBalanceStore.Domain.Entities
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Entities
+    name: Entities
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Entities
+    name: Entities
 - uid: NewBalanceStore.Domain.Interfaces.IProductRepository.GetAllAsync*
   commentId: Overload:NewBalanceStore.Domain.Interfaces.IProductRepository.GetAllAsync
   href: NewBalanceStore.Domain.Interfaces.IProductRepository.html#NewBalanceStore_Domain_Interfaces_IProductRepository_GetAllAsync
@@ -394,13 +450,6 @@ references:
   name: CreateAsync
   nameWithType: IProductRepository.CreateAsync
   fullName: NewBalanceStore.Domain.Interfaces.IProductRepository.CreateAsync
-- uid: NewBalanceStore.Domain.Entities.Product
-  commentId: T:NewBalanceStore.Domain.Entities.Product
-  parent: NewBalanceStore.Domain.Entities
-  href: NewBalanceStore.Domain.Entities.Product.html
-  name: Product
-  nameWithType: Product
-  fullName: NewBalanceStore.Domain.Entities.Product
 - uid: System.Threading.Tasks.Task
   commentId: T:System.Threading.Tasks.Task
   parent: System.Threading.Tasks
@@ -409,29 +458,6 @@ references:
   name: Task
   nameWithType: Task
   fullName: System.Threading.Tasks.Task
-- uid: NewBalanceStore.Domain.Entities
-  commentId: N:NewBalanceStore.Domain.Entities
-  name: NewBalanceStore.Domain.Entities
-  nameWithType: NewBalanceStore.Domain.Entities
-  fullName: NewBalanceStore.Domain.Entities
-  spec.csharp:
-  - uid: NewBalanceStore
-    name: NewBalanceStore
-  - name: .
-  - uid: NewBalanceStore.Domain
-    name: Domain
-  - name: .
-  - uid: NewBalanceStore.Domain.Entities
-    name: Entities
-  spec.vb:
-  - uid: NewBalanceStore
-    name: NewBalanceStore
-  - name: .
-  - uid: NewBalanceStore.Domain
-    name: Domain
-  - name: .
-  - uid: NewBalanceStore.Domain.Entities
-    name: Entities
 - uid: NewBalanceStore.Domain.Interfaces.IProductRepository.UpdateAsync*
   commentId: Overload:NewBalanceStore.Domain.Interfaces.IProductRepository.UpdateAsync
   href: NewBalanceStore.Domain.Interfaces.IProductRepository.html#NewBalanceStore_Domain_Interfaces_IProductRepository_UpdateAsync_NewBalanceStore_Domain_Entities_Product_

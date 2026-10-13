@@ -22,8 +22,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Services/OrderServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: OrderServiceTests
     path: NewBalanceStore.UnitTests/Services/OrderServiceTests.cs
     startLine: 12
@@ -67,8 +67,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Services/OrderServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: SetUp
     path: NewBalanceStore.UnitTests/Services/OrderServiceTests.cs
     startLine: 20
@@ -103,8 +103,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Services/OrderServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetOrderByIdAsync_ShouldReturnOrder_WhenExists
     path: NewBalanceStore.UnitTests/Services/OrderServiceTests.cs
     startLine: 34
@@ -141,8 +141,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Services/OrderServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetOrderByIdAsync_ShouldReturnNull_WhenOrderDoesNotExist
     path: NewBalanceStore.UnitTests/Services/OrderServiceTests.cs
     startLine: 52
@@ -179,8 +179,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Services/OrderServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: CreateOrderAsync_ShouldReturnCreatedOrderDto
     path: NewBalanceStore.UnitTests/Services/OrderServiceTests.cs
     startLine: 63
@@ -217,8 +217,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Services/OrderServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: CreateOrderAsync_ShouldCreateItemsAndCalculateTotalFromProducts
     path: NewBalanceStore.UnitTests/Services/OrderServiceTests.cs
     startLine: 85
@@ -255,8 +255,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Services/OrderServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetAllOrdersAsync_ShouldReturnListOfOrders
     path: NewBalanceStore.UnitTests/Services/OrderServiceTests.cs
     startLine: 127
@@ -293,8 +293,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Services/OrderServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: UpdateOrderStatusAsync_ShouldCallRepository_WhenOrderExists
     path: NewBalanceStore.UnitTests/Services/OrderServiceTests.cs
     startLine: 141

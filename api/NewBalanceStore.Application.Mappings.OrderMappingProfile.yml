@@ -16,14 +16,19 @@ items:
   source:
     remote:
       path: NewBalanceStore.Application/Mappings/OrderMappingProfile.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: OrderMappingProfile
     path: NewBalanceStore.Application/Mappings/OrderMappingProfile.cs
-    startLine: 6
+    startLine: 10
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.Mappings
+  summary: >-
+    Профіль AutoMapper для мапінгу доменних сутностей замовлення (<xref href="NewBalanceStore.Domain.Entities.Order" data-throw-if-not-resolved="false"></xref>, <xref href="NewBalanceStore.Domain.Entities.OrderItem" data-throw-if-not-resolved="false"></xref>)
+
+    у відповідні об'єкти передачі даних (<xref href="NewBalanceStore.Application.DTOs.OrderDto" data-throw-if-not-resolved="false"></xref>, <xref href="NewBalanceStore.Application.DTOs.OrderItemDto" data-throw-if-not-resolved="false"></xref>).
+  example: []
   syntax:
     content: 'public sealed class OrderMappingProfile : Profile, IProfileExpression, IProfileConfiguration'
     content.vb: Public NotInheritable Class OrderMappingProfile Inherits Profile Implements IProfileExpression, IProfileConfiguration
@@ -80,14 +85,19 @@ items:
   source:
     remote:
       path: NewBalanceStore.Application/Mappings/OrderMappingProfile.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: .ctor
     path: NewBalanceStore.Application/Mappings/OrderMappingProfile.cs
-    startLine: 8
+    startLine: 16
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.Mappings
+  summary: >-
+    Ініціалізує правила відповідності між властивостями доменних моделей та DTO.
+
+    Зокрема виконує парсинг рядкового ProductId в числовий тип.
+  example: []
   syntax:
     content: public OrderMappingProfile()
     content.vb: Public Sub New()
@@ -96,6 +106,32 @@ items:
   fullName.vb: NewBalanceStore.Application.Mappings.OrderMappingProfile.New()
   name.vb: New()
 references:
+- uid: NewBalanceStore.Domain.Entities.Order
+  commentId: T:NewBalanceStore.Domain.Entities.Order
+  parent: NewBalanceStore.Domain.Entities
+  href: NewBalanceStore.Domain.Entities.Order.html
+  name: Order
+  nameWithType: Order
+  fullName: NewBalanceStore.Domain.Entities.Order
+- uid: NewBalanceStore.Domain.Entities.OrderItem
+  commentId: T:NewBalanceStore.Domain.Entities.OrderItem
+  href: NewBalanceStore.Domain.Entities.OrderItem.html
+  name: OrderItem
+  nameWithType: OrderItem
+  fullName: NewBalanceStore.Domain.Entities.OrderItem
+- uid: NewBalanceStore.Application.DTOs.OrderDto
+  commentId: T:NewBalanceStore.Application.DTOs.OrderDto
+  parent: NewBalanceStore.Application.DTOs
+  href: NewBalanceStore.Application.DTOs.OrderDto.html
+  name: OrderDto
+  nameWithType: OrderDto
+  fullName: NewBalanceStore.Application.DTOs.OrderDto
+- uid: NewBalanceStore.Application.DTOs.OrderItemDto
+  commentId: T:NewBalanceStore.Application.DTOs.OrderItemDto
+  href: NewBalanceStore.Application.DTOs.OrderItemDto.html
+  name: OrderItemDto
+  nameWithType: OrderItemDto
+  fullName: NewBalanceStore.Application.DTOs.OrderItemDto
 - uid: NewBalanceStore.Application.Mappings
   commentId: N:NewBalanceStore.Application.Mappings
   name: NewBalanceStore.Application.Mappings
@@ -965,6 +1001,52 @@ references:
     href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
   - name: )
+- uid: NewBalanceStore.Domain.Entities
+  commentId: N:NewBalanceStore.Domain.Entities
+  name: NewBalanceStore.Domain.Entities
+  nameWithType: NewBalanceStore.Domain.Entities
+  fullName: NewBalanceStore.Domain.Entities
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Entities
+    name: Entities
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Domain
+    name: Domain
+  - name: .
+  - uid: NewBalanceStore.Domain.Entities
+    name: Entities
+- uid: NewBalanceStore.Application.DTOs
+  commentId: N:NewBalanceStore.Application.DTOs
+  name: NewBalanceStore.Application.DTOs
+  nameWithType: NewBalanceStore.Application.DTOs
+  fullName: NewBalanceStore.Application.DTOs
+  spec.csharp:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.DTOs
+    name: DTOs
+  spec.vb:
+  - uid: NewBalanceStore
+    name: NewBalanceStore
+  - name: .
+  - uid: NewBalanceStore.Application
+    name: Application
+  - name: .
+  - uid: NewBalanceStore.Application.DTOs
+    name: DTOs
 - uid: System
   commentId: N:System
   isExternal: true

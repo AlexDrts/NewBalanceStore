@@ -33,8 +33,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/ProductServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: ProductServiceTests
     path: NewBalanceStore.UnitTests/ProductServiceTests.cs
     startLine: 9
@@ -78,8 +78,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/ProductServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: RepositoryMock
     path: NewBalanceStore.UnitTests/ProductServiceTests.cs
     startLine: 15
@@ -107,8 +107,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/ProductServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: ProductService
     path: NewBalanceStore.UnitTests/ProductServiceTests.cs
     startLine: 16
@@ -136,8 +136,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/ProductServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: SetUp
     path: NewBalanceStore.UnitTests/ProductServiceTests.cs
     startLine: 18
@@ -172,8 +172,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/ProductServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetAllAsync_ShouldReturnAllProducts
     path: NewBalanceStore.UnitTests/ProductServiceTests.cs
     startLine: 25
@@ -210,8 +210,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/ProductServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetByIdAsync_WhenProductExists_ShouldReturnProduct
     path: NewBalanceStore.UnitTests/ProductServiceTests.cs
     startLine: 43
@@ -248,8 +248,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/ProductServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetFilteredProductsAsync_ShouldFilterBySearchTerm
     path: NewBalanceStore.UnitTests/ProductServiceTests.cs
     startLine: 55
@@ -286,8 +286,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/ProductServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetFilteredProductsAsync_ShouldReturnFilteredAndSortedResults
     path: NewBalanceStore.UnitTests/ProductServiceTests.cs
     startLine: 74
@@ -324,8 +324,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/ProductServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetFilteredProductsAsync_ShouldSearchDescriptionCaseInsensitively
     path: NewBalanceStore.UnitTests/ProductServiceTests.cs
     startLine: 105
@@ -352,8 +352,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/ProductServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetFilteredProductsAsync_ShouldFilterCategoryAndInclusivePriceRange
     path: NewBalanceStore.UnitTests/ProductServiceTests.cs
     startLine: 119
@@ -390,8 +390,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/ProductServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetFilteredProductsAsync_ShouldSortResults
     path: NewBalanceStore.UnitTests/ProductServiceTests.cs
     startLine: 140
@@ -440,8 +440,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/ProductServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetFilteredProductsAsync_WhenNoProductsMatch_ShouldReturnEmptyCollection
     path: NewBalanceStore.UnitTests/ProductServiceTests.cs
     startLine: 157
@@ -478,8 +478,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/ProductServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetByIdAsync_ShouldMapProductAndVariantProperties
     path: NewBalanceStore.UnitTests/ProductServiceTests.cs
     startLine: 174
@@ -516,8 +516,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/ProductServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: CreateAsync_ShouldCallRepository
     path: NewBalanceStore.UnitTests/ProductServiceTests.cs
     startLine: 201
@@ -554,8 +554,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/ProductServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: UpdateAsync_ShouldCallRepository_WhenProductExists
     path: NewBalanceStore.UnitTests/ProductServiceTests.cs
     startLine: 214
@@ -592,8 +592,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/ProductServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: UpdateAsync_WhenProductDoesNotExist_ShouldReturnFalseWithoutUpdating
     path: NewBalanceStore.UnitTests/ProductServiceTests.cs
     startLine: 231
@@ -630,8 +630,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/ProductServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: DeleteAsync_ShouldCallRepository_WhenProductExists
     path: NewBalanceStore.UnitTests/ProductServiceTests.cs
     startLine: 242
@@ -668,8 +668,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/ProductServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetByIdAsync_WhenProductDoesNotExist_ShouldReturnNull
     path: NewBalanceStore.UnitTests/ProductServiceTests.cs
     startLine: 258
@@ -706,8 +706,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/ProductServiceTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: DeleteAsync_WhenProductDoesNotExist_ShouldNotCallDelete
     path: NewBalanceStore.UnitTests/ProductServiceTests.cs
     startLine: 268

@@ -4,7 +4,7 @@ import TopHeader from "../../components/TopHeader/TopHeader.jsx";
 import Footer from "../../components/Footer/Footer.jsx";
 import ProductCard from "../../components/ProductCard/ProductCard.jsx";
 import { useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { homeProducts } from "../../../public/data/homeProducts.js";
 
 // Video
@@ -43,7 +43,13 @@ function Home() {
                 </div>
 
 
-                <video autoPlay muted loop id="video-background">
+                <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    disablePictureInPicture
+                    id="video-background">
                     <source src={heroVideo} type="video/mp4"/>
                 </video>
             </section>
@@ -51,23 +57,23 @@ function Home() {
 
             <main>
                 <section className="categories">
-                    <a href="#" className="category-card">
+                    <Link to="/products?gender=women" className="category-card">
                         <img src={womenPhoto} alt="Women"/>
                         <div className="overlay"></div>
                         <h2>Women</h2>
-                    </a>
+                    </Link>
 
-                    <a href="#" className="category-card">
+                    <Link to="/products?gender=men" className="category-card">
                         <img src={menPhoto} alt="Men"/>
                         <div className="overlay"></div>
                         <h2>Men</h2>
-                    </a>
+                    </Link>
 
-                    <a href="#" className="category-card">
+                    <Link to="/products?gender=kids" className="category-card">
                         <img src={kidsPhoto} alt="Kids"/>
                         <div className="overlay"></div>
                         <h2>Kids</h2>
-                    </a>
+                    </Link>
                 </section>
 
                 <section className="grey-days">

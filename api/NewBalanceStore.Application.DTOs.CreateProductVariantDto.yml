@@ -18,14 +18,19 @@ items:
   source:
     remote:
       path: NewBalanceStore.Application/DTOs/CreateProductVariantDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: CreateProductVariantDto
     path: NewBalanceStore.Application/DTOs/CreateProductVariantDto.cs
-    startLine: 6
+    startLine: 10
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: >-
+    DTO для передачі відомостей про варіацію товару (розмір, колір та кількість)
+
+    при додаванні або модифікації товару.
+  example: []
   syntax:
     content: public class CreateProductVariantDto
     content.vb: Public Class CreateProductVariantDto
@@ -53,14 +58,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Application/DTOs/CreateProductVariantDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: Color
     path: NewBalanceStore.Application/DTOs/CreateProductVariantDto.cs
-    startLine: 8
+    startLine: 15
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Колір варіації товару.
+  example: []
   syntax:
     content: public string Color { get; set; }
     parameters: []
@@ -82,14 +89,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Application/DTOs/CreateProductVariantDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: Size
     path: NewBalanceStore.Application/DTOs/CreateProductVariantDto.cs
-    startLine: 9
+    startLine: 20
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Розмір варіації (наприклад, "8.5", "9.5", "XL").
+  example: []
   syntax:
     content: public string Size { get; set; }
     parameters: []
@@ -111,14 +120,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Application/DTOs/CreateProductVariantDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: Quantity
     path: NewBalanceStore.Application/DTOs/CreateProductVariantDto.cs
-    startLine: 10
+    startLine: 25
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Кількість одиниць варіації в наявності.
+  example: []
   syntax:
     content: public int Quantity { get; set; }
     parameters: []

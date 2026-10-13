@@ -16,14 +16,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/Interfaces/IPhotoService.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: IPhotoService
     path: NewBalanceStore.Domain/Interfaces/IPhotoService.cs
-    startLine: 2
+    startLine: 7
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Interfaces
+  summary: Контракт сервісу для роботи із завантаженням та обробкою зображень у хмарне сховище (Cloudinary).
+  example: []
   syntax:
     content: public interface IPhotoService
     content.vb: Public Interface IPhotoService
@@ -43,25 +45,34 @@ items:
   source:
     remote:
       path: NewBalanceStore.Domain/Interfaces/IPhotoService.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: AddPhotoAsync
     path: NewBalanceStore.Domain/Interfaces/IPhotoService.cs
-    startLine: 4
+    startLine: 16
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Interfaces
+  summary: Завантажує зображення у хмарний сервіс та повертає публічне захищене посилання (HTTPS URL).
+  example: []
   syntax:
     content: Task<string> AddPhotoAsync(Stream fileStream, string fileName)
     parameters:
     - id: fileStream
       type: System.IO.Stream
+      description: Потік байтів файлу зображення.
     - id: fileName
       type: System.String
+      description: Оригінальна назва файлу зображення.
     return:
       type: System.Threading.Tasks.Task{System.String}
+      description: Публічний HTTPS URL завантаженого зображення.
     content.vb: Function AddPhotoAsync(fileStream As Stream, fileName As String) As Task(Of String)
   overload: NewBalanceStore.Domain.Interfaces.IPhotoService.AddPhotoAsync*
+  exceptions:
+  - type: System.Exception
+    commentId: T:System.Exception
+    description: Виникає у разі збою віддаленого завантаження у хмару.
   nameWithType.vb: IPhotoService.AddPhotoAsync(Stream, String)
   fullName.vb: NewBalanceStore.Domain.Interfaces.IPhotoService.AddPhotoAsync(System.IO.Stream, String)
   name.vb: AddPhotoAsync(Stream, String)
@@ -89,6 +100,13 @@ references:
   - name: .
   - uid: NewBalanceStore.Domain.Interfaces
     name: Interfaces
+- uid: System.Exception
+  commentId: T:System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
 - uid: NewBalanceStore.Domain.Interfaces.IPhotoService.AddPhotoAsync*
   commentId: Overload:NewBalanceStore.Domain.Interfaces.IPhotoService.AddPhotoAsync
   href: NewBalanceStore.Domain.Interfaces.IPhotoService.html#NewBalanceStore_Domain_Interfaces_IPhotoService_AddPhotoAsync_System_IO_Stream_System_String_

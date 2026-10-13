@@ -27,8 +27,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: ProductsControllerTests
     path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
     startLine: 13
@@ -72,8 +72,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: SetUp
     path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
     startLine: 20
@@ -108,8 +108,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetProducts_ReturnsOkAndPassesFilterToService
     path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
     startLine: 28
@@ -146,8 +146,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetById_WhenProductExists_ReturnsOk
     path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
     startLine: 41
@@ -184,8 +184,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: GetById_WhenProductDoesNotExist_ReturnsNotFound
     path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
     startLine: 53
@@ -222,8 +222,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: Create_ReturnsCreatedAtAction
     path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
     startLine: 63
@@ -260,8 +260,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: Update_WhenProductExists_ReturnsNoContent
     path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
     startLine: 79
@@ -298,8 +298,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: Update_WhenProductDoesNotExist_ReturnsNotFound
     path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
     startLine: 90
@@ -336,8 +336,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: Delete_WhenProductExists_ReturnsNoContent
     path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
     startLine: 101
@@ -374,8 +374,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: Delete_WhenProductDoesNotExist_ReturnsNotFound
     path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
     startLine: 111
@@ -412,8 +412,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: UploadImage_WhenFileIsEmpty_ReturnsBadRequestWithoutCallingPhotoService
     path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
     startLine: 121
@@ -450,8 +450,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: UploadImage_WhenPhotoServiceReturnsUrl_ReturnsOk
     path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
     startLine: 132
@@ -488,8 +488,8 @@ items:
   source:
     remote:
       path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: UploadImage_WhenPhotoServiceReturnsNoUrl_ReturnsBadRequest
     path: NewBalanceStore.UnitTests/Controllers/ControllerActionTests.cs
     startLine: 145

@@ -26,20 +26,27 @@ items:
   type: Class
   source:
     remote:
-      path: backend/NewBalanceStore.Application/DTOs/ProductDto.cs
-      branch: main
+      path: NewBalanceStore.Application/DTOs/CreateProductDto.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: CreateProductDto
-    path: NewBalanceStore/backend/NewBalanceStore.Application/DTOs/ProductDto.cs
-    startLine: 20
+    path: NewBalanceStore.Application/DTOs/CreateProductDto.cs
+    startLine: 10
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: >-
+    DTO для створення або оновлення товару адміністратором платформи.
+
+    Містить усі властивості та вкладені варіації моделі без ідентифікатора.
+  example: []
   syntax:
     content: public class CreateProductDto
     content.vb: Public Class CreateProductDto
   inheritance:
   - System.Object
+  derivedClasses:
+  - NewBalanceStore.Application.DTOs.ProductDto
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -61,15 +68,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/NewBalanceStore.Application/DTOs/ProductDto.cs
-      branch: main
+      path: NewBalanceStore.Application/DTOs/CreateProductDto.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Name
-    path: NewBalanceStore/backend/NewBalanceStore.Application/DTOs/ProductDto.cs
-    startLine: 22
+    path: NewBalanceStore.Application/DTOs/CreateProductDto.cs
+    startLine: 15
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Назва товару (наприклад, "New Balance 574 Core").
+  example: []
   syntax:
     content: public string Name { get; set; }
     parameters: []
@@ -90,15 +99,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/NewBalanceStore.Application/DTOs/ProductDto.cs
-      branch: main
+      path: NewBalanceStore.Application/DTOs/CreateProductDto.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Description
-    path: NewBalanceStore/backend/NewBalanceStore.Application/DTOs/ProductDto.cs
-    startLine: 23
+    path: NewBalanceStore.Application/DTOs/CreateProductDto.cs
+    startLine: 20
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Текстовий опис моделі, матеріалів та особливостей амортизації.
+  example: []
   syntax:
     content: public string Description { get; set; }
     parameters: []
@@ -119,21 +130,23 @@ items:
   type: Property
   source:
     remote:
-      path: backend/NewBalanceStore.Application/DTOs/ProductDto.cs
-      branch: main
+      path: NewBalanceStore.Application/DTOs/CreateProductDto.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Type
-    path: NewBalanceStore/backend/NewBalanceStore.Application/DTOs/ProductDto.cs
-    startLine: 24
+    path: NewBalanceStore.Application/DTOs/CreateProductDto.cs
+    startLine: 25
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Тип виробу ("Footwear", "Clothing", "Accessories").
+  example: []
   syntax:
-    content: public ProductType Type { get; set; }
+    content: public string Type { get; set; }
     parameters: []
     return:
-      type: NewBalanceStore.Domain.Enums.ProductType
-    content.vb: Public Property Type As ProductType
+      type: System.String
+    content.vb: Public Property Type As String
   overload: NewBalanceStore.Application.DTOs.CreateProductDto.Type*
 - uid: NewBalanceStore.Application.DTOs.CreateProductDto.Category
   commentId: P:NewBalanceStore.Application.DTOs.CreateProductDto.Category
@@ -148,15 +161,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/NewBalanceStore.Application/DTOs/ProductDto.cs
-      branch: main
+      path: NewBalanceStore.Application/DTOs/CreateProductDto.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Category
-    path: NewBalanceStore/backend/NewBalanceStore.Application/DTOs/ProductDto.cs
-    startLine: 25
+    path: NewBalanceStore.Application/DTOs/CreateProductDto.cs
+    startLine: 30
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Категорія товару ("Running", "Lifestyle", "Trail" тощо).
+  example: []
   syntax:
     content: public string Category { get; set; }
     parameters: []
@@ -164,6 +179,37 @@ items:
       type: System.String
     content.vb: Public Property Category As String
   overload: NewBalanceStore.Application.DTOs.CreateProductDto.Category*
+- uid: NewBalanceStore.Application.DTOs.CreateProductDto.Activity
+  commentId: P:NewBalanceStore.Application.DTOs.CreateProductDto.Activity
+  id: Activity
+  parent: NewBalanceStore.Application.DTOs.CreateProductDto
+  langs:
+  - csharp
+  - vb
+  name: Activity
+  nameWithType: CreateProductDto.Activity
+  fullName: NewBalanceStore.Application.DTOs.CreateProductDto.Activity
+  type: Property
+  source:
+    remote:
+      path: NewBalanceStore.Application/DTOs/CreateProductDto.cs
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: Activity
+    path: NewBalanceStore.Application/DTOs/CreateProductDto.cs
+    startLine: 35
+  assemblies:
+  - NewBalanceStore.Application
+  namespace: NewBalanceStore.Application.DTOs
+  summary: Цільова активність (наприклад, "Casual", "Training").
+  example: []
+  syntax:
+    content: public string Activity { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Activity As String
+  overload: NewBalanceStore.Application.DTOs.CreateProductDto.Activity*
 - uid: NewBalanceStore.Application.DTOs.CreateProductDto.Gender
   commentId: P:NewBalanceStore.Application.DTOs.CreateProductDto.Gender
   id: Gender
@@ -177,21 +223,23 @@ items:
   type: Property
   source:
     remote:
-      path: backend/NewBalanceStore.Application/DTOs/ProductDto.cs
-      branch: main
+      path: NewBalanceStore.Application/DTOs/CreateProductDto.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Gender
-    path: NewBalanceStore/backend/NewBalanceStore.Application/DTOs/ProductDto.cs
-    startLine: 26
+    path: NewBalanceStore.Application/DTOs/CreateProductDto.cs
+    startLine: 40
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Гендерна приналежність моделі ("Men", "Women", "Unisex").
+  example: []
   syntax:
-    content: public Gender Gender { get; set; }
+    content: public string Gender { get; set; }
     parameters: []
     return:
-      type: NewBalanceStore.Domain.Enums.Gender
-    content.vb: Public Property Gender As Gender
+      type: System.String
+    content.vb: Public Property Gender As String
   overload: NewBalanceStore.Application.DTOs.CreateProductDto.Gender*
 - uid: NewBalanceStore.Application.DTOs.CreateProductDto.Price
   commentId: P:NewBalanceStore.Application.DTOs.CreateProductDto.Price
@@ -206,15 +254,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/NewBalanceStore.Application/DTOs/ProductDto.cs
-      branch: main
+      path: NewBalanceStore.Application/DTOs/CreateProductDto.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Price
-    path: NewBalanceStore/backend/NewBalanceStore.Application/DTOs/ProductDto.cs
-    startLine: 27
+    path: NewBalanceStore.Application/DTOs/CreateProductDto.cs
+    startLine: 45
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Роздрібна ціна товару.
+  example: []
   syntax:
     content: public decimal Price { get; set; }
     parameters: []
@@ -235,15 +285,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/NewBalanceStore.Application/DTOs/ProductDto.cs
-      branch: main
+      path: NewBalanceStore.Application/DTOs/CreateProductDto.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: OldPrice
-    path: NewBalanceStore/backend/NewBalanceStore.Application/DTOs/ProductDto.cs
-    startLine: 28
+    path: NewBalanceStore.Application/DTOs/CreateProductDto.cs
+    startLine: 50
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Попередня ціна до знижки (опціонально).
+  example: []
   syntax:
     content: public decimal? OldPrice { get; set; }
     parameters: []
@@ -251,35 +303,6 @@ items:
       type: System.Nullable{System.Decimal}
     content.vb: Public Property OldPrice As Decimal?
   overload: NewBalanceStore.Application.DTOs.CreateProductDto.OldPrice*
-- uid: NewBalanceStore.Application.DTOs.CreateProductDto.Images
-  commentId: P:NewBalanceStore.Application.DTOs.CreateProductDto.Images
-  id: Images
-  parent: NewBalanceStore.Application.DTOs.CreateProductDto
-  langs:
-  - csharp
-  - vb
-  name: Images
-  nameWithType: CreateProductDto.Images
-  fullName: NewBalanceStore.Application.DTOs.CreateProductDto.Images
-  type: Property
-  source:
-    remote:
-      path: backend/NewBalanceStore.Application/DTOs/ProductDto.cs
-      branch: main
-      repo: https://github.com/AlexElNX/NewBalanceStore
-    id: Images
-    path: NewBalanceStore/backend/NewBalanceStore.Application/DTOs/ProductDto.cs
-    startLine: 29
-  assemblies:
-  - NewBalanceStore.Application
-  namespace: NewBalanceStore.Application.DTOs
-  syntax:
-    content: public List<string> Images { get; set; }
-    parameters: []
-    return:
-      type: System.Collections.Generic.List{System.String}
-    content.vb: Public Property Images As List(Of String)
-  overload: NewBalanceStore.Application.DTOs.CreateProductDto.Images*
 - uid: NewBalanceStore.Application.DTOs.CreateProductDto.IsNew
   commentId: P:NewBalanceStore.Application.DTOs.CreateProductDto.IsNew
   id: IsNew
@@ -293,15 +316,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/NewBalanceStore.Application/DTOs/ProductDto.cs
-      branch: main
+      path: NewBalanceStore.Application/DTOs/CreateProductDto.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: IsNew
-    path: NewBalanceStore/backend/NewBalanceStore.Application/DTOs/ProductDto.cs
-    startLine: 30
+    path: NewBalanceStore.Application/DTOs/CreateProductDto.cs
+    startLine: 55
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Прапорець новинки в каталозі.
+  example: []
   syntax:
     content: public bool IsNew { get; set; }
     parameters: []
@@ -309,64 +334,6 @@ items:
       type: System.Boolean
     content.vb: Public Property IsNew As Boolean
   overload: NewBalanceStore.Application.DTOs.CreateProductDto.IsNew*
-- uid: NewBalanceStore.Application.DTOs.CreateProductDto.Variants
-  commentId: P:NewBalanceStore.Application.DTOs.CreateProductDto.Variants
-  id: Variants
-  parent: NewBalanceStore.Application.DTOs.CreateProductDto
-  langs:
-  - csharp
-  - vb
-  name: Variants
-  nameWithType: CreateProductDto.Variants
-  fullName: NewBalanceStore.Application.DTOs.CreateProductDto.Variants
-  type: Property
-  source:
-    remote:
-      path: backend/NewBalanceStore.Application/DTOs/ProductDto.cs
-      branch: main
-      repo: https://github.com/AlexElNX/NewBalanceStore
-    id: Variants
-    path: NewBalanceStore/backend/NewBalanceStore.Application/DTOs/ProductDto.cs
-    startLine: 31
-  assemblies:
-  - NewBalanceStore.Application
-  namespace: NewBalanceStore.Application.DTOs
-  syntax:
-    content: public List<ProductVariant> Variants { get; set; }
-    parameters: []
-    return:
-      type: System.Collections.Generic.List{NewBalanceStore.Domain.Entities.ProductVariant}
-    content.vb: Public Property Variants As List(Of ProductVariant)
-  overload: NewBalanceStore.Application.DTOs.CreateProductDto.Variants*
-- uid: NewBalanceStore.Application.DTOs.CreateProductDto.Activity
-  commentId: P:NewBalanceStore.Application.DTOs.CreateProductDto.Activity
-  id: Activity
-  parent: NewBalanceStore.Application.DTOs.CreateProductDto
-  langs:
-  - csharp
-  - vb
-  name: Activity
-  nameWithType: CreateProductDto.Activity
-  fullName: NewBalanceStore.Application.DTOs.CreateProductDto.Activity
-  type: Property
-  source:
-    remote:
-      path: NewBalanceStore.Application/DTOs/CreateProductDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
-    id: Activity
-    path: NewBalanceStore.Application/DTOs/CreateProductDto.cs
-    startLine: 12
-  assemblies:
-  - NewBalanceStore.Application
-  namespace: NewBalanceStore.Application.DTOs
-  syntax:
-    content: public string Activity { get; set; }
-    parameters: []
-    return:
-      type: System.String
-    content.vb: Public Property Activity As String
-  overload: NewBalanceStore.Application.DTOs.CreateProductDto.Activity*
 - uid: NewBalanceStore.Application.DTOs.CreateProductDto.Colors
   commentId: P:NewBalanceStore.Application.DTOs.CreateProductDto.Colors
   id: Colors
@@ -381,14 +348,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Application/DTOs/CreateProductDto.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: Colors
     path: NewBalanceStore.Application/DTOs/CreateProductDto.cs
-    startLine: 19
+    startLine: 60
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Перелік доступних назв кольорів.
+  example: []
   syntax:
     content: public List<string> Colors { get; set; }
     parameters: []
@@ -396,6 +365,68 @@ items:
       type: System.Collections.Generic.List{System.String}
     content.vb: Public Property Colors As List(Of String)
   overload: NewBalanceStore.Application.DTOs.CreateProductDto.Colors*
+- uid: NewBalanceStore.Application.DTOs.CreateProductDto.Images
+  commentId: P:NewBalanceStore.Application.DTOs.CreateProductDto.Images
+  id: Images
+  parent: NewBalanceStore.Application.DTOs.CreateProductDto
+  langs:
+  - csharp
+  - vb
+  name: Images
+  nameWithType: CreateProductDto.Images
+  fullName: NewBalanceStore.Application.DTOs.CreateProductDto.Images
+  type: Property
+  source:
+    remote:
+      path: NewBalanceStore.Application/DTOs/CreateProductDto.cs
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: Images
+    path: NewBalanceStore.Application/DTOs/CreateProductDto.cs
+    startLine: 65
+  assemblies:
+  - NewBalanceStore.Application
+  namespace: NewBalanceStore.Application.DTOs
+  summary: Словник URL-посилань на зображення товару у розрізі кольорів.
+  example: []
+  syntax:
+    content: public Dictionary<string, List<string>> Images { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.String}}
+    content.vb: Public Property Images As Dictionary(Of String, List(Of String))
+  overload: NewBalanceStore.Application.DTOs.CreateProductDto.Images*
+- uid: NewBalanceStore.Application.DTOs.CreateProductDto.Variants
+  commentId: P:NewBalanceStore.Application.DTOs.CreateProductDto.Variants
+  id: Variants
+  parent: NewBalanceStore.Application.DTOs.CreateProductDto
+  langs:
+  - csharp
+  - vb
+  name: Variants
+  nameWithType: CreateProductDto.Variants
+  fullName: NewBalanceStore.Application.DTOs.CreateProductDto.Variants
+  type: Property
+  source:
+    remote:
+      path: NewBalanceStore.Application/DTOs/CreateProductDto.cs
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
+    id: Variants
+    path: NewBalanceStore.Application/DTOs/CreateProductDto.cs
+    startLine: 70
+  assemblies:
+  - NewBalanceStore.Application
+  namespace: NewBalanceStore.Application.DTOs
+  summary: Список складських варіацій (розміри, кольори, кількість).
+  example: []
+  syntax:
+    content: public List<CreateProductVariantDto> Variants { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.List{NewBalanceStore.Application.DTOs.CreateProductVariantDto}
+    content.vb: Public Property Variants As List(Of CreateProductVariantDto)
+  overload: NewBalanceStore.Application.DTOs.CreateProductDto.Variants*
 references:
 - uid: NewBalanceStore.Application.DTOs
   commentId: N:NewBalanceStore.Application.DTOs
@@ -686,55 +717,24 @@ references:
   name: Type
   nameWithType: CreateProductDto.Type
   fullName: NewBalanceStore.Application.DTOs.CreateProductDto.Type
-- uid: NewBalanceStore.Domain.Enums.ProductType
-  commentId: T:NewBalanceStore.Domain.Enums.ProductType
-  parent: NewBalanceStore.Domain.Enums
-  href: NewBalanceStore.Domain.Enums.ProductType.html
-  name: ProductType
-  nameWithType: ProductType
-  fullName: NewBalanceStore.Domain.Enums.ProductType
-- uid: NewBalanceStore.Domain.Enums
-  commentId: N:NewBalanceStore.Domain.Enums
-  name: NewBalanceStore.Domain.Enums
-  nameWithType: NewBalanceStore.Domain.Enums
-  fullName: NewBalanceStore.Domain.Enums
-  spec.csharp:
-  - uid: NewBalanceStore
-    name: NewBalanceStore
-  - name: .
-  - uid: NewBalanceStore.Domain
-    name: Domain
-  - name: .
-  - uid: NewBalanceStore.Domain.Enums
-    name: Enums
-  spec.vb:
-  - uid: NewBalanceStore
-    name: NewBalanceStore
-  - name: .
-  - uid: NewBalanceStore.Domain
-    name: Domain
-  - name: .
-  - uid: NewBalanceStore.Domain.Enums
-    name: Enums
 - uid: NewBalanceStore.Application.DTOs.CreateProductDto.Category*
   commentId: Overload:NewBalanceStore.Application.DTOs.CreateProductDto.Category
   href: NewBalanceStore.Application.DTOs.CreateProductDto.html#NewBalanceStore_Application_DTOs_CreateProductDto_Category
   name: Category
   nameWithType: CreateProductDto.Category
   fullName: NewBalanceStore.Application.DTOs.CreateProductDto.Category
+- uid: NewBalanceStore.Application.DTOs.CreateProductDto.Activity*
+  commentId: Overload:NewBalanceStore.Application.DTOs.CreateProductDto.Activity
+  href: NewBalanceStore.Application.DTOs.CreateProductDto.html#NewBalanceStore_Application_DTOs_CreateProductDto_Activity
+  name: Activity
+  nameWithType: CreateProductDto.Activity
+  fullName: NewBalanceStore.Application.DTOs.CreateProductDto.Activity
 - uid: NewBalanceStore.Application.DTOs.CreateProductDto.Gender*
   commentId: Overload:NewBalanceStore.Application.DTOs.CreateProductDto.Gender
   href: NewBalanceStore.Application.DTOs.CreateProductDto.html#NewBalanceStore_Application_DTOs_CreateProductDto_Gender
   name: Gender
   nameWithType: CreateProductDto.Gender
   fullName: NewBalanceStore.Application.DTOs.CreateProductDto.Gender
-- uid: NewBalanceStore.Domain.Enums.Gender
-  commentId: T:NewBalanceStore.Domain.Enums.Gender
-  parent: NewBalanceStore.Domain.Enums
-  href: NewBalanceStore.Domain.Enums.Gender.html
-  name: Gender
-  nameWithType: Gender
-  fullName: NewBalanceStore.Domain.Enums.Gender
 - uid: NewBalanceStore.Application.DTOs.CreateProductDto.Price*
   commentId: Overload:NewBalanceStore.Application.DTOs.CreateProductDto.Price
   href: NewBalanceStore.Application.DTOs.CreateProductDto.html#NewBalanceStore_Application_DTOs_CreateProductDto_Price
@@ -809,12 +809,29 @@ references:
   - name: " "
   - name: T
   - name: )
-- uid: NewBalanceStore.Application.DTOs.CreateProductDto.Images*
-  commentId: Overload:NewBalanceStore.Application.DTOs.CreateProductDto.Images
-  href: NewBalanceStore.Application.DTOs.CreateProductDto.html#NewBalanceStore_Application_DTOs_CreateProductDto_Images
-  name: Images
-  nameWithType: CreateProductDto.Images
-  fullName: NewBalanceStore.Application.DTOs.CreateProductDto.Images
+- uid: NewBalanceStore.Application.DTOs.CreateProductDto.IsNew*
+  commentId: Overload:NewBalanceStore.Application.DTOs.CreateProductDto.IsNew
+  href: NewBalanceStore.Application.DTOs.CreateProductDto.html#NewBalanceStore_Application_DTOs_CreateProductDto_IsNew
+  name: IsNew
+  nameWithType: CreateProductDto.IsNew
+  fullName: NewBalanceStore.Application.DTOs.CreateProductDto.IsNew
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: NewBalanceStore.Application.DTOs.CreateProductDto.Colors*
+  commentId: Overload:NewBalanceStore.Application.DTOs.CreateProductDto.Colors
+  href: NewBalanceStore.Application.DTOs.CreateProductDto.html#NewBalanceStore_Application_DTOs_CreateProductDto_Colors
+  name: Colors
+  nameWithType: CreateProductDto.Colors
+  fullName: NewBalanceStore.Application.DTOs.CreateProductDto.Colors
 - uid: System.Collections.Generic.List{System.String}
   commentId: T:System.Collections.Generic.List{System.String}
   parent: System.Collections.Generic
@@ -915,49 +932,133 @@ references:
     name: Generic
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic
-- uid: NewBalanceStore.Application.DTOs.CreateProductDto.IsNew*
-  commentId: Overload:NewBalanceStore.Application.DTOs.CreateProductDto.IsNew
-  href: NewBalanceStore.Application.DTOs.CreateProductDto.html#NewBalanceStore_Application_DTOs_CreateProductDto_IsNew
-  name: IsNew
-  nameWithType: CreateProductDto.IsNew
-  fullName: NewBalanceStore.Application.DTOs.CreateProductDto.IsNew
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
+- uid: NewBalanceStore.Application.DTOs.CreateProductDto.Images*
+  commentId: Overload:NewBalanceStore.Application.DTOs.CreateProductDto.Images
+  href: NewBalanceStore.Application.DTOs.CreateProductDto.html#NewBalanceStore_Application_DTOs_CreateProductDto_Images
+  name: Images
+  nameWithType: CreateProductDto.Images
+  fullName: NewBalanceStore.Application.DTOs.CreateProductDto.Images
+- uid: System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.String}}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,System.Collections.Generic.List{System.String}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, List<string>>
+  nameWithType: Dictionary<string, List<string>>
+  fullName: System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<string>>
+  nameWithType.vb: Dictionary(Of String, List(Of String))
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, System.Collections.Generic.List(Of String))
+  name.vb: Dictionary(Of String, List(Of String))
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
   isExternal: true
-  href: https://learn.microsoft.com/dotnet/api/system.boolean
-  name: bool
-  nameWithType: bool
-  fullName: bool
-  nameWithType.vb: Boolean
-  fullName.vb: Boolean
-  name.vb: Boolean
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
 - uid: NewBalanceStore.Application.DTOs.CreateProductDto.Variants*
   commentId: Overload:NewBalanceStore.Application.DTOs.CreateProductDto.Variants
   href: NewBalanceStore.Application.DTOs.CreateProductDto.html#NewBalanceStore_Application_DTOs_CreateProductDto_Variants
   name: Variants
   nameWithType: CreateProductDto.Variants
   fullName: NewBalanceStore.Application.DTOs.CreateProductDto.Variants
-- uid: System.Collections.Generic.List{NewBalanceStore.Domain.Entities.ProductVariant}
-  commentId: T:System.Collections.Generic.List{NewBalanceStore.Domain.Entities.ProductVariant}
+- uid: System.Collections.Generic.List{NewBalanceStore.Application.DTOs.CreateProductVariantDto}
+  commentId: T:System.Collections.Generic.List{NewBalanceStore.Application.DTOs.CreateProductVariantDto}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.List`1
   href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
-  name: List<ProductVariant>
-  nameWithType: List<ProductVariant>
-  fullName: System.Collections.Generic.List<NewBalanceStore.Domain.Entities.ProductVariant>
-  nameWithType.vb: List(Of ProductVariant)
-  fullName.vb: System.Collections.Generic.List(Of NewBalanceStore.Domain.Entities.ProductVariant)
-  name.vb: List(Of ProductVariant)
+  name: List<CreateProductVariantDto>
+  nameWithType: List<CreateProductVariantDto>
+  fullName: System.Collections.Generic.List<NewBalanceStore.Application.DTOs.CreateProductVariantDto>
+  nameWithType.vb: List(Of CreateProductVariantDto)
+  fullName.vb: System.Collections.Generic.List(Of NewBalanceStore.Application.DTOs.CreateProductVariantDto)
+  name.vb: List(Of CreateProductVariantDto)
   spec.csharp:
   - uid: System.Collections.Generic.List`1
     name: List
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
-  - uid: NewBalanceStore.Domain.Entities.ProductVariant
-    name: ProductVariant
-    href: NewBalanceStore.Domain.Entities.ProductVariant.html
+  - uid: NewBalanceStore.Application.DTOs.CreateProductVariantDto
+    name: CreateProductVariantDto
+    href: NewBalanceStore.Application.DTOs.CreateProductVariantDto.html
   - name: '>'
   spec.vb:
   - uid: System.Collections.Generic.List`1
@@ -967,19 +1068,7 @@ references:
   - name: (
   - name: Of
   - name: " "
-  - uid: NewBalanceStore.Domain.Entities.ProductVariant
-    name: ProductVariant
-    href: NewBalanceStore.Domain.Entities.ProductVariant.html
+  - uid: NewBalanceStore.Application.DTOs.CreateProductVariantDto
+    name: CreateProductVariantDto
+    href: NewBalanceStore.Application.DTOs.CreateProductVariantDto.html
   - name: )
-- uid: NewBalanceStore.Application.DTOs.CreateProductDto.Activity*
-  commentId: Overload:NewBalanceStore.Application.DTOs.CreateProductDto.Activity
-  href: NewBalanceStore.Application.DTOs.CreateProductDto.html#NewBalanceStore_Application_DTOs_CreateProductDto_Activity
-  name: Activity
-  nameWithType: CreateProductDto.Activity
-  fullName: NewBalanceStore.Application.DTOs.CreateProductDto.Activity
-- uid: NewBalanceStore.Application.DTOs.CreateProductDto.Colors*
-  commentId: Overload:NewBalanceStore.Application.DTOs.CreateProductDto.Colors
-  href: NewBalanceStore.Application.DTOs.CreateProductDto.html#NewBalanceStore_Application_DTOs_CreateProductDto_Colors
-  name: Colors
-  nameWithType: CreateProductDto.Colors
-  fullName: NewBalanceStore.Application.DTOs.CreateProductDto.Colors

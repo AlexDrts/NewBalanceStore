@@ -90,7 +90,7 @@ body {
 #video-background {
     width: 100%;
     height: 100%;
-
+    pointer-events: none;
     object-fit: cover;
 }
 
@@ -98,14 +98,14 @@ body {
    CATEGORIES SECTION
    ========================================== */
 .categories {
-    width: 1940px;
-    max-width: calc(100vw - 20px);
+    width: 100%;
+    padding: 0 6px;
 
-    margin: 5px auto 0;
+    margin: 6px auto 0;
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
+    gap: 6px;
 }
 
 .category-card {
@@ -193,28 +193,28 @@ body {
    PRODUCT GRID
    ========================================== */
 .product-grid {
-    width: 1860px;
-    max-width: calc(100vw - 20px);
+    width: 100%;
+    padding: 0 6px;
     margin: 50px auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 
-    row-gap: 60px;
-    column-gap: 15px;
+    row-gap: 48px;
+    column-gap: 6px;
 }
 
 /* ==========================================
    FEATURED PRODUCTS
    ========================================== */
 .featured-products {
-    width: 1940px;
-    max-width: calc(100vw - 20px);
+    width: 100%;
+    padding: 0 6px;
 
     margin: 100px auto;
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 6px;
 }
 
 .featured-card {
@@ -287,8 +287,8 @@ body {
 
     .product-grid {
         grid-template-columns: repeat(3, 1fr);
-        column-gap: 20px;
-        row-gap: 50px;
+        column-gap: 6px;
+        row-gap: 44px;
     }
 
     .category-card {
@@ -328,7 +328,7 @@ body {
 
     .product-grid {
         grid-template-columns: repeat(3, 1fr);
-        column-gap: 15px;
+        column-gap: 6px;
     }
 }
 
@@ -373,7 +373,9 @@ body {
     /* SECTIONS */
     .categories {
         grid-template-columns: 1fr;
-        gap: 8px;
+        gap: 4px;
+        padding: 0 4px;
+        margin-top: 4px;
     }
 
     .category-card {
@@ -382,12 +384,15 @@ body {
 
     .product-grid {
         grid-template-columns: repeat(2, 1fr);
-        row-gap: 35px;
-        column-gap: 15px;
+        row-gap: 32px;
+        column-gap: 4px;
+        padding: 0 4px;
     }
 
     .featured-products {
         grid-template-columns: 1fr;
+        gap: 4px;
+        padding: 0 4px;
     }
 }
 
@@ -422,6 +427,7 @@ body {
 
     .product-grid {
         grid-template-columns: repeat(2, 1fr);
-        column-gap: 10px;
+        column-gap: 4px;
+        padding: 0 4px;
     }
 }

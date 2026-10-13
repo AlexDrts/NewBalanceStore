@@ -17,15 +17,17 @@ items:
   type: Class
   source:
     remote:
-      path: backend/NewBalanceStore.Application/DTOs/CartDto.cs
-      branch: main
+      path: NewBalanceStore.Application/DTOs/CartDto.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: CartDto
-    path: NewBalanceStore/backend/NewBalanceStore.Application/DTOs/CartDto.cs
-    startLine: 12
+    path: NewBalanceStore.Application/DTOs/CartDto.cs
+    startLine: 41
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: DTO кошика покупок із загальним списком товарів та автоматично обчисленою сумою.
+  example: []
   syntax:
     content: public class CartDto
     content.vb: Public Class CartDto
@@ -52,15 +54,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/NewBalanceStore.Application/DTOs/CartDto.cs
-      branch: main
+      path: NewBalanceStore.Application/DTOs/CartDto.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: UserId
-    path: NewBalanceStore/backend/NewBalanceStore.Application/DTOs/CartDto.cs
-    startLine: 14
+    path: NewBalanceStore.Application/DTOs/CartDto.cs
+    startLine: 46
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Ідентифікатор користувача або сесії власника кошика.
+  example: []
   syntax:
     content: public string UserId { get; set; }
     parameters: []
@@ -81,15 +85,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/NewBalanceStore.Application/DTOs/CartDto.cs
-      branch: main
+      path: NewBalanceStore.Application/DTOs/CartDto.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Items
-    path: NewBalanceStore/backend/NewBalanceStore.Application/DTOs/CartDto.cs
-    startLine: 15
+    path: NewBalanceStore.Application/DTOs/CartDto.cs
+    startLine: 51
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Список позицій у кошику.
+  example: []
   syntax:
     content: public List<CartItemDto> Items { get; set; }
     parameters: []
@@ -110,15 +116,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/NewBalanceStore.Application/DTOs/CartDto.cs
-      branch: main
+      path: NewBalanceStore.Application/DTOs/CartDto.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: TotalAmount
-    path: NewBalanceStore/backend/NewBalanceStore.Application/DTOs/CartDto.cs
-    startLine: 16
+    path: NewBalanceStore.Application/DTOs/CartDto.cs
+    startLine: 56
   assemblies:
   - NewBalanceStore.Application
   namespace: NewBalanceStore.Application.DTOs
+  summary: Загальна сумарна вартість усіх товарів у кошику.
+  example: []
   syntax:
     content: public decimal TotalAmount { get; }
     parameters: []

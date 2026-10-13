@@ -8,10 +8,17 @@ using NewBalanceStore.Infrastructure.Configurations;
 namespace NewBalanceStore.Infrastructure.Services;
 
 [ExcludeFromCodeCoverage]
+/// <summary>
+/// Реалізація сервісу збереження та оптимізації медіафайлів за допомогою хмарного провайдера Cloudinary.
+/// </summary>
 public class PhotoService : IPhotoService
 {
     private readonly Cloudinary _cloudinary;
 
+    /// <summary>
+    /// Ініціалізує сервіс фотографій, конфігуруючи клієнт Cloudinary обліковими записами із <see cref="CloudinarySettings"/>.
+    /// </summary>
+    /// <param name="config">Налаштування Cloudinary (CloudName, ApiKey, ApiSecret).</param>
     public PhotoService(IOptions<CloudinarySettings> config)
     {
         var acc = new Account(
@@ -23,6 +30,13 @@ public class PhotoService : IPhotoService
         _cloudinary = new Cloudinary(acc);
     }
 
+    /// <summary>
+    /// Завантажує зображення у хмару Cloudinary із автоматичною обрізкою та масштабуванням (500x500 fill face).
+    /// </summary>
+    /// <param name="fileStream">Потік вхідного графічного файлу.</param>
+    /// <param name="fileName">Ім'я завантажуваного файлу.</param>
+    /// <returns>Захищене HTTPS-посилання (SecureUrl) на розміщене зображення.</returns>
+    /// <exception cref="Exception">Виникає у разі отримання помилки від API Cloudinary.</exception>
     public async Task<string> AddPhotoAsync(Stream fileStream, string fileName)
     {
         var uploadParams = new ImageUploadParams

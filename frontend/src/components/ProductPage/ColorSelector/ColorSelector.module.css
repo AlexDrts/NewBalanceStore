@@ -25,7 +25,7 @@
     aspect-ratio: 1 / 1;
     padding: 0;
     border: 1px solid transparent;
-    border-radius: 2px;
+    border-radius: 4px;
     background: #f2f2f2;
     overflow: hidden;
     cursor: pointer;
@@ -69,11 +69,13 @@
 
 @media (min-width: 1921px) {
     .swatches {
-        --swatch-size: 64px;
+        --swatch-size: 88px;
+        gap: 12px;
     }
 
     .label {
-        font-size: 15px;
+        margin-bottom: 18px;
+        font-size: 20px;
     }
 }
 

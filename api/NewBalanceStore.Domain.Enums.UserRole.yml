@@ -16,15 +16,17 @@ items:
   type: Enum
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Enums/UserRole.cs
-      branch: main
+      path: NewBalanceStore.Domain/Enums/UserRole.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: UserRole
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Enums/UserRole.cs
-    startLine: 6
+    path: NewBalanceStore.Domain/Enums/UserRole.cs
+    startLine: 7
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Enums
+  summary: Ролі користувачів для системи управління доступом (Role-Based Access Control - RBAC).
+  example: []
   syntax:
     content: public enum UserRole
     content.vb: Public Enum UserRole
@@ -41,15 +43,17 @@ items:
   type: Field
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Enums/UserRole.cs
-      branch: main
+      path: NewBalanceStore.Domain/Enums/UserRole.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Customer
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Enums/UserRole.cs
-    startLine: 8
+    path: NewBalanceStore.Domain/Enums/UserRole.cs
+    startLine: 12
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Enums
+  summary: Зареєстрований покупець із базовими правами (кошик, оформлення замовлень, власний кабінет).
+  example: []
   syntax:
     content: Customer = 0
     return:
@@ -67,15 +71,17 @@ items:
   type: Field
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Enums/UserRole.cs
-      branch: main
+      path: NewBalanceStore.Domain/Enums/UserRole.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Admin
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Enums/UserRole.cs
-    startLine: 9
+    path: NewBalanceStore.Domain/Enums/UserRole.cs
+    startLine: 17
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Enums
+  summary: Адміністратор платформи із повними привілеями (управління товарами, замовленнями, аналітикою).
+  example: []
   syntax:
     content: Admin = 1
     return:

@@ -18,15 +18,17 @@ items:
   type: Class
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/CustomerInfo.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/CustomerInfo.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: CustomerInfo
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/CustomerInfo.cs
-    startLine: 6
+    path: NewBalanceStore.Domain/Entities/CustomerInfo.cs
+    startLine: 9
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Значеннєвий об'єкт (Value Object), що інкапсулює персональні контактні дані замовника.
+  example: []
   syntax:
     content: public class CustomerInfo
     content.vb: Public Class CustomerInfo
@@ -53,15 +55,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/CustomerInfo.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/CustomerInfo.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: FirstName
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/CustomerInfo.cs
-    startLine: 8
+    path: NewBalanceStore.Domain/Entities/CustomerInfo.cs
+    startLine: 14
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Ім'я замовника.
+  example: []
   syntax:
     content: public string FirstName { get; set; }
     parameters: []
@@ -82,15 +86,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/CustomerInfo.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/CustomerInfo.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: LastName
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/CustomerInfo.cs
-    startLine: 9
+    path: NewBalanceStore.Domain/Entities/CustomerInfo.cs
+    startLine: 19
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Прізвище замовника.
+  example: []
   syntax:
     content: public string LastName { get; set; }
     parameters: []
@@ -111,15 +117,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/CustomerInfo.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/CustomerInfo.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Email
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/CustomerInfo.cs
-    startLine: 10
+    path: NewBalanceStore.Domain/Entities/CustomerInfo.cs
+    startLine: 24
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Адреса електронної пошти замовника для надсилання квитанцій та трекінг-номерів.
+  example: []
   syntax:
     content: public string Email { get; set; }
     parameters: []
@@ -140,15 +148,17 @@ items:
   type: Property
   source:
     remote:
-      path: backend/backend/NewBalanceStore.Domain/Entities/CustomerInfo.cs
-      branch: main
+      path: NewBalanceStore.Domain/Entities/CustomerInfo.cs
+      branch: test
       repo: https://github.com/AlexElNX/NewBalanceStore
     id: Phone
-    path: NewBalanceStore/backend/backend/NewBalanceStore.Domain/Entities/CustomerInfo.cs
-    startLine: 11
+    path: NewBalanceStore.Domain/Entities/CustomerInfo.cs
+    startLine: 29
   assemblies:
   - NewBalanceStore.Domain
   namespace: NewBalanceStore.Domain.Entities
+  summary: Номер телефону для зв'язку з кур'єром або оператором.
+  example: []
   syntax:
     content: public string Phone { get; set; }
     parameters: []

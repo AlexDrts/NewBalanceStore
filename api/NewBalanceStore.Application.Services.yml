@@ -17,13 +17,6 @@ items:
   assemblies:
   - NewBalanceStore.Application
 references:
-- uid: NewBalanceStore.Application.Services.ProductService
-  commentId: T:NewBalanceStore.Application.Services.ProductService
-  parent: NewBalanceStore.Application.Services
-  href: NewBalanceStore.Application.Services.ProductService.html
-  name: ProductService
-  nameWithType: ProductService
-  fullName: NewBalanceStore.Application.Services.ProductService
 - uid: NewBalanceStore.Application.Services.IOrderService
   commentId: T:NewBalanceStore.Application.Services.IOrderService
   parent: NewBalanceStore.Application.Services
@@ -37,6 +30,13 @@ references:
   name: OrderService
   nameWithType: OrderService
   fullName: NewBalanceStore.Application.Services.OrderService
+- uid: NewBalanceStore.Application.Services.ProductService
+  commentId: T:NewBalanceStore.Application.Services.ProductService
+  parent: NewBalanceStore.Application.Services
+  href: NewBalanceStore.Application.Services.ProductService.html
+  name: ProductService
+  nameWithType: ProductService
+  fullName: NewBalanceStore.Application.Services.ProductService
 - uid: NewBalanceStore.Application.Services
   commentId: N:NewBalanceStore.Application.Services
   name: NewBalanceStore.Application.Services

@@ -17,14 +17,16 @@ items:
   source:
     remote:
       path: NewBalanceStore.Infrastructure/Services/PhotoService.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: PhotoService
     path: NewBalanceStore.Infrastructure/Services/PhotoService.cs
-    startLine: 8
+    startLine: 11
   assemblies:
   - NewBalanceStore.Infrastructure
   namespace: NewBalanceStore.Infrastructure.Services
+  summary: Реалізація сервісу збереження та оптимізації медіафайлів за допомогою хмарного провайдера Cloudinary.
+  example: []
   syntax:
     content: 'public class PhotoService : IPhotoService'
     content.vb: Public Class PhotoService Implements IPhotoService
@@ -54,19 +56,22 @@ items:
   source:
     remote:
       path: NewBalanceStore.Infrastructure/Services/PhotoService.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: .ctor
     path: NewBalanceStore.Infrastructure/Services/PhotoService.cs
-    startLine: 12
+    startLine: 19
   assemblies:
   - NewBalanceStore.Infrastructure
   namespace: NewBalanceStore.Infrastructure.Services
+  summary: Ініціалізує сервіс фотографій, конфігуруючи клієнт Cloudinary обліковими записами із <xref href="NewBalanceStore.Infrastructure.Configurations.CloudinarySettings" data-throw-if-not-resolved="false"></xref>.
+  example: []
   syntax:
     content: public PhotoService(IOptions<CloudinarySettings> config)
     parameters:
     - id: config
       type: Microsoft.Extensions.Options.IOptions{NewBalanceStore.Infrastructure.Configurations.CloudinarySettings}
+      description: Налаштування Cloudinary (CloudName, ApiKey, ApiSecret).
     content.vb: Public Sub New(config As IOptions(Of CloudinarySettings))
   overload: NewBalanceStore.Infrastructure.Services.PhotoService.#ctor*
   nameWithType.vb: PhotoService.New(IOptions(Of CloudinarySettings))
@@ -86,26 +91,34 @@ items:
   source:
     remote:
       path: NewBalanceStore.Infrastructure/Services/PhotoService.cs
-      branch: main
-      repo: https://github.com/ZemNyux/NewBalanceStoreBack.git
+      branch: test
+      repo: https://github.com/AlexElNX/NewBalanceStore
     id: AddPhotoAsync
     path: NewBalanceStore.Infrastructure/Services/PhotoService.cs
-    startLine: 23
+    startLine: 37
   assemblies:
   - NewBalanceStore.Infrastructure
   namespace: NewBalanceStore.Infrastructure.Services
+  summary: Завантажує зображення у хмару Cloudinary із автоматичною обрізкою та масштабуванням (500x500 fill face).
   example: []
   syntax:
     content: public Task<string> AddPhotoAsync(Stream fileStream, string fileName)
     parameters:
     - id: fileStream
       type: System.IO.Stream
+      description: Потік вхідного графічного файлу.
     - id: fileName
       type: System.String
+      description: Ім'я завантажуваного файлу.
     return:
       type: System.Threading.Tasks.Task{System.String}
+      description: Захищене HTTPS-посилання (SecureUrl) на розміщене зображення.
     content.vb: Public Function AddPhotoAsync(fileStream As Stream, fileName As String) As Task(Of String)
   overload: NewBalanceStore.Infrastructure.Services.PhotoService.AddPhotoAsync*
+  exceptions:
+  - type: System.Exception
+    commentId: T:System.Exception
+    description: Виникає у разі отримання помилки від API Cloudinary.
   implements:
   - NewBalanceStore.Domain.Interfaces.IPhotoService.AddPhotoAsync(System.IO.Stream,System.String)
   nameWithType.vb: PhotoService.AddPhotoAsync(Stream, String)
@@ -402,6 +415,12 @@ references:
   - name: .
   - uid: NewBalanceStore.Domain.Interfaces
     name: Interfaces
+- uid: NewBalanceStore.Infrastructure.Configurations.CloudinarySettings
+  commentId: T:NewBalanceStore.Infrastructure.Configurations.CloudinarySettings
+  href: NewBalanceStore.Infrastructure.Configurations.CloudinarySettings.html
+  name: CloudinarySettings
+  nameWithType: CloudinarySettings
+  fullName: NewBalanceStore.Infrastructure.Configurations.CloudinarySettings
 - uid: NewBalanceStore.Infrastructure.Services.PhotoService.#ctor*
   commentId: Overload:NewBalanceStore.Infrastructure.Services.PhotoService.#ctor
   href: NewBalanceStore.Infrastructure.Services.PhotoService.html#NewBalanceStore_Infrastructure_Services_PhotoService__ctor_Microsoft_Extensions_Options_IOptions_NewBalanceStore_Infrastructure_Configurations_CloudinarySettings__
@@ -509,6 +528,13 @@ references:
     name: Options
     isExternal: true
     href: https://learn.microsoft.com/dotnet/api/microsoft.extensions.options
+- uid: System.Exception
+  commentId: T:System.Exception
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.exception
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
 - uid: NewBalanceStore.Infrastructure.Services.PhotoService.AddPhotoAsync*
   commentId: Overload:NewBalanceStore.Infrastructure.Services.PhotoService.AddPhotoAsync
   href: NewBalanceStore.Infrastructure.Services.PhotoService.html#NewBalanceStore_Infrastructure_Services_PhotoService_AddPhotoAsync_System_IO_Stream_System_String_
