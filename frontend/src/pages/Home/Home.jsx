@@ -43,7 +43,13 @@ function Home() {
                 </div>
 
 
-                <video autoPlay muted loop id="video-background">
+                <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    disablePictureInPicture
+                    id="video-background">
                     <source src={heroVideo} type="video/mp4"/>
                 </video>
             </section>
