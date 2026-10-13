@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import styles from './ProductCard.module.css';
 import { useState } from "react";
 
+import bagSvg from '../../assets/icons/header/bag.svg';
+
 function ProductCard({ product, onQuickAdd, page }) {
     const hasImagesObject = product.images && typeof product.images === 'object';
     const colors = hasImagesObject ? Object.keys(product.images) : [];
@@ -56,7 +58,7 @@ function ProductCard({ product, onQuickAdd, page }) {
                         onClick={() => onQuickAdd(product, activeColor)}
                         aria-label="Quick Add"
                     >
-                        <img src="../src/assets/icons/header/bag.svg" alt="Bag" />
+                        <img src={bagSvg} alt="Bag" />
                     </button>
                 )}
             </div>
