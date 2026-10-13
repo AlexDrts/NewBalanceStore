@@ -6,6 +6,10 @@ import { getProducts } from "../../services/productsService.js";
 import { Cart } from "../../entities/Cart.js";
 import { Order } from "../../entities/Order.js";
 
+import logoSvg from '../../assets/icons/footer/logo.svg';
+import cartSvg from '../../assets/icons/header/cart.svg';
+
+
 function Checkout() {
     const [products, setProducts] = useState([]);
 
@@ -112,13 +116,13 @@ function Checkout() {
                 <div className={styles.headerInner}>
                     <div className={styles.brand}>
                         <Link to="/">
-                            <img src="../src/assets/icons/footer/logo.svg" alt="NB Logo"/>
+                            <img src={logoSvg} alt="NB Logo"/>
                         </Link>
                         <span>Secure checkout</span>
                     </div>
                     <div className={styles.cart}>
                         <Link to="/cart">
-                            <img src="../src/assets/icons/header/cart.svg" alt=""/>
+                            <img src={cartSvg} alt=""/>
                         </Link>
                     </div>
                 </div>
