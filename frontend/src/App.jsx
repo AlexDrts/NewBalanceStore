@@ -10,6 +10,7 @@ import Admin from "./pages/Admin/Admin/Admin.jsx";
 import AddProduct from "./pages/Admin/AddProduct/AddProduct.jsx";
 import ManageProducts from "./pages/Admin/ManageProducts/ManageProducts.jsx";
 import NotFound from "./pages/NotFound/NotFound.jsx";
+import ContactUs from "./pages/FooterLinks/Help/ContactUs/ContactUs.jsx";
 import Account from "./pages/Account/Account.jsx";
 import AccountRoute from "./components/ProtectedRoutes/AccountRoute.jsx";
 import AdminRoute from "./components/ProtectedRoutes/AdminRoute.jsx";
@@ -36,6 +37,7 @@ function App() {
                 <AddProduct key="edit"/>
             </AdminRoute>}/>
             <Route path="/login" element={<Login/>}/>
+            <Route path="/help" element={<ContactUs/>}/>
 
             <Route path="/account" element={<AccountRoute>
                 <Account/>

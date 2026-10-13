@@ -1,0 +1,139 @@
+import { useId, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import styles from "./ContactUs.module.css";
+import TopHeader from "../../../../components/TopHeader/TopHeader.jsx";
+import MainHeader from "../../../../components/MainHeader/MainHeader.jsx";
+import Footer from "../../../../components/Footer/Footer.jsx";
+import { getCurrentUser } from "../../../../services/api/authService.js";
+import { HELP_FAQ } from "./helpFaq.jsx";
+
+function ChatIcon() {
+    return (
+        <svg className={styles.cardIcon} viewBox="0 0 28 28" fill="none" aria-hidden="true">
+            <path d="M3.5 4.5h21v15h-12l-6 4.5v-4.5h-3v-15Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+            <path d="M8 10h12M8 14h9" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+        </svg>
+    );
+}
+
+function PinIcon() {
+    return (
+        <svg className={styles.cardIcon} viewBox="0 0 28 28" fill="none" aria-hidden="true">
+            <path d="M14 25s8-7.6 8-13.5a8 8 0 0 0-16 0C6 17.4 14 25 14 25Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+            <circle cx="14" cy="11.5" r="3" stroke="currentColor" strokeWidth="1.6" />
+        </svg>
+    );
+}
+
+function BoxIcon() {
+    return (
+        <svg className={styles.cardIcon} viewBox="0 0 28 28" fill="none" aria-hidden="true">
+            <path d="M14 3.5 24 8.5v11L14 24.5 4 19.5v-11L14 3.5Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+            <path d="M4 8.5 14 13.5l10-5M14 13.5v11M9 6l10 5v4" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+        </svg>
+    );
+}
+
+function FaqItem({ item, isOpen, onToggle }) {
+    const baseId = useId();
+    const panelId = `${baseId}-panel`;
+
+    return (
+        <section className={styles.faqItem}>
+            <h3 className={styles.faqHeading}>
+                <button
+                    type="button"
+                    className={styles.faqTrigger}
+                    aria-expanded={isOpen}
+                    aria-controls={panelId}
+                    onClick={onToggle}
+                >
+                    <span>{item.question}</span>
+                    <svg className={`${styles.chevron} ${isOpen ? styles.chevronOpen : ""}`} viewBox="0 0 16 16" aria-hidden="true">
+                        <path d="M2.5 5.5 8 11l5.5-5.5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                </button>
+            </h3>
+
+            <div id={panelId} className={styles.faqPanel} hidden={!isOpen}>
+                {item.answer}
+            </div>
+        </section>
+    );
+}
+
+function ContactUs() {
+    const pageRef = useRef(null);
+    const [openId, setOpenId] = useState(null);
+    const ordersLink = getCurrentUser() ? "/account" : "/login";
+
+    const toggle = (id) => {
+        setOpenId((current) => (current === id ? null : id));
+    };
+
+    return (
+        <>
+            <TopHeader />
+            <section ref={pageRef} className={`${styles.helpPage} ${styles.hero}`}>
+                <MainHeader theme={"light"} containerRef={pageRef} />
+            </section>
+
+            <main className={styles.container}>
+                <h1 className={styles.title}>Find Help</h1>
+                <span className={styles.titleLine} aria-hidden="true" />
+                <p className={styles.subtitle}>Thank you for shopping with New Balance.</p>
+
+                <div className={styles.cards}>
+                    <section className={styles.card}>
+                        <h2 className={styles.cardTitle}>
+                            <ChatIcon />
+                            Contact us
+                        </h2>
+                        <p className={styles.cardText}>
+                            Customer service hours are Monday-Friday 9am-9pm EST, and Saturday-Sunday 9am-6pm EST. To live chat, use the chat bubble below. To speak with an agent, call <a href="tel:8005959138">800-595-9138</a>. Phone support is closed Sundays.
+                        </p>
+                    </section>
+
+                    <section className={styles.card}>
+                        <h2 className={styles.cardTitle}>
+                            <PinIcon />
+                            Track order status
+                        </h2>
+                        <p className={styles.cardText}>
+                            Quickly track your order status in real-time. Enter your order number (starting with U) or log in to your membership account to view your order history. In-stock orders ship within 2 business days.
+                        </p>
+                        <Link to={ordersLink} className={styles.cardButton}>Track my order</Link>
+                    </section>
+
+                    <section className={styles.card}>
+                        <h2 className={styles.cardTitle}>
+                            <BoxIcon />
+                            Start a return
+                        </h2>
+                        <p className={styles.cardText}>
+                            Enter your order number (starting with U) or log in to your membership account to initiate a return. Bring your items to any New Balance store for an immediate refund or ship them back to us. Review our return policy for eligible items and get started today.
+                        </p>
+                        <Link to={ordersLink} className={styles.cardButton}>Return my order</Link>
+                    </section>
+                </div>
+
+                <h2 className={styles.faqTitle}>Frequently Asked Questions</h2>
+
+                <div className={styles.faqList}>
+                    {HELP_FAQ.map((item) => (
+                        <FaqItem
+                            key={item.id}
+                            item={item}
+                            isOpen={openId === item.id}
+                            onToggle={() => toggle(item.id)}
+                        />
+                    ))}
+                </div>
+            </main>
+
+            <Footer />
+        </>
+    );
+}
+
+export default ContactUs;
