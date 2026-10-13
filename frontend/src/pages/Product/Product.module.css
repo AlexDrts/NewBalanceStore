@@ -278,20 +278,27 @@
 
 @media (min-width: 2560px) {
     .page {
-        --info-width: 620px;
-        --column-gap: 88px;
+        --info-width: 460px;
+        --column-gap: 56px;
         --gutter: 64px;
         --shift: 180px;
-        max-width: 2480px;
+        max-width: 1750px;
     }
 
-    .breadcrumbs { font-size: 20px; }
-    .crumbNote { font-size: 17px; }
-    .name { font-size: 44px; }
-    .price { font-size: 28px; }
-    .discount { font-size: 16px; }
-    .selection, .payments { font-size: 17px; }
-    .addToBag, .primaryButton { height: 72px; font-size: 22px; }
+    .hero :global(.main-header) {
+        width: 95vw;
+        max-width: 1940px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+
+    .breadcrumbs { font-size: 14px; }
+    .name { font-size: 30px; }
+    .price { font-size: 17px; }
+    .discount { font-size: 14px; }
+    .selection, .payments { font-size: 14px; }
+    .addToBag, .primaryButton { height: 52px; font-size: 16px; }
 }
 
 @media (max-width: 1280px) {
