@@ -73,9 +73,9 @@
 }
 
 .footer-column a {
-    color: #cccccc;
+    color: #ffffff;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.6;
     margin-bottom: 8px;
     transition: color 0.2s ease;
@@ -89,14 +89,15 @@
 /* BRAND SECTION */
 
 .footer-brand {
-    max-width: 320px;
+    max-width: 340px;
     flex-shrink: 0;
 }
 
 .footer-brand h2 {
     font-family: "Libre Baskerville", serif;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 400;
+    letter-spacing: -0.3px;
     margin-bottom: 20px;
 }
 
@@ -107,9 +108,9 @@
 }
 
 .footer-brand p {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #cccccc;
+    font-size: 15px;
+    line-height: 2;
+    color: #ffffff;
     margin-bottom: 28px;
 }
 
@@ -151,8 +152,8 @@
 }
 
 .footer-secondary-brands span {
-    font-size: 13px;
-    color: #555;
+    font-size: 14px;
+    color: #222;
 }
 
 .footer-secondary-brands img {
@@ -285,12 +286,12 @@
     }
 
     .footer-column a {
-        font-size: 13px;
+        font-size: 14px;
         white-space: normal;
     }
 
     .footer-brand h2 {
-        font-size: 20px;
+        font-size: 22px;
     }
 }
 
