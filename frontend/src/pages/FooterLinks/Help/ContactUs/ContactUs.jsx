@@ -64,11 +64,13 @@ function FaqItem({ item, isOpen, onToggle }) {
 
 function ContactUs() {
     const pageRef = useRef(null);
-    const [openId, setOpenId] = useState(null);
+    const [openIds, setOpenIds] = useState([]);
     const ordersLink = getCurrentUser() ? "/account" : "/login";
 
     const toggle = (id) => {
-        setOpenId((current) => (current === id ? null : id));
+        setOpenIds((current) => (
+            current.includes(id) ? current.filter((openId) => openId !== id) : [...current, id]
+        ));
     };
 
     return (
@@ -111,7 +113,7 @@ function ContactUs() {
                             Start a return
                         </h2>
                         <p className={styles.cardText}>
-                            Enter your order number (starting with U) or log in to your membership account to initiate a return. Bring your items to any New Balance store for an immediate refund or ship them back to us. Review our return policy for eligible items and get started today.
+                            Enter your order number (starting with U) or log in to your membership account to initiate a return. Bring your items to any New Balance store for an immediate refund or ship them back to us. Review our <Link to="/returns" onClick={() => window.scrollTo(0, 0)}>return policy</Link> for eligible items and get started today.
                         </p>
                         <Link to={ordersLink} className={styles.cardButton}>Return my order</Link>
                     </section>
@@ -124,7 +126,7 @@ function ContactUs() {
                         <FaqItem
                             key={item.id}
                             item={item}
-                            isOpen={openId === item.id}
+                            isOpen={openIds.includes(item.id)}
                             onToggle={() => toggle(item.id)}
                         />
                     ))}

@@ -6,7 +6,7 @@ export const HELP_FAQ = [
         question: "What is your return policy?",
         answer: (
             <p>
-                If you aren't completely happy with your purchase, we accept returns of merchandise in new condition within 45 days of purchase. Returns must be in new condition, in the state you received them. New Balance reserves the right to refuse worn or damaged merchandise. Unfortunately, we cannot accept returns on non-returnable items. Learn more about returns.
+                If you aren't completely happy with your purchase, we accept returns of merchandise in new condition within 45 days of purchase. Returns must be in new condition, in the state you received them. New Balance reserves the right to refuse worn or damaged merchandise. Unfortunately, we cannot accept returns on non-returnable items. <Link to="/returns">Learn more about returns</Link>.
             </p>
         )
     },

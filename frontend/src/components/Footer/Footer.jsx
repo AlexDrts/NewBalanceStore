@@ -41,10 +41,10 @@ function Footer() {
                             <h3>Help</h3>
 
                             <Link to="/help" onClick={() => window.scrollTo(0, 0)}>Contact us</Link>
-                            <a href="#">Start a return</a>
-                            <a href="#">Track your order</a>
+                            <Link to="/returns" onClick={() => window.scrollTo(0, 0)}>Start a return</Link>
+                            <Link to="/order-status" onClick={() => window.scrollTo(0, 0)}>Track your order</Link>
                             <a href="#">Become a member</a>
-                            <a href="#">Size guide</a>
+                            <Link to="/size-guide" onClick={() => window.scrollTo(0, 0)}>Size guide</Link>
                             <a href="#">FAQ</a>
                         </div>
 
