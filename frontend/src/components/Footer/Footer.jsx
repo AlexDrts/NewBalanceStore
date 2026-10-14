@@ -43,7 +43,7 @@ function Footer() {
                             <Link to="/help" onClick={() => window.scrollTo(0, 0)}>Contact us</Link>
                             <Link to="/returns" onClick={() => window.scrollTo(0, 0)}>Start a return</Link>
                             <Link to="/order-status" onClick={() => window.scrollTo(0, 0)}>Track your order</Link>
-                            <a href="#">Become a member</a>
+                            <Link to="/membership" onClick={() => window.scrollTo(0, 0)}>Become a member</Link>
                             <Link to="/size-guide" onClick={() => window.scrollTo(0, 0)}>Size guide</Link>
                             <Link to="/faqs" onClick={() => window.scrollTo(0, 0)}>FAQ</Link>
                         </div>
@@ -52,7 +52,7 @@ function Footer() {
                             <h3>Shop</h3>
 
                             <Link to="/stores" onClick={() => window.scrollTo(0, 0)}>Find a store</Link>
-                            <a href="#">Gift cards</a>
+                            <Link to="/giftcards" onClick={() => window.scrollTo(0, 0)}>Gift cards</Link>
                             <a href="#">Shipping information</a>
                             <a href="#">Sale exclusions</a>
                             <a href="#">Custom uniforms</a>

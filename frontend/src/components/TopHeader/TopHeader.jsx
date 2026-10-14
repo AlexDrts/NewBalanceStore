@@ -1,11 +1,53 @@
 import './TopHeader.css'
+import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 // SVG
 import usFlag from '../../assets/icons/header/US.png';
 import locationPin from '../../assets/icons/header/location-pin.svg';
 import recycleIcon from '../../assets/icons/header/recycle-icon.svg';
 
+const HELP_LINKS = [
+    { label: "Order Status", to: "/order-status" },
+    { label: "Return Order", to: "/returns" },
+    { label: "FAQ", to: "/faqs" },
+    { label: "Help", to: "/help" },
+];
+
 function TopHeader() {
+    const [helpPinned, setHelpPinned] = useState(false);
+    const [helpHovered, setHelpHovered] = useState(false);
+    const helpRef = useRef(null);
+    const helpOpen = helpPinned || helpHovered;
+
+    useEffect(() => {
+        if (!helpPinned) return;
+
+        function handleClickOutside(event) {
+            if (helpRef.current && !helpRef.current.contains(event.target)) {
+                setHelpPinned(false);
+            }
+        }
+
+        function handleEscape(event) {
+            if (event.key === "Escape") {
+                setHelpPinned(false);
+            }
+        }
+
+        document.addEventListener("mousedown", handleClickOutside);
+        document.addEventListener("keydown", handleEscape);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+            document.removeEventListener("keydown", handleEscape);
+        };
+    }, [helpPinned]);
+
+    function handleHelpLinkClick() {
+        setHelpPinned(false);
+        setHelpHovered(false);
+        window.scrollTo(0, 0);
+    }
 
     return (
         <>
@@ -27,7 +69,35 @@ function TopHeader() {
                 <div className="right-menu">
                     <a href="#">English</a>
                     <span>|</span>
-                    <a href="#">Help</a>
+                    <div
+                        className="help-menu"
+                        ref={helpRef}
+                        onMouseEnter={() => setHelpHovered(true)}
+                        onMouseLeave={() => setHelpHovered(false)}
+                    >
+                        <button
+                            type="button"
+                            className="help-toggle"
+                            onClick={() => setHelpPinned((pinned) => !pinned)}
+                            aria-expanded={helpOpen}
+                            aria-haspopup="true"
+                        >
+                            Help
+                            <svg className={`help-chevron ${helpOpen ? "help-chevron-open" : ""}`} viewBox="0 0 12 12" aria-hidden="true">
+                                <path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                        </button>
+
+                        {helpOpen && (
+                            <div className="help-dropdown">
+                                {HELP_LINKS.map((link) => (
+                                    <Link key={link.to} to={link.to} onClick={handleHelpLinkClick}>
+                                        {link.label}
+                                    </Link>
+                                ))}
+                            </div>
+                        )}
+                    </div>
                 </div>
             </header>
 
