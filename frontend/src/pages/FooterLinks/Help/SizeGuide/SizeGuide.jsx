@@ -7,7 +7,7 @@ import Footer from "../../../../components/Footer/Footer.jsx";
 import { SIZE_TABLES, SIZE_TIPS } from "./sizeData.js";
 
 const FAQ_LINKS = [
-    { label: "Most Popular", to: "#" },
+    { label: "Most Popular", to: "/faqs" },
     { label: "Discounts & Promotions", to: "#" },
     { label: "Order Status", to: "/order-status" },
     { label: "Returns", to: "/returns" },

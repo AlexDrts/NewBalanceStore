@@ -14,6 +14,8 @@ import ContactUs from "./pages/FooterLinks/Help/ContactUs/ContactUs.jsx";
 import StartAReturn from "./pages/FooterLinks/Help/StartAReturn/StartAReturn.jsx";
 import TrackYourOrder from "./pages/FooterLinks/Help/TrackYourOrder/TrackYourOrder.jsx";
 import SizeGuide from "./pages/FooterLinks/Help/SizeGuide/SizeGuide.jsx";
+import FAQ from "./pages/FooterLinks/Help/FAQ/FAQ.jsx";
+import FindAStore from "./pages/FooterLinks/Shop/FindAStore/FindAStore.jsx";
 import Account from "./pages/Account/Account.jsx";
 import AccountRoute from "./components/ProtectedRoutes/AccountRoute.jsx";
 import AdminRoute from "./components/ProtectedRoutes/AdminRoute.jsx";
@@ -44,9 +46,8 @@ function App() {
             <Route path="/returns" element={<StartAReturn/>}/>
             <Route path="/order-status" element={<TrackYourOrder/>}/>
             <Route path="/size-guide" element={<SizeGuide/>}/>
-            <Route path="/help" element={<ContactUs/>}/>
-            <Route path="/returns" element={<StartAReturn/>}/>
-            <Route path="/order-status" element={<TrackYourOrder/>}/>
+            <Route path="/faqs" element={<FAQ/>}/>
+            <Route path="/stores" element={<FindAStore/>}/>
             <Route path="/account" element={<AccountRoute>
                 <Account/>
             </AccountRoute>}/>
