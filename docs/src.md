@@ -3,7 +3,7 @@
 
 | Метадані | Значення |
 | :--- | :--- |
-| **Версія документа** | 1.1 |
+| **Версія документа** | 1.2 |
 | **Статус** | Draft for Review |
 | **Дата** | 22 серпня 2026 |
 | **Автор** | BalanceDevs |
@@ -86,8 +86,8 @@ New Balance Store — це повнофункціональна веб-плат�
 
 | Роль | Опис | Ключові дозволи |
 | :--- | :--- | :--- |
-| **Гість (Guest)** | Неавторизований відвідувач | Перегляд каталогу, пошук, фільтрація, перегляд деталей товару |
-| **Покупець (Customer)** | Авторизований користувач | Функціонал Гість + кошика, оформлення замовлення, історія замовлень, управління профілем |
+| **Гість (Guest)** | Неавторизований відвідувач | Перегляд каталогу, пошук, фільтрація, перегляд деталей товару, оформлення замовлення |
+| **Покупець (Customer)** | Авторизований користувач | Функціонал Гість + кошика, історія замовлень, управління профілем |
 | **Адміністратор (Admin)** | Менеджер платформи | CRUD товарів |
 | **Система (System)** | Автоматизовані процеси | Валідація JWT-токенів, автоматична зміна статусів кошика |
 
@@ -96,12 +96,12 @@ New Balance Store — це повнофункціональна веб-плат�
 | Компонент | Специфікація |
 | :--- | :--- |
 | **Клієнт** | Браузери Chrome, Firefox, Safari |
-| **Сервер** | ASP.NET Core Web API (.NET 8.0+), хостинг на Render / Vercel / Railway |
+| **Сервер** | ASP.NET Core Web API (.NET 8.0+), хостинг на Render |
 | **Клієнтський фреймворк** | React 18+, Vite, React Router, CSS Modules |
 | **Серверний фреймворк** | ASP.NET Core Web API, Firebase Admin SDK |
 | **База даних / Хмара** | Firebase (Cloud Firestore) |
 | **Автентифікація** | Firebase Authentication / JWT |
-| **Архітектура** | Clean Architecture / Onion Architecture |
+| **Архітектура** | Clean Architecture |
 | **Мови інтерфейсу** | Англійська (en-US) |
 
 ### 2.4. Обмеження дизайну та реалізації
@@ -291,7 +291,7 @@ New Balance Store — це повнофункціональна веб-плат�
 | **Frontend** | React, React Router, JavaScript, CSS Modules, Fetch API |
 | **Backend** | C#, ASP.NET Core 8.0+ Web API, LINQ, Firebase Admin SDK |
 | **Database & Auth** | Firebase (Cloud Firestore, Firebase Authentication) |
-| **Testing** | NUnit, Vitest |
+| **Testing** | xUnit, Vitest |
 | **Tools & DevOps** | Git, GitHub Actions, Swagger / OpenAPI |
 
 ### Додаток Б: Організація командної розробки
@@ -306,4 +306,4 @@ New Balance Store — це повнофункціональна веб-плат�
 | **Team Lead / Frontend Lead** | Архітектура проєкту, координація команди, UI/UX, React-компоненти та інтеграція з API | React, React Router, CSS Modules, Fetch API, Git |
 | **Backend Developer** | Налаштування Firebase, розробка REST API, бізнес-логіка, авторизація | C#, ASP.NET Core, Firebase Admin SDK, JWT |
 | **Full-stack / DevOps** | Інтеграція модулів, Swagger-документація, налаштування CI/CD та середовища розробки | Swagger, GitHub Actions, C#, React |
-| **QA / Technical Writer** | Написання юніт-тестів, SRS-документація, Scrum-звіти, підготовка презентації | NUnit, Vitest, PowerPoint, MS Word |
+| **QA / Technical Writer** | Написання юніт-тестів, SRS-документація, Scrum-звіти, підготовка презентації | xUnit, Vitest, PowerPoint, MS Word |
