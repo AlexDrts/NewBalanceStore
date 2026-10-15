@@ -58,7 +58,11 @@ export class Cart {
 
     for (const item of this.products) {
 
-      const product = products.find(p => p.id === item.productId);
+      const product = products.find(p => String(p.id) === String(item.productId));
+
+      if (!product) {
+        continue;
+      }
 
       items.push({
         productId: item.productId,

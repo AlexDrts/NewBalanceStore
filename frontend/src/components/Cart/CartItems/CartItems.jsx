@@ -3,9 +3,11 @@ import CartItem from "../CartItem/CartItem.jsx";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getProducts } from "../../../services/productsService.js";
+import { useCart } from "../../../context/useCart.js";
 
 function CartItems({ cart }) {
     const [products, setProducts] = useState([]);
+    const { dispatch } = useCart();
 
     useEffect(() => {
         async function loadProducts() {
@@ -14,6 +16,21 @@ function CartItems({ cart }) {
 
         loadProducts();
     }, []);
+
+    useEffect(() => {
+        if (!products.length) return;
+
+        cart.products
+            .filter(item => !products.some(product => String(product.id) === String(item.productId)))
+            .forEach(item => dispatch({
+                type: "REMOVE_PRODUCT",
+                payload: {
+                    id: item.productId,
+                    color: item.color,
+                    size: item.size
+                }
+            }));
+    }, [products, cart, dispatch]);
 
     if (!products.length) {
         return <p>Loading...</p>;
@@ -35,23 +52,23 @@ function CartItems({ cart }) {
             </div>
 
             { cart.isEmpty() ? (
-                    <div className={styles.emptyCart}>
-                        <h3>Your bag is empty</h3>
+                <div className={styles.emptyCart}>
+                    <h3>Your bag is empty</h3>
 
-                        <p>There are no items in your bag.</p>
+                    <p>There are no items in your bag.</p>
 
-                        <Link
-                            to="/products"
-                            className={styles.continueBtn}
-                        >
-                            Continue Shopping
-                        </Link>
-                    </div>
-                ) : (cartProducts.map(item => (
+                    <Link
+                        to="/products"
+                        className={styles.continueBtn}
+                    >
+                        Continue Shopping
+                    </Link>
+                </div>
+            ) : (cartProducts.map(item => (
                     <CartItem
-                    key={`${item.product.id}-${item.color}-${item.size}`}
-                    cartProduct={item}
-                />
+                        key={`${item.product.id}-${item.color}-${item.size}`}
+                        cartProduct={item}
+                    />
                 ))
             )}
 

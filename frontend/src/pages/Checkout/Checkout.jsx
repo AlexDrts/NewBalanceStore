@@ -216,7 +216,7 @@ function Checkout() {
                                 >
                                     <img
                                         className={styles.checkoutProductImage}
-                                        src={item.product.images[item.color][0]}
+                                        src={item.product.images?.[item.color]?.[0]}
                                         alt={item.product.name}
                                     />
 

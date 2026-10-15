@@ -77,7 +77,7 @@ function CartItem({ cartProduct }) {
             <div className={styles.cartItem}>
                 <div className={styles.cartItemImage}>
                     <img
-                        src={product.images[cartProduct.color][0]}
+                        src={product.images?.[cartProduct.color]?.[0]}
                         alt={product.name}
                     />
                 </div>
