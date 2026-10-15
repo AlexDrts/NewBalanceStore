@@ -53,8 +53,8 @@ function Footer() {
 
                             <Link to="/stores" onClick={() => window.scrollTo(0, 0)}>Find a store</Link>
                             <Link to="/giftcards" onClick={() => window.scrollTo(0, 0)}>Gift cards</Link>
-                            <a href="#">Shipping information</a>
-                            <a href="#">Sale exclusions</a>
+                            <Link to="/shipping" onClick={() => window.scrollTo(0, 0)}>Shipping information</Link>
+                            <Link to="/sale-exclusions" onClick={() => window.scrollTo(0, 0)}>Sale exclusions</Link>
                             <a href="#">Custom uniforms</a>
                             <a href="#">Reconsidered</a>
                         </div>
@@ -68,15 +68,15 @@ function Footer() {
                             <a href="#">Careers</a>
                             <a href="#">The TRACK at New Balance</a>
                             <a href="#">Press box</a>
-                            <a href="#">Medical Plan Information</a>
+                            <Link to="/medical-plan-information" onClick={() => window.scrollTo(0, 0)}>Medical Plan Information</Link>
                         </div>
 
                         <div className="footer-column">
                             <h3>For You</h3>
 
                             <a href="#">Special discounts</a>
-                            <a href="#">Idea submission</a>
-                            <a href="#">Affiliate program</a>
+                            <Link to="/idea-submission" onClick={() => window.scrollTo(0, 0)}>Idea submission</Link>
+                            <Link to="/affiliate" onClick={() => window.scrollTo(0, 0)}>Affiliate program</Link>
                             <a href="#">Counterfeit products</a>
                             <a href="#">Accessibility statement</a>
                         </div>

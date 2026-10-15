@@ -18,6 +18,11 @@ import SizeGuide from "./pages/FooterLinks/Help/SizeGuide/SizeGuide.jsx";
 import FAQ from "./pages/FooterLinks/Help/FAQ/FAQ.jsx";
 import FindAStore from "./pages/FooterLinks/Shop/FindAStore/FindAStore.jsx";
 import GiftCards from "./pages/FooterLinks/Shop/GiftCards/GiftCards.jsx";
+import ShippingInformation from "./pages/FooterLinks/Shop/ShippingInformation/ShippingInformation.jsx";
+import SaleExclusions from "./pages/FooterLinks/Shop/SaleExclusions/SaleExclusions.jsx";
+import MedicalPlanInformation from "./pages/FooterLinks/AboutUs/MedicalPlanInformation/MedicalPlanInformation.jsx";
+import IdeaSubmission from "./pages/FooterLinks/ForYou/IdeaSubmission/IdeaSubmission.jsx";
+import AffiliateProgram from "./pages/FooterLinks/ForYou/AffiliateProgram/AffiliateProgram.jsx";
 import Account from "./pages/Account/Account.jsx";
 import AccountRoute from "./components/ProtectedRoutes/AccountRoute.jsx";
 import AdminRoute from "./components/ProtectedRoutes/AdminRoute.jsx";
@@ -52,6 +57,11 @@ function App() {
             <Route path="/faqs" element={<FAQ/>}/>
             <Route path="/stores" element={<FindAStore/>}/>
             <Route path="/giftcards" element={<GiftCards/>}/>
+            <Route path="/shipping" element={<ShippingInformation/>}/>
+            <Route path="/sale-exclusions" element={<SaleExclusions/>}/>
+            <Route path="/medical-plan-information" element={<MedicalPlanInformation/>}/>
+            <Route path="/idea-submission" element={<IdeaSubmission/>}/>
+            <Route path="/affiliate" element={<AffiliateProgram/>}/>
             <Route path="/account" element={<AccountRoute>
                 <Account/>
             </AccountRoute>}/>
