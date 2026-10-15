@@ -1,9 +1,10 @@
-import { useId, useRef, useState } from "react";
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 import styles from "./BecomeAMember.module.css";
 import TopHeader from "../../../../components/TopHeader/TopHeader.jsx";
 import MainHeader from "../../../../components/MainHeader/MainHeader.jsx";
 import Footer from "../../../../components/Footer/Footer.jsx";
+import FaqList from "../../../../components/FaqAccordion/FaqList.jsx";
 import { getCurrentUser } from "../../../../services/api/authService.js";
 import heroImage from "../../../../assets/images/new/women-arrivals.jpg";
 import { MEMBER_BENEFITS, MEMBER_FAQ } from "./memberData.jsx";
@@ -23,45 +24,10 @@ function ArrowIcon({ direction }) {
     );
 }
 
-function FaqItem({ item, isOpen, onToggle }) {
-    const baseId = useId();
-    const panelId = `${baseId}-panel`;
-
-    return (
-        <section className={styles.faqItem}>
-            <h3 className={styles.faqHeading}>
-                <button
-                    type="button"
-                    className={styles.faqTrigger}
-                    aria-expanded={isOpen}
-                    aria-controls={panelId}
-                    onClick={onToggle}
-                >
-                    <span>{item.question}</span>
-                    <svg className={`${styles.chevron} ${isOpen ? styles.chevronOpen : ""}`} viewBox="0 0 16 16" aria-hidden="true">
-                        <path d="M2.5 5.5 8 11l5.5-5.5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                </button>
-            </h3>
-
-            <div id={panelId} className={styles.faqPanel} hidden={!isOpen}>
-                {item.answer}
-            </div>
-        </section>
-    );
-}
-
 function BecomeAMember() {
     const pageRef = useRef(null);
     const sliderRef = useRef(null);
-    const [openIds, setOpenIds] = useState([]);
     const isLoggedIn = Boolean(getCurrentUser());
-
-    const toggle = (id) => {
-        setOpenIds((current) => (
-            current.includes(id) ? current.filter((openId) => openId !== id) : [...current, id]
-        ));
-    };
 
     const scrollBenefits = (direction) => {
         const slider = sliderRef.current;
@@ -142,16 +108,8 @@ function BecomeAMember() {
                 <section className={styles.faq} aria-labelledby="member-faq-title">
                     <h2 id="member-faq-title" className={styles.faqTitle}>Frequently asked questions</h2>
 
-                    <div className={styles.faqList}>
-                        {MEMBER_FAQ.map((item) => (
-                            <FaqItem
-                                key={item.id}
-                                item={item}
-                                isOpen={openIds.includes(item.id)}
-                                onToggle={() => toggle(item.id)}
-                            />
-                        ))}
-                    </div>
+                    <FaqList items={MEMBER_FAQ} styles={styles} />
+
                 </section>
             </main>
 

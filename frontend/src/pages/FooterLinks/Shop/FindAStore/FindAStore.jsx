@@ -3,7 +3,7 @@ import styles from "./FindAStore.module.css";
 import TopHeader from "../../../../components/TopHeader/TopHeader.jsx";
 import MainHeader from "../../../../components/MainHeader/MainHeader.jsx";
 import Footer from "../../../../components/Footer/Footer.jsx";
-import { STORES } from "./storesData.js";
+import { STORES } from "../../../../data/stores.js";
 
 function SearchIcon() {
     return (

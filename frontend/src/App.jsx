@@ -23,6 +23,9 @@ import SaleExclusions from "./pages/FooterLinks/Shop/SaleExclusions/SaleExclusio
 import MedicalPlanInformation from "./pages/FooterLinks/AboutUs/MedicalPlanInformation/MedicalPlanInformation.jsx";
 import IdeaSubmission from "./pages/FooterLinks/ForYou/IdeaSubmission/IdeaSubmission.jsx";
 import AffiliateProgram from "./pages/FooterLinks/ForYou/AffiliateProgram/AffiliateProgram.jsx";
+import AccessibilityStatement from "./pages/FooterLinks/ForYou/AccessibilityStatement/AccessibilityStatement.jsx";
+import CounterfeitProducts from "./pages/FooterLinks/ForYou/CounterfeitProducts/CounterfeitProducts.jsx";
+import SpecialDiscounts from "./pages/FooterLinks/ForYou/SpecialDiscounts/SpecialDiscounts.jsx";
 import Account from "./pages/Account/Account.jsx";
 import AccountRoute from "./components/ProtectedRoutes/AccountRoute.jsx";
 import AdminRoute from "./components/ProtectedRoutes/AdminRoute.jsx";
@@ -62,6 +65,9 @@ function App() {
             <Route path="/medical-plan-information" element={<MedicalPlanInformation/>}/>
             <Route path="/idea-submission" element={<IdeaSubmission/>}/>
             <Route path="/affiliate" element={<AffiliateProgram/>}/>
+            <Route path="/accessibility-statement" element={<AccessibilityStatement/>}/>
+            <Route path="/counterfeit" element={<CounterfeitProducts/>}/>
+            <Route path="/special-discounts" element={<SpecialDiscounts/>}/>
             <Route path="/account" element={<AccountRoute>
                 <Account/>
             </AccountRoute>}/>

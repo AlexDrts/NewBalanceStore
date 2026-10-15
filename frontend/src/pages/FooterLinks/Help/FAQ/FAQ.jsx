@@ -1,9 +1,10 @@
-import { Fragment, useId, useRef, useState } from "react";
+import { Fragment, useRef } from "react";
 import { Link } from "react-router-dom";
 import styles from "./FAQ.module.css";
 import TopHeader from "../../../../components/TopHeader/TopHeader.jsx";
 import MainHeader from "../../../../components/MainHeader/MainHeader.jsx";
 import Footer from "../../../../components/Footer/Footer.jsx";
+import FaqList from "../../../../components/FaqAccordion/FaqList.jsx";
 import { FAQ_CATEGORIES, POPULAR_FAQ } from "./faqData.jsx";
 
 const FAQ_LINKS = [
@@ -38,43 +39,8 @@ function SideLink({ link }) {
     return <a href={link.to}>{link.label}</a>;
 }
 
-function FaqItem({ item, isOpen, onToggle }) {
-    const baseId = useId();
-    const panelId = `${baseId}-panel`;
-
-    return (
-        <section className={styles.faqItem}>
-            <h3 className={styles.faqHeading}>
-                <button
-                    type="button"
-                    className={styles.faqTrigger}
-                    aria-expanded={isOpen}
-                    aria-controls={panelId}
-                    onClick={onToggle}
-                >
-                    <span>{item.question}</span>
-                    <svg className={`${styles.chevron} ${isOpen ? styles.chevronOpen : ""}`} viewBox="0 0 16 16" aria-hidden="true">
-                        <path d="M2.5 5.5 8 11l5.5-5.5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                </button>
-            </h3>
-
-            <div id={panelId} className={styles.faqPanel} hidden={!isOpen}>
-                {item.answer}
-            </div>
-        </section>
-    );
-}
-
 function FAQ() {
     const pageRef = useRef(null);
-    const [openIds, setOpenIds] = useState([]);
-
-    const toggle = (id) => {
-        setOpenIds((current) => (
-            current.includes(id) ? current.filter((openId) => openId !== id) : [...current, id]
-        ));
-    };
 
     return (
         <>
@@ -123,16 +89,8 @@ function FAQ() {
 
                         <h2 className={styles.faqTitle}>Most Popular FAQs</h2>
 
-                        <div className={styles.faqList}>
-                            {POPULAR_FAQ.map((item) => (
-                                <FaqItem
-                                    key={item.id}
-                                    item={item}
-                                    isOpen={openIds.includes(item.id)}
-                                    onToggle={() => toggle(item.id)}
-                                />
-                            ))}
-                        </div>
+                        <FaqList items={POPULAR_FAQ} styles={styles} />
+
                     </div>
                 </div>
             </main>

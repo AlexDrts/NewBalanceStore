@@ -1,8 +1,9 @@
-import { useId, useRef, useState } from "react";
+import { useRef } from "react";
 import styles from "./AffiliateProgram.module.css";
 import TopHeader from "../../../../components/TopHeader/TopHeader.jsx";
 import MainHeader from "../../../../components/MainHeader/MainHeader.jsx";
 import Footer from "../../../../components/Footer/Footer.jsx";
+import FaqList from "../../../../components/FaqAccordion/FaqList.jsx";
 
 const SECTIONS = [
     {
@@ -72,43 +73,8 @@ const AFFILIATE_FAQ = [
     },
 ];
 
-function FaqItem({ item, isOpen, onToggle }) {
-    const baseId = useId();
-    const panelId = `${baseId}-panel`;
-
-    return (
-        <section className={styles.faqItem}>
-            <h3 className={styles.faqHeading}>
-                <button
-                    type="button"
-                    className={styles.faqTrigger}
-                    aria-expanded={isOpen}
-                    aria-controls={panelId}
-                    onClick={onToggle}
-                >
-                    <span>{item.question}</span>
-                    <svg className={`${styles.chevron} ${isOpen ? styles.chevronOpen : ""}`} viewBox="0 0 16 16" aria-hidden="true">
-                        <path d="M2.5 5.5 8 11l5.5-5.5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                </button>
-            </h3>
-
-            <div id={panelId} className={styles.faqPanel} hidden={!isOpen}>
-                {item.answer}
-            </div>
-        </section>
-    );
-}
-
 function AffiliateProgram() {
     const pageRef = useRef(null);
-    const [openIds, setOpenIds] = useState([]);
-
-    const toggle = (id) => {
-        setOpenIds((current) => (
-            current.includes(id) ? current.filter((openId) => openId !== id) : [...current, id]
-        ));
-    };
 
     return (
         <>
@@ -130,16 +96,8 @@ function AffiliateProgram() {
 
                 <h2 className={styles.faqTitle}>Frequently asked questions</h2>
 
-                <div className={styles.faqList}>
-                    {AFFILIATE_FAQ.map((item) => (
-                        <FaqItem
-                            key={item.id}
-                            item={item}
-                            isOpen={openIds.includes(item.id)}
-                            onToggle={() => toggle(item.id)}
-                        />
-                    ))}
-                </div>
+                <FaqList items={AFFILIATE_FAQ} styles={styles} />
+
             </main>
 
             <Footer />
