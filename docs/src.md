@@ -291,7 +291,7 @@ New Balance Store — це повнофункціональна веб-плат�
 | **Frontend** | React, React Router, JavaScript, CSS Modules, Fetch API |
 | **Backend** | C#, ASP.NET Core 8.0+ Web API, LINQ, Firebase Admin SDK |
 | **Database & Auth** | Firebase (Cloud Firestore, Firebase Authentication) |
-| **Testing** | xUnit, Vitest |
+| **Testing** | NUnit, Vitest |
 | **Tools & DevOps** | Git, GitHub Actions, Swagger / OpenAPI |
 
 ### Додаток Б: Організація командної розробки
@@ -306,4 +306,4 @@ New Balance Store — це повнофункціональна веб-плат�
 | **Team Lead / Frontend Lead** | Архітектура проєкту, координація команди, UI/UX, React-компоненти та інтеграція з API | React, React Router, CSS Modules, Fetch API, Git |
 | **Backend Developer** | Налаштування Firebase, розробка REST API, бізнес-логіка, авторизація | C#, ASP.NET Core, Firebase Admin SDK, JWT |
 | **Full-stack / DevOps** | Інтеграція модулів, Swagger-документація, налаштування CI/CD та середовища розробки | Swagger, GitHub Actions, C#, React |
-| **QA / Technical Writer** | Написання юніт-тестів, SRS-документація, Scrum-звіти, підготовка презентації | xUnit, Vitest, PowerPoint, MS Word |
+| **QA / Technical Writer** | Написання юніт-тестів, SRS-документація, Scrum-звіти, підготовка презентації | NUnit, Vitest, PowerPoint, MS Word |
