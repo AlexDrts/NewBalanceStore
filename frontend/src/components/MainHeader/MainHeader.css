@@ -255,7 +255,7 @@ html.menu-open {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 }
 
 /* ==========================
@@ -429,7 +429,7 @@ html.menu-open {
     .mobile-left-group {
         display: flex;
         align-items: center;
-        gap: 15px;
+        gap: 24px;
         z-index: 10;
     }
 
@@ -465,9 +465,14 @@ html.menu-open {
     }
 
     .header-icons {
-        gap: 16px;
+        gap: 26px;
         align-items: center;
         z-index: 10;
+    }
+
+    .cart-link {
+        display: flex;
+        align-items: center;
     }
 
     .mobile-full-menu {

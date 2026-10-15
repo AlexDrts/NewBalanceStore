@@ -1,6 +1,8 @@
 import './TopHeader.css'
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import SelectStoreModal from "../SelectStore/SelectStoreModal.jsx";
+import { useSelectedStore } from "../SelectStore/selectedStore.js";
 
 // SVG
 import usFlag from '../../assets/icons/header/US.png';
@@ -19,6 +21,9 @@ function TopHeader() {
     const [helpHovered, setHelpHovered] = useState(false);
     const helpRef = useRef(null);
     const helpOpen = helpPinned || helpHovered;
+    const [storeModalOpen, setStoreModalOpen] = useState(false);
+    const closeStoreModal = useCallback(() => setStoreModalOpen(false), []);
+    const selectedStore = useSelectedStore();
 
     useEffect(() => {
         if (!helpPinned) return;
@@ -59,7 +64,14 @@ function TopHeader() {
                     <span>|</span>
 
                     <img className="location-pin" src={locationPin} alt=""/>
-                    <a href="#">Select a Store</a>
+                    <button type="button" className="store-toggle" onClick={() => setStoreModalOpen(true)}>
+                        {selectedStore ? (
+                            <span className="store-current">
+                                <span className="store-current-label">You're Shopping:</span>
+                                <span className="store-current-name">{selectedStore.name}</span>
+                            </span>
+                        ) : "Select a Store"}
+                    </button>
                     <span>|</span>
 
                     <img className="recycle-icon" src={recycleIcon} alt=""/>
@@ -72,12 +84,12 @@ function TopHeader() {
                     <div
                         className="help-menu"
                         ref={helpRef}
-                        onMouseEnter={() => setHelpHovered(true)}
-                        onMouseLeave={() => setHelpHovered(false)}
                     >
                         <button
                             type="button"
                             className="help-toggle"
+                            onMouseEnter={() => setHelpHovered(true)}
+                            onMouseLeave={() => setHelpHovered(false)}
                             onClick={() => setHelpPinned((pinned) => !pinned)}
                             aria-expanded={helpOpen}
                             aria-haspopup="true"
@@ -101,6 +113,7 @@ function TopHeader() {
                 </div>
             </header>
 
+            {storeModalOpen && <SelectStoreModal onClose={closeStoreModal} />}
         </>
     )
 }

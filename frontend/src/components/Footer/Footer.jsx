@@ -1,15 +1,11 @@
 import './Footer.css'
 import { Link, useNavigate } from "react-router-dom";
 import { getCurrentUser } from "../../services/api/authService.js";
+import { FOOTER_COLUMNS, SOCIAL_LINKS } from "./footerLinks.js";
+import { useOpenItems } from "../FaqAccordion/useOpenItems.js";
 
 // SVG
 import logo from '../../assets/icons/footer/logo.svg';
-import instagramIcon from '../../assets/icons/footer/instagram.svg';
-import facebookIcon from '../../assets/icons/footer/facebook.svg';
-import twitterIcon from '../../assets/icons/footer/twitter.svg';
-import youtubeIcon from '../../assets/icons/footer/youtube.svg';
-import pinterestIcon from '../../assets/icons/footer/pinterest.svg';
-import tiktokIcon from '../../assets/icons/footer/tiktok.svg';
 import brineLogo from '../../assets/icons/footer/brine-logo.svg';
 import warriorLogo from '../../assets/icons/footer/warror.svg';
 import teamSportsLogo from '../../assets/icons/footer/teamsports-logo.svg';
@@ -18,6 +14,7 @@ import usFlag from '../../assets/icons/header/US.png';
 function Footer() {
     const navigate = useNavigate();
     const isLoggedIn = Boolean(getCurrentUser());
+    const { isOpen, toggle } = useOpenItems();
 
     function handleSignup() {
         navigate("/login");
@@ -37,49 +34,33 @@ function Footer() {
 
                     <div className="footer-links">
 
-                        <div className="footer-column">
-                            <h3>Help</h3>
+                        {FOOTER_COLUMNS.map((column) => (
+                            <div key={column.title} className={`footer-column ${isOpen(column.title) ? "footer-column-open" : ""}`}>
+                                <h3>
+                                    <button
+                                        type="button"
+                                        className="footer-column-toggle"
+                                        aria-expanded={isOpen(column.title)}
+                                        onClick={() => toggle(column.title)}
+                                    >
+                                        {column.title}
+                                        <svg className="footer-column-chevron" viewBox="0 0 16 16" aria-hidden="true">
+                                            <path d="M2 5.5 8 11.5l6-6" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                    </button>
+                                </h3>
 
-                            <Link to="/help" onClick={() => window.scrollTo(0, 0)}>Contact us</Link>
-                            <Link to="/returns" onClick={() => window.scrollTo(0, 0)}>Start a return</Link>
-                            <Link to="/order-status" onClick={() => window.scrollTo(0, 0)}>Track your order</Link>
-                            <Link to="/membership" onClick={() => window.scrollTo(0, 0)}>Become a member</Link>
-                            <Link to="/size-guide" onClick={() => window.scrollTo(0, 0)}>Size guide</Link>
-                            <Link to="/faqs" onClick={() => window.scrollTo(0, 0)}>FAQ</Link>
-                        </div>
-
-                        <div className="footer-column">
-                            <h3>Shop</h3>
-
-                            <Link to="/stores" onClick={() => window.scrollTo(0, 0)}>Find a store</Link>
-                            <Link to="/giftcards" onClick={() => window.scrollTo(0, 0)}>Gift cards</Link>
-                            <Link to="/shipping" onClick={() => window.scrollTo(0, 0)}>Shipping information</Link>
-                            <Link to="/sale-exclusions" onClick={() => window.scrollTo(0, 0)}>Sale exclusions</Link>
-                            <a href="#">Custom uniforms</a>
-                            <a href="#">Reconsidered</a>
-                        </div>
-
-                        <div className="footer-column">
-                            <h3>About Us</h3>
-
-                            <a href="#">Our Purpose</a>
-                            <a href="#">Responsible leadership</a>
-                            <a href="#">New Balance Foundation</a>
-                            <a href="#">Careers</a>
-                            <a href="#">The TRACK at New Balance</a>
-                            <a href="#">Press box</a>
-                            <Link to="/medical-plan-information" onClick={() => window.scrollTo(0, 0)}>Medical Plan Information</Link>
-                        </div>
-
-                        <div className="footer-column">
-                            <h3>For You</h3>
-
-                            <a href="#">Special discounts</a>
-                            <Link to="/idea-submission" onClick={() => window.scrollTo(0, 0)}>Idea submission</Link>
-                            <Link to="/affiliate" onClick={() => window.scrollTo(0, 0)}>Affiliate program</Link>
-                            <a href="#">Counterfeit products</a>
-                            <a href="#">Accessibility statement</a>
-                        </div>
+                                <div className="footer-column-links">
+                                    {column.links.map((link) => (
+                                        link.to ? (
+                                            <Link key={link.label} to={link.to} onClick={() => window.scrollTo(0, 0)}>{link.label}</Link>
+                                        ) : (
+                                            <a key={link.label} href="#">{link.label}</a>
+                                        )
+                                    ))}
+                                </div>
+                            </div>
+                        ))}
 
                     </div>
 
@@ -99,12 +80,17 @@ function Footer() {
                         </p>
 
                         <div className="social-icons">
-                            <img src={instagramIcon} alt="Instagram" />
-                            <img src={facebookIcon} alt="Facebook" />
-                            <img src={twitterIcon} alt="X" />
-                            <img src={youtubeIcon} alt="YouTube" />
-                            <img src={pinterestIcon} alt="Pinterest" />
-                            <img src={tiktokIcon} alt="TikTok" />
+                            {SOCIAL_LINKS.map((social) => (
+                                <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer">
+                                    <img src={social.icon} alt={social.label} />
+                                </a>
+                            ))}
+                        </div>
+
+                        <div className="footer-region">
+                            <span>Change region:</span>
+                            <img className="footer-region-flag" src={usFlag} alt="" />
+                            <span>US</span>
                         </div>
 
                     </div>
@@ -126,7 +112,7 @@ function Footer() {
                 <div className="footer-secondary-top">
                     <img className="US-flag" src={usFlag} alt="US Flag" />
 
-                    <a href="#">US | English</a>
+                    <a href="#" className="footer-locale">US | English</a>
 
                     <a href="#">Privacy Policy</a>
 
