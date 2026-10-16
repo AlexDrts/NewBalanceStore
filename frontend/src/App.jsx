@@ -29,10 +29,12 @@ import SpecialDiscounts from "./pages/FooterLinks/ForYou/SpecialDiscounts/Specia
 import Account from "./pages/Account/Account.jsx";
 import AccountRoute from "./components/ProtectedRoutes/AccountRoute.jsx";
 import AdminRoute from "./components/ProtectedRoutes/AdminRoute.jsx";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop.jsx";
 
 function App() {
 
     return (<>
+        <ScrollToTop/>
         <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/cart" element={<Cart/>}/>
