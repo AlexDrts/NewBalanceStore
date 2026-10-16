@@ -3,6 +3,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import SelectStoreModal from "../SelectStore/SelectStoreModal.jsx";
 import { useSelectedStore } from "../SelectStore/selectedStore.js";
+import PromoBar from "../PromoBar/PromoBar.jsx";
 
 // SVG
 import usFlag from '../../assets/icons/header/US.png';
@@ -77,6 +78,8 @@ function TopHeader() {
                     <img className="recycle-icon" src={recycleIcon} alt=""/>
                     <a href="#">Reconsidered</a>
                 </div>
+
+                <PromoBar />
 
                 <div className="right-menu">
                     <a href="#">English</a>
