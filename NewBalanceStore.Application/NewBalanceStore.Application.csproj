@@ -12,6 +12,7 @@
 	  <PackageReference Include="AutoMapper" Version="16.2.0" />
 	  <PackageReference Include="CloudinaryDotNet" Version="1.29.3" />
 	  <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.3.13" />
+	  <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.13" />
 	  <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.10.1" />
 	</ItemGroup>
 

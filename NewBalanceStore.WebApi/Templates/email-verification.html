@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #111111;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .code-box {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+            padding: 15px;
+            margin: 30px 0;
+            letter-spacing: 6px;
+            color: #000000;
+            border-radius: 6px;
+        }
+
+        .footer {
+            font-size: 12px;
+            color: #6c757d;
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">NEW BALANCE</div>
+        <p>Привет!</p>
+        <p>Благодарим за регистрацию в нашем интернет-магазине. Для подтверждения вашей почты используйте этот верификационный код:</p>
+
+        <div class="code-box">{{VerificationCode}}</div>
+
+        <p>Код действителен в течение 15 минут. Если вы не регистрировались на сайте, просто проигнорируйте это письмо.</p>
+        <div class="footer">&copy; 2026 New Balance Store. Все права защищены.</div>
+    </div>
+</body>
+</html>

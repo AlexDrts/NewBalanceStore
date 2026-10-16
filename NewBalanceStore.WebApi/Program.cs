@@ -21,6 +21,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.Configure<CloudinarySettings>(builder.Configuration.GetSection("CloudinarySettings"));
 builder.Services.AddScoped<IPhotoService, PhotoService>();
 builder.Services.AddScoped<IUserRepository, FirebaseUserRepository>();
+builder.Services.AddScoped<IEmailService, EmailService>();
 
 builder.Services.AddRateLimiter(options =>
 {
