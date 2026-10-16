@@ -1,4 +1,5 @@
 using System.Security.Claims;
+using Moq;
 using System.Text.Encodings.Web;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Hosting;
@@ -35,10 +36,12 @@ public sealed class TestApiFactory : WebApplicationFactory<Program>
             services.RemoveAll<IProductRepository>();
             services.RemoveAll<IOrderRepository>();
             services.RemoveAll<IPhotoService>();
+            services.RemoveAll<IEmailService>();
 
             services.AddSingleton<IProductRepository, LocalProductRepository>();
             services.AddSingleton<IOrderRepository, LocalOrderRepository>();
             services.AddSingleton<IPhotoService, LocalPhotoService>();
+            services.AddSingleton(Mock.Of<IEmailService>());
 
             services.AddAuthentication(options =>
             {

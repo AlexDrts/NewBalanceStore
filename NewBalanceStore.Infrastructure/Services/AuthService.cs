@@ -21,6 +21,7 @@ public class AuthService : IAuthService
 {
     private readonly IUserRepository _userRepository;
     private readonly IConfiguration _configuration;
+    private readonly IEmailService _emailService;
     private readonly PasswordHasher<User> _passwordHasher = new();
 
     /// <summary>
@@ -28,10 +29,12 @@ public class AuthService : IAuthService
     /// </summary>
     /// <param name="userRepository">Репозиторій користувачів.</param>
     /// <param name="configuration">Конфігурація застосунку із налаштуваннями секції JWT.</param>
-    public AuthService(IUserRepository userRepository, IConfiguration configuration)
+    /// <param name="emailService">Сервіс відправки електронних листів.</param>
+    public AuthService(IUserRepository userRepository, IConfiguration configuration, IEmailService emailService)
     {
         _userRepository = userRepository;
         _configuration = configuration;
+        _emailService = emailService;
     }
 
     /// <summary>
@@ -65,6 +68,9 @@ public class AuthService : IAuthService
         user.PasswordHash = _passwordHasher.HashPassword(user, registerDto.Password);
 
         await _userRepository.CreateAsync(user);
+
+        var verificationCode = Random.Shared.Next(100000, 999999).ToString();
+        await _emailService.SendVerificationEmailAsync(user.Email, verificationCode);
 
         var token = GenerateJwtToken(user);
 

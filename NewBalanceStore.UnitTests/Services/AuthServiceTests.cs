@@ -1,9 +1,10 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Moq;
 using NewBalanceStore.Application.DTOs;
-using NewBalanceStore.Infrastructure.Services;
-using NUnit.Framework;
 using NewBalanceStore.Domain.Entities;
 using NewBalanceStore.Domain.Interfaces;
+using NewBalanceStore.Infrastructure.Services;
+using NUnit.Framework;
 
 namespace NewBalanceStore.UnitTests.Services;
 
@@ -26,7 +27,8 @@ public class AuthServiceTests
             .Build();
 
         var fakeUserRepository = new FakeUserRepository();
-        _authService = new AuthService(fakeUserRepository, configuration);
+        var emailServiceMock = new Mock<IEmailService>();
+        _authService = new AuthService(fakeUserRepository, configuration, emailServiceMock.Object); 
     }
 
     [Test]
