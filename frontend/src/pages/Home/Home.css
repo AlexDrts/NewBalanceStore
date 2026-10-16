@@ -263,6 +263,12 @@ body {
 }
 
 
+@media (min-width: 2560px) {
+    .categories, .product-grid, .featured-products{
+        width: 1940px;
+    }
+}
+
 /* ===========================
    LAPTOP L (≤1920px)
 =========================== */

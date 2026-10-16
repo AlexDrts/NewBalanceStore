@@ -433,16 +433,24 @@ html.menu-open {
         z-index: 10;
     }
 
-    .burger-btn {
+     .burger-btn {
         background: transparent;
         border: none;
         padding: 0;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: inherit;
         cursor: pointer;
     }
+
+    .main-header.dark.scrolled .burger-btn{
+        color: black;
+    }
+
+    .main-header.light .burger-btn{
+        color: black;
+    }
+
 
     .mobile-account-link {
         display: flex;
@@ -539,6 +547,7 @@ html.menu-open {
 
     .mobile-menu-header .logo {
         filter: brightness(1) invert(0) !important;
+        width: 50px;
     }
 
     .mobile-menu-body {
