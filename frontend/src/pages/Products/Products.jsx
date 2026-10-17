@@ -77,6 +77,11 @@ function Products() {
     };
     const [filters, setFilters] = useState(initialFilters);
 
+    const getProductColors = (product) => {
+        const colors = product.colors?.length ? product.colors : Object.keys(product.images ?? {});
+        return colors.map(color => color.replace(/\d+$/, ""));
+    };
+
     const checkPrice = (productPrice) => {
         if (!filters.price.length) return true;
         return filters.price.some(range => {
@@ -94,9 +99,9 @@ function Products() {
             return false;
 
         if (filters.footwearSizes.length && !product.variants.some(
-                variant => filters.footwearSizes.includes(variant.size) &&
-                    variant.quantity > 0
-            ))
+            variant => filters.footwearSizes.includes(variant.size) &&
+                variant.quantity > 0
+        ))
 
             return false;
 
@@ -109,7 +114,7 @@ function Products() {
         if (filters.accessoryType.length && !filters.accessoryType.includes(product.category))
             return false;
 
-        if (filters.colors.length && !product.colors.some(color => filters.colors.includes(color)))
+        if (filters.colors.length && !getProductColors(product).some(color => filters.colors.includes(color)))
             return false;
 
         if (filters.gender.length && !filters.gender.includes(product.gender))
