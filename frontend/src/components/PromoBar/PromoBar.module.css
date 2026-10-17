@@ -259,8 +259,8 @@
         align-items: center;
         justify-content: flex-start;
         gap: 7px;
-        height: 50px;
-        padding: 7px 16px 0;
+        height: 58px;
+        padding: 11px 16px 0;
         box-sizing: border-box;
     }
 
@@ -279,7 +279,7 @@
     }
 
     .panel {
-        max-height: calc(100vh - 50px);
+        max-height: calc(100vh - 58px);
         padding: 56px 20px 48px;
     }
 

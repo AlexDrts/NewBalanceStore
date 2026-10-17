@@ -355,8 +355,9 @@ body {
 @media (max-width: 768px) {
     /* HERO */
     .hero {
-        height: calc(100vh - 40px);
-        height: calc(100svh - 40px);
+        height: calc(100vh - 48px);
+        height: calc(100svh - 48px);
+        background: #111;
         max-height: none;
     }
 

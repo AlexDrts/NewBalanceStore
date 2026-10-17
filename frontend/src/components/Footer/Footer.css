@@ -174,8 +174,8 @@
 /* SECONDARY FOOTER */
 
 .footer-secondary {
-    background: #f3f3f3;
-    color: #000;
+    background: #fafafa;
+    color: #111;
     font-size: 12px;
     width: 100%;
 }
@@ -184,55 +184,89 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
-    padding: 24px 20px 16px;
-    border-bottom: 1px solid #e0e0e0;
+    gap: 32px;
+    padding: 28px 20px 0;
 }
 
 .footer-secondary-brands span {
     font-size: 14px;
-    color: #222;
+    color: #111;
+}
+
+.footer-secondary-brands a {
+    display: inline-flex;
+    align-items: center;
 }
 
 .footer-secondary-brands img {
-    height: 28px;
+    height: 30px;
     width: auto;
     object-fit: contain;
 }
 
 .footer-secondary-top {
     display: flex;
-    flex-wrap: wrap;
-    gap: 16px 24px;
+    flex-wrap: nowrap;
+    gap: 30px;
     align-items: center;
     justify-content: center;
-    padding: 20px 40px;
-    max-width: 1440px;
+    padding: 36px 40px 30px;
+    max-width: 1480px;
     margin: 0 auto;
 }
 
 .footer-secondary-top a {
-    font-size: 13px;
+    flex: 0 1 auto;
+    font-size: 14px;
+    line-height: 1.5;
     color: #111;
-    text-decoration: none;
     font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 .footer-secondary-top a:hover {
-    text-decoration: underline;
+    text-decoration-thickness: 2px;
 }
 
 .footer-secondary-top .US-flag {
-    width: 22px;
-    height: 14px;
+    flex-shrink: 0;
+    width: 32px;
+    height: 20px;
     object-fit: cover;
 }
 
-.footer-secondary-bottom {
-    text-align: center;
-    padding: 12px 20px 24px;
-    color: #666;
+.footer-secondary-top .footer-locale {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.footer-locale-divider {
+    width: 1px;
+    height: 16px;
+    background: #111;
+}
+
+.footer-privacy-icon {
+    display: inline-block;
+    width: 48px;
+    height: 22px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.footer-copyright {
+    flex: 0 1 150px;
+    margin: 0;
+    color: #111;
     font-size: 12px;
+    line-height: 1.6;
+    text-align: right;
 }
 
 /* ==============================
@@ -404,9 +438,10 @@
         display: none;
     }
 
-    .footer-secondary-bottom {
+    .footer-copyright {
+        flex: none;
         text-align: left;
-        padding: 12px 18px 30px;
+        padding: 12px 0 20px;
     }
 }
 
