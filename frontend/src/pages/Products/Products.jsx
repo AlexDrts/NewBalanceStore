@@ -11,6 +11,7 @@ import { addToRecentlyViewed } from "../../utils/recentlyViewed.js";
 import AddedToBagPopup from "../../components/AddedToBagPopup/AddedToBagPopup.jsx";
 import { getProducts } from "../../services/productsService.js";
 import { createPortal } from "react-dom";
+import { matchesSearch } from "../../components/SearchOverlay/searchProducts.js";
 
 function Products() {
     const [products, setProducts] = useState([]);
@@ -40,6 +41,7 @@ function Products() {
     const type = searchParams.get("type");
     const category = searchParams.get("category");
     const activity = searchParams.get("activity");
+    const searchQuery = searchParams.get("q");
 
     const urlFilteredProducts = products.filter(product => {
         const productGender = product.gender.toLowerCase();
@@ -60,6 +62,9 @@ function Products() {
             return false;
 
         if (isNew === "true" && !product.isNew)
+            return false;
+
+        if (searchQuery && !matchesSearch(product, searchQuery))
             return false;
 
         return true;
@@ -150,7 +155,10 @@ function Products() {
     }
 
     const breadcrumbs = [""];
-    if (sale === "true") {
+    if (searchQuery) {
+        breadcrumbs.push(`Results for "${searchQuery}"`);
+    }
+    else if (sale === "true") {
         breadcrumbs.push("Sale");
     }
     else if (isNew === "true") {
@@ -276,6 +284,7 @@ function Products() {
                         <section className={`${styles.productGrid} ${(!showFilters || isMobile) ? styles.productGridWide : ""}`}>
                             {loading && <p>Loading products...</p>}
                             {error && <p>Failed to load products.</p>}
+                            {!loading && !error && sortedProducts.length === 0 && <p>No products found.</p>}
                             {!loading && !error &&
                                 sortedProducts.map(product => (
                                     <ProductCard
