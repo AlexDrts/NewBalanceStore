@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { createPortal } from 'react-dom';
 import { useCart } from "../../context/useCart.js";
 import BagDrawer from "../BagDrawer/BagDrawer.jsx";
+import SearchOverlay from "../SearchOverlay/SearchOverlay.jsx";
 
 // SVG
 import logo from '../../assets/icons/header/logo.svg';
@@ -29,6 +30,11 @@ function MainHeader({
     const { cart } = useCart();
     const cartCount = cart.getProductCount();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+    useEffect(() => {
+        headerRef.current?.classList.toggle("search-open", isSearchOpen);
+    }, [isSearchOpen]);
 
     const [menuStack, setMenuStack] = useState(['main']);
 
@@ -428,7 +434,14 @@ function MainHeader({
 
                 {/* RIGHT SIDE OF MOBILE HEADER: Search + Cart */}
                 <div className="header-icons">
-                    <img className="search-icon" src={searchIcon} alt="Search"/>
+                    <button
+                        type="button"
+                        className="search-btn"
+                        onClick={() => setIsSearchOpen(prev => !prev)}
+                        aria-label="Search"
+                    >
+                        <img className="search-icon" src={searchIcon} alt="Search"/>
+                    </button>
 
                     <Link to={"/login"} className="desktop-account-link">
                         <img className="account-icon" src={accountIcon} alt="Account"/>
@@ -709,6 +722,11 @@ function MainHeader({
             </header>
 
             <BagDrawer triggerRef={cartLinkRef} />
+            <SearchOverlay
+                open={isSearchOpen}
+                onClose={() => setIsSearchOpen(false)}
+                anchorRef={headerRef}
+            />
         </>
     );
 }
