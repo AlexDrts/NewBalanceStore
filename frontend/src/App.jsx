@@ -30,6 +30,9 @@ import Account from "./pages/Account/Account.jsx";
 import AccountRoute from "./components/ProtectedRoutes/AccountRoute.jsx";
 import AdminRoute from "./components/ProtectedRoutes/AdminRoute.jsx";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop.jsx";
+import GlobalLoading from "./components/LoadingOverlay/GlobalLoading.jsx";
+import InfoPage from "./pages/Info/InfoPage.jsx";
+import { INFO_PAGES } from "./pages/Info/infoPages.jsx";
 
 function App() {
 
@@ -74,9 +77,14 @@ function App() {
                 <Account/>
             </AccountRoute>}/>
 
+            {INFO_PAGES.map(page => (
+                <Route key={page.slug} path={`/${page.slug}`} element={<InfoPage slug={page.slug}/>}/>
+            ))}
+
             <Route path="*" element={<NotFound/>}/>
 
         </Routes>
+        <GlobalLoading/>
     </>)
 }
 

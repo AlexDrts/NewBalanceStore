@@ -67,7 +67,7 @@ function CounterfeitProducts() {
                     </section>
 
                     <p className={styles.back}>
-                        &lt; <a href="#" className={styles.boldLink} onClick={(event) => event.preventDefault()}>Return to Responsible Leadership</a>
+                        &lt; <Link to="/responsible-leadership" className={styles.boldLink}>Return to Responsible Leadership</Link>
                     </p>
                 </div>
             </main>

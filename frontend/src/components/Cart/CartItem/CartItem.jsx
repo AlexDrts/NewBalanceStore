@@ -1,12 +1,14 @@
 import styles from './CartItem.module.css'
-import ConfirmModal from "../../ConfirmModal/ConfirmModal.jsx";
-import { useState } from "react";
 import { useCart } from "../../../context/useCart.js";
+import { MAX_QUANTITY_PER_ITEM } from "../../../entities/Cart.js";
+import LoadingOverlay from "../../LoadingOverlay/LoadingOverlay.jsx";
+import { useLoadingAction } from "../../LoadingOverlay/useLoadingAction.js";
 
 function CartItem({ cartProduct }) {
     const product = cartProduct.product;
 
     const { dispatch } = useCart();
+    const { loading, run } = useLoadingAction();
 
     const colorMap = {
         white: "White",
@@ -26,9 +28,9 @@ function CartItem({ cartProduct }) {
     const color = cartProduct.color;
 
     const increaseQuantity = () => {
-        if (cartProduct.quantity >= 5) return;
+        if (cartProduct.quantity >= MAX_QUANTITY_PER_ITEM) return;
 
-        dispatch({
+        run(() => dispatch({
             type: "UPDATE_QUANTITY",
             payload: {
                 id: product.id,
@@ -36,13 +38,13 @@ function CartItem({ cartProduct }) {
                 size: cartProduct.size,
                 quantity: cartProduct.quantity + 1
             }
-        });
+        }));
     };
 
     const qtyDecreaseClick = () => {
         if (cartProduct.quantity <= 1) return;
 
-        dispatch({
+        run(() => dispatch({
             type: "UPDATE_QUANTITY",
             payload: {
                 id: product.id,
@@ -50,26 +52,19 @@ function CartItem({ cartProduct }) {
                 size: cartProduct.size,
                 quantity: cartProduct.quantity - 1
             }
-        });
+        }));
     };
 
 
-    const [showConfirm, setShowConfirm] = useState(false);
     const removeClick = () => {
-        setShowConfirm(true);
-    };
-
-    const confirmRemove = () => {
-        dispatch({
+        run(() => dispatch({
             type: "REMOVE_PRODUCT",
             payload: {
                 id: product.id,
                 color: cartProduct.color,
                 size: cartProduct.size
             }
-        });
-
-        setShowConfirm(false);
+        }));
     };
 
     return (
@@ -91,6 +86,7 @@ function CartItem({ cartProduct }) {
                     <div className={styles.qtyRow}>
                         <button
                             onClick={qtyDecreaseClick}
+                            disabled={cartProduct.quantity <= 1}
                             className={styles.qtyBtn}>
                             -
                         </button>
@@ -99,6 +95,7 @@ function CartItem({ cartProduct }) {
 
                         <button
                             onClick={increaseQuantity}
+                            disabled={cartProduct.quantity >= MAX_QUANTITY_PER_ITEM}
                             className={styles.qtyBtn}>
                             +
                         </button>
@@ -126,13 +123,7 @@ function CartItem({ cartProduct }) {
                 </div>
             </div>
 
-            <ConfirmModal
-                isOpen={showConfirm}
-                title="Remove item?"
-                message={`Remove "${product.name}" from your bag?`}
-                onConfirm={confirmRemove}
-                onCancel={() => setShowConfirm(false)}
-            />
+            <LoadingOverlay visible={loading} />
         </>
     )
 }

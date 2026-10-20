@@ -126,6 +126,10 @@ body.manageProducts .mainHeader .header-icons img {
     max-width: 960px;
 }
 
+.notice {
+    margin-bottom: 20px;
+}
+
 .pageHeader {
     display: flex;
     align-items: center;

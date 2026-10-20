@@ -9,26 +9,26 @@ import { FAQ_CATEGORIES, POPULAR_FAQ } from "./faqData.jsx";
 
 const FAQ_LINKS = [
     { label: "Most Popular", to: "/faqs" },
-    { label: "Discounts & Promotions", to: "#" },
+    { label: "Discounts & Promotions", to: "/special-discounts" },
     { label: "Order Status", to: "/order-status" },
     { label: "Returns", to: "/returns" },
-    { label: "Shipping & Delivery", to: "#" },
-    { label: "Product & Fit", to: "#" },
+    { label: "Shipping & Delivery", to: "/shipping" },
+    { label: "Product & Fit", to: "/size-guide" },
     { label: "Shoe Size & Width Guide", to: "/size-guide" },
-    { label: "Apparel Size Guide", to: "#" },
-    { label: "Sports Bra Size Guide", to: "#" },
-    { label: "Care & Maintenance", to: "#" },
-    { label: "Payments & Gift Cards", to: "#" },
-    { label: "Membership & Log In", to: "#" },
-    { label: "Stores", to: "#" },
-    { label: "Reconsidered", to: "#" },
+    { label: "Apparel Size Guide", to: "/size-guide" },
+    { label: "Sports Bra Size Guide", to: "/size-guide" },
+    { label: "Care & Maintenance", to: "/care-and-maintenance" },
+    { label: "Payments & Gift Cards", to: "/giftcards" },
+    { label: "Membership & Log In", to: "/membership" },
+    { label: "Stores", to: "/stores" },
+    { label: "Reconsidered", to: "/reconsidered" },
 ];
 
 const HELP_LINKS = [
     { label: "Contact Us", to: "/help" },
     { label: "Start A Return", to: "/returns" },
     { label: "Track Your Order", to: "/order-status" },
-    { label: "Find A Store", to: "#" },
+    { label: "Find A Store", to: "/stores" },
     { label: "Log In", to: "/login" },
 ];
 

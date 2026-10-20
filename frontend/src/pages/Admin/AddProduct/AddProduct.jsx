@@ -5,6 +5,7 @@ import TopHeader from "../../../components/TopHeader/TopHeader.jsx";
 import MainHeader from "../../../components/MainHeader/MainHeader.jsx";
 import Footer from "../../../components/Footer/Footer.jsx";
 import { createProduct, fetchProduct, updateProduct } from "../../../services/api/productsApi.js";
+import Notice from "../../../components/Notice/Notice.jsx";
 
 const TYPE_TO_CATEGORY = {
     Footwear: "Shoes",
@@ -32,6 +33,7 @@ function AddProduct() {
     const [loadedProduct, setLoadedProduct] = useState(null);
     const [loadError, setLoadError] = useState("");
     const [isSaving, setIsSaving] = useState(false);
+    const [notice, setNotice] = useState(null);
 
     // Form fields
     const [productName, setProductName] = useState("");
@@ -284,16 +286,17 @@ function AddProduct() {
             variants
         };
 
+        setNotice(null);
+
         if (isEdit) {
             setIsSaving(true);
             try {
                 await updateProduct(id, productData);
-                alert("Product updated successfully!");
-                navigate("/manage-products");
+                navigate("/manage-products", { state: { notice: "Product updated successfully!" } });
             }
             catch (error) {
                 console.error("Update product error:", error);
-                alert("Failed to save product. Please log in again as admin and try once more.");
+                setNotice({ type: "error", text: "Failed to save product. Please log in again as admin and try once more." });
             }
             finally {
                 setIsSaving(false);
@@ -301,10 +304,20 @@ function AddProduct() {
             return;
         }
 
-        await createProduct(productData);
+        setIsSaving(true);
+        try {
+            await createProduct(productData);
 
-        console.log("Created Product Data Object:", productData);
-        alert("Product added successfully!");
+            console.log("Created Product Data Object:", productData);
+            setNotice({ type: "success", text: "Product added successfully!" });
+        }
+        catch (error) {
+            console.error("Create product error:", error);
+            setNotice({ type: "error", text: "Failed to add product. Please log in again as admin and try once more." });
+        }
+        finally {
+            setIsSaving(false);
+        }
     };
 
     const pageTitle = isEdit ? "Edit Product" : "Add Product";
@@ -620,6 +633,8 @@ function AddProduct() {
                                 </div>
                             )}
 
+                            <Notice type={notice?.type} onClose={() => setNotice(null)}>{notice?.text}</Notice>
+
                             {/* Submit Button Container */}
                             <div className={styles.actionContainer}>
                                 {isEdit && (
@@ -632,7 +647,7 @@ function AddProduct() {
                                     </button>
                                 )}
                                 <button type="submit" className={styles.submitBtn} disabled={isSaving}>
-                                    {isEdit ? (isSaving ? "Saving..." : "Save Changes") : "Add Product"}
+                                    {isSaving ? "Saving..." : (isEdit ? "Save Changes" : "Add Product")}
                                 </button>
                             </div>
                         </form>

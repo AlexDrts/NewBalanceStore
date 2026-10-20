@@ -1,17 +1,17 @@
 import { Link } from "react-router-dom";
 
 export const FAQ_CATEGORIES = [
-    { label: "Discounts & Promotions", to: "#" },
+    { label: "Discounts & Promotions", to: "/special-discounts" },
     { label: "Order Status", to: "/order-status" },
     { label: "Returns", to: "/returns" },
-    { label: "Shipping & Delivery", to: "#" },
-    { label: "Product & Fit", to: "#" },
+    { label: "Shipping & Delivery", to: "/shipping" },
+    { label: "Product & Fit", to: "/size-guide" },
     { label: "Size & Width Guide", to: "/size-guide" },
-    { label: "Care & Maintenance", to: "#" },
-    { label: "Payments & Gift Cards", to: "#" },
-    { label: "My Account & Log In", to: "#" },
-    { label: "Stores", to: "#" },
-    { label: "Reconsidered", to: "#" },
+    { label: "Care & Maintenance", to: "/care-and-maintenance" },
+    { label: "Payments & Gift Cards", to: "/giftcards" },
+    { label: "My Account & Log In", to: "/membership" },
+    { label: "Stores", to: "/stores" },
+    { label: "Reconsidered", to: "/reconsidered" },
 ];
 
 export const POPULAR_FAQ = [
@@ -49,7 +49,7 @@ export const POPULAR_FAQ = [
                     <li>Rush (UPS 1-Day Air) - 1 business day once shipped</li>
                     <li>USPS - 2-7 business days once shipped</li>
                 </ul>
-                <p>You will receive a shipping confirmation email with tracking when your order ships. For more information about shipping rates and details, <a href="#">click here</a>.</p>
+                <p>You will receive a shipping confirmation email with tracking when your order ships. For more information about shipping rates and details, <Link to="/shipping">click here</Link>.</p>
             </>
         )
     },

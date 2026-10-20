@@ -4,6 +4,7 @@ import TopHeader from "../../../../components/TopHeader/TopHeader.jsx";
 import MainHeader from "../../../../components/MainHeader/MainHeader.jsx";
 import Footer from "../../../../components/Footer/Footer.jsx";
 import { STORES } from "../../../../data/stores.js";
+import { setSelectedStore, useSelectedStore } from "../../../../components/SelectStore/selectedStore.js";
 
 function SearchIcon() {
     return (
@@ -56,6 +57,8 @@ function FindAStore() {
     const [query, setQuery] = useState("");
     const [submittedQuery, setSubmittedQuery] = useState("");
     const [showLocateNotice, setShowLocateNotice] = useState(false);
+    const [openStoreId, setOpenStoreId] = useState(null);
+    const selectedStore = useSelectedStore();
 
     const results = useMemo(
         () => STORES.filter((store) => matchesQuery(store, submittedQuery)),
@@ -128,7 +131,16 @@ function FindAStore() {
                         </div>
 
                         <p className={styles.directory}>
-                            Use our locator to find a location near you or <a href="#">browse our directory.</a>
+                            Use our locator to find a location near you or{" "}
+                            <a
+                                href="/stores"
+                                onClick={(event) => {
+                                    event.preventDefault();
+                                    handleClear();
+                                }}
+                            >
+                                browse our directory.
+                            </a>
                         </p>
                     </section>
 
@@ -159,7 +171,28 @@ function FindAStore() {
                                             <p className={styles.storeCity}>
                                                 {store.city}, {store.stateCode} {store.zip}
                                             </p>
-                                            <a href="#" className={styles.storeLink}>Store details</a>
+                                            <button
+                                                type="button"
+                                                className={styles.storeLink}
+                                                aria-expanded={openStoreId === store.id}
+                                                onClick={() => setOpenStoreId(id => id === store.id ? null : store.id)}
+                                            >
+                                                Store details
+                                            </button>
+                                            {openStoreId === store.id && (
+                                                <div className={styles.storeDetails}>
+                                                    <p>{store.name}</p>
+                                                    <p>{store.city}, {store.state} {store.zip}</p>
+                                                    <button
+                                                        type="button"
+                                                        className={styles.storeLink}
+                                                        onClick={() => setSelectedStore(store.id)}
+                                                        disabled={selectedStore?.id === store.id}
+                                                    >
+                                                        {selectedStore?.id === store.id ? "This is your store" : "Make this my store"}
+                                                    </button>
+                                                </div>
+                                            )}
                                         </div>
                                     </li>
                                 ))}

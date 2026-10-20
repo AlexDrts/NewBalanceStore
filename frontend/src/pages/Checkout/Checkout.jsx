@@ -5,13 +5,56 @@ import { useEffect, useState } from "react";
 import { getProducts } from "../../services/productsService.js";
 import { Cart } from "../../entities/Cart.js";
 import { Order } from "../../entities/Order.js";
+import LoadingOverlay from "../../components/LoadingOverlay/LoadingOverlay.jsx";
+import { useLoadingAction } from "../../components/LoadingOverlay/useLoadingAction.js";
 
 import logoSvg from '../../assets/icons/footer/logo.svg';
 import cartSvg from '../../assets/icons/header/cart.svg';
 
+const STEPS = ["Shipping info", "Payment", "Review and buy"];
+
+const GENDER_LABELS = {
+    men: "Men's",
+    women: "Women's",
+    kids: "Kids'",
+    unisex: "Unisex",
+};
+
+const PAYMENT_METHODS = ["Visa", "Mastercard", "American Express", "Discover"];
+
+const LEGAL_LINKS = [
+    { label: "Terms & Conditions", to: "/terms" },
+    { label: "Privacy Policy", to: "/privacy-policy" },
+    { label: "CA Supply Chains Act (SB 657) and Modern Slavery Act Statement", to: "/supply-chains-act" },
+];
+
+function Field({ label, name, error, required = true, className = "", ...props }) {
+    return (
+        <label className={`${styles.field} ${error ? styles.fieldError : ""} ${className}`}>
+            <input name={name} placeholder=" " {...props} />
+            <span className={styles.fieldLabel}>
+                {label}{required && <span className={styles.required}> *</span>}
+            </span>
+            {error && <span className={styles.errorText}>{error}</span>}
+        </label>
+    );
+}
+
+function InfoIcon() {
+    return (
+        <svg className={styles.infoIcon} viewBox="0 0 20 20" aria-hidden="true">
+            <circle cx="10" cy="10" r="8.5" fill="none" stroke="currentColor" strokeWidth="1.4" />
+            <path d="M10 9v5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+            <circle cx="10" cy="6.2" r="1" fill="currentColor" />
+        </svg>
+    );
+}
 
 function Checkout() {
     const [products, setProducts] = useState([]);
+    const [step, setStep] = useState(0);
+    const [showErrors, setShowErrors] = useState(false);
+    const { loading, run } = useLoadingAction();
 
     const [form, setForm] = useState({
         email: "",
@@ -21,6 +64,10 @@ function Checkout() {
         address: "",
         country: "United States",
         newsletter: false,
+        cardNumber: "",
+        cardName: "",
+        cardExpiry: "",
+        cardCvv: "",
     });
 
     useEffect(() => {
@@ -49,7 +96,7 @@ function Checkout() {
     };
 
     if (!products.length) {
-        return <p>Loading...</p>;
+        return <LoadingOverlay />;
     }
 
     const cart = new Cart(getCart());
@@ -78,13 +125,33 @@ function Checkout() {
 
     const phoneValid = /^\+?[0-9\s()-]{10,20}$/.test(form.phone);
 
+    const addressValid = Boolean(form.firstName.trim() && form.lastName.trim() && form.address.trim());
+
     const formValid =
         emailValid &&
         phoneValid &&
-        form.firstName &&
-        form.lastName &&
-        form.address;
+        addressValid;
 
+    const cardDigits = form.cardNumber.replace(/\s+/g, "");
+    const cardValid = /^\d{15,16}$/.test(cardDigits);
+    const expiryValid = /^(0[1-9]|1[0-2])\/\d{2}$/.test(form.cardExpiry);
+    const cvvValid = /^\d{3,4}$/.test(form.cardCvv);
+    const paymentValid = cardValid && expiryValid && cvvValid && form.cardName.trim();
+
+    const shippingErrors = showErrors ? {
+        email: !emailValid && "Please enter a valid email address.",
+        phone: !phoneValid && "Please enter a valid phone number.",
+        firstName: !form.firstName.trim() && "Please enter your first name.",
+        lastName: !form.lastName.trim() && "Please enter your last name.",
+        address: !form.address.trim() && "Please enter your street address.",
+    } : {};
+
+    const paymentErrors = showErrors ? {
+        cardNumber: !cardValid && "Please enter a valid card number.",
+        cardName: !form.cardName.trim() && "Please enter the name on the card.",
+        cardExpiry: !expiryValid && "Use the MM/YY format.",
+        cardCvv: !cvvValid && "Please enter the security code.",
+    } : {};
 
     const order = new Order({
         firstName: form.firstName,
@@ -99,6 +166,18 @@ function Checkout() {
         total,
     });
 
+    function goToStep(nextStep, valid) {
+        if (!valid) {
+            setShowErrors(true);
+            return;
+        }
+        setShowErrors(false);
+        run(() => {
+            setStep(nextStep);
+            window.scrollTo(0, 0);
+        });
+    }
+
     function handleSubmit() {
         order.markAsPaid();
 
@@ -108,6 +187,8 @@ function Checkout() {
 
         navigate("/");
     }
+
+    const getGender = (gender) => GENDER_LABELS[String(gender ?? "").toLowerCase()] ?? gender;
 
     return (
         <>
@@ -130,41 +211,126 @@ function Checkout() {
 
             <div className={styles.checkoutWrapper}>
 
-                <div className={styles.breadcrumbs}>
-                    <span>Shipping info</span>
-                    <span>Payment</span>
-                    <span>Review and buy</span>
-                </div>
+                <nav className={styles.breadcrumbs} aria-label="Checkout steps">
+                    {STEPS.map((label, index) => (
+                        <button
+                            key={label}
+                            type="button"
+                            className={index === step ? styles.stepActive : ""}
+                            disabled={index >= step}
+                            onClick={() => goToStep(index, true)}
+                        >
+                            {label}
+                        </button>
+                    ))}
+                </nav>
 
                 <div className={styles.checkoutGrid}>
 
                     <div className={styles.checkoutMain}>
 
-                        {/*Contact Section*/}
-                        <section className={`${styles.section} ${styles.contactSection}`}>
-                            <h2>Contact</h2>
-                            <div className={styles.row}>
-                                <input name="email" type="email" placeholder="Email" value={form.email} onChange={handleChange}/>
-                                <input name="phone" type="tel" placeholder="Phone number" value={form.phone} onChange={handleChange}/>
-                            </div>
-                            <label className={styles.newsletter}>
-                                <input name="newsletter" type="checkbox" checked={form.newsletter} onChange={handleChange}/>
-                                <span>
-                                    Sign up for email to hear about product launches, exclusive offers and athlete news. By subscribing, I am agreeing to the New Balance <a href="#">Privacy Policy</a> and <a href="#">Terms & Conditions</a>.
-                                </span>
-                            </label>
-                        </section>
+                        {step === 0 && (
+                            <>
+                                {/*Contact Section*/}
+                                <section className={`${styles.section} ${styles.contactSection}`}>
+                                    <h2>Contact</h2>
+                                    <div className={styles.row}>
+                                        <Field label="Email" name="email" type="email" autoComplete="email" value={form.email} onChange={handleChange} error={shippingErrors.email}/>
+                                        <Field label="Phone number" name="phone" type="tel" autoComplete="tel" value={form.phone} onChange={handleChange} error={shippingErrors.phone}/>
+                                    </div>
+                                    <label className={styles.newsletter}>
+                                        <input name="newsletter" type="checkbox" checked={form.newsletter} onChange={handleChange}/>
+                                        <span>
+                                            Sign up for email to hear about product launches, exclusive offers and athlete news. By subscribing, I am agreeing to the New Balance <Link to="/privacy-policy">Privacy Policy</Link> and <Link to="/terms">Terms & Conditions</Link>.
+                                        </span>
+                                    </label>
+                                </section>
 
-                        <section className={`${styles.section} ${styles.shippingSection}`}>
-                            <h2>Shipping address</h2>
-                            <div className={styles.row}>
-                                <input name="firstName" type="text" placeholder="First Name" value={form.firstName} onChange={handleChange}/>
-                                <input name="lastName" type="text" placeholder="Last Name" value={form.lastName} onChange={handleChange}/>
-                            </div>
-                            <input name="address" type="text" placeholder="Street Address" value={form.address} onChange={handleChange}/>
-                        </section>
+                                <section className={`${styles.section} ${styles.shippingSection}`}>
+                                    <h2>Shipping address</h2>
+                                    <div className={styles.thumbs}>
+                                        {cartProducts.map(item => (
+                                            <img
+                                                key={`${item.product.id}-${item.color}-${item.size}`}
+                                                src={item.product.images?.[item.color]?.[0]}
+                                                alt={item.product.name}
+                                            />
+                                        ))}
+                                    </div>
+                                    <div className={styles.row}>
+                                        <Field label="First Name" name="firstName" type="text" autoComplete="given-name" value={form.firstName} onChange={handleChange} error={shippingErrors.firstName}/>
+                                        <Field label="Last Name" name="lastName" type="text" autoComplete="family-name" value={form.lastName} onChange={handleChange} error={shippingErrors.lastName}/>
+                                    </div>
+                                    <Field label="Street Address" name="address" type="text" autoComplete="street-address" value={form.address} onChange={handleChange} error={shippingErrors.address}/>
+                                </section>
 
-                        <button disabled={!formValid} className={styles.continueBtn} onClick={handleSubmit}>Place Order</button>
+                                <section className={styles.section}>
+                                    <h2>Shipping method</h2>
+                                    {addressValid ? (
+                                        <label className={styles.methodOption}>
+                                            <input type="radio" checked readOnly />
+                                            <span>
+                                                <strong>Standard</strong>
+                                                <span className={styles.methodNote}>3-6 business days</span>
+                                            </span>
+                                            <strong className={styles.methodPrice}>FREE</strong>
+                                        </label>
+                                    ) : (
+                                        <p className={styles.methodHint}>Enter your shipping address to view available shipping methods.</p>
+                                    )}
+                                </section>
+
+                                <button className={styles.continueBtn} onClick={() => goToStep(1, formValid)}>Continue to Payment</button>
+                            </>
+                        )}
+
+                        {step === 1 && (
+                            <section className={styles.section}>
+                                <h2>Payment</h2>
+                                <p className={styles.acceptLine}>We accept {PAYMENT_METHODS.join(", ")}.</p>
+                                <Field label="Card number" name="cardNumber" inputMode="numeric" autoComplete="cc-number" value={form.cardNumber} onChange={handleChange} error={paymentErrors.cardNumber}/>
+                                <Field label="Name on card" name="cardName" type="text" autoComplete="cc-name" value={form.cardName} onChange={handleChange} error={paymentErrors.cardName}/>
+                                <div className={styles.row}>
+                                    <Field label="Expiration (MM/YY)" name="cardExpiry" inputMode="numeric" autoComplete="cc-exp" value={form.cardExpiry} onChange={handleChange} error={paymentErrors.cardExpiry}/>
+                                    <Field label="Security code" name="cardCvv" inputMode="numeric" autoComplete="cc-csc" value={form.cardCvv} onChange={handleChange} error={paymentErrors.cardCvv}/>
+                                </div>
+                                <button className={styles.continueBtn} onClick={() => goToStep(2, paymentValid)}>Review Order</button>
+                            </section>
+                        )}
+
+                        {step === 2 && (
+                            <section className={styles.section}>
+                                <h2>Review and buy</h2>
+                                <div className={styles.reviewGrid}>
+                                    <div className={styles.reviewBlock}>
+                                        <div className={styles.reviewHead}>
+                                            <h3>Contact</h3>
+                                            <button type="button" onClick={() => goToStep(0, true)}>Edit</button>
+                                        </div>
+                                        <p>{form.email}</p>
+                                        <p>{form.phone}</p>
+                                    </div>
+                                    <div className={styles.reviewBlock}>
+                                        <div className={styles.reviewHead}>
+                                            <h3>Shipping address</h3>
+                                            <button type="button" onClick={() => goToStep(0, true)}>Edit</button>
+                                        </div>
+                                        <p>{form.firstName} {form.lastName}</p>
+                                        <p>{form.address}</p>
+                                        <p>{form.country}</p>
+                                    </div>
+                                    <div className={styles.reviewBlock}>
+                                        <div className={styles.reviewHead}>
+                                            <h3>Payment</h3>
+                                            <button type="button" onClick={() => goToStep(1, true)}>Edit</button>
+                                        </div>
+                                        <p>Card ending in {cardDigits.slice(-4)}</p>
+                                        <p>{form.cardName}</p>
+                                    </div>
+                                </div>
+                                <button disabled={!formValid || !paymentValid} className={styles.continueBtn} onClick={() => run(handleSubmit)}>Place Order</button>
+                            </section>
+                        )}
 
                     </div>
 
@@ -200,14 +366,17 @@ function Checkout() {
                         </p>
 
                         <p className={styles.summaryRow}>
-                            <span>Total Tax</span>
+                            <span className={styles.taxLabel}><InfoIcon />Total Tax</span>
                             <span>${tax.toFixed(2)}</span>
                         </p>
 
-                        <p className={`${styles.section} ${styles.orderTotal}`}>
-                            <span>Order Total </span>
+                        <p className={`${styles.summaryRow} ${styles.orderTotal}`}>
+                            <span>Order total</span>
                             <span>${total.toFixed(2)}</span>
                         </p>
+
+                        <h3 className={styles.summaryShipping}>Shipping</h3>
+
                         <div className={styles.checkoutProducts}>
                             {cartProducts.map(item => (
                                 <div
@@ -224,13 +393,13 @@ function Checkout() {
 
                                         <h4>{item.product.name}</h4>
 
-                                        <p>{item.product.gender}</p>
+                                        <p>{getGender(item.product.gender)}</p>
 
                                         <p>Color: {colorMap[item.color] || item.color}</p>
 
                                         <p>Size: {item.size}</p>
 
-                                        <p>Qty: {item.quantity}</p>
+                                        <p>Qty: {item.quantity} @ ${item.product.price.toFixed(2)}</p>
 
                                         <p className={styles.checkoutProductPrice}>
                                             <span>
@@ -254,6 +423,22 @@ function Checkout() {
                 </div>
             </div>
 
+            <footer className={styles.checkoutFooter}>
+                <div className={styles.accepts}>
+                    <span className={styles.acceptsTitle}>We accept:</span>
+                    {PAYMENT_METHODS.map(method => (
+                        <span key={method} className={styles.acceptBadge}>{method}</span>
+                    ))}
+                </div>
+                <p className={styles.ssl}>SSL Certificate</p>
+                <nav className={styles.footerLinks}>
+                    {LEGAL_LINKS.map(link => (
+                        <Link key={link.to} to={link.to}>{link.label}</Link>
+                    ))}
+                </nav>
+            </footer>
+
+            <LoadingOverlay visible={loading} />
         </>
     )
 }

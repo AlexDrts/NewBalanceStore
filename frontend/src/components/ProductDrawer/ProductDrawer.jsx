@@ -1,5 +1,6 @@
 import styles from './ProductDrawer.module.css';
 import { useState } from "react";
+import { flashLoading, withLoading } from "../LoadingOverlay/loadingStore.js";
 import { useCart } from "../../context/useCart.js";
 import { createPortal } from "react-dom";
 
@@ -26,17 +27,19 @@ function ProductDrawer({ product, activeColor, onClose, onAddedToCart }) {
             return;
         }
 
-        dispatch({
-            type: "ADD_PRODUCT",
-            payload: {
-                product,
-                color: selectedColor,
-                size: selectedSize,
-            }
-        });
+        withLoading(() => {
+            dispatch({
+                type: "ADD_PRODUCT",
+                payload: {
+                    product,
+                    color: selectedColor,
+                    size: selectedSize,
+                }
+            });
 
-        onAddedToCart();
-        onClose();
+            onAddedToCart();
+            onClose();
+        });
     };
 
     const nextImage = () => {
@@ -105,6 +108,7 @@ function ProductDrawer({ product, activeColor, onClose, onAddedToCart }) {
                             <button
                                 key={color}
                                 onClick={() => {
+                                    if (color !== selectedColor) flashLoading();
                                     setSelectedColor(color);
                                     setImageIndex(0);
                                 }}
@@ -126,6 +130,7 @@ function ProductDrawer({ product, activeColor, onClose, onAddedToCart }) {
                                     key={size}
                                     disabled={!available}
                                     onClick={() => {
+                                        if (size !== selectedSize) flashLoading();
                                         setSelectedSize(size);
                                         setSizeError(false);
                                     }}

@@ -63,7 +63,7 @@ function StartAReturn() {
                         <p className={styles.cardText}>
                             Online, in-store and event purchases can be returned in store. Bring your items and a packing slip, order confirmation email or receipt to any New Balance or New Balance Factory store to immediately receive your refund. <strong>All in-store returns are free.</strong>
                         </p>
-                        <a href="#" className={styles.cardButton}>Find a store</a>
+                        <Link to="/stores" className={styles.cardButton}>Find a store</Link>
                     </section>
 
                     <section className={styles.card}>
@@ -85,7 +85,7 @@ function StartAReturn() {
                         <p className={styles.cardText}>
                             Turn gently used products into a voucher on accepted items. Bring your gently used New Balance shoes to participating stores or print a label to ship them back through New Balance Reconsidered.
                         </p>
-                        <a href="#" className={styles.cardButton}>Trade-in</a>
+                        <Link to="/reconsidered" className={styles.cardButton}>Trade-in</Link>
                     </section>
                 </div>
 

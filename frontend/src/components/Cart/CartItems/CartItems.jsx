@@ -33,7 +33,7 @@ function CartItems({ cart }) {
     }, [products, cart, dispatch]);
 
     if (!products.length) {
-        return <p>Loading...</p>;
+        return null;
     }
 
     const cartProducts = cart.getItems(products);
@@ -43,25 +43,25 @@ function CartItems({ cart }) {
     return (
         <div className={styles.cartItems}>
 
-            <div className={styles.cartHeader}>
+            <div className={`${styles.cartHeader} ${cart.isEmpty() ? styles.cartHeaderEmpty : ""}`}>
                 <h2>My Bag</h2>
 
-                <span className={styles.cartItemCount}>
-                    {productCount} {productCount === 1 ? "Item" : "Items"}
-                </span>
+                {!cart.isEmpty() && (
+                    <span className={styles.cartItemCount}>
+                        {productCount} {productCount === 1 ? "Item" : "Items"}
+                    </span>
+                )}
             </div>
 
             { cart.isEmpty() ? (
                 <div className={styles.emptyCart}>
-                    <h3>Your bag is empty</h3>
-
                     <p>There are no items in your bag.</p>
 
                     <Link
                         to="/products"
                         className={styles.continueBtn}
                     >
-                        Continue Shopping
+                        Continue shopping
                     </Link>
                 </div>
             ) : (cartProducts.map(item => (
