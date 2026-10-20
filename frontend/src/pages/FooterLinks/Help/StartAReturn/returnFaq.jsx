@@ -30,7 +30,7 @@ export function getReturnFaq(startLink) {
                     <p><strong>Shipped Returns</strong></p>
                     <p>Please allow up to 14 days after we receive your shipped return for your refund to process and post to your payment method.</p>
                     <p><strong>In-Store Returns</strong></p>
-                    <p>Returns made in-store receive an immediate refund. Find your closest store <a href="#">here</a>. In-store returns are always free.</p>
+                    <p>Returns made in-store receive an immediate refund. Find your closest store <Link to="/stores">here</Link>. In-store returns are always free.</p>
                 </>
             )
         },
@@ -42,7 +42,7 @@ export function getReturnFaq(startLink) {
                     <p>Yes, online orders can be returned to New Balance and New Balance Factory Stores within 45 days of the purchase date for an immediate refund.</p>
                     <p>To return to a store:</p>
                     <ol>
-                        <li>Find your closest store <a href="#">here</a>.</li>
+                        <li>Find your closest store <Link to="/stores">here</Link>.</li>
                         <li>Bring your items and packing slip or email order confirmation to the store. No need to repack your items.</li>
                         <li>Receive your refund immediately. Our store associates will take care of the rest.</li>
                     </ol>
@@ -56,7 +56,7 @@ export function getReturnFaq(startLink) {
             answer: (
                 <>
                     <p>You can return your items to any New Balance or New Balance Factory Store or ship your items back to us within 45 days of the purchase date. Eligible items must be returned in new condition, in the state you received them.</p>
-                    <p>To return to a store, simply bring your items (no need to repack) and packing slip or order confirmation email. Find your closest store <a href="#">here</a>.</p>
+                    <p>To return to a store, simply bring your items (no need to repack) and packing slip or order confirmation email. Find your closest store <Link to="/stores">here</Link>.</p>
                     <p>To ship your return back to us, <Link to={startLink}>start here</Link>.</p>
                 </>
             )
@@ -67,7 +67,7 @@ export function getReturnFaq(startLink) {
             answer: (
                 <>
                     <p>We do not offer direct exchanges for online orders. Instead, start your return process <Link to={startLink}>here</Link> and place a new order for a replacement item.</p>
-                    <p>Select styles are available at New Balance and New Balance Factory Stores. <a href="#">Find your closest store</a> to complete your return and quickly shop for a replacement item.</p>
+                    <p>Select styles are available at New Balance and New Balance Factory Stores. <Link to="/stores">Find your closest store</Link> to complete your return and quickly shop for a replacement item.</p>
                 </>
             )
         },
@@ -111,7 +111,7 @@ export function getReturnFaq(startLink) {
             answer: (
                 <>
                     <p>No, return labels cannot be generated for in-store purchases. Instead, items purchased at our stores can be returned to any New Balance or New Balance Factory Store.</p>
-                    <p>Find your closest store <a href="#">here</a>.</p>
+                    <p>Find your closest store <Link to="/stores">here</Link>.</p>
                 </>
             )
         },

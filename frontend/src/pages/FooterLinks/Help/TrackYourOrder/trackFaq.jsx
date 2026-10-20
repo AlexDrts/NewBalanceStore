@@ -14,7 +14,7 @@ export function getTrackFaq(accountLink, listClass) {
                         <li><strong>UPS 1-Day Air</strong> - 1 business day once shipped</li>
                         <li><strong>USPS</strong> (used for PO Boxes, Alaska, Hawaii and other US Territories, APO/FPO addresses) - 2-7 business days once shipped</li>
                     </ul>
-                    <p>You will receive a shipping confirmation email with tracking when your order ships. For more information about shipping rates and details, <a href="#">click here</a>.</p>
+                    <p>You will receive a shipping confirmation email with tracking when your order ships. For more information about shipping rates and details, <Link to="/shipping">click here</Link>.</p>
                 </>
             )
         },
@@ -37,7 +37,7 @@ export function getTrackFaq(accountLink, listClass) {
                     <ol>
                         <li>Verify the order was placed with the correct address by checking your order or shipping confirmation emails.</li>
                         <li>Wait for the full estimated shipping time frame to pass. Packages may show as delivered for up to 2 business days prior to actual arrival.</li>
-                        <li>Still missing your order? Report a delivery issue <a href="#">here</a>.</li>
+                        <li>Still missing your order? Report a delivery issue <Link to="/help">here</Link>.</li>
                     </ol>
                 </>
             )
@@ -69,7 +69,7 @@ export function getTrackFaq(accountLink, listClass) {
             answer: (
                 <>
                     <p><strong>Late, Lost, Damaged in Transit, or Wrong Item Received</strong></p>
-                    <p>Please allow up to 48 hours after tracking shows “delivered,” as some packages may arrive later or be left in mailrooms, building offices, or with neighbors. Still missing your order or received the wrong item(s)? <a href="#">Report a delivery issue.</a></p>
+                    <p>Please allow up to 48 hours after tracking shows “delivered,” as some packages may arrive later or be left in mailrooms, building offices, or with neighbors. Still missing your order or received the wrong item(s)? <Link to="/help">Report a delivery issue.</Link></p>
                     <p><strong>Missing Items</strong></p>
                     <p>Your shipment may be split if some products were unavailable. Remaining items will ship as soon as they’re in stock. You can track your order in <Link to={accountLink}>order history</Link>.</p>
                     <p><strong>Freight Forwarding</strong></p>

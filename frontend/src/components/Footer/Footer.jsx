@@ -126,23 +126,21 @@ function Footer() {
                 <div className="footer-secondary-top">
                     <img className="US-flag" src={usFlag} alt="US Flag" />
 
-                    <a href="#" className="footer-locale">
+                    <Link to="/country-language" className="footer-locale">
                         <span>US</span>
-                        <span className="footer-locale-divider" aria-hidden="true" />
-                        <span>English</span>
-                    </a>
+                    </Link>
 
-                    <a href="#">Privacy Policy</a>
+                    <Link to="/privacy-policy">Privacy Policy</Link>
 
-                    <a href="#">Responsible Disclosure</a>
+                    <Link to="/responsible-disclosure">Responsible Disclosure</Link>
 
-                    <a href="#">Website Terms & Conditions</a>
+                    <Link to="/terms">Website Terms & Conditions</Link>
 
-                    <a href="#">CA Supply Chains Act (SB 657) and Modern Slavery Act Statement</a>
+                    <Link to="/supply-chains-act">CA Supply Chains Act (SB 657) and Modern Slavery Act Statement</Link>
 
-                    <a href="#">Health Data Privacy Policy</a>
+                    <Link to="/health-data-privacy">Health Data Privacy Policy</Link>
 
-                    <a href="#" className="footer-privacy-choices">
+                    <Link to="/privacy-choices" className="footer-privacy-choices">
                         <span>Do Not Sell or Share My Personal Information</span>
                         <svg className="footer-privacy-icon" viewBox="0 0 60 28" aria-hidden="true">
                             <rect x="1" y="1" width="58" height="26" rx="13" fill="#fff" stroke="#0066ff" strokeWidth="2" />
@@ -150,7 +148,7 @@ function Footer() {
                             <path d="M12 14.5l4.5 4.5 8-9" fill="none" stroke="#0066ff" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
                             <path d="M38 9l10 10M48 9 38 19" stroke="#fff" strokeWidth="2.6" strokeLinecap="round" />
                         </svg>
-                    </a>
+                    </Link>
 
                     <p className="footer-copyright">Copyright 2026, New Balance</p>
                 </div>

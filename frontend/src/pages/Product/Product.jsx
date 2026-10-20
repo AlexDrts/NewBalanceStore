@@ -22,8 +22,9 @@ import { getProducts } from "../../services/productsService.js";
 import { addToRecentlyViewed, getRecentlyViewed } from "../../utils/recentlyViewed.js";
 import { formatColorName, formatPrice, formatSizeLabel, formatTypeLabel, getSizeGrid } from "../../utils/productFormat.js";
 import { createProductView, getCartQuantity, pickRelatedProducts } from "./productView.js";
+import { MAX_QUANTITY_PER_ITEM } from "../../entities/Cart.js";
+import { flashLoading, withLoading } from "../../components/LoadingOverlay/loadingStore.js";
 
-const MAX_QUANTITY_PER_ITEM = 5;
 const HEADER_HIDE_AFTER = 70;
 
 function Product() {
@@ -201,10 +202,12 @@ function ProductView({ product, hideAfterRef }) {
     };
 
     const handleColorSelect = (color) => {
+        if (color !== selectedColor) flashLoading();
         updateParams({ color, size: selectedSize });
     };
 
     const handleSizeSelect = (size) => {
+        if (String(size) !== String(selectedSize)) flashLoading();
         updateParams({ color: selectedColor, size });
         setSizeError(false);
     };
@@ -248,18 +251,20 @@ function ProductView({ product, hideAfterRef }) {
             return;
         }
 
-        dispatch({
-            type: "ADD_PRODUCT",
-            payload: {
-                product: { id: product.id },
-                productId: product.id,
-                color: selectedColor,
-                size: selectedSize,
-                quantity: 1
-            }
-        });
+        withLoading(() => {
+            dispatch({
+                type: "ADD_PRODUCT",
+                payload: {
+                    product: { id: product.id },
+                    productId: product.id,
+                    color: selectedColor,
+                    size: selectedSize,
+                    quantity: 1
+                }
+            });
 
-        openBagDrawer("added");
+            openBagDrawer("added");
+        });
     };
 
     const images = product.getImages(selectedColor);

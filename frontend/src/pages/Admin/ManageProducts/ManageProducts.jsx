@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./ManageProducts.module.css";
 import TopHeader from "../../../components/TopHeader/TopHeader.jsx";
 import MainHeader from "../../../components/MainHeader/MainHeader.jsx";
 import Footer from "../../../components/Footer/Footer.jsx";
 import ConfirmModal from "../../../components/ConfirmModal/ConfirmModal.jsx";
 import { deleteProduct, fetchProducts } from "../../../services/api/productsApi.js";
+import Notice from "../../../components/Notice/Notice.jsx";
 
 function getCoverImage(product) {
     const images = product.images || {};
@@ -36,6 +37,7 @@ function formatPrice(value) {
 function ManageProducts() {
     const pageRef = useRef(null);
     const navigate = useNavigate();
+    const location = useLocation();
 
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -43,6 +45,9 @@ function ManageProducts() {
     const [search, setSearch] = useState("");
     const [productToDelete, setProductToDelete] = useState(null);
     const [deletingId, setDeletingId] = useState(null);
+    const [notice, setNotice] = useState(() =>
+        location.state?.notice ? { type: "success", text: location.state.notice } : null
+    );
 
     useEffect(() => {
         let cancelled = false;
@@ -82,13 +87,15 @@ function ManageProducts() {
         if (!product) return;
 
         setDeletingId(product.id);
+        setNotice(null);
         try {
             await deleteProduct(product.id);
             setProducts((prev) => prev.filter((item) => item.id !== product.id));
+            setNotice({ type: "success", text: `"${product.name}" was deleted.` });
         }
         catch (error) {
             console.error("Delete product error:", error);
-            alert("Failed to delete product. Please log in again as admin and try once more.");
+            setNotice({ type: "error", text: "Failed to delete product. Please log in again as admin and try once more." });
         }
         finally {
             setDeletingId(null);
@@ -119,6 +126,8 @@ function ManageProducts() {
                             Back to Dashboard
                         </button>
                     </div>
+
+                    <Notice type={notice?.type} onClose={() => setNotice(null)} className={styles.notice}>{notice?.text}</Notice>
 
                     <div className={styles.card}>
                         <div className={styles.cardHeader}>

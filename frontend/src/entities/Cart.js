@@ -1,3 +1,5 @@
+export const MAX_QUANTITY_PER_ITEM = 10;
+
 export class Cart {
   products;
   deliveryPrice;
@@ -15,7 +17,7 @@ export class Cart {
     );
 
     if (existingItem) {
-      if (existingItem.quantity >= 5) {
+      if (existingItem.quantity >= MAX_QUANTITY_PER_ITEM) {
         return;
       }
 
@@ -39,7 +41,7 @@ export class Cart {
     );
 
     if (item) {
-      item.quantity = quantity;
+      item.quantity = Math.min(quantity, MAX_QUANTITY_PER_ITEM);
     }
   }
 

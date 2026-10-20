@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import styles from "./MedicalPlanInformation.module.css";
 import TopHeader from "../../../../components/TopHeader/TopHeader.jsx";
 import MainHeader from "../../../../components/MainHeader/MainHeader.jsx";
@@ -80,8 +81,8 @@ function MedicalPlanInformation() {
                 </p>
 
                 <ul className={styles.list}>
-                    <li><a href="#">Click here MRF link</a> for negotiated in-network provider rates</li>
-                    <li><a href="#">Click here</a> to learn more about the new Zero Deductible Plan.</li>
+                    <li><Link to="/help">Click here MRF link</Link> for negotiated in-network provider rates</li>
+                    <li><Link to="/help">Click here</Link> to learn more about the new Zero Deductible Plan.</li>
                 </ul>
             </main>
 

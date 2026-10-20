@@ -24,6 +24,26 @@ function PdfIcon() {
     );
 }
 
+const SUBMISSION_FORM = [
+    "NEW BALANCE EXTERNAL SUBMISSION FORM",
+    "",
+    "Full name:",
+    "Mailing address:",
+    "Email:",
+    "Phone:",
+    "",
+    "Patent or application number(s):",
+    "Title of the idea or design:",
+    "Short description:",
+    "List of attached materials:",
+    "",
+    "I confirm that I have read and accept the submission conditions listed on the Idea Submission page.",
+    "",
+    "Signature: ______________________    Date: ____________",
+    "",
+    "Send the completed form and any materials through Customer Care on the Contact Us page.",
+].join("\r\n");
+
 function IdeaSubmission() {
     const pageRef = useRef(null);
 
@@ -56,7 +76,11 @@ function IdeaSubmission() {
                     General suggestions about the products we offer, improvements you would like to see, and other feedback or thoughts you would like to share with us should be submitted <Link to="/help" onClick={() => window.scrollTo(0, 0)}>here</Link>. If you feel your patented design or idea satisfies the above conditions, please download the External Submission Form provided below and submit it, with any related materials appended thereto, by email or mail to the appropriate address provided on the Form:
                 </p>
 
-                <a href="#" className={styles.pdfLink} onClick={(event) => event.preventDefault()}>
+                <a
+                    href={`data:text/plain;charset=utf-8,${encodeURIComponent(SUBMISSION_FORM)}`}
+                    download="external-submission-form.txt"
+                    className={styles.pdfLink}
+                >
                     <PdfIcon />
                     <span>External Submission Form</span>
                 </a>

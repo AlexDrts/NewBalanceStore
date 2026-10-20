@@ -8,26 +8,26 @@ import { SIZE_TABLES, SIZE_TIPS } from "./sizeData.js";
 
 const FAQ_LINKS = [
     { label: "Most Popular", to: "/faqs" },
-    { label: "Discounts & Promotions", to: "#" },
+    { label: "Discounts & Promotions", to: "/special-discounts" },
     { label: "Order Status", to: "/order-status" },
     { label: "Returns", to: "/returns" },
-    { label: "Shipping & Delivery", to: "#" },
-    { label: "Product & Fit", to: "#" },
+    { label: "Shipping & Delivery", to: "/shipping" },
+    { label: "Product & Fit", to: "/size-guide" },
     { label: "Shoe Size & Width Guide", to: "/size-guide" },
-    { label: "Apparel Size Guide", to: "#" },
-    { label: "Sports Bra Size Guide", to: "#" },
-    { label: "Care & Maintenance", to: "#" },
-    { label: "Payments & Gift Cards", to: "#" },
-    { label: "Membership & Log In", to: "#" },
-    { label: "Stores", to: "#" },
-    { label: "Reconsidered", to: "#" },
+    { label: "Apparel Size Guide", to: "/size-guide" },
+    { label: "Sports Bra Size Guide", to: "/size-guide" },
+    { label: "Care & Maintenance", to: "/care-and-maintenance" },
+    { label: "Payments & Gift Cards", to: "/giftcards" },
+    { label: "Membership & Log In", to: "/membership" },
+    { label: "Stores", to: "/stores" },
+    { label: "Reconsidered", to: "/reconsidered" },
 ];
 
 const HELP_LINKS = [
     { label: "Contact Us", to: "/help" },
     { label: "Start A Return", to: "/returns" },
     { label: "Track Your Order", to: "/order-status" },
-    { label: "Find A Store", to: "#" },
+    { label: "Find A Store", to: "/stores" },
     { label: "Log In", to: "/login" },
 ];
 
@@ -36,6 +36,17 @@ function SideLink({ link }) {
         return <Link to={link.to} onClick={() => window.scrollTo(0, 0)}>{link.label}</Link>;
     }
     return <a href={link.to}>{link.label}</a>;
+}
+
+function toCsv(table) {
+    const escape = (value) => `"${String(value ?? "").replace(/"/g, '""')}"`;
+    const toLines = (columns, rows) => [columns, ...rows].map(row => row.map(escape).join(","));
+    return [
+        table.title,
+        ...toLines(table.columns, table.rows),
+        "",
+        ...(table.widthColumns ? toLines(table.widthColumns, table.widthRows) : []),
+    ].join("\r\n");
 }
 
 function SizeTable({ columns, rows }) {
@@ -98,7 +109,13 @@ function SizeSection({ table }) {
                 : <SizeTable columns={table.widthColumns} rows={table.widthRows} />}
 
             {table.download && (
-                <a href="#" className={styles.download}>{table.download}</a>
+                <a
+                    href={`data:text/csv;charset=utf-8,${encodeURIComponent(toCsv(table))}`}
+                    download={`${table.id}-size-chart.csv`}
+                    className={styles.download}
+                >
+                    {table.download}
+                </a>
             )}
         </section>
     );

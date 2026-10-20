@@ -257,6 +257,13 @@ html.menu-open {
     border: none;
     background: none;
     cursor: pointer;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .search-btn {
+        transform: translateY(1px);
+    }
 }
 
 .cart-link {
@@ -294,8 +301,8 @@ html.menu-open {
     top: 80px;
     left: 0;
 
-    width: 95vw;
-    max-width: 1940px;
+    width: 100%;
+    box-sizing: border-box;
 
     background: white;
     padding: 30px 40px;
@@ -340,8 +347,8 @@ html.menu-open {
     top: 80px;
     left: 0;
 
-    width: 95vw;
-    max-width: 1940px;
+    width: 100%;
+    box-sizing: border-box;
 
     background: white;
     padding: 30px 190px 60px 270px;
@@ -353,6 +360,19 @@ html.menu-open {
     visibility: hidden;
     transform: translateY(10px);
     transition: all 0.25s ease;
+}
+
+.main-header.products .mega-menu,
+.main-header.products .new-dropdown {
+    left: calc((100% - 100vw) / 2);
+    width: 100vw;
+}
+
+.desktop-nav.menus-hidden .mega-menu,
+.desktop-nav.menus-hidden .new-dropdown {
+    opacity: 0;
+    visibility: hidden;
+    transition: none;
 }
 
 .new-card {

@@ -262,6 +262,34 @@
     text-underline-offset: 3px;
 }
 
+button.storeLink {
+    padding: 0;
+    border: none;
+    background: none;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+button.storeLink:disabled {
+    color: #757575;
+    text-decoration: none;
+    cursor: default;
+}
+
+.storeDetails {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.storeDetails p {
+    margin: 0;
+}
+
+.storeDetails button {
+    margin-top: 8px;
+}
+
 .empty {
     padding: 48px 24px;
     background: #f5f5f5;

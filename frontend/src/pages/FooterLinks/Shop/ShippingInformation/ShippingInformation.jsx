@@ -8,19 +8,19 @@ import FaqList from "../../../../components/FaqAccordion/FaqList.jsx";
 
 const FAQ_LINKS = [
     { label: "Most Popular", to: "/faqs" },
-    { label: "Discounts & Promotions", to: "#" },
+    { label: "Discounts & Promotions", to: "/special-discounts" },
     { label: "Order Status", to: "/order-status" },
     { label: "Returns", to: "/returns" },
     { label: "Shipping & Delivery", to: "/shipping" },
-    { label: "Product & Fit", to: "#" },
+    { label: "Product & Fit", to: "/size-guide" },
     { label: "Shoe Size & Width Guide", to: "/size-guide" },
-    { label: "Apparel Size Guide", to: "#" },
-    { label: "Sports Bra Size Guide", to: "#" },
-    { label: "Care & Maintenance", to: "#" },
-    { label: "Payments & Gift Cards", to: "#" },
-    { label: "Membership & Log In", to: "#" },
-    { label: "Stores", to: "#" },
-    { label: "Reconsidered", to: "#" },
+    { label: "Apparel Size Guide", to: "/size-guide" },
+    { label: "Sports Bra Size Guide", to: "/size-guide" },
+    { label: "Care & Maintenance", to: "/care-and-maintenance" },
+    { label: "Payments & Gift Cards", to: "/giftcards" },
+    { label: "Membership & Log In", to: "/membership" },
+    { label: "Stores", to: "/stores" },
+    { label: "Reconsidered", to: "/reconsidered" },
 ];
 
 const HELP_LINKS = [
@@ -67,7 +67,7 @@ const SHIPPING_FAQ = [
         id: "where",
         question: "Where do you ship to?",
         answer: (
-            <p>This site is for orders shipping to addresses within the United States and U.S. territories. For orders outside the U.S., shop our international sites by selecting your region <a href="#">here</a>.</p>
+            <p>This site is for orders shipping to addresses within the United States and U.S. territories. For orders outside the U.S., shop our international sites by selecting your region <Link to="/country-language">here</Link>.</p>
         )
     },
     {

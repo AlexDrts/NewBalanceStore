@@ -21,6 +21,7 @@ function TopHeader() {
     const [helpPinned, setHelpPinned] = useState(false);
     const [helpHovered, setHelpHovered] = useState(false);
     const helpRef = useRef(null);
+    const helpCloseTimer = useRef(null);
     const helpOpen = helpPinned || helpHovered;
     const [storeModalOpen, setStoreModalOpen] = useState(false);
     const closeStoreModal = useCallback(() => setStoreModalOpen(false), []);
@@ -49,7 +50,10 @@ function TopHeader() {
         };
     }, [helpPinned]);
 
+    useEffect(() => () => clearTimeout(helpCloseTimer.current), []);
+
     function handleHelpLinkClick() {
+        clearTimeout(helpCloseTimer.current);
         setHelpPinned(false);
         setHelpHovered(false);
         window.scrollTo(0, 0);
@@ -61,7 +65,7 @@ function TopHeader() {
                 <div className="left-menu">
                     <img className="US-flag" src={usFlag} alt=""/>
 
-                    <a href="#">US</a>
+                    <Link to="/country-language">US</Link>
                     <span>|</span>
 
                     <img className="location-pin" src={locationPin} alt=""/>
@@ -76,23 +80,26 @@ function TopHeader() {
                     <span>|</span>
 
                     <img className="recycle-icon" src={recycleIcon} alt=""/>
-                    <a href="#">Reconsidered</a>
+                    <Link to="/reconsidered">Reconsidered</Link>
                 </div>
 
                 <PromoBar />
 
                 <div className="right-menu">
-                    <a href="#">English</a>
-                    <span>|</span>
                     <div
                         className="help-menu"
                         ref={helpRef}
+                        onMouseEnter={() => {
+                            clearTimeout(helpCloseTimer.current);
+                            setHelpHovered(true);
+                        }}
+                        onMouseLeave={() => {
+                            helpCloseTimer.current = setTimeout(() => setHelpHovered(false), 80);
+                        }}
                     >
                         <button
                             type="button"
                             className="help-toggle"
-                            onMouseEnter={() => setHelpHovered(true)}
-                            onMouseLeave={() => setHelpHovered(false)}
                             onClick={() => setHelpPinned((pinned) => !pinned)}
                             aria-expanded={helpOpen}
                             aria-haspopup="true"

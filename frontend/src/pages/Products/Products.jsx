@@ -11,6 +11,7 @@ import { addToRecentlyViewed } from "../../utils/recentlyViewed.js";
 import AddedToBagPopup from "../../components/AddedToBagPopup/AddedToBagPopup.jsx";
 import { getProducts } from "../../services/productsService.js";
 import { createPortal } from "react-dom";
+import { useLoadingOnChange } from "../../components/LoadingOverlay/loadingStore.js";
 import { matchesSearch } from "../../components/SearchOverlay/searchProducts.js";
 
 function Products() {
@@ -42,6 +43,8 @@ function Products() {
     const category = searchParams.get("category");
     const activity = searchParams.get("activity");
     const searchQuery = searchParams.get("q");
+    const maxPrice = searchParams.get("maxPrice");
+    const sizesParam = searchParams.get("sizes");
 
     const urlFilteredProducts = products.filter(product => {
         const productGender = product.gender.toLowerCase();
@@ -66,6 +69,15 @@ function Products() {
 
         if (searchQuery && !matchesSearch(product, searchQuery))
             return false;
+
+        if (maxPrice && product.price > Number(maxPrice))
+            return false;
+
+        if (sizesParam) {
+            const sizes = sizesParam.split(",");
+            if (!product.variants.some(variant => sizes.includes(String(variant.size)) && variant.quantity > 0))
+                return false;
+        }
 
         return true;
     });
@@ -135,6 +147,8 @@ function Products() {
     });
 
     const [sortBy, setSortBy] = useState("featured");
+
+    useLoadingOnChange(JSON.stringify({ filters, sortBy, params: searchParams.toString() }));
     const sortedProducts = [...filteredProducts];
 
     switch (sortBy) {

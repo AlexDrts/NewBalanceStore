@@ -1,0 +1,54 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 5000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: wait;
+}
+
+.dots {
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #fff;
+    animation: pulse 0.9s ease-in-out infinite;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.45s;
+}
+
+.label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        transform: scale(0.6);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .dot {
+        animation-duration: 2s;
+    }
+}

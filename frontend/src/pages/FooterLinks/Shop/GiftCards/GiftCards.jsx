@@ -108,7 +108,7 @@ function GiftCards() {
                             <AmountSelect key={tab} />
 
                             <p className={styles.terms}>
-                                By clicking Add to bag, you confirm that you have read, understand and accept our <a href="#">Gift Card Terms &amp; Conditions</a>, and <a href="#">Privacy Policy.</a>
+                                By clicking Add to bag, you confirm that you have read, understand and accept our <Link to="/gift-card-terms">Gift Card Terms &amp; Conditions</Link>, and <Link to="/privacy-policy">Privacy Policy.</Link>
                             </p>
 
                             <button type="submit" className={styles.addButton}>
@@ -117,7 +117,7 @@ function GiftCards() {
                         </form>
 
                         <p className={styles.balanceText}>Need to know the amount left on your card?</p>
-                        <a href="#" className={styles.balanceButton}>Check balance</a>
+                        <Link to="/gift-card-balance" className={styles.balanceButton}>Check balance</Link>
                     </section>
                 </div>
             </main>

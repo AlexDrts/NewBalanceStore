@@ -8,8 +8,7 @@ import { getProducts } from "../../services/productsService.js";
 import { createProductView } from "../../pages/Product/productView.js";
 import { formatColorName, formatPrice, formatSizeLabel } from "../../utils/productFormat.js";
 import { BAG_DRAWER_EVENT } from "./bagDrawerEvents.js";
-
-const MAX_QUANTITY_PER_ITEM = 5;
+import { MAX_QUANTITY_PER_ITEM } from "../../entities/Cart.js";
 const HOVER_OPEN_DELAY = 150;
 
 function pickFrequentlyBought(items, products) {
