@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import styles from "./Account.module.css";
 import TopHeader from "../../components/TopHeader/TopHeader.jsx";
 import MainHeader from "../../components/MainHeader/MainHeader.jsx";
@@ -14,11 +14,13 @@ import photo3 from '../../../src/assets/images/account-page/photo3.jpg';
 function Account() {
     const pageRef = useRef(null);
     const navigate = useNavigate();
-    const [activeTab, setActiveTab] = useState("overview");
+    const location = useLocation();
+    const [placedOrderId, setPlacedOrderId] = useState(location.state?.placedOrderId ?? null);
+    const [activeTab, setActiveTab] = useState(placedOrderId ? "orders" : "overview");
 
     const user = getCurrentUser() || {};
-    const [firstName, setFirstName] = useState(user.firstName || user.fullName?.split(" ")[0] || "Alex");
-    const [email, setEmail] = useState(user.email || "user@example.com");
+    const firstName = user.firstName || user.fullName?.split(" ")[0] || "Alex";
+    const email = user.email || "user@example.com";
 
     const [orders, setOrders] = useState([]);
     const [loadingOrders, setLoadingOrders] = useState(false);
@@ -36,6 +38,11 @@ function Account() {
             loadOrders();
         }
     }, [activeTab, email]);
+
+    const closeOrderModal = () => {
+        setPlacedOrderId(null);
+        navigate(location.pathname, { replace: true, state: null });
+    };
 
     const handleLogout = () => {
         logout();
@@ -136,7 +143,7 @@ function Account() {
                                                             return (
                                                                 <div key={i} className={styles.orderItemRow}>
                                                                     <div className={styles.orderItemInfo}>
-                                                                        <p className={styles.itemName}>Product name: {title}</p>
+                                                                        <p className={styles.itemName}>{title}</p>
                                                                         <p className={styles.itemMeta}>
                                                                             Color: {item.color || "Standard"} | Size: {item.size || "M"} | Qty: {qtyVal}
                                                                         </p>
@@ -178,6 +185,35 @@ function Account() {
             </main>
 
             <Footer />
+
+            {placedOrderId && (
+                <div className={styles.modalOverlay} onClick={closeOrderModal}>
+                    <div
+                        className={`${styles.modalContent} ${styles.orderModal}`}
+                        role="dialog"
+                        aria-modal="true"
+                        aria-labelledby="order-success-title"
+                        onClick={(event) => event.stopPropagation()}
+                    >
+                        <button type="button" className={styles.modalClose} onClick={closeOrderModal} aria-label="Close">
+                            ×
+                        </button>
+                        <span className={styles.orderSuccessIcon} aria-hidden="true">✓</span>
+                        <h3 id="order-success-title">Thank you for your order!</h3>
+                        <p className={styles.orderModalText}>
+                            Your order <strong>#{placedOrderId}</strong> has been placed. You can track it in your order history.
+                        </p>
+                        <div className={styles.modalActions}>
+                            <Link to="/products" className={styles.cancelBtn} onClick={() => setPlacedOrderId(null)}>
+                                Continue shopping
+                            </Link>
+                            <button type="button" className={styles.saveBtn} onClick={closeOrderModal}>
+                                View order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </>
     );
 }

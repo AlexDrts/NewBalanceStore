@@ -30,7 +30,9 @@ function CartItem({ cartProduct }) {
     const stock = typeof product.getAvailableQuantity === "function"
         ? product.getAvailableQuantity(cartProduct.color, cartProduct.size)
         : 0;
-    const maxQuantity = stock > 0 ? Math.min(MAX_QUANTITY_PER_ITEM, stock) : MAX_QUANTITY_PER_ITEM;
+    const maxQuantity = typeof product.getAvailableQuantity === "function"
+        ? Math.min(MAX_QUANTITY_PER_ITEM, stock)
+        : MAX_QUANTITY_PER_ITEM;
 
     const increaseQuantity = () => {
         if (cartProduct.quantity >= maxQuantity) return;
@@ -87,6 +89,12 @@ function CartItem({ cartProduct }) {
                     <p className={styles.cartItemText}>{product.gender}</p>
                     <p className={styles.cartItemText}>Color: {colorMap[color] || color}</p>
                     <p className={styles.cartItemText}>Size: {cartProduct.size}</p>
+
+                    {stock < cartProduct.quantity && typeof product.getAvailableQuantity === "function" && (
+                        <p className={styles.stockError}>
+                            {stock === 0 ? "This item is out of stock. Please remove it from your bag." : `Only ${stock} left. Please reduce the quantity.`}
+                        </p>
+                    )}
 
                     <div className={styles.qtyRow}>
                         <button

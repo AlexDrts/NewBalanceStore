@@ -134,6 +134,11 @@ html.menu-open {
     filter: brightness(0);
 }
 
+.main-header.search-open .mega-menu,
+.main-header.search-open .new-dropdown {
+    display: none !important;
+}
+
 /* ==========================
    PRODUCTS PAGE
 ========================== */

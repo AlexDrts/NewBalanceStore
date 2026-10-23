@@ -9,7 +9,7 @@ import { useEffect, useRef, useState } from "react";
 import ProductDrawer from "../../components/ProductDrawer/ProductDrawer.jsx";
 import { addToRecentlyViewed } from "../../utils/recentlyViewed.js";
 import AddedToBagPopup from "../../components/AddedToBagPopup/AddedToBagPopup.jsx";
-import { getProducts } from "../../services/productsService.js";
+import { getProducts, isInStock } from "../../services/productsService.js";
 import { createPortal } from "react-dom";
 import { useLoadingOnChange } from "../../components/LoadingOverlay/loadingStore.js";
 import { matchesSearch } from "../../components/SearchOverlay/searchProducts.js";
@@ -24,7 +24,7 @@ function Products() {
         async function loadProducts() {
             try {
                 const data = await getProducts();
-                setProducts(data.filter(product => !product.featured));
+                setProducts(data.filter(product => !product.featured && isInStock(product)));
             }
             catch(err){
                 setError(err);

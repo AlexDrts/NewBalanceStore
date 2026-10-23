@@ -1,6 +1,6 @@
 import './MainHeader.css'
 import { Link } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from 'react-dom';
 import { useCart } from "../../context/useCart.js";
 import BagDrawer from "../BagDrawer/BagDrawer.jsx";
@@ -32,10 +32,55 @@ function MainHeader({
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [menusHidden, setMenusHidden] = useState(false);
+    const searchOpenRef = useRef(false);
 
-    useEffect(() => {
-        headerRef.current?.classList.toggle("search-open", isSearchOpen);
-    }, [isSearchOpen]);
+    useLayoutEffect(() => {
+        const header = headerRef.current;
+        searchOpenRef.current = isSearchOpen;
+        if (!header) return;
+
+        header.classList.toggle("search-open", isSearchOpen);
+        if (!isSearchOpen) return;
+
+        header.classList.remove("hidden");
+        document.body.classList.add("search-open");
+
+        if (!autoHide) {
+            return () => document.body.classList.remove("search-open");
+        }
+
+        const topBar = document.querySelector(".top-header");
+        const container = containerRef?.current;
+        const previousStyle = {
+            position: header.style.position,
+            top: header.style.top,
+            width: header.style.width,
+            left: header.style.left,
+            transition: header.style.transition,
+        };
+        const previousBodyPadding = document.body.style.paddingTop;
+        const topBarHeight = topBar ? topBar.offsetHeight : 0;
+
+        header.style.transition = "none";
+        header.style.position = "fixed";
+        header.style.top = `${topBarHeight}px`;
+        if (container) {
+            header.style.width = `${container.offsetWidth}px`;
+            header.style.left = `${container.getBoundingClientRect().left}px`;
+        }
+        if (topBar) {
+            topBar.classList.add("pinned");
+            document.body.style.paddingTop = `${topBarHeight}px`;
+        }
+
+        return () => {
+            document.body.classList.remove("search-open");
+            topBar?.classList.remove("pinned");
+            document.body.style.paddingTop = previousBodyPadding;
+            Object.assign(header.style, previousStyle);
+            requestAnimationFrame(() => window.dispatchEvent(new Event("scroll")));
+        };
+    }, [isSearchOpen, containerRef, autoHide]);
 
     const [menuStack, setMenuStack] = useState(['main']);
 
@@ -94,6 +139,10 @@ function MainHeader({
 
         const handleScroll = () => {
             if (isMobileMenuOpen) return;
+            if (searchOpenRef.current) {
+                header.classList.remove("hidden");
+                return;
+            }
 
             const currentScroll = window.scrollY;
 

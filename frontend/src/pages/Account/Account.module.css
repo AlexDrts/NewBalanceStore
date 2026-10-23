@@ -512,7 +512,6 @@ details[open] .accordionIcon::after {
 .orderProductsGrid {
     display: flex;
     flex-direction: column;
-    gap: 12px;
     margin-bottom: 16px;
 }
 
@@ -520,21 +519,38 @@ details[open] .accordionIcon::after {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 17px;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.orderItemRow:last-child {
+    border-bottom: none;
+}
+
+.orderItemInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
 }
 
 .itemName {
+    margin: 0;
     color: #111;
-    margin-top: -30px;
-    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 700;
 }
 
 .itemMeta {
-    font-size: 15px;
-    margin: 2px 0 0 0;
+    margin: 0;
+    color: #555;
+    font-size: 14px;
 }
 
 .itemPrice {
+    flex-shrink: 0;
+    font-size: 16px;
     font-weight: 600;
     color: #111;
 }
@@ -543,9 +559,11 @@ details[open] .accordionIcon::after {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-top: 16px;
     border-top: 1px solid #eee;
     font-size: 14px;
-    margin-top: -10px;
     color: #444;
 }
 
@@ -557,6 +575,66 @@ details[open] .accordionIcon::after {
 .orderTotal strong {
     margin-left: 8px;
     font-size: 18px;
+}
+
+.orderStatus.delivered {
+    background: #e6f4ea;
+    color: #137333;
+}
+
+.orderModal {
+    position: relative;
+    align-items: center;
+    text-align: center;
+}
+
+.orderModal h3 {
+    margin: 0;
+}
+
+.modalClose {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    border: none;
+    background: none;
+    font-size: 26px;
+    line-height: 1;
+    color: #111;
+    cursor: pointer;
+}
+
+.orderSuccessIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #e6f4ea;
+    color: #137333;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.orderModalText {
+    margin: 0;
+    color: #333;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.orderModal .modalActions {
+    justify-content: center;
+    width: 100%;
+    margin-top: 8px;
+}
+
+.orderModal .cancelBtn {
+    display: inline-flex;
+    align-items: center;
+    color: #111;
+    text-decoration: none;
 }
 
 /* Adaptive */
@@ -626,6 +704,16 @@ details[open] .accordionIcon::after {
 
     .benefitImgPlaceholder {
         height: 320px;
+    }
+
+    .orderHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .orderModal .modalActions {
+        flex-direction: column-reverse;
     }
 
     .blockHeader {

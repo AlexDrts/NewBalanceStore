@@ -206,7 +206,7 @@ function Checkout() {
                 try {
                     await apiRequest(`/api/Orders/${orderId}/status`, {
                         method: "PATCH",
-                        body: JSON.stringify("Delivered")
+                        body: JSON.stringify("Paid")
                     });
                 } catch (statusErr) {
                     console.warn("Status update endpoint skipped or failed:", statusErr);
@@ -245,7 +245,7 @@ function Checkout() {
                 customerName: `${form.firstName} ${form.lastName}`.trim(),
                 shippingAddress: form.address,
                 totalAmount: total,
-                status: "Delivered",
+                status: "Paid",
                 createdAt: createdOrder?.createdAt || new Date().toISOString(),
                 items: cartProducts.map(item => ({
                     productName: item.product.name,
@@ -260,7 +260,7 @@ function Checkout() {
 
             clearCart();
             window.dispatchEvent(new Event("storage"));
-            navigate("/account", { replace: true });
+            navigate("/account", { replace: true, state: { placedOrderId: finalOrderToSave.id } });
         } catch (err) {
             console.error("Failed to process order:", err);
         }

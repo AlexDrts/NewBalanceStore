@@ -2,7 +2,7 @@ import styles from "./SearchOverlay.module.css";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Link, useNavigate } from "react-router-dom";
-import { getProducts } from "../../services/productsService.js";
+import { getProducts, isInStock } from "../../services/productsService.js";
 import { formatPrice } from "../../utils/productFormat.js";
 import { searchProducts } from "./searchProducts.js";
 
@@ -76,7 +76,7 @@ function SearchOverlay({ open, onClose, anchorRef }) {
         if (!open || products) return;
         let cancelled = false;
         getProducts()
-            .then(list => { if (!cancelled) setProducts(list); })
+            .then(list => { if (!cancelled) setProducts(list.filter(isInStock)); })
             .catch(() => { if (!cancelled) setProducts([]); });
         return () => { cancelled = true; };
     }, [open, products]);
@@ -84,19 +84,29 @@ function SearchOverlay({ open, onClose, anchorRef }) {
     useLayoutEffect(() => {
         if (!open) return;
         const updateTop = () => {
-            const rect = anchorRef?.current?.getBoundingClientRect();
-            setTop(rect ? Math.max(rect.bottom, 0) : 0);
+            const anchor = anchorRef?.current;
+            if (!anchor) {
+                setTop(0);
+                return;
+            }
+            if (anchor.style.position === "fixed") {
+                setTop((parseFloat(anchor.style.top) || 0) + anchor.offsetHeight);
+                return;
+            }
+            setTop(Math.max(anchor.getBoundingClientRect().bottom, 0));
         };
         updateTop();
+        const frame = requestAnimationFrame(updateTop);
         window.addEventListener("resize", updateTop);
-        return () => window.removeEventListener("resize", updateTop);
+        return () => {
+            cancelAnimationFrame(frame);
+            window.removeEventListener("resize", updateTop);
+        };
     }, [open, anchorRef]);
 
     useEffect(() => {
         if (!open) return;
         inputRef.current?.focus();
-        const previousOverflow = document.body.style.overflow;
-        document.body.style.overflow = "hidden";
         const handleKey = (event) => {
             if (event.key === "Escape") {
                 setQuery("");
@@ -105,7 +115,6 @@ function SearchOverlay({ open, onClose, anchorRef }) {
         };
         document.addEventListener("keydown", handleKey);
         return () => {
-            document.body.style.overflow = previousOverflow;
             document.removeEventListener("keydown", handleKey);
         };
     }, [open]);
