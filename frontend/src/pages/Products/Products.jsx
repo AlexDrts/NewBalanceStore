@@ -11,9 +11,11 @@ import { addToRecentlyViewed } from "../../utils/recentlyViewed.js";
 import AddedToBagPopup from "../../components/AddedToBagPopup/AddedToBagPopup.jsx";
 import { getProducts, isInStock } from "../../services/productsService.js";
 import { createPortal } from "react-dom";
-import { useLoadingOnChange } from "../../components/LoadingOverlay/loadingStore.js";
+import { flashLoading, useLoadingOnChange } from "../../components/LoadingOverlay/loadingStore.js";
 import { matchesSearch } from "../../components/SearchOverlay/searchProducts.js";
 import { getProductActivity, matchesActivity, matchesCategory } from "./productTaxonomy.js";
+
+const PAGE_SIZE = 18;
 
 function Products() {
     const [products, setProducts] = useState([]);
@@ -149,7 +151,10 @@ function Products() {
 
     const [sortBy, setSortBy] = useState("featured");
 
-    useLoadingOnChange(JSON.stringify({ filters, sortBy, params: searchParams.toString() }));
+    const listKey = JSON.stringify({ filters, sortBy, params: searchParams.toString() });
+    useLoadingOnChange(listKey);
+    const [page, setPage] = useState({ key: listKey, count: PAGE_SIZE });
+    const visibleCount = page.key === listKey ? page.count : PAGE_SIZE;
     const sortedProducts = [...filteredProducts];
 
     switch (sortBy) {
@@ -301,7 +306,7 @@ function Products() {
                             {error && <p>Failed to load products.</p>}
                             {!loading && !error && sortedProducts.length === 0 && <p>No products found.</p>}
                             {!loading && !error &&
-                                sortedProducts.map(product => (
+                                sortedProducts.slice(0, visibleCount).map(product => (
                                     <ProductCard
                                         key={product.id}
                                         product={product}
@@ -315,6 +320,26 @@ function Products() {
                                 ))
                             }
                         </section>
+
+                        {!loading && !error && sortedProducts.length > 0 && (
+                            <div className={styles.loadMore}>
+                                <p className={styles.loadMoreText}>
+                                    You have viewed {Math.min(visibleCount, sortedProducts.length)} of {sortedProducts.length} results
+                                </p>
+                                {visibleCount < sortedProducts.length && (
+                                    <button
+                                        type="button"
+                                        className={styles.loadMoreBtn}
+                                        onClick={() => {
+                                            flashLoading();
+                                            setPage({ key: listKey, count: visibleCount + PAGE_SIZE });
+                                        }}
+                                    >
+                                        Load more
+                                    </button>
+                                )}
+                            </div>
+                        )}
                     </div>
                 </div>
             </main>
