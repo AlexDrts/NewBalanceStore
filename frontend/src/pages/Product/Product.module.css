@@ -9,6 +9,11 @@
     transform: translateY(-100%);
 }
 
+:global(body.search-open) .headerBar {
+    transform: none !important;
+    transition: none;
+}
+
 .hero {
     position: relative;
     width: 100%;
@@ -180,6 +185,17 @@
 }
 
 .lowStock + .addToBag {
+    margin-top: 24px;
+}
+
+.soldOut {
+    margin: 32px 0 0;
+    color: #111;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.soldOut + .addToBag {
     margin-top: 24px;
 }
 

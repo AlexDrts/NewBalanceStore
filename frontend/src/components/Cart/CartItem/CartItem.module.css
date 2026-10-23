@@ -163,3 +163,9 @@
         right: 0;
     }
 }
+
+.stockError {
+    margin: 6px 0 10px;
+    color: #cf0a2c;
+    font-size: 14px;
+}

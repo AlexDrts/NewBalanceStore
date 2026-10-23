@@ -18,7 +18,7 @@ import { openBagDrawer } from "../../components/BagDrawer/bagDrawerEvents.js";
 
 import { useCart } from "../../context/useCart.js";
 import { fetchProduct } from "../../services/api/productsApi.js";
-import { getProducts } from "../../services/productsService.js";
+import { getProducts, isInStock } from "../../services/productsService.js";
 import { addToRecentlyViewed, getRecentlyViewed } from "../../utils/recentlyViewed.js";
 import { formatColorName, formatPrice, formatSizeLabel, formatTypeLabel, getSizeGrid } from "../../utils/productFormat.js";
 import { createProductView, getCartQuantity, pickRelatedProducts } from "./productView.js";
@@ -89,7 +89,7 @@ function Product() {
         getProducts()
             .then(products => {
                 if (cancelled) return;
-                setRelated(pickRelatedProducts(product, products));
+                setRelated(pickRelatedProducts(product, products.filter(isInStock)));
                 setRecent(
                     recentIds
                         .map(recentId => products.find(item => String(item.id) === String(recentId)))
@@ -384,6 +384,10 @@ function ProductView({ product, hideAfterRef }) {
 
                         {showLowStock && (
                             <p className={styles.lowStock}>Only {stock} left.</p>
+                        )}
+
+                        {!productInStock && (
+                            <p className={styles.soldOut}>This item is sold out. Check out similar styles below.</p>
                         )}
 
                         <button
