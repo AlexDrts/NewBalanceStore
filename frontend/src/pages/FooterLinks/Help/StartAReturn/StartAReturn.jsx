@@ -5,7 +5,6 @@ import TopHeader from "../../../../components/TopHeader/TopHeader.jsx";
 import MainHeader from "../../../../components/MainHeader/MainHeader.jsx";
 import Footer from "../../../../components/Footer/Footer.jsx";
 import FaqList from "../../../../components/FaqAccordion/FaqList.jsx";
-import { getCurrentUser } from "../../../../services/api/authService.js";
 import { getReturnFaq } from "./returnFaq.jsx";
 
 function StoreIcon() {
@@ -37,8 +36,7 @@ function TradeInIcon() {
 
 function StartAReturn() {
     const pageRef = useRef(null);
-    const startLink = getCurrentUser() ? "/account" : "/login";
-    const faq = getReturnFaq(startLink);
+    const faq = getReturnFaq();
 
     return (
         <>
@@ -72,9 +70,9 @@ function StartAReturn() {
                             Ship your return
                         </h2>
                         <p className={styles.cardText}>
-                            For online orders only: Print a label and ship your items back to us. <strong>Online returns are free for members.</strong> Non-member returns are subject to a $5 restocking fee, which will be deducted from the total refund amount. Please allow up to 14 days after we receive your package for your refund to process.
+                            For online orders only: contact our Customer Care team and ship your items back to us. <strong>Online returns are free for members.</strong> Non-member returns are subject to a $5 restocking fee, which will be deducted from the total refund amount. Please allow up to 14 days after we receive your package for your refund to process.
                         </p>
-                        <Link to={startLink} className={styles.cardButton}>Start a return</Link>
+                        <Link to="/help" className={styles.cardButton}>Contact us</Link>
                     </section>
 
                     <section className={styles.card}>

@@ -24,7 +24,7 @@ export function getTrackFaq(accountLink, listClass) {
             answer: (
                 <>
                     <p>You will receive a shipping confirmation email with tracking when your order ships. If your order is split into more than one shipment, you will receive separate emails for each shipment.</p>
-                    <p>Additionally, you can track your order by <Link to="/login">logging into your account</Link> or by providing your order number, billing last name, and shipping zip code <a href="#order-form">here</a>.</p>
+                    <p>Additionally, you can track your order by <Link to={accountLink}>logging into your account</Link> and opening your order history.</p>
                 </>
             )
         },
@@ -53,7 +53,7 @@ export function getTrackFaq(accountLink, listClass) {
             id: "no-email",
             question: "I can’t find my shipping confirmation email. Can I track my order?",
             answer: (
-                <p>Yes, you can track your order by <Link to="/login">logging into your account</Link> or by providing your order number, billing last name, and shipping zip code <a href="#order-form">here</a>.</p>
+                <p>Yes, you can track your order by <Link to={accountLink}>logging into your account</Link> and opening your order history.</p>
             )
         },
         {
@@ -81,7 +81,7 @@ export function getTrackFaq(accountLink, listClass) {
             id: "cancel",
             question: "I just placed an order. Can I cancel it?",
             answer: (
-                <p>Most orders can be canceled within one hour of placement by inputting your order status information above and click on "Track Order." Then click on the "Cancel Order" button displaying under your items for your order. If the cancel button is greyed out and states the cancellation period has expired, it's too late to cancel. But don't worry, you can request a return label <Link to="/returns">here</Link>.</p>
+                <p>To cancel an order, contact our <Link to="/help">Customer Care team</Link> as soon as possible after placing it. If your order has already shipped, you can return it according to our <Link to="/returns">return policy</Link>.</p>
             )
         }
     ];

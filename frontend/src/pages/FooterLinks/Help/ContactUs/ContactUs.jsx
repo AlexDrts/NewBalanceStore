@@ -58,7 +58,7 @@ function ContactUs() {
                             Contact us
                         </h2>
                         <p className={styles.cardText}>
-                            Customer service hours are Monday-Friday 9am-9pm EST, and Saturday-Sunday 9am-6pm EST. To live chat, use the chat bubble below. To speak with an agent, call <a href="tel:8005959138">800-595-9138</a>. Phone support is closed Sundays.
+                            Customer service hours are Monday-Friday 9am-9pm EST, and Saturday-Sunday 9am-6pm EST. To speak with an agent, call <a href="tel:8005959138">800-595-9138</a>. Phone support is closed Sundays.
                         </p>
                     </section>
 
@@ -68,7 +68,7 @@ function ContactUs() {
                             Track order status
                         </h2>
                         <p className={styles.cardText}>
-                            Quickly track your order status in real-time. Enter your order number (starting with U) or log in to your membership account to view your order history. In-stock orders ship within 2 business days.
+                            Log in to your account to view your order history and the status of your orders. In-stock orders ship within 2 business days.
                         </p>
                         <Link to={ordersLink} className={styles.cardButton}>Track my order</Link>
                     </section>
@@ -76,12 +76,12 @@ function ContactUs() {
                     <section className={styles.card}>
                         <h2 className={styles.cardTitle}>
                             <BoxIcon />
-                            Start a return
+                            Return policy
                         </h2>
                         <p className={styles.cardText}>
-                            Enter your order number (starting with U) or log in to your membership account to initiate a return. Bring your items to any New Balance store for an immediate refund or ship them back to us. Review our <Link to="/returns" onClick={() => window.scrollTo(0, 0)}>return policy</Link> for eligible items and get started today.
+                            We accept returns of merchandise in new condition within 45 days of purchase. Bring your items to any New Balance store for an immediate refund. Review our return policy for eligible items.
                         </p>
-                        <Link to={ordersLink} className={styles.cardButton}>Return my order</Link>
+                        <Link to="/returns" className={styles.cardButton}>View return policy</Link>
                     </section>
                 </div>
 

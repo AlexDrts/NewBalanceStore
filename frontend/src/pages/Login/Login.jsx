@@ -255,7 +255,6 @@ function Login() {
                                     />
                                     Remember me
                                 </label>
-                                <Link to="/forgot-password" className={styles.forgotLink}>Forgot password</Link>
                             </div>
 
                             <Notice onClose={() => setAuthError("")}>{authError}</Notice>

@@ -23,6 +23,8 @@ import { addToRecentlyViewed, getRecentlyViewed } from "../../utils/recentlyView
 import { formatColorName, formatPrice, formatSizeLabel, formatTypeLabel, getSizeGrid } from "../../utils/productFormat.js";
 import { createProductView, getCartQuantity, pickRelatedProducts } from "./productView.js";
 import { MAX_QUANTITY_PER_ITEM } from "../../entities/Cart.js";
+
+const LOW_STOCK_LIMIT = 5;
 import { flashLoading, withLoading } from "../../components/LoadingOverlay/loadingStore.js";
 
 const HEADER_HIDE_AFTER = 70;
@@ -215,6 +217,7 @@ function ProductView({ product, hideAfterRef }) {
     const stock = selectedSize !== null ? product.getAvailableQuantity(selectedColor, selectedSize) : 0;
     const inCart = selectedSize !== null ? getCartQuantity(cart, product.id, selectedColor, selectedSize) : 0;
     const canAddMore = Math.max(0, Math.min(MAX_QUANTITY_PER_ITEM, stock) - inCart);
+    const showLowStock = selectedSize !== null && stock > 0 && stock <= LOW_STOCK_LIMIT;
     const colorInStock = product.isColorAvailable(selectedColor);
     const productInStock = product.isAvailable();
 
@@ -378,6 +381,10 @@ function ProductView({ product, hideAfterRef }) {
                             onSelect={handleSizeSelect}
                             showError={sizeError}
                         />
+
+                        {showLowStock && (
+                            <p className={styles.lowStock}>Only {stock} left.</p>
+                        )}
 
                         <button
                             ref={addButtonRef}

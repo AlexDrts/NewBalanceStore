@@ -12,7 +12,6 @@ import recycleIcon from '../../assets/icons/header/recycle-icon.svg';
 
 const HELP_LINKS = [
     { label: "Order Status", to: "/order-status" },
-    { label: "Return Order", to: "/returns" },
     { label: "FAQ", to: "/faqs" },
     { label: "Help", to: "/help" },
 ];

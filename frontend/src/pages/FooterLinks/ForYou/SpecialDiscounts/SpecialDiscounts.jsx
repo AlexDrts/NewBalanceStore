@@ -114,9 +114,6 @@ function SpecialDiscounts() {
                         </p>
 
                         <div className={styles.bannerButtons}>
-                            <button type="button" className={styles.bannerButton} onClick={(event) => event.preventDefault()}>
-                                Verify with ID.me
-                            </button>
                             <Link to="/products" className={styles.bannerButton} onClick={() => window.scrollTo(0, 0)}>
                                 Shop now
                             </Link>

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export function getReturnFaq(startLink) {
+export function getReturnFaq() {
     return [
         {
             id: "return-policy",
@@ -57,7 +57,7 @@ export function getReturnFaq(startLink) {
                 <>
                     <p>You can return your items to any New Balance or New Balance Factory Store or ship your items back to us within 45 days of the purchase date. Eligible items must be returned in new condition, in the state you received them.</p>
                     <p>To return to a store, simply bring your items (no need to repack) and packing slip or order confirmation email. Find your closest store <Link to="/stores">here</Link>.</p>
-                    <p>To ship your return back to us, <Link to={startLink}>start here</Link>.</p>
+                    <p>To ship your return back to us, contact our <Link to="/help">Customer Care team</Link>.</p>
                 </>
             )
         },
@@ -66,7 +66,7 @@ export function getReturnFaq(startLink) {
             question: "Can I exchange an item instead of returning?",
             answer: (
                 <>
-                    <p>We do not offer direct exchanges for online orders. Instead, start your return process <Link to={startLink}>here</Link> and place a new order for a replacement item.</p>
+                    <p>We do not offer direct exchanges for online orders. Instead, return your item in a store or through our <Link to="/help">Customer Care team</Link> and place a new order for a replacement item.</p>
                     <p>Select styles are available at New Balance and New Balance Factory Stores. <Link to="/stores">Find your closest store</Link> to complete your return and quickly shop for a replacement item.</p>
                 </>
             )
@@ -84,14 +84,14 @@ export function getReturnFaq(startLink) {
             id: "territories",
             question: "I live in Alaska, Hawaii, Guam, Puerto Rico or another U.S. Territory. How do I make a return?",
             answer: (
-                <p>To get a prepaid USPS label for the above areas, <Link to={startLink}>start here</Link>.</p>
+                <p>To get a prepaid USPS label for the above areas, contact our <Link to="/help">Customer Care team</Link>.</p>
             )
         },
         {
             id: "apo-fpo",
             question: "I have an APO/FPO address. How do I make a return?",
             answer: (
-                <p>To get a prepaid USPS label for APO/FPO addresses, <Link to={startLink}>start here</Link>.</p>
+                <p>To get a prepaid USPS label for APO/FPO addresses, contact our <Link to="/help">Customer Care team</Link>.</p>
             )
         },
         {
@@ -100,7 +100,7 @@ export function getReturnFaq(startLink) {
             answer: (
                 <>
                     <p>To receive an electronic Gift Card for the value of your return, contact our <Link to="/help">Customer Care team</Link>.</p>
-                    <p>To receive a refund to the original payment, <Link to={startLink}>start a return</Link>.</p>
+                    <p>To receive a refund to the original payment, contact our <Link to="/help">Customer Care team</Link>.</p>
                     <p>Gifts can be returned in-store for a Gift Card.</p>
                 </>
             )
@@ -215,7 +215,7 @@ export function getReturnFaq(startLink) {
                     <p>If you run, if you play – however you move for fitness – we believe a properly fitting sports bra is transformative.</p>
                     <p>New Balance Athletics, Inc. is proud to offer a Fit Promise for the following sports bras purchased after February 1, 2025 at a New Balance retail store (excluding New Balance factory stores) or newbalance.com: the RC Bra (WB51052), NB Essential Run Bra (WB51032), NB Define Train Bra (WB51053), NB Essential Train Bra (WB51035), NB Harmony Yoga Bra (WB51037), NB Essential Yoga Bra (WB51039), Klutch X NB Racerback Bra (WB53612), and AC Train Bra (WB61Q0QK).</p>
                     <p>Even after you’ve removed the tags and taken it for a run, we’ll take eligible sports bras back within 45 days from date of purchase or shipment, for a refund to the original form of payment. Sports bras are made for motion, so we encourage you to test the fit by hitting the gym, court, or field and trying it out. If you would like a different size or color of the same style, you can return the original product and repurchase the desired item.</p>
-                    <p>To take advantage of the Fit Promise for Sports Bras, you must process a return either <Link to={startLink}>online</Link> or in-store with your order number or receipt at any New Balance retail store. If you purchased your sports bra in-store, you must process your return in-store. If you purchased your sports bra online, you may process your return in-store or online. This service is provided at no charge to you if returned in-store or if you are a newbalance.com account holder. However, a $5 restocking fee will apply to online returns if you do not have an account on newbalance.com.</p>
+                    <p>To take advantage of the Fit Promise for Sports Bras, you must process a return either through our <Link to="/help">Customer Care team</Link> or in-store with your order number or receipt at any New Balance retail store. If you purchased your sports bra in-store, you must process your return in-store. If you purchased your sports bra online, you may process your return in-store or online. This service is provided at no charge to you if returned in-store or if you are a newbalance.com account holder. However, a $5 restocking fee will apply to online returns if you do not have an account on newbalance.com.</p>
                     <p>This Fit Promise for Sports Bras does not cover:</p>
                     <ul>
                         <li>Damage resulting from improper care (e.g., using a hot iron on the fabric)</li>

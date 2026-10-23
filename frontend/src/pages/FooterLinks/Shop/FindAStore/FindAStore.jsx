@@ -15,26 +15,6 @@ function SearchIcon() {
     );
 }
 
-function LocateIcon() {
-    return (
-        <svg className={styles.icon} viewBox="0 0 20 20" fill="none" aria-hidden="true">
-            <circle cx="10" cy="10" r="5.5" stroke="currentColor" strokeWidth="1.6" />
-            <circle cx="10" cy="10" r="2" fill="currentColor" />
-            <path d="M10 1.5v3M10 15.5v3M1.5 10h3M15.5 10h3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-        </svg>
-    );
-}
-
-function InfoIcon() {
-    return (
-        <svg className={styles.noticeIcon} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <circle cx="12" cy="12" r="9.5" stroke="currentColor" strokeWidth="1.6" />
-            <path d="M12 10.5v6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-            <circle cx="12" cy="7.5" r="1.1" fill="currentColor" />
-        </svg>
-    );
-}
-
 function PinIcon() {
     return (
         <svg className={styles.pin} viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -56,7 +36,6 @@ function FindAStore() {
     const pageRef = useRef(null);
     const [query, setQuery] = useState("");
     const [submittedQuery, setSubmittedQuery] = useState("");
-    const [showLocateNotice, setShowLocateNotice] = useState(false);
     const [openStoreId, setOpenStoreId] = useState(null);
     const selectedStore = useSelectedStore();
 
@@ -68,7 +47,6 @@ function FindAStore() {
     const handleSubmit = (event) => {
         event.preventDefault();
         setSubmittedQuery(query);
-        setShowLocateNotice(false);
     };
 
     const handleClear = () => {
@@ -106,42 +84,8 @@ function FindAStore() {
                                     placeholder="Search here"
                                     aria-label="Search by address, state or postal code"
                                 />
-                                <button type="button" className={styles.iconButton} onClick={() => setShowLocateNotice(true)} aria-label="Geolocate" aria-expanded={showLocateNotice}>
-                                    <LocateIcon />
-                                </button>
                             </form>
-
-                            {showLocateNotice && (
-                                <div className={styles.notice} role="status">
-                                    <InfoIcon />
-                                    <div className={styles.noticeText}>
-                                        <p className={styles.noticeTitle}>Search near me is coming soon</p>
-                                        <p>For now, search by city, state or ZIP code to find a store.</p>
-                                    </div>
-                                    <button
-                                        type="button"
-                                        className={styles.noticeClose}
-                                        onClick={() => setShowLocateNotice(false)}
-                                        aria-label="Close"
-                                    >
-                                        ×
-                                    </button>
-                                </div>
-                            )}
                         </div>
-
-                        <p className={styles.directory}>
-                            Use our locator to find a location near you or{" "}
-                            <a
-                                href="/stores"
-                                onClick={(event) => {
-                                    event.preventDefault();
-                                    handleClear();
-                                }}
-                            >
-                                browse our directory.
-                            </a>
-                        </p>
                     </section>
 
                     <section className={styles.results} aria-live="polite">
