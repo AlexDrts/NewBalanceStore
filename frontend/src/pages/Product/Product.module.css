@@ -172,6 +172,17 @@
     cursor: default;
 }
 
+.lowStock {
+    margin: 32px 0 0;
+    color: #111;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.lowStock + .addToBag {
+    margin-top: 24px;
+}
+
 .selection {
     margin-top: 10px;
     font-size: 12px;

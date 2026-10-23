@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ForgotPasswordForm, GiftCardBalanceForm, PrivacyChoicesForm } from "./infoForms.jsx";
+import { PrivacyChoicesForm } from "./infoForms.jsx";
 
 export const INFO_PAGES = [
     {
@@ -142,7 +142,7 @@ export const INFO_PAGES = [
             },
             {
                 heading: "Balance",
-                body: <p>Gift cards do not expire and have no fees. You can check your balance on the <Link to="/gift-card-balance">Check Balance</Link> page.</p>,
+                body: <p>Gift cards do not expire and have no fees. You can check your balance in any participating New Balance store.</p>,
             },
             {
                 heading: "Lost or stolen cards",
@@ -150,21 +150,6 @@ export const INFO_PAGES = [
             },
         ],
         links: [{ label: "Shop gift cards", to: "/giftcards" }],
-    },
-    {
-        slug: "gift-card-balance",
-        group: "Gift Cards",
-        title: "Check Gift Card Balance",
-        intro: "Enter the card number and PIN found on the back of your gift card.",
-        form: GiftCardBalanceForm,
-        links: [{ label: "Shop gift cards", to: "/giftcards" }],
-    },
-    {
-        slug: "forgot-password",
-        group: "Account",
-        title: "Forgot Password",
-        intro: "Enter the email address you use to log in.",
-        form: ForgotPasswordForm,
     },
     {
         slug: "our-purpose",
@@ -313,7 +298,7 @@ export const INFO_PAGES = [
         ],
         links: [
             { label: "Find a participating store", to: "/stores" },
-            { label: "Start a return", to: "/returns" },
+            { label: "Return policy", to: "/returns" },
         ],
     },
     {

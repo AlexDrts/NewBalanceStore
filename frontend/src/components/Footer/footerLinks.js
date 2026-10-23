@@ -10,7 +10,7 @@ export const FOOTER_COLUMNS = [
         title: "Help",
         links: [
             { label: "Contact us", to: "/help" },
-            { label: "Start a return", to: "/returns" },
+            { label: "Return policy", to: "/returns" },
             { label: "Track your order", to: "/order-status" },
             { label: "Become a member", to: "/membership" },
             { label: "Size guide", to: "/size-guide" },

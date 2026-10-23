@@ -13,6 +13,7 @@ import { getProducts } from "../../services/productsService.js";
 import { createPortal } from "react-dom";
 import { useLoadingOnChange } from "../../components/LoadingOverlay/loadingStore.js";
 import { matchesSearch } from "../../components/SearchOverlay/searchProducts.js";
+import { getProductActivity, matchesActivity, matchesCategory } from "./productTaxonomy.js";
 
 function Products() {
     const [products, setProducts] = useState([]);
@@ -55,10 +56,10 @@ function Products() {
         if(type && product.type.toLowerCase() !== type)
             return false;
 
-        if(category && product.category.toLowerCase() !== category)
+        if(category && !matchesCategory(product, category))
             return false;
 
-        if(activity && product.activity.toLowerCase() !== activity)
+        if(activity && !matchesActivity(product, activity))
             return false;
 
         if (sale === "true" && !product.hasDiscount())
@@ -137,7 +138,7 @@ function Products() {
         if (filters.gender.length && !filters.gender.includes(product.gender))
             return false;
 
-        if (filters.activity.length && !filters.activity.includes(product.activity))
+        if (filters.activity.length && !filters.activity.includes(getProductActivity(product)))
             return false;
 
         if (!checkPrice(product.price))

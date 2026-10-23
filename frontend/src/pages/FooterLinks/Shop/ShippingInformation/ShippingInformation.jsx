@@ -25,7 +25,6 @@ const FAQ_LINKS = [
 
 const HELP_LINKS = [
     { label: "Contact Us", to: "/help" },
-    { label: "Start A Return", to: "/returns" },
     { label: "Track Your Order", to: "/order-status" },
     { label: "Find A Store", to: "/stores" },
     { label: "Log In", to: "/login" },

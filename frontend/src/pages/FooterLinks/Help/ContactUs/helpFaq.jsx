@@ -20,7 +20,7 @@ export const HELP_FAQ = [
                 </p>
                 <p>Carrier delivery times go into effect once your order has shipped.</p>
                 <p>
-                    You can track your order by <Link to="/login">logging into your account</Link> or by providing your order number, billing last name, and shipping zip code here.
+                    You can track your order by <Link to="/login">logging into your account</Link> and opening your order history.
                 </p>
             </>
         )

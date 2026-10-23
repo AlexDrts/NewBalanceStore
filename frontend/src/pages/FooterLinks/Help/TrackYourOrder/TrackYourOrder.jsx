@@ -10,12 +10,9 @@ import { getTrackFaq } from "./trackFaq.jsx";
 
 function TrackYourOrder() {
     const pageRef = useRef(null);
-    const accountLink = getCurrentUser() ? "/account" : "/login";
+    const isLoggedIn = Boolean(getCurrentUser());
+    const accountLink = isLoggedIn ? "/account" : "/login";
     const faq = getTrackFaq(accountLink, styles.plainList);
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-    };
 
     return (
         <>
@@ -33,26 +30,15 @@ function TrackYourOrder() {
 
                 <div className={styles.content}>
                     <h1 className={styles.title}>Order Status</h1>
-                    <p className={styles.subtitle}>Quickly check your order status or start a return.</p>
+                    <p className={styles.subtitle}>
+                        {isLoggedIn
+                            ? "View your order history and the status of your orders in your account."
+                            : "Log in to your account to view your order history and the status of your orders."}
+                    </p>
 
-                    <form id="order-form" className={styles.form} onSubmit={handleSubmit} noValidate>
-                        <label className={styles.field}>
-                            <input className={styles.input} type="text" name="orderNumber" autoComplete="off" placeholder=" " />
-                            <span className={styles.label}>Order Number</span>
-                        </label>
-
-                        <label className={styles.field}>
-                            <input className={styles.input} type="text" name="lastName" autoComplete="family-name" placeholder=" " />
-                            <span className={styles.label}>Billing Last Name</span>
-                        </label>
-
-                        <label className={styles.field}>
-                            <input className={styles.input} type="text" name="zipCode" inputMode="numeric" autoComplete="postal-code" placeholder=" " />
-                            <span className={styles.label}>Shipping ZIP Code</span>
-                        </label>
-
-                        <button type="submit" className={styles.submit}>Track Order</button>
-                    </form>
+                    <Link to={accountLink} className={styles.accountButton}>
+                        {isLoggedIn ? "View my orders" : "Log in"}
+                    </Link>
 
                     <h2 className={styles.faqTitle}>Frequently Asked Questions</h2>
 

@@ -29,14 +29,11 @@ function getResultsMessage(status, count) {
     return `There are ${count} ${storesWord}`;
 }
 
-const NEAR_ME_NOTICE = "Search near me is coming soon. For now, please search by ZIP code.";
-
 function SelectStoreModal({ onClose, onSelect }) {
     const [zip, setZip] = useState("");
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
     const [results, setResults] = useState(null);
-    const [showNearMeNotice, setShowNearMeNotice] = useState(false);
     const selectedStore = useSelectedStore();
     const closeRef = useRef(null);
     const searchIdRef = useRef(0);
@@ -70,7 +67,6 @@ function SelectStoreModal({ onClose, onSelect }) {
         const searchId = searchIdRef.current + 1;
         searchIdRef.current = searchId;
         setError("");
-        setShowNearMeNotice(false);
         setLoading(true);
 
         const found = await searchStoresByZip(zip);
@@ -78,11 +74,6 @@ function SelectStoreModal({ onClose, onSelect }) {
         if (searchIdRef.current !== searchId) return;
         setLoading(false);
         setResults(found);
-    }
-
-    function handleNearMe() {
-        setError("");
-        setShowNearMeNotice(true);
     }
 
     function handleSelect(store) {
@@ -143,27 +134,9 @@ function SelectStoreModal({ onClose, onSelect }) {
                                 <SearchIcon />
                             </button>
                         </form>
-
-                        <div className={styles.or} aria-hidden="true">
-                            <span className={styles.line} />
-                            <span>Or</span>
-                            <span className={styles.line} />
-                        </div>
-
-                        <button type="button" className={styles.nearMe} onClick={handleNearMe}>
-                            <PinIcon />
-                            <span>Near me</span>
-                        </button>
                     </div>
 
                     {error && <p className={styles.error} role="alert">{error}</p>}
-
-                    {showNearMeNotice && (
-                        <p className={styles.notice} role="status">
-                            <PinIcon />
-                            <span>{NEAR_ME_NOTICE}</span>
-                        </p>
-                    )}
 
                     {loading && <p className={styles.resultsTitle} role="status">Searching stores…</p>}
 
@@ -215,15 +188,6 @@ function SearchIcon() {
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" strokeWidth="1.8" />
             <path d="m15.5 15.5 5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-        </svg>
-    );
-}
-
-function PinIcon() {
-    return (
-        <svg width="20" height="24" viewBox="0 0 20 24" fill="none" aria-hidden="true">
-            <path d="M10 22s7-6.6 7-12.2A7 7 0 0 0 3 9.8C3 15.4 10 22 10 22Z" stroke="currentColor" strokeWidth="1.8" />
-            <circle cx="10" cy="9.8" r="2.6" stroke="currentColor" strokeWidth="1.8" />
         </svg>
     );
 }

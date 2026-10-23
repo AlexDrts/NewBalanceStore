@@ -17,6 +17,7 @@ function CartItem({ cartProduct }) {
         black_and_white: "Black & White",
         black: "Black",
         gray: "Gray",
+        grey: "Gray",
         tan: "Tan",
         green: "Green",
         blue: "Blue",
@@ -26,9 +27,13 @@ function CartItem({ cartProduct }) {
         multi_color: "Multi Color"
     };
     const color = cartProduct.color;
+    const stock = typeof product.getAvailableQuantity === "function"
+        ? product.getAvailableQuantity(cartProduct.color, cartProduct.size)
+        : 0;
+    const maxQuantity = stock > 0 ? Math.min(MAX_QUANTITY_PER_ITEM, stock) : MAX_QUANTITY_PER_ITEM;
 
     const increaseQuantity = () => {
-        if (cartProduct.quantity >= MAX_QUANTITY_PER_ITEM) return;
+        if (cartProduct.quantity >= maxQuantity) return;
 
         run(() => dispatch({
             type: "UPDATE_QUANTITY",
@@ -95,7 +100,7 @@ function CartItem({ cartProduct }) {
 
                         <button
                             onClick={increaseQuantity}
-                            disabled={cartProduct.quantity >= MAX_QUANTITY_PER_ITEM}
+                            disabled={cartProduct.quantity >= maxQuantity}
                             className={styles.qtyBtn}>
                             +
                         </button>

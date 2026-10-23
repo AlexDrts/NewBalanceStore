@@ -4,6 +4,8 @@ import { flashLoading, withLoading } from "../LoadingOverlay/loadingStore.js";
 import { useCart } from "../../context/useCart.js";
 import { createPortal } from "react-dom";
 
+const LOW_STOCK_LIMIT = 5;
+
 function ProductDrawer({ product, activeColor, onClose, onAddedToCart }) {
     const { dispatch } = useCart();
 
@@ -15,6 +17,9 @@ function ProductDrawer({ product, activeColor, onClose, onAddedToCart }) {
     if (!product) return null;
 
     const images = product.images[selectedColor] || [];
+
+    const stock = selectedSize !== null ? product.getAvailableQuantity(selectedColor, selectedSize) : 0;
+    const showLowStock = stock > 0 && stock <= LOW_STOCK_LIMIT;
 
     const allSizes = product.type === "Footwear"
         ? [5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 12, 12.5]
@@ -150,6 +155,10 @@ function ProductDrawer({ product, activeColor, onClose, onAddedToCart }) {
                         <div className={styles.sizeError}>
                             Please select a size
                         </div>
+                    )}
+
+                    {showLowStock && (
+                        <p className={styles.lowStock}>Only {stock} left.</p>
                     )}
 
                     <button onClick={handleAddToCart} className={styles.drawerAddToCart}>
