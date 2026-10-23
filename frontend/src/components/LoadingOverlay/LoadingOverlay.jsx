@@ -9,6 +9,7 @@ function LoadingOverlay({ visible = true }) {
             <span className={styles.dots} aria-hidden="true">
                 <span className={styles.dot} />
                 <span className={styles.dot} />
+                <span className={styles.dot} />
             </span>
             <span className={styles.label}>Loading</span>
         </div>,

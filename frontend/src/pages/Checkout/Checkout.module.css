@@ -152,6 +152,13 @@ body {
     outline: none;
 }
 
+.fieldDisabled input {
+    background-color: #f4f4f4;
+    color: #666;
+    cursor: not-allowed;
+    border-color: #e0e0e0;
+}
+
 .fieldLabel {
     position: absolute;
     top: 14px;
@@ -473,6 +480,77 @@ body {
 }
 
 /* ===== RESPONSIVE MEDIA QUERIES ===== */
+@media (min-width: 1921px) {
+    .headerInner,
+    .checkoutWrapper,
+    .checkoutFooter {
+        max-width: 1700px;
+    }
+
+    .checkoutGrid {
+        grid-template-columns: minmax(0, 1fr) 620px;
+        gap: 120px;
+    }
+
+    .breadcrumbs {
+        font-size: 15px;
+        margin-bottom: 48px;
+    }
+
+    .section h2 {
+        font-size: 25px;
+        margin-bottom: 28px;
+    }
+
+    .field input {
+        height: 60px;
+        font-size: 17px;
+        padding: 28px 20px 0;
+    }
+
+    .fieldLabel {
+        top: 10px;
+        left: 20px;
+        font-size: 15px;
+    }
+
+    .summary {
+        max-width: 500px;
+    }
+
+    .summary h2,
+    .summaryShipping {
+        font-size: 25px;
+        margin-top: 0;
+    }
+
+    .checkoutProductImage {
+        width: 165px;
+        height: 164px;
+    }
+
+    .checkoutProductInfo h4 {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    .checkoutProductInfo p {
+        font-size: 14px;
+        margin-top: 0;
+    }
+
+    .checkoutProductPrice {
+        font-size: 16px !important;
+    }
+
+    .shippingSection {
+    }
+
+    .continueBtn {
+        height: 55px;
+        font-size: 14px;
+    }
+}
 
 @media (max-width: 1280px) {
     .checkoutGrid {
