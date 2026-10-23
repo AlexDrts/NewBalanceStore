@@ -4,12 +4,13 @@ import { clearCart, getCart } from "../../utils/cartStorage.js";
 import { useEffect, useState } from "react";
 import { getProducts } from "../../services/productsService.js";
 import { Cart } from "../../entities/Cart.js";
-import { Order } from "../../entities/Order.js";
 import LoadingOverlay from "../../components/LoadingOverlay/LoadingOverlay.jsx";
 import { useLoadingAction } from "../../components/LoadingOverlay/useLoadingAction.js";
+import { getCurrentUser } from "../../services/api/authService.js";
 
 import logoSvg from '../../assets/icons/footer/logo.svg';
 import cartSvg from '../../assets/icons/header/cart.svg';
+import {apiRequest} from "../../services/api/apiClient.js";
 
 const STEPS = ["Shipping info", "Payment", "Review and buy"];
 
@@ -28,10 +29,10 @@ const LEGAL_LINKS = [
     { label: "CA Supply Chains Act (SB 657) and Modern Slavery Act Statement", to: "/supply-chains-act" },
 ];
 
-function Field({ label, name, error, required = true, className = "", ...props }) {
+function Field({ label, name, error, required = true, className = "", disabled = false, ...props }) {
     return (
-        <label className={`${styles.field} ${error ? styles.fieldError : ""} ${className}`}>
-            <input name={name} placeholder=" " {...props} />
+        <label className={`${styles.field} ${error ? styles.fieldError : ""} ${disabled ? styles.fieldDisabled : ""} ${className}`}>
+            <input name={name} placeholder=" " disabled={disabled} {...props} />
             <span className={styles.fieldLabel}>
                 {label}{required && <span className={styles.required}> *</span>}
             </span>
@@ -55,13 +56,16 @@ function Checkout() {
     const [step, setStep] = useState(0);
     const [showErrors, setShowErrors] = useState(false);
     const { loading, run } = useLoadingAction();
+    const navigate = useNavigate();
+
+    const currentUser = getCurrentUser();
 
     const [form, setForm] = useState({
-        email: "",
-        phone: "",
-        firstName: "",
-        lastName: "",
-        address: "",
+        email: currentUser?.email || "",
+        phone: currentUser?.phone || "",
+        firstName: currentUser?.fullName ? currentUser.fullName.split(" ")[0] : "",
+        lastName: currentUser?.fullName ? currentUser.fullName.split(" ").slice(1).join(" ") : "",
+        address: currentUser?.address || "",
         country: "United States",
         newsletter: false,
         cardNumber: "",
@@ -77,22 +81,11 @@ function Checkout() {
         loadProducts();
     }, []);
 
-    const navigate = useNavigate();
-
     const colorMap = {
-        white: "White",
-        white1: "White",
-        white2: "White",
-        black_and_white: "Black & White",
-        black: "Black",
-        gray: "Gray",
-        tan: "Tan",
-        green: "Green",
-        blue: "Blue",
-        purple: "Purple",
-        pink: "Pink",
-        red: "Red",
-        multi_color: "Multi Color"
+        white: "White", white1: "White", white2: "White",
+        black_and_white: "Black & White", black: "Black", gray: "Gray",
+        tan: "Tan", green: "Green", blue: "Blue", purple: "Purple",
+        pink: "Pink", red: "Red", multi_color: "Multi Color"
     };
 
     if (!products.length) {
@@ -100,41 +93,63 @@ function Checkout() {
     }
 
     const cart = new Cart(getCart());
-
     const cartProducts = cart.getItems(products);
 
     const originalPrice = cart.getOriginalPrice(products);
     const savings = cart.getSavings(products);
-
     const subtotal = cart.getSubtotal(products);
     const hasDiscount = originalPrice > subtotal;
-
     const tax = cart.getTax(products);
     const total = cart.getTotal(products);
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
+        let formattedValue = value;
+
+        if (name === "cardNumber") {
+            const digits = value.replace(/\D/g, "").slice(0, 16);
+            formattedValue = digits.replace(/(\d{4})(?=\d)/g, "$1 ");
+        } else if (name === "cardName") {
+            formattedValue = value.replace(/[^a-zA-Zа-яА-ЯёЁ\s-]/g, "").slice(0, 50);
+        } else if (name === "cardExpiry") {
+            const digits = value.replace(/\D/g, "").slice(0, 4);
+            if (digits.length >= 3) {
+                formattedValue = `${digits.slice(0, 2)}/${digits.slice(2)}`;
+            } else {
+                formattedValue = digits;
+            }
+        } else if (name === "cardCvv") {
+            formattedValue = value.replace(/\D/g, "").slice(0, 3);
+        } else {
+            formattedValue = type === "checkbox" ? checked : value;
+        }
 
         setForm(prev => ({
             ...prev,
-            [name]: type === "checkbox" ? checked : value
+            [name]: formattedValue
         }));
     };
 
     const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email);
-
     const phoneValid = /^\+?[0-9\s()-]{10,20}$/.test(form.phone);
-
     const addressValid = Boolean(form.firstName.trim() && form.lastName.trim() && form.address.trim());
-
-    const formValid =
-        emailValid &&
-        phoneValid &&
-        addressValid;
+    const formValid = emailValid && phoneValid && addressValid;
 
     const cardDigits = form.cardNumber.replace(/\s+/g, "");
     const cardValid = /^\d{15,16}$/.test(cardDigits);
-    const expiryValid = /^(0[1-9]|1[0-2])\/\d{2}$/.test(form.cardExpiry);
+
+    const expiryFormatValid = /^(0[1-9]|1[0-2])\/\d{2}$/.test(form.cardExpiry);
+    let expiryValid = false;
+    if (expiryFormatValid) {
+        const [monthStr, yearStr] = form.cardExpiry.split("/");
+        const expMonth = parseInt(monthStr, 10);
+        const expYear = 2000 + parseInt(yearStr, 10);
+        const now = new Date();
+        if (expYear > now.getFullYear() || (expYear === now.getFullYear() && expMonth >= now.getMonth() + 1)) {
+            expiryValid = true;
+        }
+    }
+
     const cvvValid = /^\d{3,4}$/.test(form.cardCvv);
     const paymentValid = cardValid && expiryValid && cvvValid && form.cardName.trim();
 
@@ -149,22 +164,9 @@ function Checkout() {
     const paymentErrors = showErrors ? {
         cardNumber: !cardValid && "Please enter a valid card number.",
         cardName: !form.cardName.trim() && "Please enter the name on the card.",
-        cardExpiry: !expiryValid && "Use the MM/YY format.",
+        cardExpiry: !expiryValid && (expiryFormatValid ? "The card has expired." : "Use the MM/YY format."),
         cardCvv: !cvvValid && "Please enter the security code.",
     } : {};
-
-    const order = new Order({
-        firstName: form.firstName,
-        lastName: form.lastName,
-        email: form.email,
-        phoneNumber: form.phone,
-        streetAddress: form.address,
-        newsletter: form.newsletter,
-        products: cartProducts,
-        subtotal,
-        tax,
-        total,
-    });
 
     function goToStep(nextStep, valid) {
         if (!valid) {
@@ -178,21 +180,95 @@ function Checkout() {
         });
     }
 
-    function handleSubmit() {
-        order.markAsPaid();
+    async function handleSubmit() {
+        const orderPayload = {
+            customerName: `${form.firstName} ${form.lastName}`.trim(),
+            customerEmail: form.email,
+            customerPhone: form.phone,
+            shippingAddress: form.address,
+            items: cartProducts.map(item => ({
+                productId: Number(item.product.id) || 0,
+                color: item.color,
+                size: String(item.size),
+                quantity: item.quantity
+            }))
+        };
 
-        console.log("Created order:", order);
+        try {
+            const createdOrder = await apiRequest("/api/Orders", {
+                method: "POST",
+                body: JSON.stringify(orderPayload)
+            });
 
-        clearCart();
+            const orderId = createdOrder?.id;
 
-        navigate("/");
+            if (orderId) {
+                try {
+                    await apiRequest(`/api/Orders/${orderId}/status`, {
+                        method: "PATCH",
+                        body: JSON.stringify("Delivered")
+                    });
+                } catch (statusErr) {
+                    console.warn("Status update endpoint skipped or failed:", statusErr);
+                }
+            }
+
+            const activeUser = getCurrentUser();
+            if (activeUser) {
+                const updatedUser = {
+                    ...activeUser,
+                    phone: activeUser.phone || form.phone,
+                    address: activeUser.address || form.address,
+                    firstName: activeUser.firstName || form.firstName,
+                    lastName: activeUser.lastName || form.lastName
+                };
+                localStorage.setItem("authUser", JSON.stringify(updatedUser));
+            } else {
+                const newGuestUser = {
+                    token: "guest-token-" + Date.now(),
+                    email: form.email,
+                    firstName: form.firstName,
+                    lastName: form.lastName,
+                    fullName: `${form.firstName} ${form.lastName}`,
+                    role: "Customer",
+                    phone: form.phone,
+                    address: form.address
+                };
+                localStorage.setItem("authUser", JSON.stringify(newGuestUser));
+            }
+
+            const userEmailKey = form.email.trim().toLowerCase();
+            const existingOrders = JSON.parse(localStorage.getItem(`orders_${userEmailKey}`) || "[]");
+
+            const finalOrderToSave = {
+                id: orderId || Date.now(),
+                customerName: `${form.firstName} ${form.lastName}`.trim(),
+                shippingAddress: form.address,
+                totalAmount: total,
+                status: "Delivered",
+                createdAt: createdOrder?.createdAt || new Date().toISOString(),
+                items: cartProducts.map(item => ({
+                    productName: item.product.name,
+                    color: item.color,
+                    size: item.size,
+                    quantity: item.quantity,
+                    price: item.product.price
+                }))
+            };
+
+            localStorage.setItem(`orders_${userEmailKey}`, JSON.stringify([finalOrderToSave, ...existingOrders]));
+
+            clearCart();
+            window.dispatchEvent(new Event("storage"));
+            navigate("/account", { replace: true });
+        } catch (err) {
+            console.error("Failed to process order:", err);
+        }
     }
-
     const getGender = (gender) => GENDER_LABELS[String(gender ?? "").toLowerCase()] ?? gender;
 
     return (
         <>
-
             <header className={styles.checkoutHeader}>
                 <div className={styles.headerInner}>
                     <div className={styles.brand}>
@@ -210,7 +286,6 @@ function Checkout() {
             </header>
 
             <div className={styles.checkoutWrapper}>
-
                 <nav className={styles.breadcrumbs} aria-label="Checkout steps">
                     {STEPS.map((label, index) => (
                         <button
@@ -226,17 +301,30 @@ function Checkout() {
                 </nav>
 
                 <div className={styles.checkoutGrid}>
-
                     <div className={styles.checkoutMain}>
-
                         {step === 0 && (
                             <>
-                                {/*Contact Section*/}
                                 <section className={`${styles.section} ${styles.contactSection}`}>
                                     <h2>Contact</h2>
                                     <div className={styles.row}>
-                                        <Field label="Email" name="email" type="email" autoComplete="email" value={form.email} onChange={handleChange} error={shippingErrors.email}/>
-                                        <Field label="Phone number" name="phone" type="tel" autoComplete="tel" value={form.phone} onChange={handleChange} error={shippingErrors.phone}/>
+                                        <Field
+                                            label="Email"
+                                            name="email"
+                                            type="email"
+                                            autoComplete="email"
+                                            value={form.email}
+                                            onChange={handleChange}
+                                            error={shippingErrors.email}
+                                        />
+                                        <Field
+                                            label="Phone number"
+                                            name="phone"
+                                            type="tel"
+                                            autoComplete="tel"
+                                            value={form.phone}
+                                            onChange={handleChange}
+                                            error={shippingErrors.phone}
+                                        />
                                     </div>
                                     <label className={styles.newsletter}>
                                         <input name="newsletter" type="checkbox" checked={form.newsletter} onChange={handleChange}/>
@@ -258,10 +346,36 @@ function Checkout() {
                                         ))}
                                     </div>
                                     <div className={styles.row}>
-                                        <Field label="First Name" name="firstName" type="text" autoComplete="given-name" value={form.firstName} onChange={handleChange} error={shippingErrors.firstName}/>
-                                        <Field label="Last Name" name="lastName" type="text" autoComplete="family-name" value={form.lastName} onChange={handleChange} error={shippingErrors.lastName}/>
+                                        <Field
+                                            label="First Name"
+                                            name="firstName"
+                                            type="text"
+                                            autoComplete="given-name"
+                                            value={form.firstName}
+                                            onChange={handleChange}
+                                            error={shippingErrors.firstName}
+                                            disabled={Boolean(currentUser)}
+                                        />
+                                        <Field
+                                            label="Last Name"
+                                            name="lastName"
+                                            type="text"
+                                            autoComplete="family-name"
+                                            value={form.lastName}
+                                            onChange={handleChange}
+                                            error={shippingErrors.lastName}
+                                            disabled={Boolean(currentUser)}
+                                        />
                                     </div>
-                                    <Field label="Street Address" name="address" type="text" autoComplete="street-address" value={form.address} onChange={handleChange} error={shippingErrors.address}/>
+                                    <Field
+                                        label="Street Address"
+                                        name="address"
+                                        type="text"
+                                        autoComplete="street-address"
+                                        value={form.address}
+                                        onChange={handleChange}
+                                        error={shippingErrors.address}
+                                    />
                                 </section>
 
                                 <section className={styles.section}>
@@ -288,11 +402,48 @@ function Checkout() {
                             <section className={styles.section}>
                                 <h2>Payment</h2>
                                 <p className={styles.acceptLine}>We accept {PAYMENT_METHODS.join(", ")}.</p>
-                                <Field label="Card number" name="cardNumber" inputMode="numeric" autoComplete="cc-number" value={form.cardNumber} onChange={handleChange} error={paymentErrors.cardNumber}/>
-                                <Field label="Name on card" name="cardName" type="text" autoComplete="cc-name" value={form.cardName} onChange={handleChange} error={paymentErrors.cardName}/>
+                                <Field
+                                    label="Card number"
+                                    name="cardNumber"
+                                    inputMode="numeric"
+                                    autoComplete="cc-number"
+                                    maxLength={19}
+                                    value={form.cardNumber}
+                                    onChange={handleChange}
+                                    error={paymentErrors.cardNumber}
+                                />
+                                <Field
+                                    label="Name on card"
+                                    name="cardName"
+                                    type="text"
+                                    autoComplete="cc-name"
+                                    maxLength={50}
+                                    value={form.cardName}
+                                    onChange={handleChange}
+                                    error={paymentErrors.cardName}
+                                />
+
                                 <div className={styles.row}>
-                                    <Field label="Expiration (MM/YY)" name="cardExpiry" inputMode="numeric" autoComplete="cc-exp" value={form.cardExpiry} onChange={handleChange} error={paymentErrors.cardExpiry}/>
-                                    <Field label="Security code" name="cardCvv" inputMode="numeric" autoComplete="cc-csc" value={form.cardCvv} onChange={handleChange} error={paymentErrors.cardCvv}/>
+                                    <Field
+                                        label="Expiration (MM/YY)"
+                                        name="cardExpiry"
+                                        inputMode="numeric"
+                                        autoComplete="cc-exp"
+                                        maxLength={5}
+                                        value={form.cardExpiry}
+                                        onChange={handleChange}
+                                        error={paymentErrors.cardExpiry}
+                                    />
+                                    <Field
+                                        label="Security code"
+                                        name="cardCvv"
+                                        inputMode="numeric"
+                                        autoComplete="cc-csc"
+                                        maxLength={3}
+                                        value={form.cardCvv}
+                                        onChange={handleChange}
+                                        error={paymentErrors.cardCvv}
+                                    />
                                 </div>
                                 <button className={styles.continueBtn} onClick={() => goToStep(2, paymentValid)}>Review Order</button>
                             </section>
@@ -331,45 +482,35 @@ function Checkout() {
                                 <button disabled={!formValid || !paymentValid} className={styles.continueBtn} onClick={() => run(handleSubmit)}>Place Order</button>
                             </section>
                         )}
-
                     </div>
 
                     {/*Summary Section*/}
                     <aside className={styles.summary}>
                         <h2>Order Summary</h2>
-
                         {hasDiscount && (
                             <>
                                 <p className={styles.summaryRow}>
                                     <span>Original Price</span>
                                     <span>${originalPrice.toFixed(2)}</span>
                                 </p>
-
                                 <p className={`${styles.summaryRow} ${styles.savingsRow}`}>
                                     <span>Your savings</span>
                                     <span>${savings.toFixed(2)}</span>
                                 </p>
-
                             </>
-                        )
-
-                        }
-
+                        )}
                         <p className={styles.summaryRow}>
                             <span>Subtotal</span>
                             <span>${subtotal.toFixed(2)}</span>
                         </p>
-
                         <p className={styles.summaryRow}>
                             <span>Shipping: Standard</span>
                             <span>FREE</span>
                         </p>
-
                         <p className={styles.summaryRow}>
                             <span className={styles.taxLabel}><InfoIcon />Total Tax</span>
                             <span>${tax.toFixed(2)}</span>
                         </p>
-
                         <p className={`${styles.summaryRow} ${styles.orderTotal}`}>
                             <span>Order total</span>
                             <span>${total.toFixed(2)}</span>
@@ -379,47 +520,27 @@ function Checkout() {
 
                         <div className={styles.checkoutProducts}>
                             {cartProducts.map(item => (
-                                <div
-                                    key={`${item.product.id}-${item.color}-${item.size}`}
-                                    className={styles.checkoutProduct}
-                                >
-                                    <img
-                                        className={styles.checkoutProductImage}
-                                        src={item.product.images?.[item.color]?.[0]}
-                                        alt={item.product.name}
-                                    />
-
+                                <div key={`${item.product.id}-${item.color}-${item.size}`} className={styles.checkoutProduct}>
+                                    <img className={styles.checkoutProductImage} src={item.product.images?.[item.color]?.[0]} alt={item.product.name} />
                                     <div className={styles.checkoutProductInfo}>
-
                                         <h4>{item.product.name}</h4>
-
                                         <p>{getGender(item.product.gender)}</p>
-
                                         <p>Color: {colorMap[item.color] || item.color}</p>
-
                                         <p>Size: {item.size}</p>
-
                                         <p>Qty: {item.quantity} @ ${item.product.price.toFixed(2)}</p>
-
                                         <p className={styles.checkoutProductPrice}>
-                                            <span>
-                                                ${(item.product.price * item.quantity).toFixed(2)}
-                                            </span>
-
+                                            <span>${(item.product.price * item.quantity).toFixed(2)}</span>
                                             {item.product.oldPrice && (
                                                 <span className={styles.oldPrice}>
                                                     ${(item.product.oldPrice * item.quantity).toFixed(2)}
                                                 </span>
                                             )}
-
                                         </p>
-
                                     </div>
                                 </div>
                             ))}
                         </div>
                     </aside>
-
                 </div>
             </div>
 
@@ -440,7 +561,7 @@ function Checkout() {
 
             <LoadingOverlay visible={loading} />
         </>
-    )
+    );
 }
 
-export default Checkout
+export default Checkout;

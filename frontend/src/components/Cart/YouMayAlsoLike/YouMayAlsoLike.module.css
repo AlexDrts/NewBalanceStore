@@ -12,6 +12,12 @@
     font-weight: 400;
 }
 
+@media (max-width: 2560px) {
+    .wrapper {
+        max-width: 2560px;
+    }
+}
+
 @media (max-width: 768px) {
     .wrapper h2 {
         font-size: 28px;
