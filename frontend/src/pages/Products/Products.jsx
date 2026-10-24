@@ -96,6 +96,12 @@ function Products() {
         price: [],
     };
     const [filters, setFilters] = useState(initialFilters);
+    const sectionKey = `${gender ?? ""}|${type ?? ""}`;
+    const [filtersSection, setFiltersSection] = useState(sectionKey);
+    if (filtersSection !== sectionKey) {
+        setFiltersSection(sectionKey);
+        setFilters(initialFilters);
+    }
 
     const getProductColors = (product) => {
         const colors = product.colors?.length ? product.colors : Object.keys(product.images ?? {});
@@ -297,6 +303,8 @@ function Products() {
                             filters={filters}
                             setFilters={setFilters}
                             initialFilters={initialFilters}
+                            sectionType={type}
+                            sectionGender={gender}
                         />
                     )}
 
@@ -361,6 +369,8 @@ function Products() {
                             filters={filters}
                             setFilters={setFilters}
                             initialFilters={initialFilters}
+                            sectionType={type}
+                            sectionGender={gender}
                         />
                     </div>
                     <div className={styles.mobileFiltersFooter}>
