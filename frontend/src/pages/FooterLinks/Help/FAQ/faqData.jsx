@@ -11,7 +11,6 @@ export const FAQ_CATEGORIES = [
     { label: "Payments & Gift Cards", to: "/giftcards" },
     { label: "My Account & Log In", to: "/membership" },
     { label: "Stores", to: "/stores" },
-    { label: "Reconsidered", to: "/reconsidered" },
 ];
 
 export const POPULAR_FAQ = [

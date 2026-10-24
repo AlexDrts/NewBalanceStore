@@ -190,7 +190,6 @@ export const INFO_PAGES = [
                 body: <p>Learn how to spot and report fake products on our <Link to="/counterfeit">counterfeit products</Link> page.</p>,
             },
         ],
-        links: [{ label: "Reconsidered", to: "/reconsidered" }],
     },
     {
         slug: "new-balance-foundation",
@@ -280,26 +279,6 @@ export const INFO_PAGES = [
             },
         ],
         links: [{ label: "Shop team sports", to: "/products?activity=soccer" }],
-    },
-    {
-        slug: "reconsidered",
-        group: "Shop",
-        title: "Reconsidered",
-        intro: "Give your gently used New Balance shoes a second life.",
-        sections: [
-            {
-                heading: "Trade in",
-                body: <p>Bring your gently used New Balance shoes to a participating store or ship them back to us. Accepted items earn a voucher toward your next purchase.</p>,
-            },
-            {
-                heading: "Shop renewed",
-                body: <p>Traded-in shoes are cleaned, repaired and sold again, so fewer shoes end up in landfills.</p>,
-            },
-        ],
-        links: [
-            { label: "Find a participating store", to: "/stores" },
-            { label: "Return policy", to: "/returns" },
-        ],
     },
     {
         slug: "care-and-maintenance",

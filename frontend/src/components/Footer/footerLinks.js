@@ -25,7 +25,6 @@ export const FOOTER_COLUMNS = [
             { label: "Shipping information", to: "/shipping" },
             { label: "Sale exclusions", to: "/sale-exclusions" },
             { label: "Custom uniforms", to: "/custom-uniforms" },
-            { label: "Reconsidered", to: "/reconsidered" },
         ],
     },
     {

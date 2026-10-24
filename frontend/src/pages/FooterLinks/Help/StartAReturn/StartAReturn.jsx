@@ -25,15 +25,6 @@ function BoxIcon() {
     );
 }
 
-function TradeInIcon() {
-    return (
-        <svg className={styles.cardIcon} viewBox="0 0 28 28" fill="none" aria-hidden="true">
-            <path d="M22.5 11A9 9 0 0 0 6 8.5M5.5 17A9 9 0 0 0 22 19.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-            <path d="M5.5 4v5h5M22.5 24v-5h-5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-    );
-}
-
 function StartAReturn() {
     const pageRef = useRef(null);
     const faq = getReturnFaq();
@@ -73,17 +64,6 @@ function StartAReturn() {
                             For online orders only: contact our Customer Care team and ship your items back to us. <strong>Online returns are free for members.</strong> Non-member returns are subject to a $5 restocking fee, which will be deducted from the total refund amount. Please allow up to 14 days after we receive your package for your refund to process.
                         </p>
                         <Link to="/help" className={styles.cardButton}>Contact us</Link>
-                    </section>
-
-                    <section className={styles.card}>
-                        <h2 className={styles.cardTitle}>
-                            <TradeInIcon />
-                            Trade-in
-                        </h2>
-                        <p className={styles.cardText}>
-                            Turn gently used products into a voucher on accepted items. Bring your gently used New Balance shoes to participating stores or print a label to ship them back through New Balance Reconsidered.
-                        </p>
-                        <Link to="/reconsidered" className={styles.cardButton}>Trade-in</Link>
                     </section>
                 </div>
 

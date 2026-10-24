@@ -343,8 +343,13 @@ html.menu-open {
 
 .featured {
     padding-right: 40px;
-    border-right: 1px solid #ddd;
+    border-right: 1.5px solid #ddd;
     margin-left: 190px;
+}
+
+.mega-column.featured a {
+    color: #000;
+    font-weight: 700;
 }
 
 .new-dropdown {
