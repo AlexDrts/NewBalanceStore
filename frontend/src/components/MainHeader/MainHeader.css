@@ -310,7 +310,7 @@ html.menu-open {
     transform: translateY(-3px);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .search-btn {
         transform: translateY(1px);
     }
@@ -514,7 +514,7 @@ html.menu-open {
    MOBILE RESPONSIVE
 ========================== */
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .main-header {
         height: 65px;
         padding: 0 15px;
