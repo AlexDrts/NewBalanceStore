@@ -1,4 +1,4 @@
-import { apiRequest } from "./apiClient.js";
+import { apiRequest } from "./api/apiClient.js";
 
 /**
  * Отримує список замовлень поточного користувача з бекенду.
