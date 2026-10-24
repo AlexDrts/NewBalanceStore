@@ -2,7 +2,7 @@ import styles from "./ProductFilters.module.css";
 import { useState } from "react";
 import FilterButton from "./FilterButton.jsx";
 
-function ProductFilters({filters, setFilters, initialFilters}) {
+function ProductFilters({filters, setFilters, initialFilters, sectionType, sectionGender}) {
     const [openedFilters, setOpenedFilters] = useState({
         productType: false,
         footwearSize: false,
@@ -31,11 +31,17 @@ function ProductFilters({filters, setFilters, initialFilters}) {
     const hasClothingFilter = filters.clothingSizes.length > 0;
     const hasAccessoryFilter = filters.accessoryType.length > 0;
 
-    const showFootwearSize = !hasClothingFilter && !hasAccessoryFilter && (selectedCategories.length === 0 || selectedCategories.includes("footwear"));
+    const inSection = (type) => !sectionType || sectionType === type;
 
-    const showClothingSize = !hasFootwearFilter && !hasAccessoryFilter && (selectedCategories.length === 0 || selectedCategories.includes("clothing"));
+    const showGender = !sectionGender;
 
-    const showAccessoryType = !hasFootwearFilter && !hasClothingFilter && (selectedCategories.length === 0 || selectedCategories.includes("accessories"));
+    const showProductType = !sectionType;
+
+    const showFootwearSize = inSection("footwear") && !hasClothingFilter && !hasAccessoryFilter && (selectedCategories.length === 0 || selectedCategories.includes("footwear"));
+
+    const showClothingSize = inSection("clothing") && !hasFootwearFilter && !hasAccessoryFilter && (selectedCategories.length === 0 || selectedCategories.includes("clothing"));
+
+    const showAccessoryType = inSection("accessories") && !hasFootwearFilter && !hasClothingFilter && (selectedCategories.length === 0 || selectedCategories.includes("accessories"));
 
 
     const clearFilters = () => {
@@ -143,47 +149,51 @@ function ProductFilters({filters, setFilters, initialFilters}) {
                 </button>
             )}
 
-            <div className={`${styles.filterGroup} ${openedFilters.gender ? styles.active : ""}`}>
-                <h4 onClick={() => toggleFilter("gender")}>Gender</h4>
-                <div className={
-                         openedFilters.gender
-                             ? `${styles.filterContent} ${styles.filterContentOpen}`
-                             : styles.filterContent
-                     }>
-                    { gender.map(item => (
-                        <FilterButton
-                            key={item.value}
-                            filterName="gender"
-                            value={item.value}
-                            label={item.label}
-                            filters={filters}
-                            setFilters={setFilters}
-                        />
-                    ))}
+            { showGender && (
+                <div className={`${styles.filterGroup} ${openedFilters.gender ? styles.active : ""}`}>
+                    <h4 onClick={() => toggleFilter("gender")}>Gender</h4>
+                    <div className={
+                             openedFilters.gender
+                                 ? `${styles.filterContent} ${styles.filterContentOpen}`
+                                 : styles.filterContent
+                         }>
+                        { gender.map(item => (
+                            <FilterButton
+                                key={item.value}
+                                filterName="gender"
+                                value={item.value}
+                                label={item.label}
+                                filters={filters}
+                                setFilters={setFilters}
+                            />
+                        ))}
+                    </div>
                 </div>
-            </div>
+            )}
 
-            <div className={`${styles.filterGroup} ${openedFilters.productType ? styles.active : ""}`}>
-                <h4 onClick={() => toggleFilter("productType")}>
-                    Product Type
-                </h4>
-                <div className={
-                         openedFilters.productType
-                             ? `${styles.filterContent} ${styles.filterContentOpen}`
-                             : styles.filterContent
-                     }>
-                    { productTypes.map(item => (
-                        <FilterButton
-                            key={item.value}
-                            filterName="category"
-                            value={item.value}
-                            label={item.label}
-                            filters={filters}
-                            setFilters={setFilters}
-                        />
-                    ))}
+            { showProductType && (
+                <div className={`${styles.filterGroup} ${openedFilters.productType ? styles.active : ""}`}>
+                    <h4 onClick={() => toggleFilter("productType")}>
+                        Product Type
+                    </h4>
+                    <div className={
+                             openedFilters.productType
+                                 ? `${styles.filterContent} ${styles.filterContentOpen}`
+                                 : styles.filterContent
+                         }>
+                        { productTypes.map(item => (
+                            <FilterButton
+                                key={item.value}
+                                filterName="category"
+                                value={item.value}
+                                label={item.label}
+                                filters={filters}
+                                setFilters={setFilters}
+                            />
+                        ))}
+                    </div>
                 </div>
-            </div>
+            )}
 
             { showFootwearSize && (
                 <div className={`${styles.filterGroup} ${openedFilters.footwearSize ? styles.active : ""}`}>
