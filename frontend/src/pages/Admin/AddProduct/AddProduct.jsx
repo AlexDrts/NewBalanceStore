@@ -64,7 +64,7 @@ function AddProduct() {
 
     const activeSizesList = (category === "Clothing" || category === "Accessories") ? clothingSizes : footwearSizes;
 
-    const genderOptions = ["Unisex", "Men", "Women"];
+    const genderOptions = ["Unisex", "Men", "Women", "Kids"];
     const activityOptions = ["Lifestyle", "Running", "Training", "Soccer", "Basketball", "Tennis"];
 
     const extraColors = selectedColors.filter((colorKey) =>
@@ -406,6 +406,7 @@ function AddProduct() {
                                             <option value="Unisex">Unisex</option>
                                             <option value="Men">Men</option>
                                             <option value="Women">Women</option>
+                                            <option value="Kids">Kids</option>
                                             {!genderOptions.includes(gender) && (
                                                 <option value={gender}>{gender}</option>
                                             )}

@@ -479,6 +479,62 @@ body {
     text-decoration: underline;
 }
 
+.methodsList {
+    display: flex;
+    flex-direction: column;
+}
+
+.methodOption {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #fff;
+    transition: border-color 0.2s;
+}
+
+.methodOption:hover {
+    border-color: #000;
+}
+
+.methodNote {
+    display: block;
+    font-size: 12px;
+    color: #707070;
+    margin-top: 2px;
+}
+
+.methodPrice {
+    font-weight: 600;
+}
+
+.infoIconWrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 6px;
+}
+
+.taxTooltip {
+    position: absolute;
+    bottom: 125%;
+    left: 0;
+    width: 280px;
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 12px 14px;
+    font-size: 11px;
+    line-height: 1.4;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    z-index: 100;
+    pointer-events: none;
+}
+
 /* ===== RESPONSIVE MEDIA QUERIES ===== */
 @media (min-width: 1921px) {
     .headerInner,
@@ -543,7 +599,8 @@ body {
         font-size: 16px !important;
     }
 
-    .shippingSection {
+    .methodOption {
+        max-width: 100%;
     }
 
     .continueBtn {
