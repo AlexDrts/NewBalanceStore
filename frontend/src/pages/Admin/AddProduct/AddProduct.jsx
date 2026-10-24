@@ -32,7 +32,8 @@ const KIDS_SHOE_SIZES = {
     "Babies & Toddlers": [2, 3, 4, 5, 6, 7, 8, 9, 10]
 };
 
-const SHOE_ACTIVITIES = ["Lifestyle", "Running", "Walking", "Cleats", "Training", "Hiking & Trail", "Tennis", "Basketball", "Skateboarding", "Sandals", "Soccer", "Football", "Golf"];
+const SHOE_ACTIVITIES = ["Lifestyle", "Running", "Walking", "Cleats", "Training", "Hiking & Trail", "Tennis", "Basketball", "Skateboarding", "Sandals"];
+const MEN_SHOE_ACTIVITIES = ["Lifestyle", "Running", "Walking", "Cleats", "Basketball", "Hiking & Trail", "Skateboarding", "Training", "Tennis", "Sandals"];
 const SPORTS = ["Soccer", "Tennis", "Running", "Basketball", "Football", "Training", "Golf"];
 const KIDS_SPORTS = ["Basketball", "Baseball", "Soccer", "Running", "Tennis", "Lacrosse", "Skateboarding", "Softball"];
 
@@ -44,7 +45,7 @@ function getSubcategoryOptions(category, gender) {
 function getActivityOptions(category, gender) {
     const isKids = gender === "Kids";
     if (category === "Shoes")
-        return isKids ? ["Lifestyle", ...KIDS_SPORTS] : SHOE_ACTIVITIES;
+        return isKids ? ["Lifestyle", ...KIDS_SPORTS] : (gender === "Men" ? MEN_SHOE_ACTIVITIES : SHOE_ACTIVITIES);
     return isKids ? KIDS_SPORTS : SPORTS;
 }
 

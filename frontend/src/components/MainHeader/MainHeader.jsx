@@ -14,7 +14,6 @@ import bagIcon from '../../assets/icons/header/bag-icon.svg';
 import menArrivals from '../../assets/images/new/men-arrivals.jpg';
 import womenArrivals from '../../assets/images/new/women-arrivals.jpg';
 import kidsArrivals from '../../assets/images/new/kids-arrivals.jpg';
-import footballCollection from '../../assets/images/new/football-collection.jpg';
 
 
 
@@ -261,11 +260,6 @@ function MainHeader({
                                 <Link to={"/products?gender=kids&new=true"} className="new-card">
                                     <img src={kidsArrivals} alt=""/>
                                     <span>Kids' new arrivals</span>
-                                </Link>
-
-                                <Link to={"/products?activity=soccer"} className="new-card">
-                                    <img src={footballCollection} alt=""/>
-                                    <span>The international football collection</span>
                                 </Link>
                             </div>
                         </div>
@@ -558,7 +552,6 @@ function MainHeader({
                                     <Link to="/products?gender=men&new=true" className="menu-nav-row-link" onClick={closeMobileMenu}>Men's new arrivals</Link>
                                     <Link to="/products?gender=women&new=true" className="menu-nav-row-link" onClick={closeMobileMenu}>Women's new arrivals</Link>
                                     <Link to="/products?gender=kids&new=true" className="menu-nav-row-link" onClick={closeMobileMenu}>Kids' new arrivals</Link>
-                                    <Link to="/products?activity=soccer" className="menu-nav-row-link" onClick={closeMobileMenu}>The international football collection</Link>
                                 </div>
                             )}
 
