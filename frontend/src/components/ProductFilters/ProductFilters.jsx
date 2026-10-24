@@ -120,7 +120,7 @@ function ProductFilters({filters, setFilters, initialFilters}) {
         { value: "white", color: "white" },
         { value: "green", color: "green" },
         { value: "blue", color: "blue" },
-        { value: "gray", color: "gray" },
+        { value: "grey", color: "gray" },
         { value: "red", color: "red" },
         { value: "pink", color: "pink" },
         { value: "tan", color: "tan" },

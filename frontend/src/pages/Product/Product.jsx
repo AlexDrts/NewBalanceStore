@@ -550,7 +550,7 @@ function getBreadcrumbs(product) {
         else if (type === "footwear" && activity) {
             crumbs.push({
                 label: activity,
-                to: `/products?gender=${genderParam}&type=${type}&activity=${activity.toLowerCase()}`
+                to: `/products?gender=${genderParam}&type=${type}&activity=${encodeURIComponent(activity.toLowerCase())}`
             });
         }
     }

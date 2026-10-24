@@ -39,13 +39,19 @@ export function matchesActivity(product, activity) {
     return getProductActivity(product).toLowerCase() === activity.toLowerCase();
 }
 
+const KIDS_AGE_GROUPS = ["Big Kids", "Little Kids", "Babies & Toddlers"];
+
 export function getProductSubcategory(product) {
+    const productCategory = (product.category ?? "").toLowerCase();
+    const ageGroup = KIDS_AGE_GROUPS.find(item => item.toLowerCase() === productCategory);
+    if (ageGroup)
+        return { label: ageGroup, value: productCategory };
+
     const type = (product.type ?? "").toLowerCase();
     const rules = SUBCATEGORY_PATTERNS.filter(item => item.type === type);
     if (!rules.length)
         return null;
 
-    const productCategory = (product.category ?? "").toLowerCase();
     const name = (product.name ?? "").toLowerCase();
     const rule = rules.find(item => item.category === productCategory)
         ?? rules.find(item => item.pattern.test(name));

@@ -99,7 +99,7 @@ function Products() {
 
     const getProductColors = (product) => {
         const colors = product.colors?.length ? product.colors : Object.keys(product.images ?? {});
-        return colors.map(color => color.replace(/\d+$/, ""));
+        return colors.map(color => color.toLowerCase().replace(/\d+$/, "").replace(/^gray$/, "grey"));
     };
 
     const checkPrice = (productPrice) => {
@@ -201,12 +201,12 @@ function Products() {
             if(category === "shoes")
                 breadcrumbs.push("All Shoes");
             else
-                breadcrumbs.push(category.charAt(0).toUpperCase() + category.slice(1));
+                breadcrumbs.push(category.replace(/\b\w/g, letter => letter.toUpperCase()));
 
         }
         else if(activity) {
             breadcrumbs.push(" / ");
-            breadcrumbs.push(activity.charAt(0).toUpperCase() + activity.slice(1));
+            breadcrumbs.push(activity.replace(/\b\w/g, letter => letter.toUpperCase()));
         }
     }
 
