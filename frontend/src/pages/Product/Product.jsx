@@ -23,6 +23,7 @@ import { addToRecentlyViewed, getRecentlyViewed } from "../../utils/recentlyView
 import { formatColorName, formatPrice, formatSizeLabel, formatTypeLabel, getSizeGrid } from "../../utils/productFormat.js";
 import { createProductView, getCartQuantity, pickRelatedProducts } from "./productView.js";
 import { MAX_QUANTITY_PER_ITEM } from "../../entities/Cart.js";
+import { getProductActivity, getProductSubcategory } from "../Products/productTaxonomy.js";
 
 const LOW_STOCK_LIMIT = 5;
 import { flashLoading, withLoading } from "../../components/LoadingOverlay/loadingStore.js";
@@ -301,7 +302,7 @@ function ProductView({ product, hideAfterRef }) {
                     <li>Style #: {product.id}</li>
                     {product.type && <li>Type: {formatTypeLabel(product.type)}</li>}
                     {product.category && <li>Category: {product.category}</li>}
-                    {product.activity && <li>Activity: {product.activity}</li>}
+                    {getProductActivity(product) && <li>Activity: {getProductActivity(product)}</li>}
                     {product.gender && <li>Gender: {product.gender}</li>}
                     <li>Available colors: {product.colors.map(formatColorName).join(", ")}</li>
                 </ul>
@@ -537,10 +538,19 @@ function getBreadcrumbs(product) {
             to: `/products?gender=${genderParam}&type=${type}`
         });
 
-        if (product.activity) {
+        const subcategory = getProductSubcategory(product);
+        const activity = getProductActivity(product);
+
+        if (subcategory) {
             crumbs.push({
-                label: product.activity,
-                to: `/products?gender=${genderParam}&type=${type}&activity=${product.activity.toLowerCase()}`
+                label: subcategory.label,
+                to: `/products?gender=${genderParam}&type=${type}&category=${encodeURIComponent(subcategory.value)}`
+            });
+        }
+        else if (type === "footwear" && activity) {
+            crumbs.push({
+                label: activity,
+                to: `/products?gender=${genderParam}&type=${type}&activity=${activity.toLowerCase()}`
             });
         }
     }

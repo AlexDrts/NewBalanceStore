@@ -8,7 +8,6 @@ import PromoBar from "../PromoBar/PromoBar.jsx";
 // SVG
 import usFlag from '../../assets/icons/header/US.png';
 import locationPin from '../../assets/icons/header/location-pin.svg';
-import recycleIcon from '../../assets/icons/header/recycle-icon.svg';
 
 const HELP_LINKS = [
     { label: "Order Status", to: "/order-status" },
@@ -76,10 +75,6 @@ function TopHeader() {
                             </span>
                         ) : "Select a Store"}
                     </button>
-                    <span>|</span>
-
-                    <img className="recycle-icon" src={recycleIcon} alt=""/>
-                    <Link to="/reconsidered">Reconsidered</Link>
                 </div>
 
                 <PromoBar />

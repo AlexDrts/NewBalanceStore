@@ -14,7 +14,6 @@ import bagIcon from '../../assets/icons/header/bag-icon.svg';
 import menArrivals from '../../assets/images/new/men-arrivals.jpg';
 import womenArrivals from '../../assets/images/new/women-arrivals.jpg';
 import kidsArrivals from '../../assets/images/new/kids-arrivals.jpg';
-import launchCalendar from '../../assets/images/new/launch-calendar.jpg';
 import footballCollection from '../../assets/images/new/football-collection.jpg';
 
 
@@ -262,11 +261,6 @@ function MainHeader({
                                     <span>Kids' new arrivals</span>
                                 </Link>
 
-                                <Link to={"/products?new=true"} className="new-card">
-                                    <img src={launchCalendar} alt=""/>
-                                    <span>Launch calendar</span>
-                                </Link>
-
                                 <Link to={"/products?activity=soccer"} className="new-card">
                                     <img src={footballCollection} alt=""/>
                                     <span>The international football collection</span>
@@ -280,16 +274,8 @@ function MainHeader({
                             <div className="mega-menu">
 
                                 <div className="mega-column featured">
-                                    <Link to={"/products?gender=men&activity=soccer"}>Soccer</Link>
                                     <Link to={"/products?gender=men&new=true"}>New Arrivals</Link>
-                                    <Link to={"/products?gender=men"}>Top Styles</Link>
                                     <Link to={"/products?gender=men&activity=lifestyle"}>NB Lifestyle</Link>
-                                    <Link to={"/products?gender=men&q=made%20in%20usa"}>Made in USA</Link>
-                                    <Link to={"/products?gender=men&q=made%20in%20uk"}>Made in UK</Link>
-                                    <Link to={"/products?gender=men&new=true"}>Launch Calendar</Link>
-                                    <Link to={"/products?gender=men&type=footwear"}>Color Edit</Link>
-                                    <Link to={"/products?gender=men&q=klutch"}>Klutch Athletics</Link>
-                                    <Link to={"/reconsidered"}>Reconsidered</Link>
                                     <Link to={"/products?gender=men&sale=true"}>Sale</Link>
                                 </div>
 
@@ -340,16 +326,8 @@ function MainHeader({
                             <div className="mega-menu">
 
                                 <div className="mega-column featured">
-                                    <Link to={"/products?gender=women&activity=soccer"}>Soccer</Link>
                                     <Link to={"/products?gender=women&new=true"}>New Arrivals</Link>
-                                    <Link to={"/products?gender=women"}>Top Styles</Link>
                                     <Link to={"/products?gender=women&activity=lifestyle"}>NB Lifestyle</Link>
-                                    <Link to={"/products?gender=women&q=made%20in%20usa"}>Made in USA</Link>
-                                    <Link to={"/products?gender=women&q=made%20in%20uk"}>Made in UK</Link>
-                                    <Link to={"/products?gender=women&new=true"}>Launch Calendar</Link>
-                                    <Link to={"/products?gender=women&type=footwear"}>Color Edit</Link>
-                                    <Link to={"/products?gender=women&q=klutch"}>Klutch Athletics</Link>
-                                    <Link to={"/reconsidered"}>Reconsidered</Link>
                                     <Link to={"/products?gender=women&sale=true"}>Sale</Link>
                                 </div>
 
@@ -401,13 +379,7 @@ function MainHeader({
                             <div className="mega-menu">
 
                                 <div className="mega-column featured">
-                                    <Link to={"/products?gender=kids&activity=soccer"}>Soccer</Link>
                                     <Link to={"/products?gender=kids&new=true"}>New Arrivals</Link>
-                                    <Link to={"/products?gender=kids&type=footwear"}>School Uniform Shoes</Link>
-                                    <Link to={"/products?gender=kids"}>Top Styles</Link>
-                                    <Link to={"/products?gender=kids"}>Sibling Shop</Link>
-                                    <Link to={"/products?gender=kids&type=footwear"}>Wide Shoes</Link>
-                                    <Link to={"/products?gender=kids&type=footwear"}>Kid-friendly Closures</Link>
                                     <Link to={"/products?gender=kids&type=footwear&maxPrice=75"}>Shoes under $75</Link>
                                     <Link to={"/products?gender=kids&sale=true"}>Sale</Link>
                                 </div>
@@ -417,15 +389,11 @@ function MainHeader({
                                     <Link to={"/products?gender=kids&type=footwear"}>All Shoes</Link>
                                     <Link to={"/products?gender=kids&type=footwear&sizes=3.5,4,4.5,5,5.5,6,6.5,7"}>Big Kids (Size 3.5 - 7)</Link>
                                     <Link to={"/products?gender=kids&type=footwear&sizes=10.5,11,11.5,12,12.5,13,13.5,1,1.5,2,2.5,3"}>Little Kids (Size 10.5 - 3)</Link>
-                                    <Link to={"/products?gender=kids&type=footwear"}>Babies & Toddlers (Size 0 - 10)</Link>
                                 </div>
 
                                 <div className="mega-column">
                                     <h4>CLOTHING</h4>
                                     <Link to={"/products?gender=kids&type=clothing"}>All Clothing</Link>
-                                    <Link to={"/products?gender=kids&type=clothing"}>Big Kids (Size 7Y - 16Y)</Link>
-                                    <Link to={"/products?gender=kids&type=clothing"}>Little Kids (Size 3Y - 6Y)</Link>
-                                    <Link to={"/products?gender=kids&type=clothing"}>Babies & Toddlers (Size 12M - 3T)</Link>
                                 </div>
 
                                 <div className="mega-column">
@@ -454,7 +422,7 @@ function MainHeader({
                             <div className="mega-menu">
 
                                 <div className="mega-column featured">
-                                    <h4>All Sale</h4>
+                                    <Link to={"/products?sale=true"}>All Sale</Link>
                                     <Link to={"/products?sale=true&maxPrice=50"}>Under $50</Link>
                                     <Link to={"/products?sale=true&maxPrice=100"}>Under $100</Link>
                                 </div>
@@ -463,7 +431,6 @@ function MainHeader({
                                     <h4>MEN</h4>
 
                                     <Link to={"/products?gender=men&type=footwear&sale=true"}>Shoes</Link>
-                                    <Link to={"/products?gender=men&type=clothing&sale=true"}>Clothing</Link>
                                     <Link to={"/products?gender=men&type=accessories&sale=true"}>Accessories</Link>
                                 </div>
 
@@ -471,7 +438,6 @@ function MainHeader({
                                     <h4>WOMEN</h4>
 
                                     <Link to={"/products?gender=women&type=footwear&sale=true"}>Shoes</Link>
-                                    <Link to={"/products?gender=women&type=clothing&sale=true"}>Clothing</Link>
                                     <Link to={"/products?gender=women&type=accessories&sale=true"}>Accessories</Link>
                                 </div>
 
@@ -479,8 +445,6 @@ function MainHeader({
                                     <h4>KIDS</h4>
 
                                     <Link to={"/products?gender=kids&type=footwear&sale=true"}>Shoes</Link>
-                                    <Link to={"/products?gender=kids&type=clothing&sale=true"}>Clothing</Link>
-                                    <Link to={"/products?gender=kids&type=accessories&sale=true"}>Accessories</Link>
                                 </div>
 
                             </div>
@@ -576,7 +540,6 @@ function MainHeader({
                                     <Link to="/products?gender=men&new=true" className="menu-nav-row-link" onClick={closeMobileMenu}>Men's new arrivals</Link>
                                     <Link to="/products?gender=women&new=true" className="menu-nav-row-link" onClick={closeMobileMenu}>Women's new arrivals</Link>
                                     <Link to="/products?gender=kids&new=true" className="menu-nav-row-link" onClick={closeMobileMenu}>Kids' new arrivals</Link>
-                                    <Link to="/products?new=true" className="menu-nav-row-link" onClick={closeMobileMenu}>Launch calendar</Link>
                                     <Link to="/products?activity=soccer" className="menu-nav-row-link" onClick={closeMobileMenu}>The international football collection</Link>
                                 </div>
                             )}
@@ -746,7 +709,6 @@ function MainHeader({
                                     <Link to="/products?gender=kids&type=footwear" className="menu-nav-row-link" onClick={closeMobileMenu}>All Shoes</Link>
                                     <Link to="/products?gender=kids&type=footwear&sizes=3.5,4,4.5,5,5.5,6,6.5,7" className="menu-nav-row-link" onClick={closeMobileMenu}>Big Kids (Size 3.5 - 7)</Link>
                                     <Link to="/products?gender=kids&type=footwear&sizes=10.5,11,11.5,12,12.5,13,13.5,1,1.5,2,2.5,3" className="menu-nav-row-link" onClick={closeMobileMenu}>Little Kids (Size 10.5 - 3)</Link>
-                                    <Link to="/products?gender=kids&type=footwear" className="menu-nav-row-link" onClick={closeMobileMenu}>Babies & Toddlers (Size 0 - 10)</Link>
                                 </div>
                             )}
 
@@ -754,9 +716,6 @@ function MainHeader({
                             {currentMenu === 'kids-clothing' && (
                                 <div className="menu-page">
                                     <Link to="/products?gender=kids&type=clothing" className="menu-nav-row-link" onClick={closeMobileMenu}>All Clothing</Link>
-                                    <Link to="/products?gender=kids&type=clothing" className="menu-nav-row-link" onClick={closeMobileMenu}>Big Kids (Size 7Y - 16Y)</Link>
-                                    <Link to="/products?gender=kids&type=clothing" className="menu-nav-row-link" onClick={closeMobileMenu}>Little Kids (Size 3Y - 6Y)</Link>
-                                    <Link to="/products?gender=kids&type=clothing" className="menu-nav-row-link" onClick={closeMobileMenu}>Babies & Toddlers (Size 12M - 3T)</Link>
                                 </div>
                             )}
 

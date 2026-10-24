@@ -20,7 +20,6 @@ const FAQ_LINKS = [
     { label: "Payments & Gift Cards", to: "/giftcards" },
     { label: "Membership & Log In", to: "/membership" },
     { label: "Stores", to: "/stores" },
-    { label: "Reconsidered", to: "/reconsidered" },
 ];
 
 const HELP_LINKS = [

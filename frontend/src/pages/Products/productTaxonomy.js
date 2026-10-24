@@ -1,26 +1,35 @@
 const RUNNING_PATTERN = /running shoe|everyday miles|road work|long run|marathon/;
 
 const SUBCATEGORY_PATTERNS = [
-    { category: "hoodies & sweatshirts", pattern: /hood|sweatshirt|crew\b|pullover|fleece/ },
-    { category: "jackets & vests", pattern: /jacket|vest|anorak|windbreaker|parka/ },
-    { category: "shirts", pattern: /shirt|tee\b|top\b|tank|polo|jersey|sleeve/ },
-    { category: "shorts", pattern: /short/ },
-    { category: "pants", pattern: /pant|jogger|legging|tight|trouser/ },
-    { category: "socks", pattern: /sock/ },
-    { category: "bags", pattern: /bag|backpack|tote|duffel/ },
-    { category: "hats & gloves", pattern: /hat\b|cap\b|beanie|glove|headband/ },
+    { category: "hoodies & sweatshirts", label: "Hoodies & Sweatshirts", type: "clothing", pattern: /hood|sweatshirt|crew\b|pullover|fleece/ },
+    { category: "jackets & vests", label: "Jackets & Vests", type: "clothing", pattern: /jacket|vest|anorak|windbreaker|parka/ },
+    { category: "shirts", label: "Shirts", type: "clothing", pattern: /shirt|tee\b|top\b|tank|polo|jersey|sleeve/ },
+    { category: "shorts", label: "Shorts", type: "clothing", pattern: /short/ },
+    { category: "pants", label: "Pants", type: "clothing", pattern: /pant|jogger|legging|tight|trouser/ },
+    { category: "socks", label: "Socks", type: "accessories", pattern: /sock/ },
+    { category: "bags", label: "Bags", type: "accessories", pattern: /bag|backpack|tote|duffel/ },
+    { category: "hats & gloves", label: "Hats & Gloves", type: "accessories", pattern: /hat\b|cap\b|beanie|glove|headband/ },
 ];
 
 function getSearchText(product) {
     return `${product.name ?? ""} ${product.description ?? ""}`.toLowerCase();
 }
 
+function isFootwear(product) {
+    return (product.type ?? "").toLowerCase() === "footwear";
+}
+
 export function getProductActivity(product) {
-    if (product.activity && product.activity.trim())
-        return product.activity.trim();
+    const activity = (product.activity ?? "").trim();
+
+    if (!isFootwear(product))
+        return activity.toLowerCase() === "lifestyle" ? "" : activity;
+
+    if (activity)
+        return activity;
 
     const text = getSearchText(product);
-    if ((product.type ?? "").toLowerCase() === "footwear" && RUNNING_PATTERN.test(text) && !text.includes("inspired"))
+    if (RUNNING_PATTERN.test(text) && !text.includes("inspired"))
         return "Running";
 
     return "Lifestyle";
@@ -28,6 +37,20 @@ export function getProductActivity(product) {
 
 export function matchesActivity(product, activity) {
     return getProductActivity(product).toLowerCase() === activity.toLowerCase();
+}
+
+export function getProductSubcategory(product) {
+    const type = (product.type ?? "").toLowerCase();
+    const rules = SUBCATEGORY_PATTERNS.filter(item => item.type === type);
+    if (!rules.length)
+        return null;
+
+    const productCategory = (product.category ?? "").toLowerCase();
+    const name = (product.name ?? "").toLowerCase();
+    const rule = rules.find(item => item.category === productCategory)
+        ?? rules.find(item => item.pattern.test(name));
+
+    return rule ? { label: rule.label, value: rule.category } : null;
 }
 
 export function matchesCategory(product, category) {

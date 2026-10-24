@@ -6,11 +6,18 @@ import MainHeader from "../../../components/MainHeader/MainHeader.jsx";
 import Footer from "../../../components/Footer/Footer.jsx";
 import { createProduct, fetchProduct, updateProduct } from "../../../services/api/productsApi.js";
 import Notice from "../../../components/Notice/Notice.jsx";
+import { getProductSubcategory } from "../../Products/productTaxonomy.js";
 
 const TYPE_TO_CATEGORY = {
     Footwear: "Shoes",
     Clothing: "Clothing",
     Accessories: "Accessories"
+};
+
+const SUBCATEGORIES = {
+    Shoes: [],
+    Clothing: ["Shirts", "Shorts", "Pants", "Hoodies & Sweatshirts", "Jackets & Vests"],
+    Accessories: ["Socks", "Bags", "Hats & Gloves"]
 };
 
 function categoryToType(category) {
@@ -41,6 +48,7 @@ function AddProduct() {
     const [category, setCategory] = useState("Shoes");
     const [gender, setGender] = useState("Unisex");
     const [activity, setActivity] = useState("Lifestyle");
+    const [subcategory, setSubcategory] = useState("");
     const [price, setPrice] = useState("");
     const [oldPrice, setOldPrice] = useState("");
 
@@ -65,7 +73,10 @@ function AddProduct() {
     const activeSizesList = (category === "Clothing" || category === "Accessories") ? clothingSizes : footwearSizes;
 
     const genderOptions = ["Unisex", "Men", "Women", "Kids"];
-    const activityOptions = ["Lifestyle", "Running", "Training", "Soccer", "Basketball", "Tennis"];
+    const activityOptions = ["Lifestyle", "Running", "Training", "Soccer", "Basketball", "Tennis", "Football", "Golf"];
+    const isShoes = category === "Shoes";
+    const visibleActivityOptions = isShoes ? activityOptions : activityOptions.filter((item) => item !== "Lifestyle");
+    const subcategoryOptions = SUBCATEGORIES[category] || [];
 
     const extraColors = selectedColors.filter((colorKey) =>
         !availableColors.some((color) => color.toLowerCase() === colorKey)
@@ -112,9 +123,16 @@ function AddProduct() {
 
                 setProductName(product.name || "");
                 setDescription(product.description || "");
-                setCategory(TYPE_TO_CATEGORY[product.type] || "Accessories");
+                const loadedCategory = TYPE_TO_CATEGORY[product.type] || "Accessories";
+                setCategory(loadedCategory);
+                const loadedSubcategory = getProductSubcategory(product)?.label;
+                setSubcategory((SUBCATEGORIES[loadedCategory] || []).includes(loadedSubcategory) ? loadedSubcategory : "");
                 setGender(product.gender || "Unisex");
-                setActivity(product.activity || "Lifestyle");
+                const loadedActivity = product.activity || "";
+                if (product.type === "Footwear")
+                    setActivity(loadedActivity || "Lifestyle");
+                else
+                    setActivity(loadedActivity === "Lifestyle" ? "" : loadedActivity);
                 setPrice(product.price != null ? String(product.price) : "");
                 setOldPrice(product.oldPrice != null ? String(product.oldPrice) : "");
                 setIsNew(Boolean(product.isNew));
@@ -211,6 +229,11 @@ function AddProduct() {
     const handleCategoryChange = (e) => {
         const newCategory = e.target.value;
         setCategory(newCategory);
+        setSubcategory("");
+        if (newCategory === "Shoes" && !activity)
+            setActivity("Lifestyle");
+        if (newCategory !== "Shoes" && activity === "Lifestyle")
+            setActivity("");
         setColorVariants({});
     };
 
@@ -269,7 +292,8 @@ function AddProduct() {
 
 
         const type = categoryToType(category);
-        const keepCategory = isEdit && loadedProduct && loadedProduct.type === type && loadedProduct.category;
+        const isKnownSubcategory = Object.values(SUBCATEGORIES).flat().some((item) => item.toLowerCase() === String(loadedProduct?.category || "").toLowerCase());
+        const keepCategory = isEdit && loadedProduct && loadedProduct.type === type && loadedProduct.category && !isKnownSubcategory;
 
         const productData = {
             name: productName,
@@ -277,8 +301,8 @@ function AddProduct() {
             oldPrice: oldPrice ? parseFloat(oldPrice) : null,
             gender: gender,
             type: type,
-            category: keepCategory ? loadedProduct.category : category,
-            activity: activity,
+            category: subcategory || (keepCategory ? loadedProduct.category : category),
+            activity: isShoes || activity !== "Lifestyle" ? activity : "",
             description: description,
             images: colorImages,
             colors: selectedColors,
@@ -414,18 +438,30 @@ function AddProduct() {
                                     </div>
                                 </div>
 
+                                {subcategoryOptions.length > 0 && (
+                                    <div className={styles.fieldGroup}>
+                                        <label className={styles.label}>
+                                            Subcategory <span className={styles.required}>*</span>
+                                        </label>
+                                        <select value={subcategory} onChange={(e) => setSubcategory(e.target.value)} required>
+                                            <option value="" disabled>Select subcategory</option>
+                                            {subcategoryOptions.map((item) => (
+                                                <option key={item} value={item}>{item}</option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                )}
+
                                 <div className={styles.fieldGroup}>
                                     <label className={styles.label}>
-                                        Activity <span className={styles.required}>*</span>
+                                        {isShoes ? <>Activity <span className={styles.required}>*</span></> : "Sport"}
                                     </label>
-                                    <select value={activity} onChange={(e) => setActivity(e.target.value)} required>
-                                        <option value="Lifestyle">Lifestyle</option>
-                                        <option value="Running">Running</option>
-                                        <option value="Training">Training</option>
-                                        <option value="Soccer">Soccer</option>
-                                        <option value="Basketball">Basketball</option>
-                                        <option value="Tennis">Tennis</option>
-                                        {!activityOptions.includes(activity) && (
+                                    <select value={activity} onChange={(e) => setActivity(e.target.value)} required={isShoes}>
+                                        {!isShoes && <option value="">None</option>}
+                                        {visibleActivityOptions.map((item) => (
+                                            <option key={item} value={item}>{item}</option>
+                                        ))}
+                                        {activity && !visibleActivityOptions.includes(activity) && (
                                             <option value={activity}>{activity}</option>
                                         )}
                                     </select>
