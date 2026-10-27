@@ -7,7 +7,7 @@
 <p>
   <em>
     A full-featured e-commerce web platform for browsing, filtering, and ordering sportswear and footwear online,
-    modeled on the official New Balance online store. A university course project built on a modern stack:
+    modeled on the official New Balance online store. A project built on a modern stack:
     React, ASP.NET Core Web API, and Firebase.
   </em>
 </p>
